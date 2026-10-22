@@ -1,0 +1,61 @@
+{
+  "summary": "PetLens can use a dog detector and a pose model to find body points in a clip. Every clip also gets a standard frame-to-frame motion measurement. Scores and the note come from fixed formulas. An optional language model can reword the note when the server is configured for it; it cannot change the numbers. This checkpoint's pose head outputs 17 COCO joint names and does not output the neck or the base of the tail. Pose quality on pet dogs is unproven until a labeled set is measured.",
+  "entries": [
+    {
+      "id": "dog-detector",
+      "whatItIs": "RT-DETR, PekingU/rtdetr_r50vd_coco_o365, an object detector. The model card license is Apache-2.0.",
+      "whatItDoes": "When torch and the weights are installed, the server finds dog boxes in sampled frames. The dog class id is read from the model labels. It also notes when a person box is present. That note is informational.",
+      "whatItDoesnt": "It does not name a condition, decide which leg is weaker, or choose the wellness score.",
+      "codePath": "gait_engine/pose_backend.py",
+      "resultLine": "The dog was located with an object detector (RT-DETR)."
+    },
+    {
+      "id": "pose-model",
+      "whatItIs": "ViTPose++ base, usyd-community/vitpose-plus-base. Dataset index 3 selects a backbone expert. The only keypoint head in this checkpoint is the 17-channel COCO head. It does not emit AP-10K neck or root-of-tail points.",
+      "whatItDoes": "When torch and weights are installed, the server returns positions and confidence for this checkpoint's 17 COCO-17 human joint labels inside a detected dog box. These labels are not validated canine anatomical landmarks. The head has no neck or root-of-tail point, so stride length and left/right gait symmetry remain unmeasured.",
+      "whatItDoesnt": "It outputs positions and confidences only. It does not name a condition, detect pain, or choose the wellness score. A low score is not stored as a measurement.",
+      "codePath": "gait_engine/pose_backend.py",
+      "resultLine": "ViTPose++ returned COCO-17 joint labels; canine landmark interpretation is unvalidated."
+    },
+    {
+      "id": "motion-fallback",
+      "whatItIs": "Standard OpenCV frame-difference analysis. This is not a learned model.",
+      "whatItDoes": "The server compares consecutive frames and records how much the picture changed. This runs on every clip. When pose is unavailable, it is the only movement measurement. When pose runs, this measurement still supplies movement consistency and activity.",
+      "whatItDoesnt": "It does not find limbs or keypoints, and it is not an AI model.",
+      "codePath": "gait_engine/motion.py",
+      "resultLine": "Motion measured with standard video analysis (no AI model)."
+    },
+    {
+      "id": "scoring",
+      "whatItIs": "Fixed formulas and weights in the wellness module.",
+      "whatItDoes": "Turns the measured values into factor scores and one overall indicator from 0 to 100. A missing measurement is left out. It is not treated as zero.",
+      "whatItDoesnt": "No AI model chooses or adjusts these scores.",
+      "codePath": "gait_engine/wellness.py",
+      "resultLine": "Scores come from fixed formulas, not from an AI model."
+    },
+    {
+      "id": "observation-rules",
+      "whatItIs": "Sentence templates in the wellness module.",
+      "whatItDoes": "Builds the plain-language note from the measured values and the scores.",
+      "whatItDoesnt": "It does not invent numbers, name a condition, or call a language model.",
+      "codePath": "gait_engine/wellness.py",
+      "resultLine": "Note written from your measurements by fixed rules."
+    },
+    {
+      "id": "llm-rewrite",
+      "whatItIs": "An optional language-model call on the analysis server.",
+      "whatItDoes": "When SILVERPAWS_LLM_URL and SILVERPAWS_LLM_MODEL are set, the server asks that provider to rephrase the rule-based note. The reply is shown only if it passes validation.",
+      "whatItDoesnt": "It is off when those variables are unset. It cannot add a measurement, name a condition, or drop a veterinarian recommendation. A failed or invalid reply is discarded and the rule-based note is shown.",
+      "codePath": "artifacts/api-server/src/lib/explanation.ts",
+      "resultLine": "Note reworded by an AI language model; the numbers are unchanged."
+    },
+    {
+      "id": "development",
+      "whatItIs": "AI coding assistants used while building the app.",
+      "whatItDoes": "Parts of this app's code and documentation were written with AI coding assistants and reviewed by the team.",
+      "whatItDoesnt": "This is not a model that runs on a clip. It does not measure a pet or write the note an owner sees from a walk. The team lead confirms this entry's final wording before release.",
+      "codePath": "repository",
+      "resultLine": "Parts of this app's code and documentation were written with AI coding assistants and reviewed by the team."
+    }
+  ]
+}

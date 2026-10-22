@@ -1,0 +1,10 @@
+# Normalize line endings so Windows and macOS teammates produce identical diffs.
+* text=auto eol=lf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.ico binary
+*.mp4 binary
+*.mov binary
+*.pdf binary

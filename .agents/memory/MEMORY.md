@@ -1,0 +1,2 @@
+- [Pet pose validation](pose-validation.md) — The checkpoint's 17 channels are COCO joints, checked on one side-view frame. Pose quality is not validated, and this head has no neck or base of the tail.
+- [Local report export](report-export.md) — Keep browser PDF exports dependency-free, separate measurements from interpretation, and preserve cautious metadata.

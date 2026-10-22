@@ -1,0 +1,76 @@
+# See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# compiled output
+dist
+tmp
+out-tsc
+*.tsbuildinfo
+
+# dependencies
+node_modules
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# ML validation outputs and local media
+outputs/
+validation_clips/
+*.mp4
+*.mov
+*.avi
+# Detector and pose weights. Do not commit them.
+models/
+
+# Firebase credentials — never commit service-account keys
+firebase-service-account*.json
+service-account*.json
+
+# Local environment files (keep the examples)
+.env
+.env.*
+!.env.example
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md
+
+# Replit
+.cache/
+.local/
+
+# Local prompt attachments are not application assets
+attached_assets/
+
+# Local generated reports and private agent-asset metadata
+reports/archive/*.pdf
+.agents/agent_assets_metadata.toml

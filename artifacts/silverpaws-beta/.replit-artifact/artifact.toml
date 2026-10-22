@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "PetLens AI Beta"
+description = "A browser-based beta for pet mobility screening. Create a pet profile, upload a walking video, run an experimental gait analysis, and review saved mobility observations for discussion with a veterinarian."
+version = "1.0.0"
+id = "artifacts/silverpaws-beta"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20493
+
+[services.development]
+run = "pnpm --filter @workspace/silverpaws-beta run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/silverpaws-beta", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/silverpaws-beta/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20493"
+BASE_PATH = "/"

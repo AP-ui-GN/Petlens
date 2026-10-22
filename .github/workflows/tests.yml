@@ -1,0 +1,119 @@
+# Validation for pull requests and direct updates to main.
+# Python installs the OpenCV stack only. It does not download pose weights.
+# There is no skipped model test in this workflow.
+
+name: tests
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Set up Python
+        uses: actions/setup-python@7f4fc3e22c37d6ff65e88745f38bd3157c663f7c # v4.9.1
+        with:
+          python-version: "3.12"
+
+      - name: Install OpenCV, NumPy, and SciPy
+        run: python -m pip install -r requirements-opencv.txt
+
+      - name: Run Python unit tests
+        run: python -m unittest discover -s tests -t .
+
+      - name: Report the local setup without downloading weights
+        run: python scripts/check_setup.py
+
+  python-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Set up Python
+        uses: actions/setup-python@7f4fc3e22c37d6ff65e88745f38bd3157c663f7c # v4.9.1
+        with:
+          python-version: "3.12"
+
+      - name: Install OpenCV, NumPy, and SciPy
+        run: python -m pip install -r requirements-opencv.txt
+
+      - name: Import the benchmark utility on Windows
+        run: python -c "import scripts.time_clip; print('time_clip import passed on Windows')"
+
+      - name: Run Python unit tests
+        run: python -m unittest discover -s tests -t .
+
+      - name: Report the local setup without downloading weights
+        run: python scripts/check_setup.py
+
+  api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4.3.0
+        with:
+          version: 10.33.4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install workspace dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Regenerate API clients and verify committed output
+        run: |
+          pnpm --filter @workspace/api-spec run codegen
+          git diff --exit-code -- lib/api-zod/src/generated lib/api-client-react/src/generated
+          test -z "$(git ls-files --others --exclude-standard -- lib/api-zod/src/generated lib/api-client-react/src/generated)"
+
+      - name: Run API tests
+        run: pnpm --filter @workspace/api-server run test
+
+      - name: Typecheck workspaces
+        run: pnpm run typecheck
+
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4.3.0
+        with:
+          version: 10.33.4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install workspace dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Verify generated AI-use registry copies
+        run: node scripts/sync-ai-use.mjs --check
+
+      - name: Run web tests
+        run: pnpm --filter @workspace/silverpaws-beta run test

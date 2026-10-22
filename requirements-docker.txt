@@ -1,0 +1,13 @@
+# Container install for the analysis API.
+#
+# The image uses Debian bookworm's Python 3.11. The same pins support
+# Python 3.10–3.12. opencv-python-headless matches the laptop OpenCV
+# version because the container has no screen. Torch is the CPU wheel.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.14.1+cpu
+torchvision==0.29.1+cpu
+pillow==11.3.0
+transformers==5.20.2
+scipy==1.15.3
+opencv-python-headless==4.10.0.84
+numpy==2.2.6

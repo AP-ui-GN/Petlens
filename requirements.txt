@@ -1,0 +1,17 @@
+# Dog-pose path for PetLens.
+#
+# Python 3.10, 3.11, or 3.12. TensorFlow is not used.
+# Torch is the CPU wheel. The +cpu build is published on the PyTorch CPU
+# index, not as the default PyPI file.
+#
+# Versions were read from PyPI and download.pytorch.org on October 21, 2026.
+# transformers 5.20.2 documents VitPoseForPoseEstimation and dataset_index
+# 3 = AP-10K, 4 = APT-36K.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.14.1+cpu
+torchvision==0.29.1+cpu
+pillow==11.3.0
+transformers==5.20.2
+scipy==1.15.3
+opencv-python==4.10.0.84
+numpy==2.2.6

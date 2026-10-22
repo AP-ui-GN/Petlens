@@ -1,0 +1,36 @@
+{
+  "name": "@workspace/api-server",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node -e \"const { spawn } = require('node:child_process'); process.env.NODE_ENV = 'development'; const build = spawn(process.execPath, ['./build.mjs'], { stdio: 'inherit' }); build.on('exit', (code) => { if (code !== 0) process.exit(code ?? 1); const server = spawn(process.execPath, ['--enable-source-maps', './dist/index.mjs'], { stdio: 'inherit', env: { ...process.env, NODE_ENV: 'development' } }); server.on('exit', (serverCode) => process.exit(serverCode ?? 0)); });\"",
+    "build": "node ./build.mjs",
+    "start": "node --enable-source-maps ./dist/index.mjs",
+    "test": "node --experimental-strip-types --test --test-concurrency=1 tests/multipart.test.ts tests/explanation.test.ts tests/upload-cleanup.test.ts tests/mobile-walks.test.ts tests/ai-use.test.ts tests/hosting.test.ts tests/api-address.test.ts tests/saved-result.test.ts tests/analyze-gate.test.ts tests/readyz.test.ts tests/graceful-shutdown.test.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@workspace/api-zod": "workspace:*",
+    "@workspace/db": "workspace:*",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "drizzle-orm": "catalog:",
+    "express": "^5.2.1",
+    "pino": "^9.14.0",
+    "pino-http": "^10.5.0"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "catalog:",
+    "esbuild": "0.27.3",
+    "esbuild-plugin-pino": "^2.3.3",
+    "pino-pretty": "^13.1.3",
+    "thread-stream": "3.1.0"
+  },
+  "optionalDependencies": {
+    "@esbuild/win32-x64": "0.27.3"
+  }
+}

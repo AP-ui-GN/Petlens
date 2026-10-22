@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    // The generated multipart schemas reference File/Blob, which live in the DOM
+    // lib. Node 24 provides both at runtime, so this is type-only.
+    "lib": ["dom", "es2022"]
+  },
+  "include": ["src"]
+}

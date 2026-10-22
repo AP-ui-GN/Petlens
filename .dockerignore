@@ -1,0 +1,13 @@
+.git
+.venv
+venv
+**/node_modules
+mobile
+models
+attached_assets
+tmp
+dist
+**/*.mp4
+**/*.mov
+**/.env
+**/.env.*

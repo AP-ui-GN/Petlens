@@ -1,0 +1,159 @@
+# Builds the documented Docker image and exercises the API in-container.
+# The generated synthetic clip verifies the HTTP-to-Python contract only; it is
+# not a pet-pose accuracy test and must never be reported as model validation.
+
+name: container-smoke
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "Dockerfile"
+      - "docker-compose.yml"
+      - "requirements-docker.txt"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - "scripts/**"
+      - "gait_engine/**"
+      - "artifacts/api-server/**"
+      - "lib/**"
+      - ".github/workflows/container-smoke.yml"
+  push:
+    branches: [main]
+    paths:
+      - "Dockerfile"
+      - "docker-compose.yml"
+      - "requirements-docker.txt"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - "scripts/**"
+      - "gait_engine/**"
+      - "artifacts/api-server/**"
+      - "lib/**"
+      - ".github/workflows/container-smoke.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  docker-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Build the production Docker image
+        run: docker build --pull --tag petlens-api:ci .
+
+      - name: Start the API container
+        run: |
+          docker run --detach --name silverpaws-api-ci \
+            --publish 8080:8080 \
+            --env NODE_ENV=development \
+            --env PORT=8080 \
+            --env ANALYSIS_TIMEOUT_MS=180000 \
+            silverpaws-api:ci
+
+      - name: Wait for liveness and readiness
+        shell: bash
+        run: |
+          set -euo pipefail
+          live=0
+          for attempt in $(seq 1 60); do
+            if curl --fail --silent --show-error http://127.0.0.1:8080/api/healthz >/tmp/healthz.json; then
+              live=1
+              break
+            fi
+            sleep 5
+          done
+          test "$live" -eq 1
+          cat /tmp/healthz.json
+          ready_status="$(curl --silent --show-error --output /tmp/readyz.json --write-out "%{http_code}" http://127.0.0.1:8080/api/readyz)"
+          cat /tmp/readyz.json
+          if [ "$ready_status" != "200" ]; then
+            echo "Readiness endpoint returned HTTP $ready_status"
+            exit 1
+          fi
+          node --input-type=module -e '
+            import fs from "node:fs";
+            const data = JSON.parse(fs.readFileSync("/tmp/readyz.json", "utf8"));
+            if (data.status !== "ready") throw new Error("Unexpected readiness status: " + String(data.status));
+            if (!Array.isArray(data.capabilities) || !data.capabilities.includes("opencv-motion")) {
+              throw new Error("Ready service does not report the OpenCV fallback capability");
+            }
+          '
+
+      - name: Create a deterministic synthetic motion clip
+        run: |
+          python3 -m pip install --disable-pip-version-check -r requirements-opencv.txt
+          python3 - <<'PY'
+          from pathlib import Path
+          import cv2
+          import numpy as np
+
+          target = Path("/tmp/petlens-smoke.mp4")
+          writer = cv2.VideoWriter(
+              str(target),
+              cv2.VideoWriter_fourcc(*"mp4v"),
+              15.0,
+              (320, 240),
+          )
+          if not writer.isOpened():
+              raise SystemExit("OpenCV could not create the synthetic MP4 fixture")
+          try:
+              for frame_index in range(45):
+                  frame = np.full((240, 320, 3), 32, dtype=np.uint8)
+                  x = 8 + (frame_index * 5) % 250
+                  cv2.rectangle(frame, (x, 80), (x + 42, 158), (20, 160, 230), -1)
+                  writer.write(frame)
+          finally:
+              writer.release()
+          if not target.is_file() or target.stat().st_size < 1000:
+              raise SystemExit("Synthetic MP4 fixture was not written correctly")
+          print(f"Created synthetic smoke fixture: {target} ({target.stat().st_size} bytes)")
+          PY
+
+      - name: Exercise POST /api/analyze through the container
+        run: |
+          curl --fail-with-body --silent --show-error --max-time 240 \
+            --form "video=@/tmp/silverpaws-smoke.mp4;type=video/mp4" \
+            --form "petName=CI smoke" \
+            http://127.0.0.1:8080/api/analyze \
+            --output /tmp/analyze-result.json
+          node --input-type=module -e '
+            import fs from "node:fs";
+            const result = JSON.parse(fs.readFileSync("/tmp/analyze-result.json", "utf8"));
+            if (result.ok !== true) throw new Error("API did not return a successful analysis");
+            if (!["dog-pose", "opencv-motion", "movenet"].includes(result.pipeline)) {
+              throw new Error("Unexpected pipeline: " + String(result.pipeline));
+            }
+            if (!result.measurements || typeof result.measurements.frameCount !== "number") {
+              throw new Error("Analysis measurements are missing or malformed");
+            }
+            if (!Object.hasOwn(result.measurements, "strideSymmetry")) {
+              throw new Error("The documented measurement contract is missing strideSymmetry");
+            }
+            if (typeof result.signalNote !== "string") {
+              throw new Error("The analysis did not provide its signal limitation note");
+            }
+            console.log(JSON.stringify({
+              ok: result.ok,
+              pipeline: result.pipeline,
+              frameCount: result.measurements.frameCount,
+              strideSymmetry: result.measurements.strideSymmetry,
+              signalQuality: result.signalQuality,
+              note: result.signalNote
+            }, null, 2));
+          '
+
+      - name: Print container logs if a previous step failed
+        if: failure()
+        run: docker logs silverpaws-api-ci || true
+
+      - name: Remove the test container
+        if: always()
+        run: docker rm --force silverpaws-api-ci || true

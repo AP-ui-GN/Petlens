@@ -1,0 +1,71 @@
+{
+  "expo": {
+    "name": "PetLens AI",
+    "slug": "silverpaws-ai",
+    "scheme": "silverpaws",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.silverpaws.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "PetLens uses the camera to record a short side-on walking clip. Only the picture is measured. This app does not record or analyze sound.",
+        "NSPhotoLibraryUsageDescription": "PetLens opens your video library so you can choose a walking clip to measure. The chosen clip is sent to the analysis server and then deleted. Other photos and videos stay on this phone."
+      }
+    },
+    "android": {
+      "package": "com.silverpaws.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#061826",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "PetLens opens your video library so you can choose a walking clip to measure. The chosen clip is sent to the analysis server and then deleted. Other photos and videos stay on this phone.",
+          "cameraPermission": "PetLens uses the camera to record a short side-on walking clip. Only the picture is measured. This app does not record or analyze sound.",
+          "microphonePermission": false
+        }
+      ],
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#061826",
+          "image": "./assets/splash-icon.png",
+          "resizeMode": "contain",
+          "imageWidth": 200
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#3eb49c"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "80ec3317-d4f9-4823-93c8-1b51df88808a"
+      }
+    },
+    "owner": "abhikshit",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/80ec3317-d4f9-4823-93c8-1b51df88808a"
+    }
+  }
+}

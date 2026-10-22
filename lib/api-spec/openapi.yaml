@@ -1,0 +1,482 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: API specification
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: analysis
+    description: Movement analysis operations
+paths:
+  /analyze:
+    post:
+      operationId: analyzeMovementClip
+      tags: [analysis]
+      summary: Analyze a movement clip
+      description: >-
+        Runs the gait_engine pipeline on an uploaded clip and returns
+        measurements, factor scores, and a plain-language observation. The clip
+        is processed in a temporary directory and deleted afterwards. This is an
+        observational wellness result, never a diagnosis.
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                video:
+                  type: string
+                  format: binary
+                  description: Short walking clip (MP4, MOV, or WebM).
+                petName:
+                  type: string
+                  description: Used only to address the pet in the observation text.
+                previousOverall:
+                  type: number
+                  description: Overall score of the previous saved analysis.
+                previousPipeline:
+                  type: string
+                  description: >-
+                    Pipeline that produced previousOverall. Trends are only
+                    compared when it matches the pipeline used for this run.
+              required:
+                - video
+      responses:
+        "200":
+          description: Analysis finished
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AnalyzeResult"
+        "400":
+          description: The upload was missing or not a supported video
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AnalyzeError"
+        "413":
+          description: The upload was larger than the beta limit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AnalyzeError"
+        "429":
+          description: Upload or analysis capacity was limited
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AnalyzeError"
+        "502":
+          description: The analysis pipeline could not produce a usable result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AnalyzeError"
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+    AnalyzeError:
+      type: object
+      description: A message the app can show to the user as-is.
+      properties:
+        ok:
+          type: boolean
+        error:
+          type: string
+        code:
+          type: string
+          description: Stable machine-readable error code; optional for compatibility with older clients.
+          enum:
+            - HTTPS_REQUIRED
+            - INVALID_MULTIPART
+            - VIDEO_REQUIRED
+            - UNSUPPORTED_VIDEO
+            - UPLOAD_TOO_LARGE
+            - UPLOAD_REJECTED
+            - ANALYSIS_BUSY
+            - RATE_LIMITED
+            - PIPELINE_UNAVAILABLE
+            - PIPELINE_TIMEOUT
+            - INVALID_VIDEO
+            - PIPELINE_INVALID_OUTPUT
+            - SCHEMA_MISMATCH
+            - ANALYSIS_FAILED
+      required:
+        - ok
+        - error
+    AnalysisMeasurements:
+      type: object
+      description: >-
+        Raw measurements from the clip. These describe what was measured and
+        carry no interpretation.
+      properties:
+        poseKeypoints:
+          type: array
+          nullable: true
+          description: >-
+            Confidence-filtered mean keypoint coordinates across usable pose
+            frames, normalized to the source frame from 0 to 1. Kept for older
+            saved walks. Null when pose did not run. An empty array means pose
+            ran but no point passed the confidence filters.
+          items:
+            $ref: "#/components/schemas/PoseKeypointSummary"
+        frameCount:
+          # Whole number of frames. Declared as number so the generated zod
+          # stays compatible with the zod version pinned in the catalog.
+          type: number
+        durationSeconds:
+          type: number
+        meanKeypointConfidence:
+          type: number
+          nullable: true
+        leftAnkleMotion:
+          type: number
+          nullable: true
+          deprecated: true
+          description: Legacy field from the human-pose path. The dog-pose pipeline leaves this null.
+        rightAnkleMotion:
+          type: number
+          nullable: true
+          deprecated: true
+          description: Legacy field from the human-pose path. The dog-pose pipeline leaves this null.
+        strideSymmetry:
+          type: number
+          nullable: true
+          description: Worse of the measured front and rear pair symmetries, from 0 to 1. Null when no pair was measured.
+        asymmetryPercent:
+          type: number
+          nullable: true
+        motionMean:
+          type: number
+        motionStd:
+          type: number
+        motionCoverage:
+          type: number
+        hipStability:
+          type: number
+          nullable: true
+          deprecated: true
+          description: Legacy field from the human-pose path. The dog-pose pipeline leaves this null. Left-versus-right hip height is not computed.
+        symmetryReliable:
+          type: boolean
+        view:
+          $ref: "#/components/schemas/SideOnView"
+        subject:
+          $ref: "#/components/schemas/SubjectInfo"
+        strides:
+          $ref: "#/components/schemas/StrideSet"
+        limbSymmetry:
+          $ref: "#/components/schemas/PairValues"
+        strideLengthBodyLengths:
+          $ref: "#/components/schemas/PairValues"
+        cadenceStridesPerMinute:
+          type: number
+          nullable: true
+        strideTimeCv:
+          type: number
+          nullable: true
+        headVerticalOscillation:
+          type: number
+          nullable: true
+        pelvisVerticalOscillation:
+          type: number
+          nullable: true
+        headBobAsymmetry:
+          type: number
+          nullable: true
+        pelvisAsymmetry:
+          type: number
+          nullable: true
+        notMeasuredReasons:
+          type: array
+          items:
+            type: string
+        poseSample:
+          type: array
+          nullable: true
+          description: >-
+            One sampled frame, 17 COCO-17 joint outputs normalized to the detected dog box from 0 to 1. They use COCO-17 human joint names, not validated canine anatomical landmarks. This checkpoint does not emit AP-10K neck or root-of-tail points. This is not the uploaded video and stores no pixels.
+          items:
+            $ref: "#/components/schemas/PoseKeypointSummary"
+      required:
+        - frameCount
+        - durationSeconds
+        - motionMean
+        - motionStd
+        - motionCoverage
+        - symmetryReliable
+    SideOnView:
+      type: object
+      properties:
+        sideOn:
+          type: boolean
+          nullable: true
+        reason:
+          type: string
+          nullable: true
+    SubjectInfo:
+      type: object
+      properties:
+        dogFramesShare:
+          type: number
+          nullable: true
+        multipleDogs:
+          type: boolean
+          nullable: true
+        personPresent:
+          type: boolean
+          nullable: true
+    PawStride:
+      type: object
+      properties:
+        strideCount:
+          type: number
+          nullable: true
+        excursion:
+          type: number
+          nullable: true
+    StrideSet:
+      type: object
+      properties:
+        frontLeft:
+          $ref: "#/components/schemas/PawStride"
+        frontRight:
+          $ref: "#/components/schemas/PawStride"
+        rearLeft:
+          $ref: "#/components/schemas/PawStride"
+        rearRight:
+          $ref: "#/components/schemas/PawStride"
+    PairValues:
+      type: object
+      properties:
+        front:
+          type: number
+          nullable: true
+        rear:
+          type: number
+          nullable: true
+    PoseKeypointSummary:
+      type: object
+      description: One keypoint. x and y are fractions from 0 to 1.
+      properties:
+        name:
+          type: string
+        x:
+          type: number
+          minimum: 0
+          maximum: 1
+        y:
+          type: number
+          minimum: 0
+          maximum: 1
+        confidence:
+          type: number
+          minimum: 0
+          maximum: 1
+      required:
+        - name
+        - x
+        - y
+        - confidence
+    AnalysisFactors:
+      type: object
+      description: >-
+        Factor scores from 0-100. A null value means there was not enough
+        signal to score that factor; it never means zero.
+      properties:
+        movementConsistency:
+          type: number
+          nullable: true
+        symmetry:
+          type: number
+          nullable: true
+        mobility:
+          type: number
+          nullable: true
+        activity:
+          type: number
+          nullable: true
+        historicalChange:
+          type: number
+          nullable: true
+    ModelInfo:
+      type: object
+      description: Which model produced this result. The app does not swap models silently.
+      properties:
+        pipeline:
+          type: string
+          enum:
+            - dog-pose
+            - movenet
+            - opencv-motion
+        modelName:
+          type: string
+        modelVersion:
+          type: string
+        runsOn:
+          type: string
+          enum:
+            - server
+      required:
+        - pipeline
+        - modelName
+        - modelVersion
+        - runsOn
+    AnalysisWeights:
+      type: object
+      description: Weights used to blend the available factors into overallScore.
+      properties:
+        movementConsistency:
+          type: number
+        symmetry:
+          type: number
+        mobility:
+          type: number
+        activity:
+          type: number
+        historicalChange:
+          type: number
+    AnalyzeResult:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        pipeline:
+          type: string
+          description: >-
+            dog-pose when the dog detector and ViTPose++ COCO-17 output path ran. The labels are human COCO-17 joint names applied inside a detected dog box and are not validated canine anatomical landmarks; stride length and left/right gait symmetry remain unmeasured. opencv-motion when only frame-to-frame picture change could be measured. movenet remains so older saved walks still validate. New results do not use movenet.
+          enum:
+            - dog-pose
+            - movenet
+            - opencv-motion
+        signalQuality:
+          type: string
+          description: How much the measurements from this clip can be trusted.
+          enum:
+            - good
+            - limited
+            - unusable
+        signalNote:
+          type: string
+          description: Plain-language reason for signalQuality, safe to display.
+        measurements:
+          $ref: "#/components/schemas/AnalysisMeasurements"
+        factors:
+          $ref: "#/components/schemas/AnalysisFactors"
+        overallScore:
+          type: number
+          nullable: true
+        strideSymmetryScore:
+          type: number
+          nullable: true
+        asymmetryPercent:
+          type: number
+          nullable: true
+        confidence:
+          type: number
+          nullable: true
+        observation:
+          type: string
+          description: Plain-language interpretation built only from the values above.
+        limitations:
+          type: string
+        concerningChange:
+          type: boolean
+          description: >-
+            True when the measured change is worth raising with a veterinarian.
+            This is a prompt to ask a professional, not a diagnosis.
+        usedLlm:
+          type: boolean
+          description: True when a validated model rewrite replaced the rule-based text.
+        weightsUsed:
+          $ref: "#/components/schemas/AnalysisWeights"
+        modelInfo:
+          $ref: "#/components/schemas/ModelInfo"
+        modelConfidence:
+          type: number
+          nullable: true
+          description: >-
+            Mean keypoint confidence from 0 to 1 when pose landmarks were used.
+            Null when pose was not run. Null is not zero. The older confidence
+            field remains this value on a 0-100 scale for existing screens.
+        framesUsed:
+          type: number
+          nullable: true
+          description: >-
+            Pose frames whose mean keypoint confidence met the trust threshold.
+            Null when pose was not run. A count of zero means no frame passed,
+            which is different from null.
+        framesTotal:
+          type: number
+          nullable: true
+          description: Pose frames the model actually ran on. Null when pose was not run.
+        lowConfidence:
+          type: boolean
+          description: >-
+            True when pose ran but confidence was below the trust threshold.
+            Clients show "Low confidence — try a clearer clip" and treat limb
+            values as not measured.
+        qualityNotes:
+          type: array
+          description: >-
+            Plain, actionable notes from the clip-quality pre-check. Empty when
+            the clip did not trip a check. These are filming tips, not a diagnosis.
+          items:
+            type: string
+        aiUse:
+          type: array
+          description: >-
+            Ids from lib/ai-use/registry.json for the steps that produced this
+            result. development is never included. llm-rewrite is included only
+            when a validated rewrite was kept.
+          items:
+            type: string
+        diagnostics:
+          type: object
+          additionalProperties: true
+          description: >-
+            Pipeline-specific debug values. Keys are not part of the stable
+            contract and should not be shown to users.
+      required:
+        - ok
+        - pipeline
+        - signalQuality
+        - signalNote
+        - measurements
+        - factors
+        - observation
+        - limitations
+        - concerningChange
+        - usedLlm
+        - modelInfo
+        - modelConfidence
+        - framesUsed
+        - framesTotal
+        - lowConfidence
+        - qualityNotes
+        - aiUse
