@@ -62,6 +62,8 @@ class SetupCheckTests(unittest.TestCase):
         self.assertEqual(report["schema"], "coco-17")
         self.assertEqual(report["channel4"], "R_Ear")
         self.assertIn("Pose schema: coco-17", text)
+        self.assertIn("Validated canine pose capability: no", text)
+        self.assertFalse(collect_setup(root)["caninePoseReady"])
         self.assertIn("does not download weights", text)
         self.assertNotIn("ap10k", text.lower())
 
@@ -107,6 +109,7 @@ class SetupCheckTests(unittest.TestCase):
         self.assertFalse(report["downloadsWeights"])
         self.assertIn("fallbackReady", report)
         self.assertIn("poseReady", report)
+        self.assertFalse(report["caninePoseReady"])
         self.assertIn("poseDependencies", report)
         self.assertIn("detector", report)
         self.assertIn("pose", report)

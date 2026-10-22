@@ -136,6 +136,7 @@ def collect_setup(root: Path | None = None) -> dict[str, object]:
             and detector["weightsPresent"]
             and pose["schema"] == "coco-17"
         ),
+        "caninePoseReady": False,
         "fallbackReady": opencv is not None,
         "downloadsWeights": False,
     }
@@ -156,7 +157,8 @@ def format_setup(report: dict[str, object]) -> str:
         f"Pose channel 4: {pose['channel4'] if pose['channel4'] is not None else 'absent'}",
         f"Detector weights: {'present' if detector['weightsPresent'] else 'absent'} ({detector['modelId']})",
         f"Pose dependencies: {'present' if all(report['poseDependencies'].values()) else 'incomplete'} (torch + transformers)",
-        f"Pose capability cached: {'yes' if report['poseReady'] else 'no'}",
+        f"COCO pose capability cached: {'yes' if report['poseReady'] else 'no'}",
+        "Validated canine pose capability: no",
         "This command does not download weights.",
     ]
     return "\n".join(lines) + "\n"

@@ -84,6 +84,9 @@ into the web app by `node scripts/sync-ai-use.mjs`. The generated page is
 - One camera angle of one short clip is not a full picture of a pet
 - The pose checkpoint is not validated on a labeled set of pet dogs. Its only
   keypoint head is 17 COCO joints. See `docs/MODEL_CARD.md`
+- The canine-pose dataset audit, schema-checked AP-10K preparation tool, and
+  model acceptance gates are documented in `docs/model_audit.md`. No canine
+  checkpoint has been trained or validated in this checkout.
 - Beta data stays in this browser (`localStorage`), not a shared database
 
 ## How to run

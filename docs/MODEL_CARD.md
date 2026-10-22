@@ -67,6 +67,12 @@ Both models run on the server. The browser only uploads the clip.
 - Stride symmetry as a clinical measure
 - Any link between a score and pain, injury, or disease
 
+The canine-pose development audit, dataset source review, preparation command,
+and acceptance gates are in [`docs/model_audit.md`](model_audit.md). No
+canine-pose checkpoint has been trained or validated in this checkout. The
+AP-10K annotation converter has only been exercised against generated test
+fixtures; it does not establish dataset accuracy or canine coverage.
+
 Placeholder peak, spacing, and phase cutoffs are in `docs/GAIT_METRICS.md`.
 
 ## Fallback

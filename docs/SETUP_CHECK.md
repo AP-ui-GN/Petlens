@@ -14,7 +14,8 @@ The text report is built by `collect_setup` and `format_setup` in `gait_engine/s
 - For each id: config present or absent, weights present or absent. A weight file counts only when `model.safetensors` or `pytorch_model.bin` is a real non-empty file. A broken symlink is absent.
 - Pose schema from the cached `config.json` `id2label`, when that file is present. The schema is `coco-17` only when channels 0–16 match the COCO short names, including `r_ear` at channel 4. Any other label list is `unverified`. Channel 4 is printed as the string stored in the file. The check does not rename it.
 - Whether `torch` and `transformers` can be found with `importlib.util.find_spec`. They are not imported.
-- `poseReady`: true only when both of those packages are findable, both weight files are present, and the pose schema is `coco-17`. This means the cache looks usable. It is not an accuracy number and it is not a validation result.
+- `poseReady`: true only when both of those packages are findable, both weight files are present, and the pose schema is `coco-17`. This means the COCO pose cache looks usable. It is not an accuracy number and it is not a canine-pose validation result.
+- `caninePoseReady`: always false in this build. No validated canine checkpoint is configured.
 - `fallbackReady`: true when OpenCV imports.
 - `downloadsWeights`: always false.
 - The sentence `This command does not download weights.`
