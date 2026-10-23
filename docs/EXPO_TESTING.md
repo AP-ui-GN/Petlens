@@ -102,7 +102,11 @@ two times. Development builds can also load an update from the Extensions tab.
 
 ## What to test
 
-On a saved result, the AI-use lines should name only the steps that produced that walk: MoveNet when pose ran, frame-to-frame motion (it runs on every clip), fixed scores and a fixed note, and a language-model reword only when the server kept one.
+On a saved result, the AI-use lines should name only the steps that produced
+that walk: experimental COCO-17 output only when explicitly enabled, frame
+motion (which runs on every clip), fixed scores and a fixed note, and a
+language-model reword only when the server kept one. COCO-17 output is not
+validated canine pose and is disabled by default.
 
 Also walk through: create a pet, record or choose a short side-on clip, confirm
 the server connection chip, open the saved walk, and try Compare only with two
