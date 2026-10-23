@@ -1,6 +1,6 @@
 # Validation for pull requests and direct updates to main.
 # Python installs the OpenCV stack only. It does not download pose weights.
-# There is no skipped model test in this workflow.
+# Training-loss tests are skipped when the optional PyTorch stack is absent.
 
 name: tests
 

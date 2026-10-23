@@ -2,11 +2,15 @@
 
 import unittest
 
-import torch
+try:
+    import torch
+except ImportError:
+    torch = None
 
 from training.train_pose import _loss
 
 
+@unittest.skipIf(torch is None, "optional PyTorch training dependencies are not installed")
 class HeatmapLossTests(unittest.TestCase):
     def test_zero_heatmaps_have_unit_error_for_a_labeled_landmark(self):
         outputs = torch.zeros((1, 1, 2, 2))
