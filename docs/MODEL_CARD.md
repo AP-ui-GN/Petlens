@@ -6,8 +6,8 @@ PetLens measures a walking clip. It does not diagnose pain, injury, or disease.
 
 | Pipeline | When | What it measures |
 | --- | --- | --- |
-| `coco-pose` | torch, transformers, and the weights load | A dog box, then 17 human COCO joints. This checkpoint has no AP-10K head and is not canine pose. |
-| `opencv-motion` | pose cannot run, or pose throws | Frame-to-frame picture change; when detector dependencies and weights are available, dog-in-frame coverage is retained without pose output. |
+| `opencv-motion` | Default; also used if optional inference is unavailable | Frame-to-frame picture change; when detector dependencies and weights are available, dog-in-frame coverage is retained without pose output. |
+| `coco-pose` | Only when `PETLENS_ENABLE_EXPERIMENTAL_COCO_POSE=true` and the pose dependencies and weights load | Experimental detector output plus 17 human COCO joints. This checkpoint has no AP-10K head and is not canine pose. |
 
 New results do not use the older human-pose pipeline name. Saved walks that
 used it still validate.
@@ -83,7 +83,9 @@ retrained. The model's dog-only PCK@0.1 was 0.000881 (2/2,269 keypoints),
 below an oracle-box-center baseline of 0.051565 (117/2,269); both are
 diagnostic on the already-inspected test split. See
 [`reports/canine_pose_evaluation.md`](../reports/canine_pose_evaluation.md).
-Current app results remain COCO-17 or motion-only, never canine-pose results.
+Default app results are motion-only, optionally with detector metadata. The
+COCO-17 experiment is disabled unless explicitly enabled; it is never a
+validated canine-pose result.
 
 | Canine-pose milestone | Status |
 | --- | --- |
@@ -100,11 +102,13 @@ Placeholder peak, spacing, and phase cutoffs are in `docs/GAIT_METRICS.md`.
 
 ## Fallback
 
-If pose weights are missing or pose throws, the clip is still measured with
-OpenCV frame difference. If the dog detector can run independently, its
-tracked dog-frame share, multiple-dog flag, and person-present flag are kept;
-pose coordinates and gait metrics remain unavailable. If detector dependencies
-or weights are also missing, the result is motion-only.
+Experimental pose is disabled by default. The clip is measured with OpenCV
+frame difference, and if the dog detector can run independently, its tracked
+dog-frame share, multiple-dog flag, and person-present flag are kept. Pose
+coordinates and gait metrics remain unavailable. If detector dependencies or
+weights are also missing, the result is motion-only. For local pose-output
+inspection only, set `PETLENS_ENABLE_EXPERIMENTAL_COCO_POSE=true`. Missing
+weights or inference failures still fall back to motion and dog detection.
 `diagnostics.poseSkipReason` says which path ran and why. The request does not
 fail because either model failed.
 

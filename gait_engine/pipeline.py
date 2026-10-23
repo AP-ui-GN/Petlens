@@ -3,14 +3,14 @@
     video -> frames -> (pose landmarks | picture motion) -> measurements
           -> factor scores -> overall indicator -> plain-language observation
 
-Two pipelines are supported and the best available one is chosen per clip:
+The motion and detection path is the default. Experimental COCO-17 output is
+available only after an explicit environment-variable opt-in:
 
-* ``coco-pose``     RT-DETR dog boxes and ViTPose++ COCO-17 output. The
+* ``opencv-motion`` frame-to-frame picture change; dog detection metadata is
+                    retained when detector dependencies and weights are available.
+* ``coco-pose``     Opt-in RT-DETR dog boxes and ViTPose++ COCO-17 output. The
                     checkpoint has no AP-10K canine keypoint head, so gait metrics
                     that require that schema remain unavailable.
-* ``opencv-motion`` frame-to-frame picture change only. Used whenever torch,
-                    transformers, or the weights are unavailable, or when pose
-                    throws. The request still returns a result.
 
 The returned dictionary matches the ``AnalyzeResult`` schema in
 `lib/api-spec/openapi.yaml`, so the API server can validate it before replying.
@@ -18,6 +18,7 @@ The returned dictionary matches the ``AnalyzeResult`` schema in
 
 from __future__ import annotations
 
+import os
 from collections.abc import Callable
 from pathlib import Path
 from typing import Any
@@ -52,6 +53,16 @@ POSE_CONFIDENCE_THRESHOLD = 0.2
 MIN_POSE_CONFIDENCE = 0.3
 
 MIN_COMPARABLE_FRAMES = 5
+EXPERIMENTAL_COCO_POSE_ENV = "PETLENS_ENABLE_EXPERIMENTAL_COCO_POSE"
+
+
+def _experimental_coco_pose_enabled() -> bool:
+    return os.getenv(EXPERIMENTAL_COCO_POSE_ENV, "").strip().lower() in {
+        "1",
+        "true",
+        "yes",
+        "on",
+    }
 
 
 def _model_info(
@@ -168,7 +179,7 @@ def _clean_pet_name(pet_name: str | None) -> str | None:
 def _try_pose_and_detection(
     video_path: Path,
 ) -> tuple[Any | None, dict[str, Any] | None, str | None]:
-    """Try pose first, then keep dog-detection results if only pose fails."""
+    """Run experimental pose only by opt-in; otherwise retain dog detection."""
 
     try:
         from .pose_backend import get_pose_backend
@@ -178,16 +189,26 @@ def _try_pose_and_detection(
 
     frames = []
     backend = None
+    result = None
+    pose_error = None
     try:
         frames = sample_video(video_path)
         backend = get_pose_backend()
-        result = backend.process(frames)
-        if result.keypoint_schema != "coco-17":
-            raise ValueError(
-                f"Pose schema {result.keypoint_schema!r} is not enabled for application inference."
+        if _experimental_coco_pose_enabled():
+            result = backend.process(frames)
+            if result.keypoint_schema != "coco-17":
+                raise ValueError(
+                    f"Pose schema {result.keypoint_schema!r} is not enabled for application inference."
+                )
+        else:
+            pose_error = (
+                f"Experimental COCO-17 pose is disabled by default; set "
+                f"{EXPERIMENTAL_COCO_POSE_ENV}=true to opt in"
             )
     except Exception as pose_exc:  # noqa: BLE001 - optional model failures must fall back
         pose_error = f"{type(pose_exc).__name__}: {pose_exc}"
+
+    if pose_error is not None:
         try:
             if backend is None:
                 backend = get_pose_backend()
@@ -213,6 +234,7 @@ def _try_pose_and_detection(
             f"{pose_error}; pose unavailable, dog detection only",
         )
 
+    assert result is not None
     return {
         "keypoints": result.keypoints,
         "dog_frames_share": result.dog_frames_share,

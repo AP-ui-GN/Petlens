@@ -1,5 +1,6 @@
 """Pose failures stay on the OpenCV path and still return a result."""
 
+import os
 import tempfile
 import unittest
 from pathlib import Path
@@ -42,6 +43,7 @@ class PoseFallbackTests(unittest.TestCase):
                 return result
 
         with (
+            patch.dict(os.environ, {"PETLENS_ENABLE_EXPERIMENTAL_COCO_POSE": "true"}),
             patch("gait_engine.sampling.sample_video", return_value=[object()]),
             patch("gait_engine.pose_backend.get_pose_backend", return_value=Backend()),
         ):
@@ -59,7 +61,10 @@ class PoseFallbackTests(unittest.TestCase):
                 def process(self, frames):
                     raise RuntimeError("weights missing")
 
-            with patch("gait_engine.pose_backend.get_pose_backend", return_value=Broken()):
+            with (
+                patch.dict(os.environ, {"PETLENS_ENABLE_EXPERIMENTAL_COCO_POSE": "true"}),
+                patch("gait_engine.pose_backend.get_pose_backend", return_value=Broken()),
+            ):
                 result = analyze_clip(path, use_pose=True)
 
         self.assertEqual(result["pipeline"], "opencv-motion")
@@ -88,9 +93,12 @@ class PoseFallbackTests(unittest.TestCase):
                         track_segment_ids=(1, 1, None, 1),
                     )
 
-            with patch(
-                "gait_engine.pose_backend.get_pose_backend",
-                return_value=DetectionOnly(),
+            with (
+                patch.dict(os.environ, {"PETLENS_ENABLE_EXPERIMENTAL_COCO_POSE": "true"}),
+                patch(
+                    "gait_engine.pose_backend.get_pose_backend",
+                    return_value=DetectionOnly(),
+                ),
             ):
                 result = analyze_clip(path, use_pose=True)
 
@@ -103,6 +111,41 @@ class PoseFallbackTests(unittest.TestCase):
         self.assertIn("dog-detector", result["aiUse"])
         self.assertIn("RT-DETR dog detection", result["modelInfo"]["modelName"])
         self.assertIn("pose unavailable, dog detection only", result["diagnostics"]["poseSkipReason"])
+
+    def test_experimental_coco_pose_is_disabled_by_default(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "walk.avi"
+            write_clip(path)
+
+            class DetectionOnly:
+                def process(self, frames):
+                    raise AssertionError("experimental pose must stay disabled")
+
+                def detect(self, frames):
+                    return SimpleNamespace(
+                        dog_frames_share=0.75,
+                        multiple_dogs=False,
+                        person_present=False,
+                        detector_id="test/dog-detector",
+                        detector_revision="test-revision",
+                        track_states=("tracked",) * 4,
+                        track_segment_ids=(1,) * 4,
+                    )
+
+            with (
+                patch.dict(os.environ, {"PETLENS_ENABLE_EXPERIMENTAL_COCO_POSE": ""}),
+                patch("gait_engine.pose_backend.get_pose_backend", return_value=DetectionOnly()),
+            ):
+                result = analyze_clip(path, use_pose=True)
+
+        self.assertEqual(result["pipeline"], "opencv-motion")
+        self.assertEqual(result["measurements"]["subject"]["dogFramesShare"], 0.75)
+        self.assertIsNone(result["measurements"]["poseKeypoints"])
+        self.assertIsNone(result["measurements"]["strideSymmetry"])
+        self.assertIn(
+            "PETLENS_ENABLE_EXPERIMENTAL_COCO_POSE=true",
+            result["diagnostics"]["poseSkipReason"],
+        )
 
     def test_coco_pose_is_not_reported_as_canine_pose_or_used_for_gait(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -132,7 +175,10 @@ class PoseFallbackTests(unittest.TestCase):
                 def process(self, frames):
                     return backend_result
 
-            with patch("gait_engine.pose_backend.get_pose_backend", return_value=Backend()):
+            with (
+                patch.dict(os.environ, {"PETLENS_ENABLE_EXPERIMENTAL_COCO_POSE": "true"}),
+                patch("gait_engine.pose_backend.get_pose_backend", return_value=Backend()),
+            ):
                 result = analyze_clip(path, use_pose=True)
 
         self.assertEqual(result["pipeline"], "coco-pose")

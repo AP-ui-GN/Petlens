@@ -95,7 +95,7 @@ jobs:
           import cv2
           import numpy as np
 
-          target = Path("/tmp/petlens-smoke.mp4")
+          target = Path("/tmp/silverpaws-smoke.mp4")
           writer = cv2.VideoWriter(
               str(target),
               cv2.VideoWriter_fourcc(*"mp4v"),

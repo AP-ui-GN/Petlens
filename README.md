@@ -64,18 +64,21 @@ motion analysis; it does not download AI weights.
 
 ### Optional detector and pose dependencies
 
-To enable the RT-DETR dog detector and the experimental COCO-17 pose path,
-install the pinned CPU dependencies and cache the models:
+To enable RT-DETR dog detection, install the pinned CPU dependencies and cache
+the models:
 
 ```bash
 pip install -r requirements.txt
 python scripts/cache_models.py
 ```
 
-This downloads model weights. RT-DETR can provide dog-detection metadata.
-ViTPose++ still produces human COCO joints, not canine pose, so this does not
-enable stride measurements. Cached weights live under `models/hf` by default
-and are not part of the source code. The API readiness endpoint is
+This downloads model weights. By default, the app uses RT-DETR for dog
+detection only; it does not return pose landmarks. To explicitly opt into
+experimental ViTPose++ COCO-17 output for local inspection, set
+`PETLENS_ENABLE_EXPERIMENTAL_COCO_POSE=true` before starting the API. These are
+human-joint labels, not validated canine anatomy, and they do not enable
+stride measurements. Cached weights live under `models/hf` by default and
+are not part of the source code. The API readiness endpoint is
 `http://127.0.0.1:8080/api/readyz`.
 
 ## Analyze a video from the command line
@@ -99,12 +102,22 @@ or their outputs.
 Run the Python suite and the API and web checks from the repository root:
 
 ```bash
-python -m pytest -q
+python -m unittest discover -s tests -t .
 pnpm --filter @workspace/api-server typecheck
 pnpm --filter @workspace/api-server test
 pnpm --filter @workspace/silverpaws-beta typecheck
 pnpm --filter @workspace/silverpaws-beta test
 pnpm --filter @workspace/silverpaws-beta build
+```
+
+The Expo mobile client is a standalone npm project:
+
+```bash
+cd mobile
+npm ci
+npm run typecheck
+npm run doctor
+npm run export:check
 ```
 
 ## Project structure

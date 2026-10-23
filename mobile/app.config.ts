@@ -25,6 +25,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       ...config.android,
       package: PLACEHOLDER_APP_ID,
     },
+    plugins: [...(config.plugins ?? []), 'expo-sharing'],
     extra: {
       ...(config.extra ?? {}),
       apiUrl,

@@ -1,117 +1,74 @@
 # PetLens architecture
 
-## System flow
+## Components and data flow
 
 ```text
-USER
-  ↓
-PET PROFILE          artifacts/silverpaws-beta/src/pages/pet.tsx
-  ↓
-UPLOAD CLIP          pages/analyze.tsx  →  lib/analysis-api.ts
-  ↓
-VALIDATION           file type / size / duration (UI + API)
-  ↓
-API                  POST /api/analyze  (multipart video)
-  ↓
-PYTHON PIPELINE      scripts/analyze_clip.py → gait_engine.pipeline.analyze_clip
-  ↓
-FRAMES               gait_engine/motion.py
-  ↓
-POSE (optional)      gait_engine/pose_backend.py
-  ↓
-FEATURES             gait_engine/features.py, gait_engine/gait.py
-  ↓
-WELLNESS MODEL       gait_engine/wellness.py
-  ↓
-AI EXPLANATION       api-server/src/lib/explanation.ts
-                     (rule-based text in, optional rewrite out)
-  ↓
-localStorage         src/lib/storage.ts
-  ↓
-DASHBOARD / HISTORY  pages/home.tsx, pages/history.tsx
+Web app (React) ─┐
+                 ├─ video upload ─> Express API ─> Python analysis pipeline
+Mobile app (Expo)┘                                  │
+                                                   ├─ OpenCV frame motion
+                                                   ├─ optional RT-DETR dog detection
+                                                   └─ optional ViTPose++ COCO-17 output
+                                                            │
+                                 OpenAPI/Zod-validated JSON <┘
+                                      │
+                         ┌────────────┴────────────┐
+                         │                         │
+                  Web localStorage          Mobile AsyncStorage
+                  dashboard/history         local pet and walk history
 ```
 
-The UI never runs the vision pipeline. It sends a file and stores the JSON
-that comes back. The current pose result is `coco-pose`; `dog-pose` remains
-accepted for saved results from the earlier naming.
-The phone app in `mobile/` is the Expo client restored from `main` commit
-`1093191`, including that commit's screens. It can store current and legacy
-pipeline results.
-The web package and folder names retain their historical `silverpaws-beta` identifier; the user-facing application and repository are named PetLens.
+The API does not persist user profiles or analyses. Each client stores its
+own records locally; data is not shared between devices or accounts.
 
-## Module map
+## Responsibilities
 
-### Frontend — `artifacts/silverpaws-beta/src`
+| Component | Location | Responsibility |
+| --- | --- | --- |
+| Web app | `artifacts/silverpaws-beta/src` | Pet profiles, video upload, analysis display, browser-local history, trends, and reports |
+| Mobile app | `mobile/src` | Expo screens, video upload with progress, phone-local history, settings, and reports |
+| Analysis API | `artifacts/api-server/src` | Validate multipart uploads, apply request limits, call the Python process, validate responses, optionally rewrite explanation text, and clean up uploaded files |
+| Python pipeline | `gait_engine/`, `scripts/analyze_clip.py` | Decode/sample video, measure frame motion, optionally detect dogs or produce pose output, and assemble a result |
+| API contract | `lib/api-spec/openapi.yaml` | Source schema for the API |
+| Generated clients | `lib/api-zod`, `lib/api-client-react` | Runtime response validation and web client generated from the API specification |
 
-- `App.tsx` — routes
-- `pages/pet.tsx` — profile form
-- `pages/analyze.tsx` — upload, review, processing, errors
-- `pages/home.tsx` — overview
-- `pages/history.tsx` — list + detail (measurements vs interpretation)
-- `components/trend-panel.tsx` — saved-walk comparison, split by pipeline
-- `lib/storage.ts` — pets and analyses in `localStorage`
-- `lib/analysis-api.ts` — upload checks and API error messages
-- `lib/report.ts` — browser PDF from a saved record
-- `lib/disclaimers.ts` — safety copy used in the footer
+## Analysis boundaries
 
-### API — `artifacts/api-server/src`
+Every successful analysis measures generic frame-to-frame picture motion with
+OpenCV. If dependencies and weights are available, RT-DETR can report dog
+detections on sampled frames and tracking metadata. The optional
+`usyd-community/vitpose-plus-base` checkpoint has a human COCO-17 output head;
+it is not canine pose and is disabled by default. Set
+`PETLENS_ENABLE_EXPERIMENTAL_COCO_POSE=true` only for local inspection. The app
+does not use those joints to report canine stride length or left/right gait
+symmetry. Missing measurements remain `null` rather than being inferred or
+set to zero.
 
-- `routes/analyze.ts` — multipart parse, size cap, temp file, JSON reply
-- `lib/analysis-runner.ts` — spawn Python, validate against `@workspace/api-zod`
-- `lib/explanation.ts` — optional provider rewrite; invalid text is rejected
-- `lib/multipart.ts` — small multipart reader (no extra npm dependency)
+Factor scores and rule-based observations are computed in
+`gait_engine/wellness.py`. An optional server-side language-model rewrite is
+implemented in `artifacts/api-server/src/lib/explanation.ts`; the result is
+validated and rejected if it invents measurements or makes unsupported
+medical claims.
 
-### Analysis — `gait_engine/`
+## Saved data
 
-- `motion.py` — OpenCV frame motion
-- `pose_backend.py` — dog detector and ViTPose++ COCO-17 output; canine landmark interpretation is unvalidated and AP-10K gait metrics remain unavailable
-- `sampling.py` — 15 fps samples and the busiest 20-second window
-- `features.py` — consistency, coverage, hip stability
-- `wellness.py` — factor scores, including mobility and historical change
-- `pipeline.py` — chooses `coco-pose` or `opencv-motion`, builds `AnalyzeResult`
-- `confidence.py` — pose confidence gate (`modelConfidence`, frames used)
-- `clip_quality.py` — duration, resolution, brightness, and motion notes
+The browser stores profiles and analysis results in `localStorage`. The phone
+stores them in `AsyncStorage`. Uploaded video is written to a temporary
+directory for processing and removed after the request. No database or
+cross-device account sync is currently implemented; `lib/db` is not used by
+the beta application.
 
-### Contracts — `lib/`
+## Run and test
 
-- `lib/api-spec/openapi.yaml` — `/api/analyze` and `/api/healthz`
-- `lib/api-zod` / `lib/api-client-react` — generated from that spec
-- `lib/db` — Drizzle stub; unused in the beta
+Install steps and the exact current model limitations are in
+[`README.md`](README.md) and [`docs/MODEL_CARD.md`](docs/MODEL_CARD.md).
 
-## Human vs AI
+Start the API and web app in separate terminals:
 
-**Human-developable:** routing, forms, local storage, upload handling, history
-layout, PDF assembly, error messages, disclaimers.
+```bash
+pnpm --filter @workspace/api-server run dev
+pnpm --filter @workspace/silverpaws-beta run dev
+```
 
-**AI / ML:** pose inference, movement features, gait metrics, factor scoring,
-observation text, optional LLM rewrite.
-
-## Measurements vs interpretation
-
-A saved analysis keeps both:
-
-- `measurements` — frames, motion mean/std/coverage, symmetry, hip stability
-- `factors` / `overallScore` / `observation` — scores and wording
-
-`None` / “Not measured” means the clip did not support that value. It never
-means zero.
-
-## Error handling
-
-| Failure | What the user sees |
-| --- | --- |
-| Missing / non-video file | 400 with a plain message |
-| Unreadable / corrupt video | 400 from the pipeline |
-| Upload too large | 413 |
-| Python missing or crash | 502 |
-| Pipeline timeout | 502 |
-| API unreachable | UI: “Could not reach the analysis service…” |
-| LLM rewrite invalid | Rule-based observation; `usedLlm: false` |
-
-Temporary upload files are deleted after each request.
-
-## Extensibility
-
-- Sudarshan can change scoring without touching the UI
-- Kavin can chart saved records without touching the pipeline
-- Abhi can add a model provider without changing `gait_engine`
+Run Python, API, web, and (when its dependencies are installed) mobile checks
+using the commands documented in `README.md` and `mobile/package.json`.

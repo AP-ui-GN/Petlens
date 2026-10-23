@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, Check, CircleAlert, FileVideo, Film, LoaderCircl
 import { Link, useLocation } from 'wouter';
 import { toast } from 'sonner';
 import LocationSpecialistCard from '@/components/LocationSpecialistCard';
-import PoseFrameScrubber from '@/components/PoseFrameScrubber';
+import VideoFrameScrubber from '@/components/VideoFrameScrubber';
 import ProductTour from '@/components/ProductTour';
 import { findBaseline, toAnalysisRecord, type Analysis, type Pet } from '@/lib/storage';
 import { checkClip, describeAnalysisError, MAX_UPLOAD_MB, requestAnalysis } from '@/lib/analysis-api';
@@ -307,7 +307,7 @@ export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis 
             Cancel analysis
           </button>
         </section>
-        {previewUrl && <PoseFrameScrubber videoUrl={previewUrl} />}
+        {previewUrl && <VideoFrameScrubber videoUrl={previewUrl} />}
         </>
       )}
 

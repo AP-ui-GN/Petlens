@@ -113,7 +113,7 @@ async function inspectReadiness(): Promise<ReadinessReport> {
   if (setup.poseReady) {
     capabilities.push("coco-17-keypoints");
     warnings.push(
-      "The cached pose checkpoint exposes COCO-17 human landmarks; stride length and left/right gait symmetry remain unmeasured.",
+      "Experimental COCO-17 human pose weights are cached but pose output is disabled by default. Stride length and left/right gait symmetry remain unmeasured.",
     );
   } else if (setup.detectorReady) {
     warnings.push(
