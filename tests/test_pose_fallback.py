@@ -68,6 +68,42 @@ class PoseFallbackTests(unittest.TestCase):
         self.assertIn("RuntimeError", result["diagnostics"]["poseSkipReason"])
         self.assertIsNone(result["measurements"]["strideSymmetry"])
 
+    def test_detector_results_are_kept_when_pose_model_is_unavailable(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "walk.avi"
+            write_clip(path)
+
+            class DetectionOnly:
+                def process(self, frames):
+                    raise RuntimeError("pose checkpoint unavailable")
+
+                def detect(self, frames):
+                    return SimpleNamespace(
+                        dog_frames_share=0.75,
+                        multiple_dogs=False,
+                        person_present=True,
+                        detector_id="test/dog-detector",
+                        detector_revision="test-revision",
+                        track_states=("tracked", "tracked", "unmatched", "tracked"),
+                        track_segment_ids=(1, 1, None, 1),
+                    )
+
+            with patch(
+                "gait_engine.pose_backend.get_pose_backend",
+                return_value=DetectionOnly(),
+            ):
+                result = analyze_clip(path, use_pose=True)
+
+        self.assertEqual(result["pipeline"], "opencv-motion")
+        self.assertEqual(result["measurements"]["subject"]["dogFramesShare"], 0.75)
+        self.assertFalse(result["measurements"]["subject"]["multipleDogs"])
+        self.assertTrue(result["measurements"]["subject"]["personPresent"])
+        self.assertIsNone(result["measurements"]["poseKeypoints"])
+        self.assertIsNone(result["measurements"]["strideSymmetry"])
+        self.assertIn("dog-detector", result["aiUse"])
+        self.assertIn("RT-DETR dog detection", result["modelInfo"]["modelName"])
+        self.assertIn("pose unavailable, dog detection only", result["diagnostics"]["poseSkipReason"])
+
     def test_coco_pose_is_not_reported_as_canine_pose_or_used_for_gait(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "walk.avi"

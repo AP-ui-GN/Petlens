@@ -54,7 +54,11 @@ MIN_POSE_CONFIDENCE = 0.3
 MIN_COMPARABLE_FRAMES = 5
 
 
-def _model_info(pipeline: str, pose: dict | None) -> dict[str, str]:
+def _model_info(
+    pipeline: str,
+    pose: dict | None,
+    detection: dict | None = None,
+) -> dict[str, str]:
     """Describe the model that produced this result. Inference stays on the server."""
 
     if pipeline in ("coco-pose", "dog-pose") and pose is not None:
@@ -71,6 +75,17 @@ def _model_info(pipeline: str, pose: dict | None) -> dict[str, str]:
             "runsOn": "server",
         }
 
+    if detection is not None:
+        detector = detection["detector_id"]
+        if detection.get("detector_revision"):
+            detector = f"{detector}@{detection['detector_revision']}"
+        return {
+            "pipeline": pipeline,
+            "modelName": f"OpenCV frame difference + RT-DETR dog detection ({detector})",
+            "modelVersion": detector,
+            "runsOn": "server",
+        }
+
     return {
         "pipeline": "opencv-motion",
         "modelName": "OpenCV frame difference",
@@ -79,7 +94,7 @@ def _model_info(pipeline: str, pose: dict | None) -> dict[str, str]:
     }
 
 
-def ai_use_ids(pipeline: str) -> list[str]:
+def ai_use_ids(pipeline: str, *, dog_detection: bool = False) -> list[str]:
     """Registry ids for the steps that produced one result.
 
     Frame-difference motion runs on every successful clip, including when
@@ -94,6 +109,8 @@ def ai_use_ids(pipeline: str) -> list[str]:
         return ["dog-detector", "pose-model", *shared]
     if pipeline == "movenet":
         return ["pose-model", *shared]
+    if dog_detection:
+        return ["dog-detector", *shared]
     return shared
 
 
@@ -148,26 +165,53 @@ def _clean_pet_name(pet_name: str | None) -> str | None:
     return cleaned or None
 
 
-def _try_pose(video_path: Path) -> tuple[Any | None, str | None]:
-    """Try the dog pose backend. Returns (pose_payload, skip_reason)."""
+def _try_pose_and_detection(
+    video_path: Path,
+) -> tuple[Any | None, dict[str, Any] | None, str | None]:
+    """Try pose first, then keep dog-detection results if only pose fails."""
 
     try:
         from .pose_backend import get_pose_backend
         from .sampling import sample_video
     except ImportError as exc:
-        return None, f"pose modules unavailable: {exc}"
+        return None, None, f"pose modules unavailable: {exc}"
 
+    frames = []
+    backend = None
     try:
         frames = sample_video(video_path)
-        result = get_pose_backend().process(frames)
+        backend = get_pose_backend()
+        result = backend.process(frames)
         if result.keypoint_schema != "coco-17":
             raise ValueError(
                 f"Pose schema {result.keypoint_schema!r} is not enabled for application inference."
             )
-    except Exception as exc:  # noqa: BLE001 - any pose failure must fall back
-        # Missing torch, missing weights, or a pose exception must not fail
-        # the request. The motion pipeline can still measure the clip.
-        return None, f"{type(exc).__name__}: {exc}"
+    except Exception as pose_exc:  # noqa: BLE001 - optional model failures must fall back
+        pose_error = f"{type(pose_exc).__name__}: {pose_exc}"
+        try:
+            if backend is None:
+                backend = get_pose_backend()
+            detection = backend.detect(frames)
+        except Exception as detection_exc:  # noqa: BLE001 - detection is optional too
+            return (
+                None,
+                None,
+                f"{pose_error}; detector-only analysis unavailable: "
+                f"{type(detection_exc).__name__}: {detection_exc}",
+            )
+        return (
+            None,
+            {
+                "dog_frames_share": detection.dog_frames_share,
+                "multiple_dogs": detection.multiple_dogs,
+                "person_present": detection.person_present,
+                "detector_id": detection.detector_id,
+                "detector_revision": detection.detector_revision,
+                "track_states": detection.track_states,
+                "track_segment_ids": detection.track_segment_ids,
+            },
+            f"{pose_error}; pose unavailable, dog detection only",
+        )
 
     return {
         "keypoints": result.keypoints,
@@ -185,7 +229,22 @@ def _try_pose(video_path: Path) -> tuple[Any | None, str | None]:
         "keypoint_schema": result.keypoint_schema,
         "track_states": result.track_states,
         "track_segment_ids": result.track_segment_ids,
+    }, {
+        "dog_frames_share": result.dog_frames_share,
+        "multiple_dogs": result.multiple_dogs,
+        "person_present": result.person_present,
+        "detector_id": result.detector_id,
+        "detector_revision": result.detector_revision,
+        "track_states": result.track_states,
+        "track_segment_ids": result.track_segment_ids,
     }, None
+
+
+def _try_pose(video_path: Path) -> tuple[Any | None, str | None]:
+    """Compatibility wrapper for callers that need only the pose result."""
+
+    pose, _detection, reason = _try_pose_and_detection(video_path)
+    return pose, reason
 
 
 def _track_segment_count(pose: dict | None) -> int | None:
@@ -296,6 +355,7 @@ def analyze_clip(
     low_confidence = False
 
     pose_payload = None
+    detection_payload = None
 
     def pack(note_override: str | None = None) -> dict[str, Any]:
         signal_quality, signal_note = _assess_signal(pipeline, measurements)
@@ -382,22 +442,34 @@ def analyze_clip(
             "concerningChange": concerning,
             "usedLlm": False,
             "weightsUsed": weights_used(factors),
-            "modelInfo": _model_info(pipeline, pose_payload),
+            "modelInfo": _model_info(pipeline, pose_payload, detection_payload),
             "modelConfidence": model_confidence,
             "framesUsed": frames_used,
             "framesTotal": frames_total,
             "lowConfidence": low_confidence,
             "qualityNotes": notes,
-            "aiUse": ai_use_ids(pipeline),
+            "aiUse": ai_use_ids(pipeline, dog_detection=detection_payload is not None),
             "diagnostics": {
                 "fps": signal.fps,
                 "framePairs": len(signal.frame_motion),
                 "poseSkipReason": pose_skip_reason,
-                "trackSegments": _track_segment_count(pose_payload),
-                "ambiguousTrackFrames": _ambiguous_track_frames(pose_payload),
-                "dogFramesShare": None if pose_payload is None else pose_payload["dog_frames_share"],
-                "multipleDogs": None if pose_payload is None else pose_payload["multiple_dogs"],
-                "personPresent": None if pose_payload is None else pose_payload["person_present"],
+                "trackSegments": _track_segment_count(detection_payload),
+                "ambiguousTrackFrames": _ambiguous_track_frames(detection_payload),
+                "dogFramesShare": (
+                    None
+                    if detection_payload is None
+                    else detection_payload["dog_frames_share"]
+                ),
+                "multipleDogs": (
+                    None
+                    if detection_payload is None
+                    else detection_payload["multiple_dogs"]
+                ),
+                "personPresent": (
+                    None
+                    if detection_payload is None
+                    else detection_payload["person_present"]
+                ),
                 "configuredWeights": DEFAULT_WEIGHTS,
                 "comparedToPrevious": comparable_previous is not None,
             },
@@ -409,7 +481,13 @@ def analyze_clip(
         motion_ready(pack(POSE_TIME_LIMIT_NOTE))
 
     if use_pose:
-        pose_payload, pose_skip_reason = _try_pose(path)
+        pose_payload, detection_payload, pose_skip_reason = _try_pose_and_detection(path)
+        if detection_payload is not None:
+            measurements["subject"] = {
+                "dogFramesShare": detection_payload["dog_frames_share"],
+                "multipleDogs": detection_payload["multiple_dogs"],
+                "personPresent": detection_payload["person_present"],
+            }
         if pose_payload is not None:
             pipeline = "coco-pose"
             keypoints = pose_payload["keypoints"]

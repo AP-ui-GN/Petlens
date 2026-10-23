@@ -7,8 +7,9 @@ import tempfile
 import sys
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
-from gait_engine.pose_backend import COCO17_KEYPOINTS, POSE_ID
+from gait_engine.pose_backend import COCO17_KEYPOINTS, DETECTOR_ID, POSE_ID
 from gait_engine.setup_check import collect_setup, format_setup, inspect_model
 
 
@@ -48,10 +49,32 @@ class SetupCheckTests(unittest.TestCase):
     def test_an_empty_cache_reports_weights_absent(self):
         with self._temp() as root:
             report = inspect_model(root, POSE_ID)
+            setup = collect_setup(root)
         self.assertFalse(report["weightsPresent"])
         self.assertFalse(report["configPresent"])
         self.assertEqual(report["schema"], "absent")
         self.assertIsNone(report["channel4"])
+        self.assertFalse(setup["detectorReady"])
+        self.assertFalse(setup["poseReady"])
+
+    def test_detector_can_be_ready_without_pose_weights(self):
+        with self._temp() as root:
+            folder = "models--" + DETECTOR_ID.replace("/", "--")
+            snapshot = root / "hub" / folder / "snapshots" / "abc"
+            snapshot.mkdir(parents=True)
+            (snapshot / "config.json").write_text(
+                json.dumps({"id2label": {"0": "person", "1": "dog"}}),
+                encoding="utf8",
+            )
+            (snapshot / "model.safetensors").write_bytes(b"not-a-real-weight")
+            with patch(
+                "gait_engine.setup_check.importlib.util.find_spec",
+                side_effect=lambda name: object() if name in {"torch", "transformers"} else None,
+            ):
+                report = collect_setup(root)
+
+        self.assertTrue(report["detectorReady"])
+        self.assertFalse(report["poseReady"])
 
     def test_a_local_coco_config_is_named_from_the_file(self):
         with self._temp() as root:
@@ -111,6 +134,7 @@ class SetupCheckTests(unittest.TestCase):
         self.assertIn("poseReady", report)
         self.assertFalse(report["caninePoseReady"])
         self.assertIn("poseDependencies", report)
+        self.assertIn("detectorReady", report)
         self.assertIn("detector", report)
         self.assertIn("pose", report)
 

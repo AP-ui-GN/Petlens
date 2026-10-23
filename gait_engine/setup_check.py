@@ -123,17 +123,21 @@ def collect_setup(root: Path | None = None) -> dict[str, object]:
         "transformers": importlib.util.find_spec("transformers") is not None,
     }
     opencv = opencv_version()
+    detector_ready = (
+        dependencies["torch"]
+        and dependencies["transformers"]
+        and detector["weightsPresent"]
+    )
     return {
         "python": sys.version.split()[0],
         "opencv": opencv,
         "pose": pose,
         "detector": detector,
         "poseDependencies": dependencies,
+        "detectorReady": detector_ready,
         "poseReady": (
-            dependencies["torch"]
-            and dependencies["transformers"]
+            detector_ready
             and pose["weightsPresent"]
-            and detector["weightsPresent"]
             and pose["schema"] == "coco-17"
         ),
         "caninePoseReady": False,
@@ -157,6 +161,7 @@ def format_setup(report: dict[str, object]) -> str:
         f"Pose channel 4: {pose['channel4'] if pose['channel4'] is not None else 'absent'}",
         f"Detector weights: {'present' if detector['weightsPresent'] else 'absent'} ({detector['modelId']})",
         f"Pose dependencies: {'present' if all(report['poseDependencies'].values()) else 'incomplete'} (torch + transformers)",
+        f"Dog detection capability cached: {'yes' if report['detectorReady'] else 'no'}",
         f"COCO pose capability cached: {'yes' if report['poseReady'] else 'no'}",
         "Validated canine pose capability: no",
         "This command does not download weights.",

@@ -22,7 +22,7 @@ from pathlib import Path
 import numpy as np
 
 from .sampling import DETECT_EVERY_N_FRAMES, SampledFrame
-from .tracking import associate_tracks, choose_initial_dog, choose_tracked_dog
+from .tracking import TrackDecision, associate_tracks, choose_initial_dog, choose_tracked_dog
 
 DETECTOR_ID = "PekingU/rtdetr_r50vd_coco_o365"
 POSE_ID = "usyd-community/vitpose-plus-base"
@@ -206,6 +206,19 @@ class PoseResult:
     track_segment_ids: tuple[int | None, ...] = ()
 
 
+@dataclass(frozen=True)
+class DogDetectionResult:
+    """Dog/person detections and tracked dog coverage without pose inference."""
+
+    dog_frames_share: float
+    multiple_dogs: bool
+    person_present: bool
+    detector_id: str
+    detector_revision: str | None
+    track_states: tuple[str, ...]
+    track_segment_ids: tuple[int | None, ...]
+
+
 class PoseBackend(ABC):
     """One pose implementation. ``process`` does not catch its own failures."""
 
@@ -324,17 +337,25 @@ class VitPoseCoco17Backend(PoseBackend):
     def _ensure_loaded(self) -> None:
         if self._loaded:
             return
+        self._ensure_detector_loaded()
+        from transformers import VitPoseForPoseEstimation, VitPoseImageProcessor
+
+        self._pose_processor = VitPoseImageProcessor.from_pretrained(POSE_ID)
+        self._pose = VitPoseForPoseEstimation.from_pretrained(POSE_ID)
+        self._pose.to(self._device)
+        self._pose.eval()
+        self._pose_revision = _revision(POSE_ID)
+        self._loaded = True
+
+    def _ensure_detector_loaded(self) -> None:
+        if self._detector is not None:
+            return
         home = hf_home()
         home.mkdir(parents=True, exist_ok=True)
         os.environ["HF_HOME"] = str(home)
 
         import torch
-        from transformers import (
-            RTDetrForObjectDetection,
-            RTDetrImageProcessor,
-            VitPoseForPoseEstimation,
-            VitPoseImageProcessor,
-        )
+        from transformers import RTDetrForObjectDetection, RTDetrImageProcessor
 
         self._device = "cuda" if torch.cuda.is_available() else "cpu"
         self._detector_processor = RTDetrImageProcessor.from_pretrained(DETECTOR_ID)
@@ -344,27 +365,34 @@ class VitPoseCoco17Backend(PoseBackend):
         labels = {value: key for key, value in self._detector.config.id2label.items()}
         self._dog_id = labels["dog"]
         self._person_id = labels.get("person")
-
-        self._pose_processor = VitPoseImageProcessor.from_pretrained(POSE_ID)
-        self._pose = VitPoseForPoseEstimation.from_pretrained(POSE_ID)
-        self._pose.to(self._device)
-        self._pose.eval()
         self._detector_revision = _revision(DETECTOR_ID)
-        self._pose_revision = _revision(POSE_ID)
-        self._loaded = True
 
-    def process(self, frames: list[SampledFrame]) -> PoseResult:
+    def detect(self, frames: list[SampledFrame]) -> DogDetectionResult:
+        """Run the object detector when pose weights are unavailable."""
+
         if not frames:
             raise ValueError("No frames were sampled.")
-        self._ensure_loaded()
+        self._ensure_detector_loaded()
+        decisions, multiple_dogs, person_present = self._detect_tracks(frames)
+        dog_frames = sum(
+            decision.state in ("tracked", "new_segment") for decision in decisions
+        )
+        return DogDetectionResult(
+            dog_frames_share=round(dog_frames / len(frames), 4),
+            multiple_dogs=multiple_dogs,
+            person_present=person_present,
+            detector_id=DETECTOR_ID,
+            detector_revision=self._detector_revision,
+            track_states=tuple(decision.state for decision in decisions),
+            track_segment_ids=tuple(decision.segment_id for decision in decisions),
+        )
 
-        keypoints = _empty_keypoints(len(frames))
+    def _detect_tracks(
+        self, frames: list[SampledFrame]
+    ) -> tuple[list[TrackDecision], bool, bool]:
         observations: list[list[tuple[float, float, float, float]]] = []
         multiple_dogs = False
         person_present = False
-
-        # The detector runs on a fixed stride. Frames in between are empty
-        # observations. Tracking does not copy the last box into that gap.
         for index, frame in enumerate(frames):
             if index % DETECT_EVERY_N_FRAMES != 0:
                 observations.append([])
@@ -375,8 +403,18 @@ class VitPoseCoco17Backend(PoseBackend):
             observations.append(detected)
 
         decisions = associate_tracks(observations)
-        if any(decision.state == "ambiguous" for decision in decisions):
-            multiple_dogs = True
+        multiple_dogs = multiple_dogs or any(
+            decision.state == "ambiguous" for decision in decisions
+        )
+        return decisions, multiple_dogs, person_present
+
+    def process(self, frames: list[SampledFrame]) -> PoseResult:
+        if not frames:
+            raise ValueError("No frames were sampled.")
+        self._ensure_loaded()
+
+        keypoints = _empty_keypoints(len(frames))
+        decisions, multiple_dogs, person_present = self._detect_tracks(frames)
         boxes: list[tuple[float, float, float, float] | None] = [
             decision.box if decision.state in ("tracked", "new_segment") else None
             for decision in decisions

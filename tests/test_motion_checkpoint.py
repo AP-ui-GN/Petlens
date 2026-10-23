@@ -39,9 +39,9 @@ class MotionCheckpointTests(unittest.TestCase):
 
             def pose_later(_video_path: Path):
                 order.append("pose")
-                return None, "pose was not run"
+                return None, None, "pose was not run"
 
-            with patch("gait_engine.pipeline._try_pose", side_effect=pose_later):
+            with patch("gait_engine.pipeline._try_pose_and_detection", side_effect=pose_later):
                 result = analyze_clip(path, use_pose=True, motion_ready=ready)
 
         self.assertEqual(order, ["ready", "pose"])

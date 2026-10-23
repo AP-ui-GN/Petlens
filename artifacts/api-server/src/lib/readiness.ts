@@ -27,6 +27,7 @@ export interface ReadinessReport {
 interface SetupReport {
   opencv: string | null;
   fallbackReady: boolean;
+  detectorReady: boolean;
   poseReady: boolean;
 }
 
@@ -49,6 +50,7 @@ function readSetupPayload(stdout: string): SetupReport | null {
     const row = value as Record<string, unknown>;
     if (
       typeof row["fallbackReady"] !== "boolean" ||
+      typeof row["detectorReady"] !== "boolean" ||
       typeof row["poseReady"] !== "boolean" ||
       !(typeof row["opencv"] === "string" || row["opencv"] === null)
     ) {
@@ -57,6 +59,7 @@ function readSetupPayload(stdout: string): SetupReport | null {
     return {
       opencv: row["opencv"],
       fallbackReady: row["fallbackReady"],
+      detectorReady: row["detectorReady"],
       poseReady: row["poseReady"],
     };
   } catch {
@@ -104,10 +107,17 @@ async function inspectReadiness(): Promise<ReadinessReport> {
 
   const warnings: string[] = [];
   const capabilities = ["opencv-motion"];
+  if (setup.detectorReady) {
+    capabilities.push("dog-detection");
+  }
   if (setup.poseReady) {
     capabilities.push("coco-17-keypoints");
     warnings.push(
       "The cached pose checkpoint exposes COCO-17 human landmarks; stride length and left/right gait symmetry remain unmeasured.",
+    );
+  } else if (setup.detectorReady) {
+    warnings.push(
+      "Dog detection is available, but pose weights are unavailable; only dog-in-frame coverage can be measured, not anatomical landmarks or gait.",
     );
   } else {
     warnings.push(

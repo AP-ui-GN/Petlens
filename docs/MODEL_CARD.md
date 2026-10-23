@@ -7,7 +7,7 @@ PetLens measures a walking clip. It does not diagnose pain, injury, or disease.
 | Pipeline | When | What it measures |
 | --- | --- | --- |
 | `coco-pose` | torch, transformers, and the weights load | A dog box, then 17 human COCO joints. This checkpoint has no AP-10K head and is not canine pose. |
-| `opencv-motion` | pose cannot run, or pose throws | Frame-to-frame picture change only |
+| `opencv-motion` | pose cannot run, or pose throws | Frame-to-frame picture change; when detector dependencies and weights are available, dog-in-frame coverage is retained without pose output. |
 
 New results do not use the older human-pose pipeline name. Saved walks that
 used it still validate.
@@ -92,7 +92,7 @@ Current app results remain COCO-17 or motion-only, never canine-pose results.
 | Checkpoint loaded | Yes; epoch-4 state loaded and produced a finite `(1, 17, 64, 48)` heatmap tensor in a local smoke test |
 | Canine keypoints produced by inference | Yes on AP-10K still images with oracle boxes; exploratory epoch-2 predictions only |
 | Independent labeled evaluation | No; official test data has been inspected and is diagnostic-only |
-| Real dog-walking video tested with the canine model | No; no authorized video was available in the repository or local cache |
+| Real dog-walking video tested with the canine model | No; the supplied gait-paper clip was tested with detector-only processing, without canine pose |
 | Gait metrics validated | No |
 | Canine feature integrated into the app | No; only COCO-17 or motion-only inference is enabled |
 
@@ -100,9 +100,21 @@ Placeholder peak, spacing, and phase cutoffs are in `docs/GAIT_METRICS.md`.
 
 ## Fallback
 
-If torch, transformers, or the weights are missing, or pose throws, the clip
-is still measured with OpenCV frame difference. `diagnostics.poseSkipReason`
-says why. The request does not fail because pose failed.
+If pose weights are missing or pose throws, the clip is still measured with
+OpenCV frame difference. If the dog detector can run independently, its
+tracked dog-frame share, multiple-dog flag, and person-present flag are kept;
+pose coordinates and gait metrics remain unavailable. If detector dependencies
+or weights are also missing, the result is motion-only.
+`diagnostics.poseSkipReason` says which path ran and why. The request does not
+fail because either model failed.
+
+The supplied 5-second, 60-frame gait-paper OGV was run through the current
+Python analysis pipeline with pose downloads disabled. RT-DETR found one dog
+on all 12 scheduled detector samples, reported a person present, and found no
+multiple-dog ambiguity. `dogFramesShare=0.2` is 12 accepted detections divided
+by all 60 sampled frames: detections run every fifth frame, and skipped frames
+are not inferred. It is not a claim that the dog occupied only 20% of the
+video. Pose landmarks, stride symmetry, and gait metrics remained unavailable.
 
 ## Cache
 
