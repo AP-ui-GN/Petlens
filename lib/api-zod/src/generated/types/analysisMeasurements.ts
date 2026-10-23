@@ -21,12 +21,12 @@ export interface AnalysisMeasurements {
   durationSeconds: number;
   meanKeypointConfidence?: number | null;
   /**
-     * Legacy field from the human-pose path. The dog-pose pipeline leaves this null.
+     * Legacy field from the human-pose path. The COCO-17 output path leaves this null; saved dog-pose results retain the same behavior.
      * @deprecated
      */
   leftAnkleMotion?: number | null;
   /**
-     * Legacy field from the human-pose path. The dog-pose pipeline leaves this null.
+     * Legacy field from the human-pose path. The COCO-17 output path leaves this null; saved dog-pose results retain the same behavior.
      * @deprecated
      */
   rightAnkleMotion?: number | null;
@@ -37,7 +37,7 @@ export interface AnalysisMeasurements {
   motionStd: number;
   motionCoverage: number;
   /**
-     * Legacy field from the human-pose path. The dog-pose pipeline leaves this null. Left-versus-right hip height is not computed.
+     * Legacy field from the human-pose path. The COCO-17 output path leaves this null; saved dog-pose results retain the same behavior. Left-versus-right hip height is not computed.
      * @deprecated
      */
   hipStability?: number | null;

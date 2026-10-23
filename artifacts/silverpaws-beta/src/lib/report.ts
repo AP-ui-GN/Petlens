@@ -83,6 +83,7 @@ const FACTOR_REPORT_LABELS: [keyof NonNullable<Analysis['factors']>, string][] =
 ];
 
 const PIPELINE_REPORT_LABELS: Record<string, string> = {
+  'coco-pose': 'COCO-17 output (canine interpretation unvalidated)',
   'dog-pose': 'COCO-17 output (canine interpretation unvalidated)',
   movenet: 'Pose landmarks (older saved walk)',
   'opencv-motion': 'Picture motion only',

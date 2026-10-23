@@ -98,7 +98,7 @@ On a saved result, the AI-use lines should name only the steps that produced tha
       mentions the score difference
 - [ ] Delete an observation and visit its old URL
 - [ ] Stop the API and confirm the analyze page shows a reachable-service error
-- [ ] Confirm the dog-pose path (`pipeline: "dog-pose"`) on a machine with
+- [ ] Confirm the COCO-17 pose-output path (`pipeline: "coco-pose"`) on a machine with
       the CPU torch stack from `requirements.txt`
 
 ## Pet form and trends (automated)

@@ -5,7 +5,7 @@
  * truth. If the API contract changes, update the spec first and then this file.
  */
 
-export type Pipeline = 'dog-pose' | 'movenet' | 'opencv-motion';
+export type Pipeline = 'coco-pose' | 'dog-pose' | 'movenet' | 'opencv-motion';
 
 export type SignalQuality = 'good' | 'limited' | 'unusable';
 

@@ -1,6 +1,8 @@
 """The loaded pose head is COCO-17. AP-10K names are a different index order."""
 
+import json
 import unittest
+from pathlib import Path
 from unittest.mock import patch
 
 import numpy as np
@@ -9,6 +11,7 @@ from scripts.time_clip import _supports_ap10k_gait, rss_mb
 
 from gait_engine.pose_backend import (
     AP10K_KEYPOINTS,
+    AP10K_SKELETON_EDGES,
     COCO17_EDGES,
     COCO17_KEYPOINTS,
     KEYPOINT_MIN_SCORE,
@@ -63,6 +66,21 @@ class BenchmarkSchemaTests(unittest.TestCase):
 
 
 class SchemaTests(unittest.TestCase):
+    def test_versioned_schema_matches_python_order_and_topology(self):
+        schema_path = Path(__file__).resolve().parents[1] / "training" / "canine_keypoint_schema.json"
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+
+        self.assertEqual(schema["schema_version"], "petlens.ap10k-17.v1")
+        self.assertEqual(
+            [keypoint["id"] for keypoint in schema["keypoints"]],
+            list(AP10K_KEYPOINTS),
+        )
+        self.assertEqual(
+            [tuple(edge) for edge in schema["skeleton_connections"]],
+            list(AP10K_SKELETON_EDGES),
+        )
+        self.assertIn("digitigrade animals", schema["use_limitations"][1])
+
     def test_checkpoint_order_matches_the_coco_head(self):
         self.assertEqual(MODEL_OUTPUT_SCHEMA, "coco-17")
         self.assertEqual(MODEL_OUTPUT_KEYPOINTS, COCO17_KEYPOINTS)

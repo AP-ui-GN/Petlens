@@ -1,0 +1,3444 @@
+{
+  "status": "exploratory_measured",
+  "evaluation_protocol_note": "The official AP-10K test predictions were inspected before training continued. This is not independent held-out evidence and must not guide checkpoint selection or claims.",
+  "model": {
+    "name": "PetLens AP-10K dog-only ResNet-18 heatmap (experimental)",
+    "version": "2c408756-94ed-4ed8-be40-6efc615236f8",
+    "architecture": "resnet18-topdown-heatmap",
+    "initialization": "random",
+    "checkpoint_file_at_evaluation": "checkpoint_best.pt",
+    "checkpoint_epoch": 2,
+    "best_validation_loss": 0.006018147058784962,
+    "checkpoint_artifact_retained": false,
+    "artifact_note": "The exact epoch-2 weights were overwritten by training continuation. The epoch-4 checkpoint is retained only in the local cache and was not evaluated."
+  },
+  "training": {
+    "epochs_completed_at_evaluation": 2,
+    "duration_seconds_at_evaluation": 99.156,
+    "device": "cpu",
+    "initialization": "random",
+    "selected_by": "lowest validation loss",
+    "continued_through_epoch": 4,
+    "continuation_duration_seconds": null
+  },
+  "dataset": {
+    "name": "AP-10K",
+    "split": "official test split",
+    "species_filter": "dog",
+    "schema_version": "petlens.ap10k-17.v1",
+    "instances": 225,
+    "images": 200,
+    "test_annotation_sha256": "c3f9bb80340ba954cbf46905b52a0ed97d5a93c3de55c86f8bc2648aa5e5a552"
+  },
+  "evaluation": {
+    "schema_version": "petlens.ap10k-17.v1",
+    "evaluation_scope": "pose localization with ground-truth boxes; detection, tracking, and gait are not evaluated",
+    "instances": 225,
+    "predicted_instances": 225,
+    "missing_prediction_instances": 0,
+    "minimum_confidence": 0.0,
+    "metrics": {
+      "PCK@0.05": {
+        "threshold": 0.05,
+        "normalizer": "sqrt(annotation_bbox_width * annotation_bbox_height)",
+        "overall": 0.0,
+        "correct": 0,
+        "visible_keypoints": 2269,
+        "bootstrap_95_ci_by_image": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "images": 200,
+          "replicates": 1000,
+          "seed": 0
+        },
+        "by_visibility": {
+          "visible": {
+            "correct": 0,
+            "keypoints": 2269,
+            "pck": 0.0
+          },
+          "occluded": {
+            "correct": 0,
+            "keypoints": 0,
+            "pck": null
+          }
+        },
+        "per_keypoint": {
+          "left_eye": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 192,
+            "mean_pixel_error": 411.18885430275753,
+            "mean_normalized_error": 0.8794014494347647,
+            "predicted": 192
+          },
+          "right_eye": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 198,
+            "mean_pixel_error": 395.86515562375985,
+            "mean_normalized_error": 0.8392111564185982,
+            "predicted": 198
+          },
+          "nose": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 215,
+            "mean_pixel_error": 328.08436685839064,
+            "mean_normalized_error": 0.6750966848056257,
+            "predicted": 215
+          },
+          "neck": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 203,
+            "mean_pixel_error": 342.75055686217047,
+            "mean_normalized_error": 0.7367049453587866,
+            "predicted": 203
+          },
+          "root_of_tail": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 105,
+            "mean_pixel_error": 375.6845796516481,
+            "mean_normalized_error": 0.8436722546884615,
+            "predicted": 105
+          },
+          "left_shoulder": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 153,
+            "mean_pixel_error": 358.07789096065346,
+            "mean_normalized_error": 0.8051527130353354,
+            "predicted": 153
+          },
+          "left_elbow": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 137,
+            "mean_pixel_error": 406.16422826495466,
+            "mean_normalized_error": 0.9093727767943325,
+            "predicted": 137
+          },
+          "left_front_paw": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 119,
+            "mean_pixel_error": 424.234491614947,
+            "mean_normalized_error": 0.9776888603945884,
+            "predicted": 119
+          },
+          "right_shoulder": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 149,
+            "mean_pixel_error": 412.12407248206915,
+            "mean_normalized_error": 0.9071999050277083,
+            "predicted": 149
+          },
+          "right_elbow": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 130,
+            "mean_pixel_error": 297.3265391367199,
+            "mean_normalized_error": 0.6543969330952605,
+            "predicted": 130
+          },
+          "right_front_paw": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 120,
+            "mean_pixel_error": 452.39864605923424,
+            "mean_normalized_error": 1.040848705174294,
+            "predicted": 120
+          },
+          "left_hip": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 88,
+            "mean_pixel_error": 341.295859769767,
+            "mean_normalized_error": 0.7585846309332077,
+            "predicted": 88
+          },
+          "left_knee": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 90,
+            "mean_pixel_error": 323.90211719063194,
+            "mean_normalized_error": 0.7285181703740431,
+            "predicted": 90
+          },
+          "left_back_paw": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 96,
+            "mean_pixel_error": 393.79062795685286,
+            "mean_normalized_error": 0.9267034968217457,
+            "predicted": 96
+          },
+          "right_hip": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 90,
+            "mean_pixel_error": 269.1170785100734,
+            "mean_normalized_error": 0.6163706163174462,
+            "predicted": 90
+          },
+          "right_knee": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 89,
+            "mean_pixel_error": 291.89659800691106,
+            "mean_normalized_error": 0.652310838437727,
+            "predicted": 89
+          },
+          "right_back_paw": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 95,
+            "mean_pixel_error": 240.66206986388815,
+            "mean_normalized_error": 0.529930471061571,
+            "predicted": 95
+          }
+        }
+      },
+      "PCK@0.1": {
+        "threshold": 0.1,
+        "normalizer": "sqrt(annotation_bbox_width * annotation_bbox_height)",
+        "overall": 0.0008814455707360071,
+        "correct": 2,
+        "visible_keypoints": 2269,
+        "bootstrap_95_ci_by_image": {
+          "lower": 0.0,
+          "upper": 0.0022381378692927483,
+          "images": 200,
+          "replicates": 1000,
+          "seed": 0
+        },
+        "by_visibility": {
+          "visible": {
+            "correct": 2,
+            "keypoints": 2269,
+            "pck": 0.0008814455707360071
+          },
+          "occluded": {
+            "correct": 0,
+            "keypoints": 0,
+            "pck": null
+          }
+        },
+        "per_keypoint": {
+          "left_eye": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 192,
+            "mean_pixel_error": 411.18885430275753,
+            "mean_normalized_error": 0.8794014494347647,
+            "predicted": 192
+          },
+          "right_eye": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 198,
+            "mean_pixel_error": 395.86515562375985,
+            "mean_normalized_error": 0.8392111564185982,
+            "predicted": 198
+          },
+          "nose": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 215,
+            "mean_pixel_error": 328.08436685839064,
+            "mean_normalized_error": 0.6750966848056257,
+            "predicted": 215
+          },
+          "neck": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 203,
+            "mean_pixel_error": 342.75055686217047,
+            "mean_normalized_error": 0.7367049453587866,
+            "predicted": 203
+          },
+          "root_of_tail": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 105,
+            "mean_pixel_error": 375.6845796516481,
+            "mean_normalized_error": 0.8436722546884615,
+            "predicted": 105
+          },
+          "left_shoulder": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 153,
+            "mean_pixel_error": 358.07789096065346,
+            "mean_normalized_error": 0.8051527130353354,
+            "predicted": 153
+          },
+          "left_elbow": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 137,
+            "mean_pixel_error": 406.16422826495466,
+            "mean_normalized_error": 0.9093727767943325,
+            "predicted": 137
+          },
+          "left_front_paw": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 119,
+            "mean_pixel_error": 424.234491614947,
+            "mean_normalized_error": 0.9776888603945884,
+            "predicted": 119
+          },
+          "right_shoulder": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 149,
+            "mean_pixel_error": 412.12407248206915,
+            "mean_normalized_error": 0.9071999050277083,
+            "predicted": 149
+          },
+          "right_elbow": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 130,
+            "mean_pixel_error": 297.3265391367199,
+            "mean_normalized_error": 0.6543969330952605,
+            "predicted": 130
+          },
+          "right_front_paw": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 120,
+            "mean_pixel_error": 452.39864605923424,
+            "mean_normalized_error": 1.040848705174294,
+            "predicted": 120
+          },
+          "left_hip": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 88,
+            "mean_pixel_error": 341.295859769767,
+            "mean_normalized_error": 0.7585846309332077,
+            "predicted": 88
+          },
+          "left_knee": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 90,
+            "mean_pixel_error": 323.90211719063194,
+            "mean_normalized_error": 0.7285181703740431,
+            "predicted": 90
+          },
+          "left_back_paw": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 96,
+            "mean_pixel_error": 393.79062795685286,
+            "mean_normalized_error": 0.9267034968217457,
+            "predicted": 96
+          },
+          "right_hip": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 90,
+            "mean_pixel_error": 269.1170785100734,
+            "mean_normalized_error": 0.6163706163174462,
+            "predicted": 90
+          },
+          "right_knee": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 89,
+            "mean_pixel_error": 291.89659800691106,
+            "mean_normalized_error": 0.652310838437727,
+            "predicted": 89
+          },
+          "right_back_paw": {
+            "pck": 0.021052631578947368,
+            "correct": 2,
+            "visible": 95,
+            "mean_pixel_error": 240.66206986388815,
+            "mean_normalized_error": 0.529930471061571,
+            "predicted": 95
+          }
+        }
+      },
+      "keypoint_error": {
+        "pixel_units": "original-image pixels",
+        "normalized_units": "error divided by sqrt(annotation_bbox_width * annotation_bbox_height)",
+        "predicted_keypoints": 2269,
+        "visible_keypoints": 2269,
+        "mean_pixel_error": 362.36465250909913,
+        "mean_normalized_error": 0.7989039401548517
+      }
+    },
+    "per_image": [
+      {
+        "image_id": 8912,
+        "annotation_id": 2601,
+        "visible_keypoints": 6,
+        "predicted_keypoints": 6,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 589.2049599923889,
+        "mean_normalized_error": 0.7489430325068903
+      },
+      {
+        "image_id": 9297,
+        "annotation_id": 2700,
+        "visible_keypoints": 13,
+        "predicted_keypoints": 13,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 396.5228488000262,
+        "mean_normalized_error": 0.7398020350283271
+      },
+      {
+        "image_id": 9295,
+        "annotation_id": 2698,
+        "visible_keypoints": 6,
+        "predicted_keypoints": 6,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 182.1209547598538,
+        "mean_normalized_error": 0.7514760241310993
+      },
+      {
+        "image_id": 8892,
+        "annotation_id": 2577,
+        "visible_keypoints": 5,
+        "predicted_keypoints": 5,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 222.33012568311392,
+        "mean_normalized_error": 0.7599309199212709
+      },
+      {
+        "image_id": 8892,
+        "annotation_id": 2578,
+        "visible_keypoints": 6,
+        "predicted_keypoints": 6,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 255.9614464476383,
+        "mean_normalized_error": 0.8816826450123564
+      },
+      {
+        "image_id": 9260,
+        "annotation_id": 2656,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 533.6780749136044,
+        "mean_normalized_error": 0.8636517361156317
+      },
+      {
+        "image_id": 8885,
+        "annotation_id": 2570,
+        "visible_keypoints": 3,
+        "predicted_keypoints": 3,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 261.1914381434348,
+        "mean_normalized_error": 0.8079958002892472
+      },
+      {
+        "image_id": 9305,
+        "annotation_id": 2708,
+        "visible_keypoints": 10,
+        "predicted_keypoints": 10,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 670.7364455789304,
+        "mean_normalized_error": 0.8800042503484165
+      },
+      {
+        "image_id": 8834,
+        "annotation_id": 2515,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 595.4419854693567,
+        "mean_normalized_error": 0.6754951537328997
+      },
+      {
+        "image_id": 9294,
+        "annotation_id": 2697,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 262.3902794144446,
+        "mean_normalized_error": 0.6644346423362749
+      },
+      {
+        "image_id": 8852,
+        "annotation_id": 2533,
+        "visible_keypoints": 7,
+        "predicted_keypoints": 7,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 553.4541208419564,
+        "mean_normalized_error": 0.6759904129240096
+      },
+      {
+        "image_id": 8832,
+        "annotation_id": 2513,
+        "visible_keypoints": 12,
+        "predicted_keypoints": 12,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 213.000414996519,
+        "mean_normalized_error": 0.8900783412650486
+      },
+      {
+        "image_id": 8813,
+        "annotation_id": 2493,
+        "visible_keypoints": 17,
+        "predicted_keypoints": 17,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 156.13967203870382,
+        "mean_normalized_error": 0.7716837297798156
+      },
+      {
+        "image_id": 8916,
+        "annotation_id": 2606,
+        "visible_keypoints": 17,
+        "predicted_keypoints": 17,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 418.22676608493737,
+        "mean_normalized_error": 0.7267192422765498
+      },
+      {
+        "image_id": 8856,
+        "annotation_id": 2537,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 373.94428878533296,
+        "mean_normalized_error": 0.7718185365075998
+      },
+      {
+        "image_id": 9048,
+        "annotation_id": 2628,
+        "visible_keypoints": 5,
+        "predicted_keypoints": 5,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 258.6171259320116,
+        "mean_normalized_error": 0.716261783034979
+      },
+      {
+        "image_id": 9048,
+        "annotation_id": 2629,
+        "visible_keypoints": 3,
+        "predicted_keypoints": 3,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 109.36485614528847,
+        "mean_normalized_error": 0.40896133604994017
+      },
+      {
+        "image_id": 9274,
+        "annotation_id": 2673,
+        "visible_keypoints": 8,
+        "predicted_keypoints": 8,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 595.3772719098752,
+        "mean_normalized_error": 0.7797412773817483
+      },
+      {
+        "image_id": 8864,
+        "annotation_id": 2547,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 104.06624059208968,
+        "mean_normalized_error": 0.701678242773457
+      },
+      {
+        "image_id": 8887,
+        "annotation_id": 2572,
+        "visible_keypoints": 11,
+        "predicted_keypoints": 11,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 332.86639586420534,
+        "mean_normalized_error": 0.824492689536605
+      },
+      {
+        "image_id": 9301,
+        "annotation_id": 2704,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 523.4564761249852,
+        "mean_normalized_error": 0.6711951361303894
+      },
+      {
+        "image_id": 9225,
+        "annotation_id": 2650,
+        "visible_keypoints": 10,
+        "predicted_keypoints": 10,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 244.23924210080244,
+        "mean_normalized_error": 0.6641056480330384
+      },
+      {
+        "image_id": 8921,
+        "annotation_id": 2612,
+        "visible_keypoints": 10,
+        "predicted_keypoints": 10,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 441.32874824624423,
+        "mean_normalized_error": 1.0075053558419544
+      },
+      {
+        "image_id": 9265,
+        "annotation_id": 2664,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 621.0404499772885,
+        "mean_normalized_error": 0.7552264064036043
+      },
+      {
+        "image_id": 8879,
+        "annotation_id": 2563,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 191.11327591115582,
+        "mean_normalized_error": 0.8809402214410611
+      },
+      {
+        "image_id": 8879,
+        "annotation_id": 2564,
+        "visible_keypoints": 12,
+        "predicted_keypoints": 12,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 314.7253418671844,
+        "mean_normalized_error": 0.7247543109592538
+      },
+      {
+        "image_id": 8871,
+        "annotation_id": 2555,
+        "visible_keypoints": 15,
+        "predicted_keypoints": 15,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 255.17997981400623,
+        "mean_normalized_error": 0.8040405661696612
+      },
+      {
+        "image_id": 9290,
+        "annotation_id": 2693,
+        "visible_keypoints": 12,
+        "predicted_keypoints": 12,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 434.2104410590027,
+        "mean_normalized_error": 0.8510070314442197
+      },
+      {
+        "image_id": 9287,
+        "annotation_id": 2690,
+        "visible_keypoints": 15,
+        "predicted_keypoints": 15,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 519.888630361556,
+        "mean_normalized_error": 0.9402978471103047
+      },
+      {
+        "image_id": 8889,
+        "annotation_id": 2574,
+        "visible_keypoints": 17,
+        "predicted_keypoints": 17,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 155.00351200909287,
+        "mean_normalized_error": 0.6708160479571894
+      },
+      {
+        "image_id": 8907,
+        "annotation_id": 2594,
+        "visible_keypoints": 15,
+        "predicted_keypoints": 15,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.06666666666666667
+        },
+        "mean_pixel_error": 587.7731391184284,
+        "mean_normalized_error": 0.7762603461500693
+      },
+      {
+        "image_id": 9037,
+        "annotation_id": 2626,
+        "visible_keypoints": 9,
+        "predicted_keypoints": 9,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 226.372042587793,
+        "mean_normalized_error": 0.7558848131148262
+      },
+      {
+        "image_id": 9037,
+        "annotation_id": 2627,
+        "visible_keypoints": 7,
+        "predicted_keypoints": 7,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 258.6032791695233,
+        "mean_normalized_error": 0.8802753997201164
+      },
+      {
+        "image_id": 9258,
+        "annotation_id": 2655,
+        "visible_keypoints": 12,
+        "predicted_keypoints": 12,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 249.86407485837762,
+        "mean_normalized_error": 0.7543017001399845
+      },
+      {
+        "image_id": 8846,
+        "annotation_id": 2527,
+        "visible_keypoints": 9,
+        "predicted_keypoints": 9,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 364.68032426570585,
+        "mean_normalized_error": 0.8650948577070117
+      },
+      {
+        "image_id": 8872,
+        "annotation_id": 2556,
+        "visible_keypoints": 10,
+        "predicted_keypoints": 10,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 321.153779976861,
+        "mean_normalized_error": 1.0306527551446503
+      },
+      {
+        "image_id": 9286,
+        "annotation_id": 2689,
+        "visible_keypoints": 5,
+        "predicted_keypoints": 5,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 425.58283195643264,
+        "mean_normalized_error": 0.7110608385533189
+      },
+      {
+        "image_id": 8827,
+        "annotation_id": 2509,
+        "visible_keypoints": 17,
+        "predicted_keypoints": 17,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 422.9442771125369,
+        "mean_normalized_error": 0.8320421008555167
+      },
+      {
+        "image_id": 9025,
+        "annotation_id": 2624,
+        "visible_keypoints": 7,
+        "predicted_keypoints": 7,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 315.9750314830314,
+        "mean_normalized_error": 0.8270265923788271
+      },
+      {
+        "image_id": 9272,
+        "annotation_id": 2671,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 332.44279809402843,
+        "mean_normalized_error": 0.7680612868474902
+      },
+      {
+        "image_id": 9281,
+        "annotation_id": 2682,
+        "visible_keypoints": 15,
+        "predicted_keypoints": 15,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 514.7676864337614,
+        "mean_normalized_error": 0.8590277682819669
+      },
+      {
+        "image_id": 9302,
+        "annotation_id": 2705,
+        "visible_keypoints": 6,
+        "predicted_keypoints": 6,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 723.3596211940554,
+        "mean_normalized_error": 0.8465217207916762
+      },
+      {
+        "image_id": 9268,
+        "annotation_id": 2667,
+        "visible_keypoints": 6,
+        "predicted_keypoints": 6,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 590.3032865021261,
+        "mean_normalized_error": 0.9861961716635864
+      },
+      {
+        "image_id": 9275,
+        "annotation_id": 2674,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 541.8504320956653,
+        "mean_normalized_error": 0.8312505967407404
+      },
+      {
+        "image_id": 9329,
+        "annotation_id": 2731,
+        "visible_keypoints": 6,
+        "predicted_keypoints": 6,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 633.1190590956734,
+        "mean_normalized_error": 0.7815302022237787
+      },
+      {
+        "image_id": 9933,
+        "annotation_id": 2892,
+        "visible_keypoints": 10,
+        "predicted_keypoints": 10,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 102.24013624049,
+        "mean_normalized_error": 0.7832251495495848
+      },
+      {
+        "image_id": 9689,
+        "annotation_id": 2866,
+        "visible_keypoints": 15,
+        "predicted_keypoints": 15,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 480.04550759669496,
+        "mean_normalized_error": 0.773269823114615
+      },
+      {
+        "image_id": 9414,
+        "annotation_id": 2828,
+        "visible_keypoints": 13,
+        "predicted_keypoints": 13,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 193.15027313469966,
+        "mean_normalized_error": 0.7885326880986934
+      },
+      {
+        "image_id": 9387,
+        "annotation_id": 2793,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 650.6331648829142,
+        "mean_normalized_error": 0.8214646152019917
+      },
+      {
+        "image_id": 9412,
+        "annotation_id": 2826,
+        "visible_keypoints": 15,
+        "predicted_keypoints": 15,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 191.628961427178,
+        "mean_normalized_error": 0.824853630068052
+      },
+      {
+        "image_id": 9511,
+        "annotation_id": 2847,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 185.96477343637034,
+        "mean_normalized_error": 0.7005478330344262
+      },
+      {
+        "image_id": 9373,
+        "annotation_id": 2777,
+        "visible_keypoints": 6,
+        "predicted_keypoints": 6,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 186.73423541210764,
+        "mean_normalized_error": 0.665234275726168
+      },
+      {
+        "image_id": 10188,
+        "annotation_id": 2924,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 697.4065424025703,
+        "mean_normalized_error": 0.7430664317775895
+      },
+      {
+        "image_id": 9349,
+        "annotation_id": 2753,
+        "visible_keypoints": 15,
+        "predicted_keypoints": 15,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 258.7616098330399,
+        "mean_normalized_error": 0.8565635944625513
+      },
+      {
+        "image_id": 9911,
+        "annotation_id": 2889,
+        "visible_keypoints": 10,
+        "predicted_keypoints": 10,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 517.0358019290154,
+        "mean_normalized_error": 0.9139031349235653
+      },
+      {
+        "image_id": 9342,
+        "annotation_id": 2746,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 220.45049214958053,
+        "mean_normalized_error": 0.8299115077354086
+      },
+      {
+        "image_id": 9400,
+        "annotation_id": 2813,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 494.21341062994355,
+        "mean_normalized_error": 0.7142140424542429
+      },
+      {
+        "image_id": 9700,
+        "annotation_id": 2867,
+        "visible_keypoints": 15,
+        "predicted_keypoints": 15,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 316.73809047203184,
+        "mean_normalized_error": 0.8293420354340154
+      },
+      {
+        "image_id": 9317,
+        "annotation_id": 2717,
+        "visible_keypoints": 17,
+        "predicted_keypoints": 17,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 229.7056510372104,
+        "mean_normalized_error": 0.8193954749375313
+      },
+      {
+        "image_id": 9622,
+        "annotation_id": 2859,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 226.51158104998808,
+        "mean_normalized_error": 0.67138197028212
+      },
+      {
+        "image_id": 9800,
+        "annotation_id": 2878,
+        "visible_keypoints": 10,
+        "predicted_keypoints": 10,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 119.34151739422836,
+        "mean_normalized_error": 0.81115290602718
+      },
+      {
+        "image_id": 9478,
+        "annotation_id": 2844,
+        "visible_keypoints": 16,
+        "predicted_keypoints": 16,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 547.0865246261236,
+        "mean_normalized_error": 0.8211865348451017
+      },
+      {
+        "image_id": 9379,
+        "annotation_id": 2784,
+        "visible_keypoints": 9,
+        "predicted_keypoints": 9,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 386.6392268218121,
+        "mean_normalized_error": 0.8318747217790703
+      },
+      {
+        "image_id": 10133,
+        "annotation_id": 2919,
+        "visible_keypoints": 6,
+        "predicted_keypoints": 6,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 391.9442400437301,
+        "mean_normalized_error": 0.7975940480543094
+      },
+      {
+        "image_id": 9323,
+        "annotation_id": 2725,
+        "visible_keypoints": 3,
+        "predicted_keypoints": 3,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 559.582386775832,
+        "mean_normalized_error": 0.8077279915062855
+      },
+      {
+        "image_id": 9867,
+        "annotation_id": 2885,
+        "visible_keypoints": 16,
+        "predicted_keypoints": 16,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 641.9383436715572,
+        "mean_normalized_error": 0.8952357496558792
+      },
+      {
+        "image_id": 9357,
+        "annotation_id": 2761,
+        "visible_keypoints": 12,
+        "predicted_keypoints": 12,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 464.0291919495525,
+        "mean_normalized_error": 0.9163042847570656
+      },
+      {
+        "image_id": 9339,
+        "annotation_id": 2742,
+        "visible_keypoints": 15,
+        "predicted_keypoints": 15,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 211.85497732218406,
+        "mean_normalized_error": 0.9300476636434346
+      },
+      {
+        "image_id": 9368,
+        "annotation_id": 2772,
+        "visible_keypoints": 10,
+        "predicted_keypoints": 10,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 279.93909541167403,
+        "mean_normalized_error": 0.8714123412081936
+      },
+      {
+        "image_id": 9331,
+        "annotation_id": 2733,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 172.340185063627,
+        "mean_normalized_error": 0.8020595563290474
+      },
+      {
+        "image_id": 9401,
+        "annotation_id": 2814,
+        "visible_keypoints": 8,
+        "predicted_keypoints": 8,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 630.4677728288991,
+        "mean_normalized_error": 0.833310798506254
+      },
+      {
+        "image_id": 9362,
+        "annotation_id": 2766,
+        "visible_keypoints": 11,
+        "predicted_keypoints": 11,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 357.61146504538897,
+        "mean_normalized_error": 0.8634080085830768
+      },
+      {
+        "image_id": 9325,
+        "annotation_id": 2727,
+        "visible_keypoints": 8,
+        "predicted_keypoints": 8,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 676.6858934335488,
+        "mean_normalized_error": 0.8123205008605389
+      },
+      {
+        "image_id": 9355,
+        "annotation_id": 2759,
+        "visible_keypoints": 13,
+        "predicted_keypoints": 13,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 375.52726529716887,
+        "mean_normalized_error": 0.9516936428611706
+      },
+      {
+        "image_id": 9381,
+        "annotation_id": 2786,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 516.1990793354196,
+        "mean_normalized_error": 0.7068899277215491
+      },
+      {
+        "image_id": 9370,
+        "annotation_id": 2774,
+        "visible_keypoints": 12,
+        "predicted_keypoints": 12,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 383.84111846203746,
+        "mean_normalized_error": 0.8534650848288062
+      },
+      {
+        "image_id": 9388,
+        "annotation_id": 2794,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 409.784233451791,
+        "mean_normalized_error": 0.7997940757046544
+      },
+      {
+        "image_id": 9778,
+        "annotation_id": 2876,
+        "visible_keypoints": 6,
+        "predicted_keypoints": 6,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 639.3563623066008,
+        "mean_normalized_error": 0.8060226643788319
+      },
+      {
+        "image_id": 9338,
+        "annotation_id": 2740,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 455.63170370927736,
+        "mean_normalized_error": 0.8626047272661213
+      },
+      {
+        "image_id": 9338,
+        "annotation_id": 2741,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 348.40016583702624,
+        "mean_normalized_error": 0.7556971744704036
+      },
+      {
+        "image_id": 9755,
+        "annotation_id": 2873,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 343.4893513513292,
+        "mean_normalized_error": 0.67036127870914
+      },
+      {
+        "image_id": 10055,
+        "annotation_id": 2909,
+        "visible_keypoints": 13,
+        "predicted_keypoints": 13,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 271.6879912533755,
+        "mean_normalized_error": 0.774121549671546
+      },
+      {
+        "image_id": 9365,
+        "annotation_id": 2769,
+        "visible_keypoints": 9,
+        "predicted_keypoints": 9,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 295.4597978711624,
+        "mean_normalized_error": 0.7976664771270476
+      },
+      {
+        "image_id": 9366,
+        "annotation_id": 2770,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 537.1952447003774,
+        "mean_normalized_error": 0.8291570680797645
+      },
+      {
+        "image_id": 9371,
+        "annotation_id": 2775,
+        "visible_keypoints": 12,
+        "predicted_keypoints": 12,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 276.0116918493984,
+        "mean_normalized_error": 0.835157605709758
+      },
+      {
+        "image_id": 10781,
+        "annotation_id": 3117,
+        "visible_keypoints": 15,
+        "predicted_keypoints": 15,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 254.84460597958497,
+        "mean_normalized_error": 0.790558905270365
+      },
+      {
+        "image_id": 10798,
+        "annotation_id": 3135,
+        "visible_keypoints": 13,
+        "predicted_keypoints": 13,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 221.17406779972114,
+        "mean_normalized_error": 0.6921023072127751
+      },
+      {
+        "image_id": 10798,
+        "annotation_id": 3136,
+        "visible_keypoints": 17,
+        "predicted_keypoints": 17,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 231.80032650679073,
+        "mean_normalized_error": 0.6002189380555691
+      },
+      {
+        "image_id": 10340,
+        "annotation_id": 3023,
+        "visible_keypoints": 11,
+        "predicted_keypoints": 11,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 482.299400392009,
+        "mean_normalized_error": 0.9536377413982251
+      },
+      {
+        "image_id": 10366,
+        "annotation_id": 3049,
+        "visible_keypoints": 5,
+        "predicted_keypoints": 5,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 445.86828666861237,
+        "mean_normalized_error": 0.9051264921114092
+      },
+      {
+        "image_id": 10317,
+        "annotation_id": 2992,
+        "visible_keypoints": 15,
+        "predicted_keypoints": 15,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 347.8686528814946,
+        "mean_normalized_error": 0.8015108883104408
+      },
+      {
+        "image_id": 10278,
+        "annotation_id": 2942,
+        "visible_keypoints": 16,
+        "predicted_keypoints": 16,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 424.4060092328424,
+        "mean_normalized_error": 0.702581925793053
+      },
+      {
+        "image_id": 10554,
+        "annotation_id": 3088,
+        "visible_keypoints": 16,
+        "predicted_keypoints": 16,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 554.7307199313276,
+        "mean_normalized_error": 0.8104695252379944
+      },
+      {
+        "image_id": 10298,
+        "annotation_id": 2967,
+        "visible_keypoints": 17,
+        "predicted_keypoints": 17,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 325.0054380977561,
+        "mean_normalized_error": 0.8131949314285624
+      },
+      {
+        "image_id": 10298,
+        "annotation_id": 2968,
+        "visible_keypoints": 16,
+        "predicted_keypoints": 16,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 215.04078289762728,
+        "mean_normalized_error": 0.7944880610381714
+      },
+      {
+        "image_id": 10654,
+        "annotation_id": 3098,
+        "visible_keypoints": 17,
+        "predicted_keypoints": 17,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 268.6508942324492,
+        "mean_normalized_error": 0.5456598292196226
+      },
+      {
+        "image_id": 10372,
+        "annotation_id": 3055,
+        "visible_keypoints": 5,
+        "predicted_keypoints": 5,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 436.46047204278227,
+        "mean_normalized_error": 1.0491959526039447
+      },
+      {
+        "image_id": 10789,
+        "annotation_id": 3126,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 700.5770257713069,
+        "mean_normalized_error": 0.904852852936907
+      },
+      {
+        "image_id": 10720,
+        "annotation_id": 3104,
+        "visible_keypoints": 8,
+        "predicted_keypoints": 8,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 441.3895935166172,
+        "mean_normalized_error": 0.7855648585738901
+      },
+      {
+        "image_id": 10376,
+        "annotation_id": 3059,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 456.18471216679893,
+        "mean_normalized_error": 0.7618075512845531
+      },
+      {
+        "image_id": 10283,
+        "annotation_id": 2948,
+        "visible_keypoints": 13,
+        "predicted_keypoints": 13,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 402.0981414747257,
+        "mean_normalized_error": 0.7252042755823624
+      },
+      {
+        "image_id": 10802,
+        "annotation_id": 3140,
+        "visible_keypoints": 13,
+        "predicted_keypoints": 13,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 245.60746964991114,
+        "mean_normalized_error": 0.7288568916917105
+      },
+      {
+        "image_id": 10802,
+        "annotation_id": 3141,
+        "visible_keypoints": 9,
+        "predicted_keypoints": 9,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 488.7762502635179,
+        "mean_normalized_error": 0.829161139589946
+      },
+      {
+        "image_id": 10369,
+        "annotation_id": 3052,
+        "visible_keypoints": 5,
+        "predicted_keypoints": 5,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 94.27026667595825,
+        "mean_normalized_error": 0.6020004163036472
+      },
+      {
+        "image_id": 10765,
+        "annotation_id": 3109,
+        "visible_keypoints": 7,
+        "predicted_keypoints": 7,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 493.6081066109853,
+        "mean_normalized_error": 0.9348638382783812
+      },
+      {
+        "image_id": 10292,
+        "annotation_id": 2959,
+        "visible_keypoints": 8,
+        "predicted_keypoints": 8,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 593.7742420480788,
+        "mean_normalized_error": 0.8679277621735709
+      },
+      {
+        "image_id": 10332,
+        "annotation_id": 3014,
+        "visible_keypoints": 16,
+        "predicted_keypoints": 16,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 400.056634285695,
+        "mean_normalized_error": 0.6483806395417688
+      },
+      {
+        "image_id": 10314,
+        "annotation_id": 2987,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 455.78772820928356,
+        "mean_normalized_error": 0.7991603846662343
+      },
+      {
+        "image_id": 10314,
+        "annotation_id": 2988,
+        "visible_keypoints": 5,
+        "predicted_keypoints": 5,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 426.5768286420419,
+        "mean_normalized_error": 0.6865267818619168
+      },
+      {
+        "image_id": 10803,
+        "annotation_id": 3142,
+        "visible_keypoints": 8,
+        "predicted_keypoints": 8,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 548.8682349836604,
+        "mean_normalized_error": 0.9065975033758299
+      },
+      {
+        "image_id": 10803,
+        "annotation_id": 3143,
+        "visible_keypoints": 16,
+        "predicted_keypoints": 16,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 489.57434966862064,
+        "mean_normalized_error": 0.7520281206196268
+      },
+      {
+        "image_id": 10358,
+        "annotation_id": 3041,
+        "visible_keypoints": 11,
+        "predicted_keypoints": 11,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 402.21497697558897,
+        "mean_normalized_error": 0.672980550326937
+      },
+      {
+        "image_id": 10279,
+        "annotation_id": 2943,
+        "visible_keypoints": 3,
+        "predicted_keypoints": 3,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 571.4952063001955,
+        "mean_normalized_error": 0.9412638144668893
+      },
+      {
+        "image_id": 10338,
+        "annotation_id": 3021,
+        "visible_keypoints": 7,
+        "predicted_keypoints": 7,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 496.82336155641224,
+        "mean_normalized_error": 0.8792851819576747
+      },
+      {
+        "image_id": 10421,
+        "annotation_id": 3075,
+        "visible_keypoints": 6,
+        "predicted_keypoints": 6,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 430.7829801552284,
+        "mean_normalized_error": 0.566690218757949
+      },
+      {
+        "image_id": 10328,
+        "annotation_id": 3010,
+        "visible_keypoints": 6,
+        "predicted_keypoints": 6,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 532.3453475283151,
+        "mean_normalized_error": 0.6532951336718198
+      },
+      {
+        "image_id": 10373,
+        "annotation_id": 3056,
+        "visible_keypoints": 8,
+        "predicted_keypoints": 8,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 272.3904507626931,
+        "mean_normalized_error": 0.817956148725212
+      },
+      {
+        "image_id": 10808,
+        "annotation_id": 3149,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 698.3763724712697,
+        "mean_normalized_error": 0.8572811224031692
+      },
+      {
+        "image_id": 10326,
+        "annotation_id": 3007,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 563.9690742792116,
+        "mean_normalized_error": 0.8258730009131614
+      },
+      {
+        "image_id": 10326,
+        "annotation_id": 3008,
+        "visible_keypoints": 13,
+        "predicted_keypoints": 13,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 584.2921401700316,
+        "mean_normalized_error": 0.7843193742182327
+      },
+      {
+        "image_id": 10293,
+        "annotation_id": 2960,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 665.3609008319477,
+        "mean_normalized_error": 0.8763477071151513
+      },
+      {
+        "image_id": 10353,
+        "annotation_id": 3036,
+        "visible_keypoints": 12,
+        "predicted_keypoints": 12,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 555.6552355380869,
+        "mean_normalized_error": 0.7666887185942665
+      },
+      {
+        "image_id": 10344,
+        "annotation_id": 3027,
+        "visible_keypoints": 10,
+        "predicted_keypoints": 10,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 544.7288607553403,
+        "mean_normalized_error": 0.767683795140711
+      },
+      {
+        "image_id": 10676,
+        "annotation_id": 3100,
+        "visible_keypoints": 16,
+        "predicted_keypoints": 16,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 387.68572265509806,
+        "mean_normalized_error": 0.6991288878244034
+      },
+      {
+        "image_id": 10379,
+        "annotation_id": 3062,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 485.0721447534759,
+        "mean_normalized_error": 0.7243013629433341
+      },
+      {
+        "image_id": 10778,
+        "annotation_id": 3114,
+        "visible_keypoints": 6,
+        "predicted_keypoints": 6,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 547.9055715120139,
+        "mean_normalized_error": 0.8301027891913191
+      },
+      {
+        "image_id": 10336,
+        "annotation_id": 3019,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 441.3001376229919,
+        "mean_normalized_error": 0.6607651955030466
+      },
+      {
+        "image_id": 10443,
+        "annotation_id": 3077,
+        "visible_keypoints": 16,
+        "predicted_keypoints": 16,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 414.3971395498256,
+        "mean_normalized_error": 0.7407227452101763
+      },
+      {
+        "image_id": 10777,
+        "annotation_id": 3113,
+        "visible_keypoints": 10,
+        "predicted_keypoints": 10,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 539.8420461406156,
+        "mean_normalized_error": 0.8339181398714727
+      },
+      {
+        "image_id": 10310,
+        "annotation_id": 2982,
+        "visible_keypoints": 7,
+        "predicted_keypoints": 7,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 591.0840604319945,
+        "mean_normalized_error": 0.7566536530735776
+      },
+      {
+        "image_id": 10754,
+        "annotation_id": 3108,
+        "visible_keypoints": 11,
+        "predicted_keypoints": 11,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 408.5362776655907,
+        "mean_normalized_error": 0.8169843257881344
+      },
+      {
+        "image_id": 12528,
+        "annotation_id": 3207,
+        "visible_keypoints": 13,
+        "predicted_keypoints": 13,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 283.1785053569601,
+        "mean_normalized_error": 0.9385471319611641
+      },
+      {
+        "image_id": 17343,
+        "annotation_id": 3350,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 178.4913416982458,
+        "mean_normalized_error": 0.6714947637114641
+      },
+      {
+        "image_id": 13094,
+        "annotation_id": 3268,
+        "visible_keypoints": 12,
+        "predicted_keypoints": 12,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 349.8795652204512,
+        "mean_normalized_error": 0.7476332168992509
+      },
+      {
+        "image_id": 16868,
+        "annotation_id": 3342,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 188.26429376906378,
+        "mean_normalized_error": 0.6899878477319649
+      },
+      {
+        "image_id": 12659,
+        "annotation_id": 3225,
+        "visible_keypoints": 6,
+        "predicted_keypoints": 6,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 391.10258098585456,
+        "mean_normalized_error": 0.9191149488290143
+      },
+      {
+        "image_id": 17508,
+        "annotation_id": 3379,
+        "visible_keypoints": 9,
+        "predicted_keypoints": 9,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 131.98390202635943,
+        "mean_normalized_error": 0.8836116755734902
+      },
+      {
+        "image_id": 17508,
+        "annotation_id": 3380,
+        "visible_keypoints": 2,
+        "predicted_keypoints": 2,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 57.36975396073355,
+        "mean_normalized_error": 0.6992153175073779
+      },
+      {
+        "image_id": 17508,
+        "annotation_id": 3381,
+        "visible_keypoints": 6,
+        "predicted_keypoints": 6,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 67.79623734412822,
+        "mean_normalized_error": 0.7897176554365433
+      },
+      {
+        "image_id": 12572,
+        "annotation_id": 3213,
+        "visible_keypoints": 15,
+        "predicted_keypoints": 15,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 197.11863424781475,
+        "mean_normalized_error": 0.7910862685828594
+      },
+      {
+        "image_id": 13602,
+        "annotation_id": 3309,
+        "visible_keypoints": 13,
+        "predicted_keypoints": 13,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 224.5526594436396,
+        "mean_normalized_error": 0.8952077760080199
+      },
+      {
+        "image_id": 12482,
+        "annotation_id": 3202,
+        "visible_keypoints": 5,
+        "predicted_keypoints": 5,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 289.76496588121506,
+        "mean_normalized_error": 0.680717286005406
+      },
+      {
+        "image_id": 10932,
+        "annotation_id": 3174,
+        "visible_keypoints": 13,
+        "predicted_keypoints": 13,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 152.83923129974121,
+        "mean_normalized_error": 0.6916439601658084
+      },
+      {
+        "image_id": 10932,
+        "annotation_id": 3175,
+        "visible_keypoints": 8,
+        "predicted_keypoints": 8,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 154.89195088944064,
+        "mean_normalized_error": 0.9432714515915664
+      },
+      {
+        "image_id": 10946,
+        "annotation_id": 3179,
+        "visible_keypoints": 3,
+        "predicted_keypoints": 3,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 223.51860719461965,
+        "mean_normalized_error": 0.7817056323974527
+      },
+      {
+        "image_id": 17379,
+        "annotation_id": 3353,
+        "visible_keypoints": 6,
+        "predicted_keypoints": 6,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 209.45728074393608,
+        "mean_normalized_error": 0.8319726803692186
+      },
+      {
+        "image_id": 17379,
+        "annotation_id": 3354,
+        "visible_keypoints": 3,
+        "predicted_keypoints": 3,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 63.30806383682373,
+        "mean_normalized_error": 0.7674973402998444
+      },
+      {
+        "image_id": 12826,
+        "annotation_id": 3242,
+        "visible_keypoints": 11,
+        "predicted_keypoints": 11,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 303.3213963703575,
+        "mean_normalized_error": 0.7613934040082712
+      },
+      {
+        "image_id": 16379,
+        "annotation_id": 3332,
+        "visible_keypoints": 17,
+        "predicted_keypoints": 17,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 222.32007141659736,
+        "mean_normalized_error": 0.8328989879668486
+      },
+      {
+        "image_id": 13431,
+        "annotation_id": 3302,
+        "visible_keypoints": 12,
+        "predicted_keypoints": 12,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 369.68046889636156,
+        "mean_normalized_error": 0.7859140490792557
+      },
+      {
+        "image_id": 14468,
+        "annotation_id": 3324,
+        "visible_keypoints": 10,
+        "predicted_keypoints": 10,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 68.18257371973692,
+        "mean_normalized_error": 0.9469801905519016
+      },
+      {
+        "image_id": 14468,
+        "annotation_id": 3325,
+        "visible_keypoints": 15,
+        "predicted_keypoints": 15,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 77.24298998892763,
+        "mean_normalized_error": 0.786027898582528
+      },
+      {
+        "image_id": 12570,
+        "annotation_id": 3212,
+        "visible_keypoints": 8,
+        "predicted_keypoints": 8,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 324.5205362351195,
+        "mean_normalized_error": 0.7315852642677891
+      },
+      {
+        "image_id": 12730,
+        "annotation_id": 3234,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 343.41120067514913,
+        "mean_normalized_error": 0.7700983596195426
+      },
+      {
+        "image_id": 12949,
+        "annotation_id": 3258,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 345.0645463705998,
+        "mean_normalized_error": 0.7236745666660185
+      },
+      {
+        "image_id": 12180,
+        "annotation_id": 3199,
+        "visible_keypoints": 12,
+        "predicted_keypoints": 12,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 154.01653201603392,
+        "mean_normalized_error": 0.6894036132051679
+      },
+      {
+        "image_id": 13097,
+        "annotation_id": 3269,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 208.09456004355027,
+        "mean_normalized_error": 0.7612253385522875
+      },
+      {
+        "image_id": 13309,
+        "annotation_id": 3285,
+        "visible_keypoints": 12,
+        "predicted_keypoints": 12,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 400.44818684872394,
+        "mean_normalized_error": 0.8557542488360017
+      },
+      {
+        "image_id": 12435,
+        "annotation_id": 3201,
+        "visible_keypoints": 10,
+        "predicted_keypoints": 10,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 208.46287234723746,
+        "mean_normalized_error": 0.8402141561796768
+      },
+      {
+        "image_id": 17524,
+        "annotation_id": 3382,
+        "visible_keypoints": 7,
+        "predicted_keypoints": 7,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 157.48314525646657,
+        "mean_normalized_error": 0.7583936776584898
+      },
+      {
+        "image_id": 13646,
+        "annotation_id": 3310,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 61.688148159313215,
+        "mean_normalized_error": 0.771101851991415
+      },
+      {
+        "image_id": 13646,
+        "annotation_id": 3311,
+        "visible_keypoints": 3,
+        "predicted_keypoints": 3,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 64.94395328947864,
+        "mean_normalized_error": 0.8289441663346757
+      },
+      {
+        "image_id": 13646,
+        "annotation_id": 3312,
+        "visible_keypoints": 7,
+        "predicted_keypoints": 7,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 243.56481866066648,
+        "mean_normalized_error": 0.9417041458419477
+      },
+      {
+        "image_id": 12913,
+        "annotation_id": 3254,
+        "visible_keypoints": 7,
+        "predicted_keypoints": 7,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 386.0686908368264,
+        "mean_normalized_error": 0.8731547120199047
+      },
+      {
+        "image_id": 13386,
+        "annotation_id": 3294,
+        "visible_keypoints": 13,
+        "predicted_keypoints": 13,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 311.7435907739872,
+        "mean_normalized_error": 0.8066168623739588
+      },
+      {
+        "image_id": 10847,
+        "annotation_id": 3166,
+        "visible_keypoints": 13,
+        "predicted_keypoints": 13,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 174.60521796830997,
+        "mean_normalized_error": 0.8573925948329666
+      },
+      {
+        "image_id": 13389,
+        "annotation_id": 3295,
+        "visible_keypoints": 10,
+        "predicted_keypoints": 10,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 325.2600431439078,
+        "mean_normalized_error": 0.8070397376904929
+      },
+      {
+        "image_id": 12563,
+        "annotation_id": 3211,
+        "visible_keypoints": 16,
+        "predicted_keypoints": 16,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 359.59275721688863,
+        "mean_normalized_error": 0.7884441162634326
+      },
+      {
+        "image_id": 17462,
+        "annotation_id": 3372,
+        "visible_keypoints": 16,
+        "predicted_keypoints": 16,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 116.12030249371338,
+        "mean_normalized_error": 0.7499440271426838
+      },
+      {
+        "image_id": 17462,
+        "annotation_id": 3373,
+        "visible_keypoints": 7,
+        "predicted_keypoints": 7,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 111.1177473605453,
+        "mean_normalized_error": 0.8970155716099824
+      },
+      {
+        "image_id": 17462,
+        "annotation_id": 3374,
+        "visible_keypoints": 17,
+        "predicted_keypoints": 17,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 109.23953950425015,
+        "mean_normalized_error": 0.7871395230970326
+      },
+      {
+        "image_id": 17462,
+        "annotation_id": 3375,
+        "visible_keypoints": 12,
+        "predicted_keypoints": 12,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 113.10089394098138,
+        "mean_normalized_error": 1.0234641617839075
+      },
+      {
+        "image_id": 13144,
+        "annotation_id": 3272,
+        "visible_keypoints": 11,
+        "predicted_keypoints": 11,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 299.65583779222027,
+        "mean_normalized_error": 0.733314908697312
+      },
+      {
+        "image_id": 12618,
+        "annotation_id": 3218,
+        "visible_keypoints": 15,
+        "predicted_keypoints": 15,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.06666666666666667
+        },
+        "mean_pixel_error": 307.37667110593094,
+        "mean_normalized_error": 0.6968434071132988
+      },
+      {
+        "image_id": 13276,
+        "annotation_id": 3282,
+        "visible_keypoints": 12,
+        "predicted_keypoints": 12,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 230.30338005553858,
+        "mean_normalized_error": 0.889288413845267
+      },
+      {
+        "image_id": 12756,
+        "annotation_id": 3239,
+        "visible_keypoints": 5,
+        "predicted_keypoints": 5,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 300.88449769740504,
+        "mean_normalized_error": 0.7569475220360737
+      },
+      {
+        "image_id": 13155,
+        "annotation_id": 3273,
+        "visible_keypoints": 17,
+        "predicted_keypoints": 17,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 223.68175545907673,
+        "mean_normalized_error": 0.6388873613766365
+      },
+      {
+        "image_id": 12637,
+        "annotation_id": 3220,
+        "visible_keypoints": 17,
+        "predicted_keypoints": 17,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 347.1309898010159,
+        "mean_normalized_error": 0.8064530998966175
+      },
+      {
+        "image_id": 13338,
+        "annotation_id": 3287,
+        "visible_keypoints": 6,
+        "predicted_keypoints": 6,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 342.43823576829465,
+        "mean_normalized_error": 0.7819875581529158
+      },
+      {
+        "image_id": 13161,
+        "annotation_id": 3275,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 315.92462255286665,
+        "mean_normalized_error": 0.7353569700574913
+      },
+      {
+        "image_id": 12648,
+        "annotation_id": 3221,
+        "visible_keypoints": 17,
+        "predicted_keypoints": 17,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 217.64437288588783,
+        "mean_normalized_error": 0.7805939392405317
+      },
+      {
+        "image_id": 18347,
+        "annotation_id": 3665,
+        "visible_keypoints": 12,
+        "predicted_keypoints": 12,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 146.03528349015315,
+        "mean_normalized_error": 0.8302285108458856
+      },
+      {
+        "image_id": 18347,
+        "annotation_id": 3666,
+        "visible_keypoints": 17,
+        "predicted_keypoints": 17,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 146.23074904284684,
+        "mean_normalized_error": 0.7916633826239261
+      },
+      {
+        "image_id": 18971,
+        "annotation_id": 3805,
+        "visible_keypoints": 15,
+        "predicted_keypoints": 15,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 589.4505835596402,
+        "mean_normalized_error": 0.8924433906029315
+      },
+      {
+        "image_id": 18343,
+        "annotation_id": 3661,
+        "visible_keypoints": 16,
+        "predicted_keypoints": 16,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 182.51297474211236,
+        "mean_normalized_error": 0.8140765040564475
+      },
+      {
+        "image_id": 18357,
+        "annotation_id": 3678,
+        "visible_keypoints": 3,
+        "predicted_keypoints": 3,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 707.6551162525984,
+        "mean_normalized_error": 0.8727787396293684
+      },
+      {
+        "image_id": 18342,
+        "annotation_id": 3660,
+        "visible_keypoints": 12,
+        "predicted_keypoints": 12,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 343.85853110105336,
+        "mean_normalized_error": 0.8334697061672388
+      },
+      {
+        "image_id": 18307,
+        "annotation_id": 3622,
+        "visible_keypoints": 3,
+        "predicted_keypoints": 3,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 617.8255058951939,
+        "mean_normalized_error": 0.7568300008998609
+      },
+      {
+        "image_id": 18370,
+        "annotation_id": 3692,
+        "visible_keypoints": 17,
+        "predicted_keypoints": 17,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 430.42846045102647,
+        "mean_normalized_error": 0.8019516668566175
+      },
+      {
+        "image_id": 18882,
+        "annotation_id": 3796,
+        "visible_keypoints": 5,
+        "predicted_keypoints": 5,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 594.5300498118701,
+        "mean_normalized_error": 0.7115717929180322
+      },
+      {
+        "image_id": 19015,
+        "annotation_id": 3809,
+        "visible_keypoints": 3,
+        "predicted_keypoints": 3,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 638.5442126839099,
+        "mean_normalized_error": 0.8248025475441708
+      },
+      {
+        "image_id": 18321,
+        "annotation_id": 3639,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 320.3398721538751,
+        "mean_normalized_error": 0.9520273447271848
+      },
+      {
+        "image_id": 18893,
+        "annotation_id": 3797,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 528.6698765214267,
+        "mean_normalized_error": 0.6717148382126761
+      },
+      {
+        "image_id": 18403,
+        "annotation_id": 3726,
+        "visible_keypoints": 15,
+        "predicted_keypoints": 15,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 417.7261673134427,
+        "mean_normalized_error": 0.7713876312253317
+      },
+      {
+        "image_id": 18350,
+        "annotation_id": 3669,
+        "visible_keypoints": 17,
+        "predicted_keypoints": 17,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 313.2109783593274,
+        "mean_normalized_error": 0.77120534604937
+      },
+      {
+        "image_id": 18350,
+        "annotation_id": 3670,
+        "visible_keypoints": 7,
+        "predicted_keypoints": 7,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 248.02053710661698,
+        "mean_normalized_error": 0.8016611472074485
+      },
+      {
+        "image_id": 18350,
+        "annotation_id": 3671,
+        "visible_keypoints": 17,
+        "predicted_keypoints": 17,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 330.5665277075227,
+        "mean_normalized_error": 0.8400925079478521
+      },
+      {
+        "image_id": 18350,
+        "annotation_id": 3672,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 209.1242033884343,
+        "mean_normalized_error": 0.7385122998780139
+      },
+      {
+        "image_id": 18348,
+        "annotation_id": 3667,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 264.3357520719862,
+        "mean_normalized_error": 0.9036816064295541
+      },
+      {
+        "image_id": 18391,
+        "annotation_id": 3714,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 597.6831134400123,
+        "mean_normalized_error": 0.6784148677248586
+      },
+      {
+        "image_id": 19048,
+        "annotation_id": 3812,
+        "visible_keypoints": 8,
+        "predicted_keypoints": 8,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 463.39121024698625,
+        "mean_normalized_error": 0.6069407454330951
+      },
+      {
+        "image_id": 18320,
+        "annotation_id": 3638,
+        "visible_keypoints": 17,
+        "predicted_keypoints": 17,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 339.9884490471077,
+        "mean_normalized_error": 0.7616476375498676
+      },
+      {
+        "image_id": 18413,
+        "annotation_id": 3736,
+        "visible_keypoints": 6,
+        "predicted_keypoints": 6,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 666.9235191382289,
+        "mean_normalized_error": 1.069491072174832
+      },
+      {
+        "image_id": 18749,
+        "annotation_id": 3783,
+        "visible_keypoints": 12,
+        "predicted_keypoints": 12,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 224.04464985463198,
+        "mean_normalized_error": 0.840629253156405
+      },
+      {
+        "image_id": 18414,
+        "annotation_id": 3737,
+        "visible_keypoints": 7,
+        "predicted_keypoints": 7,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 643.2646236264303,
+        "mean_normalized_error": 0.8316230865687351
+      },
+      {
+        "image_id": 18604,
+        "annotation_id": 3765,
+        "visible_keypoints": 6,
+        "predicted_keypoints": 6,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 799.5056988949988,
+        "mean_normalized_error": 1.060182700330633
+      },
+      {
+        "image_id": 18360,
+        "annotation_id": 3681,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 263.79320615493833,
+        "mean_normalized_error": 0.7330983819856134
+      },
+      {
+        "image_id": 18356,
+        "annotation_id": 3677,
+        "visible_keypoints": 16,
+        "predicted_keypoints": 16,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 331.0478437567055,
+        "mean_normalized_error": 0.7458151439100973
+      },
+      {
+        "image_id": 18332,
+        "annotation_id": 3649,
+        "visible_keypoints": 15,
+        "predicted_keypoints": 15,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 326.68492279695676,
+        "mean_normalized_error": 0.5881834081988292
+      },
+      {
+        "image_id": 19237,
+        "annotation_id": 3831,
+        "visible_keypoints": 16,
+        "predicted_keypoints": 16,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 360.9873617125765,
+        "mean_normalized_error": 0.7342968095526672
+      },
+      {
+        "image_id": 18313,
+        "annotation_id": 3629,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 341.61003744302263,
+        "mean_normalized_error": 0.9517409339752693
+      },
+      {
+        "image_id": 18306,
+        "annotation_id": 3621,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 539.2383614551097,
+        "mean_normalized_error": 0.8317777239434102
+      },
+      {
+        "image_id": 18715,
+        "annotation_id": 3779,
+        "visible_keypoints": 12,
+        "predicted_keypoints": 12,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 617.8788349933069,
+        "mean_normalized_error": 0.8869937240634496
+      },
+      {
+        "image_id": 19070,
+        "annotation_id": 3814,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 533.84718033853,
+        "mean_normalized_error": 0.7328793954759523
+      },
+      {
+        "image_id": 18325,
+        "annotation_id": 3643,
+        "visible_keypoints": 11,
+        "predicted_keypoints": 11,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 516.7430843802837,
+        "mean_normalized_error": 0.8191597480276016
+      },
+      {
+        "image_id": 18527,
+        "annotation_id": 3755,
+        "visible_keypoints": 15,
+        "predicted_keypoints": 15,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 692.781799019979,
+        "mean_normalized_error": 0.8891607894205464
+      },
+      {
+        "image_id": 18993,
+        "annotation_id": 3807,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 556.9044488868374,
+        "mean_normalized_error": 0.7544447904659772
+      },
+      {
+        "image_id": 19104,
+        "annotation_id": 3818,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 548.9491835102432,
+        "mean_normalized_error": 0.8750530687183761
+      },
+      {
+        "image_id": 18328,
+        "annotation_id": 3646,
+        "visible_keypoints": 2,
+        "predicted_keypoints": 2,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 624.00509355086,
+        "mean_normalized_error": 0.7979728742583481
+      },
+      {
+        "image_id": 18385,
+        "annotation_id": 3707,
+        "visible_keypoints": 4,
+        "predicted_keypoints": 4,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 589.4855355517905,
+        "mean_normalized_error": 0.7362313884972753
+      },
+      {
+        "image_id": 18438,
+        "annotation_id": 3746,
+        "visible_keypoints": 13,
+        "predicted_keypoints": 13,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 619.2368041499559,
+        "mean_normalized_error": 0.8420292471391115
+      },
+      {
+        "image_id": 18305,
+        "annotation_id": 3620,
+        "visible_keypoints": 11,
+        "predicted_keypoints": 11,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 517.003021888622,
+        "mean_normalized_error": 0.7095694343060123
+      },
+      {
+        "image_id": 18375,
+        "annotation_id": 3697,
+        "visible_keypoints": 17,
+        "predicted_keypoints": 17,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 535.4208917527243,
+        "mean_normalized_error": 0.8162510828646927
+      },
+      {
+        "image_id": 18369,
+        "annotation_id": 3691,
+        "visible_keypoints": 11,
+        "predicted_keypoints": 11,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 287.3127182884013,
+        "mean_normalized_error": 0.8358897806762818
+      },
+      {
+        "image_id": 19137,
+        "annotation_id": 3821,
+        "visible_keypoints": 14,
+        "predicted_keypoints": 14,
+        "pck": {
+          "PCK@0.05": 0.0,
+          "PCK@0.1": 0.0
+        },
+        "mean_pixel_error": 504.24564124387365,
+        "mean_normalized_error": 0.7866211639382097
+      }
+    ],
+    "failure_analysis": {
+      "instances_without_prediction": 0,
+      "instances_without_prediction_rate": 0.0,
+      "visible_keypoints_missed_at_pck_0_1": 2267,
+      "visible_keypoint_miss_rate_at_pck_0_1": 0.999118554429264,
+      "detection_failure_rate": null,
+      "detection_note": "Oracle ground-truth boxes were used; detector failures were not measured."
+    }
+  },
+  "runtime": {
+    "device": "cpu",
+    "measurement": "Not recorded by the first evaluation run."
+  },
+  "visualizations_written": 12,
+  "evaluation_protocol": {
+    "independent": false,
+    "test_split_previously_inspected": true,
+    "confidence_interval": "95% nonparametric bootstrap by 200 dog images; 1000 replicates; seed 0",
+    "note": "The official AP-10K test predictions were inspected before training continued. This is not independent held-out evidence and must not guide checkpoint selection or claims."
+  },
+  "baseline": {
+    "method": "Place all 17 points at the center of the annotation ground-truth box.",
+    "evaluation_scope": "Same dog-only images, oracle boxes, PCK normalizer, and bootstrap protocol.",
+    "metrics": {
+      "PCK@0.05": {
+        "threshold": 0.05,
+        "normalizer": "sqrt(annotation_bbox_width * annotation_bbox_height)",
+        "overall": 0.00881445570736007,
+        "correct": 20,
+        "visible_keypoints": 2269,
+        "bootstrap_95_ci_by_image": {
+          "lower": 0.005045871559633028,
+          "upper": 0.01263537906137184,
+          "images": 200,
+          "replicates": 1000,
+          "seed": 0
+        },
+        "by_visibility": {
+          "visible": {
+            "correct": 20,
+            "keypoints": 2269,
+            "pck": 0.00881445570736007
+          },
+          "occluded": {
+            "correct": 0,
+            "keypoints": 0,
+            "pck": null
+          }
+        },
+        "per_keypoint": {
+          "left_eye": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 192,
+            "mean_pixel_error": 153.6654463053934,
+            "mean_normalized_error": 0.3297211868490797,
+            "predicted": 192
+          },
+          "right_eye": {
+            "pck": 0.010101010101010102,
+            "correct": 2,
+            "visible": 198,
+            "mean_pixel_error": 155.15760224836353,
+            "mean_normalized_error": 0.32726621875399914,
+            "predicted": 198
+          },
+          "nose": {
+            "pck": 0.009302325581395349,
+            "correct": 2,
+            "visible": 215,
+            "mean_pixel_error": 164.54704597099186,
+            "mean_normalized_error": 0.33436894045924354,
+            "predicted": 215
+          },
+          "neck": {
+            "pck": 0.024630541871921183,
+            "correct": 5,
+            "visible": 203,
+            "mean_pixel_error": 102.06847992965926,
+            "mean_normalized_error": 0.2107942285178094,
+            "predicted": 203
+          },
+          "root_of_tail": {
+            "pck": 0.009523809523809525,
+            "correct": 1,
+            "visible": 105,
+            "mean_pixel_error": 163.8436983199502,
+            "mean_normalized_error": 0.378702495290663,
+            "predicted": 105
+          },
+          "left_shoulder": {
+            "pck": 0.026143790849673203,
+            "correct": 4,
+            "visible": 153,
+            "mean_pixel_error": 111.09610691539694,
+            "mean_normalized_error": 0.24689180153560206,
+            "predicted": 153
+          },
+          "left_elbow": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 137,
+            "mean_pixel_error": 156.39757891695544,
+            "mean_normalized_error": 0.3511940055353781,
+            "predicted": 137
+          },
+          "left_front_paw": {
+            "pck": 0.008403361344537815,
+            "correct": 1,
+            "visible": 119,
+            "mean_pixel_error": 189.62674699543598,
+            "mean_normalized_error": 0.44152235725037253,
+            "predicted": 119
+          },
+          "right_shoulder": {
+            "pck": 0.020134228187919462,
+            "correct": 3,
+            "visible": 149,
+            "mean_pixel_error": 113.68153703970727,
+            "mean_normalized_error": 0.24516712450341752,
+            "predicted": 149
+          },
+          "right_elbow": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 130,
+            "mean_pixel_error": 152.33551211762307,
+            "mean_normalized_error": 0.33983190966024607,
+            "predicted": 130
+          },
+          "right_front_paw": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 120,
+            "mean_pixel_error": 194.08452891143952,
+            "mean_normalized_error": 0.44227200573324393,
+            "predicted": 120
+          },
+          "left_hip": {
+            "pck": 0.011363636363636364,
+            "correct": 1,
+            "visible": 88,
+            "mean_pixel_error": 128.45275502345845,
+            "mean_normalized_error": 0.2808901677480677,
+            "predicted": 88
+          },
+          "left_knee": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 90,
+            "mean_pixel_error": 166.0648553926213,
+            "mean_normalized_error": 0.3771299608398124,
+            "predicted": 90
+          },
+          "left_back_paw": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 96,
+            "mean_pixel_error": 186.95358236673476,
+            "mean_normalized_error": 0.4350704782638888,
+            "predicted": 96
+          },
+          "right_hip": {
+            "pck": 0.011111111111111112,
+            "correct": 1,
+            "visible": 90,
+            "mean_pixel_error": 124.00550245527167,
+            "mean_normalized_error": 0.28537658617787454,
+            "predicted": 90
+          },
+          "right_knee": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 89,
+            "mean_pixel_error": 164.0020502835461,
+            "mean_normalized_error": 0.37165371942966324,
+            "predicted": 89
+          },
+          "right_back_paw": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 95,
+            "mean_pixel_error": 184.46258309719235,
+            "mean_normalized_error": 0.42713687856620913,
+            "predicted": 95
+          }
+        }
+      },
+      "PCK@0.1": {
+        "threshold": 0.1,
+        "normalizer": "sqrt(annotation_bbox_width * annotation_bbox_height)",
+        "overall": 0.05156456588805641,
+        "correct": 117,
+        "visible_keypoints": 2269,
+        "bootstrap_95_ci_by_image": {
+          "lower": 0.04363001745200698,
+          "upper": 0.06050420168067227,
+          "images": 200,
+          "replicates": 1000,
+          "seed": 0
+        },
+        "by_visibility": {
+          "visible": {
+            "correct": 117,
+            "keypoints": 2269,
+            "pck": 0.05156456588805641
+          },
+          "occluded": {
+            "correct": 0,
+            "keypoints": 0,
+            "pck": null
+          }
+        },
+        "per_keypoint": {
+          "left_eye": {
+            "pck": 0.026041666666666668,
+            "correct": 5,
+            "visible": 192,
+            "mean_pixel_error": 153.6654463053934,
+            "mean_normalized_error": 0.3297211868490797,
+            "predicted": 192
+          },
+          "right_eye": {
+            "pck": 0.025252525252525252,
+            "correct": 5,
+            "visible": 198,
+            "mean_pixel_error": 155.15760224836353,
+            "mean_normalized_error": 0.32726621875399914,
+            "predicted": 198
+          },
+          "nose": {
+            "pck": 0.09767441860465116,
+            "correct": 21,
+            "visible": 215,
+            "mean_pixel_error": 164.54704597099186,
+            "mean_normalized_error": 0.33436894045924354,
+            "predicted": 215
+          },
+          "neck": {
+            "pck": 0.18226600985221675,
+            "correct": 37,
+            "visible": 203,
+            "mean_pixel_error": 102.06847992965926,
+            "mean_normalized_error": 0.2107942285178094,
+            "predicted": 203
+          },
+          "root_of_tail": {
+            "pck": 0.009523809523809525,
+            "correct": 1,
+            "visible": 105,
+            "mean_pixel_error": 163.8436983199502,
+            "mean_normalized_error": 0.378702495290663,
+            "predicted": 105
+          },
+          "left_shoulder": {
+            "pck": 0.0784313725490196,
+            "correct": 12,
+            "visible": 153,
+            "mean_pixel_error": 111.09610691539694,
+            "mean_normalized_error": 0.24689180153560206,
+            "predicted": 153
+          },
+          "left_elbow": {
+            "pck": 0.029197080291970802,
+            "correct": 4,
+            "visible": 137,
+            "mean_pixel_error": 156.39757891695544,
+            "mean_normalized_error": 0.3511940055353781,
+            "predicted": 137
+          },
+          "left_front_paw": {
+            "pck": 0.008403361344537815,
+            "correct": 1,
+            "visible": 119,
+            "mean_pixel_error": 189.62674699543598,
+            "mean_normalized_error": 0.44152235725037253,
+            "predicted": 119
+          },
+          "right_shoulder": {
+            "pck": 0.12080536912751678,
+            "correct": 18,
+            "visible": 149,
+            "mean_pixel_error": 113.68153703970727,
+            "mean_normalized_error": 0.24516712450341752,
+            "predicted": 149
+          },
+          "right_elbow": {
+            "pck": 0.015384615384615385,
+            "correct": 2,
+            "visible": 130,
+            "mean_pixel_error": 152.33551211762307,
+            "mean_normalized_error": 0.33983190966024607,
+            "predicted": 130
+          },
+          "right_front_paw": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 120,
+            "mean_pixel_error": 194.08452891143952,
+            "mean_normalized_error": 0.44227200573324393,
+            "predicted": 120
+          },
+          "left_hip": {
+            "pck": 0.022727272727272728,
+            "correct": 2,
+            "visible": 88,
+            "mean_pixel_error": 128.45275502345845,
+            "mean_normalized_error": 0.2808901677480677,
+            "predicted": 88
+          },
+          "left_knee": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 90,
+            "mean_pixel_error": 166.0648553926213,
+            "mean_normalized_error": 0.3771299608398124,
+            "predicted": 90
+          },
+          "left_back_paw": {
+            "pck": 0.0,
+            "correct": 0,
+            "visible": 96,
+            "mean_pixel_error": 186.95358236673476,
+            "mean_normalized_error": 0.4350704782638888,
+            "predicted": 96
+          },
+          "right_hip": {
+            "pck": 0.06666666666666667,
+            "correct": 6,
+            "visible": 90,
+            "mean_pixel_error": 124.00550245527167,
+            "mean_normalized_error": 0.28537658617787454,
+            "predicted": 90
+          },
+          "right_knee": {
+            "pck": 0.02247191011235955,
+            "correct": 2,
+            "visible": 89,
+            "mean_pixel_error": 164.0020502835461,
+            "mean_normalized_error": 0.37165371942966324,
+            "predicted": 89
+          },
+          "right_back_paw": {
+            "pck": 0.010526315789473684,
+            "correct": 1,
+            "visible": 95,
+            "mean_pixel_error": 184.46258309719235,
+            "mean_normalized_error": 0.42713687856620913,
+            "predicted": 95
+          }
+        }
+      },
+      "keypoint_error": {
+        "pixel_units": "original-image pixels",
+        "normalized_units": "error divided by sqrt(annotation_bbox_width * annotation_bbox_height)",
+        "predicted_keypoints": 2269,
+        "visible_keypoints": 2269,
+        "mean_pixel_error": 150.738645491254,
+        "mean_normalized_error": 0.3325364661006581
+      }
+    },
+    "selection_use": "Diagnostic comparison only; not used for checkpoint selection."
+  },
+  "training_loss_note": "The evaluated checkpoint used the original pixel-mean heatmap loss. The trainer loss normalization has since been corrected; no retraining was performed."
+}

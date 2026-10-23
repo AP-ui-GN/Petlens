@@ -15,7 +15,7 @@ import type { ModelInfo } from './modelInfo';
 
 export interface AnalyzeResult {
   ok: boolean;
-  /** dog-pose when the dog detector and ViTPose++ COCO-17 output path ran. The labels are human COCO-17 joint names applied inside a detected dog box and are not validated canine anatomical landmarks; stride length and left/right gait symmetry remain unmeasured. opencv-motion when only frame-to-frame picture change could be measured. movenet remains so older saved walks still validate. New results do not use movenet. */
+  /** coco-pose when the dog detector and ViTPose++ COCO-17 output path ran. The labels are human COCO-17 joint names applied inside a detected dog box and are not validated canine anatomical landmarks; stride length and left/right gait symmetry remain unmeasured. dog-pose is retained for previously saved results. opencv-motion when only frame-to-frame picture change could be measured. movenet remains so older saved walks still validate. */
   pipeline: AnalyzeResultPipeline;
   /** How much the measurements from this clip can be trusted. */
   signalQuality: AnalyzeResultSignalQuality;

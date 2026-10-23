@@ -26,7 +26,7 @@ const MAX_UPLOAD_BYTES = MAX_UPLOAD_MB * 1024 * 1024;
 
 const MAX_PET_NAME_LENGTH = 40;
 
-const KNOWN_PIPELINES = ["dog-pose", "movenet", "opencv-motion"];
+const KNOWN_PIPELINES = ["coco-pose", "dog-pose", "movenet", "opencv-motion"];
 
 const router: IRouter = Router();
 

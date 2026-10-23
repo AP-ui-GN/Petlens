@@ -15,6 +15,7 @@ __pycache__/
 
 # ML validation outputs and local media
 outputs/
+reports/canine-pose-test/
 validation_clips/
 *.mp4
 *.mov

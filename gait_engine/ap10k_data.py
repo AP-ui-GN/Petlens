@@ -6,10 +6,14 @@ import hashlib
 import json
 import math
 import re
+from collections import Counter
 from pathlib import Path, PurePosixPath
 from typing import Any
 
-from .pose_backend import AP10K_KEYPOINTS
+import cv2
+import numpy as np
+
+from .pose_backend import AP10K_KEYPOINTS, AP10K_SWAP_PAIRS
 
 SCHEMA_VERSION = "petlens.ap10k-17.v1"
 DATASET_URL = "https://github.com/AlexTheBad/AP-10K"
@@ -55,6 +59,21 @@ class DatasetValidationError(ValueError):
     """Raised when an AP-10K split cannot safely be used."""
 
 
+def flip_ap10k_keypoints(keypoints: np.ndarray, image_width: int) -> np.ndarray:
+    """Mirror points horizontally and exchange the AP-10K left/right channels."""
+
+    points = np.asarray(keypoints, dtype=np.float32)
+    if points.shape != (len(AP10K_KEYPOINTS), 3):
+        raise DatasetValidationError("A keypoint array must have 17 (x, y, visibility) rows.")
+    if image_width <= 0:
+        raise DatasetValidationError("Image width must be positive.")
+    flipped = points.copy()
+    flipped[:, 0] = image_width - 1 - flipped[:, 0]
+    for first, second in AP10K_SWAP_PAIRS:
+        flipped[[first, second]] = flipped[[second, first]]
+    return flipped
+
+
 def _normalize_keypoint_name(value: Any) -> str:
     compact = re.sub(r"[^a-z0-9]", "", str(value).lower())
     return _KEYPOINT_ALIASES.get(compact, compact)
@@ -85,12 +104,13 @@ def _identifier(value: Any, field: str) -> str | int:
     return value
 
 
-def _image_sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as image:
-        for chunk in iter(lambda: image.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+def _inspect_image(path: Path) -> tuple[str, int, int]:
+    contents = path.read_bytes()
+    image = cv2.imdecode(np.frombuffer(contents, dtype=np.uint8), cv2.IMREAD_UNCHANGED)
+    if image is None:
+        raise DatasetValidationError(f"Image cannot be decoded: {path.name!r}.")
+    height, width = image.shape[:2]
+    return hashlib.sha256(contents).hexdigest(), width, height
 
 
 def _category_names(payload: dict[str, Any]) -> dict[str | int, str]:
@@ -156,7 +176,12 @@ def _validate_annotations(
                 raise DatasetValidationError(f"{split}: image path escapes the dataset root.")
             if not image_path.is_file():
                 raise DatasetValidationError(f"{split}: missing image file {file_name!r}.")
-            hashes[str(image_id)] = _image_sha256(image_path)
+            digest, decoded_width, decoded_height = _inspect_image(image_path)
+            if (decoded_width, decoded_height) != (width, height):
+                raise DatasetValidationError(
+                    f"{split}: image dimensions do not match annotations for {file_name!r}."
+                )
+            hashes[str(image_id)] = digest
 
     canonical: list[dict[str, Any]] = []
     annotation_ids: set[Any] = set()
@@ -169,11 +194,12 @@ def _validate_annotations(
                 f"{split}: annotation {annotation.get('id')!r} references an unknown image."
             )
         annotation_id = annotation.get("id")
-        if annotation_id is not None:
-            annotation_id = _identifier(annotation_id, f"{split} annotation.id")
-            if annotation_id in annotation_ids:
-                raise DatasetValidationError(f"{split}: duplicate annotation id {annotation_id!r}.")
-            annotation_ids.add(annotation_id)
+        if annotation_id is None:
+            raise DatasetValidationError(f"{split}: each annotation needs an id.")
+        annotation_id = _identifier(annotation_id, f"{split} annotation.id")
+        if annotation_id in annotation_ids:
+            raise DatasetValidationError(f"{split}: duplicate annotation id {annotation_id!r}.")
+        annotation_ids.add(annotation_id)
         category_id = _identifier(
             annotation.get("category_id"), f"{split} annotation.category_id"
         )
@@ -284,8 +310,12 @@ def prepare_ap10k(
         records, groups, hashes = _validate_annotations(
             payload, split, image_root, verify_images=verify_images
         )
+        split_image_ids: set[str] = set()
         for record in records:
             image_id = str(record["image_id"])
+            if image_id in split_image_ids:
+                continue
+            split_image_ids.add(image_id)
             path_key = record["file_name"].casefold()
             for key, seen, label in (
                 (image_id, seen_image_ids, "image id"),
@@ -320,13 +350,24 @@ def prepare_ap10k(
         records = prepared_splits[split]
         split_path = output_dir / f"{split}.json"
         split_path.write_text(
-            json.dumps({"schema_version": SCHEMA_VERSION, "records": records}, indent=2) + "\n",
+            json.dumps(
+                {
+                    "schema_version": SCHEMA_VERSION,
+                    "keypoints": list(AP10K_KEYPOINTS),
+                    "records": records,
+                },
+                indent=2,
+            )
+            + "\n",
             encoding="utf-8",
         )
         manifest["splits"][split] = {
             "file": split_path.name,
             "annotation_count": len(records),
             "source_file": split_source_names[split],
+            "category_instance_counts": dict(
+                sorted(Counter(record["category_name"] for record in records).items())
+            ),
         }
 
     if not seen_groups:

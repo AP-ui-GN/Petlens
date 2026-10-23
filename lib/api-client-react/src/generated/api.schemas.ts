@@ -102,12 +102,12 @@ export interface AnalysisMeasurements {
   durationSeconds: number;
   meanKeypointConfidence?: number | null;
   /**
-     * Legacy field from the human-pose path. The dog-pose pipeline leaves this null.
+     * Legacy field from the human-pose path. The COCO-17 output path leaves this null; saved dog-pose results retain the same behavior.
      * @deprecated
      */
   leftAnkleMotion?: number | null;
   /**
-     * Legacy field from the human-pose path. The dog-pose pipeline leaves this null.
+     * Legacy field from the human-pose path. The COCO-17 output path leaves this null; saved dog-pose results retain the same behavior.
      * @deprecated
      */
   rightAnkleMotion?: number | null;
@@ -118,7 +118,7 @@ export interface AnalysisMeasurements {
   motionStd: number;
   motionCoverage: number;
   /**
-     * Legacy field from the human-pose path. The dog-pose pipeline leaves this null. Left-versus-right hip height is not computed.
+     * Legacy field from the human-pose path. The COCO-17 output path leaves this null; saved dog-pose results retain the same behavior. Left-versus-right hip height is not computed.
      * @deprecated
      */
   hipStability?: number | null;
@@ -154,6 +154,7 @@ export type ModelInfoPipeline = typeof ModelInfoPipeline[keyof typeof ModelInfoP
 
 
 export const ModelInfoPipeline = {
+  'coco-pose': 'coco-pose',
   'dog-pose': 'dog-pose',
   movenet: 'movenet',
   'opencv-motion': 'opencv-motion',
@@ -188,12 +189,13 @@ export interface AnalysisWeights {
 }
 
 /**
- * dog-pose when the dog detector and ViTPose++ COCO-17 output path ran. The labels are human COCO-17 joint names applied inside a detected dog box and are not validated canine anatomical landmarks; stride length and left/right gait symmetry remain unmeasured. opencv-motion when only frame-to-frame picture change could be measured. movenet remains so older saved walks still validate. New results do not use movenet.
+ * coco-pose when the dog detector and ViTPose++ COCO-17 output path ran. The labels are human COCO-17 joint names applied inside a detected dog box and are not validated canine anatomical landmarks; stride length and left/right gait symmetry remain unmeasured. dog-pose is retained for previously saved results. opencv-motion when only frame-to-frame picture change could be measured. movenet remains so older saved walks still validate.
  */
 export type AnalyzeResultPipeline = typeof AnalyzeResultPipeline[keyof typeof AnalyzeResultPipeline];
 
 
 export const AnalyzeResultPipeline = {
+  'coco-pose': 'coco-pose',
   'dog-pose': 'dog-pose',
   movenet: 'movenet',
   'opencv-motion': 'opencv-motion',
@@ -218,7 +220,7 @@ export type AnalyzeResultDiagnostics = { [key: string]: unknown };
 
 export interface AnalyzeResult {
   ok: boolean;
-  /** dog-pose when the dog detector and ViTPose++ COCO-17 output path ran. The labels are human COCO-17 joint names applied inside a detected dog box and are not validated canine anatomical landmarks; stride length and left/right gait symmetry remain unmeasured. opencv-motion when only frame-to-frame picture change could be measured. movenet remains so older saved walks still validate. New results do not use movenet. */
+  /** coco-pose when the dog detector and ViTPose++ COCO-17 output path ran. The labels are human COCO-17 joint names applied inside a detected dog box and are not validated canine anatomical landmarks; stride length and left/right gait symmetry remain unmeasured. dog-pose is retained for previously saved results. opencv-motion when only frame-to-frame picture change could be measured. movenet remains so older saved walks still validate. */
   pipeline: AnalyzeResultPipeline;
   /** How much the measurements from this clip can be trusted. */
   signalQuality: AnalyzeResultSignalQuality;

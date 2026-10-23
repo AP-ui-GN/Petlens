@@ -3,12 +3,13 @@
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 import cv2
 import numpy as np
 
-from gait_engine.pipeline import analyze_clip
+from gait_engine.pipeline import _try_pose, analyze_clip
 from gait_engine.pose_backend import (
     AP10K_SWAP_PAIRS,
     choose_initial_dog,
@@ -33,6 +34,22 @@ def write_clip(path: Path) -> None:
 
 
 class PoseFallbackTests(unittest.TestCase):
+    def test_non_coco_schema_is_disabled_for_app_inference(self):
+        result = SimpleNamespace(keypoint_schema="ap10k")
+
+        class Backend:
+            def process(self, frames):
+                return result
+
+        with (
+            patch("gait_engine.sampling.sample_video", return_value=[object()]),
+            patch("gait_engine.pose_backend.get_pose_backend", return_value=Backend()),
+        ):
+            pose, skip_reason = _try_pose(Path("unused.mp4"))
+
+        self.assertIsNone(pose)
+        self.assertIn("not enabled for application inference", skip_reason)
+
     def test_a_pose_exception_keeps_the_motion_result(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "walk.avi"
@@ -50,6 +67,46 @@ class PoseFallbackTests(unittest.TestCase):
         self.assertIsNotNone(result["diagnostics"]["poseSkipReason"])
         self.assertIn("RuntimeError", result["diagnostics"]["poseSkipReason"])
         self.assertIsNone(result["measurements"]["strideSymmetry"])
+
+    def test_coco_pose_is_not_reported_as_canine_pose_or_used_for_gait(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "walk.avi"
+            write_clip(path)
+            keypoints = np.zeros((8, 17, 3), dtype=np.float32)
+            keypoints[:, :, 0] = 100
+            keypoints[:, :, 1] = 100
+            keypoints[:, :, 2] = 0.9
+            backend_result = SimpleNamespace(
+                keypoints=keypoints,
+                boxes=[(20.0, 20.0, 200.0, 180.0)] * 8,
+                timestamps_seconds=np.arange(8, dtype=np.float64) / 10,
+                dog_frames_share=1.0,
+                multiple_dogs=False,
+                person_present=False,
+                detector_id="test/detector",
+                pose_id="test/coco-pose",
+                detector_revision=None,
+                pose_revision=None,
+                keypoint_schema="coco-17",
+                track_states=("tracked",) * 8,
+                track_segment_ids=(1,) * 8,
+            )
+
+            class Backend:
+                def process(self, frames):
+                    return backend_result
+
+            with patch("gait_engine.pose_backend.get_pose_backend", return_value=Backend()):
+                result = analyze_clip(path, use_pose=True)
+
+        self.assertEqual(result["pipeline"], "coco-pose")
+        self.assertEqual(result["modelInfo"]["pipeline"], "coco-pose")
+        self.assertIn("COCO-17 output", result["modelInfo"]["modelName"])
+        self.assertIn("unvalidated", result["modelInfo"]["modelName"])
+        self.assertIn("human COCO-17", result["signalNote"])
+        self.assertIsNone(result["measurements"]["strideSymmetry"])
+        self.assertEqual(result["measurements"]["poseSample"][4]["name"], "right_ear")
+        self.assertIn("pose-model", result["aiUse"])
 
 
 class PoseGeometryTests(unittest.TestCase):

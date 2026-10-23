@@ -32,9 +32,11 @@ DASHBOARD / HISTORY  pages/home.tsx, pages/history.tsx
 ```
 
 The UI never runs the vision pipeline. It sends a file and stores the JSON
-that comes back. The web app is the PetLens client built for the dog-pose pipeline.
+that comes back. The current pose result is `coco-pose`; `dog-pose` remains
+accepted for saved results from the earlier naming.
 The phone app in `mobile/` is the Expo client restored from `main` commit
-`1093191`, including that commit's screens. It can store a `dog-pose` result.
+`1093191`, including that commit's screens. It can store current and legacy
+pipeline results.
 The web package and folder names retain their historical `silverpaws-beta` identifier; the user-facing application and repository are named PetLens.
 
 ## Module map
@@ -66,7 +68,7 @@ The web package and folder names retain their historical `silverpaws-beta` ident
 - `sampling.py` — 15 fps samples and the busiest 20-second window
 - `features.py` — consistency, coverage, hip stability
 - `wellness.py` — factor scores, including mobility and historical change
-- `pipeline.py` — chooses `dog-pose` or `opencv-motion`, builds `AnalyzeResult`
+- `pipeline.py` — chooses `coco-pose` or `opencv-motion`, builds `AnalyzeResult`
 - `confidence.py` — pose confidence gate (`modelConfidence`, frames used)
 - `clip_quality.py` — duration, resolution, brightness, and motion notes
 

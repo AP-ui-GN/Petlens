@@ -362,7 +362,7 @@ export function isAnalyzeResult(value: unknown): value is AnalyzeResult {
     validPoseKeypoints;
   return (
     result.ok === true &&
-    (result.pipeline === 'dog-pose' || result.pipeline === 'movenet' || result.pipeline === 'opencv-motion') &&
+    (result.pipeline === 'coco-pose' || result.pipeline === 'dog-pose' || result.pipeline === 'movenet' || result.pipeline === 'opencv-motion') &&
     (result.signalQuality === 'good' || result.signalQuality === 'limited' || result.signalQuality === 'unusable') &&
     typeof result.signalNote === 'string' &&
     typeof result.observation === 'string' &&
@@ -377,7 +377,7 @@ export function isAnalyzeResult(value: unknown): value is AnalyzeResult {
     (result.confidence === undefined || isNullableNumber(result.confidence)) &&
     validWeights &&
     modelInfo !== null &&
-    (modelInfo.pipeline === 'dog-pose' || modelInfo.pipeline === 'movenet' || modelInfo.pipeline === 'opencv-motion') &&
+    (modelInfo.pipeline === 'coco-pose' || modelInfo.pipeline === 'dog-pose' || modelInfo.pipeline === 'movenet' || modelInfo.pipeline === 'opencv-motion') &&
     typeof modelInfo.modelName === 'string' &&
     typeof modelInfo.modelVersion === 'string' &&
     modelInfo.runsOn === 'server' &&

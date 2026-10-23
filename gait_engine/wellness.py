@@ -371,7 +371,7 @@ def build_limitations(pipeline: str, signal_quality: str) -> str:
             "No pet pose landmarks were used for this clip, so the measurements describe "
             "overall picture movement rather than individual limbs."
         )
-    elif pipeline == "dog-pose":
+    elif pipeline in ("coco-pose", "dog-pose"):
         parts.append(
             "The pose checkpoint emits COCO-17 human joint labels, not an AP-10K "
             "canine keypoint head. These labels are not validated canine anatomical "

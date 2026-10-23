@@ -192,7 +192,7 @@ class OpenCvResultTests(unittest.TestCase):
 class ModelInfoTests(unittest.TestCase):
     def test_current_pose_head_is_not_mislabeled_as_ap10k(self):
         info = _model_info(
-            "dog-pose",
+            "coco-pose",
             {
                 "pose_id": "usyd-community/vitpose-plus-base",
                 "pose_revision": None,
@@ -204,6 +204,18 @@ class ModelInfoTests(unittest.TestCase):
         self.assertIn("COCO-17 output", info["modelName"])
         self.assertIn("canine pose unvalidated", info["modelName"])
         self.assertNotIn("AP-10K", info["modelName"])
+        self.assertEqual(info["pipeline"], "coco-pose")
+
+    def test_coco_pose_signal_is_limited_by_schema_not_confidence(self):
+        from gait_engine.pipeline import _assess_signal
+
+        quality, note = _assess_signal(
+            "coco-pose",
+            {"frameCount": 20, "motionMean": 0.1, "symmetryReliable": False},
+        )
+
+        self.assertEqual(quality, "limited")
+        self.assertIn("human COCO-17", note)
 
 
 class AiUseIdTests(unittest.TestCase):

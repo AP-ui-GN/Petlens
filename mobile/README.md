@@ -93,7 +93,7 @@ npm run export:check     # full Metro bundle for iOS without a device
   1080p phone clip is usually 15–30 MB; the picker asks for medium quality.
 - Expo Go allows plain `http://` to the laptop. A store build would need
   HTTPS or an explicit cleartext exception.
-- The trend view only compares walks that share a pipeline (`dog-pose`,
-  `movenet`, or `opencv-motion`). A missing score is shown as “Not scored”,
-  not as zero. New server results use `dog-pose`. `movenet` remains so an
-  older saved walk can still be opened.
+- The trend view only compares walks that share a pipeline (`coco-pose`,
+  `dog-pose`, `movenet`, or `opencv-motion`). A missing score is shown as “Not scored”,
+  not as zero. New server results use `coco-pose`; `dog-pose` and `movenet`
+  remain supported for older saved walks.

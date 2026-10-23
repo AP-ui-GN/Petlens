@@ -41,7 +41,7 @@ export type Analysis = {
   source?: string;
   license?: string;
   sourceUrl?: string;
-  /** Which measurement path produced this record. New walks use dog-pose or opencv-motion. Older saved walks may use the previous pipeline name. */
+  /** Which measurement path produced this record. New walks use coco-pose or opencv-motion. Older saved walks may use dog-pose or movenet. */
   pipeline?: string;
   signalQuality?: string;
   signalNote?: string;

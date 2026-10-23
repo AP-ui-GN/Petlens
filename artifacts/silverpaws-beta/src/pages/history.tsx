@@ -44,6 +44,7 @@ const SIGNAL_LABELS: Record<string, string> = {
 };
 
 const PIPELINE_LABELS: Record<string, string> = {
+  'coco-pose': 'COCO-17 output (canine interpretation unvalidated)',
   'dog-pose': 'COCO-17 output (canine interpretation unvalidated)',
   movenet: 'Pose landmarks (older saved walk)',
   'opencv-motion': 'Picture motion only',
@@ -108,8 +109,8 @@ function PipelineVisual({ analysis }: { analysis: Analysis }) {
   const rawPoints = Array.isArray(sample) && sample.length > 0 ? sample : legacy;
   const points = Array.isArray(rawPoints) ? rawPoints.filter(isPosePoint) : [];
   const sampleFrame = Array.isArray(sample) && sample.length > 0;
-  const currentDogPose = analysis.pipeline === 'dog-pose';
-  const connections = currentDogPose ? COCO_EDGES : POSE_CONNECTIONS;
+  const currentCocoPose = analysis.pipeline === 'coco-pose' || analysis.pipeline === 'dog-pose';
+  const connections = currentCocoPose ? COCO_EDGES : POSE_CONNECTIONS;
   const lowConfidence =
     analysis.lowConfidence === true ||
     (typeof analysis.modelConfidence === 'number' && analysis.modelConfidence < 0.3) ||

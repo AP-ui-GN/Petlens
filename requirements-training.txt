@@ -1,0 +1,4 @@
+# Optional CPU-capable training stack; keep out of the application runtime.
+torch==2.6.0
+torchvision==0.21.0
+PyYAML==6.0.2

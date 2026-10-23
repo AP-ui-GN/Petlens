@@ -1,0 +1,26 @@
+dataset:
+  root: "C:/path/to/ap-10k"
+  prepared_dir: "C:/path/to/ap10k-prepared"
+  split_number: 1
+  species: "dog"
+  schema_version: "petlens.ap10k-17.v1"
+
+model:
+  architecture: "resnet18-topdown-heatmap"
+  initialization: "random"
+  input_width: 192
+  input_height: 256
+  heatmap_width: 48
+  heatmap_height: 64
+
+training:
+  output_dir: "outputs/ap10k-dog"
+  seed: 42
+  epochs: 30
+  batch_size: 8
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  patience: 5
+  num_workers: 0
+  horizontal_flip_probability: 0.5
+  gaussian_sigma: 2.0

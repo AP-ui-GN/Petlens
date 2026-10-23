@@ -128,7 +128,7 @@ jobs:
             import fs from "node:fs";
             const result = JSON.parse(fs.readFileSync("/tmp/analyze-result.json", "utf8"));
             if (result.ok !== true) throw new Error("API did not return a successful analysis");
-            if (!["dog-pose", "opencv-motion", "movenet"].includes(result.pipeline)) {
+            if (!["coco-pose", "dog-pose", "opencv-motion", "movenet"].includes(result.pipeline)) {
               throw new Error("Unexpected pipeline: " + String(result.pipeline));
             }
             if (!result.measurements || typeof result.measurements.frameCount !== "number") {

@@ -6,7 +6,7 @@ PetLens measures a walking clip. It does not diagnose pain, injury, or disease.
 
 | Pipeline | When | What it measures |
 | --- | --- | --- |
-| `dog-pose` | torch, transformers, and the weights load | A dog box, then 17 COCO joints. This checkpoint has no AP-10K head. |
+| `coco-pose` | torch, transformers, and the weights load | A dog box, then 17 human COCO joints. This checkpoint has no AP-10K head and is not canine pose. |
 | `opencv-motion` | pose cannot run, or pose throws | Frame-to-frame picture change only |
 
 New results do not use the older human-pose pipeline name. Saved walks that
@@ -68,10 +68,33 @@ Both models run on the server. The browser only uploads the clip.
 - Any link between a score and pain, injury, or disease
 
 The canine-pose development audit, dataset source review, preparation command,
-and acceptance gates are in [`docs/model_audit.md`](model_audit.md). No
-canine-pose checkpoint has been trained or validated in this checkout. The
-AP-10K annotation converter has only been exercised against generated test
-fixtures; it does not establish dataset accuracy or canine coverage.
+and acceptance gates are in [`docs/model_audit.md`](model_audit.md). The
+official AP-10K split 1 archive has been validated locally; it contains 794
+training, 110 validation, and 225 test `dog` instances. An optional
+random-initialization dog-only training experiment recorded four epochs in its
+logs/checkpoint; epoch 2 was the only epoch evaluated. The result is
+exploratory: the test split was inspected before training continued, and the
+exact epoch-2 checkpoint was overwritten. The epoch-4 local checkpoint
+successfully loads but was not evaluated. Neither checkpoint is part of
+application inference or appropriate for performance claims. A loss
+normalization flaw identified in the original run has since been corrected;
+the existing checkpoints were trained with the old loss and have not been
+retrained. The model's dog-only PCK@0.1 was 0.000881 (2/2,269 keypoints),
+below an oracle-box-center baseline of 0.051565 (117/2,269); both are
+diagnostic on the already-inspected test split. See
+[`reports/canine_pose_evaluation.md`](../reports/canine_pose_evaluation.md).
+Current app results remain COCO-17 or motion-only, never canine-pose results.
+
+| Canine-pose milestone | Status |
+| --- | --- |
+| Training code implemented | Yes; AP-10K preparation and dog-only heatmap trainer |
+| Training completed | Partial run only: four epochs logged/checkpointed; the configured 10 epochs were not completed |
+| Checkpoint loaded | Yes; epoch-4 state loaded and produced a finite `(1, 17, 64, 48)` heatmap tensor in a local smoke test |
+| Canine keypoints produced by inference | Yes on AP-10K still images with oracle boxes; exploratory epoch-2 predictions only |
+| Independent labeled evaluation | No; official test data has been inspected and is diagnostic-only |
+| Real dog-walking video tested with the canine model | No; no authorized video was available in the repository or local cache |
+| Gait metrics validated | No |
+| Canine feature integrated into the app | No; only COCO-17 or motion-only inference is enabled |
 
 Placeholder peak, spacing, and phase cutoffs are in `docs/GAIT_METRICS.md`.
 
@@ -98,8 +121,9 @@ a 5-second clip recorded sample time 0.949 s, pose including weight load
 of gait math and 40.127 s total, but it incorrectly ran AP-10K gait formulas
 on COCO-17 output. Those gait and total values are not valid for production
 gait-performance comparison. The one-shot `analyze_clip.py` run returned
-`pipeline: dog-pose` in 37.543 seconds on that same file. A new comparable
-benchmark has not yet been run; see the correction in `docs/HOSTING.md`.
+`pipeline: dog-pose` in 37.543 seconds on that same file; that legacy
+identifier is now `coco-pose`. A new comparable benchmark has not yet been
+run; see the correction in `docs/HOSTING.md`.
 Loading both models in a new process, without a clip, took 4.02 seconds of
 wall time. GitHub Actions built and smoke-tested the Docker image on October 22, 2026, but peak hosted RAM has not been measured.
 Details are in `docs/HOSTING.md`.

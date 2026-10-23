@@ -141,7 +141,7 @@ Do this with a dog the student has permission to film. Do not treat the result a
 
 1. Film from the side. Keep one dog's whole body in frame. Note the location, the date, the clip length, and whether a person is in frame. Write a one-sentence description of what the dog did before opening the result.
 2. Run `python scripts/check_setup.py`. Record Python, OpenCV, whether both weight files are present, the pose schema, and channel 4. Confirm channel 4 is the stored ear label, not a renamed joint. The command will not print CPU or CUDA.
-3. Analyze the clip in the web app, or with `scripts/analyze_clip.py`. Record the pipeline name (`opencv-motion` or `dog-pose`), the signal note, and the status text while it runs.
+3. Analyze the clip in the web app, or with `scripts/analyze_clip.py`. Record the pipeline name (`opencv-motion` or `coco-pose`), the signal note, and the status text while it runs.
 4. On the result, list every field that is a number and every field that says "Not measured". On this checkpoint, stride length and left/right symmetry must stay unmeasured. A zero in those fields is a defect, not a finding.
 5. If pose ran, check the keypoint names against the COCO-17 list. Channel 4 must be the right ear. Use `python scripts/check_pose_backend.py` as described in `docs/pose-validation.md` for a drawn-frame look. Do not score a nose-to-tail length.
 6. Compare the result only to the sentence written in step 1: was the dog moving, still, or hard to see? Agreement on that question is a sanity check. It is not an accuracy rate.

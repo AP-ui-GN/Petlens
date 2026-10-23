@@ -151,8 +151,9 @@ function PipelineVisual({ analysis }: { analysis: Analysis }) {
   const byName = new Map(points.map((point) => [point.name, point]));
   const cocoNamed = points.some((point) => point.name === 'right_ear' || point.name === 'left_wrist');
   const connections = cocoNamed ? COCO_EDGES : POSE_CONNECTIONS;
-  const title = analysis.pipeline === 'dog-pose' ? 'COCO-17 output summary' : analysis.pipeline === 'movenet' ? 'MoveNet landmark summary' : 'Saved landmark summary';
-  const caption = analysis.pipeline === 'dog-pose'
+  const isCocoPose = analysis.pipeline === 'coco-pose' || analysis.pipeline === 'dog-pose';
+  const title = isCocoPose ? 'COCO-17 output summary' : analysis.pipeline === 'movenet' ? 'MoveNet landmark summary' : 'Saved landmark summary';
+  const caption = isCocoPose
     ? 'Mean positions from confident frames. These are COCO-17 human joint labels applied inside a detected dog box, not validated canine anatomical landmarks. The head has no neck or tail-base point, so stride length and left/right gait symmetry are not measured.'
     : 'Mean normalized COCO-17 landmark positions from confident frames; canine anatomical interpretation is unvalidated.';
   return (

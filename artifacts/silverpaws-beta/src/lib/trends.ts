@@ -34,7 +34,8 @@ export type TrendSeries = {
 export type SparkPoint = { x: number; y: number; score: number };
 
 const PIPELINE_LABELS: Record<string, string> = {
-  "dog-pose": "Dog pose",
+  "coco-pose": "COCO-17 output (canine interpretation unvalidated)",
+  "dog-pose": "COCO-17 output (canine interpretation unvalidated)",
   movenet: "Pose landmarks (older saved walk)",
   "opencv-motion": "Picture motion only",
   unspecified: "Measurement method not recorded",

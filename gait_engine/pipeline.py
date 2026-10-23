@@ -5,7 +5,7 @@
 
 Two pipelines are supported and the best available one is chosen per clip:
 
-* ``dog-pose``      RT-DETR dog boxes and ViTPose++ COCO-17 output. The
+* ``coco-pose``     RT-DETR dog boxes and ViTPose++ COCO-17 output. The
                     checkpoint has no AP-10K canine keypoint head, so gait metrics
                     that require that schema remain unavailable.
 * ``opencv-motion`` frame-to-frame picture change only. Used whenever torch,
@@ -57,7 +57,7 @@ MIN_COMPARABLE_FRAMES = 5
 def _model_info(pipeline: str, pose: dict | None) -> dict[str, str]:
     """Describe the model that produced this result. Inference stays on the server."""
 
-    if pipeline == "dog-pose" and pose is not None:
+    if pipeline in ("coco-pose", "dog-pose") and pose is not None:
         version = pose["pose_id"]
         if pose.get("pose_revision"):
             version = f"{version}@{pose['pose_revision']}"
@@ -65,7 +65,7 @@ def _model_info(pipeline: str, pose: dict | None) -> dict[str, str]:
         if pose.get("detector_revision"):
             detector = f"{detector}@{pose['detector_revision']}"
         return {
-            "pipeline": "dog-pose",
+            "pipeline": pipeline,
             "modelName": f"RT-DETR ({detector}) + ViTPose++ COCO-17 output ({version}); canine pose unvalidated",
             "modelVersion": version,
             "runsOn": "server",
@@ -90,7 +90,7 @@ def ai_use_ids(pipeline: str) -> list[str]:
     """
 
     shared = ["motion-fallback", "scoring", "observation-rules"]
-    if pipeline == "dog-pose":
+    if pipeline in ("coco-pose", "dog-pose"):
         return ["dog-detector", "pose-model", *shared]
     if pipeline == "movenet":
         return ["pose-model", *shared]
@@ -160,6 +160,10 @@ def _try_pose(video_path: Path) -> tuple[Any | None, str | None]:
     try:
         frames = sample_video(video_path)
         result = get_pose_backend().process(frames)
+        if result.keypoint_schema != "coco-17":
+            raise ValueError(
+                f"Pose schema {result.keypoint_schema!r} is not enabled for application inference."
+            )
     except Exception as exc:  # noqa: BLE001 - any pose failure must fall back
         # Missing torch, missing weights, or a pose exception must not fail
         # the request. The motion pipeline can still measure the clip.
@@ -217,6 +221,13 @@ def _assess_signal(pipeline: str, measurements: dict) -> tuple[str, str]:
             "limited",
             "No pet pose landmarks were available for this clip, so stride symmetry "
             "was not measured.",
+        )
+
+    if pipeline == "coco-pose":
+        return (
+            "limited",
+            "The available pose head returns human COCO-17 landmarks, not validated canine "
+            "landmarks, so stride measurements were not made.",
         )
 
     if not measurements["symmetryReliable"]:
@@ -400,7 +411,7 @@ def analyze_clip(
     if use_pose:
         pose_payload, pose_skip_reason = _try_pose(path)
         if pose_payload is not None:
-            pipeline = "dog-pose"
+            pipeline = "coco-pose"
             keypoints = pose_payload["keypoints"]
             summary = summarize_keypoints(
                 keypoints,

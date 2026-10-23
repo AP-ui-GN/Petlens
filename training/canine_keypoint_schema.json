@@ -1,0 +1,178 @@
+{
+  "schema_version": "petlens.ap10k-17.v1",
+  "name": "AP-10K 17-point animal pose schema",
+  "source": "https://github.com/AlexTheBad/AP-10K",
+  "coordinate_convention": {
+    "origin": "top-left of the original image",
+    "x_axis": "increases to the right",
+    "y_axis": "increases downward",
+    "units": "pixels",
+    "bounding_box": "COCO xywh in original-image pixels"
+  },
+  "visibility": {
+    "0": "not labeled",
+    "1": "labeled but occluded; location inferred from body plan, pose, or symmetry",
+    "2": "labeled and visible"
+  },
+  "keypoints": [
+    {
+      "index": 0,
+      "id": "left_eye",
+      "name": "Left eye",
+      "annotation_name": "left_eye",
+      "anatomical_meaning": "Left eye landmark as named by AP-10K.",
+      "gait_use": "Not used for stride calculations."
+    },
+    {
+      "index": 1,
+      "id": "right_eye",
+      "name": "Right eye",
+      "annotation_name": "right_eye",
+      "anatomical_meaning": "Right eye landmark as named by AP-10K.",
+      "gait_use": "Not used for stride calculations."
+    },
+    {
+      "index": 2,
+      "id": "nose",
+      "name": "Nose",
+      "annotation_name": "nose",
+      "anatomical_meaning": "Nose landmark as named by AP-10K.",
+      "gait_use": "Head-position reference only; not validated on walking dogs."
+    },
+    {
+      "index": 3,
+      "id": "neck",
+      "name": "Neck",
+      "annotation_name": "neck",
+      "anatomical_meaning": "Neck landmark as named by AP-10K.",
+      "gait_use": "Potential body reference; requires side-view validation."
+    },
+    {
+      "index": 4,
+      "id": "root_of_tail",
+      "name": "Root of tail",
+      "annotation_name": "root_of_tail",
+      "anatomical_meaning": "Tail-root landmark as named by AP-10K.",
+      "gait_use": "Potential rear-body reference; requires side-view validation."
+    },
+    {
+      "index": 5,
+      "id": "left_shoulder",
+      "name": "Left shoulder",
+      "annotation_name": "left_shoulder",
+      "anatomical_meaning": "Left shoulder landmark as named by AP-10K.",
+      "gait_use": "Potential forelimb reference; requires side-view validation."
+    },
+    {
+      "index": 6,
+      "id": "left_elbow",
+      "name": "Left elbow",
+      "annotation_name": "left_elbow",
+      "anatomical_meaning": "Left elbow landmark as named by AP-10K.",
+      "gait_use": "Potential forelimb reference; requires side-view validation."
+    },
+    {
+      "index": 7,
+      "id": "left_front_paw",
+      "name": "Left front paw",
+      "annotation_name": "left_front_paw",
+      "anatomical_meaning": "Left front-paw landmark as named by AP-10K.",
+      "gait_use": "Potential paw trajectory; gait interpretation remains unvalidated."
+    },
+    {
+      "index": 8,
+      "id": "right_shoulder",
+      "name": "Right shoulder",
+      "annotation_name": "right_shoulder",
+      "anatomical_meaning": "Right shoulder landmark as named by AP-10K.",
+      "gait_use": "Potential forelimb reference; requires side-view validation."
+    },
+    {
+      "index": 9,
+      "id": "right_elbow",
+      "name": "Right elbow",
+      "annotation_name": "right_elbow",
+      "anatomical_meaning": "Right elbow landmark as named by AP-10K.",
+      "gait_use": "Potential forelimb reference; requires side-view validation."
+    },
+    {
+      "index": 10,
+      "id": "right_front_paw",
+      "name": "Right front paw",
+      "annotation_name": "right_front_paw",
+      "anatomical_meaning": "Right front-paw landmark as named by AP-10K.",
+      "gait_use": "Potential paw trajectory; gait interpretation remains unvalidated."
+    },
+    {
+      "index": 11,
+      "id": "left_hip",
+      "name": "Left hip",
+      "annotation_name": "left_hip",
+      "anatomical_meaning": "AP-10K's left hip label. Its documentation uses this label for the knee in digitigrade animals such as dogs.",
+      "gait_use": "Do not interpret as the anatomical hip for dogs without a validated remapping."
+    },
+    {
+      "index": 12,
+      "id": "left_knee",
+      "name": "Left knee",
+      "annotation_name": "left_knee",
+      "anatomical_meaning": "AP-10K's left knee label. Its documentation uses this label for the ankle in digitigrade animals such as dogs.",
+      "gait_use": "Do not interpret as the anatomical knee for dogs without a validated remapping."
+    },
+    {
+      "index": 13,
+      "id": "left_back_paw",
+      "name": "Left back paw",
+      "annotation_name": "left_back_paw",
+      "anatomical_meaning": "Left back-paw landmark as named by AP-10K.",
+      "gait_use": "Potential paw trajectory; gait interpretation remains unvalidated."
+    },
+    {
+      "index": 14,
+      "id": "right_hip",
+      "name": "Right hip",
+      "annotation_name": "right_hip",
+      "anatomical_meaning": "AP-10K's right hip label. Its documentation uses this label for the knee in digitigrade animals such as dogs.",
+      "gait_use": "Do not interpret as the anatomical hip for dogs without a validated remapping."
+    },
+    {
+      "index": 15,
+      "id": "right_knee",
+      "name": "Right knee",
+      "annotation_name": "right_knee",
+      "anatomical_meaning": "AP-10K's right knee label. Its documentation uses this label for the ankle in digitigrade animals such as dogs.",
+      "gait_use": "Do not interpret as the anatomical knee for dogs without a validated remapping."
+    },
+    {
+      "index": 16,
+      "id": "right_back_paw",
+      "name": "Right back paw",
+      "annotation_name": "right_back_paw",
+      "anatomical_meaning": "Right back-paw landmark as named by AP-10K.",
+      "gait_use": "Potential paw trajectory; gait interpretation remains unvalidated."
+    }
+  ],
+  "skeleton_connections": [
+    [0, 2],
+    [1, 2],
+    [2, 3],
+    [3, 4],
+    [3, 5],
+    [5, 6],
+    [6, 7],
+    [3, 8],
+    [8, 9],
+    [9, 10],
+    [4, 11],
+    [11, 12],
+    [12, 13],
+    [4, 14],
+    [14, 15],
+    [15, 16]
+  ],
+  "use_limitations": [
+    "The AP-10K keypoint schema is shared across animal species and is not a dog-only annotation protocol.",
+    "AP-10K's documentation states that for digitigrade animals the labels hip and knee denote the knee and ankle, respectively.",
+    "Image-level pose metrics do not validate video tracking, walking gait, or clinical interpretation."
+  ]
+}

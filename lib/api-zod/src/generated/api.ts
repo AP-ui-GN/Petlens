@@ -41,7 +41,7 @@ export const analyzeMovementClipResponseMeasurementsPoseSampleItemConfidenceMax 
 
 export const AnalyzeMovementClipResponse = zod.object({
   "ok": zod.boolean(),
-  "pipeline": zod.enum(['dog-pose', 'movenet', 'opencv-motion']).describe('dog-pose when the dog detector and ViTPose++ COCO-17 output path ran. The labels are human COCO-17 joint names applied inside a detected dog box and are not validated canine anatomical landmarks; stride length and left\/right gait symmetry remain unmeasured. opencv-motion when only frame-to-frame picture change could be measured. movenet remains so older saved walks still validate. New results do not use movenet.'),
+  "pipeline": zod.enum(['coco-pose', 'dog-pose', 'movenet', 'opencv-motion']).describe('coco-pose when the dog detector and ViTPose++ COCO-17 output path ran. The labels are human COCO-17 joint names applied inside a detected dog box and are not validated canine anatomical landmarks; stride length and left\/right gait symmetry remain unmeasured. dog-pose is retained for previously saved results. opencv-motion when only frame-to-frame picture change could be measured. movenet remains so older saved walks still validate.'),
   "signalQuality": zod.enum(['good', 'limited', 'unusable']).describe('How much the measurements from this clip can be trusted.'),
   "signalNote": zod.string().describe('Plain-language reason for signalQuality, safe to display.'),
   "measurements": zod.object({
@@ -54,14 +54,14 @@ export const AnalyzeMovementClipResponse = zod.object({
   "frameCount": zod.number(),
   "durationSeconds": zod.number(),
   "meanKeypointConfidence": zod.number().nullish(),
-  "leftAnkleMotion": zod.number().nullish().describe('Legacy field from the human-pose path. The dog-pose pipeline leaves this null.'),
-  "rightAnkleMotion": zod.number().nullish().describe('Legacy field from the human-pose path. The dog-pose pipeline leaves this null.'),
+  "leftAnkleMotion": zod.number().nullish().describe('Legacy field from the human-pose path. The COCO-17 output path leaves this null; saved dog-pose results retain the same behavior.'),
+  "rightAnkleMotion": zod.number().nullish().describe('Legacy field from the human-pose path. The COCO-17 output path leaves this null; saved dog-pose results retain the same behavior.'),
   "strideSymmetry": zod.number().nullish().describe('Worse of the measured front and rear pair symmetries, from 0 to 1. Null when no pair was measured.'),
   "asymmetryPercent": zod.number().nullish(),
   "motionMean": zod.number(),
   "motionStd": zod.number(),
   "motionCoverage": zod.number(),
-  "hipStability": zod.number().nullish().describe('Legacy field from the human-pose path. The dog-pose pipeline leaves this null. Left-versus-right hip height is not computed.'),
+  "hipStability": zod.number().nullish().describe('Legacy field from the human-pose path. The COCO-17 output path leaves this null; saved dog-pose results retain the same behavior. Left-versus-right hip height is not computed.'),
   "symmetryReliable": zod.boolean(),
   "view": zod.object({
   "sideOn": zod.boolean().nullish(),
@@ -135,7 +135,7 @@ export const AnalyzeMovementClipResponse = zod.object({
   "historicalChange": zod.number().optional()
 }).optional().describe('Weights used to blend the available factors into overallScore.'),
   "modelInfo": zod.object({
-  "pipeline": zod.enum(['dog-pose', 'movenet', 'opencv-motion']),
+  "pipeline": zod.enum(['coco-pose', 'dog-pose', 'movenet', 'opencv-motion']),
   "modelName": zod.string(),
   "modelVersion": zod.string(),
   "runsOn": zod.enum(['server'])
