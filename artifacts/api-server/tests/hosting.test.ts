@@ -20,9 +20,10 @@ import {
   tryStartAnalysis,
 } from "../src/lib/hosting.ts";
 
-test("production requires https except for the health check", () => {
+test("production requires https except for health checks", () => {
   assert.equal(httpsOnlyApplies("production", "/api/analyze"), true);
   assert.equal(httpsOnlyApplies("production", "/api/healthz"), false);
+  assert.equal(httpsOnlyApplies("production", "/api/readyz"), false);
   assert.equal(httpsOnlyApplies("development", "/api/analyze"), false);
   assert.equal(requestIsHttps(true, undefined), true);
   assert.equal(requestIsHttps(false, "https", true), true);

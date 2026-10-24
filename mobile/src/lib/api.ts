@@ -346,7 +346,8 @@ export function isAnalyzeResult(value: unknown): value is AnalyzeResult {
         if (!isRecord(point)) return false;
         const time = point.timeSeconds;
         const movement = point.movement;
-        const priorTime = index > 0 && isRecord(points[index - 1]) ? points[index - 1].timeSeconds : -1;
+        const previousPoint = index > 0 ? points[index - 1] : null;
+        const priorTime = isRecord(previousPoint) ? previousPoint.timeSeconds : -1;
         return (
           isFiniteNumber(time) &&
           time >= 0 &&

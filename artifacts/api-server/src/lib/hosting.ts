@@ -165,10 +165,15 @@ export function requestIsHttps(
   return proto === "https";
 }
 
-/** Health checks stay on HTTP so the container probe can reach them. */
+/** Liveness and readiness checks stay on HTTP so host probes can reach them. */
 export function httpsOnlyApplies(nodeEnv: string | undefined, path: string): boolean {
   if (nodeEnv !== "production") return false;
-  return path !== "/api/healthz" && path !== "/healthz";
+  return (
+    path !== "/api/healthz" &&
+    path !== "/healthz" &&
+    path !== "/api/readyz" &&
+    path !== "/readyz"
+  );
 }
 
 /**
