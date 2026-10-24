@@ -50,10 +50,12 @@ run `npm run start:tunnel` instead and set the API address by hand.
 | Home | See each pet with its latest overall score; add or edit pets |
 | Analyze | Pick a pet, **Record** a walk with the camera or **Choose video**, watch upload progress, get the saved result |
 | History | Every saved walk, filterable by pet, with a trend comparison |
-| Walk details | Overall score, five factors with bars, **raw measurements** grid, observation text, limitations, share sheet, delete |
+| Walk details | Overall score, five factors with bars, **raw measurements** grid, per-video motion graph, available experimental limb-SI graph, observation text, limitations, share sheet, delete |
 | Settings | API address + connection test, delete local data, full safety text |
 
 Everything is stored on the phone with AsyncStorage. There are no accounts.
+The **Formulas and scientific evidence** page explains the symmetry formula,
+camera/model limitations, data provenance, and peer-reviewed references.
 
 ## Layout
 
@@ -63,6 +65,7 @@ mobile/
     _layout.tsx             providers + root stack
     (tabs)/                 Home, Analyze, History, Settings
     history/[id].tsx        one saved walk
+    methodology.tsx         measurement formulas and evidence limits
     pet/[id].tsx            create ("new") or edit a pet
   src/
     lib/types.ts            mirrors lib/api-spec/openapi.yaml
@@ -71,7 +74,7 @@ mobile/
     lib/format.ts           labels and number formatting
     lib/disclaimers.ts      same text as the web app
     hooks/use-local-data.tsx  one in-memory copy of pets + walks
-    components/             ui.tsx, score.tsx, trend-panel.tsx, disclaimer-footer.tsx
+    components/             ui.tsx, score.tsx, trend-panel.tsx, scientific-charts.tsx
   metro.config.js           keeps Metro inside this folder (pnpm monorepo above)
 ```
 
@@ -86,6 +89,10 @@ npm run typecheck        # tsc --noEmit
 npm run doctor           # expo-doctor (21 checks)
 npm run export:check     # full Metro bundle for iOS without a device
 ```
+
+The production EAS profile is configured for an Android APK, but an APK build
+still requires a deployed HTTPS API address and authorized EAS credentials.
+See [`../docs/MOBILE_RELEASE.md`](../docs/MOBILE_RELEASE.md).
 
 ## Limits worth knowing
 

@@ -332,6 +332,49 @@ export function isAnalyzeResult(value: unknown): value is AnalyzeResult {
           keypoint.confidence <= 1
         );
       }));
+  const motionTrace = measurements?.motionTrace;
+  const validMotionTrace =
+    motionTrace === undefined ||
+    motionTrace === null ||
+    (isRecord(motionTrace) &&
+    typeof motionTrace.sampleCount === 'number' &&
+    Number.isInteger(motionTrace.sampleCount) &&
+      motionTrace.sampleCount >= 0 &&
+      Array.isArray(motionTrace.points) &&
+      motionTrace.points.length <= 120 &&
+      motionTrace.points.every((point: unknown, index: number, points: unknown[]) => {
+        if (!isRecord(point)) return false;
+        const time = point.timeSeconds;
+        const movement = point.movement;
+        const priorTime = index > 0 && isRecord(points[index - 1]) ? points[index - 1].timeSeconds : -1;
+        return (
+          isFiniteNumber(time) &&
+          time >= 0 &&
+          isFiniteNumber(priorTime) &&
+          time >= priorTime &&
+          isFiniteNumber(movement) &&
+          movement >= 0 &&
+          movement <= 1
+        );
+      }));
+  const limbSymmetryIndex = measurements?.limbSymmetryIndex;
+  const validIndexPair = (value: unknown) =>
+    value === undefined ||
+    value === null ||
+    (isRecord(value) &&
+      ['signed', 'absolute'].every((key) => {
+        if (!(key in value)) return true;
+        const index = value[key];
+        if (index === null) return true;
+        if (!isFiniteNumber(index)) return false;
+        return key === 'signed' ? index >= -200 && index <= 200 : index >= 0 && index <= 200;
+      }));
+  const validLimbSymmetryIndex =
+    limbSymmetryIndex === undefined ||
+    limbSymmetryIndex === null ||
+    (isRecord(limbSymmetryIndex) &&
+      validIndexPair(limbSymmetryIndex.front) &&
+      validIndexPair(limbSymmetryIndex.rear));
   const validFactors = factors !== null && hasOptionalNullableNumbers(factors, [
     'movementConsistency',
     'symmetry',
@@ -359,7 +402,9 @@ export function isAnalyzeResult(value: unknown): value is AnalyzeResult {
       'asymmetryPercent',
       'hipStability',
     ]) &&
-    validPoseKeypoints;
+    validPoseKeypoints &&
+    validMotionTrace &&
+    validLimbSymmetryIndex;
   return (
     result.ok === true &&
     (result.pipeline === 'coco-pose' || result.pipeline === 'dog-pose' || result.pipeline === 'movenet' || result.pipeline === 'opencv-motion') &&

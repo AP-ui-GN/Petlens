@@ -43,6 +43,14 @@ class SymmetricWalkTests(unittest.TestCase):
 
         self.assertGreaterEqual(result["limbSymmetry"]["front"], 0.95)
         self.assertGreaterEqual(result["limbSymmetry"]["rear"], 0.95)
+        self.assertAlmostEqual(
+            result["limbSymmetryIndex"]["front"]["signed"], 0.0, delta=5.0
+        )
+        self.assertAlmostEqual(
+            result["limbSymmetry"]["front"],
+            1.0 - result["limbSymmetryIndex"]["front"]["absolute"] / 200.0,
+            places=3,
+        )
         self.assertLess(result["headBobAsymmetry"], 0.2)
         self.assertLess(result["pelvisAsymmetry"], 0.2)
         self.assertTrue(result["view"]["sideOn"])
@@ -54,6 +62,12 @@ class SymmetricWalkTests(unittest.TestCase):
         self.assertAlmostEqual(result["limbSymmetry"]["rear"], 0.82, delta=0.05)
         self.assertGreaterEqual(result["limbSymmetry"]["front"], 0.95)
         self.assertAlmostEqual(result["strideSymmetry"], result["limbSymmetry"]["rear"], places=3)
+        self.assertGreater(result["limbSymmetryIndex"]["rear"]["signed"], 0)
+        self.assertAlmostEqual(
+            result["limbSymmetry"]["rear"],
+            1.0 - result["limbSymmetryIndex"]["rear"]["absolute"] / 200.0,
+            places=3,
+        )
 
     def test_one_smaller_dip_raises_the_asymmetry_index(self):
         even = _measure()
@@ -79,6 +93,7 @@ class SymmetricWalkTests(unittest.TestCase):
 
         self.assertIsNone(result["strideSymmetry"])
         self.assertIsNone(result["limbSymmetry"]["front"])
+        self.assertIsNone(result["limbSymmetryIndex"]["front"]["signed"])
         self.assertNotEqual(result["strideSymmetry"], 0)
         self.assertTrue(result["notMeasuredReasons"])
 

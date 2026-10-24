@@ -5,6 +5,8 @@
  * API specification
  * OpenAPI spec version: 0.1.0
  */
+import type { LimbSymmetryIndex } from './limbSymmetryIndex';
+import type { MotionTrace } from './motionTrace';
 import type { PairValues } from './pairValues';
 import type { PoseKeypointSummary } from './poseKeypointSummary';
 import type { SideOnView } from './sideOnView';
@@ -36,6 +38,10 @@ export interface AnalysisMeasurements {
   motionMean: number;
   motionStd: number;
   motionCoverage: number;
+  /** Up to 120 timestamped averages of the frame-pair motion signal. This is whole-picture change, not a limb or gait measurement. Optional for compatibility with saved results from older clients. */
+  motionTrace?: MotionTrace;
+  /** Signed and absolute SI values for paired AP-10K landmark excursions. Positive signed values mean the left excursion was larger. These remain experimental and are absent for the current COCO-17 model. */
+  limbSymmetryIndex?: LimbSymmetryIndex;
   /**
      * Legacy field from the human-pose path. The COCO-17 output path leaves this null; saved dog-pose results retain the same behavior. Left-versus-right hip height is not computed.
      * @deprecated

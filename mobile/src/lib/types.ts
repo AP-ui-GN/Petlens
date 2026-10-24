@@ -30,6 +30,22 @@ export type PoseKeypointSummary = {
   confidence: number;
 };
 
+export type MotionTracePoint = {
+  timeSeconds: number;
+  movement: number;
+};
+
+export type MotionTrace = {
+  /** Number of decoded frame comparisons before downsampling. */
+  sampleCount: number;
+  points: MotionTracePoint[];
+};
+
+export type SymmetryIndexPair = {
+  signed?: number | null;
+  absolute?: number | null;
+};
+
 export type AnalysisMeasurements = {
   poseKeypoints?: PoseKeypointSummary[] | null;
   frameCount: number;
@@ -42,6 +58,7 @@ export type AnalysisMeasurements = {
   motionMean: number;
   motionStd: number;
   motionCoverage: number;
+  motionTrace?: MotionTrace | null;
   hipStability?: number | null;
   symmetryReliable: boolean;
   strides?: {
@@ -51,6 +68,10 @@ export type AnalysisMeasurements = {
     rearRight?: { strideCount?: number | null } | null;
   } | null;
   limbSymmetry?: { front?: number | null; rear?: number | null } | null;
+  limbSymmetryIndex?: {
+    front?: SymmetryIndexPair | null;
+    rear?: SymmetryIndexPair | null;
+  } | null;
   strideLengthBodyLengths?: { front?: number | null; rear?: number | null } | null;
   cadenceStridesPerMinute?: number | null;
   strideTimeCv?: number | null;

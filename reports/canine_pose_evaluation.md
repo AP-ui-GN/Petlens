@@ -1,5 +1,10 @@
 # Canine Pose Evaluation
 
+- Reproducible figure: [`canine_pose_exploratory.svg`](canine_pose_exploratory.svg),
+  generated with `python scripts/plot_canine_pose_results.py`.
+- The four recorded training/validation objective values are preserved in
+  [`canine_pose_training.csv`](canine_pose_training.csv). They come from the
+  local four-epoch run log; they do not establish convergence or model readiness.
 - Status: exploratory measurement, not an independent held-out result
 - Model: PetLens AP-10K dog-only ResNet-18 heatmap (`2c408756-94ed-4ed8-be40-6efc615236f8`)
 - Training: epoch 2 of 4 recorded epochs; random initialization; 99.156 seconds for the initial two-epoch run on CPU. The exact continuation duration is unavailable.

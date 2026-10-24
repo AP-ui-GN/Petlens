@@ -123,6 +123,8 @@ npm run export:check
 The current mobile dependency security review, including unresolved
 transitive advisories, is documented in
 [`docs/MOBILE_SECURITY.md`](docs/MOBILE_SECURITY.md).
+For an installable Android APK, production API setup, and EAS build
+instructions, see [`docs/MOBILE_RELEASE.md`](docs/MOBILE_RELEASE.md).
 
 ## Project structure
 

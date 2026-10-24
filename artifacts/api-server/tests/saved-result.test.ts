@@ -82,6 +82,50 @@ test("a saved motion result matches the contract and leaves stride unmeasured", 
   assert.notEqual(parsed.data.measurements.strideSymmetry, 0);
 });
 
+test("motion traces and experimental symmetry indices match the contract", () => {
+  const result = {
+    ...motionResult,
+    measurements: {
+      ...motionResult.measurements,
+      motionTrace: {
+        sampleCount: 24,
+        points: [
+          { timeSeconds: 0.02, movement: 0.1 },
+          { timeSeconds: 0.06, movement: 0.2 },
+        ],
+      },
+      limbSymmetryIndex: {
+        front: { signed: 20, absolute: 20 },
+        rear: { signed: -40, absolute: 40 },
+      },
+    },
+  };
+  assert.equal(AnalyzeMovementClipResponse.safeParse(result).success, true);
+
+  const invalidTrace = {
+    ...result,
+    measurements: {
+      ...result.measurements,
+      motionTrace: {
+        sampleCount: 1,
+        points: [{ timeSeconds: 0.02, movement: 1.1 }],
+      },
+    },
+  };
+  assert.equal(AnalyzeMovementClipResponse.safeParse(invalidTrace).success, false);
+
+  const invalidSymmetry = {
+    ...result,
+    measurements: {
+      ...result.measurements,
+      limbSymmetryIndex: {
+        front: { signed: 201, absolute: 201 },
+      },
+    },
+  };
+  assert.equal(AnalyzeMovementClipResponse.safeParse(invalidSymmetry).success, false);
+});
+
 test("a pipeline failure is not treated as a saved result", () => {
   const failure = { ok: false, error: "The clip could not be analyzed." };
   assert.equal(isFinishedAnalysis(failure), false);

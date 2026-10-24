@@ -28,6 +28,28 @@ export const analyzeMovementClipResponseMeasurementsPoseKeypointsItemYMax = 1;
 export const analyzeMovementClipResponseMeasurementsPoseKeypointsItemConfidenceMin = 0;
 export const analyzeMovementClipResponseMeasurementsPoseKeypointsItemConfidenceMax = 1;
 
+export const analyzeMovementClipResponseMeasurementsMotionTraceSampleCountMin = 0;
+export const analyzeMovementClipResponseMeasurementsMotionTraceSampleCountMultipleOf = 1;
+
+export const analyzeMovementClipResponseMeasurementsMotionTracePointsItemTimeSecondsMin = 0;
+
+export const analyzeMovementClipResponseMeasurementsMotionTracePointsItemMovementMin = 0;
+export const analyzeMovementClipResponseMeasurementsMotionTracePointsItemMovementMax = 1;
+
+export const analyzeMovementClipResponseMeasurementsMotionTracePointsMax = 120;
+
+export const analyzeMovementClipResponseMeasurementsLimbSymmetryIndexFrontSignedMin = -200;
+export const analyzeMovementClipResponseMeasurementsLimbSymmetryIndexFrontSignedMax = 200;
+
+export const analyzeMovementClipResponseMeasurementsLimbSymmetryIndexFrontAbsoluteMin = 0;
+export const analyzeMovementClipResponseMeasurementsLimbSymmetryIndexFrontAbsoluteMax = 200;
+
+export const analyzeMovementClipResponseMeasurementsLimbSymmetryIndexRearSignedMin = -200;
+export const analyzeMovementClipResponseMeasurementsLimbSymmetryIndexRearSignedMax = 200;
+
+export const analyzeMovementClipResponseMeasurementsLimbSymmetryIndexRearAbsoluteMin = 0;
+export const analyzeMovementClipResponseMeasurementsLimbSymmetryIndexRearAbsoluteMax = 200;
+
 export const analyzeMovementClipResponseMeasurementsPoseSampleItemXMin = 0;
 export const analyzeMovementClipResponseMeasurementsPoseSampleItemXMax = 1;
 
@@ -61,6 +83,23 @@ export const AnalyzeMovementClipResponse = zod.object({
   "motionMean": zod.number(),
   "motionStd": zod.number(),
   "motionCoverage": zod.number(),
+  "motionTrace": zod.object({
+  "sampleCount": zod.number().min(analyzeMovementClipResponseMeasurementsMotionTraceSampleCountMin).multipleOf(analyzeMovementClipResponseMeasurementsMotionTraceSampleCountMultipleOf).describe('Number of decoded frame comparisons before downsampling.'),
+  "points": zod.array(zod.object({
+  "timeSeconds": zod.number().min(analyzeMovementClipResponseMeasurementsMotionTracePointsItemTimeSecondsMin),
+  "movement": zod.number().min(analyzeMovementClipResponseMeasurementsMotionTracePointsItemMovementMin).max(analyzeMovementClipResponseMeasurementsMotionTracePointsItemMovementMax).describe('Mean absolute grayscale change, normalized from 0 to 1.')
+})).max(analyzeMovementClipResponseMeasurementsMotionTracePointsMax)
+}).optional().describe('Up to 120 timestamped averages of the frame-pair motion signal. This is whole-picture change, not a limb or gait measurement. Optional for compatibility with saved results from older clients.'),
+  "limbSymmetryIndex": zod.object({
+  "front": zod.object({
+  "signed": zod.number().min(analyzeMovementClipResponseMeasurementsLimbSymmetryIndexFrontSignedMin).max(analyzeMovementClipResponseMeasurementsLimbSymmetryIndexFrontSignedMax).nullish().describe('200 times (left minus right) divided by (left plus right). Positive means the left measurement was larger.'),
+  "absolute": zod.number().min(analyzeMovementClipResponseMeasurementsLimbSymmetryIndexFrontAbsoluteMin).max(analyzeMovementClipResponseMeasurementsLimbSymmetryIndexFrontAbsoluteMax).nullish().describe('Absolute magnitude of signed SI, from 0 to 200.')
+}).optional(),
+  "rear": zod.object({
+  "signed": zod.number().min(analyzeMovementClipResponseMeasurementsLimbSymmetryIndexRearSignedMin).max(analyzeMovementClipResponseMeasurementsLimbSymmetryIndexRearSignedMax).nullish().describe('200 times (left minus right) divided by (left plus right). Positive means the left measurement was larger.'),
+  "absolute": zod.number().min(analyzeMovementClipResponseMeasurementsLimbSymmetryIndexRearAbsoluteMin).max(analyzeMovementClipResponseMeasurementsLimbSymmetryIndexRearAbsoluteMax).nullish().describe('Absolute magnitude of signed SI, from 0 to 200.')
+}).optional()
+}).optional().describe('Signed and absolute SI values for paired AP-10K landmark excursions. Positive signed values mean the left excursion was larger. These remain experimental and are absent for the current COCO-17 model.'),
   "hipStability": zod.number().nullish().describe('Legacy field from the human-pose path. The COCO-17 output path leaves this null; saved dog-pose results retain the same behavior. Left-versus-right hip height is not computed.'),
   "symmetryReliable": zod.boolean(),
   "view": zod.object({

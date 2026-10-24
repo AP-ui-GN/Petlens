@@ -64,6 +64,47 @@ export interface PoseKeypointSummary {
   confidence: number;
 }
 
+export interface MotionTracePoint {
+  /** @minimum 0 */
+  timeSeconds: number;
+  /**
+     * Mean absolute grayscale change, normalized from 0 to 1.
+     * @minimum 0
+     * @maximum 1
+     */
+  movement: number;
+}
+
+export interface MotionTrace {
+  /**
+     * Number of decoded frame comparisons before downsampling.
+     * @minimum 0
+     */
+  sampleCount: number;
+  /** @maxItems 120 */
+  points: MotionTracePoint[];
+}
+
+export interface SymmetryIndexPair {
+  /**
+     * 200 times (left minus right) divided by (left plus right). Positive means the left measurement was larger.
+     * @minimum -200
+     * @maximum 200
+     */
+  signed?: number | null;
+  /**
+     * Absolute magnitude of signed SI, from 0 to 200.
+     * @minimum 0
+     * @maximum 200
+     */
+  absolute?: number | null;
+}
+
+export interface LimbSymmetryIndex {
+  front?: SymmetryIndexPair;
+  rear?: SymmetryIndexPair;
+}
+
 export interface SideOnView {
   sideOn?: boolean | null;
   reason?: string | null;
@@ -117,6 +158,10 @@ export interface AnalysisMeasurements {
   motionMean: number;
   motionStd: number;
   motionCoverage: number;
+  /** Up to 120 timestamped averages of the frame-pair motion signal. This is whole-picture change, not a limb or gait measurement. Optional for compatibility with saved results from older clients. */
+  motionTrace?: MotionTrace;
+  /** Signed and absolute SI values for paired AP-10K landmark excursions. Positive signed values mean the left excursion was larger. These remain experimental and are absent for the current COCO-17 model. */
+  limbSymmetryIndex?: LimbSymmetryIndex;
   /**
      * Legacy field from the human-pose path. The COCO-17 output path leaves this null; saved dog-pose results retain the same behavior. Left-versus-right hip height is not computed.
      * @deprecated

@@ -10,6 +10,7 @@ import { Alert, ScrollView, Share, StyleSheet, Text, View } from 'react-native';
 import Svg, { Circle, Line } from 'react-native-svg';
 
 import { DisclaimerFooter } from '../../src/components/disclaimer-footer';
+import { ScientificCharts } from '../../src/components/scientific-charts';
 import { FactorRow, ScoreBadge } from '../../src/components/score';
 import { Button, Card, EmptyState, Eyebrow, Muted, Note, Tag } from '../../src/components/ui';
 import { useLocalData } from '../../src/hooks/use-local-data';
@@ -330,6 +331,7 @@ export default function WalkDetailScreen() {
       </Card>
 
       <PipelineVisual analysis={analysis} />
+      <ScientificCharts measurements={analysis.measurements} />
 
       <Card>
         <Eyebrow>Factors</Eyebrow>
@@ -407,6 +409,7 @@ export default function WalkDetailScreen() {
         <Button label="Delete" icon="trash-outline" variant="danger" onPress={confirmDelete} />
       </View>
       <Button label="Movement report for recent walks" variant="secondary" onPress={() => void saveVetSummary()} />
+      <Button label="Formulas and scientific evidence" variant="secondary" onPress={() => router.push('/methodology')} />
 
       <DisclaimerFooter />
     </ScrollView>

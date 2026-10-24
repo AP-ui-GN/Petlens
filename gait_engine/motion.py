@@ -15,6 +15,7 @@ import cv2
 # Frames are downscaled before differencing. Small frames are enough for a
 # whole-body movement signal and keep long clips fast.
 ANALYSIS_WIDTH = 320
+MOTION_TRACE_MAX_POINTS = 120
 
 
 @dataclass(frozen=True)
@@ -44,6 +45,39 @@ def _to_analysis_frame(frame_bgr):
 
     gray = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2GRAY)
     return cv2.GaussianBlur(gray, (5, 5), 0)
+
+
+def compact_motion_trace(
+    frame_motion: list[float],
+    fps: float,
+    *,
+    max_points: int = MOTION_TRACE_MAX_POINTS,
+) -> dict[str, object]:
+    """Downsample frame-pair motion into timestamped means for visualization."""
+
+    if max_points < 1:
+        raise ValueError("max_points must be positive.")
+    sample_count = len(frame_motion)
+    if sample_count == 0:
+        return {"sampleCount": 0, "points": []}
+    if not fps or not 0 < fps <= 240:
+        return {"sampleCount": sample_count, "points": []}
+
+    point_count = min(sample_count, max_points)
+    points: list[dict[str, float]] = []
+    for point_index in range(point_count):
+        start = point_index * sample_count // point_count
+        end = (point_index + 1) * sample_count // point_count
+        values = frame_motion[start:end]
+        if not values:
+            continue
+        points.append(
+            {
+                "timeSeconds": round((start + end) / (2.0 * fps), 4),
+                "movement": round(sum(values) / len(values), 6),
+            }
+        )
+    return {"sampleCount": sample_count, "points": points}
 
 
 def read_motion_signal(video_path: str | Path, *, max_frames: int = 600) -> MotionSignal:

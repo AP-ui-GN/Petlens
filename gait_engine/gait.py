@@ -30,6 +30,7 @@ from .pose_backend import (
     RIGHT_SHOULDER,
     ROOT_OF_TAIL,
 )
+from .symmetry import symmetry_indices
 
 KEYPOINT_MIN_SCORE = 0.3
 MIN_SIDE_ON_RATIO = 0.6
@@ -73,6 +74,10 @@ def _empty_result(reasons: list[str], *, side_on: bool | None) -> dict:
         "view": {"sideOn": side_on, "reason": None if side_on else SIDE_ON_REASON},
         "strides": paws,
         "limbSymmetry": {"front": None, "rear": None},
+        "limbSymmetryIndex": {
+            "front": {"signed": None, "absolute": None},
+            "rear": {"signed": None, "absolute": None},
+        },
         "strideSymmetry": None,
         "asymmetryPercent": None,
         "strideLengthBodyLengths": {"front": None, "rear": None},
@@ -263,14 +268,12 @@ def _peak_intervals(signal: np.ndarray, stamps: np.ndarray, step: float) -> tupl
 
 
 def _symmetry(left_excursion: float | None, right_excursion: float | None) -> tuple[float | None, float | None]:
-    if left_excursion is None or right_excursion is None:
+    _signed_index, absolute_index = symmetry_indices(left_excursion, right_excursion)
+    if absolute_index is None:
         return None, None
-    total = left_excursion + right_excursion
-    if total <= 0:
-        return None, None
-    score = 1.0 - abs(left_excursion - right_excursion) / total
+    score = 1.0 - absolute_index / 200.0
     score = float(np.clip(score, 0.0, 1.0))
-    return score, (1.0 - score) * 100.0
+    return score, absolute_index / 2.0
 
 
 def _phase_is_alternating(left: np.ndarray, right: np.ndarray, period_seconds: float, step: float) -> bool:
@@ -502,6 +505,10 @@ def compute_gait_metrics(
         "front": None if front_s is None else round(front_s, 4),
         "rear": None if rear_s is None else round(rear_s, 4),
     }
+    result["limbSymmetryIndex"] = {
+        "front": _pair_symmetry_index("frontLeft", "frontRight", excursions),
+        "rear": _pair_symmetry_index("rearLeft", "rearRight", excursions),
+    }
     result["strideLengthBodyLengths"] = {
         "front": None if front_len is None else round(front_len, 4),
         "rear": None if rear_len is None else round(rear_len, 4),
@@ -529,3 +536,19 @@ def compute_gait_metrics(
     result["symmetryReliable"] = bool(side_on and share_ok and measured)
     result["notMeasuredReasons"] = reasons
     return result
+
+
+def _pair_symmetry_index(
+    left_name: str,
+    right_name: str,
+    excursions: dict[str, list[float]],
+) -> dict[str, float | None]:
+    left = excursions[left_name]
+    right = excursions[right_name]
+    if not left or not right:
+        return {"signed": None, "absolute": None}
+    signed, absolute = symmetry_indices(float(np.median(left)), float(np.median(right)))
+    return {
+        "signed": None if signed is None else round(signed, 4),
+        "absolute": None if absolute is None else round(absolute, 4),
+    }
