@@ -7,6 +7,27 @@
     "baseline": 0.03713768115942029,
     "ratio": 11.463414634146343
   },
+  "anatomical_groups": {
+    "metric": "PCK@0.1",
+    "aggregation": "sum of correct visible landmarks / sum of visible landmarks in each group",
+    "higher_is_better": true,
+    "model_pck": {
+      "Head": 0.570446735395189,
+      "Neck": 0.4444444444444444,
+      "Front legs": 0.4319371727748691,
+      "Hind legs": 0.3381818181818182,
+      "Tail base": 0.03508771929824561
+    },
+    "baseline_pck": {
+      "Head": 0.044673539518900345,
+      "Neck": 0.1111111111111111,
+      "Front legs": 0.028795811518324606,
+      "Hind legs": 0.02181818181818182,
+      "Tail base": 0.0
+    },
+    "model_groups_above_baseline": 5,
+    "group_count": 5
+  },
   "keypoints": {
     "model_pck": {
       "root_of_tail": 0.03508771929824561,

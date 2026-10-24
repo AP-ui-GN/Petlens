@@ -233,6 +233,112 @@ def plot_keypoints(metrics: dict[str, Any], out_dir: Path) -> dict[str, Any]:
     }
 
 
+def plot_radar(metrics: dict[str, Any], out_dir: Path) -> dict[str, Any]:
+    groups = {
+        "Head": ("left_eye", "right_eye", "nose"),
+        "Neck": ("neck",),
+        "Front legs": (
+            "left_shoulder",
+            "right_shoulder",
+            "left_elbow",
+            "right_elbow",
+            "left_front_paw",
+            "right_front_paw",
+        ),
+        "Hind legs": (
+            "left_hip",
+            "right_hip",
+            "left_knee",
+            "right_knee",
+            "left_back_paw",
+            "right_back_paw",
+        ),
+        "Tail base": ("root_of_tail",),
+    }
+    model = metrics["pck_at_0_1"]["model"]["per_keypoint"]
+    baseline = metrics["pck_at_0_1"]["box_center_baseline"]["per_keypoint"]
+
+    def group_pck(per_keypoint: dict[str, Any], landmarks: tuple[str, ...]) -> float:
+        visible = sum(int(per_keypoint[name]["visible"]) for name in landmarks)
+        correct = sum(int(per_keypoint[name]["correct"]) for name in landmarks)
+        if visible == 0:
+            raise ValueError(f"Landmark group has no visible annotations: {landmarks}")
+        return correct / visible
+
+    labels = list(groups)
+    model_values = [group_pck(model, landmarks) for landmarks in groups.values()]
+    baseline_values = [group_pck(baseline, landmarks) for landmarks in groups.values()]
+    angles = np.linspace(0, 2 * np.pi, len(labels), endpoint=False).tolist()
+    closed_angles = angles + angles[:1]
+
+    fig, ax = plt.subplots(figsize=(8.5, 7.2), subplot_kw={"polar": True})
+    fig.subplots_adjust(top=0.82, bottom=0.2, left=0.08, right=0.92)
+    fig.patch.set_facecolor("white")
+    ax.set_facecolor("white")
+    ax.set_theta_offset(np.pi / 2)
+    ax.set_theta_direction(-1)
+    ax.set_ylim(0, 1)
+    ax.set_yticks([0.2, 0.4, 0.6, 0.8, 1.0])
+    ax.set_yticklabels(["20%", "40%", "60%", "80%", "100%"], color=MUTED, fontsize=8)
+    ax.set_xticks(angles, labels)
+    ax.tick_params(axis="x", colors=INK, labelsize=10, pad=12)
+    ax.spines["polar"].set_color("#bfd0d8")
+    ax.grid(color="#dbe5e9", linewidth=0.8)
+
+    model_line = model_values + model_values[:1]
+    baseline_line = baseline_values + baseline_values[:1]
+    ax.plot(closed_angles, model_line, color=BLUE, linewidth=2.5, marker="o", label="PetLens pose model")
+    ax.fill(closed_angles, model_line, color=BLUE, alpha=0.22)
+    ax.plot(
+        closed_angles,
+        baseline_line,
+        color="#c65a78",
+        linewidth=2.5,
+        marker="o",
+        label="Box-center baseline",
+    )
+    ax.fill(closed_angles, baseline_line, color="#c65a78", alpha=0.15)
+    fig.suptitle(
+        "PetLens pose model vs. box-center baseline",
+        y=0.975,
+        color=INK,
+        fontsize=15,
+        fontweight="bold",
+    )
+    ax.text(
+        0.5,
+        1.14,
+        "Higher is better • model scores higher in all five landmark groups",
+        transform=ax.transAxes,
+        ha="center",
+        color=GREEN,
+        fontsize=10,
+        fontweight="bold",
+    )
+    ax.legend(loc="lower center", bbox_to_anchor=(0.5, -0.16), ncol=2, frameon=False)
+    fig.text(
+        0.5,
+        0.035,
+        "AP-10K dog-only validation • 110 instances • ground-truth boxes • development-only, not app-level testing",
+        ha="center",
+        color=MUTED,
+        fontsize=8.5,
+    )
+    save(fig, out_dir, "00-validation-radar")
+    return {
+        "metric": "PCK@0.1",
+        "aggregation": "sum of correct visible landmarks / sum of visible landmarks in each group",
+        "higher_is_better": True,
+        "model_pck": dict(zip(labels, model_values)),
+        "baseline_pck": dict(zip(labels, baseline_values)),
+        "model_groups_above_baseline": sum(
+            model_value > baseline_value
+            for model_value, baseline_value in zip(model_values, baseline_values)
+        ),
+        "group_count": len(labels),
+    }
+
+
 def plot_training(metrics: dict[str, Any], rows: list[dict[str, float]], out_dir: Path) -> dict[str, float]:
     epochs = np.asarray([row["epoch"] for row in rows])
     training_loss = np.asarray([row["training_loss"] for row in rows])
@@ -313,6 +419,7 @@ def main() -> int:
     args = parse_args()
     metrics, rows = load_inputs(args.metrics, args.training_csv)
     args.out_dir.mkdir(parents=True, exist_ok=True)
+    radar = plot_radar(metrics, args.out_dir)
     baseline = plot_baseline(metrics, args.out_dir)
     keypoints = plot_keypoints(metrics, args.out_dir)
     training = plot_training(metrics, rows, args.out_dir)
@@ -326,6 +433,7 @@ def main() -> int:
             "gait, or clinical performance."
         ),
         "pck_at_0_1": baseline,
+        "anatomical_groups": radar,
         "keypoints": keypoints,
         "training": training,
         "dataset": metrics["dataset"],
@@ -349,13 +457,16 @@ AP-10K still-image validation experiment. The checkpoint was selected on this
 split and used ground-truth dog boxes. It is not an independent test, not
 production app inference, and not validation of walking video, gait, or
 osteoarthritis. The live app pipeline remains motion-only.</p>
-<section><h2>1. Pose localization vs. a simple baseline</h2>
+<section><h2>1. Pose localization across landmark groups</h2>
+<img src="00-validation-radar.png" alt="Radar chart comparing PetLens and box-center validation PCK across five landmark groups">
+<p>Each radar value is computed from the actual correct and visible landmark counts in that group. A higher value means more landmarks were localized within the PCK@0.1 threshold. This compares an experimental pose model with a simple baseline, not the complete app with another product.</p></section>
+<section><h2>2. Overall pose localization vs. the same baseline</h2>
 <img src="01-validation-vs-baseline.png" alt="Validation PCK comparison with confidence intervals">
 <p>PetLens exceeded the box-center baseline on this validation split.</p></section>
-<section><h2>2. Landmark coverage</h2>
+<section><h2>3. Landmark coverage</h2>
 <img src="02-landmark-coverage.png" alt="Per-landmark validation PCK compared with box center">
 <p>The comparison shows every landmark, including the weaker tail-root result.</p></section>
-<section><h2>3. Training progress</h2>
+<section><h2>4. Training progress</h2>
 <img src="03-training-progress.png" alt="Recorded training and validation objective by epoch">
 <p>Lower objective values indicate optimization progress, not model accuracy.</p></section>
 <small>Source metrics and full report: ../canine-pose-validation/</small>
