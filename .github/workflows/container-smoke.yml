@@ -59,6 +59,7 @@ jobs:
         run: |
           docker run --detach --name petlens-api-motion-ci \
             --publish 8080:8080 \
+            --env TRUST_PROXY=1 \
             petlens-api-motion:ci
 
       - name: Verify readiness and motion-only analysis
@@ -109,7 +110,18 @@ jobs:
           finally:
               writer.release()
           PY
+          http_status="$(curl --silent --show-error \
+            --output /tmp/insecure-analysis.json \
+            --write-out "%{http_code}" \
+            --request POST \
+            http://127.0.0.1:8080/api/analyze)"
+          if [ "$http_status" != "400" ]; then
+            cat /tmp/insecure-analysis.json
+            echo "Expected production analysis over plain HTTP to return 400, got $http_status"
+            exit 1
+          fi
           curl --fail-with-body --silent --show-error --max-time 240 \
+            --header "X-Forwarded-Proto: https" \
             --form "video=@/tmp/petlens-motion-smoke.mp4;type=video/mp4" \
             http://127.0.0.1:8080/api/analyze \
             --output /tmp/motion-result.json
