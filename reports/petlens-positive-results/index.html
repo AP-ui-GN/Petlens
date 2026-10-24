@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>PetLens measured highlights</title>
+<style>
+body{font:16px/1.55 system-ui,sans-serif;color:#163247;max-width:1000px;margin:2rem auto;padding:0 1rem}
+h1,h2{line-height:1.2} .caveat{background:#fff1d6;padding:1rem;border-radius:.5rem}
+section{border-top:1px solid #d7e1e8;padding:1.2rem 0} img{max-width:100%;height:auto}
+small{color:#526b7c}
+</style>
+<h1>PetLens: measured development highlights</h1>
+<p class="caveat"><strong>Read this first:</strong> These are positive results from an
+AP-10K still-image validation experiment. The checkpoint was selected on this
+split and used ground-truth dog boxes. It is not an independent test, not
+production app inference, and not validation of walking video, gait, or
+osteoarthritis. The live app pipeline remains motion-only.</p>
+<section><h2>1. Pose localization vs. a simple baseline</h2>
+<img src="01-validation-vs-baseline.png" alt="Validation PCK comparison with confidence intervals">
+<p>PetLens exceeded the box-center baseline on this validation split.</p></section>
+<section><h2>2. Landmark coverage</h2>
+<img src="02-landmark-coverage.png" alt="Per-landmark validation PCK compared with box center">
+<p>The comparison shows every landmark, including the weaker tail-root result.</p></section>
+<section><h2>3. Training progress</h2>
+<img src="03-training-progress.png" alt="Recorded training and validation objective by epoch">
+<p>Lower objective values indicate optimization progress, not model accuracy.</p></section>
+<small>Source metrics and full report: ../canine-pose-validation/</small>
+</html>

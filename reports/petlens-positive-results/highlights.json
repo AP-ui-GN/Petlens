@@ -1,0 +1,67 @@
+{
+  "status": "development_validation_only",
+  "results_are_independent": false,
+  "scope": "Still-image keypoint localization on AP-10K dog-only validation with ground-truth boxes; not production app inference, video tracking, gait, or clinical performance.",
+  "pck_at_0_1": {
+    "model": 0.4257246376811594,
+    "baseline": 0.03713768115942029,
+    "ratio": 11.463414634146343
+  },
+  "keypoints": {
+    "model_pck": {
+      "root_of_tail": 0.03508771929824561,
+      "left_hip": 0.2619047619047619,
+      "left_back_paw": 0.275,
+      "right_hip": 0.29411764705882354,
+      "left_knee": 0.3333333333333333,
+      "right_shoulder": 0.38235294117647056,
+      "right_elbow": 0.38235294117647056,
+      "right_back_paw": 0.4,
+      "left_shoulder": 0.40298507462686567,
+      "right_knee": 0.44,
+      "neck": 0.4444444444444444,
+      "left_front_paw": 0.46551724137931033,
+      "left_elbow": 0.46774193548387094,
+      "right_front_paw": 0.5084745762711864,
+      "nose": 0.5428571428571428,
+      "right_eye": 0.5578947368421052,
+      "left_eye": 0.6153846153846154
+    },
+    "baseline_pck": {
+      "root_of_tail": 0.0,
+      "left_hip": 0.047619047619047616,
+      "left_back_paw": 0.0,
+      "right_hip": 0.0392156862745098,
+      "left_knee": 0.023809523809523808,
+      "right_shoulder": 0.07352941176470588,
+      "right_elbow": 0.014705882352941176,
+      "right_back_paw": 0.02,
+      "left_shoulder": 0.05970149253731343,
+      "right_knee": 0.0,
+      "neck": 0.1111111111111111,
+      "left_front_paw": 0.0,
+      "left_elbow": 0.016129032258064516,
+      "right_front_paw": 0.0,
+      "nose": 0.08571428571428572,
+      "right_eye": 0.010526315789473684,
+      "left_eye": 0.03296703296703297
+    },
+    "landmarks_at_or_above_baseline": 17,
+    "landmark_count": 17
+  },
+  "training": {
+    "validation_objective_reduction": 0.7200279689490083,
+    "training_objective_reduction": 0.9690994154867648,
+    "selected_epoch": 30,
+    "validation_objective_at_selection": 0.8413868719881231
+  },
+  "dataset": {
+    "name": "AP-10K",
+    "split": "official val split",
+    "species_filter": "dog",
+    "schema_version": "petlens.ap10k-17.v1",
+    "instances": 110,
+    "annotations_sha256": "61c36b69f0d56d1a7d27a9da8a1828ab8ec659ad3de185634a349f45abb16687",
+    "manifest_sha256": "b68dbdeedfdf58f62d25418c474b474416c95be3c712efac1ead2e839720a01d"
+  }
+}

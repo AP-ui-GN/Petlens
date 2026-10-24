@@ -83,7 +83,8 @@ result is development evidence, not an independent test result. It uses
 oracle boxes on still images and says nothing about detection, walking-video
 tracking, or gait. The checkpoint stays in the local cache and is not part of
 application inference. Charts, metrics, and protocol caveats are in the
-[`validation report`](../reports/canine-pose-validation/index.html).
+[`validation report`](../reports/canine-pose-validation/index.html), with a
+separate [`measured highlights gallery`](../reports/petlens-positive-results/index.html).
 
 The earlier epoch-2 test result (PCK@0.1 0.000881 versus 0.051565 for
 box-center) came from a checkpoint trained with the old loss and from a test
