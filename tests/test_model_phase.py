@@ -3,6 +3,7 @@
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 import cv2
 import numpy as np
@@ -187,6 +188,25 @@ class OpenCvResultTests(unittest.TestCase):
         self.assertNotIn("pose-model", result["aiUse"])
         self.assertNotIn("llm-rewrite", result["aiUse"])
         self.assertNotIn("development", result["aiUse"])
+
+    def test_motion_only_deployment_does_not_initialize_the_pose_backend(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "walk.avi"
+            write_clip(path)
+            with patch.dict("os.environ", {"PETLENS_MOTION_ONLY": "true"}):
+                with patch(
+                    "gait_engine.pipeline._try_pose_and_detection",
+                    side_effect=AssertionError("pose backend must not run"),
+                ):
+                    result = analyze_clip(path, use_pose=True)
+
+        self.assertEqual(result["pipeline"], "opencv-motion")
+        self.assertIn(
+            "motion-only deployment",
+            result["diagnostics"]["poseSkipReason"],
+        )
+        self.assertNotIn("pose-model", result["aiUse"])
+        self.assertIsNone(result["measurements"]["strideSymmetry"])
 
 
 class ModelInfoTests(unittest.TestCase):

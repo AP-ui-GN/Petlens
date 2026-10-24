@@ -54,10 +54,20 @@ MIN_POSE_CONFIDENCE = 0.3
 
 MIN_COMPARABLE_FRAMES = 5
 EXPERIMENTAL_COCO_POSE_ENV = "PETLENS_ENABLE_EXPERIMENTAL_COCO_POSE"
+MOTION_ONLY_ENV = "PETLENS_MOTION_ONLY"
 
 
 def _experimental_coco_pose_enabled() -> bool:
     return os.getenv(EXPERIMENTAL_COCO_POSE_ENV, "").strip().lower() in {
+        "1",
+        "true",
+        "yes",
+        "on",
+    }
+
+
+def _motion_only_enabled() -> bool:
+    return os.getenv(MOTION_ONLY_ENV, "").strip().lower() in {
         "1",
         "true",
         "yes",
@@ -341,13 +351,16 @@ def analyze_clip(
     model_url: str | None = None,
     motion_ready: Callable[[dict[str, Any]], None] | None = None,
 ) -> dict[str, Any]:
-    del model_url  # Older callers passed a pose URL. It is ignored.
     """Analyze one movement clip and return an ``AnalyzeResult`` dictionary.
 
     Raises:
         FileNotFoundError: the clip does not exist.
         ValueError: the clip could not be decoded as video.
     """
+
+    del model_url  # Older callers passed a pose URL. It is ignored.
+    if _motion_only_enabled():
+        use_pose = False
 
     path = Path(video_path)
     signal = read_motion_signal(path, max_frames=MAX_MOTION_FRAMES)
@@ -375,7 +388,11 @@ def analyze_clip(
     }
 
     pipeline = "opencv-motion"
-    pose_skip_reason: str | None = "pose extraction was disabled for this run"
+    pose_skip_reason: str | None = (
+        "pose was disabled by the motion-only deployment configuration"
+        if _motion_only_enabled()
+        else "pose extraction was disabled for this run"
+    )
     model_confidence: float | None = None
     frames_used: int | None = None
     frames_total: int | None = None

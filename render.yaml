@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: petlens-motion-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile.motion-only
+    dockerContext: .
+    healthCheckPath: /api/readyz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TRUST_PROXY
+        value: "1"
+      - key: PETLENS_MOTION_ONLY
+        value: "true"
+      - key: MAX_UPLOAD_MB
+        value: "20"
+      - key: ANALYSIS_TIMEOUT_MS
+        value: "600000"
+      - key: ANALYZE_MAX_CONCURRENT
+        value: "1"
+      - key: ANALYZE_RATE_LIMIT_PER_MINUTE
+        value: "10"

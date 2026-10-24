@@ -137,4 +137,5 @@ instructions, see [`docs/MOBILE_RELEASE.md`](docs/MOBILE_RELEASE.md).
 | Model status and audit | `docs/MODEL_CARD.md`, `docs/model_audit.md` |
 
 For deployment and hosting configuration, see [`docs/HOSTING.md`](docs/HOSTING.md).
+For a no-cost, motion-only Render preview, see the "No-cost motion-only Render preview" section.
 For the architecture, see [`ARCHITECTURE.md`](ARCHITECTURE.md).

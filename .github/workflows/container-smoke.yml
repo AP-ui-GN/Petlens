@@ -9,6 +9,8 @@ on:
     branches: [main]
     paths:
       - "Dockerfile"
+      - "Dockerfile.motion-only"
+      - "render.yaml"
       - "docker-compose.yml"
       - "requirements-docker.txt"
       - "package.json"
@@ -23,6 +25,8 @@ on:
     branches: [main]
     paths:
       - "Dockerfile"
+      - "Dockerfile.motion-only"
+      - "render.yaml"
       - "docker-compose.yml"
       - "requirements-docker.txt"
       - "package.json"
@@ -39,6 +43,96 @@ permissions:
   contents: read
 
 jobs:
+  motion-only-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Build the motion-only image
+        run: docker build --pull --file Dockerfile.motion-only --tag petlens-api-motion:ci .
+
+      - name: Start the motion-only API
+        run: |
+          docker run --detach --name petlens-api-motion-ci \
+            --publish 8080:8080 \
+            petlens-api-motion:ci
+
+      - name: Verify readiness and motion-only analysis
+        shell: bash
+        run: |
+          set -euo pipefail
+          live=0
+          for attempt in $(seq 1 60); do
+            if curl --fail --silent --show-error http://127.0.0.1:8080/api/healthz >/dev/null; then
+              live=1
+              break
+            fi
+            sleep 5
+          done
+          test "$live" -eq 1
+          curl --fail --silent --show-error http://127.0.0.1:8080/api/readyz >/tmp/motion-ready.json
+          node --input-type=module -e '
+            import fs from "node:fs";
+            const data = JSON.parse(fs.readFileSync("/tmp/motion-ready.json", "utf8"));
+            if (data.status !== "ready" || !data.capabilities.includes("opencv-motion")) {
+              throw new Error("Motion-only API is not ready");
+            }
+            if (data.capabilities.includes("coco-17-keypoints")) {
+              throw new Error("Motion-only API unexpectedly reports pose support");
+            }
+          '
+          python3 -m pip install --disable-pip-version-check -r requirements-opencv.txt
+          python3 - <<'PY'
+          from pathlib import Path
+          import cv2
+          import numpy as np
+
+          target = Path("/tmp/petlens-motion-smoke.mp4")
+          writer = cv2.VideoWriter(
+              str(target),
+              cv2.VideoWriter_fourcc(*"mp4v"),
+              15.0,
+              (320, 240),
+          )
+          if not writer.isOpened():
+              raise SystemExit("OpenCV could not create the synthetic MP4 fixture")
+          try:
+              for index in range(45):
+                  frame = np.full((240, 320, 3), 32, dtype=np.uint8)
+                  x = 8 + (index * 5) % 250
+                  cv2.rectangle(frame, (x, 80), (x + 42, 158), (20, 160, 230), -1)
+                  writer.write(frame)
+          finally:
+              writer.release()
+          PY
+          curl --fail-with-body --silent --show-error --max-time 240 \
+            --form "video=@/tmp/petlens-motion-smoke.mp4;type=video/mp4" \
+            http://127.0.0.1:8080/api/analyze \
+            --output /tmp/motion-result.json
+          node --input-type=module -e '
+            import fs from "node:fs";
+            const result = JSON.parse(fs.readFileSync("/tmp/motion-result.json", "utf8"));
+            if (result.ok !== true || result.pipeline !== "opencv-motion") {
+              throw new Error("Expected a successful motion-only analysis");
+            }
+            if (result.measurements.strideSymmetry !== null) {
+              throw new Error("Motion-only result must leave stride symmetry unmeasured");
+            }
+            if (!Array.isArray(result.measurements.motionTrace?.points)) {
+              throw new Error("Motion trace is missing from result");
+            }
+          '
+
+      - name: Print container logs if a previous step failed
+        if: failure()
+        run: docker logs petlens-api-motion-ci || true
+
+      - name: Remove the test container
+        if: always()
+        run: docker rm --force petlens-api-motion-ci || true
+
   docker-smoke:
     runs-on: ubuntu-latest
     timeout-minutes: 45

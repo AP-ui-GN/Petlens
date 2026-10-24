@@ -5,11 +5,14 @@ It uses EAS remote versioning and the `production` EAS environment.
 
 ## Required before building
 
-1. Set `EXPO_PUBLIC_API_URL` in the EAS `production` environment to the
-   deployed API's public HTTPS base URL, for example
-   `https://api.example.org`. Do not use `localhost` or a private LAN address:
-   those point at the device itself or are unreachable outside that network.
-   The value is embedded in the public app bundle and must not contain secrets.
+1. Deploy the API and set `EXPO_PUBLIC_API_URL` in the EAS `production`
+   environment to its public HTTPS base URL, for example
+   `https://your-service.onrender.com`. The no-cost Render Blueprint in
+   [`HOSTING.md`](HOSTING.md#no-cost-motion-only-render-preview) runs in
+   motion-only mode and can sleep while idle. Do not use `localhost` or a
+   private LAN address: those point at the device itself or are unreachable
+   outside that network. This URL is embedded in the public app bundle and
+   must not contain secrets.
 2. Confirm that the deployed server's `/api/healthz` and `/api/analyze`
    endpoints are reachable from a phone using that URL.
 3. Sign in to the EAS project and install/use the EAS CLI version required by

@@ -152,4 +152,35 @@ Render is the host described here because a Docker web service, a health check, 
 6. Deploy. Render serves HTTPS. The image build caches the detector and the pose model, so the first request should not download them.
 7. Copy the `https://` address Render shows. Serve the web build from that origin, or point the web build at it. Do not invent an address in the repo.
 
+## No-cost motion-only Render preview
+
+Render offers a Free web-service plan for hobby projects, but it has only
+512 MB of memory and can sleep after 15 minutes without traffic. It is not a
+production service tier. The full image above installs large pose models and
+requires more memory; do not deploy it on Free.
+
+For a no-cost preview, the repository includes `render.yaml` and
+`Dockerfile.motion-only`. In Render, create a new **Blueprint** from this
+GitHub repository and select the `petlens-motion-api` service. Confirm the
+compute plan is **Free** before applying the Blueprint. The image installs
+only OpenCV dependencies, does not download detector/pose weights, and forces
+the API to skip pose even if a request is sent with pose enabled. The result
+is frame-to-frame picture motion only; stride, joint, and OA measurements
+remain unavailable. The free service may take about a minute to wake after
+being idle.
+
+After Render finishes deploying, copy the service's HTTPS URL. Check
+`<service-url>/api/healthz` and `<service-url>/api/readyz`; readiness should
+report `opencv-motion`. Then set that base URL as `EXPO_PUBLIC_API_URL` in the
+EAS `production` environment before building the APK. Do not include `/api`
+at the end of the base URL. A change to this environment value requires a new
+APK build.
+
+Render's Free plan has monthly included usage limits for instance hours,
+outbound bandwidth, and build minutes. Review the current limits in the
+Render dashboard before applying the Blueprint. Render documents that without
+a payment method, services are suspended rather than billed when applicable
+included usage is exhausted. Do not select a paid compute plan or add a
+payment method just to deploy this preview.
+
 The web build does not contain `SILVERPAWS_LLM_KEY` or any other server secret.
