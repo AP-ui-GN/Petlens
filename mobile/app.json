@@ -55,17 +55,16 @@
         }
       ]
     ],
-    "extra": {
-      "eas": {
-        "projectId": "80ec3317-d4f9-4823-93c8-1b51df88808a"
-      }
-    },
     "owner": "abhikshit",
     "runtimeVersion": {
       "policy": "appVersion"
     },
-    "updates": {
-      "url": "https://u.expo.dev/80ec3317-d4f9-4823-93c8-1b51df88808a"
+    "extra": {
+      "apiUrl": {},
+      "router": {},
+      "eas": {
+        "projectId": "f2e7a1b9-741f-4395-89cd-aafcfef0433d"
+      }
     }
   }
 }

@@ -1,6 +1,6 @@
 # Canine-pose model audit
 
-**Status: no validated canine-pose checkpoint is available in this checkout.**
+**Status: no validated production canine-pose checkpoint is available in this checkout.**
 The current optional pose path uses a dog detector and a ViTPose++ checkpoint
 whose output head is COCO-17. Its output remains labeled `coco-17`; selecting
 the checkpoint's AP-10K backbone expert does not change that head. COCO-17 has
@@ -28,21 +28,25 @@ The repository and local resources were inspected for this audit:
   32 GB system RAM, no dedicated GPU memory reported, and about 688 GB free on
   C:. Python is 3.12.10 and OpenCV is 4.10.0. The application environment has
   no `torch`, `transformers`, `ultralytics`, or `onnxruntime`.
-- A separate optional ResNet-18 top-down training/evaluation path is
-  implemented and trained for four epochs recorded in cache logs from random
-  initialization. The only test evaluation was the epoch-2 model, with
-  PCK@0.1 of 0.000881 on 225 dog instances using ground-truth boxes. The test
-  split was inspected before training continued to epoch 4, so this is not
-  independent evidence and must not guide checkpoint selection. The evaluated
-  epoch-2 checkpoint was overwritten; the epoch-4 checkpoint loads but was not
-  evaluated. Its PCK@0.1 (2/2,269) was below the oracle-box-center baseline
-  (117/2,269). Neither is suitable for integration or performance claims. See
-  `reports/canine_pose_evaluation.md`.
-- Review found the trainer divided sparse heatmap error by all spatial pixels,
-  which allowed background pixels to dominate the loss. The trainer now
+- A fresh random-initialization, corrected-loss ResNet-18 run completed 30
+  epochs and selected its checkpoint by validation loss. On the official
+  dog-only validation split it achieved PCK@0.1 of 0.425725 (470/1,104 visible
+  keypoints), versus 0.037138 (41/1,104) for the oracle-box-center baseline.
+  All 17 channels exceeded their per-keypoint baselines; tail-root PCK was
+  only 0.035. This is a validation baseline pass only: the split selected the
+  checkpoint and controlled early stopping, and the evaluation uses
+  ground-truth boxes on still images. It is not independent evidence or
+  video/gait validation. The checkpoint remains in the local cache and is not
+  integrated. See
+  `reports/canine-pose-validation/index.html`.
+- The earlier epoch-2 test result (0.000881 versus a 0.051565 box-center
+  baseline) belongs to a checkpoint trained with the old loss and to a test
+  split inspected before training continued. It is a historical diagnostic,
+  not a result for the fresh run; see `reports/canine_pose_evaluation.md`.
+- Review found the original trainer divided sparse heatmap error by all
+  spatial pixels, allowing background pixels to dominate. The trainer now
   normalizes each labeled landmark's spatial squared error by its target
-  heatmap energy. The cached checkpoints used the original loss and were not
-  retrained after this correction.
+  heatmap energy; the fresh 30-epoch run used the corrected loss.
 - The official AP-10K README states CC BY 4.0, while the included COCO license
   metadata labels its image license MIT and links to a different license URL.
   This discrepancy is documented and must be resolved before public model or
@@ -104,42 +108,44 @@ early stopping, atomic best/last checkpoints, JSONL metrics, and resume
 support. It initializes randomly; it does not reuse the human COCO-17 head or
 download an unverified weight file. The existing detector remains separate.
 
-The optional stack is in `requirements-training.txt`. Four epochs are recorded
-in local logs/checkpoint; the first two took 99.156 seconds on CPU, while the
-continuation's duration is unavailable because its metadata was not updated.
-The exact epoch-2 checkpoint used for test predictions was overwritten.
-Current trainer runs now use unique experiment directories, fingerprint their
-data/config/checkpoint artifacts, and preserve parent checkpoint identity on
-resume. AP-10K's dog-only subset is small, has no walking-video labels, and its
-digitigrade hip/knee labels do not map directly to literal canine anatomy.
-Product gait metrics therefore remain gated.
+The optional stack is in `requirements-training.txt`. The fresh corrected-loss
+run completed 30 epochs on CPU in 1,205.218 seconds; its checkpoint is retained
+outside the repository. The older epoch-2 checkpoint used for the historical
+test diagnostic was overwritten. Current trainer runs use unique experiment
+directories, fingerprint their data/config/checkpoint artifacts, and preserve
+parent checkpoint identity on resume. AP-10K's dog-only subset is small, has
+no walking-video labels, and its digitigrade hip/knee labels do not map
+directly to literal canine anatomy. Product gait metrics therefore remain
+gated.
 
 ## Held-out pose evaluation
 
-`training/evaluate_pose.py` predicts the AP-10K official dog-only test split
-and writes machine-readable metrics, a human-readable report, predictions, and
-optional labeled overlays. `scripts/evaluate_ap10k.py` provides the underlying
-fixture-tested PCK/error evaluator. It reports confidence-filtered PCK at
-explicit thresholds, mean pixel and normalized errors, per-keypoint results,
-and visible-versus-occluded scores. It uses ground-truth boxes, so it measures
-pose localization only; it does not measure dog detection, tracking,
-real-video behavior, or gait. Example:
+`training/evaluate_pose.py` supports the AP-10K dog-only validation and test
+splits and writes machine-readable metrics, a human-readable report,
+predictions, and optional labeled overlays. `scripts/evaluate_ap10k.py`
+provides the underlying fixture-tested PCK/error evaluator. It reports
+confidence-filtered PCK at explicit thresholds, mean pixel and normalized
+errors, per-keypoint results, and visible-versus-occluded scores. It uses
+ground-truth boxes, so it measures pose localization only; it does not measure
+dog detection, tracking, real-video behavior, or gait. Example:
 
 ```powershell
 python training/evaluate_pose.py `
   --config training\dataset_config.yaml `
+  --split val `
+  --require-baseline `
   --checkpoint outputs\ap10k-dog\checkpoint_best.pt `
-  --visualizations-dir reports\canine-pose-test
+  --visualizations-dir reports\canine-pose-validation
 ```
 
-The exploratory test metrics in `reports/canine_pose_metrics.json` are from
-the epoch-2 model only. They are not independent held-out evidence: the test
-split was inspected before training continued, and the corresponding
-checkpoint was later overwritten. The evaluator now reports image-bootstrap
-intervals and an oracle-box-center baseline, but neither restores test-set
-independence. Do not use these metrics to select a checkpoint or make
-product-performance claims. A separate rights-cleared dog dataset is required
-for an independent evaluation.
+The current corrected-loss model's validation metrics and charts are in
+`reports/canine-pose-validation/`. The validation split selected the checkpoint
+and is not independent. The historical test metrics in
+`reports/canine_pose_metrics.json` are from the earlier epoch-2 model only;
+that split was inspected before training continued and the corresponding
+checkpoint was overwritten. Do not use either result as independent evidence
+or a product-performance claim. A separate rights-cleared dog dataset is
+required for independent evaluation.
 
 ## Acceptance gates before model integration
 

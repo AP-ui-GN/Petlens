@@ -65,6 +65,14 @@ Pair symmetry is `S = 1 - |A_left - A_right| / (A_left + A_right)`.
 `strideSymmetry` is the lower of the measured pairs. `strideLengthBodyLengths`
 is the mean excursion of that pair.
 
+The optional signed index uses the same paired excursions:
+`SI = 200 * (A_left - A_right) / (A_left + A_right)` and `ASI = |SI|`.
+Positive SI means the left excursion is larger; negative means the right is
+larger. For non-negative excursions, `SI` is bounded by `[-200, 200]`, and
+`S = 1 - ASI / 200`. `limbSymmetryIndex.front` and `.rear` contain these
+signed and absolute values when the pair is measured. They describe normalized
+paw excursion, not calibrated stride length or a clinical severity scale.
+
 `cadenceStridesPerMinute` is `60 / median(kept same-paw intervals)` from the
 pairs that were measured. `strideTimeCv` is the standard deviation of those
 intervals divided by their mean.

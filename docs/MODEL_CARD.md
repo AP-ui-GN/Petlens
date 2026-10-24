@@ -70,19 +70,26 @@ Both models run on the server. The browser only uploads the clip.
 The canine-pose development audit, dataset source review, preparation command,
 and acceptance gates are in [`docs/model_audit.md`](model_audit.md). The
 official AP-10K split 1 archive has been validated locally; it contains 794
-training, 110 validation, and 225 test `dog` instances. An optional
-random-initialization dog-only training experiment recorded four epochs in its
-logs/checkpoint; epoch 2 was the only epoch evaluated. The result is
-exploratory: the test split was inspected before training continued, and the
-exact epoch-2 checkpoint was overwritten. The epoch-4 local checkpoint
-successfully loads but was not evaluated. Neither checkpoint is part of
-application inference or appropriate for performance claims. A loss
-normalization flaw identified in the original run has since been corrected;
-the existing checkpoints were trained with the old loss and have not been
-retrained. The model's dog-only PCK@0.1 was 0.000881 (2/2,269 keypoints),
-below an oracle-box-center baseline of 0.051565 (117/2,269); both are
-diagnostic on the already-inspected test split. See
-[`reports/canine_pose_evaluation.md`](../reports/canine_pose_evaluation.md).
+training, 110 validation, and 225 test `dog` instances. A fresh, randomly
+initialized dog-only ResNet-18 run used the corrected heatmap loss and
+completed 30 epochs. Its validation-selected checkpoint reached PCK@0.1
+**0.425725 (470/1,104 visible keypoints)** on the official dog-only validation
+split, versus **0.037138 (41/1,104)** for the oracle-box-center baseline; the
+model's 95% image-bootstrap interval is [0.379068, 0.475340]. All 17 keypoint
+channels also exceed their box-center validation baseline, although tail-root
+PCK remains low at 0.035. This clears the baseline on validation only. The
+same split selected the checkpoint and controlled early stopping, so the
+result is development evidence, not an independent test result. It uses
+oracle boxes on still images and says nothing about detection, walking-video
+tracking, or gait. The checkpoint stays in the local cache and is not part of
+application inference. Charts, metrics, and protocol caveats are in the
+[`validation report`](../reports/canine-pose-validation/index.html).
+
+The earlier epoch-2 test result (PCK@0.1 0.000881 versus 0.051565 for
+box-center) came from a checkpoint trained with the old loss and from a test
+split inspected before training continued. It is a historical diagnostic, not
+a result for the corrected-loss model or independent evidence; see the
+[historical test report](../reports/canine_pose_evaluation.md).
 Default app results are motion-only, optionally with detector metadata. The
 COCO-17 experiment is disabled unless explicitly enabled; it is never a
 validated canine-pose result.
@@ -90,10 +97,10 @@ validated canine-pose result.
 | Canine-pose milestone | Status |
 | --- | --- |
 | Training code implemented | Yes; AP-10K preparation and dog-only heatmap trainer |
-| Training completed | Partial run only: four epochs logged/checkpointed; the configured 10 epochs were not completed |
-| Checkpoint loaded | Yes; epoch-4 state loaded and produced a finite `(1, 17, 64, 48)` heatmap tensor in a local smoke test |
-| Canine keypoints produced by inference | Yes on AP-10K still images with oracle boxes; exploratory epoch-2 predictions only |
-| Independent labeled evaluation | No; official test data has been inspected and is diagnostic-only |
+| Training completed | Yes; 30 epochs with the corrected loss, selected by validation loss |
+| Checkpoint loaded | Yes; best checkpoint evaluated on AP-10K validation images |
+| Canine keypoints produced by inference | Yes on AP-10K still images with oracle boxes; not in app inference |
+| Independent labeled evaluation | No; validation is development-only and prior test inspection prevents an independent test claim |
 | Real dog-walking video tested with the canine model | No; the supplied gait-paper clip was tested with detector-only processing, without canine pose |
 | Gait metrics validated | No |
 | Canine feature integrated into the app | No; only COCO-17 or motion-only inference is enabled |

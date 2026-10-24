@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Evaluate a trained AP-10K dog pose model on the official held-out test split."""
+"""Evaluate a trained AP-10K dog pose model on a prepared data split."""
 
 from __future__ import annotations
 
@@ -29,15 +29,19 @@ def parse_args() -> argparse.Namespace:
         default=REPOSITORY_ROOT / "training" / "dataset_config.yaml",
     )
     parser.add_argument("--checkpoint", type=Path, required=True)
+    parser.add_argument("--split", choices=("val", "test"), default="test")
+    parser.add_argument(
+        "--require-baseline",
+        action="store_true",
+        help="Return a failure status unless PCK@0.1 meets the box-center baseline.",
+    )
     parser.add_argument(
         "--metrics-out",
         type=Path,
-        default=REPOSITORY_ROOT / "reports" / "canine_pose_metrics.json",
     )
     parser.add_argument(
         "--report-out",
         type=Path,
-        default=REPOSITORY_ROOT / "reports" / "canine_pose_evaluation.md",
     )
     parser.add_argument("--predictions-out", type=Path)
     parser.add_argument("--visualizations-dir", type=Path)
@@ -111,13 +115,14 @@ def _markdown_report(payload: dict[str, Any]) -> str:
         f"- Model: {payload['model']['name']} (`{payload['model']['version']}`)",
         f"- Training: {payload['training']['epochs_completed']} epochs; {payload['training']['initialization']} initialization; selected by {payload['training']['selected_by']}",
         f"- Training device: {payload['training']['device']}; duration seconds: {payload['training']['duration_seconds']}",
-        f"- Dataset: AP-10K official test split, species filter `{payload['dataset']['species_filter']}`",
+        f"- Dataset: AP-10K {payload['dataset']['split']}, species filter `{payload['dataset']['species_filter']}`",
         f"- Instances: {evaluation['instances']} annotations; {evaluation['predicted_instances']} predictions",
         "- Scope: pose localization with ground-truth boxes; detection, tracking, and gait are not evaluated.",
         f"- PCK@0.05: {pck_005['overall']}",
         f"- PCK@0.1: {pck_01['overall']}",
         f"- PCK@0.1 95% image-bootstrap CI: {confidence_interval_text}",
         f"- Box-center baseline PCK@0.1: {baseline_01['overall']}",
+        f"- Box-center baseline comparison: {'met' if payload['baseline']['meets_or_exceeds'] else 'not met'} on this split",
         f"- Mean pixel error: {errors['mean_pixel_error']} px over {errors['predicted_keypoints']} predicted visible keypoints",
         f"- Mean normalized error: {errors['mean_normalized_error']} (normalizer: {errors['normalized_units']})",
         f"- Model-forward latency: {payload['runtime']['mean_model_forward_seconds_per_instance']} seconds per dog crop on {payload['runtime']['device']}",
@@ -167,10 +172,29 @@ def run_evaluation(args: argparse.Namespace) -> int:
         else Path(dataset_config["prepared_dir"])
     ).expanduser()
     species = str(dataset_config.get("species", "dog"))
+    split_path = prepared_dir / f"{args.split}.json"
+    metrics_out = args.metrics_out or (
+        REPOSITORY_ROOT
+        / "reports"
+        / (
+            "canine_pose_metrics.json"
+            if args.split == "test"
+            else f"canine_pose_metrics_{args.split}.json"
+        )
+    )
+    report_out = args.report_out or (
+        REPOSITORY_ROOT
+        / "reports"
+        / (
+            "canine_pose_evaluation.md"
+            if args.split == "test"
+            else f"canine_pose_evaluation_{args.split}.md"
+        )
+    )
     input_size = (int(model_config["input_width"]), int(model_config["input_height"]))
     heatmap_size = (int(model_config["heatmap_width"]), int(model_config["heatmap_height"]))
     dataset = AP10KHeatmapDataset(
-        prepared_dir / "test.json",
+        split_path,
         dataset_root / "data",
         species=species,
         input_size=input_size,
@@ -239,7 +263,7 @@ def run_evaluation(args: argparse.Namespace) -> int:
                     prediction,
                     dataset.image_root,
                     args.visualizations_dir
-                    / f"test-{record['annotation_id']}-{visualizations:02d}.jpg",
+                    / f"{args.split}-{record['annotation_id']}-{visualizations:02d}.jpg",
                     model_version,
                 )
                 visualizations += 1
@@ -282,6 +306,10 @@ def run_evaluation(args: argparse.Namespace) -> int:
         baseline_predictions,
         minimum_confidence=args.minimum_confidence,
     )
+    meets_baseline = (
+        evaluation["metrics"]["PCK@0.1"]["overall"]
+        >= baseline_evaluation["metrics"]["PCK@0.1"]["overall"]
+    )
     training_metadata_path = args.checkpoint.parent / "training_metadata.json"
     training_metadata = (
         json.loads(training_metadata_path.read_text(encoding="utf-8"))
@@ -297,13 +325,24 @@ def run_evaluation(args: argparse.Namespace) -> int:
         == checkpoint.get("run_id")
     )
     result = {
-        "status": "exploratory_measured",
+        "status": (
+            "development_validation"
+            if args.split == "val"
+            else "exploratory_measured"
+        ),
         "evaluation_protocol": {
             "independent": False,
             "note": (
-                "The AP-10K official test split was evaluated and inspected before "
-                "training continued; it is diagnostic only and must not guide model "
-                "selection or performance claims."
+                (
+                    "The AP-10K validation split is used for model selection and "
+                    "early stopping; these measurements are development-only and "
+                    "are not independent performance evidence."
+                    if args.split == "val"
+                    else
+                    "The AP-10K official test split was evaluated and inspected before "
+                    "training continued; it is diagnostic only and must not guide model "
+                    "selection or performance claims."
+                )
             ),
         },
         "model": {
@@ -340,17 +379,18 @@ def run_evaluation(args: argparse.Namespace) -> int:
         },
         "dataset": {
             "name": "AP-10K",
-            "split": "official test split",
+            "split": f"official {args.split} split",
             "species_filter": species,
             "schema_version": SCHEMA_VERSION,
             "instances": len(dataset),
-            "test_annotations_sha256": _sha256_file(prepared_dir / "test.json"),
+            "annotations_sha256": _sha256_file(split_path),
             "manifest_sha256": _sha256_file(prepared_dir / "manifest.json"),
         },
         "evaluation": evaluation,
         "baseline": {
             "method": "Every AP-10K keypoint is placed at the ground-truth box center.",
             "evaluation": "same oracle-box instances and PCK protocol as the model",
+            "meets_or_exceeds": meets_baseline,
             "metrics": baseline_evaluation["metrics"],
         },
         "runtime": {
@@ -362,13 +402,25 @@ def run_evaluation(args: argparse.Namespace) -> int:
         },
         "visualizations_written": visualizations,
     }
-    _write_json(args.metrics_out, result)
+    _write_json(metrics_out, result)
     if args.predictions_out is not None:
         _write_json(args.predictions_out, prediction_payload)
-    args.report_out.parent.mkdir(parents=True, exist_ok=True)
-    args.report_out.write_text(_markdown_report(result), encoding="utf-8")
-    print(f"Wrote test metrics to {args.metrics_out}")
-    print(f"Wrote human-readable report to {args.report_out}")
+    report_out.parent.mkdir(parents=True, exist_ok=True)
+    report_out.write_text(_markdown_report(result), encoding="utf-8")
+    print(f"Wrote {args.split} metrics to {metrics_out}")
+    print(f"Wrote human-readable report to {report_out}")
+    print(
+        "Box-center baseline "
+        f"{'met' if meets_baseline else 'not met'} on {args.split} "
+        f"(model {evaluation['metrics']['PCK@0.1']['overall']:.6f}, "
+        f"baseline {baseline_evaluation['metrics']['PCK@0.1']['overall']:.6f})."
+    )
+    if args.require_baseline and not meets_baseline:
+        print(
+            "Baseline acceptance failed: model PCK@0.1 is below the box-center baseline.",
+            file=sys.stderr,
+        )
+        return 3
     return 0
 
 

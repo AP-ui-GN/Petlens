@@ -19,6 +19,9 @@
       "channel": "production",
       "environment": "production",
       "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://petlens-motion-api.onrender.com"
+      },
       "android": {
         "buildType": "apk"
       }
