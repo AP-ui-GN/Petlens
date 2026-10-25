@@ -10,7 +10,11 @@
     "ios": "expo start --ios",
     "typecheck": "tsc --noEmit",
     "doctor": "expo-doctor",
-    "export:check": "expo export --platform ios --output-dir .expo/export-check"
+    "export:check": "expo export --platform ios --output-dir .expo/export-check",
+    "verify:eas-update": "node scripts/verify-eas-update-config.mjs",
+    "build:android:production": "npx eas-cli@latest build --platform android --profile production",
+    "update:preview": "npx eas-cli@latest update --channel preview --environment preview",
+    "update:production": "npx eas-cli@latest update --channel production --environment production"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.1.1",

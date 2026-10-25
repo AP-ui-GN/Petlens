@@ -30,6 +30,7 @@
     },
     "plugins": [
       "expo-router",
+      "expo-updates",
       [
         "expo-image-picker",
         {
@@ -56,8 +57,14 @@
       ]
     ],
     "owner": "abhikshit",
+    "updates": {
+      "enabled": true,
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/f2e7a1b9-741f-4395-89cd-aafcfef0433d"
+    },
     "runtimeVersion": {
-      "policy": "appVersion"
+      "policy": "fingerprint"
     },
     "extra": {
       "apiUrl": {},

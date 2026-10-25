@@ -6,6 +6,7 @@
  */
 
 import Constants from 'expo-constants';
+import * as Updates from 'expo-updates';
 import { useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Alert, Platform, ScrollView, Share, StyleSheet, Switch, Text, TextInput, View } from 'react-native';
@@ -245,6 +246,27 @@ export default function SettingsScreen() {
       </Card>
 
       <Card>
+        <Eyebrow>App updates</Eyebrow>
+        <Muted>
+          {Updates.isEnabled
+            ? `Automatic update checks run on launch${Updates.channel ? ` on the ${Updates.channel} channel` : ''}. A downloaded update takes effect after you reopen the app.`
+            : 'Over-the-air updates are not enabled in this app build.'}
+        </Muted>
+        <InfoRow label="App version" value={Constants.expoConfig?.version ?? 'Unavailable'} />
+        <InfoRow label="Native runtime" value={Updates.runtimeVersion ?? 'Unavailable in this client'} />
+        <InfoRow
+          label="Running bundle"
+          value={
+            !Updates.isEnabled
+              ? 'Unavailable in this client'
+              : Updates.isEmbeddedLaunch
+                ? 'Embedded fallback'
+                : Updates.updateId ?? 'Update ID unavailable'
+          }
+        />
+      </Card>
+
+      <Card>
         <Eyebrow>App</Eyebrow>
         <Button label="How AI is used" variant="secondary" onPress={() => router.push('/ai-use')} />
         <Button label="Send feedback" variant="secondary" onPress={sendFeedback} />
@@ -260,6 +282,16 @@ export default function SettingsScreen() {
         </Muted>
       </Card>
     </ScrollView>
+  );
+}
+
+function InfoRow({ label, value }: { label: string; value: string }) {
+  const palette = useColors();
+  return (
+    <View style={styles.infoRow}>
+      <Text style={{ color: palette.muted }}>{label}</Text>
+      <Text selectable style={[styles.infoValue, { color: palette.text }]}>{value}</Text>
+    </View>
   );
 }
 
@@ -295,6 +327,8 @@ function SettingRow({
 
 const styles = StyleSheet.create({
   settingRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, minHeight: 44 },
+  infoRow: { gap: spacing.xs, paddingVertical: spacing.xs },
+  infoValue: { fontSize: 14, lineHeight: 20 },
   page: { padding: spacing.lg, gap: spacing.lg },
   input: {
     borderWidth: 1,

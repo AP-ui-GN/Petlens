@@ -15,7 +15,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     ...config,
     name: config.name ?? 'PetLens AI',
     slug: config.slug ?? 'silverpaws-ai',
-    runtimeVersion: { policy: 'appVersion' },
+    runtimeVersion: { policy: 'fingerprint' },
     ios: {
       ...config.ios,
       bundleIdentifier: PLACEHOLDER_APP_ID,
