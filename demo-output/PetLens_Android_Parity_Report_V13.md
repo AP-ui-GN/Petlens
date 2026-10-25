@@ -92,7 +92,7 @@ Evidence: `parity-v13/hc-1-offline.png`, `hc-2-network-back.png`, `hc-3-after-re
 | Profile editor: cancel unsaved breed change | **PASS** — reopening retained "Labrador mix" |
 | Profile editor: save breed change | **PASS** — saved "Retriever" and profile card reflected it |
 | Restart persistence | **PASS** — after force-stop/relaunch, "Retriever" and saved observations remained |
-| Compare with two actual API responses | **PASS, limited** — selected two saved same-method (`Picture motion only`) records; dates and actual saved metrics displayed as "Not measured". Both were generated from `20.mp4` screen-recording runs, not dog walks. |
+| Compare / insufficient data | **PASS, limited** — selected two saved same-method (`Picture motion only`) records; dates and actual saved metrics displayed as "Not measured". Both were generated from `20.mp4` screen-recording runs, not dog walks. With one record, Compare was disabled. A cross-method/incompatible pair was **NOT TESTED**. |
 | Methodology | **PASS** — opened, scrolled to the sources/disclaimer, and verified it says default analysis measures whole-picture frame motion and explicitly disclaims validated canine keypoints and clinical claims. Added a Stack screen entry for a titled native header; confirmed the "Methodology" header on V15. |
 | Guided tour | **PASS** — opened; Next and Back changed steps; Skip dismissed it; a separate run advanced to step 4 and Finish dismissed it; tab navigation remained available. |
 | Delete confirmation | **PASS** — Keep left the two observations intact; confirming Delete removed only the selected walk and left one observation. |
