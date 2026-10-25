@@ -6,6 +6,11 @@ an APK on the `production` channel; preview and development builds use separate
 channels. `expo-updates` is configured to check on launch without waiting for
 the network before opening the app.
 
+Previously distributed APKs built before this configuration do not contain the
+EAS Update URL and cannot be retrofitted over the air. Install the new
+update-enabled production APK once; later compatible JavaScript and asset
+releases can then arrive through EAS Update.
+
 ## What can ship over the air
 
 EAS Update can deliver JavaScript and bundled asset changes that are compatible
