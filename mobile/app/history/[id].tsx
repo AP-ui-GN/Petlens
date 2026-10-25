@@ -18,6 +18,7 @@ import { aiUseResultLines } from '../../src/lib/ai-use';
 import { EMERGENCY_NOTE, SAFETY_DISCLAIMER } from '../../src/lib/disclaimers';
 import { sharePdf } from '../../src/lib/print-report';
 import { vetSummaryHtml, walkReportHtml } from '../../src/lib/report-html';
+import { buildTelemetryCsv, buildTelemetryJson } from '../../src/lib/telemetry-export';
 import { recentWalks, walksForPet } from '../../src/lib/walks';
 import {
   FACTOR_LABELS,
@@ -215,6 +216,9 @@ function PipelineVisual({ analysis }: { analysis: Analysis }) {
 function buildShareText(analysis: Analysis, pet?: Pet) {
   const lines = [
     `PetLens AI observation for ${pet?.name ?? 'pet'} — ${formatDateTime(analysis.createdAt)}`,
+    analysis.source ? `Video source: ${analysis.source}` : '',
+    analysis.license ? `License or permission: ${analysis.license}` : '',
+    analysis.sourceUrl ? `Source link: ${analysis.sourceUrl}` : '',
     `Overall wellness indicator: ${formatMeasure(analysis.overallScore, '/100', 0)}`,
     ...FACTOR_LABELS.map((factor) => `${factor.label}: ${formatMeasure(analysis.factors[factor.key], '/100', 0)}`),
     '',
@@ -262,6 +266,20 @@ export default function WalkDetailScreen() {
     if (!outcome.ok) Alert.alert('Summary not shared', outcome.message);
   }
 
+  async function shareTelemetry(format: 'csv' | 'json') {
+    try {
+      const message = format === 'csv'
+        ? buildTelemetryCsv(walk, pet)
+        : JSON.stringify(buildTelemetryJson(walk, pet), null, 2);
+      await Share.share({
+        title: `PetLens raw telemetry (${format.toUpperCase()})`,
+        message,
+      });
+    } catch {
+      Alert.alert('Telemetry not shared', 'The raw values could not be opened in the share sheet.');
+    }
+  }
+
   function confirmDelete() {
     Alert.alert('Delete this walk?', 'The saved measurements and notes will be removed from this phone.', [
       { text: 'Keep', style: 'cancel' },
@@ -300,6 +318,14 @@ export default function WalkDetailScreen() {
             Measured on the server with {analysis.modelInfo.modelName}, version {analysis.modelInfo.modelVersion}.
           </Muted>
         ) : null}
+        {(analysis.source || analysis.license || analysis.sourceUrl) && (
+          <View style={{ gap: 4 }}>
+            <Eyebrow>Video attribution</Eyebrow>
+            {analysis.source ? <Muted>Source: {analysis.source}</Muted> : null}
+            {analysis.license ? <Muted>License or permission: {analysis.license}</Muted> : null}
+            {analysis.sourceUrl ? <Muted>Source link: {analysis.sourceUrl}</Muted> : null}
+          </View>
+        )}
         {aiUseResultLines(analysis.aiUse).map((line) => (
           <Muted key={line}>{line}</Muted>
         ))}
@@ -395,6 +421,13 @@ export default function WalkDetailScreen() {
       <Card>
         <Eyebrow>Limitations</Eyebrow>
         <Text style={[styles.body, { color: colors.text }]}>{analysis.limitations}</Text>
+      </Card>
+
+      <Card>
+        <Eyebrow>Export options</Eyebrow>
+        <Muted>Share the saved observation or raw measured values from this phone.</Muted>
+        <Button label="Export raw telemetry (CSV)" icon="download-outline" variant="secondary" onPress={() => void shareTelemetry('csv')} />
+        <Button label="Export raw telemetry (JSON)" icon="download-outline" variant="secondary" onPress={() => void shareTelemetry('json')} />
       </Card>
 
       <View style={styles.actions}>

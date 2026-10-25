@@ -109,8 +109,8 @@ export default function PetScreen() {
       updatePet(existing.id, payload);
       router.back();
     } else {
-      const created = addPet(payload);
-      router.replace({ pathname: '/analyze', params: { petId: created.id } });
+      addPet(payload);
+      router.replace('/pet');
     }
   }
 

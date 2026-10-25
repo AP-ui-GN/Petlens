@@ -163,11 +163,16 @@ export default function SettingsScreen() {
 
       <Card>
         <Eyebrow>Appearance</Eyebrow>
+        <Muted>The default appearance matches the dark PetLens web app. Choose light to override it.</Muted>
         <View style={styles.row}>
           {(['system', 'light', 'dark'] as ThemeChoice[]).map((choice) => (
             <Button
               key={choice}
-              label={preferences.theme === choice ? `${choice} selected` : choice}
+              label={
+                preferences.theme === choice
+                  ? `${choice === 'system' ? 'Default dark' : choice} selected`
+                  : choice === 'system' ? 'Default dark' : choice
+              }
               variant={preferences.theme === choice ? 'primary' : 'secondary'}
               onPress={() => update({ theme: choice })}
               style={{ flex: 1 }}

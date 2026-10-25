@@ -134,6 +134,9 @@ export type Analysis = {
   id: string;
   petId: string;
   fileName: string;
+  source?: string;
+  license?: string;
+  sourceUrl?: string;
   durationSeconds: number;
   createdAt: string;
   pipeline: Pipeline;

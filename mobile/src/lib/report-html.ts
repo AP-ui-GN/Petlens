@@ -44,6 +44,11 @@ export function walkReportHtml(analysis: Analysis, pets: Pet[]): string {
   const concerning = analysis.concerningChange
     ? '<p><strong>Worth asking a veterinarian.</strong> This is a prompt to ask a professional, not a diagnosis.</p>'
     : '';
+  const attribution = [
+    analysis.source ? row('Video source', analysis.source) : '',
+    analysis.license ? row('License or permission', analysis.license) : '',
+    analysis.sourceUrl ? row('Source link', analysis.sourceUrl) : '',
+  ].join('');
   return `<!DOCTYPE html>
 <html>
 <head>
@@ -69,6 +74,7 @@ export function walkReportHtml(analysis: Analysis, pets: Pet[]): string {
   <p class="muted">What was saved from the clip. "Not measured" does not mean zero.</p>
   <table>
     ${row('Measured with', PIPELINE_LABELS[analysis.pipeline] ?? analysis.pipeline)}
+    ${attribution}
     ${row('Model', analysis.modelInfo ? `${analysis.modelInfo.modelName} ${analysis.modelInfo.modelVersion}` : 'Not measured')}
     ${row('Overall wellness indicator', formatMeasure(analysis.overallScore, '/100', 0))}
     ${row('Movement consistency', formatMeasure(analysis.factors.movementConsistency, '/100', 0))}

@@ -6,7 +6,7 @@ import { ActivityIndicator, Alert, Pressable, ScrollView, StyleSheet, Text, View
 import { DisclaimerFooter } from '../../src/components/disclaimer-footer';
 import { ScoreBadge } from '../../src/components/score';
 import { TrendPanel } from '../../src/components/trend-panel';
-import { Button, Card, Chip, EmptyState, Muted } from '../../src/components/ui';
+import { Button, Card, Chip, EmptyState, Eyebrow, Muted } from '../../src/components/ui';
 import { useLocalData } from '../../src/hooks/use-local-data';
 import { formatDateTime, formatDuration, SIGNAL_LABELS } from '../../src/lib/format';
 import { sharePdf } from '../../src/lib/print-report';
@@ -44,20 +44,27 @@ export default function HistoryScreen() {
     );
   }
 
-  if (analyses.length === 0) {
-    return (
-      <ScrollView contentContainerStyle={styles.page}>
-        <Card>
-          <EmptyState icon="footsteps-outline" title="No walks yet" body="Each saved walk shows up here with its score, what was measured, and what it means." />
-          <Button label="Record a walk" icon="videocam-outline" onPress={() => router.push('/analyze')} />
-        </Card>
-        <DisclaimerFooter />
-      </ScrollView>
-    );
-  }
-
   return (
     <ScrollView contentContainerStyle={styles.page}>
+      <View style={{ gap: spacing.sm }}>
+        <Eyebrow>Your local notebook</Eyebrow>
+        <Text style={[styles.pageTitle, { color: colors.text }]}>
+          History, not{'\n'}<Text style={{ color: colors.accent }}>a verdict.</Text>
+        </Text>
+        <Muted>A dated trail of observations to help you notice patterns and ask better questions.</Muted>
+      </View>
+      <View style={styles.countRow}>
+        <Muted>{analyses.length} saved observation{analyses.length === 1 ? '' : 's'} on this device</Muted>
+        <Button label="New analysis" icon="videocam-outline" onPress={() => router.push('/analyze')} />
+      </View>
+
+      {analyses.length === 0 ? (
+        <Card>
+          <EmptyState icon="footsteps-outline" title="No walks saved yet" body="Your first observation will appear here after you run an analysis." />
+          <Button label="Record a walk" icon="videocam-outline" onPress={() => router.push('/analyze')} />
+        </Card>
+      ) : (
+        <>
       {pets.length > 1 && (
         <View style={styles.chips}>
           <Chip label="All pets" selected={petFilter === null} onPress={() => setPetFilter(null)} />
@@ -91,6 +98,7 @@ export default function HistoryScreen() {
               <ScoreBadge score={analysis.overallScore} size="small" />
               <View style={{ flex: 1, gap: 2 }}>
                 <Text style={[styles.itemTitle, { color: colors.text }]}>{pet?.name ?? 'Pet'}</Text>
+                <Text numberOfLines={1} style={[styles.itemFile, { color: colors.muted }]}>{analysis.fileName}</Text>
                 <Muted>
                   {formatDateTime(analysis.createdAt)} · {formatDuration(analysis.durationSeconds)}
                 </Muted>
@@ -104,6 +112,8 @@ export default function HistoryScreen() {
           );
         })}
       </View>
+        </>
+      )}
 
       <DisclaimerFooter />
     </ScrollView>
@@ -113,6 +123,8 @@ export default function HistoryScreen() {
 const styles = StyleSheet.create({
   page: { padding: spacing.lg, gap: spacing.lg },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  pageTitle: { fontSize: 34, lineHeight: 39, fontWeight: '800', letterSpacing: -0.8 },
+  countRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: spacing.sm },
   actions: { flexDirection: 'row', gap: spacing.sm },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
   item: {
@@ -125,4 +137,5 @@ const styles = StyleSheet.create({
     padding: spacing.md,
   },
   itemTitle: { fontSize: 16, fontWeight: '700' },
+  itemFile: { fontSize: 12 },
 });

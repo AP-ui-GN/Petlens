@@ -58,6 +58,9 @@ export type ClipDetails = {
   petId: string;
   fileName: string;
   durationSeconds: number;
+  source?: string;
+  license?: string;
+  sourceUrl?: string;
 };
 
 /** Turn an API result into a saved record. */
@@ -67,6 +70,9 @@ export function toAnalysisRecord(result: AnalyzeResult, details: ClipDetails): A
     createdAt: new Date().toISOString(),
     petId: details.petId,
     fileName: details.fileName,
+    source: details.source?.trim() || undefined,
+    license: details.license?.trim() || undefined,
+    sourceUrl: details.sourceUrl?.trim() || undefined,
     // The pipeline measures duration from decoded frames; the picker value is the
     // fallback for containers where the frame rate could not be read.
     durationSeconds: Math.round(result.measurements.durationSeconds || details.durationSeconds),

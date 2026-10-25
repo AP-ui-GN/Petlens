@@ -25,6 +25,7 @@ function Navigation() {
         <Stack.Screen name="history/[id]" options={{ title: 'Walk details' }} />
         <Stack.Screen name="pet/[id]" options={{ title: 'Pet profile' }} />
         <Stack.Screen name="onboarding" options={{ title: 'Before you start', headerBackVisible: false }} />
+        <Stack.Screen name="guided-tour" options={{ title: 'PetLens walkthrough' }} />
         <Stack.Screen name="demo" options={{ title: 'Sample data' }} />
         <Stack.Screen name="compare" options={{ title: 'Compare walks' }} />
         <Stack.Screen name="ai-use" options={{ title: 'How AI is used' }} />

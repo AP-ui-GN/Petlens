@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
-import { Tabs } from 'expo-router';
-import { Image, Text, View } from 'react-native';
+import { Tabs, useRouter } from 'expo-router';
+import { Image, Pressable, Text, View } from 'react-native';
 
 import { useColors } from '../../src/theme-context';
 
@@ -23,6 +23,7 @@ function PetLensHeader() {
 
 export default function TabsLayout() {
   const colors = useColors();
+  const router = useRouter();
   return (
     <Tabs
       screenOptions={{
@@ -31,8 +32,20 @@ export default function TabsLayout() {
         headerTintColor: colors.text,
         headerTitleStyle: { fontWeight: '700' },
         headerTitle: PetLensHeader,
+        headerRight: () => (
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="Settings"
+            onPress={() => router.push('/settings')}
+            hitSlop={10}
+            style={{ padding: 8 }}
+          >
+            <Ionicons name="settings-outline" size={20} color={colors.muted} />
+          </Pressable>
+        ),
         tabBarActiveTintColor: colors.accent,
         tabBarInactiveTintColor: colors.muted,
+        tabBarLabelStyle: { fontSize: 9, fontWeight: '600' },
         tabBarStyle: { backgroundColor: colors.card, borderTopColor: colors.border, minHeight: 56 },
         sceneStyle: { backgroundColor: colors.background },
       }}
@@ -40,15 +53,15 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color, size }) => <Ionicons name="home-outline" size={size} color={color} />,
+          title: 'Overview',
+          tabBarIcon: ({ color, size }) => <Ionicons name="pulse-outline" size={size} color={color} />,
         }}
       />
       <Tabs.Screen
         name="analyze"
         options={{
-          title: 'Analyze',
-          tabBarIcon: ({ color, size }) => <Ionicons name="videocam-outline" size={size} color={color} />,
+          title: 'New analysis',
+          tabBarIcon: ({ color, size }) => <Ionicons name="add-circle-outline" size={size} color={color} />,
         }}
       />
       <Tabs.Screen
@@ -59,10 +72,23 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
+        name="pet/index"
+        options={{
+          title: 'Pet profile',
+          tabBarIcon: ({ color, size }) => <Ionicons name="paw-outline" size={size} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="ai-use"
+        options={{
+          title: 'AI use',
+          tabBarIcon: ({ color, size }) => <Ionicons name="shield-checkmark-outline" size={size} color={color} />,
+        }}
+      />
+      <Tabs.Screen
         name="settings"
         options={{
-          title: 'Settings',
-          tabBarIcon: ({ color, size }) => <Ionicons name="settings-outline" size={size} color={color} />,
+          href: null,
         }}
       />
     </Tabs>

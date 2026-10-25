@@ -5,10 +5,10 @@
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-import { Card, Muted, Title } from '../src/components/ui';
-import { aiUseEntries, aiUseSummary } from '../src/lib/ai-use';
-import { spacing } from '../src/theme';
-import { useColors } from '../src/theme-context';
+import { Card, Eyebrow, Muted, Title } from '../../src/components/ui';
+import { aiUseEntries, aiUseSummary } from '../../src/lib/ai-use';
+import { spacing } from '../../src/theme';
+import { useColors } from '../../src/theme-context';
 
 export default function AiUseScreen() {
   const colors = useColors();
@@ -16,6 +16,7 @@ export default function AiUseScreen() {
   return (
     <ScrollView contentContainerStyle={styles.page}>
       <Card>
+        <Eyebrow>Transparency</Eyebrow>
         <Title>How AI is used</Title>
         <Muted>{aiUseSummary()}</Muted>
       </Card>
@@ -47,7 +48,7 @@ export default function AiUseScreen() {
 }
 
 const styles = StyleSheet.create({
-  page: { padding: spacing.lg, gap: spacing.md },
+  page: { padding: spacing.lg, gap: spacing.md, paddingBottom: spacing.xxl },
   row: { minHeight: 44, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: spacing.md },
   heading: { flex: 1, fontSize: 15, fontWeight: '700' },
 });

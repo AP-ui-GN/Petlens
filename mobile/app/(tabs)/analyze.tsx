@@ -8,7 +8,7 @@
 import * as ImagePicker from 'expo-image-picker';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Linking, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import { DisclaimerFooter } from '../../src/components/disclaimer-footer';
@@ -73,6 +73,11 @@ export default function AnalyzeScreen() {
   const [uploadFraction, setUploadFraction] = useState(0);
   const [elapsed, setElapsed] = useState(0);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [source, setSource] = useState('');
+  const [license, setLicense] = useState('');
+  const [sourceUrl, setSourceUrl] = useState('');
+  const [specialistLocation, setSpecialistLocation] = useState('');
+  const [specialistError, setSpecialistError] = useState('');
   const [saved, setSaved] = useState<Analysis | null>(null);
   const abortRef = useRef<AbortController | null>(null);
 
@@ -100,10 +105,29 @@ export default function AnalyzeScreen() {
 
   const pet = useMemo(() => pets.find((item) => item.id === petId), [pets, petId]);
 
+  function searchSpecialists(query: string) {
+    const place = query.trim();
+    if (!place) {
+      setSpecialistError('Enter a ZIP code or city to search nearby.');
+      return;
+    }
+    setSpecialistError('');
+    const url = new URL('https://www.google.com/maps/search/');
+    url.searchParams.set('api', '1');
+    url.searchParams.set('query', `Veterinary Physical Therapy near ${place}`);
+    void Linking.openURL(url.toString()).catch((error: unknown) => {
+      console.error('Could not open Google Maps search for veterinary physical therapy.', error);
+      setSpecialistError('Could not open Maps. Try searching for veterinary physical therapy in your maps app.');
+    });
+  }
+
   async function pickClip(source: 'library' | 'camera') {
     setErrorMessage(null);
     setSaved(null);
     setPhase('idle');
+    setSource('');
+    setLicense('');
+    setSourceUrl('');
 
     try {
       if (source === 'camera') {
@@ -177,6 +201,9 @@ export default function AnalyzeScreen() {
         petId: pet.id,
         fileName: clip.name,
         durationSeconds: clip.durationSeconds ?? 0,
+        source,
+        license,
+        sourceUrl,
       });
       addAnalysis(record);
       setSaved(record);
@@ -210,6 +237,11 @@ export default function AnalyzeScreen() {
           <EmptyState icon="paw-outline" title="Add a pet first" body="Walks are saved against a pet profile so they can be compared over time." />
           <Button label="Create a pet profile" icon="add" onPress={() => router.push('/pet/new')} />
         </Card>
+        <Card>
+          <Eyebrow>Sample</Eyebrow>
+          <Muted>Explore an example result. It is sample data, not a real clip analysis, and is not saved to history.</Muted>
+          <Button label="Try Sample Dog Walk" icon="sparkles" variant="secondary" onPress={() => router.push('/demo')} />
+        </Card>
         <Muted>{PRIVACY_LINE}</Muted>
         <DisclaimerFooter />
       </ScrollView>
@@ -224,6 +256,17 @@ export default function AnalyzeScreen() {
           Read the three short notes and acknowledge that this is a wellness note, not a diagnosis.
         </Note>
       )}
+      <View style={styles.pageHeading}>
+        <Eyebrow>New mobility observation</Eyebrow>
+        <Text style={[styles.pageTitle, { color: colors.text }]}>
+          One walk.{'\n'}<Text style={{ color: colors.accent }}>A little more context.</Text>
+        </Text>
+        <Muted>
+          Choose a short video and the analysis service will measure the movement it can see, then save an educational observation.
+        </Muted>
+        <Button label="Replay guided tour" icon="help-circle-outline" variant="secondary" onPress={() => router.push('/guided-tour')} />
+      </View>
+
       <Card>
         <Eyebrow>How to film</Eyebrow>
         {FILMING_GUIDE.map((item) => (
@@ -314,8 +357,54 @@ export default function AnalyzeScreen() {
             <Muted>
               {clip.durationSeconds ? formatDuration(clip.durationSeconds) : 'Length unknown'} · {formatBytes(clip.sizeBytes)}
             </Muted>
+            <Button
+              label="Choose another video"
+              icon="refresh"
+              variant="secondary"
+              onPress={() => void pickClip('library')}
+              disabled={busy}
+            />
+            <View style={[styles.sourceContext, { borderColor: colors.border, backgroundColor: colors.accentSoft }]}>
+              <Eyebrow>Optional sharing context</Eyebrow>
+              <Muted>
+                Add attribution if the clip came from a shared library. Leave these blank for a private local video.
+              </Muted>
+              <TextInput
+                accessibilityLabel="Video source"
+                value={source}
+                onChangeText={setSource}
+                placeholder="Source (for example, personal video)"
+                placeholderTextColor={colors.muted}
+                style={[styles.input, { color: colors.text, borderColor: colors.border, backgroundColor: colors.background }]}
+              />
+              <TextInput
+                accessibilityLabel="Video license"
+                value={license}
+                onChangeText={setLicense}
+                placeholder="License or permission"
+                placeholderTextColor={colors.muted}
+                style={[styles.input, { color: colors.text, borderColor: colors.border, backgroundColor: colors.background }]}
+              />
+              <TextInput
+                accessibilityLabel="Video source link"
+                value={sourceUrl}
+                onChangeText={setSourceUrl}
+                placeholder="https://…"
+                placeholderTextColor={colors.muted}
+                autoCapitalize="none"
+                autoCorrect={false}
+                keyboardType="url"
+                style={[styles.input, { color: colors.text, borderColor: colors.border, backgroundColor: colors.background }]}
+              />
+            </View>
           </View>
         )}
+      </Card>
+
+      <Card>
+        <Eyebrow>Sample</Eyebrow>
+        <Muted>Explore an example result. It is labeled sample data, is not measured from a video, and is never saved in history.</Muted>
+        <Button label="Try Sample Dog Walk" icon="sparkles" variant="secondary" onPress={() => router.push('/demo')} />
       </Card>
 
       <Card>
@@ -342,7 +431,7 @@ export default function AnalyzeScreen() {
             </View>
             <Muted>
               {phase === 'analyzing'
-                ? `Reading frames and comparing left and right movement. ${elapsed}s so far; short clips usually finish within 10 seconds.`
+                ? `Reading video frames. ${elapsed}s elapsed; the measurements depend on the signal available in this clip.`
                 : 'Large clips take longer on Wi-Fi. Keep the app open.'}
             </Muted>
             <Button label="Cancel" variant="secondary" onPress={cancel} />
@@ -390,6 +479,30 @@ export default function AnalyzeScreen() {
         </Card>
       )}
 
+      <Card>
+        <Eyebrow>Find Care Nearby</Eyebrow>
+        <Muted>Search Google Maps for veterinary physical therapy specialists near you.</Muted>
+        <TextInput
+          accessibilityLabel="ZIP code or city"
+          value={specialistLocation}
+          onChangeText={setSpecialistLocation}
+          onSubmitEditing={() => searchSpecialists(specialistLocation)}
+          placeholder="ZIP code or city"
+          placeholderTextColor={colors.muted}
+          autoComplete="postal-code"
+          returnKeyType="search"
+          style={[styles.input, { color: colors.text, borderColor: colors.border, backgroundColor: colors.background }]}
+        />
+        <Button label="Search" icon="search-outline" onPress={() => searchSpecialists(specialistLocation)} />
+        <Button
+          label="Search near me in Maps"
+          icon="map-outline"
+          variant="secondary"
+          onPress={() => searchSpecialists('me')}
+        />
+        {specialistError ? <Note tone="error">{specialistError}</Note> : null}
+      </Card>
+
       <Muted>{PRIVACY_LINE}</Muted>
       <DisclaimerFooter />
     </ScrollView>
@@ -430,6 +543,8 @@ function ConnectionChip({
 
 const styles = StyleSheet.create({
   page: { padding: spacing.lg, gap: spacing.lg },
+  pageHeading: { gap: spacing.sm },
+  pageTitle: { fontSize: 31, lineHeight: 36, fontWeight: '800', letterSpacing: -0.7 },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   alignmentGuide: { borderWidth: 1, borderRadius: radius.md, padding: spacing.md, gap: spacing.md },
   alignmentHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: spacing.sm },
@@ -458,6 +573,8 @@ const styles = StyleSheet.create({
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
   row: { flexDirection: 'row', gap: spacing.sm, marginTop: spacing.xs },
   clipMeta: { marginTop: spacing.xs, gap: 2 },
+  sourceContext: { gap: spacing.sm, padding: spacing.md, borderWidth: 1, borderRadius: radius.md, marginTop: spacing.sm },
+  input: { borderWidth: 1, borderRadius: radius.md, paddingHorizontal: spacing.md, paddingVertical: 11, fontSize: 14 },
   clipName: { fontWeight: '600', fontSize: 14 },
   stage: { fontWeight: '700', fontSize: 15 },
   track: { height: 8, borderRadius: radius.pill, overflow: 'hidden' },

@@ -4,16 +4,14 @@
  */
 
 import { createContext, useContext, type ReactNode } from 'react';
-import { useColorScheme } from 'react-native';
-
 import { usePreferences } from './hooks/use-preferences';
 import { colors as lightColors, type ThemeColors } from './theme';
 
 export const darkColors: ThemeColors = {
-  background: '#04121d',
-  card: '#082d47',
-  border: '#124969',
-  text: '#f3fafc',
+  background: '#061826',
+  card: '#0a4267',
+  border: '#1669aa',
+  text: '#f4fbff',
   muted: '#a5bec9',
   accent: '#3eb49c',
   accentSoft: '#103d4f',
@@ -28,11 +26,8 @@ export const darkColors: ThemeColors = {
 const ThemeContext = createContext<ThemeColors>(lightColors);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const scheme = useColorScheme();
   const { ready, preferences } = usePreferences();
-  let mode: 'light' | 'dark' = scheme === 'dark' ? 'dark' : 'light';
-  if (ready && preferences.theme === 'light') mode = 'light';
-  if (ready && preferences.theme === 'dark') mode = 'dark';
+  const mode = ready && preferences.theme === 'light' ? 'light' : 'dark';
   const palette = mode === 'dark' ? darkColors : lightColors;
   return <ThemeContext.Provider value={palette}>{children}</ThemeContext.Provider>;
 }
