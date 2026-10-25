@@ -5,7 +5,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
-import { DisclaimerFooter } from '../src/components/disclaimer-footer';
 import { Button, Card, EmptyState, Muted, Note } from '../src/components/ui';
 import { useLocalData } from '../src/hooks/use-local-data';
 import { formatDate, formatMeasure, PIPELINE_LABELS } from '../src/lib/format';
@@ -79,7 +78,6 @@ export default function CompareScreen() {
           </Card>
         )
       )}
-      <DisclaimerFooter />
     </ScrollView>
   );
 }

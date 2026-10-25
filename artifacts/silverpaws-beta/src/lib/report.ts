@@ -266,8 +266,8 @@ function buildPdf(lines: ReportLine[]) {
     objects.push(value);
     return objects.length;
   };
-  const fontRegular = addObject('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>');
-  const fontBold = addObject('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>');
+  const fontRegular = addObject('<< /Type /Font /Subtype /Type1 /BaseFont /ArialMT >>');
+  const fontBold = addObject('<< /Type /Font /Subtype /Type1 /BaseFont /Arial-BoldMT >>');
   const contentIds: number[] = [];
   const pageIds: number[] = [];
 

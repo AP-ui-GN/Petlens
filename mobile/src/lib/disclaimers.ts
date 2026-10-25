@@ -8,4 +8,4 @@ export const EMERGENCY_NOTE =
   'If a pet is in pain, collapses, has trouble breathing, or changes suddenly, contact a veterinarian or emergency clinic. Do not wait on an app result.';
 
 export const PRIVACY_LINE =
-  'The clip is sent to the analysis server only to be analyzed and is deleted afterward.';
+  'The clip is sent to the PetLens analysis service and deleted right after. Only the numbers and summary are saved on this device.';

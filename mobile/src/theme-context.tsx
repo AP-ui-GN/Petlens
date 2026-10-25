@@ -9,18 +9,19 @@ import { colors as lightColors, type ThemeColors } from './theme';
 
 export const darkColors: ThemeColors = {
   background: '#061826',
-  card: '#0a4267',
-  border: '#1669aa',
+  card: '#0a2b3e',
+  border: '#204254',
   text: '#f4fbff',
   muted: '#a5bec9',
+  primary: '#1669aa',
   accent: '#3eb49c',
-  accentSoft: '#103d4f',
+  accentSoft: '#103541',
   good: '#69d8bf',
   warn: '#f1b65f',
   warnSoft: '#3a311c',
   error: '#ff8b84',
   errorSoft: '#3a2420',
-  track: '#12364b',
+  track: '#173746',
 };
 
 const ThemeContext = createContext<ThemeColors>(lightColors);

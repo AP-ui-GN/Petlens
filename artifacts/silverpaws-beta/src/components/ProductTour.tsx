@@ -204,7 +204,7 @@ export default function ProductTour({ onComplete, onStepChange, initialStep = 0 
             Back
           </button>
           <button
-            className="rounded-lg bg-gradient-to-r from-[#1669aa] via-[#3794a4] to-[#3eb49c] px-5 py-2 text-sm font-bold text-white hover:brightness-110"
+            className="rounded-lg bg-[#1669aa] px-5 py-2 text-sm font-bold text-white hover:brightness-110"
             onClick={goNext}
             type="button"
           >

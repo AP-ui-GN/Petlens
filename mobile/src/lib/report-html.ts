@@ -54,7 +54,7 @@ export function walkReportHtml(analysis: Analysis, pets: Pet[]): string {
 <head>
 <meta charset="utf-8" />
 <style>
-  body { font-family: -apple-system, sans-serif; color: #0a4267; padding: 28px; font-size: 14px; line-height: 1.4; }
+  body { font-family: Arial, Helvetica, sans-serif; color: #0a4267; padding: 28px; font-size: 14px; line-height: 1.4; }
   h1 { font-size: 22px; margin-bottom: 4px; }
   h2 { font-size: 16px; margin-top: 22px; }
   .muted { color: #46606a; }
@@ -128,7 +128,7 @@ export function vetSummaryHtml(walks: Analysis[], pets: Pet[]): string {
 <head>
 <meta charset="utf-8" />
 <style>
-  body { font-family: -apple-system, sans-serif; color: #0a4267; padding: 28px; font-size: 14px; line-height: 1.4; }
+  body { font-family: Arial, Helvetica, sans-serif; color: #0a4267; padding: 28px; font-size: 14px; line-height: 1.4; }
   h1 { font-size: 22px; }
   h2 { font-size: 16px; margin-top: 18px; }
   .muted { color: #46606a; }

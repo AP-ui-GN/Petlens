@@ -4,7 +4,6 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useState } from 'react';
 import { Alert, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
-import { DisclaimerFooter } from '../../src/components/disclaimer-footer';
 import { Button, Card, Chip, Eyebrow, Muted } from '../../src/components/ui';
 import { useLocalData } from '../../src/hooks/use-local-data';
 import { usePreferences } from '../../src/hooks/use-preferences';
@@ -176,7 +175,6 @@ export default function PetScreen() {
           <Button label={existing ? 'Save changes' : 'Save and record a walk'} icon="checkmark" onPress={save} />
           {existing && <Button label="Remove pet" icon="trash-outline" variant="danger" onPress={confirmDelete} />}
         </Card>
-        <DisclaimerFooter />
       </ScrollView>
     </KeyboardAvoidingView>
   );

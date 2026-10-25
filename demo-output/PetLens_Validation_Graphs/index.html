@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>PetLens canine-pose validation report</title>
+<style>
+body{font:16px/1.55 system-ui,sans-serif;color:#163247;max-width:1050px;margin:2rem auto;padding:0 1rem}
+h1,h2{line-height:1.2} .warning{background:#fff1d6;padding:1rem;border-radius:.5rem}
+section{border-top:1px solid #d7e1e8;padding:1rem 0} img{max-width:100%;height:auto}
+code{overflow-wrap:anywhere} footer{color:#526b7c}
+</style>
+<h1>PetLens canine-pose validation diagnostics</h1>
+<p class="warning"><strong>Development validation only.</strong> This AP-10K result uses
+the validation split, which selected the checkpoint. It is not independent test
+evidence and does not measure walking-video tracking, gait, or osteoarthritis.
+The app's production inference remains motion-only.</p>
+<p>Model run <code>f15db4ca-667b-48c0-895d-950d8599bbfc</code>,
+checkpoint SHA-256 <code>59a25c5cab004c89b3f9fe5afa200bd9b67161aaf6c05e5a99261ceaf95fbf98</code>,
+epoch 30. Dataset: AP-10K official dog-only validation split,
+110 instances and
+1104 visible keypoints. PCK@0.1 is
+470/1104 (0.4257);
+box-center baseline 41/1104
+(0.0371).</p>
+<section><h2>Training Loss</h2><picture><source srcset="01-training-loss.svg" type="image/svg+xml"><img src="01-training-loss.png" alt="Actual recorded train/validation loss. The dashed line marks the selected checkpoint."></picture><p>Actual recorded train/validation loss. The dashed line marks the selected checkpoint.</p></section>
+<section><h2>Overall Pck</h2><picture><source srcset="02-overall-pck.svg" type="image/svg+xml"><img src="02-overall-pck.png" alt="PCK@0.1 and 95% image-bootstrap intervals on the 110-instance validation split."></picture><p>PCK@0.1 and 95% image-bootstrap intervals on the 110-instance validation split.</p></section>
+<section><h2>Per Keypoint Pck</h2><picture><source srcset="03-per-keypoint-pck.svg" type="image/svg+xml"><img src="03-per-keypoint-pck.png" alt="All 17 AP-10K landmarks, evaluated with the same oracle dog boxes and threshold."></picture><p>All 17 AP-10K landmarks, evaluated with the same oracle dog boxes and threshold.</p></section>
+<section><h2>Per Keypoint Difference</h2><picture><source srcset="04-per-keypoint-difference.svg" type="image/svg+xml"><img src="04-per-keypoint-difference.png" alt="PetLens minus box-center PCK for every landmark, in proportion points."></picture><p>PetLens minus box-center PCK for every landmark, in proportion points.</p></section>
+<section><h2>Image Error Distribution</h2><picture><source srcset="05-image-error-distribution.svg" type="image/svg+xml"><img src="05-image-error-distribution.png" alt="Per-image mean normalized localization error; averages only labeled, predicted visible points."></picture><p>Per-image mean normalized localization error; averages only labeled, predicted visible points.</p></section>
+<section><h2>Confidence Distribution</h2><picture><source srcset="06-confidence-distribution.svg" type="image/svg+xml"><img src="06-confidence-distribution.png" alt="Peak heatmap scores are uncalibrated and are not probabilities of correctness."></picture><p>Peak heatmap scores are uncalibrated and are not probabilities of correctness.</p></section>
+<h2>Not measured</h2><ul>
+<li>Video pose tracking: no validated AP-10K video inference path.</li>
+<li>Stride timing/symmetry: no validated canine keypoints in production app inference.</li>
+<li>Osteoarthritis analysis: no independently labeled clinical dataset is present.</li>
+</ul>
+<footer>See adjacent metrics.json for graph data and docs/MODEL_CARD.md for model limitations.</footer>
+</html>

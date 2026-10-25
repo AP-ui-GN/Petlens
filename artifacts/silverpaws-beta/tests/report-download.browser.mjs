@@ -197,6 +197,8 @@ function assertReport(pdfBytes, expected) {
   assert(pdf.startsWith('%PDF-1.4'), 'downloaded report is not a PDF');
   assert(pdf.endsWith('%%EOF'), 'downloaded report is missing the PDF trailer');
   assert(pdf.length > 1_000, 'downloaded report is unexpectedly small');
+  assert(searchablePdf.includes('/BaseFont /ArialMT'), 'report regular text does not use Arial');
+  assert(searchablePdf.includes('/BaseFont /Arial-BoldMT'), 'report bold text does not use Arial Bold');
 
   const rawIndex = searchablePdf.indexOf('Raw measurements');
   const interpretationIndex = searchablePdf.indexOf('Interpretation');
@@ -242,7 +244,13 @@ async function run() {
   const downloadDirectory = await mkdtemp(join(tmpdir(), 'silverpaws-report-'));
   const serverPort = await getFreePort();
   const debugPort = await getFreePort();
-  const server = spawn('pnpm', ['run', 'dev'], {
+  const server = spawn(process.execPath, [
+    resolve(appRoot, 'node_modules', 'vite', 'bin', 'vite.js'),
+    '--config',
+    'vite.config.ts',
+    '--host',
+    '0.0.0.0',
+  ], {
     cwd: appRoot,
     env: {
       ...process.env,

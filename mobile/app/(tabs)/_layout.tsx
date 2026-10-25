@@ -1,6 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
-import { Tabs, useRouter } from 'expo-router';
-import { Image, Pressable, Text, View } from 'react-native';
+import { Tabs } from 'expo-router';
+import { Image, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { useColors } from '../../src/theme-context';
 
@@ -11,7 +12,7 @@ function PetLensHeader() {
       <Image
         accessibilityLabel="PetLens analysis for dogs"
         source={require('../../assets/petlens-dog-mark.png')}
-        style={{ width: 34, height: 34, borderRadius: 9, backgroundColor: '#fff' }}
+        style={{ width: 42, height: 42, borderRadius: 13, backgroundColor: '#fff' }}
       />
       <View>
         <Text style={{ color: colors.text, fontSize: 16, fontWeight: '800' }}>PetLens</Text>
@@ -23,7 +24,7 @@ function PetLensHeader() {
 
 export default function TabsLayout() {
   const colors = useColors();
-  const router = useRouter();
+  const insets = useSafeAreaInsets();
   return (
     <Tabs
       screenOptions={{
@@ -33,21 +34,37 @@ export default function TabsLayout() {
         headerTitleStyle: { fontWeight: '700' },
         headerTitle: PetLensHeader,
         headerRight: () => (
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel="Settings"
-            onPress={() => router.push('/settings')}
-            hitSlop={10}
-            style={{ padding: 8 }}
-          >
-            <Ionicons name="settings-outline" size={20} color={colors.muted} />
-          </Pressable>
+          <Text style={{ color: colors.muted, fontSize: 11, fontWeight: '700', letterSpacing: 1.1 }}>
+            BETA
+          </Text>
         ),
-        tabBarActiveTintColor: colors.accent,
+        tabBarActiveTintColor: '#ffffff',
         tabBarInactiveTintColor: colors.muted,
-        tabBarLabelStyle: { fontSize: 9, fontWeight: '600' },
-        tabBarStyle: { backgroundColor: colors.card, borderTopColor: colors.border, minHeight: 56 },
-        sceneStyle: { backgroundColor: colors.background },
+        tabBarLabelStyle: { fontSize: 11, fontWeight: '700' },
+        tabBarItemStyle: { borderRadius: 12, marginHorizontal: 3, marginVertical: 1 },
+        tabBarActiveBackgroundColor: 'rgba(55,148,164,0.2)',
+        // Leave room for Android's gesture area below the floating tabs.
+        tabBarStyle: {
+          position: 'absolute',
+          left: 15,
+          right: 15,
+          bottom: Math.max(12, insets.bottom + 8),
+          height: 90,
+          minHeight: 90,
+          backgroundColor: 'rgba(6,24,38,0.96)',
+          borderTopWidth: 1,
+          borderWidth: 1,
+          borderColor: 'rgba(22,105,170,0.4)',
+          borderRadius: 18,
+          paddingTop: 7,
+          paddingBottom: 7,
+          shadowColor: '#000000',
+          shadowOpacity: 0.3,
+          shadowRadius: 14,
+          shadowOffset: { width: 0, height: 8 },
+          elevation: 12,
+        },
+        sceneStyle: { backgroundColor: colors.background, paddingBottom: 112 },
       }}
     >
       <Tabs.Screen
@@ -76,13 +93,6 @@ export default function TabsLayout() {
         options={{
           title: 'Pet profile',
           tabBarIcon: ({ color, size }) => <Ionicons name="paw-outline" size={size} color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="ai-use"
-        options={{
-          title: 'AI use',
-          tabBarIcon: ({ color, size }) => <Ionicons name="shield-checkmark-outline" size={size} color={color} />,
         }}
       />
       <Tabs.Screen

@@ -9,7 +9,6 @@ import { useState } from 'react';
 import { Alert, ScrollView, Share, StyleSheet, Text, View } from 'react-native';
 import Svg, { Circle, Line } from 'react-native-svg';
 
-import { DisclaimerFooter } from '../../src/components/disclaimer-footer';
 import { ScientificCharts } from '../../src/components/scientific-charts';
 import { FactorRow, ScoreBadge } from '../../src/components/score';
 import { Button, Card, EmptyState, Eyebrow, Muted, Note, Tag } from '../../src/components/ui';
@@ -444,7 +443,6 @@ export default function WalkDetailScreen() {
       <Button label="Movement report for recent walks" variant="secondary" onPress={() => void saveVetSummary()} />
       <Button label="Formulas and scientific evidence" variant="secondary" onPress={() => router.push('/methodology')} />
 
-      <DisclaimerFooter />
     </ScrollView>
   );
 }

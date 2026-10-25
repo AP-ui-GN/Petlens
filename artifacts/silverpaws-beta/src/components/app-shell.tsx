@@ -1,14 +1,12 @@
-import { Activity, ClipboardList, Plus, ShieldAlert, UserRound } from 'lucide-react';
+import { Activity, ClipboardList, Plus, UserRound } from 'lucide-react';
 import { type ReactNode } from 'react';
 import { Link, useLocation } from 'wouter';
-import { EMERGENCY_NOTE, SAFETY_DISCLAIMER } from '@/lib/disclaimers';
 
 const items = [
   { href: '/', label: 'Overview', icon: Activity },
   { href: '/analyze', label: 'New analysis', icon: Plus },
   { href: '/history', label: 'History', icon: ClipboardList },
   { href: '/pet', label: 'Pet profile', icon: UserRound },
-  { href: '/ai-use', label: 'AI use', icon: ShieldAlert },
 ];
 
 function NavItems({ mobile = false }: { mobile?: boolean }) {
@@ -75,15 +73,6 @@ export function AppShell({ children }: { children: ReactNode }) {
           />
           {children}
         </main>
-        <footer className="page-frame pt-0" data-testid="text-safety-disclaimer">
-          <div className="soft-note p-4 text-xs leading-relaxed flex gap-3 items-start">
-            <ShieldAlert size={16} className="shrink-0 mt-[1px]" />
-            <span>
-              {SAFETY_DISCLAIMER}
-              <span className="block mt-2 font-semibold">{EMERGENCY_NOTE}</span>
-            </span>
-          </div>
-        </footer>
         <NavItems mobile />
       </div>
     </div>

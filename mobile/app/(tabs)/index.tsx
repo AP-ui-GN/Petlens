@@ -2,8 +2,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-import { DisclaimerFooter } from '../../src/components/disclaimer-footer';
-import { ScoreBadge } from '../../src/components/score';
 import { TrendPanel } from '../../src/components/trend-panel';
 import { Button, Card, EmptyState, Eyebrow, Muted } from '../../src/components/ui';
 import { useLocalData } from '../../src/hooks/use-local-data';
@@ -59,7 +57,6 @@ export default function HomeScreen() {
             style={styles.createButton}
           />
         </Card>
-        <DisclaimerFooter />
       </ScrollView>
     );
   }
@@ -70,16 +67,13 @@ export default function HomeScreen() {
     <ScrollView contentContainerStyle={styles.page}>
       <View style={styles.hero}>
         <View style={{ flex: 1, gap: spacing.sm }}>
-          <Eyebrow>A quiet read on movement</Eyebrow>
           <Text style={[styles.heroTitle, { color: colors.text }]}>
             Good morning,{'\n'}
             <Text style={{ color: colors.accent }}>{pet.name}.</Text>
           </Text>
-          <Muted>One short walk can become a useful note to bring into a bigger conversation.</Muted>
         </View>
         <Button
           label="Start an analysis"
-          icon="sparkles"
           onPress={() => router.push({ pathname: '/analyze', params: { petId: pet.id } })}
           style={styles.heroButton}
         />
@@ -87,6 +81,7 @@ export default function HomeScreen() {
 
       <View style={styles.cards}>
         <Card style={styles.summaryCard}>
+          <Text pointerEvents="none" style={styles.summaryOrnament}>◒</Text>
           <View style={styles.petRow}>
             <View style={[styles.petOrb, { backgroundColor: colors.accentSoft, borderColor: colors.border }]}>
               <Text style={[styles.petInitials, { color: colors.accent }]}>{initials}</Text>
@@ -127,12 +122,30 @@ export default function HomeScreen() {
                 {latest ? 'A steady picture' : 'Nothing to compare yet'}
               </Text>
             </View>
-            {latest && <ScoreBadge score={latest.overallScore} size="small" />}
-            {!latest && <Ionicons name="heart-outline" size={24} color={colors.accent} />}
+            <Ionicons name="heart-outline" size={25} color={colors.accent} />
           </View>
           {latest ? (
             <>
               <Muted>{latest.observation}</Muted>
+              {typeof latest.overallScore === 'number' && Number.isFinite(latest.overallScore) && (
+                <View style={{ marginTop: spacing.lg }}>
+                  <View style={styles.scoreHeading}>
+                    <Text style={[styles.scoreLabel, { color: colors.text }]}>Overall indicator</Text>
+                    <Text style={[styles.scoreValue, { color: colors.text }]}>
+                      {Math.round(latest.overallScore)}/100
+                    </Text>
+                  </View>
+                  <View style={[styles.scoreTrack, { backgroundColor: colors.track }]}>
+                    <View
+                      style={[
+                        styles.scoreFill,
+                        // Keep older out-of-range scores from overflowing the bar.
+                        { width: `${Math.max(0, Math.min(100, latest.overallScore))}%`, backgroundColor: colors.accent },
+                      ]}
+                    />
+                  </View>
+                </View>
+              )}
               <View style={styles.noteMeta}>
                 <Muted>{formatDateTime(latest.createdAt)} · {formatDuration(latest.durationSeconds)}</Muted>
                 <Button
@@ -221,13 +234,12 @@ export default function HomeScreen() {
           <Text style={[styles.repeatText, { color: colors.text }]}>Repeat over time, not just once.</Text>
         </View>
       </Card>
-      <DisclaimerFooter />
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  page: { padding: spacing.lg, gap: spacing.lg, paddingBottom: spacing.xxl },
+  page: { padding: 20, gap: 20, paddingBottom: 120 },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   emptyCard: { alignItems: 'center', paddingVertical: spacing.xxl },
   paw: { width: 58, height: 58, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
@@ -238,17 +250,32 @@ const styles = StyleSheet.create({
   heroTitle: { fontSize: 36, lineHeight: 40, fontWeight: '800', letterSpacing: -1.1 },
   heroButton: { alignSelf: 'flex-start' },
   cards: { gap: spacing.md },
-  summaryCard: { gap: spacing.lg },
+  summaryCard: { gap: spacing.lg, position: 'relative', overflow: 'hidden' },
+  summaryOrnament: { position: 'absolute', right: -14, top: -31, fontSize: 170, lineHeight: 170, color: '#3794a4', opacity: 0.1 },
   petRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.md },
-  petOrb: { width: 54, height: 54, borderRadius: 18, borderWidth: 1, alignItems: 'center', justifyContent: 'center' },
-  petInitials: { fontWeight: '800', fontSize: 17 },
+  petOrb: {
+    width: 76,
+    height: 76,
+    borderRadius: 28,
+    borderBottomLeftRadius: 7,
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    transform: [{ rotate: '-5deg' }],
+  },
+  petInitials: { fontWeight: '800', fontSize: 25 },
   petName: { fontWeight: '700', fontSize: 18 },
-  stats: { flexDirection: 'row', borderTopWidth: StyleSheet.hairlineWidth, paddingTop: spacing.md, gap: spacing.md },
+  stats: { flexDirection: 'row', borderTopWidth: StyleSheet.hairlineWidth, paddingTop: spacing.lg, marginTop: spacing.sm, gap: spacing.md },
   statValue: { fontSize: 14, fontWeight: '600', marginTop: 5 },
   latestCard: { gap: spacing.md },
   noteHeading: { flexDirection: 'row', alignItems: 'center', gap: spacing.md },
   cardTitle: { fontSize: 19, lineHeight: 25, fontWeight: '700', marginTop: spacing.xs },
   noteMeta: { gap: spacing.md, alignItems: 'flex-start' },
+  scoreHeading: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: spacing.sm },
+  scoreLabel: { fontSize: 12, fontWeight: '600' },
+  scoreValue: { fontSize: 12, fontVariant: ['tabular-nums'] },
+  scoreTrack: { height: 8, borderRadius: 999, overflow: 'hidden' },
+  scoreFill: { height: '100%', borderRadius: 999 },
   sectionHeading: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
   linkRow: { flexDirection: 'row', alignItems: 'center', minHeight: 44 },
   linkText: { fontWeight: '700', fontSize: 13 },

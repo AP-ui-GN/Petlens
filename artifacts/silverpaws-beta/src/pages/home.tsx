@@ -1,4 +1,4 @@
-import { ArrowRight, CalendarDays, ChevronRight, CircleHelp, FileVideo, HeartHandshake, PawPrint, Sparkles } from 'lucide-react';
+import { ArrowRight, CalendarDays, ChevronRight, CircleHelp, FileVideo, HeartHandshake, PawPrint } from 'lucide-react';
 import { Link } from 'wouter';
 import MobilityTrendTracker from '@/components/MobilityTrendTracker';
 import { displayScore, type Analysis, type Pet } from '@/lib/storage';
@@ -30,11 +30,9 @@ export default function Home({ pets, analyses }: Props) {
     <div className="page-frame">
       <div className="flex flex-wrap justify-between gap-5 items-end stagger">
         <div>
-          <div className="eyebrow font-sans text-[11px] font-bold uppercase tracking-wider text-slate-400/90">A quiet read on movement</div>
           <h1 className="display-title text-4xl sm:text-5xl mt-3">Good morning,<br /><span className="accent-label">{pet.name}.</span></h1>
-          <p className="body-muted mt-4 max-w-md leading-relaxed">One short walk can become a useful note to bring into a bigger conversation.</p>
         </div>
-        <Link href="/analyze" className="btn-primary mb-1" data-testid="link-start-analysis"><Sparkles size={16} /> Start an analysis</Link>
+        <Link href="/analyze" className="btn-primary mb-1" data-testid="link-start-analysis">Start an analysis</Link>
       </div>
 
       <section className="grid md:grid-cols-[1.1fr_.9fr] gap-5 mt-10 stagger-2">

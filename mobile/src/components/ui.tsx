@@ -65,7 +65,7 @@ export function Button({ label, onPress, icon, variant = 'primary', disabled, bu
       disabled={inactive}
       style={({ pressed }) => [
         styles.button,
-        variant === 'primary' && { backgroundColor: colors.accent },
+        variant === 'primary' && { backgroundColor: colors.primary, borderRadius: radius.pill },
         variant === 'secondary' && { backgroundColor: colors.card, borderWidth: 1, borderColor: colors.border },
         variant === 'danger' && { backgroundColor: colors.errorSoft },
         inactive && styles.buttonDisabled,
@@ -151,11 +151,11 @@ export function EmptyState({ icon, title, body }: { icon: ComponentProps<typeof 
 const styles = StyleSheet.create({
   card: {
     backgroundColor: colors.card,
-    borderRadius: radius.lg,
+    borderRadius: 24,
     borderWidth: 1,
     borderColor: colors.border,
-    padding: spacing.lg,
-    gap: spacing.sm,
+    padding: 18,
+    gap: spacing.md,
   },
   eyebrow: {
     fontSize: 11,
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: spacing.sm,
-    paddingVertical: 14,
+    paddingVertical: 12,
     paddingHorizontal: spacing.lg,
     borderRadius: radius.md,
     minHeight: 48,
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
   buttonSecondary: { backgroundColor: colors.card, borderWidth: 1, borderColor: colors.border },
   buttonDanger: { backgroundColor: colors.errorSoft },
   buttonDisabled: { opacity: 0.5 },
-  buttonText: { fontSize: 15, fontWeight: '600' },
+  buttonText: { fontSize: 13, fontWeight: '700' },
   tag: {
     backgroundColor: colors.track,
     borderRadius: radius.pill,

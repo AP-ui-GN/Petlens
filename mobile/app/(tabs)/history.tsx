@@ -3,7 +3,6 @@ import { useRouter } from 'expo-router';
 import { useEffect, useMemo, useState } from 'react';
 import { ActivityIndicator, Alert, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-import { DisclaimerFooter } from '../../src/components/disclaimer-footer';
 import { ScoreBadge } from '../../src/components/score';
 import { TrendPanel } from '../../src/components/trend-panel';
 import { Button, Card, Chip, EmptyState, Eyebrow, Muted } from '../../src/components/ui';
@@ -115,7 +114,6 @@ export default function HistoryScreen() {
         </>
       )}
 
-      <DisclaimerFooter />
     </ScrollView>
   );
 }

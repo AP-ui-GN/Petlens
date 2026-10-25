@@ -1,27 +1,21 @@
-/**
- * Record or choose a walking clip, send it to the analysis API, save the result.
- *
- * The screen owns the upload state machine only. Clip checks live in lib/api.ts
- * and every measurement comes back from the server; nothing is computed here.
- */
+/** Handles clip selection, analysis requests, and the saved-result state. */
 
 import * as ImagePicker from 'expo-image-picker';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { Linking, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { useEffect, useRef, useState } from 'react';
+import { Linking, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
-import { DisclaimerFooter } from '../../src/components/disclaimer-footer';
+import { ConnectionStatus } from '../../src/components/analysis/connection-status';
+import { AnalysisStepper } from '../../src/components/analysis/analysis-stepper';
+import { VideoUploadCard } from '../../src/components/analysis/video-upload-card';
 import { ScoreBadge } from '../../src/components/score';
-import { Button, Card, Chip, EmptyState, Eyebrow, Muted, Note, Tag } from '../../src/components/ui';
+import { Button, Card, EmptyState, Eyebrow, Muted, Note, Tag } from '../../src/components/ui';
 import { useConnection } from '../../src/hooks/use-connection';
 import { useLocalData } from '../../src/hooks/use-local-data';
 import { usePreferences } from '../../src/hooks/use-preferences';
 import {
   checkClip,
   describeAnalysisError,
-  MAX_CLIP_SECONDS,
-  MAX_UPLOAD_MB,
   MISSING_API_URL_MESSAGE,
   requestAnalysis,
   resolveApiUrl,
@@ -37,15 +31,7 @@ import { useColors } from '../../src/theme-context';
 
 type Phase = 'idle' | 'uploading' | 'analyzing' | 'done' | 'error';
 
-const FILMING_GUIDE = [
-  'Side angle, so the legs are visible',
-  'Flat ground',
-  'A useful walk is about 5 to 15 seconds. The server accepts a longer clip, up to 120 seconds.',
-  'Whole body in frame',
-  'Good light',
-];
-
-/** Map what the picker returns onto the fields the API client needs. */
+// The picker doesn't always include every detail, so fill in upload-safe defaults here.
 function toClipAsset(asset: ImagePicker.ImagePickerAsset): ClipAsset {
   const name = asset.fileName?.trim() || `walk-${Date.now()}.mp4`;
   return {
@@ -68,7 +54,6 @@ export default function AnalyzeScreen() {
   const [petId, setPetId] = useState<string | null>(params.petId ?? pets[0]?.id ?? null);
   const [clip, setClip] = useState<ClipAsset | null>(null);
   const [clipProblem, setClipProblem] = useState<string | null>(null);
-  const [framingReady, setFramingReady] = useState(false);
   const [phase, setPhase] = useState<Phase>('idle');
   const [uploadFraction, setUploadFraction] = useState(0);
   const [elapsed, setElapsed] = useState(0);
@@ -81,17 +66,16 @@ export default function AnalyzeScreen() {
   const [saved, setSaved] = useState<Analysis | null>(null);
   const abortRef = useRef<AbortController | null>(null);
 
-  // Follow the pet the user came from (Home → "Record a walk").
+  // Keep the pet selected on Home when opening this screen from a pet card.
   useEffect(() => {
     if (params.petId) setPetId(params.petId);
   }, [params.petId]);
 
-  // If the chosen pet was deleted, fall back to the first one.
+  // If that pet was removed, select the next available profile.
   useEffect(() => {
     if (petId && !pets.some((pet) => pet.id === petId)) setPetId(pets[0]?.id ?? null);
   }, [pets, petId]);
 
-  // Simple elapsed-seconds counter while work is in flight.
   const busy = phase === 'uploading' || phase === 'analyzing';
   useEffect(() => {
     if (!busy) return;
@@ -100,10 +84,11 @@ export default function AnalyzeScreen() {
     return () => clearInterval(timer);
   }, [busy]);
 
-  // Leaving the screen cancels an in-flight request.
+  // Don't keep uploading if the user leaves this screen.
   useEffect(() => () => abortRef.current?.abort(), []);
 
-  const pet = useMemo(() => pets.find((item) => item.id === petId), [pets, petId]);
+  const pet = pets.find((item) => item.id === petId);
+  const activeStep = busy || phase === 'done' ? 2 : clip ? 1 : 0;
 
   function searchSpecialists(query: string) {
     const place = query.trim();
@@ -232,7 +217,7 @@ export default function AnalyzeScreen() {
   if (pets.length === 0) {
     return (
       <ScrollView contentContainerStyle={styles.page}>
-        <ConnectionChip state={connection} onRetry={retryConnection} />
+        <ConnectionStatus state={connection} onRetry={retryConnection} />
         <Card>
           <EmptyState icon="paw-outline" title="Add a pet first" body="Walks are saved against a pet profile so they can be compared over time." />
           <Button label="Create a pet profile" icon="add" onPress={() => router.push('/pet/new')} />
@@ -240,116 +225,45 @@ export default function AnalyzeScreen() {
         <Card>
           <Eyebrow>Sample</Eyebrow>
           <Muted>Explore an example result. It is sample data, not a real clip analysis, and is not saved to history.</Muted>
-          <Button label="Try Sample Dog Walk" icon="sparkles" variant="secondary" onPress={() => router.push('/demo')} />
+          <Button label="Try Sample Dog Walk" variant="secondary" onPress={() => router.push('/demo')} />
         </Card>
         <Muted>{PRIVACY_LINE}</Muted>
-        <DisclaimerFooter />
       </ScrollView>
     );
   }
 
   return (
     <ScrollView contentContainerStyle={styles.page} keyboardShouldPersistTaps="handled">
-      <ConnectionChip state={connection} onRetry={retryConnection} />
+      <ConnectionStatus state={connection} onRetry={retryConnection} />
       {!preferences.consentAccepted && (
         <Note tone="info" title="Before the first analysis">
           Read the three short notes and acknowledge that this is a wellness note, not a diagnosis.
         </Note>
       )}
       <View style={styles.pageHeading}>
-        <Eyebrow>New mobility observation</Eyebrow>
-        <Text style={[styles.pageTitle, { color: colors.text }]}>
-          One walk.{'\n'}<Text style={{ color: colors.accent }}>A little more context.</Text>
-        </Text>
+        <Text accessibilityRole="header" style={[styles.pageTitle, { color: colors.text }]}>Analyze how your dog walks</Text>
         <Muted>
-          Choose a short video and the analysis service will measure the movement it can see, then save an educational observation.
+          Choose a video of your dog. We’ll look for patterns in your pet’s movement and give you an easy-to-understand observation.
         </Muted>
-        <Button label="Replay guided tour" icon="help-circle-outline" variant="secondary" onPress={() => router.push('/guided-tour')} />
+        <Button label="Replay Guided Tour" icon="help-circle-outline" variant="secondary" onPress={() => router.push('/guided-tour')} style={styles.tourButton} />
       </View>
 
-      <Card>
-        <Eyebrow>How to film</Eyebrow>
-        {FILMING_GUIDE.map((item) => (
-          <Muted key={item}>• {item}</Muted>
-        ))}
-      </Card>
-      <Card>
-        <Eyebrow>1 · Which pet?</Eyebrow>
-        <View style={styles.chips}>
-          {pets.map((item) => (
-            <Chip key={item.id} label={item.name} selected={item.id === petId} onPress={() => setPetId(item.id)} />
-          ))}
-        </View>
-      </Card>
+      <AnalysisStepper activeStep={activeStep} />
 
-      <Card>
-        <Eyebrow>2 · The walk</Eyebrow>
-        <View style={[styles.alignmentGuide, { backgroundColor: colors.track, borderColor: colors.border }]}>
-          <View style={styles.alignmentHeader}>
-            <View style={styles.alignmentTitleGroup}>
-              <Ionicons name="scan-outline" size={17} color={colors.accent} />
-              <Text style={[styles.alignmentTitle, { color: colors.text }]}>Pre-Filming Alignment Guide</Text>
-            </View>
-            <Text style={[styles.alignmentStep, { color: colors.muted }]}>01 / 03</Text>
-          </View>
+      <VideoUploadCard
+        pets={pets}
+        selectedPetId={petId}
+        onSelectPet={setPetId}
+        onRecord={() => void pickClip('camera')}
+        onChooseVideo={() => void pickClip('library')}
+        onTrySample={() => router.push('/demo')}
+        disabled={busy}
+      />
 
-          <View style={styles.viewfinder}>
-            <View style={styles.targetFrame}>
-              <View style={styles.frameLabel}>
-                <View style={styles.liveDot} />
-                <Text style={styles.frameLabelText}>SIDE VIEW</Text>
-              </View>
-              <Ionicons name="paw" size={46} color="#f5e8d7" />
-              <View style={styles.groundLine} />
-              <View style={styles.targetCornerTopLeft} />
-              <View style={styles.targetCornerTopRight} />
-              <View style={styles.targetCornerBottomLeft} />
-              <View style={styles.targetCornerBottomRight} />
-            </View>
-          </View>
+      {clipProblem && <Note tone="error">{clipProblem}</Note>}
 
-          <View style={styles.guidelineList}>
-            <View style={styles.guidelineRow}>
-              <Ionicons name="compass-outline" size={16} color={colors.accent} />
-              <Text style={[styles.guidelineText, { color: colors.text }]}>Film directly from the side (90° angle)</Text>
-            </View>
-            <View style={styles.guidelineRow}>
-              <Ionicons name="sunny-outline" size={16} color={colors.accent} />
-              <Text style={[styles.guidelineText, { color: colors.text }]}>Ensure flat ground and good lighting</Text>
-            </View>
-            <View style={styles.guidelineRow}>
-              <Ionicons name="scan-outline" size={16} color={colors.accent} />
-              <Text style={[styles.guidelineText, { color: colors.text }]}>Keep pet's full body inside the viewport</Text>
-            </View>
-          </View>
-
-          <Pressable
-            accessibilityRole="switch"
-            accessibilityState={{ checked: framingReady }}
-            onPress={() => setFramingReady((ready) => !ready)}
-            style={styles.readyToggle}
-          >
-            <View style={styles.readyTextGroup}>
-              <Ionicons name={framingReady ? 'checkmark-circle' : 'ellipse-outline'} size={18} color={framingReady ? colors.good : colors.muted} />
-              <Text style={[styles.readyText, { color: colors.text }]}>Framing Ready</Text>
-            </View>
-            <View style={[styles.toggleTrack, { backgroundColor: framingReady ? colors.good : colors.border }]}>
-              <View style={[styles.toggleThumb, framingReady && styles.toggleThumbOn]} />
-            </View>
-          </Pressable>
-        </View>
-        <Muted>
-          Film from the side while your pet walks in a straight line, in good light. A useful walk is about 5 to 15
-          seconds. The server accepts a longer clip, up to {MAX_CLIP_SECONDS} seconds and {MAX_UPLOAD_MB} MB.
-        </Muted>
-        <View style={styles.row}>
-          <Button label="Record" icon="videocam-outline" onPress={() => pickClip('camera')} disabled={busy} style={{ flex: 1 }} />
-          <Button label="Choose video" icon="images-outline" variant="secondary" onPress={() => pickClip('library')} disabled={busy} style={{ flex: 1 }} />
-        </View>
-
-        {clipProblem && <Note tone="error">{clipProblem}</Note>}
-
-        {clip && (
+      {clip && (
+        <Card>
           <View style={styles.clipMeta}>
             <Text style={[styles.clipName, { color: colors.text }]} numberOfLines={1}>
               {clip.name}
@@ -398,14 +312,8 @@ export default function AnalyzeScreen() {
               />
             </View>
           </View>
-        )}
-      </Card>
-
-      <Card>
-        <Eyebrow>Sample</Eyebrow>
-        <Muted>Explore an example result. It is labeled sample data, is not measured from a video, and is never saved in history.</Muted>
-        <Button label="Try Sample Dog Walk" icon="sparkles" variant="secondary" onPress={() => router.push('/demo')} />
-      </Card>
+        </Card>
+      )}
 
       <Card>
         <Eyebrow>3 · Analyze</Eyebrow>
@@ -451,7 +359,7 @@ export default function AnalyzeScreen() {
               <ScoreBadge score={saved.overallScore} />
               <View style={{ flex: 1, gap: 6 }}>
                 <Text style={[styles.resultTitle, { color: colors.text }]}>Saved to history</Text>
-                <View style={styles.chips}>
+                <View style={styles.resultTags}>
                   <Tag>{SIGNAL_LABELS[saved.signalQuality] ?? saved.signalQuality}</Tag>
                   {saved.concerningChange && <Tag tone="warn">Worth asking a vet</Tag>}
                 </View>
@@ -504,74 +412,17 @@ export default function AnalyzeScreen() {
       </Card>
 
       <Muted>{PRIVACY_LINE}</Muted>
-      <DisclaimerFooter />
     </ScrollView>
   );
 }
 
-function ConnectionChip({
-  state,
-  onRetry,
-}: {
-  state: { kind: 'checking' } | { kind: 'online'; url: string } | { kind: 'offline'; message: string };
-  onRetry: () => void;
-}) {
-  if (state.kind === 'checking') {
-    return (
-      <Note tone="info" title="Checking the server">
-        Looking for the analysis server.
-      </Note>
-    );
-  }
-  if (state.kind === 'online') {
-    return (
-      <Note tone="info" title="Connected">
-        The analysis server answered.
-      </Note>
-    );
-  }
-  return (
-    <Note tone="error" title="Offline">
-      {state.message} You can keep the clip you already chose and try again.
-      <Text onPress={onRetry} accessibilityRole="button" style={{ fontWeight: '700' }}>
-        {' '}
-        Retry
-      </Text>
-    </Note>
-  );
-}
-
 const styles = StyleSheet.create({
-  page: { padding: spacing.lg, gap: spacing.lg },
+  page: { padding: 20, gap: 20, paddingBottom: 120 },
   pageHeading: { gap: spacing.sm },
-  pageTitle: { fontSize: 31, lineHeight: 36, fontWeight: '800', letterSpacing: -0.7 },
+  pageTitle: { fontSize: 36, lineHeight: 40, fontWeight: '800', letterSpacing: -1.1 },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-  alignmentGuide: { borderWidth: 1, borderRadius: radius.md, padding: spacing.md, gap: spacing.md },
-  alignmentHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: spacing.sm },
-  alignmentTitleGroup: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, flex: 1 },
-  alignmentTitle: { fontSize: 14, fontWeight: '700', flexShrink: 1 },
-  alignmentStep: { fontSize: 10, fontWeight: '700', letterSpacing: 0.8 },
-  viewfinder: { height: 150, borderRadius: radius.sm, backgroundColor: '#263b35', padding: spacing.md },
-  targetFrame: { flex: 1, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderStyle: 'dashed', borderColor: 'rgba(245, 232, 215, 0.72)', borderRadius: radius.sm, overflow: 'hidden' },
-  frameLabel: { position: 'absolute', top: spacing.sm, left: spacing.sm, flexDirection: 'row', alignItems: 'center', gap: 6, backgroundColor: 'rgba(20, 31, 28, 0.72)', borderRadius: radius.pill, paddingHorizontal: spacing.sm, paddingVertical: 5 },
-  liveDot: { width: 6, height: 6, borderRadius: radius.pill, backgroundColor: '#e8a47b' },
-  frameLabelText: { color: '#f5e8d7', fontSize: 9, fontWeight: '700', letterSpacing: 1 },
-  groundLine: { position: 'absolute', left: spacing.md, right: spacing.md, bottom: 27, borderBottomWidth: 1, borderColor: 'rgba(245, 232, 215, 0.48)' },
-  targetCornerTopLeft: { position: 'absolute', top: -1, left: -1, width: 13, height: 13, borderTopWidth: 2, borderLeftWidth: 2, borderColor: '#f5e8d7' },
-  targetCornerTopRight: { position: 'absolute', top: -1, right: -1, width: 13, height: 13, borderTopWidth: 2, borderRightWidth: 2, borderColor: '#f5e8d7' },
-  targetCornerBottomLeft: { position: 'absolute', bottom: -1, left: -1, width: 13, height: 13, borderBottomWidth: 2, borderLeftWidth: 2, borderColor: '#f5e8d7' },
-  targetCornerBottomRight: { position: 'absolute', bottom: -1, right: -1, width: 13, height: 13, borderBottomWidth: 2, borderRightWidth: 2, borderColor: '#f5e8d7' },
-  guidelineList: { gap: spacing.sm },
-  guidelineRow: { flexDirection: 'row', alignItems: 'flex-start', gap: spacing.sm },
-  guidelineText: { flex: 1, fontSize: 12, lineHeight: 18 },
-  readyToggle: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderTopWidth: 1, borderColor: 'rgba(122, 111, 102, 0.18)', paddingTop: spacing.md, minHeight: 40 },
-  readyTextGroup: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
-  readyText: { fontSize: 13, fontWeight: '700' },
-  toggleTrack: { width: 40, height: 23, borderRadius: radius.pill, justifyContent: 'center', paddingHorizontal: 3 },
-  toggleThumb: { width: 17, height: 17, borderRadius: radius.pill, backgroundColor: '#fff' },
-  toggleThumbOn: { alignSelf: 'flex-end' },
-  chips: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
-  row: { flexDirection: 'row', gap: spacing.sm, marginTop: spacing.xs },
+  tourButton: { alignSelf: 'flex-start' },
+  resultTags: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
   clipMeta: { marginTop: spacing.xs, gap: 2 },
   sourceContext: { gap: spacing.sm, padding: spacing.md, borderWidth: 1, borderRadius: radius.md, marginTop: spacing.sm },
   input: { borderWidth: 1, borderRadius: radius.md, paddingHorizontal: spacing.md, paddingVertical: 11, fontSize: 14 },

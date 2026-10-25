@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, Check, CircleAlert, FileVideo, Film, LoaderCircle, LockKeyhole, PawPrint, Play, RotateCcw, Sparkles, UploadCloud } from 'lucide-react';
+import { ArrowRight, Check, CircleAlert, FileVideo, LoaderCircle, LockKeyhole, PawPrint, Play, RotateCcw, UploadCloud } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 import { toast } from 'sonner';
 import LocationSpecialistCard from '@/components/LocationSpecialistCard';
@@ -186,15 +186,10 @@ export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis 
 
   return (
     <div className={`page-frame max-w-4xl${showTour ? ' pb-60' : ''}`}>
-      <Link href="/" className="btn-quiet -ml-3" data-testid="link-back-home"><ArrowLeft size={15} /> Overview</Link>
       <div className="mt-6 flex flex-wrap items-start justify-between gap-4 stagger">
         <div>
-          <div className="eyebrow">New mobility observation</div>
-          <h1 className="mb-3 font-sans text-3xl font-extrabold leading-[1.15] tracking-tight sm:text-4xl lg:text-[2.75rem]">
-            <span className="block text-white sm:mr-2 sm:inline">One walk.</span>
-            <span className="block bg-gradient-to-r from-[#1669aa] via-[#3794a4] to-[#3eb49c] bg-clip-text text-transparent sm:inline">A little more context.</span>
-          </h1>
-          <p className="max-w-2xl text-sm font-normal leading-relaxed text-slate-300/90 sm:text-base">Choose a short video and the analysis service will measure the movement it can see, then save an educational observation.</p>
+          <h1 className="display-title text-3xl sm:text-4xl">Analyze how your dog walks</h1>
+          <p className="max-w-2xl text-sm font-normal leading-relaxed text-slate-300/90 sm:text-base mt-3">Choose a video of your dog. We’ll look for patterns in your pet’s movement and give you an easy-to-understand observation.</p>
         </div>
         <button
           className="btn-secondary"
@@ -224,11 +219,11 @@ export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis 
                 : <div className="soft-note p-3 text-sm" data-testid="text-no-pet-warning">Create a pet profile before starting an analysis. <Link href="/pet" className="font-bold underline">Add a pet</Link></div>}
               <div id="tour-upload-dropzone" className="dotted-drop mt-6 min-h-[245px] flex flex-col items-center justify-center text-center p-7">
                 <div className="empty-art"><UploadCloud size={27} /></div>
-                <h2 className="font-bold text-lg mt-5">Drop a walking video here</h2>
+                <h2 className="font-bold text-lg mt-5">PLEASE UPLOAD A SIDE VIEW OF YOUR DOG WALKING</h2>
                 <p className="body-muted text-sm mt-2">Side view, steady camera. A useful walk is about 5 to 15 seconds. The server accepts a longer clip, up to 120 seconds.</p>
                 <div className="flex flex-wrap justify-center gap-3 mt-5">
-                  <button type="button" className="btn-secondary" onClick={() => inputRef.current?.click()} disabled={!pets.length} data-testid="button-choose-video"><Film size={16} /> Choose video</button>
-                  <button id="try-sample-btn" type="button" className="btn-quiet scroll-mt-20 font-semibold text-[#3eb49c] transition-colors hover:text-white" onClick={tryDemo} data-testid="button-try-demo"><Sparkles size={16} /> Try Sample Dog Walk</button>
+                  <button type="button" className="btn-secondary" onClick={() => inputRef.current?.click()} disabled={!pets.length} data-testid="button-choose-video">Choose video</button>
+                  <button id="try-sample-btn" type="button" className="btn-quiet scroll-mt-20 font-semibold text-[#3eb49c] transition-colors hover:text-white" onClick={tryDemo} data-testid="button-try-demo">Try Sample Dog Walk</button>
                 </div>
                 <input ref={inputRef} className="hidden" type="file" accept="video/*" onChange={(event) => selectFile(event.target.files?.[0])} data-testid="input-walking-video" />
               </div>
@@ -237,7 +232,7 @@ export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis 
             <div className="soft-note p-4 h-fit">
               <LockKeyhole size={17} />
               <h3 className="font-bold text-sm mt-3">Sent only for analysis</h3>
-              <p className="body-muted text-xs leading-relaxed mt-2">The clip is sent to the PetLens analysis service, measured in a temporary folder, and deleted straight after. Only the numbers and the note are saved, in this browser.</p>
+              <p className="body-muted text-xs leading-relaxed mt-2">The clip is sent to the PetLens analysis service and deleted right after. Only the numbers and summary are saved in your current browser.</p>
             </div>
           </div>
         </section>
@@ -276,7 +271,7 @@ export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis 
                  </div>
                </div>
               {error && <div className="text-sm mt-4 flex items-start gap-2" style={{ color: '#ff8b84' }} role="alert" data-testid="text-analysis-error"><CircleAlert size={15} className="mt-[2px] shrink-0" />{error}</div>}
-              <button className="btn-primary w-full mt-6" onClick={runAnalysis} disabled={!petId} data-testid="button-run-analysis"><Sparkles size={16} style={{ color: '#3eb49c' }} /> Run analysis <ArrowRight size={15} /></button>
+              <button className="btn-primary w-full mt-6" onClick={runAnalysis} disabled={!petId} data-testid="button-run-analysis">Run analysis <ArrowRight size={15} /></button>
               <p className="body-muted text-[11px] leading-relaxed mt-4">The result describes visible movement only. It is not a diagnosis and should never replace veterinary advice.</p>
             </div>
           </div>

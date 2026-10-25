@@ -268,7 +268,6 @@ export default function SettingsScreen() {
 
       <Card>
         <Eyebrow>App</Eyebrow>
-        <Button label="How AI is used" variant="secondary" onPress={() => router.push('/ai-use')} />
         <Button label="Send feedback" variant="secondary" onPress={sendFeedback} />
         <Muted>Version {Constants.expoConfig?.version ?? '0.1.0'}. Feedback does not attach a video.</Muted>
       </Card>

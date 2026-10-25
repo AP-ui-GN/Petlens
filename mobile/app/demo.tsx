@@ -3,11 +3,9 @@
  * enters saved history.
  */
 
-import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import { Alert, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-import { DisclaimerFooter } from '../src/components/disclaimer-footer';
 import { FactorRow, ScoreBadge } from '../src/components/score';
 import { Button, Card, Eyebrow, Muted, Note } from '../src/components/ui';
 import { FACTOR_LABELS, formatMeasure } from '../src/lib/format';
@@ -20,7 +18,6 @@ import { useColors } from '../src/theme-context';
 
 export default function DemoScreen() {
   const colors = useColors();
-  const router = useRouter();
   const { pets } = useLocalData();
   const walk = sampleWalk;
   const [sharing, setSharing] = useState(false);
@@ -101,8 +98,6 @@ export default function DemoScreen() {
       </Card>
 
       <Button label="Share sample report" icon="share-outline" variant="secondary" onPress={() => void shareSampleReport()} busy={sharing} />
-      <Button label="How AI is used" variant="secondary" onPress={() => router.push('/ai-use')} />
-      <DisclaimerFooter />
     </ScrollView>
   );
 }

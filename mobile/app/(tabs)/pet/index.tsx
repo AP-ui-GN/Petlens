@@ -2,7 +2,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-import { DisclaimerFooter } from '../../../src/components/disclaimer-footer';
 import { Button, Card, EmptyState, Eyebrow, Muted } from '../../../src/components/ui';
 import { useLocalData } from '../../../src/hooks/use-local-data';
 import { spacing } from '../../../src/theme';
@@ -28,6 +27,7 @@ export default function PetProfilesScreen() {
         <Text style={[styles.title, { color: colors.text }]}>Make it personal.</Text>
         <Muted>A little context helps every saved observation stay connected to the right pet.</Muted>
       </View>
+      <Button label="Settings" icon="settings-outline" variant="secondary" onPress={() => router.push('/settings')} />
       <Card style={styles.info}>
         <Ionicons name="shield-checkmark-outline" size={17} color={colors.accent} />
         <Text style={[styles.infoText, { color: colors.text }]}>Saved only on this device</Text>
@@ -85,7 +85,6 @@ export default function PetProfilesScreen() {
         <Text style={[styles.noteText, { color: colors.text }]}>Built for noticing, not diagnosing.</Text>
         <Muted>Notes are optional and can hold details you want to remember when reviewing a walk.</Muted>
       </Card>
-      <DisclaimerFooter />
     </ScrollView>
   );
 }
