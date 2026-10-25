@@ -29,7 +29,7 @@ import { formatBytes, formatDuration, SIGNAL_LABELS } from '../../src/lib/format
 import { stashSelection, takeSelection } from '../../src/lib/pending-selection';
 import { findBaseline, toAnalysisRecord } from '../../src/lib/storage';
 import type { Analysis } from '../../src/lib/types';
-import { radius, spacing } from '../../src/theme';
+import { fontFamily, radius, spacing } from '../../src/theme';
 import { useColors } from '../../src/theme-context';
 
 type Phase = 'idle' | 'uploading' | 'analyzing' | 'done' | 'error';
@@ -451,7 +451,7 @@ export default function AnalyzeScreen() {
 const styles = StyleSheet.create({
   page: { padding: 20, gap: 20, paddingBottom: 120 },
   pageHeading: { gap: spacing.sm },
-  pageTitle: { fontSize: 36, lineHeight: 40, fontWeight: '800', letterSpacing: -1.1 },
+  pageTitle: { fontFamily: fontFamily.display, fontSize: 32, lineHeight: 37, fontWeight: '800', letterSpacing: -0.8 },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   tourButton: { alignSelf: 'flex-start' },
   resultTags: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },

@@ -62,7 +62,7 @@ export default function LocationSpecialistCard() {
   }
 
   return (
-    <section aria-labelledby="nearby-care-title" className="rounded-2xl border border-[#1669aa]/50 border-t-[#3794a4]/40 bg-gradient-to-b from-[#0a4267]/60 to-[#061826]/95 p-6 text-white shadow-2xl backdrop-blur-md">
+    <section aria-labelledby="nearby-care-title" className="rounded-2xl border border-[#1669aa]/50 border-t-[#3794a4]/40 bg-[#0a2b3e] p-6 text-white shadow-2xl backdrop-blur-md">
       <div className="flex items-center gap-2">
         <MapPin aria-hidden="true" className="h-5 w-5 text-[#3eb49c]" />
         <h2 className="text-lg font-bold text-white" id="nearby-care-title">

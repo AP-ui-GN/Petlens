@@ -76,7 +76,7 @@ export default function VideoFrameScrubber({
   return (
     <section
       aria-labelledby="video-frame-scrubber-title"
-      className="mt-5 rounded-2xl border border-[#1669aa]/50 border-t-[#3794a4]/40 bg-gradient-to-b from-[#0a4267]/60 to-[#061826]/95 p-6 text-white shadow-2xl backdrop-blur-md"
+      className="mt-5 rounded-2xl border border-[#1669aa]/50 border-t-[#3794a4]/40 bg-[#0a2b3e] p-6 text-white shadow-2xl backdrop-blur-md"
       data-testid="video-frame-scrubber"
     >
       <div>

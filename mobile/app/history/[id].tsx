@@ -40,6 +40,7 @@ function formatStrideCounts(left: number | null | undefined, right: number | nul
 
 function Measure({ label, value }: { label: string; value: string }) {
   const colors = useColors();
+  if (value === 'Not measured') return null;
   return (
     <View style={[styles.measure, { backgroundColor: colors.background }]}>
       <Text style={[styles.measureLabel, { color: colors.muted }]}>{label}</Text>
@@ -130,7 +131,6 @@ function PipelineVisual({ analysis }: { analysis: Analysis }) {
         : 'No usable pose keypoints were returned, so frame-motion coverage is shown instead.';
     return (
       <Card>
-        <Eyebrow>Computer vision activity</Eyebrow>
         <Text style={[styles.sectionTitle, { color: colors.text }]}>Frame Motion Coverage</Text>
         <Muted>Share of analyzed frame pairs with visible picture motion. {reason}</Muted>
         <View style={styles.coverageHeader}>
@@ -153,13 +153,12 @@ function PipelineVisual({ analysis }: { analysis: Analysis }) {
   const cocoNamed = points.some((point) => point.name === 'right_ear' || point.name === 'left_wrist');
   const connections = cocoNamed ? COCO_EDGES : POSE_CONNECTIONS;
   const isCocoPose = analysis.pipeline === 'coco-pose' || analysis.pipeline === 'dog-pose';
-  const title = isCocoPose ? 'COCO-17 output summary' : analysis.pipeline === 'movenet' ? 'MoveNet landmark summary' : 'Saved landmark summary';
+  const title = isCocoPose ? 'COCO-17 output summary' : analysis.pipeline === 'movenet' ? 'Vite+ Landmark Summary' : 'Saved landmark summary';
   const caption = isCocoPose
     ? 'Mean positions from confident frames. These are COCO-17 human joint labels applied inside a detected dog box, not validated canine anatomical landmarks. The head has no neck or tail-base point, so stride length and left/right gait symmetry are not measured.'
     : 'Mean normalized COCO-17 landmark positions from confident frames; canine anatomical interpretation is unvalidated.';
   return (
     <Card>
-      <Eyebrow>Computer vision activity</Eyebrow>
       <Text style={[styles.sectionTitle, { color: colors.text }]}>{title}</Text>
       <Muted>{caption}</Muted>
       {points.length ? (
@@ -197,12 +196,17 @@ function PipelineVisual({ analysis }: { analysis: Analysis }) {
               ))}
             </Svg>
           </View>
-          <Muted>
-            {selectedPoint
-              ? `${selectedPoint.name.replaceAll('_', ' ')} · ${Math.round(selectedPoint.confidence * 100)}% confidence`
-              : 'Tap a keypoint to inspect its confidence.'}
-            {' · '}{points.length} landmarks averaged across {formatPoseFrames(analysis.framesUsed, analysis.framesTotal)}.
-          </Muted>
+          <View style={[styles.confidenceChip, { borderColor: colors.good, backgroundColor: colors.background }]}>
+            <Text style={[styles.confidenceValue, { color: colors.text }]}>
+              {selectedPoint ? `${Math.round(selectedPoint.confidence * 100)}%` : '--'}
+            </Text>
+            <View style={{ flex: 1 }}>
+              <Text style={[styles.confidenceLabel, { color: colors.text }]}>
+                {selectedPoint ? `confidence · ${selectedPoint.name.replaceAll('_', ' ')}` : 'Tap a keypoint to see its confidence'}
+              </Text>
+              <Muted>{points.length} landmarks averaged across {formatPoseFrames(analysis.framesUsed, analysis.framesTotal)}</Muted>
+            </View>
+          </View>
         </>
       ) : (
         <Muted>No confident keypoints were available to visualize for this walk.</Muted>
@@ -300,7 +304,7 @@ export default function WalkDetailScreen() {
           <ScoreBadge score={analysis.overallScore} />
           <View style={{ flex: 1, gap: 6 }}>
             <Eyebrow>Overall wellness indicator</Eyebrow>
-            <Text style={[styles.petName, { color: colors.text }]}>{pet?.name ?? 'Pet'}</Text>
+            <Text style={[styles.petName, { color: colors.text }]}>A breakdown of {pet?.name ?? 'your pet'}'s walk</Text>
             <Muted>
               {formatDateTime(analysis.createdAt)} · {formatDuration(analysis.durationSeconds)}
             </Muted>
@@ -411,16 +415,8 @@ export default function WalkDetailScreen() {
             <Measure label="Confident frames" value={formatPoseFrames(analysis.framesUsed, analysis.framesTotal)} />
             <Measure label="Symmetry reliable" value={typeof measurements.symmetryReliable === 'boolean' ? (measurements.symmetryReliable ? 'Yes' : 'No') : 'Not measured'} />
           </View>
-          {(measurements.notMeasuredReasons ?? []).map((reason) => (
-            <Muted key={reason}>Not measured: {reason}</Muted>
-          ))}
         </Card>
       )}
-
-      <Card>
-        <Eyebrow>Limitations</Eyebrow>
-        <Text style={[styles.body, { color: colors.text }]}>{analysis.limitations}</Text>
-      </Card>
 
       <Card>
         <Eyebrow>Export options</Eyebrow>
@@ -456,6 +452,9 @@ const styles = StyleSheet.create({
   sectionTitle: { fontSize: 18, fontWeight: '700' },
   coverageHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: spacing.md },
   coverageValue: { fontSize: 14, fontWeight: '700' },
+  confidenceChip: { flexDirection: 'row', alignItems: 'center', gap: 14, borderWidth: 1.5, borderRadius: 16, paddingVertical: 12, paddingHorizontal: 16 },
+  confidenceValue: { fontSize: 30, fontWeight: '800' },
+  confidenceLabel: { fontSize: 14, fontWeight: '700' },
   coverageTrack: { height: 10, borderRadius: 5, overflow: 'hidden', marginTop: spacing.xs },
   coverageFill: { height: '100%', borderRadius: 5 },
   poseCanvas: { width: '100%', aspectRatio: 10 / 7, borderRadius: 12, overflow: 'hidden', backgroundColor: '#263b35', marginVertical: spacing.md },

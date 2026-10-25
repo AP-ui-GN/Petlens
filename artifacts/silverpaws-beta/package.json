@@ -8,7 +8,7 @@
     "build": "vite build --config vite.config.ts",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "node --experimental-strip-types --test --test-concurrency=1 tests/pet-form.test.ts tests/trends.test.ts tests/sample-analysis.test.ts tests/telemetry-export.test.ts tests/daily-wellness.test.ts tests/saved-observation.test.ts tests/headline.test.ts",
+    "test": "node --experimental-strip-types --test --test-concurrency=1 tests/pet-form.test.ts tests/trends.test.ts tests/sample-analysis.test.ts tests/telemetry-export.test.ts tests/daily-wellness.test.ts tests/saved-observation.test.ts tests/headline.test.ts tests/storage.test.ts",
     "test:report": "node tests/report-download.browser.mjs"
   },
   "devDependencies": {

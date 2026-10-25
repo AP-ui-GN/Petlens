@@ -1,5 +1,4 @@
 import { latestNoteHeadline } from '../../src/lib/headline';
-import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
@@ -7,7 +6,7 @@ import { TrendPanel } from '../../src/components/trend-panel';
 import { Button, Card, EmptyState, Eyebrow, Muted } from '../../src/components/ui';
 import { useLocalData } from '../../src/hooks/use-local-data';
 import { formatDateTime, formatDuration } from '../../src/lib/format';
-import { spacing } from '../../src/theme';
+import { fontFamily, spacing } from '../../src/theme';
 import { useColors } from '../../src/theme-context';
 
 function relativeDate(value: string) {
@@ -43,13 +42,9 @@ export default function HomeScreen() {
     return (
       <ScrollView contentContainerStyle={styles.page}>
         <Card style={styles.emptyCard}>
-          <View style={[styles.paw, { backgroundColor: colors.accentSoft }]}>
-            <Ionicons name="paw-outline" size={28} color={colors.accent} />
-          </View>
-          <Eyebrow>First, a little context</Eyebrow>
           <Text style={[styles.emptyTitle, { color: colors.text }]}>Tell us who you’re watching over.</Text>
           <Muted style={styles.centerText}>
-            A pet profile helps keep each walking observation connected to the right companion.
+            A pet profile keeps each walking observation connected to the right pet.
           </Muted>
           <Button
             label="Create pet profile"
@@ -62,7 +57,7 @@ export default function HomeScreen() {
     );
   }
 
-  const initials = pet.name.trim().slice(0, 2).toUpperCase() || '🐾';
+  const initials = pet.name.trim().slice(0, 2).toUpperCase();
 
   return (
     <ScrollView contentContainerStyle={styles.page}>
@@ -70,7 +65,7 @@ export default function HomeScreen() {
         <View style={{ flex: 1, gap: spacing.sm }}>
           <Text style={[styles.heroTitle, { color: colors.text }]}>
             Good morning,{'\n'}
-            <Text style={{ color: colors.accent }}>{pet.name}.</Text>
+            <Text>{pet.name}.</Text>
           </Text>
         </View>
         <Button
@@ -88,7 +83,6 @@ export default function HomeScreen() {
               <Text style={[styles.petInitials, { color: colors.accent }]}>{initials}</Text>
             </View>
             <View style={{ flex: 1, gap: 3 }}>
-              <Eyebrow>Selected companion</Eyebrow>
               <Text style={[styles.petName, { color: colors.text }]}>{pet.name}</Text>
               <Muted>{pet.species}{pet.age ? ` · ${pet.age} years` : ''}</Muted>
             </View>
@@ -99,7 +93,7 @@ export default function HomeScreen() {
               hitSlop={8}
               style={[styles.editButton, { backgroundColor: colors.background, borderColor: colors.border }]}
             >
-              <Ionicons name="create-outline" size={20} color={colors.text} />
+              <Text style={{ color: colors.muted, fontSize: 11, fontWeight: '700' }}>Edit</Text>
             </Pressable>
           </View>
           <View style={[styles.stats, { borderTopColor: colors.border }]}>
@@ -119,12 +113,10 @@ export default function HomeScreen() {
         <Card style={styles.latestCard}>
           <View style={styles.noteHeading}>
             <View style={{ flex: 1 }}>
-              <Eyebrow>Latest mobility note</Eyebrow>
               <Text style={[styles.cardTitle, { color: colors.text }]}>
                 {latestNoteHeadline(latest)}
               </Text>
             </View>
-            <Ionicons name="heart-outline" size={25} color={colors.accent} />
           </View>
           {latest ? (
             <>
@@ -185,7 +177,6 @@ export default function HomeScreen() {
             style={styles.linkRow}
           >
             <Text style={[styles.linkText, { color: colors.accent }]}>See all</Text>
-            <Ionicons name="chevron-forward" size={16} color={colors.accent} />
           </Pressable>
         </View>
         {recent.length ? (
@@ -196,9 +187,6 @@ export default function HomeScreen() {
               onPress={() => router.push({ pathname: '/history/[id]', params: { id: analysis.id } })}
               style={[styles.analysisRow, { borderTopColor: colors.border }]}
             >
-              <View style={[styles.videoIcon, { backgroundColor: colors.accentSoft }]}>
-                <Ionicons name="videocam-outline" size={17} color={colors.accent} />
-              </View>
               <View style={{ flex: 1, gap: 3 }}>
                 <Text style={[styles.analysisTitle, { color: colors.text }]} numberOfLines={1}>{analysis.fileName}</Text>
                 <Muted style={styles.smallText}>{relativeDate(analysis.createdAt)} · Observation ready</Muted>
@@ -220,22 +208,7 @@ export default function HomeScreen() {
         )}
       </Card>
 
-      <Card style={styles.guideCard}>
-        <Ionicons name="help-circle-outline" size={21} color={colors.accent} />
-        <Text style={[styles.cardTitle, { color: colors.text }]}>How to get a useful clip</Text>
-        <View style={{ gap: spacing.sm }}>
-          {['Keep the camera low and level.', 'Capture a few steps from the side.', 'Let your pet move naturally.'].map((item) => (
-            <View key={item} style={styles.guideRow}>
-              <Ionicons name="ellipse" size={6} color={colors.accent} />
-              <Muted style={{ flex: 1 }}>{item}</Muted>
-            </View>
-          ))}
-        </View>
-        <View style={styles.repeatRow}>
-          <Ionicons name="calendar-outline" size={15} color={colors.accent} />
-          <Text style={[styles.repeatText, { color: colors.text }]}>Repeat over time, not just once.</Text>
-        </View>
-      </Card>
+
     </ScrollView>
   );
 }
@@ -244,12 +217,11 @@ const styles = StyleSheet.create({
   page: { padding: 20, gap: 20, paddingBottom: 120 },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   emptyCard: { alignItems: 'center', paddingVertical: spacing.xxl },
-  paw: { width: 58, height: 58, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
-  emptyTitle: { fontSize: 28, lineHeight: 34, fontWeight: '800', textAlign: 'center', letterSpacing: -0.7 },
+  emptyTitle: { fontFamily: fontFamily.display, fontSize: 25, lineHeight: 30, textAlign: 'center', letterSpacing: -0.5 },
   centerText: { textAlign: 'center', maxWidth: 300 },
   createButton: { alignSelf: 'center', marginTop: spacing.sm },
   hero: { gap: spacing.md, paddingVertical: spacing.sm },
-  heroTitle: { fontSize: 36, lineHeight: 40, fontWeight: '800', letterSpacing: -1.1 },
+  heroTitle: { fontFamily: fontFamily.display, fontSize: 32, lineHeight: 37, letterSpacing: -0.8 },
   heroButton: { alignSelf: 'flex-start' },
   cards: { gap: spacing.md },
   summaryCard: { gap: spacing.lg, position: 'relative', overflow: 'hidden' },
@@ -268,13 +240,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     transform: [{ rotate: '-5deg' }],
   },
-  petInitials: { fontWeight: '800', fontSize: 25 },
-  petName: { fontWeight: '700', fontSize: 18 },
+  petInitials: { fontFamily: fontFamily.sans, fontSize: 25, fontWeight: '700' },
+  petName: { fontFamily: fontFamily.sans, fontSize: 17, fontWeight: '700' },
   stats: { flexDirection: 'row', borderTopWidth: StyleSheet.hairlineWidth, paddingTop: spacing.lg, marginTop: spacing.sm, gap: spacing.md },
   statValue: { fontSize: 14, fontWeight: '600', marginTop: 5 },
   latestCard: { gap: spacing.md },
   noteHeading: { flexDirection: 'row', alignItems: 'center', gap: spacing.md },
-  cardTitle: { fontSize: 19, lineHeight: 25, fontWeight: '700', marginTop: spacing.xs },
+  cardTitle: { fontFamily: fontFamily.display, fontSize: 17, lineHeight: 23, marginTop: spacing.xs },
   noteMeta: { gap: spacing.md, alignItems: 'flex-start' },
   scoreHeading: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: spacing.sm },
   scoreLabel: { fontSize: 12, fontWeight: '600' },

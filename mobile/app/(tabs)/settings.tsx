@@ -16,7 +16,7 @@ import { useLocalData } from '../../src/hooks/use-local-data';
 import { usePreferences } from '../../src/hooks/use-preferences';
 import { checkHealth, getSavedApiUrl, guessApiUrl, normalizeApiUrl, resolveApiUrl, saveApiUrl } from '../../src/lib/api';
 import { EMERGENCY_NOTE, SAFETY_DISCLAIMER } from '../../src/lib/disclaimers';
-import type { ThemeChoice, WeightUnit } from '../../src/lib/preferences';
+import type { ThemeChoice } from '../../src/lib/preferences';
 import { disableWalkReminder, enableWalkReminder } from '../../src/lib/reminder';
 import { radius, spacing } from '../../src/theme';
 import { useColors } from '../../src/theme-context';
@@ -147,19 +147,8 @@ export default function SettingsScreen() {
       </Card>
 
       <Card>
-        <Eyebrow>New pet measurements</Eyebrow>
-        <Muted>This unit is used for a new pet. An existing weight is not converted when you change it.</Muted>
-        <View style={styles.row}>
-          {(['kg', 'lb'] as WeightUnit[]).map((unit) => (
-            <Button
-              key={unit}
-              label={preferences.weightUnit === unit ? `${unit} selected` : unit}
-              variant={preferences.weightUnit === unit ? 'primary' : 'secondary'}
-              onPress={() => update({ weightUnit: unit })}
-              style={{ flex: 1 }}
-            />
-          ))}
-        </View>
+        <Eyebrow>Pet weight</Eyebrow>
+        <Muted>Weights are saved and displayed in pounds (lb).</Muted>
       </Card>
 
       <Card>

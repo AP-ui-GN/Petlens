@@ -8,6 +8,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import type { Analysis, AnalyzeResult, Pet } from './types';
+import { normalizePetWeightsToPounds } from './walks';
 
 const PETS_KEY = 'silverpaws:pets';
 const ANALYSES_KEY = 'silverpaws:analyses';
@@ -30,8 +31,11 @@ async function write<T>(key: string, value: T): Promise<boolean> {
   }
 }
 
-export function loadPets() {
-  return read<Pet[]>(PETS_KEY, []);
+export async function loadPets() {
+  const pets = await read<Pet[]>(PETS_KEY, []);
+  const normalized = normalizePetWeightsToPounds(pets);
+  if (normalized.changed) await savePets(normalized.pets);
+  return normalized.pets;
 }
 
 export function loadAnalyses() {

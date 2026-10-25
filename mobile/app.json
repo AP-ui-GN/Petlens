@@ -17,6 +17,7 @@
     },
     "android": {
       "package": "com.silverpaws.app",
+      "versionCode": 16,
       "adaptiveIcon": {
         "backgroundColor": "#061826",
         "foregroundImage": "./assets/android-icon-foreground.png",

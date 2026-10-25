@@ -18,7 +18,7 @@ const TOUR_STEPS = [
   {
     targetId: 'try-sample-btn',
     title: 'Try a sample walk',
-    description: "Click 'Try Sample Dog Walk' below to run a simulated gait analysis.",
+    description: "Click 'Try Sample Dog Walk' below to run a sample movement tracking test.",
   },
   {
     targetId: 'movenet-card',

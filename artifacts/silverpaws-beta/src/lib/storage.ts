@@ -20,6 +20,7 @@ export type Pet = {
   breed: string;
   age: string;
   weight: string;
+  weightUnit?: 'kg' | 'lb';
   notes: string;
   createdAt: string;
 };
@@ -102,7 +103,21 @@ function write<T>(key: string, value: T) {
 }
 
 export function getPets() {
-  return read<Pet[]>(PETS_KEY, []);
+  const pets = read<Pet[]>(PETS_KEY, []);
+  let migrated = false;
+  const normalized = pets.map((pet) => {
+    if (pet.weightUnit === 'lb') return pet;
+    migrated = true;
+    const weight = pet.weight.trim();
+    const kilograms = Number(weight);
+    const pounds =
+      weight && Number.isFinite(kilograms) && kilograms > 0
+        ? formatWeight(kilograms / 0.45359237)
+        : pet.weight;
+    return { ...pet, weight: pounds, weightUnit: 'lb' as const };
+  });
+  if (migrated) savePets(normalized);
+  return normalized;
 }
 
 export function getAnalyses() {
@@ -135,6 +150,11 @@ export function saveHappinessEntries(entries: HappinessEntry[]) {
 
 export function makeId(prefix: string) {
   return `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+}
+
+function formatWeight(value: number) {
+  const rounded = Math.round(value * 10) / 10;
+  return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
 }
 
 /**

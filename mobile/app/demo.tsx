@@ -41,8 +41,7 @@ export default function DemoScreen() {
       </Note>
 
       <Card>
-        <Eyebrow>Demo result</Eyebrow>
-        <Text style={[styles.title, { color: colors.text }]}>A closer look at the sample walk.</Text>
+        <Text style={[styles.title, { color: colors.text }]}>A breakdown of the sample pet's walk</Text>
         <View style={styles.scoreRow}>
           <ScoreBadge score={walk.overallScore} />
           <View style={{ flex: 1 }}>

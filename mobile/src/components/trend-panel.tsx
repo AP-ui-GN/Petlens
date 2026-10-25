@@ -94,10 +94,9 @@ export function TrendPanel({ analyses }: { analyses: Analysis[] }) {
 
   return (
     <Card>
-      <Eyebrow>Saved walks</Eyebrow>
       <Text style={[styles.title, { color: colors.text }]}>How the scores moved</Text>
       {series.length === 0 ? (
-        <Muted>Trends appear after the first scored walk is saved. Nothing is filled in before that.</Muted>
+        <Muted>Trends appear after the first scored walk is saved.</Muted>
       ) : (
         <>
           <Muted>
