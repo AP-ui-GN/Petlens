@@ -7,5 +7,5 @@
     "noUncheckedIndexedAccess": false
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"],
-  "exclude": ["node_modules", ".expo/export-check"]
+  "exclude": ["node_modules", "tests", ".expo/export-check"]
 }

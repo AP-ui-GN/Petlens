@@ -3,6 +3,7 @@ import { Link } from 'wouter';
 import MobilityTrendTracker from '@/components/MobilityTrendTracker';
 import { displayScore, type Analysis, type Pet } from '@/lib/storage';
 import { formatRelative } from '@/lib/format';
+import { latestNoteHeadline } from '@/lib/headline';
 
 type Props = { pets: Pet[]; analyses: Analysis[] };
 
@@ -55,7 +56,7 @@ export default function Home({ pets, analyses }: Props) {
         </div>
         <div className="panel panel-padded flex flex-col justify-between">
           <div className="flex justify-between gap-4">
-            <div><div className="eyebrow font-sans text-[11px] font-bold uppercase tracking-wider text-slate-400/90">Latest mobility note</div><h2 className="font-sans font-bold text-xl text-white tracking-normal leading-snug mt-2">{latest ? 'A steady picture' : 'Nothing to compare yet'}</h2></div>
+            <div><div className="eyebrow font-sans text-[11px] font-bold uppercase tracking-wider text-slate-400/90">Latest mobility note</div><h2 className="font-sans font-bold text-xl text-white tracking-normal leading-snug mt-2">{latestNoteHeadline(latest)}</h2></div>
             <HeartHandshake size={25} style={{ color: '#3eb49c' }} />
           </div>
           {latest ? (

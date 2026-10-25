@@ -1,5 +1,6 @@
 import { Text } from 'react-native';
 
+import { connectionTitle } from '../../lib/connection-messages';
 import { Note } from '../ui';
 import type { ConnectionState } from '../../hooks/use-connection';
 
@@ -26,8 +27,8 @@ export function ConnectionStatus({ state, onRetry }: Props) {
   }
 
   return (
-    <Note tone="error" title="Offline">
-      {state.message} You can keep the clip you already chose and try again.
+    <Note tone="error" title={state.failure === 'config' ? 'Not configured' : connectionTitle(state.failure)}>
+      {state.message} Your chosen clip stays selected.
       <Text onPress={onRetry} accessibilityRole="button" style={{ fontWeight: '700' }}>
         {' '}
         Retry

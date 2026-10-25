@@ -1,3 +1,4 @@
+import { latestNoteHeadline } from '../../src/lib/headline';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
@@ -96,8 +97,9 @@ export default function HomeScreen() {
               accessibilityLabel={`Edit ${pet.name}'s profile`}
               onPress={() => router.push({ pathname: '/pet/[id]', params: { id: pet.id } })}
               hitSlop={8}
+              style={[styles.editButton, { backgroundColor: colors.background, borderColor: colors.border }]}
             >
-              <Ionicons name="create-outline" size={21} color={colors.muted} />
+              <Ionicons name="create-outline" size={20} color={colors.text} />
             </Pressable>
           </View>
           <View style={[styles.stats, { borderTopColor: colors.border }]}>
@@ -119,7 +121,7 @@ export default function HomeScreen() {
             <View style={{ flex: 1 }}>
               <Eyebrow>Latest mobility note</Eyebrow>
               <Text style={[styles.cardTitle, { color: colors.text }]}>
-                {latest ? 'A steady picture' : 'Nothing to compare yet'}
+                {latestNoteHeadline(latest)}
               </Text>
             </View>
             <Ionicons name="heart-outline" size={25} color={colors.accent} />
@@ -251,8 +253,11 @@ const styles = StyleSheet.create({
   heroButton: { alignSelf: 'flex-start' },
   cards: { gap: spacing.md },
   summaryCard: { gap: spacing.lg, position: 'relative', overflow: 'hidden' },
-  summaryOrnament: { position: 'absolute', right: -14, top: -31, fontSize: 170, lineHeight: 170, color: '#3794a4', opacity: 0.1 },
+  // Sits lower than on the web card so it never lands behind the mobile-only edit button.
+  summaryOrnament: { position: 'absolute', right: -14, top: 40, fontSize: 170, lineHeight: 170, color: '#3794a4', opacity: 0.1 },
   petRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.md },
+  // Opaque so the decorative ornament behind the card never reads as part of the button.
+  editButton: { width: 40, height: 40, borderRadius: 20, borderWidth: 1, alignItems: 'center', justifyContent: 'center' },
   petOrb: {
     width: 76,
     height: 76,

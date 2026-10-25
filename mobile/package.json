@@ -9,6 +9,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test --test-concurrency=1 tests/*.test.ts",
     "doctor": "expo-doctor",
     "export:check": "expo export --platform ios --output-dir .expo/export-check",
     "verify:eas-update": "node scripts/verify-eas-update-config.mjs",

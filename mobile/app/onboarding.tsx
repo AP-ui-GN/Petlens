@@ -42,7 +42,9 @@ export default function OnboardingScreen() {
   function accept() {
     if (!checked) return;
     update({ consentAccepted: true, consentAcceptedAt: new Date().toISOString() });
-    router.replace('/');
+    // Go back to wherever the notes were opened from, such as a half-finished analysis.
+    if (router.canGoBack()) router.back();
+    else router.replace('/analyze');
   }
 
   return (

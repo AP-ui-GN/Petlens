@@ -203,7 +203,7 @@ export default function SettingsScreen() {
         {preferences.advancedApi && (
           <>
         <Muted>
-          Clips are analyzed by the PetLens API running on a laptop on the same Wi-Fi network.{' '}
+          Clips are analyzed by the PetLens API. Only change this address if you were given a different server to test.{' '}
           {guess ? `Detected from the Expo dev server: ${guess}.` : 'No dev server address detected; enter the address by hand.'}
         </Muted>
         <TextInput

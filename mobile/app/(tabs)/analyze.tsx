@@ -1,8 +1,8 @@
 /** Handles clip selection, analysis requests, and the saved-result state. */
 
 import * as ImagePicker from 'expo-image-picker';
-import { useLocalSearchParams, useRouter } from 'expo-router';
-import { useEffect, useRef, useState } from 'react';
+import { useFocusEffect, useLocalSearchParams, useRouter } from 'expo-router';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Linking, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import { ConnectionStatus } from '../../src/components/analysis/connection-status';
@@ -16,6 +16,7 @@ import { usePreferences } from '../../src/hooks/use-preferences';
 import {
   checkClip,
   describeAnalysisError,
+  isClipReadable,
   MISSING_API_URL_MESSAGE,
   requestAnalysis,
   resolveApiUrl,
@@ -24,6 +25,7 @@ import {
 import { aiUseResultLines } from '../../src/lib/ai-use';
 import { PRIVACY_LINE } from '../../src/lib/disclaimers';
 import { formatBytes, formatDuration, SIGNAL_LABELS } from '../../src/lib/format';
+import { stashSelection, takeSelection } from '../../src/lib/pending-selection';
 import { findBaseline, toAnalysisRecord } from '../../src/lib/storage';
 import type { Analysis } from '../../src/lib/types';
 import { radius, spacing } from '../../src/theme';
@@ -65,6 +67,19 @@ export default function AnalyzeScreen() {
   const [specialistError, setSpecialistError] = useState('');
   const [saved, setSaved] = useState<Analysis | null>(null);
   const abortRef = useRef<AbortController | null>(null);
+
+  // Bring back a clip that was set aside while the consent notes were open.
+  useFocusEffect(
+    useCallback(() => {
+      const restored = takeSelection();
+      if (!restored) return;
+      setClip(restored.clip);
+      if (restored.petId) setPetId(restored.petId);
+      setSource(restored.source);
+      setLicense(restored.license);
+      setSourceUrl(restored.sourceUrl);
+    }, []),
+  );
 
   // Keep the pet selected on Home when opening this screen from a pet card.
   useEffect(() => {
@@ -147,10 +162,18 @@ export default function AnalyzeScreen() {
 
   async function run() {
     if (!preferences.consentAccepted) {
+      if (clip) stashSelection({ clip, petId, source, license, sourceUrl });
       router.push('/onboarding');
       return;
     }
     if (!clip || !pet) return;
+    if (busy) return;
+
+    if (!(await isClipReadable(clip.uri))) {
+      setClip(null);
+      setClipProblem('That video can no longer be opened. Please choose it again.');
+      return;
+    }
 
     const controller = new AbortController();
     abortRef.current = controller;

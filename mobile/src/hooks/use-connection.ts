@@ -1,70 +1,73 @@
 /**
- * Health of the analysis server, with backoff while it is offline.
+ * Health of the analysis server. Only one check runs at a time, automatic
+ * retries stop after a few tries, and a manual retry always works.
  */
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { checkHealth, MISSING_API_URL_MESSAGE, resolveApiUrl } from '../lib/api';
+import { nextHealthRetryDelay, type FailureKind } from '../lib/connection-messages';
 
 export type ConnectionState =
   | { kind: 'checking' }
   | { kind: 'online'; url: string }
-  | { kind: 'offline'; message: string };
-
-const BACKOFF_MS = [1000, 2000, 4000, 8000, 16000, 30000];
+  | { kind: 'offline'; message: string; failure: FailureKind | 'config' };
 
 export function useConnection(active: boolean) {
   const [state, setState] = useState<ConnectionState>({ kind: 'checking' });
-  const attempt = useRef(0);
+  const autoRetries = useRef(0);
+  const inFlight = useRef(false);
+  const alive = useRef(true);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  const clearTimer = () => {
+    if (timer.current) clearTimeout(timer.current);
+    timer.current = null;
+  };
+
   const check = useCallback(async () => {
+    if (inFlight.current) return;
+    inFlight.current = true;
+    clearTimer();
     setState((current) => (current.kind === 'online' ? current : { kind: 'checking' }));
-    const url = await resolveApiUrl();
-    if (!url) {
-      attempt.current = 0;
-      setState({ kind: 'offline', message: MISSING_API_URL_MESSAGE });
-      return;
+    try {
+      const url = await resolveApiUrl();
+      if (!alive.current) return;
+      if (!url) {
+        setState({ kind: 'offline', message: MISSING_API_URL_MESSAGE, failure: 'config' });
+        return;
+      }
+      const outcome = await checkHealth(url);
+      if (!alive.current) return;
+      if (outcome.ok) {
+        autoRetries.current = 0;
+        setState({ kind: 'online', url });
+        return;
+      }
+      setState({ kind: 'offline', message: outcome.message, failure: outcome.kind });
+      const delay = nextHealthRetryDelay(autoRetries.current);
+      if (delay !== null) {
+        autoRetries.current += 1;
+        timer.current = setTimeout(() => void check(), delay);
+      }
+    } finally {
+      inFlight.current = false;
     }
-    const outcome = await checkHealth(url);
-    if (outcome.ok) {
-      attempt.current = 0;
-      setState({ kind: 'online', url });
-      return;
-    }
-    setState({ kind: 'offline', message: outcome.message });
   }, []);
 
   useEffect(() => {
+    alive.current = true;
     if (!active) return;
-    let cancelled = false;
-
-    const run = async () => {
-      if (cancelled) return;
-      await check();
-    };
-    void run();
-
+    autoRetries.current = 0;
+    void check();
     return () => {
-      cancelled = true;
-      if (timer.current) clearTimeout(timer.current);
+      alive.current = false;
+      clearTimer();
     };
   }, [active, check]);
 
-  useEffect(() => {
-    if (!active || state.kind !== 'offline') return;
-    const delay = BACKOFF_MS[Math.min(attempt.current, BACKOFF_MS.length - 1)] ?? 30000;
-    attempt.current += 1;
-    timer.current = setTimeout(() => {
-      void check();
-    }, delay);
-    return () => {
-      if (timer.current) clearTimeout(timer.current);
-    };
-  }, [active, state.kind, state.kind === 'offline' ? state.message : '', check]);
-
   const retry = useCallback(() => {
-    attempt.current = 0;
+    autoRetries.current = 0;
     void check();
   }, [check]);
 

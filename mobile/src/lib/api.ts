@@ -9,6 +9,13 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Constants from 'expo-constants';
 
 import { chooseApiUrl } from './api-address';
+import {
+  describeAnalysisFailure,
+  describeHealthFailure,
+  HEALTH_TIMEOUT_MS,
+  kindFromStatus,
+  type FailureKind,
+} from './connection-messages';
 import type { AnalyzeResult, Pipeline } from './types';
 
 const API_URL_KEY = 'silverpaws:apiUrl';
@@ -102,27 +109,20 @@ export const MISSING_API_URL_MESSAGE =
 // Health check
 // ---------------------------------------------------------------------------
 
-export type HealthOutcome = { ok: true } | { ok: false; message: string };
+export type HealthOutcome = { ok: true } | { ok: false; kind: FailureKind; message: string };
 
-export async function checkHealth(baseUrl: string, timeoutMs = 5000): Promise<HealthOutcome> {
+export async function checkHealth(baseUrl: string, timeoutMs = HEALTH_TIMEOUT_MS): Promise<HealthOutcome> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
+  const fail = (kind: FailureKind): HealthOutcome => ({ ok: false, kind, message: describeHealthFailure(kind) });
   try {
     const response = await fetch(`${baseUrl}/api/healthz`, { signal: controller.signal });
-    if (!response.ok) {
-      return { ok: false, message: `The server answered with status ${response.status}.` };
-    }
+    if (!response.ok) return fail(kindFromStatus(response.status));
     const body = (await response.json()) as { status?: unknown };
-    if (body.status !== 'ok') {
-      return { ok: false, message: 'Something answered, but it does not look like the PetLens API.' };
-    }
+    if (body.status !== 'ok') return fail('not-petlens');
     return { ok: true };
   } catch (error) {
-    if (isAbort(error)) return { ok: false, message: 'The server did not answer within 5 seconds.' };
-    return {
-      ok: false,
-      message: 'Could not reach that address. Check the phone and laptop share a Wi-Fi network and the API server is running.',
-    };
+    return fail(isAbort(error) ? 'timeout' : 'network');
   } finally {
     clearTimeout(timer);
   }
@@ -142,6 +142,22 @@ export type ClipAsset = {
 };
 
 export type ClipProblem = { field: 'type' | 'size' | 'duration'; message: string };
+
+/**
+ * Confirm the chosen file can still be opened. Android can revoke access to a
+ * picked file, and the person may have deleted it, so ask before uploading.
+ */
+export async function isClipReadable(uri: string): Promise<boolean> {
+  const controller = new AbortController();
+  try {
+    const response = await fetch(uri, { signal: controller.signal });
+    return response.ok || response.status === 0;
+  } catch {
+    return false;
+  } finally {
+    controller.abort();
+  }
+}
 
 export function checkClip(clip: ClipAsset): ClipProblem | null {
   const looksLikeVideo =
@@ -181,8 +197,10 @@ export function checkClip(clip: ClipAsset): ClipProblem | null {
 
 export class AnalysisError extends Error {
   status: number;
-  constructor(status: number, message: string) {
+  unreadable: boolean;
+  constructor(status: number, message: string, unreadable = false) {
     super(message);
+    this.unreadable = unreadable;
     this.name = 'AnalysisError';
     this.status = status;
   }
@@ -245,7 +263,7 @@ export function requestAnalysis(request: AnalysisRequest): Promise<AnalyzeResult
         if (isAnalyzeResult(body)) {
           resolve(body);
         } else {
-          reject(new AnalysisError(502, 'The analysis service returned a result the app could not read.'));
+          reject(new AnalysisError(502, '', true));
         }
         return;
       }
@@ -263,7 +281,7 @@ export function requestAnalysis(request: AnalysisRequest): Promise<AnalyzeResult
     };
     xhr.ontimeout = () => {
       cleanup();
-      reject(new AnalysisError(504, 'The analysis took too long. Try a shorter clip.'));
+      reject(new AnalysisError(504, ''));
     };
     xhr.onabort = () => {
       cleanup();
@@ -442,21 +460,10 @@ export function isAnalyzeResult(value: unknown): value is AnalyzeResult {
 /** Turn any thrown value into a message the UI can show directly. */
 export function describeAnalysisError(error: unknown): string {
   if (error instanceof AnalysisError) {
-    if (error.message.trim()) return error.message;
-    if (error.status === 413) {
-      return `That clip is larger than the ${MAX_UPLOAD_MB} MB beta limit. Try a shorter clip.`;
-    }
-    if (error.status >= 500) {
-      return 'The analysis service could not finish this clip. Please try again in a moment.';
-    }
-    return 'This clip could not be analyzed. Please try a different video.';
+    if (error.status === 502 && error.unreadable) return describeAnalysisFailure({ kind: 'unreadable' }, MAX_UPLOAD_MB);
+    return describeAnalysisFailure({ kind: 'http', status: error.status, serverMessage: error.message }, MAX_UPLOAD_MB);
   }
-
-  if (isAbort(error)) return 'Analysis was cancelled.';
-
-  if (error instanceof TypeError) {
-    return 'Could not reach the analysis service. Check the API address in Settings and that the server is running.';
-  }
-
+  if (isAbort(error)) return describeAnalysisFailure({ kind: 'cancelled' }, MAX_UPLOAD_MB);
+  if (error instanceof TypeError) return describeAnalysisFailure({ kind: 'network' }, MAX_UPLOAD_MB);
   return 'Something went wrong while analyzing this clip. Please try again.';
 }
