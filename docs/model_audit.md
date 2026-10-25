@@ -118,6 +118,17 @@ no walking-video labels, and its digitigrade hip/knee labels do not map
 directly to literal canine anatomy. Product gait metrics therefore remain
 gated.
 
+On 2026-10-25, one additional CPU epoch was resumed from the corrected-loss
+checkpoint using the same train/validation files. It took 57.156 seconds.
+Validation PCK@0.1 increased from 0.425725 to 0.431159, but validation loss
+increased from 0.841387 to 0.848593; the image-bootstrap intervals overlap and
+some per-joint scores decreased. The trainer kept epoch 30 as its
+validation-loss-selected checkpoint. The epoch-31 last checkpoint and its
+metadata remain in the user cache, were not promoted, and are not integrated
+into inference. See the
+[bounded training report](../reports/canine-pose-training-2026-10-25.md) for
+hashes, all per-joint metrics, reproduction commands, and limitations.
+
 ## Held-out pose evaluation
 
 `training/evaluate_pose.py` supports the AP-10K dog-only validation and test

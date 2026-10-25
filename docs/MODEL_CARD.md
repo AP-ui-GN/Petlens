@@ -91,6 +91,14 @@ box-center) came from a checkpoint trained with the old loss and from a test
 split inspected before training continued. It is a historical diagnostic, not
 a result for the corrected-loss model or independent evidence; see the
 [historical test report](../reports/canine_pose_evaluation.md).
+
+A bounded one-epoch CPU fine-tune from the corrected-loss checkpoint was
+evaluated on the same development validation split on 2026-10-25. PCK@0.1
+changed from 0.425725 to 0.431159, but validation loss worsened, the image
+bootstrap intervals overlap, and several per-joint scores declined. It was
+not promoted or integrated. The original epoch-30 checkpoint remains the
+selected experimental model. See the
+[training follow-up](../reports/canine-pose-training-2026-10-25.md).
 Default app results are motion-only, optionally with detector metadata. The
 COCO-17 experiment is disabled unless explicitly enabled; it is never a
 validated canine-pose result.
