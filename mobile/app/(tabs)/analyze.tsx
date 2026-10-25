@@ -23,6 +23,7 @@ import {
   type ClipAsset,
 } from '../../src/lib/api';
 import { aiUseResultLines } from '../../src/lib/ai-use';
+import { attemptAnalysis, createSubmissionGate } from '../../src/lib/analysis-attempt';
 import { PRIVACY_LINE } from '../../src/lib/disclaimers';
 import { formatBytes, formatDuration, SIGNAL_LABELS } from '../../src/lib/format';
 import { stashSelection, takeSelection } from '../../src/lib/pending-selection';
@@ -67,6 +68,7 @@ export default function AnalyzeScreen() {
   const [specialistError, setSpecialistError] = useState('');
   const [saved, setSaved] = useState<Analysis | null>(null);
   const abortRef = useRef<AbortController | null>(null);
+  const gate = useRef(createSubmissionGate());
 
   // Bring back a clip that was set aside while the consent notes were open.
   useFocusEffect(
@@ -167,13 +169,7 @@ export default function AnalyzeScreen() {
       return;
     }
     if (!clip || !pet) return;
-    if (busy) return;
-
-    if (!(await isClipReadable(clip.uri))) {
-      setClip(null);
-      setClipProblem('That video can no longer be opened. Please choose it again.');
-      return;
-    }
+    if (!gate.current.tryEnter()) return;
 
     const controller = new AbortController();
     abortRef.current = controller;
@@ -184,44 +180,57 @@ export default function AnalyzeScreen() {
     setSaved(null);
 
     try {
-      const baseUrl = await resolveApiUrl();
-      if (!baseUrl) {
-        setErrorMessage(MISSING_API_URL_MESSAGE);
-        setPhase('error');
-        return;
-      }
       const baseline = findBaseline(analyses, pet.id);
-
-      const result = await requestAnalysis({
-        baseUrl,
+      const outcome = await attemptAnalysis(
         clip,
-        petName: pet.name,
-        previousOverall: baseline?.overallScore,
-        previousPipeline: baseline?.pipeline,
-        signal: controller.signal,
-        onUploadProgress: (fraction) => {
+        {
+          isReadable: isClipReadable,
+          resolveUrl: resolveApiUrl,
+          request: (baseUrl, chosen, onUploadProgress) =>
+            requestAnalysis({
+              baseUrl,
+              clip: chosen,
+              petName: pet.name,
+              previousOverall: baseline?.overallScore,
+              previousPipeline: baseline?.pipeline,
+              signal: controller.signal,
+              onUploadProgress,
+            }),
+          describeError: describeAnalysisError,
+        },
+        (fraction) => {
           setUploadFraction(fraction);
           if (fraction >= 1) setPhase('analyzing');
         },
-      });
+      );
 
-      const record = toAnalysisRecord(result, {
-        petId: pet.id,
-        fileName: clip.name,
-        durationSeconds: clip.durationSeconds ?? 0,
-        source,
-        license,
-        sourceUrl,
-      });
-      addAnalysis(record);
-      setSaved(record);
-      setPhase('done');
-      setClip(null);
-    } catch (error) {
-      setErrorMessage(describeAnalysisError(error));
-      setPhase('error');
+      if (outcome.kind === 'unreadable') {
+        setClip(null);
+        setClipProblem('That video can no longer be opened. Please choose it again.');
+        setPhase('idle');
+      } else if (outcome.kind === 'no-server') {
+        setErrorMessage(MISSING_API_URL_MESSAGE);
+        setPhase('error');
+      } else if (outcome.kind === 'failed') {
+        setErrorMessage(outcome.message);
+        setPhase('error');
+      } else {
+        const record = toAnalysisRecord(outcome.result, {
+          petId: pet.id,
+          fileName: clip.name,
+          durationSeconds: clip.durationSeconds ?? 0,
+          source,
+          license,
+          sourceUrl,
+        });
+        addAnalysis(record);
+        setSaved(record);
+        setPhase('done');
+        setClip(null);
+      }
     } finally {
       abortRef.current = null;
+      gate.current.leave();
     }
   }
 

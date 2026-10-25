@@ -28,6 +28,7 @@ function Navigation() {
         <Stack.Screen name="guided-tour" options={{ title: 'PetLens walkthrough' }} />
         <Stack.Screen name="demo" options={{ title: 'Sample data' }} />
         <Stack.Screen name="compare" options={{ title: 'Compare walks' }} />
+        <Stack.Screen name="methodology" options={{ title: 'Methodology' }} />
       </Stack>
     </>
   );
