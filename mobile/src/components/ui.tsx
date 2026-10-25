@@ -3,8 +3,7 @@
  * Plain React Native views with the shared theme; nothing clever.
  */
 
-import { Ionicons } from '@expo/vector-icons';
-import type { ComponentProps, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import {
   ActivityIndicator,
   Pressable,
@@ -16,7 +15,7 @@ import {
   type ViewStyle,
 } from 'react-native';
 
-import { colors, radius, spacing } from '../theme';
+import { colors, fontFamily, radius, spacing } from '../theme';
 import { useColors } from '../theme-context';
 
 export function Card({ children, style }: { children: ReactNode; style?: StyleProp<ViewStyle> }) {
@@ -46,7 +45,7 @@ export function Muted({ children, style }: { children: ReactNode; style?: StyleP
 type ButtonProps = {
   label: string;
   onPress: () => void;
-  icon?: ComponentProps<typeof Ionicons>['name'];
+  icon?: string;
   variant?: 'primary' | 'secondary' | 'danger';
   disabled?: boolean;
   busy?: boolean;
@@ -75,9 +74,7 @@ export function Button({ label, onPress, icon, variant = 'primary', disabled, bu
     >
       {busy ? (
         <ActivityIndicator color={textColor} />
-      ) : (
-        icon && <Ionicons name={icon} size={18} color={textColor} />
-      )}
+      ) : null}
       <Text style={[styles.buttonText, { color: textColor }]}>{label}</Text>
     </Pressable>
   );
@@ -103,13 +100,12 @@ export function Tag({ children, tone = 'neutral' }: { children: ReactNode; tone?
 export function Note({ tone, title, children }: { tone: 'error' | 'warn' | 'info'; title?: string; children: ReactNode }) {
   const colors = useColors();
   const palette = {
-    error: { bg: colors.errorSoft, fg: colors.error, icon: 'alert-circle' as const },
-    warn: { bg: colors.warnSoft, fg: colors.warn, icon: 'warning' as const },
-    info: { bg: colors.accentSoft, fg: colors.accent, icon: 'information-circle' as const },
+    error: { bg: colors.errorSoft, fg: colors.error },
+    warn: { bg: colors.warnSoft, fg: colors.warn },
+    info: { bg: colors.accentSoft, fg: colors.accent },
   }[tone];
   return (
     <View accessibilityRole={tone === 'info' ? undefined : 'alert'} style={[styles.note, { backgroundColor: palette.bg }]}>
-      <Ionicons name={palette.icon} size={20} color={palette.fg} />
       <View style={{ flex: 1 }}>
         {title && <Text style={[styles.noteTitle, { color: palette.fg }]}>{title}</Text>}
         <Text style={[styles.noteText, { color: colors.text }]}>{children}</Text>
@@ -137,11 +133,10 @@ export function Chip({ label, selected, onPress }: { label: string; selected: bo
   );
 }
 
-export function EmptyState({ icon, title, body }: { icon: ComponentProps<typeof Ionicons>['name']; title: string; body: string }) {
+export function EmptyState({ title, body }: { icon?: string; title: string; body: string }) {
   const palette = useColors();
   return (
     <View style={styles.empty}>
-      <Ionicons name={icon} size={36} color={palette.accent} />
       <Text style={[styles.emptyTitle, { color: palette.text }]}>{title}</Text>
       <Text style={[styles.muted, { color: palette.muted }]}>{body}</Text>
     </View>
@@ -164,7 +159,7 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     color: colors.muted,
   },
-  title: { fontSize: 24, fontWeight: '700', color: colors.text },
+  title: { fontFamily: fontFamily.display, fontSize: 22, color: colors.text },
   muted: { fontSize: 13, color: colors.muted, lineHeight: 19 },
   button: {
     flexDirection: 'row',
@@ -180,7 +175,7 @@ const styles = StyleSheet.create({
   buttonSecondary: { backgroundColor: colors.card, borderWidth: 1, borderColor: colors.border },
   buttonDanger: { backgroundColor: colors.errorSoft },
   buttonDisabled: { opacity: 0.5 },
-  buttonText: { fontSize: 13, fontWeight: '700' },
+  buttonText: { fontFamily: fontFamily.sans, fontSize: 13, fontWeight: '700' },
   tag: {
     backgroundColor: colors.track,
     borderRadius: radius.pill,

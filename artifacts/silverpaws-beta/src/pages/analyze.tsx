@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Check, CircleAlert, FileVideo, LoaderCircle, LockKeyhole, PawPrint, Play, RotateCcw, UploadCloud } from 'lucide-react';
+﻿import { useEffect, useRef, useState } from 'react';
+import { ArrowRight, Check, CircleAlert, FileVideo, LockKeyhole, PawPrint, Play, RotateCcw } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 import { toast } from 'sonner';
 import LocationSpecialistCard from '@/components/LocationSpecialistCard';
@@ -210,21 +210,22 @@ export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis 
       </div>
 
       {phase === 'upload' && (
-        <section className="mt-7 rounded-2xl border border-[#1669aa]/50 border-t-[#3794a4]/40 bg-gradient-to-b from-[#0a4267]/60 to-[#061826]/95 p-6 shadow-2xl backdrop-blur-md stagger-2">
+        <section className="mt-7 rounded-2xl border border-[#1669aa]/50 border-t-[#3794a4]/40 bg-[#0a2b3e] p-6 shadow-2xl backdrop-blur-md stagger-2">
           <div className="grid md:grid-cols-[1fr_220px] gap-7">
             <div>
-              <label className="field-label" htmlFor="pet-select">Who is in this video?</label>
+              
               {pets.length
                 ? <select id="pet-select" className="field-input border-[#1669aa]/60 text-white placeholder:text-slate-400" value={petId} onChange={(event) => setPetId(event.target.value)} data-testid="select-analysis-pet">{pets.map((pet) => <option value={pet.id} key={pet.id}>{pet.name} · {pet.species}</option>)}</select>
                 : <div className="soft-note p-3 text-sm" data-testid="text-no-pet-warning">Create a pet profile before starting an analysis. <Link href="/pet" className="font-bold underline">Add a pet</Link></div>}
               <div id="tour-upload-dropzone" className="dotted-drop mt-6 min-h-[245px] flex flex-col items-center justify-center text-center p-7">
-                <div className="empty-art"><UploadCloud size={27} /></div>
-                <h2 className="font-bold text-lg mt-5">PLEASE UPLOAD A SIDE VIEW OF YOUR DOG WALKING</h2>
+                
+                <h2 className="font-bold text-lg mt-5">Please upload a side video of your dog walking.</h2>
                 <p className="body-muted text-sm mt-2">Side view, steady camera. A useful walk is about 5 to 15 seconds. The server accepts a longer clip, up to 120 seconds.</p>
                 <div className="flex flex-wrap justify-center gap-3 mt-5">
                   <button type="button" className="btn-secondary" onClick={() => inputRef.current?.click()} disabled={!pets.length} data-testid="button-choose-video">Choose video</button>
                   <button id="try-sample-btn" type="button" className="btn-quiet scroll-mt-20 font-semibold text-[#3eb49c] transition-colors hover:text-white" onClick={tryDemo} data-testid="button-try-demo">Try Sample Dog Walk</button>
                 </div>
+                <p className="body-muted text-xs mt-3">Click 'Try Sample Dog Walk' below to run a sample movement tracking test.</p>
                 <input ref={inputRef} className="hidden" type="file" accept="video/*" onChange={(event) => selectFile(event.target.files?.[0])} data-testid="input-walking-video" />
               </div>
               {error && <div className="text-sm mt-3 flex items-center gap-2" style={{ color: '#ff8b84' }} role="alert" data-testid="text-upload-error"><CircleAlert size={15} />{error}</div>}
@@ -281,7 +282,7 @@ export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis 
       {phase === 'processing' && (
         <>
         <section className="panel panel-padded mt-7 stagger-2 text-center max-w-2xl mx-auto" aria-busy="true">
-          <div className="empty-art mx-auto" style={{ animation: 'pulse-soft 1.3s infinite' }}><LoaderCircle size={28} className="animate-spin" /></div>
+          
           <div className="eyebrow mt-7">Analysis in progress</div>
           <h2 className="display-title text-3xl mt-2" data-testid="text-processing-stage">{PROCESSING_STATUS}</h2>
           <p className="body-muted text-sm mt-3">This page waits while the analysis service is still working.</p>
@@ -307,7 +308,7 @@ export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis 
       )}
 
       {phase === 'done' && (
-        <section className="panel panel-padded mt-7 text-center"><div className="empty-art mx-auto"><Check size={29} /></div><h2 className="display-title text-3xl mt-5">Your note is ready.</h2><p className="body-muted text-sm mt-2">Opening the saved observation for {currentPet?.name ?? 'your pet'}…</p></section>
+        <section className="panel panel-padded mt-7 text-center"><h2 className="display-title text-3xl mt-5">Your note is ready.</h2><p className="body-muted text-sm mt-2">Opening the saved observation for {currentPet?.name ?? 'your pet'}…</p></section>
       )}
       <div className="mt-5" id="vet-summary-export">
         <LocationSpecialistCard />

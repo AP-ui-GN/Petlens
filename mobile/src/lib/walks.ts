@@ -3,7 +3,7 @@
  * compared as if they were the same measurement.
  */
 
-import type { Analysis } from './types.ts';
+import type { Analysis, Pet } from './types.ts';
 
 export const SAMPLE_WALK_ID = 'sample-walk';
 
@@ -23,6 +23,24 @@ const KG_PER_LB = 0.45359237;
 function formatConvertedWeight(value: number): string {
   const rounded = Math.round(value * 10) / 10;
   return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
+}
+
+export function normalizePetWeightsToPounds(pets: Pet[]): { pets: Pet[]; changed: boolean } {
+  let changed = false;
+  const normalized = pets.map((pet) => {
+    if (pet.weightUnit === 'lb') return pet;
+    changed = true;
+    if (pet.weightUnit !== 'kg') return { ...pet, weightUnit: 'lb' as const };
+
+    const trimmed = pet.weight.trim();
+    const kilograms = Number(trimmed);
+    const weight =
+      trimmed && Number.isFinite(kilograms) && kilograms > 0
+        ? formatConvertedWeight(kilograms / KG_PER_LB)
+        : pet.weight;
+    return { ...pet, weight, weightUnit: 'lb' as const };
+  });
+  return { pets: normalized, changed };
 }
 
 /**

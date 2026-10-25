@@ -13,7 +13,7 @@ function PetLensHeader() {
       <Image
         accessibilityLabel="PetLens analysis for dogs"
         source={require('../../assets/petlens-dog-mark.png')}
-        style={{ width: 42, height: 42, borderRadius: 13, backgroundColor: '#fff' }}
+        style={{ width: 42, height: 42, borderRadius: 13, backgroundColor: 'transparent' }}
       />
       <View>
         <Text style={{ color: colors.text, fontSize: 16, fontWeight: '800' }}>PetLens</Text>
@@ -93,11 +93,6 @@ export default function TabsLayout() {
         headerTintColor: colors.text,
         headerTitleStyle: { fontWeight: '700' },
         headerTitle: PetLensHeader,
-        headerRight: () => (
-          <Text style={{ color: colors.muted, fontSize: 11, fontWeight: '700', letterSpacing: 1.1 }}>
-            BETA
-          </Text>
-        ),
         headerRightContainerStyle: { paddingRight: 18 },
         headerLeftContainerStyle: { paddingLeft: 6 },
         sceneStyle: { backgroundColor: colors.background, paddingBottom: 112 },

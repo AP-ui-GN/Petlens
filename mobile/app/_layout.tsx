@@ -1,4 +1,5 @@
 import { Stack } from 'expo-router';
+import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -8,8 +9,14 @@ import { LocalDataProvider } from '../src/hooks/use-local-data';
 import { ThemeProvider, useColorMode, useColors } from '../src/theme-context';
 
 function Navigation() {
+  const [fontsLoaded, fontError] = useFonts({
+    Montserrat: require('../assets/fonts/Montserrat-Variable.ttf'),
+    Horizon: require('../assets/fonts/Horizon-Bold.otf'),
+  });
   const colors = useColors();
   const mode = useColorMode();
+  if (fontError) throw fontError;
+  if (!fontsLoaded) return null;
   return (
     <>
       <StatusBar style={mode === 'dark' ? 'light' : 'dark'} />

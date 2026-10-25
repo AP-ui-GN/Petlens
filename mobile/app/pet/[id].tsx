@@ -1,17 +1,14 @@
 /** Create (`/pet/new`) or edit (`/pet/<id>`) a pet profile. Plain form, local save. */
 
-import { useLocalSearchParams, useRouter } from 'expo-router';
+import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { useState } from 'react';
 import { Alert, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import { Button, Card, Chip, Eyebrow, Muted } from '../../src/components/ui';
 import { useLocalData } from '../../src/hooks/use-local-data';
-import { usePreferences } from '../../src/hooks/use-preferences';
 import { petFormIsValid, validatePetForm, type PetFormErrors } from '../../src/lib/pet-form';
-import type { WeightUnit } from '../../src/lib/preferences';
-import { applyWeightUnitChange, legacyWeightNote, weightUnitForPet } from '../../src/lib/walks';
 import type { PetInput } from '../../src/lib/types';
-import { radius, spacing } from '../../src/theme';
+import { fontFamily, radius, spacing } from '../../src/theme';
 import { useColors } from '../../src/theme-context';
 
 const SPECIES = ['Dog', 'Cat', 'Other'];
@@ -66,13 +63,9 @@ function Field({
 export default function PetScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { pets, addPet, updatePet, deletePet } = useLocalData();
-  const { preferences } = usePreferences();
   const router = useRouter();
 
   const existing = id === 'new' ? undefined : pets.find((pet) => pet.id === id);
-  const [weightUnit, setWeightUnit] = useState<WeightUnit>(
-    weightUnitForPet(existing?.weightUnit, preferences.weightUnit, id === 'new'),
-  );
   const [form, setForm] = useState<PetInput>(
     existing
       ? { name: existing.name, species: existing.species, breed: existing.breed, age: existing.age, weight: existing.weight, notes: existing.notes }
@@ -80,16 +73,8 @@ export default function PetScreen() {
   );
 
   const [attempted, setAttempted] = useState(false);
-  const [unitNote, setUnitNote] = useState<string | null>(null);
   const colors = useColors();
 
-  function chooseUnit(next: WeightUnit) {
-    const result = applyWeightUnitChange(form.weight, weightUnit, next);
-    setUnitNote(result.note);
-    if (!result.ok) return;
-    setWeightUnit(next);
-    setForm((current) => ({ ...current, weight: result.value }));
-  }
   const set = (key: keyof PetInput) => (value: string) => setForm((current) => ({ ...current, [key]: value }));
   const validated = validatePetForm(form);
   const errors: PetFormErrors = {
@@ -103,7 +88,7 @@ export default function PetScreen() {
     setAttempted(true);
     if (!petFormIsValid(next)) return;
 
-    const payload = { ...form, weightUnit };
+    const payload = { ...form, weightUnit: 'lb' as const };
     if (existing) {
       updatePet(existing.id, payload);
       router.back();
@@ -129,13 +114,15 @@ export default function PetScreen() {
   }
 
   return (
-    <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={{ flex: 1 }}>
+    <>
+      <Stack.Screen options={{ title: existing ? 'Edit Profile' : 'New Profile' }} />
+      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={styles.page} keyboardShouldPersistTaps="handled">
         <Card>
-          <Eyebrow>{existing ? 'Edit profile' : 'New pet'}</Eyebrow>
+          <Eyebrow>{existing ? 'Edit profile' : 'New Profile'}</Eyebrow>
           <Muted>Only a name is required. Nothing here leaves the phone.</Muted>
 
-          <Field label="Name" value={form.name} onChange={set('name')} placeholder="Mabel" error={errors.name} />
+          <Field label="Name" value={form.name} onChange={set('name')} error={errors.name} />
 
           <View style={{ gap: 6 }}>
             <Text style={[styles.label, { color: colors.text }]}>Species</Text>
@@ -146,43 +133,29 @@ export default function PetScreen() {
             </View>
           </View>
 
-          <Field label="Breed" value={form.breed} onChange={set('breed')} placeholder="Labrador mix" />
+          <Field label="Breed" value={form.breed} onChange={set('breed')} />
           <View style={styles.row}>
             <View style={{ flex: 1 }}>
-              <Field label="Age (years)" value={form.age} onChange={set('age')} placeholder="9" keyboardType="decimal-pad" error={errors.age} />
+              <Field label="Age (years)" value={form.age} onChange={set('age')} keyboardType="decimal-pad" error={errors.age} />
             </View>
             <View style={{ flex: 1 }}>
-              <Field label={`Weight (${weightUnit})`} value={form.weight} onChange={set('weight')} placeholder={weightUnit === 'kg' ? '28' : '62'} keyboardType="decimal-pad" error={errors.weight} />
+              <Field label="Weight (lb)" value={form.weight} onChange={set('weight')} keyboardType="decimal-pad" error={errors.weight} />
             </View>
           </View>
-          {legacyWeightNote(existing?.weightUnit, form.weight) && !unitNote ? (
-            <Muted>{legacyWeightNote(existing?.weightUnit, form.weight)}</Muted>
-          ) : null}
-          {unitNote ? <Muted>{unitNote}</Muted> : null}
-          <View style={styles.chips}>
-            {(['kg', 'lb'] as WeightUnit[]).map((unit) => (
-              <Chip key={unit} label={weightUnit === unit ? `${unit} selected` : unit} selected={weightUnit === unit} onPress={() => chooseUnit(unit)} />
-            ))}
-          </View>
-          <Field
-            label="Baseline notes"
-            value={form.notes}
-            onChange={set('notes')}
-            placeholder="What a normal walk looks like, past injuries, anything a future you would want to remember."
-            multiline
-          />
+          <Field label="Baseline notes" value={form.notes} onChange={set('notes')} multiline />
 
           <Button label={existing ? 'Save changes' : 'Save and record a walk'} icon="checkmark" onPress={save} />
           {existing && <Button label="Remove pet" icon="trash-outline" variant="danger" onPress={confirmDelete} />}
         </Card>
       </ScrollView>
-    </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   page: { padding: spacing.lg, gap: spacing.lg },
-  label: { fontSize: 13, fontWeight: '600' },
+  label: { fontFamily: fontFamily.sans, fontSize: 13, fontWeight: '600' },
   input: {
     borderWidth: 1,
     borderRadius: radius.md,

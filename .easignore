@@ -1,0 +1,50 @@
+# EAS archives the repository root for this Expo workspace. Keep local-only
+# artifacts and generated build output out of the remote build context.
+.git/
+.agents/
+.cursor/
+.pytest_cache/
+.venv/
+venv/
+__pycache__/
+node_modules/
+**/node_modules/
+demo-output/
+models/
+attached_assets/
+reports/
+
+# Generated output
+dist/
+tmp/
+out-tsc/
+coverage/
+outputs/
+validation_clips/
+*.tsbuildinfo
+*.mp4
+*.mov
+*.avi
+
+# Expo and native build output
+mobile/.expo/
+mobile/dist/
+mobile/web-build/
+mobile/android/
+mobile/ios/
+mobile/.kotlin/
+mobile/.metro-health-check*
+mobile/*.orig.*
+mobile/*.jks
+mobile/*.p8
+mobile/*.p12
+mobile/*.key
+mobile/*.mobileprovision
+
+# Local environment files and signing material
+.env
+.env.*
+!.env.example
+**/.env*.local
+firebase-service-account*.json
+service-account*.json

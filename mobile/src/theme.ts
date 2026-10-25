@@ -44,6 +44,11 @@ export const spacing = {
   xxl: 32,
 };
 
+export const fontFamily = {
+  sans: 'Montserrat',
+  display: 'Horizon',
+};
+
 export const radius = {
   sm: 8,
   md: 12,

@@ -26,7 +26,7 @@ export const DEFAULT_PREFERENCES: Preferences = {
   consentAccepted: false,
   consentAcceptedAt: null,
   demoMode: false,
-  weightUnit: 'kg',
+  weightUnit: 'lb',
   theme: 'system',
   reminderEnabled: false,
   advancedApi: false,
@@ -37,7 +37,7 @@ export async function loadPreferences(): Promise<Preferences> {
     const raw = await AsyncStorage.getItem(KEY);
     if (!raw) return { ...DEFAULT_PREFERENCES };
     const parsed = JSON.parse(raw) as Partial<Preferences>;
-    return { ...DEFAULT_PREFERENCES, ...parsed };
+    return { ...DEFAULT_PREFERENCES, ...parsed, weightUnit: 'lb' };
   } catch {
     return { ...DEFAULT_PREFERENCES };
   }

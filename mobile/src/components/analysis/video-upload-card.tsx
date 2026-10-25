@@ -1,10 +1,9 @@
-import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, Text, View } from 'react-native';
 
 import { Button, Card, Chip, Muted, Note } from '../ui';
 import type { Pet } from '../../lib/types';
 import { MAX_CLIP_SECONDS } from '../../lib/api';
-import { spacing } from '../../theme';
+import { fontFamily, spacing } from '../../theme';
 import { useColors } from '../../theme-context';
 
 type Props = {
@@ -45,11 +44,8 @@ export function VideoUploadCard({
       </View>
 
       <View style={[styles.dropzone, { backgroundColor: 'rgba(10,66,103,0.18)' }]}>
-        <View style={[styles.uploadIcon, { backgroundColor: colors.accentSoft }]}>
-          <Ionicons name="cloud-upload-outline" size={27} color={colors.accent} />
-        </View>
         <Text style={[styles.uploadTitle, { color: colors.text }]}>
-          PLEASE UPLOAD A SIDE VIEW OF YOUR DOG WALKING
+          Please upload a side video of your dog walking.
         </Text>
         <Muted style={styles.centeredText}>
           Side view, steady camera. A useful walk is about 5 to 15 seconds. The server accepts a longer clip, up to {MAX_CLIP_SECONDS} seconds.
@@ -59,6 +55,7 @@ export function VideoUploadCard({
           <Button label="Choose video" variant="secondary" onPress={onChooseVideo} disabled={disabled} />
         </View>
         <Button label="Try Sample Dog Walk" variant="secondary" onPress={onTrySample} disabled={disabled} />
+        <Muted style={styles.sampleNote}>Click 'Try Sample Dog Walk' below to run a sample movement tracking test.</Muted>
         <Muted style={styles.sampleNote}>
           Sample data is not measured from a video and is never saved to history.
         </Muted>
@@ -73,7 +70,7 @@ export function VideoUploadCard({
 
 const styles = StyleSheet.create({
   petPicker: { gap: spacing.sm },
-  fieldLabel: { fontSize: 12, fontWeight: '700' },
+  fieldLabel: { fontFamily: fontFamily.sans, fontSize: 12, fontWeight: '700' },
   petChips: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
   dropzone: {
     minHeight: 245,
@@ -94,7 +91,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     transform: [{ rotate: '-7deg' }],
   },
-  uploadTitle: { fontSize: 17, lineHeight: 24, fontWeight: '700', textAlign: 'center' },
+  uploadTitle: { fontFamily: fontFamily.sans, fontSize: 17, lineHeight: 24, fontWeight: '700', textAlign: 'center' },
   centeredText: { textAlign: 'center' },
   actions: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: spacing.sm },
   sampleNote: { textAlign: 'center', fontSize: 11 },

@@ -90,11 +90,11 @@ export function TrendPanel({ analyses }: { analyses: Analysis[] }) {
 
   return (
     <section className="soft-note p-5 mt-5" data-testid="trend-panel">
-      <div className="eyebrow">Saved walks</div>
+      
       <h2 className="font-bold text-sm mt-2">How the scores moved</h2>
       {series.length === 0 ? (
         <p className="body-muted text-sm leading-relaxed mt-2" data-testid="trend-empty">
-          Charts appear here after the first walk is saved. Nothing is filled in before that.
+          Charts appear here after the first walk is saved.
         </p>
       ) : (
         <>

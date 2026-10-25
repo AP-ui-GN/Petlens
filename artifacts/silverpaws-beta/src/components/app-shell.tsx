@@ -45,7 +45,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         <NavItems />
         <div className="mt-auto">
           <div className="rounded-2xl p-4" style={{ background: 'rgba(255,255,255,.08)' }}>
-            <div className="eyebrow" style={{ color: '#3eb49c' }}>Browser beta</div>
+
             <p className="text-xs leading-relaxed mt-2" style={{ color: 'rgba(230,247,251,.72)' }}>
               Your videos and observations stay on this device while testing.
             </p>
@@ -62,7 +62,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               <span className="brand-sub block">analysis for dogs</span>
             </span>
           </Link>
-          <span className="eyebrow">Beta</span>
+
         </header>
         <main className="page-content">
           <img

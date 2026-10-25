@@ -1,4 +1,3 @@
-import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useEffect, useMemo, useState } from 'react';
 import { ActivityIndicator, Alert, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
@@ -11,7 +10,7 @@ import { formatDateTime, formatDuration, SIGNAL_LABELS } from '../../src/lib/for
 import { sharePdf } from '../../src/lib/print-report';
 import { vetSummaryHtml } from '../../src/lib/report-html';
 import { recentWalks } from '../../src/lib/walks';
-import { spacing } from '../../src/theme';
+import { fontFamily, spacing } from '../../src/theme';
 import { useColors } from '../../src/theme-context';
 
 export default function HistoryScreen() {
@@ -47,10 +46,7 @@ export default function HistoryScreen() {
     <ScrollView contentContainerStyle={styles.page}>
       <View style={{ gap: spacing.sm }}>
         <Eyebrow>Your local notebook</Eyebrow>
-        <Text style={[styles.pageTitle, { color: colors.text }]}>
-          History, not{'\n'}<Text style={{ color: colors.accent }}>a verdict.</Text>
-        </Text>
-        <Muted>A dated trail of observations to help you notice patterns and ask better questions.</Muted>
+        <Text style={[styles.pageTitle, { color: colors.text }]}>Your pet’s history</Text>
       </View>
       <View style={styles.countRow}>
         <Muted>{analyses.length} saved observation{analyses.length === 1 ? '' : 's'} on this device</Muted>
@@ -106,7 +102,6 @@ export default function HistoryScreen() {
                   {analysis.concerningChange ? ' · worth asking a vet' : ''}
                 </Muted>
               </View>
-              <Ionicons name="chevron-forward" size={18} color={colors.muted} accessibilityElementsHidden />
             </Pressable>
           );
         })}
@@ -121,7 +116,7 @@ export default function HistoryScreen() {
 const styles = StyleSheet.create({
   page: { padding: spacing.lg, gap: spacing.lg },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-  pageTitle: { fontSize: 34, lineHeight: 39, fontWeight: '800', letterSpacing: -0.8 },
+  pageTitle: { fontFamily: fontFamily.display, fontSize: 30, lineHeight: 35, letterSpacing: -0.6 },
   countRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: spacing.sm },
   actions: { flexDirection: 'row', gap: spacing.sm },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
@@ -134,6 +129,6 @@ const styles = StyleSheet.create({
     minHeight: 44,
     padding: spacing.md,
   },
-  itemTitle: { fontSize: 16, fontWeight: '700' },
+  itemTitle: { fontFamily: fontFamily.sans, fontSize: 15, fontWeight: '700' },
   itemFile: { fontSize: 12 },
 });

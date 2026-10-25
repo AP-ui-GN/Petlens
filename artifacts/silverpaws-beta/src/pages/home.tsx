@@ -1,4 +1,4 @@
-import { ArrowRight, CalendarDays, ChevronRight, CircleHelp, FileVideo, HeartHandshake, PawPrint } from 'lucide-react';
+import { ArrowRight, ChevronRight, FileVideo, HeartHandshake } from 'lucide-react';
 import { Link } from 'wouter';
 import MobilityTrendTracker from '@/components/MobilityTrendTracker';
 import { displayScore, type Analysis, type Pet } from '@/lib/storage';
@@ -17,10 +17,8 @@ export default function Home({ pets, analyses }: Props) {
     return (
       <div className="page-frame">
         <section className="panel panel-padded text-center max-w-xl mx-auto mt-16">
-          <div className="empty-art mx-auto mb-5"><PawPrint size={28} /></div>
-          <div className="eyebrow">First, a little context</div>
           <h1 className="display-title text-4xl mt-3">Tell us who you’re watching over.</h1>
-          <p className="body-muted mt-3 leading-relaxed">A pet profile helps keep each walking observation connected to the right companion.</p>
+          <p className="body-muted mt-3 leading-relaxed">A pet profile keeps each walking observation connected to the right pet.</p>
           <Link href="/pet" className="btn-primary mt-7" data-testid="link-create-first-pet">Create pet profile <ArrowRight size={16} /></Link>
         </section>
       </div>
@@ -43,7 +41,7 @@ export default function Home({ pets, analyses }: Props) {
             <div className="flex items-center gap-4">
               <div className="pet-orb">{pet.name.slice(0, 2).toUpperCase()}</div>
               <div>
-                <div className="eyebrow font-sans text-[11px] font-bold uppercase tracking-wider text-slate-400/90">Selected companion</div>
+                
                 <h2 className="font-sans font-bold text-xl text-white tracking-normal leading-snug mt-1">{pet.name}</h2>
                 <p className="body-muted text-sm mt-1">{pet.species}{pet.age ? ` · ${pet.age} years` : ''}</p>
               </div>
@@ -56,7 +54,7 @@ export default function Home({ pets, analyses }: Props) {
         </div>
         <div className="panel panel-padded flex flex-col justify-between">
           <div className="flex justify-between gap-4">
-            <div><div className="eyebrow font-sans text-[11px] font-bold uppercase tracking-wider text-slate-400/90">Latest mobility note</div><h2 className="font-sans font-bold text-xl text-white tracking-normal leading-snug mt-2">{latestNoteHeadline(latest)}</h2></div>
+            <div><h2 className="font-sans font-bold text-xl text-white tracking-normal leading-snug mt-2">{latestNoteHeadline(latest)}</h2></div>
             <HeartHandshake size={25} style={{ color: '#3eb49c' }} />
           </div>
           {latest ? (
@@ -76,9 +74,9 @@ export default function Home({ pets, analyses }: Props) {
         </div>
       </section>
 
-      <MobilityTrendTracker analyses={analyses} petId={pet.id} />
+      <MobilityTrendTracker analyses={analyses} petId={pet.id} petName={pet.name} />
 
-      <section className="grid lg:grid-cols-[1.2fr_.8fr] gap-5 mt-5 stagger-3">
+      <section className="mt-5 stagger-3">
         <div className="panel panel-padded">
           <div className="flex items-center justify-between mb-3"><div><div className="eyebrow font-sans text-[11px] font-bold uppercase tracking-wider text-slate-400/90">Recent analyses</div><h2 className="font-sans font-bold text-xl text-white tracking-normal leading-snug mt-2">Your observation trail</h2></div><Link href="/history" className="btn-quiet" data-testid="link-see-all-history">See all <ChevronRight size={15} /></Link></div>
           {recent.length ? recent.map((analysis) => (
@@ -88,14 +86,8 @@ export default function Home({ pets, analyses }: Props) {
             </Link>
           )) : <div className="body-muted text-sm py-8 text-center">Your completed observations will collect here.</div>}
         </div>
-        <div className="soft-note p-5">
-          <CircleHelp size={20} style={{ color: '#3794a4' }} />
-          <h2 className="font-sans font-bold text-xl text-white tracking-normal leading-snug mt-4">How to get a useful clip</h2>
-          <ul className="body-muted text-sm leading-relaxed mt-3 space-y-2 list-disc pl-4"><li>Keep the camera low and level.</li><li>Capture a few steps from the side.</li><li>Let your pet move naturally.</li></ul>
-          <div className="flex items-center gap-2 mt-5 text-xs font-semibold"><CalendarDays size={14} /> Repeat over time, not just once.</div>
-        </div>
       </section>
-      <p className="body-muted text-[11px] mt-7 flex items-center gap-2"><CircleHelp size={13} /> PetLens AI is experimental and educational. It does not diagnose injury or illness.</p>
+
     </div>
   );
 }

@@ -24,7 +24,6 @@ type MetricDefinition = {
 
 const METRICS: MetricDefinition[] = [
   { key: 'overall', label: 'Overall mobility', color: '#3eb49c' },
-  { key: 'symmetry', label: 'Stride symmetry', color: '#3794a4' },
   { key: 'hip', label: 'Hip stability', color: '#1669aa' },
 ];
 
@@ -119,11 +118,11 @@ function withinRange(points: TrackerPoint[], range: TimeRange): TrackerPoint[] {
   return points.filter((point) => new Date(point.createdAt).getTime() >= cutoff);
 }
 
-export default function MobilityTrendTracker({ analyses, petId }: { analyses: Analysis[]; petId: string }) {
+export default function MobilityTrendTracker({ analyses, petId, petName }: { analyses: Analysis[]; petId: string; petName?: string }) {
   const [range, setRange] = useState<TimeRange>('90');
   const [enabled, setEnabled] = useState<Record<MetricKey, boolean>>({
     overall: true,
-    symmetry: true,
+    symmetry: false,
     hip: true,
   });
   const [hovered, setHovered] = useState<{ point: TrackerPoint; x: number; y: number } | null>(null);
@@ -154,7 +153,7 @@ export default function MobilityTrendTracker({ analyses, petId }: { analyses: An
   const selectedPoint = hovered?.point ?? displayedPoints[displayedPoints.length - 1];
 
   const delta = useMemo(() => {
-    const scored = displayedPoints.map((point) => point.symmetry).filter((value): value is number => value !== null);
+    const scored = displayedPoints.map((point) => point.overall).filter((value): value is number => value !== null);
     if (scored.length < 2) return null;
     const first = scored[Math.max(0, scored.length - 4)];
     const last = scored[scored.length - 1];
@@ -173,7 +172,7 @@ export default function MobilityTrendTracker({ analyses, petId }: { analyses: An
 
   return (
     <section
-      className="mt-5 rounded-2xl border border-[#1669aa]/50 border-t-[#3794a4]/40 bg-gradient-to-b from-[#0a4267]/60 to-[#061826]/95 p-6 text-white shadow-2xl backdrop-blur-md"
+      className="mt-5 rounded-2xl border border-[#1669aa]/50 border-t-[#3794a4]/40 bg-[#0a2b3e] p-6 text-white shadow-2xl backdrop-blur-md"
       data-testid="mobility-trend-tracker"
     >
       <div className="flex flex-wrap items-start justify-between gap-4">
@@ -182,7 +181,7 @@ export default function MobilityTrendTracker({ analyses, petId }: { analyses: An
           <h2 className="mt-2 font-sans text-xl font-bold leading-snug tracking-normal">Gait baseline &amp; trend</h2>
           <p className="body-muted mt-2 max-w-2xl text-sm leading-relaxed">
             {isPreview
-              ? 'Sample trajectory shown below. Once you upload and analyze a video of Mabel, your real gait measurements will automatically plot here.'
+              ? `Sample trajectory shown below. Once you upload and analyze a video of ${petName ?? 'your pet'}, your real gait measurements will automatically plot here.`
               : 'Longitudinal movement trends tracked across recorded walk observations.'}
           </p>
         </div>
@@ -329,7 +328,7 @@ export default function MobilityTrendTracker({ analyses, petId }: { analyses: An
                 {delta > 0 ? '+' : ''}{Math.round(delta)} pts
               </span>
               <span className="body-muted text-xs">
-                Symmetry change over the last {Math.min(3, Math.max(1, displayedPoints.length - 1))} walk{displayedPoints.length === 2 ? '' : 's'}
+                Overall change over the last {Math.min(3, Math.max(1, displayedPoints.length - 1))} walk{displayedPoints.length === 2 ? '' : 's'}
               </span>
             </>
           )}

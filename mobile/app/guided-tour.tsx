@@ -8,7 +8,7 @@ import { spacing } from '../src/theme';
 const STEPS = [
   {
     title: 'Try a sample walk',
-    body: 'Open “Try Sample Dog Walk” to explore a clearly labeled example. It is mock data, not an analysis of a real clip.',
+    body: 'Click \'Try Sample Dog Walk\' below to run a sample movement tracking test. The example is mock data, not an analysis of a real clip.',
   },
   {
     title: 'Pose keypoints',
