@@ -22,6 +22,7 @@ function aiUseSection(analysis: Analysis): string {
 }
 
 function escapeHtml(value: string): string {
+  // Escape user and model text before inserting it into report markup.
   return value
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -38,6 +39,7 @@ function petName(pets: Pet[], petId: string): string {
 }
 
 export function walkReportHtml(analysis: Analysis, pets: Pet[]): string {
+  // Keep saved measurements, interpretation, and limitations in separate sections.
   const sample = isDemoWalk(analysis);
   const measurements = analysis.measurements;
   const name = sample ? 'Sample pet' : petName(pets, analysis.petId);
@@ -102,6 +104,7 @@ export function walkReportHtml(analysis: Analysis, pets: Pet[]): string {
 }
 
 export function vetSummaryHtml(walks: Analysis[], pets: Pet[]): string {
+  // Group real walks by pipeline so measurements from different methods stay separate.
   const real = walks.filter((walk) => !isDemoWalk(walk));
   const groups = new Map<string, Analysis[]>();
   for (const walk of real) {

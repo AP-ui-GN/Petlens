@@ -13,6 +13,7 @@ import { normalizePetWeightsToPounds } from './walks';
 const PETS_KEY = 'silverpaws:pets';
 const ANALYSES_KEY = 'silverpaws:analyses';
 
+// Keep storage failures from preventing the rest of the app from opening.
 async function read<T>(key: string, fallback: T): Promise<T> {
   try {
     const value = await AsyncStorage.getItem(key);
@@ -33,6 +34,7 @@ async function write<T>(key: string, value: T): Promise<boolean> {
 
 export async function loadPets() {
   const pets = await read<Pet[]>(PETS_KEY, []);
+  // Older profiles without an explicit unit are normalized before display.
   const normalized = normalizePetWeightsToPounds(pets);
   if (normalized.changed) await savePets(normalized.pets);
   return normalized.pets;

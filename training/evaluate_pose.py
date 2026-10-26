@@ -216,6 +216,7 @@ def run_evaluation(args: argparse.Namespace) -> int:
     model = build_model().to(device)
     model.load_state_dict(checkpoint["model_state"])
     model.eval()
+    # Run the model once per prepared instance and map heatmap peaks to image pixels.
     predictions = []
     visualizations = 0
     model_version = str(checkpoint.get("run_id", "unversioned"))
@@ -283,6 +284,7 @@ def run_evaluation(args: argparse.Namespace) -> int:
         prediction_payload,
         minimum_confidence=args.minimum_confidence,
     )
+    # Compare against a simple box-center placement using the same annotations.
     baseline_predictions = {
         "schema_version": SCHEMA_VERSION,
         "keypoints": list(AP10K_KEYPOINTS),

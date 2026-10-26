@@ -32,6 +32,7 @@ def summarize_keypoints(keypoints, *, frame_threshold: float) -> dict:
     if not 0.0 <= frame_threshold <= 1.0:
         raise ValueError("frame_threshold must be between 0 and 1.")
 
+    # Keep confidence summaries separate from the per-frame coordinates.
     confidence = array[:, :, 2]
     frames_total = int(confidence.shape[0])
     finite = np.isfinite(confidence)
@@ -90,6 +91,7 @@ def summarize_pose_coordinates(
     if (frame_width is None) != (frame_height is None):
         raise ValueError("frame_width and frame_height must be provided together.")
 
+    # Retain frames with enough average confidence before averaging each point.
     confidences = array[:, :, 2]
     usable_frames = []
     for frame, frame_confidence in zip(array, confidences):
@@ -136,6 +138,7 @@ def summarize_pose_coordinates(
 def pose_is_trusted(summary: dict, *, minimum: float) -> bool:
     """True when the pose mean is high enough and at least one frame was used."""
 
+    # A mean alone is not enough when no frames passed the confidence threshold.
     confidence = summary.get("modelConfidence")
     frames_used = summary.get("framesUsed")
     if not isinstance(confidence, (int, float)) or isinstance(confidence, bool):

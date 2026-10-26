@@ -337,6 +337,8 @@ class VitPoseCoco17Backend(PoseBackend):
     def _ensure_loaded(self) -> None:
         if self._loaded:
             return
+
+        # Load both models once so subsequent clips reuse their weights.
         self._ensure_detector_loaded()
         from transformers import VitPoseForPoseEstimation, VitPoseImageProcessor
 
@@ -350,6 +352,8 @@ class VitPoseCoco17Backend(PoseBackend):
     def _ensure_detector_loaded(self) -> None:
         if self._detector is not None:
             return
+
+        # Prefer the configured local model cache and choose an available device.
         home = hf_home()
         home.mkdir(parents=True, exist_ok=True)
         os.environ["HF_HOME"] = str(home)
@@ -390,6 +394,7 @@ class VitPoseCoco17Backend(PoseBackend):
     def _detect_tracks(
         self, frames: list[SampledFrame]
     ) -> tuple[list[TrackDecision], bool, bool]:
+        # Sample detector frames, then associate detections across the clip.
         observations: list[list[tuple[float, float, float, float]]] = []
         multiple_dogs = False
         person_present = False
@@ -413,6 +418,7 @@ class VitPoseCoco17Backend(PoseBackend):
             raise ValueError("No frames were sampled.")
         self._ensure_loaded()
 
+        # Run pose only on frames where the dog tracker accepted a box.
         keypoints = _empty_keypoints(len(frames))
         decisions, multiple_dogs, person_present = self._detect_tracks(frames)
         boxes: list[tuple[float, float, float, float] | None] = [

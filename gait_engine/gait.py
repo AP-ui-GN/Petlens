@@ -137,6 +137,7 @@ def _smooth_segments(series: np.ndarray) -> np.ndarray:
 
 
 def _prepare_points(keypoints: np.ndarray) -> np.ndarray:
+    # Ignore low-confidence joints, fill only short gaps, and smooth each visible run.
     points = np.array(keypoints[:, :, :2], dtype=np.float64, copy=True)
     scores = np.asarray(keypoints[:, :, 2], dtype=np.float64)
     points[scores < KEYPOINT_MIN_SCORE] = np.nan
@@ -209,6 +210,7 @@ def _reference(points: np.ndarray, left: int, right: int) -> np.ndarray:
 
 
 def _paw_signal(points: np.ndarray, paw: int, reference: np.ndarray, forward: np.ndarray, body_length: float) -> np.ndarray:
+    # Express paw movement along the body axis and scale it by body length.
     delta = points[:, paw, :] - reference
     valid = np.isfinite(delta).all(axis=1) & np.isfinite(forward).all(axis=1)
     signal = np.full(len(points), np.nan)
@@ -432,6 +434,7 @@ def compute_gait_metrics(
     ``(x, y, w, h)`` or None per frame.
     """
 
+    # Require the AP-10K-shaped input before deriving any stride measurements.
     array = np.asarray(keypoints, dtype=np.float64)
     if array.ndim != 3 or array.shape[1:] != (17, 3):
         raise ValueError(f"keypoints must have shape (frames, 17, 3); received {array.shape}.")
@@ -472,6 +475,7 @@ def compute_gait_metrics(
         result["notMeasuredReasons"] = reasons
         return result
 
+    # Detect paw cycles relative to shoulder and hip centers, then compare sides.
     front_reference = _reference(points, LEFT_SHOULDER, RIGHT_SHOULDER)
     rear_reference = _reference(points, LEFT_HIP, RIGHT_HIP)
     signals = {

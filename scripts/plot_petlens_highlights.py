@@ -416,6 +416,7 @@ def plot_training(metrics: dict[str, Any], rows: list[dict[str, float]], out_dir
 
 
 def main() -> int:
+    # Build the baseline, landmark, radar, and training-history figures from reports.
     args = parse_args()
     metrics, rows = load_inputs(args.metrics, args.training_csv)
     args.out_dir.mkdir(parents=True, exist_ok=True)

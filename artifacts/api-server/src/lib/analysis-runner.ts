@@ -125,6 +125,7 @@ interface ProcessOutcome {
 
 function runPython(command: string, args: string[]): Promise<ProcessOutcome> {
   return new Promise((resolve) => {
+    // Keep analysis in a separate process so its timeout and failure stay isolated.
     const child = spawn(command, args, {
       cwd: REPOSITORY_ROOT,
       detached: process.platform !== "win32",
@@ -197,6 +198,7 @@ export async function runAnalysis(
   const outputPath = path.join(outputDirectory, "analysis.json");
 
   try {
+    // Prefer the JSON file, but preserve the CLI's last JSON line as a fallback.
     const outcome = await runPython(command, buildArguments(request, outputPath));
 
     if (outcome.spawnError) {
@@ -267,6 +269,7 @@ export async function runAnalysis(
       };
     }
 
+    // Validate the Python result before it crosses the API boundary.
     const parsed = AnalyzeMovementClipResponse.safeParse(payload);
     if (!parsed.success) {
       logger.error(

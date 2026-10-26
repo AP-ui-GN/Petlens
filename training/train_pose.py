@@ -308,6 +308,7 @@ def run_training(args: argparse.Namespace) -> int:
     started_at = time.monotonic()
     best_epoch = 0
     if resumed_checkpoint is not None:
+        # Recheck the resumed model, then seed the new run's best checkpoint.
         best_validation_loss = _run_epoch(
             model, validation_loader, device, torch
         )
@@ -335,6 +336,8 @@ def run_training(args: argparse.Namespace) -> int:
         }
         _save_checkpoint(output_dir / "checkpoint_last.pt", initial_checkpoint, torch)
         _save_checkpoint(output_dir / "checkpoint_best.pt", initial_checkpoint, torch)
+
+    # Train on the training split and select checkpoints by validation loss.
     for epoch in range(start_epoch, epochs):
         training_loss = _run_epoch(model, train_loader, device, torch, optimizer)
         validation_loss = _run_epoch(model, validation_loader, device, torch)

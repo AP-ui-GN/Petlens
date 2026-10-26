@@ -13,6 +13,7 @@ import { recentWalks } from '../../src/lib/walks';
 import { fontFamily, spacing } from '../../src/theme';
 import { useColors } from '../../src/theme-context';
 
+// Show saved observations from this device and open each result on demand.
 export default function HistoryScreen() {
   const colors = useColors();
   const { loading, pets, analyses } = useLocalData();
@@ -23,6 +24,7 @@ export default function HistoryScreen() {
     if (petFilter && !pets.some((pet) => pet.id === petFilter)) setPetFilter(null);
   }, [pets, petFilter]);
 
+  // Filtering changes the displayed rows without changing the saved history.
   const visible = useMemo(
     () => (petFilter ? analyses.filter((item) => item.petId === petFilter) : analyses),
     [analyses, petFilter],

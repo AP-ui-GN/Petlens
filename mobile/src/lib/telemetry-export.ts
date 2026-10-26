@@ -3,6 +3,7 @@ import type { Analysis, Pet } from './types';
 type TelemetryValue = string | number | boolean | null | undefined | object;
 
 function telemetryDocument(analysis: Analysis, pet?: Pet) {
+  // Keep provenance, scores, measurements, and interpretation in named groups.
   return {
     schemaVersion: 1,
     exportGeneratedAt: new Date().toISOString(),
@@ -41,6 +42,7 @@ function telemetryDocument(analysis: Analysis, pet?: Pet) {
 }
 
 function flatten(value: TelemetryValue, path: string, rows: string[][]) {
+  // Mark unavailable values explicitly rather than exporting them as zero.
   if (value === null || value === undefined) {
     rows.push([path, 'Not measured', 'not_measured']);
     return;
@@ -60,6 +62,7 @@ function flatten(value: TelemetryValue, path: string, rows: string[][]) {
 }
 
 function csvCell(value: string) {
+  // Quote cells and prefix spreadsheet formula-like text before export.
   const safe = /^[\s]*[=+\-@]/.test(value) ? `'${value}` : value;
   return `"${safe.replace(/"/g, '""')}"`;
 }

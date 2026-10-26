@@ -19,6 +19,7 @@ from .sampling import sample_video
 def write_debug_video(video_path: str | Path, output_path: str | Path) -> None:
     """Write skeleton, dog box, and stride-peak markers. Does not return video bytes."""
 
+    # Generate annotations from the same sampled frames used by the pose pipeline.
     frames = sample_video(video_path)
     if not frames:
         raise ValueError("No frames were sampled.")
@@ -36,6 +37,7 @@ def write_debug_video(video_path: str | Path, output_path: str | Path) -> None:
     )
     if not writer.isOpened():
         raise ValueError(f"Could not write {output}")
+    # Draw accepted detections and confidence-filtered checkpoint joints.
     try:
         for index, frame in enumerate(frames):
             image = frame.image_bgr.copy()

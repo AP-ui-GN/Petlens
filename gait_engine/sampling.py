@@ -186,6 +186,7 @@ def sample_video(video_path: str | Path) -> list[SampledFrame]:
             "This file could not be opened as a video. Try exporting it as MP4."
         )
 
+    # Read timestamps and motion first so long clips can be sampled by activity.
     fps = float(capture.get(cv2.CAP_PROP_FPS))
     if not np.isfinite(fps) or fps <= 0 or fps > 240:
         fps = 0.0
@@ -228,6 +229,7 @@ def sample_video(video_path: str | Path) -> list[SampledFrame]:
     if not chosen:
         chosen = [0]
 
+    # Reopen the video and decode only the selected frame indexes for pose.
     wanted = set(chosen)
     capture = cv2.VideoCapture(str(path))
     if not capture.isOpened():

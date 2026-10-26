@@ -7,6 +7,7 @@ import * as Sharing from 'expo-sharing';
 
 export async function sharePdf(html: string, dialogTitle: string): Promise<{ ok: true } | { ok: false; message: string }> {
   try {
+    // Create a local PDF first, then pass it to the platform share sheet.
     const file = await Print.printToFileAsync({ html });
     const available = await Sharing.isAvailableAsync();
     if (!available) {

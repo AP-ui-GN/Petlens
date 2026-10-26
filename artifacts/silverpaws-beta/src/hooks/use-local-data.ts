@@ -15,11 +15,13 @@ import {
 } from '@/lib/storage';
 
 export function useLocalData() {
+  // Start each page from this browser's saved profiles and observations.
   const [pets, setPets] = useState<Pet[]>(() => getPets());
   const [analyses, setAnalyses] = useState<Analysis[]>(() => getAnalyses());
   const [cognitiveLogs, setCognitiveLogs] = useState<CognitiveLog[]>(() => getCognitiveLogs());
   const [happinessEntries, setHappinessEntries] = useState<HappinessEntry[]>(() => getHappinessEntries());
 
+  // Keep browser storage in sync whenever a local collection changes.
   useEffect(() => {
     savePets(pets);
   }, [pets]);

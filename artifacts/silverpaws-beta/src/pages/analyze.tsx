@@ -58,6 +58,7 @@ export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis 
     return () => window.clearInterval(timer);
   }, [phase]);
 
+  // Check the selected video before creating its preview and review state.
   const selectFile = (selected: File | undefined) => {
     if (!selected) return;
     setError('');
@@ -124,6 +125,7 @@ export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis 
     openDemoAnalysis(createSampleAnalysis(), showTour);
   };
 
+  // Send the reviewed clip, then save the returned observation locally.
   const runAnalysis = async () => {
     if (!file) return;
 

@@ -104,6 +104,7 @@ function looksLikeVideo(contentType: string, fileName: string): boolean {
   return /\.(mp4|mov|m4v|webm|avi|mkv)$/i.test(fileName);
 }
 
+// Validate and stage the upload before handing it to the analysis runner.
 router.post(
   "/analyze",
   gateAnalyzeRequest,
@@ -150,6 +151,7 @@ router.post(
     try {
       await writeFile(videoPath, video.data);
 
+      // The runner returns measurements; this route prepares the final API response.
       const outcome = await runAnalysis({
         videoPath,
         petName: readPetName(form.fields["petName"]),

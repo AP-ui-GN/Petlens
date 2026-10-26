@@ -362,6 +362,7 @@ def analyze_clip(
     if _motion_only_enabled():
         use_pose = False
 
+    # Motion measurements are the baseline and remain available if pose cannot run.
     path = Path(video_path)
     signal = read_motion_signal(path, max_frames=MAX_MOTION_FRAMES)
     motion_mean, motion_std, motion_coverage = motion_statistics(signal.frame_motion)
@@ -524,6 +525,7 @@ def analyze_clip(
     if use_pose and motion_ready is not None:
         motion_ready(pack(POSE_TIME_LIMIT_NOTE))
 
+    # Optional pose adds landmarks and gait metrics; unavailable values stay missing.
     if use_pose:
         pose_payload, detection_payload, pose_skip_reason = _try_pose_and_detection(path)
         if detection_payload is not None:

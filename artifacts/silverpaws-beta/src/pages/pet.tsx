@@ -7,6 +7,7 @@ type Props = { pets: Pet[]; addPet: (pet: Omit<Pet, 'id' | 'createdAt'>) => Pet;
 type FormState = Omit<Pet, 'id' | 'createdAt'>;
 const blank: FormState = { name: '', species: 'Dog', breed: '', age: '', weight: '', weightUnit: 'lb', notes: '' };
 
+// Keep profile edits local and show validation messages before saving.
 export default function PetProfile({ pets, addPet, updatePet }: Props) {
   const [selectedId, setSelectedId] = useState(pets[0]?.id ?? 'new');
   const [form, setForm] = useState<FormState>(pets[0] ? { ...pets[0] } : blank);
@@ -38,6 +39,7 @@ export default function PetProfile({ pets, addPet, updatePet }: Props) {
     setSaved(false);
   };
 
+  // Validate the form before creating or updating a local profile.
   const submit = (event: React.FormEvent) => {
     event.preventDefault();
     const next = validatePetForm(form);
