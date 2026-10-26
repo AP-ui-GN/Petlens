@@ -9,7 +9,7 @@ It helps owners notice and discuss visible changes with a veterinarian.
 | --- | --- |
 | Video motion | OpenCV compares frames to summarize picture movement. This is not a measurement of a particular leg or of gait health. |
 | Dog detection (optional) | RT-DETR can report dog detections on sampled frames, whether a person was seen, and whether multiple dogs made tracking ambiguous. |
-| Pose output (optional, experimental) | The available ViTPose++ checkpoint outputs 17 **human COCO** joints. These are not validated canine landmarks and are not used to calculate dog stride symmetry. |
+| Pose output (optional, experimental) | The available ViTPose++ checkpoint outputs 17 **human** joints. These are not  canine landmarks and are not used to calculate dog stride symmetry. |
 | Stride and gait health | Not currently measured. Stride symmetry, stride length, and clinical conclusions are not available. |
 
 When pose processing is unavailable or fails, the app can still return a
