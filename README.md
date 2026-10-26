@@ -1,8 +1,7 @@
 # PetLens
 
 PetLens turns a short pet-walking video into a saved movement observation.
-It helps owners notice and discuss visible changes with a veterinarian. It
-does **not** diagnose pain, injury, or disease.
+It helps owners notice and discuss visible changes with a veterinarian. 
 
 ## What PetLens measures today
 
@@ -16,8 +15,7 @@ does **not** diagnose pain, injury, or disease.
 When pose processing is unavailable or fails, the app can still return a
 motion-only result. If the detector is also installed and its weights are
 cached, dog-detection metadata is retained without inventing pose or gait
-values. Missing measurements remain unavailable in the result.
-
+values. 
 The web app saves pet profiles and observations in that browser's
 `localStorage`; this beta does not use a shared database. See
 [`docs/MODEL_CARD.md`](docs/MODEL_CARD.md) for model details and validation
