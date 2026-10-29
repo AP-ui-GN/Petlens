@@ -1,0 +1,4615 @@
+{
+  "video": "tmp/4300700-sd_426_240_30fps.mp4",
+  "model": "OpenMMLab RTMPose-m AP-10K",
+  "device": "cpu",
+  "frameRangeInclusive": [
+    67,
+    96
+  ],
+  "frameCount": 30,
+  "fps": 29.97002997002997,
+  "durationSeconds": 0.9676,
+  "modelLoadSeconds": 5.0814,
+  "meanInferenceSeconds": 0.2651,
+  "boundingBoxStrategy": {
+    "type": "manual fixed-size box swept along the visible dog",
+    "sizePixels": [
+      270,
+      160
+    ],
+    "topBottomPixels": [
+      55,
+      215
+    ],
+    "leftXAnchors": [
+      [
+        67,
+        75
+      ],
+      [
+        81,
+        104
+      ],
+      [
+        96,
+        130
+      ]
+    ],
+    "interpolation": "linear between manually fitted anchor positions"
+  },
+  "pawPositionReference": {
+    "torsoCenter": "midpoint between shoulder-pair center and hip-pair center",
+    "normalization": "distance between shoulder-pair center and hip-pair center",
+    "rawPredictionsWereSmoothedOrCorrected": false
+  },
+  "diagnosticThresholds": {
+    "lowRawScore": 0.8,
+    "largeJumpBodyLengthsPerFrame": 0.45,
+    "note": "Heuristic flags only; raw scores are not calibrated probabilities."
+  },
+  "artifacts": {
+    "annotatedVideo": "tmp/rtmpose-test/frames30/rtmpose-30-consecutive-annotated.mp4",
+    "pawGraph": "tmp/rtmpose-test/frames30/rtmpose-30-paw-positions.png",
+    "rawPredictionsJson": "tmp/rtmpose-test/frames30/rtmpose-30-raw-predictions.json",
+    "rawKeypointsCsv": "tmp/rtmpose-test/frames30/rtmpose-30-raw-keypoints.csv"
+  },
+  "pawDiagnostics": {
+    "left_front_paw": {
+      "lowRawScoreFrames": [
+        {
+          "frameIndex": 82,
+          "rawScore": 0.7377
+        }
+      ],
+      "largestFrameToFrameJumps": [
+        {
+          "fromFrame": 83,
+          "toFrame": 84,
+          "jumpBodyLengths": 0.2557,
+          "fromRawScore": 1.1343,
+          "toRawScore": 1.2404
+        },
+        {
+          "fromFrame": 80,
+          "toFrame": 81,
+          "jumpBodyLengths": 0.2514,
+          "fromRawScore": 1.1378,
+          "toRawScore": 0.9212
+        },
+        {
+          "fromFrame": 70,
+          "toFrame": 71,
+          "jumpBodyLengths": 0.1187,
+          "fromRawScore": 1.2113,
+          "toRawScore": 0.9909
+        },
+        {
+          "fromFrame": 84,
+          "toFrame": 85,
+          "jumpBodyLengths": 0.1165,
+          "fromRawScore": 1.2404,
+          "toRawScore": 1.2489
+        },
+        {
+          "fromFrame": 93,
+          "toFrame": 94,
+          "jumpBodyLengths": 0.0945,
+          "fromRawScore": 0.9376,
+          "toRawScore": 1.1021
+        }
+      ],
+      "largeJumpFrames": [],
+      "meanRawScore": 1.2259,
+      "minimumRawScore": 0.7377,
+      "largeJumpThresholdBodyLengths": 0.45,
+      "lowScoreThreshold": 0.8
+    },
+    "right_front_paw": {
+      "lowRawScoreFrames": [
+        {
+          "frameIndex": 70,
+          "rawScore": 0.7879
+        },
+        {
+          "frameIndex": 92,
+          "rawScore": 0.7457
+        },
+        {
+          "frameIndex": 93,
+          "rawScore": 0.7422
+        }
+      ],
+      "largestFrameToFrameJumps": [
+        {
+          "fromFrame": 69,
+          "toFrame": 70,
+          "jumpBodyLengths": 0.2903,
+          "fromRawScore": 0.9547,
+          "toRawScore": 0.7879
+        },
+        {
+          "fromFrame": 93,
+          "toFrame": 94,
+          "jumpBodyLengths": 0.2408,
+          "fromRawScore": 0.7422,
+          "toRawScore": 0.9973
+        },
+        {
+          "fromFrame": 91,
+          "toFrame": 92,
+          "jumpBodyLengths": 0.186,
+          "fromRawScore": 0.8932,
+          "toRawScore": 0.7457
+        },
+        {
+          "fromFrame": 72,
+          "toFrame": 73,
+          "jumpBodyLengths": 0.1663,
+          "fromRawScore": 0.9426,
+          "toRawScore": 0.9454
+        },
+        {
+          "fromFrame": 94,
+          "toFrame": 95,
+          "jumpBodyLengths": 0.1615,
+          "fromRawScore": 0.9973,
+          "toRawScore": 1.092
+        }
+      ],
+      "largeJumpFrames": [],
+      "meanRawScore": 1.1306,
+      "minimumRawScore": 0.7422,
+      "largeJumpThresholdBodyLengths": 0.45,
+      "lowScoreThreshold": 0.8
+    },
+    "left_back_paw": {
+      "lowRawScoreFrames": [
+        {
+          "frameIndex": 67,
+          "rawScore": 0.6617
+        },
+        {
+          "frameIndex": 77,
+          "rawScore": 0.7433
+        },
+        {
+          "frameIndex": 87,
+          "rawScore": 0.6324
+        },
+        {
+          "frameIndex": 88,
+          "rawScore": 0.7647
+        },
+        {
+          "frameIndex": 89,
+          "rawScore": 0.7918
+        },
+        {
+          "frameIndex": 90,
+          "rawScore": 0.6648
+        }
+      ],
+      "largestFrameToFrameJumps": [
+        {
+          "fromFrame": 90,
+          "toFrame": 91,
+          "jumpBodyLengths": 0.4023,
+          "fromRawScore": 0.6648,
+          "toRawScore": 1.2644
+        },
+        {
+          "fromFrame": 77,
+          "toFrame": 78,
+          "jumpBodyLengths": 0.2108,
+          "fromRawScore": 0.7433,
+          "toRawScore": 1.0494
+        },
+        {
+          "fromFrame": 86,
+          "toFrame": 87,
+          "jumpBodyLengths": 0.1733,
+          "fromRawScore": 1.2803,
+          "toRawScore": 0.6324
+        },
+        {
+          "fromFrame": 89,
+          "toFrame": 90,
+          "jumpBodyLengths": 0.1652,
+          "fromRawScore": 0.7918,
+          "toRawScore": 0.6648
+        },
+        {
+          "fromFrame": 78,
+          "toFrame": 79,
+          "jumpBodyLengths": 0.1652,
+          "fromRawScore": 1.0494,
+          "toRawScore": 1.1379
+        }
+      ],
+      "largeJumpFrames": [],
+      "meanRawScore": 1.0827,
+      "minimumRawScore": 0.6324,
+      "largeJumpThresholdBodyLengths": 0.45,
+      "lowScoreThreshold": 0.8
+    },
+    "right_back_paw": {
+      "lowRawScoreFrames": [
+        {
+          "frameIndex": 87,
+          "rawScore": 0.6651
+        }
+      ],
+      "largestFrameToFrameJumps": [
+        {
+          "fromFrame": 90,
+          "toFrame": 91,
+          "jumpBodyLengths": 0.5157,
+          "fromRawScore": 0.9204,
+          "toRawScore": 1.0889
+        },
+        {
+          "fromFrame": 86,
+          "toFrame": 87,
+          "jumpBodyLengths": 0.2816,
+          "fromRawScore": 1.254,
+          "toRawScore": 0.6651
+        },
+        {
+          "fromFrame": 68,
+          "toFrame": 69,
+          "jumpBodyLengths": 0.1846,
+          "fromRawScore": 0.9282,
+          "toRawScore": 1.2002
+        },
+        {
+          "fromFrame": 77,
+          "toFrame": 78,
+          "jumpBodyLengths": 0.151,
+          "fromRawScore": 1.1181,
+          "toRawScore": 1.1281
+        },
+        {
+          "fromFrame": 78,
+          "toFrame": 79,
+          "jumpBodyLengths": 0.1355,
+          "fromRawScore": 1.1281,
+          "toRawScore": 1.2488
+        }
+      ],
+      "largeJumpFrames": [
+        {
+          "fromFrame": 90,
+          "toFrame": 91,
+          "jumpBodyLengths": 0.5157
+        }
+      ],
+      "meanRawScore": 1.1634,
+      "minimumRawScore": 0.6651,
+      "largeJumpThresholdBodyLengths": 0.45,
+      "lowScoreThreshold": 0.8
+    }
+  },
+  "frames": [
+    {
+      "ordinal": 1,
+      "frameIndex": 67,
+      "timestampSeconds": 2.2356,
+      "bboxXyxy": [
+        75,
+        55,
+        345,
+        215
+      ],
+      "inferenceSeconds": 2.4072,
+      "meanRawKeypointScore": 1.1081,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 319.42,
+          "y": 120.5,
+          "rawScore": 1.1499
+        },
+        {
+          "name": "right_eye",
+          "x": 312.83,
+          "y": 121.82,
+          "rawScore": 1.3154
+        },
+        {
+          "name": "nose",
+          "x": 326.67,
+          "y": 140.93,
+          "rawScore": 1.3417
+        },
+        {
+          "name": "neck",
+          "x": 262.73,
+          "y": 115.88,
+          "rawScore": 0.9189
+        },
+        {
+          "name": "root_of_tail",
+          "x": 157.27,
+          "y": 97.43,
+          "rawScore": 1.0735
+        },
+        {
+          "name": "left_shoulder",
+          "x": 254.82,
+          "y": 146.87,
+          "rawScore": 1.3641
+        },
+        {
+          "name": "left_elbow",
+          "x": 264.05,
+          "y": 168.62,
+          "rawScore": 1.2844
+        },
+        {
+          "name": "left_front_paw",
+          "x": 276.58,
+          "y": 187.08,
+          "rawScore": 1.2559
+        },
+        {
+          "name": "right_shoulder",
+          "x": 237.69,
+          "y": 144.23,
+          "rawScore": 1.2002
+        },
+        {
+          "name": "right_elbow",
+          "x": 223.84,
+          "y": 165.98,
+          "rawScore": 1.0886
+        },
+        {
+          "name": "right_front_paw",
+          "x": 213.3,
+          "y": 185.76,
+          "rawScore": 1.1442
+        },
+        {
+          "name": "left_hip",
+          "x": 161.88,
+          "y": 136.98,
+          "rawScore": 0.8827
+        },
+        {
+          "name": "left_knee",
+          "x": 149.36,
+          "y": 154.78,
+          "rawScore": 0.7489
+        },
+        {
+          "name": "left_back_paw",
+          "x": 153.97,
+          "y": 181.8,
+          "rawScore": 0.6617
+        },
+        {
+          "name": "right_hip",
+          "x": 174.4,
+          "y": 138.96,
+          "rawScore": 1.0817
+        },
+        {
+          "name": "right_knee",
+          "x": 155.95,
+          "y": 156.75,
+          "rawScore": 1.146
+        },
+        {
+          "name": "right_back_paw",
+          "x": 163.2,
+          "y": 184.44,
+          "rawScore": 1.1806
+        }
+      ],
+      "torsoReference": {
+        "centerX": 207.2,
+        "centerY": 141.76,
+        "shoulderToHipLength": 78.48
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.8841,
+          "yBodyLengths": 0.5775,
+          "rawScore": 1.2559
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.0778,
+          "yBodyLengths": 0.5606,
+          "rawScore": 1.1442
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.6782,
+          "yBodyLengths": 0.5102,
+          "rawScore": 0.6617
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.5606,
+          "yBodyLengths": 0.5438,
+          "rawScore": 1.1806
+        }
+      }
+    },
+    {
+      "ordinal": 2,
+      "frameIndex": 68,
+      "timestampSeconds": 2.2689,
+      "bboxXyxy": [
+        77,
+        55,
+        347,
+        215
+      ],
+      "inferenceSeconds": 0.1935,
+      "meanRawKeypointScore": 1.1275,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 320.76,
+          "y": 119.84,
+          "rawScore": 1.1322
+        },
+        {
+          "name": "right_eye",
+          "x": 314.83,
+          "y": 121.82,
+          "rawScore": 1.3127
+        },
+        {
+          "name": "nose",
+          "x": 328.67,
+          "y": 140.27,
+          "rawScore": 1.3976
+        },
+        {
+          "name": "neck",
+          "x": 261.44,
+          "y": 115.22,
+          "rawScore": 0.9309
+        },
+        {
+          "name": "root_of_tail",
+          "x": 157.29,
+          "y": 97.43,
+          "rawScore": 1.0919
+        },
+        {
+          "name": "left_shoulder",
+          "x": 252.87,
+          "y": 146.87,
+          "rawScore": 1.3923
+        },
+        {
+          "name": "left_elbow",
+          "x": 260.78,
+          "y": 167.96,
+          "rawScore": 1.2843
+        },
+        {
+          "name": "left_front_paw",
+          "x": 271.99,
+          "y": 186.42,
+          "rawScore": 1.2782
+        },
+        {
+          "name": "right_shoulder",
+          "x": 239.03,
+          "y": 143.57,
+          "rawScore": 1.2492
+        },
+        {
+          "name": "right_elbow",
+          "x": 228.48,
+          "y": 165.98,
+          "rawScore": 1.1555
+        },
+        {
+          "name": "right_front_paw",
+          "x": 214.64,
+          "y": 184.44,
+          "rawScore": 1.1051
+        },
+        {
+          "name": "left_hip",
+          "x": 166.52,
+          "y": 138.96,
+          "rawScore": 0.9424
+        },
+        {
+          "name": "left_knee",
+          "x": 157.29,
+          "y": 161.37,
+          "rawScore": 0.84
+        },
+        {
+          "name": "left_back_paw",
+          "x": 161.9,
+          "y": 185.1,
+          "rawScore": 0.8043
+        },
+        {
+          "name": "right_hip",
+          "x": 176.4,
+          "y": 139.61,
+          "rawScore": 1.1829
+        },
+        {
+          "name": "right_knee",
+          "x": 159.27,
+          "y": 160.05,
+          "rawScore": 1.1395
+        },
+        {
+          "name": "right_back_paw",
+          "x": 169.15,
+          "y": 183.78,
+          "rawScore": 0.9282
+        }
+      ],
+      "torsoReference": {
+        "centerX": 208.7,
+        "centerY": 142.25,
+        "shoulderToHipLength": 74.73
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.8469,
+          "yBodyLengths": 0.5911,
+          "rawScore": 1.2782
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.0794,
+          "yBodyLengths": 0.5646,
+          "rawScore": 1.1051
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.6264,
+          "yBodyLengths": 0.5734,
+          "rawScore": 0.8043
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.5293,
+          "yBodyLengths": 0.5557,
+          "rawScore": 0.9282
+        }
+      }
+    },
+    {
+      "ordinal": 3,
+      "frameIndex": 69,
+      "timestampSeconds": 2.3023,
+      "bboxXyxy": [
+        79,
+        55,
+        349,
+        215
+      ],
+      "inferenceSeconds": 0.1843,
+      "meanRawKeypointScore": 1.2176,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 322.11,
+          "y": 120.5,
+          "rawScore": 1.165
+        },
+        {
+          "name": "right_eye",
+          "x": 314.85,
+          "y": 122.48,
+          "rawScore": 1.341
+        },
+        {
+          "name": "nose",
+          "x": 329.36,
+          "y": 140.93,
+          "rawScore": 1.3824
+        },
+        {
+          "name": "neck",
+          "x": 264.1,
+          "y": 115.88,
+          "rawScore": 0.9415
+        },
+        {
+          "name": "root_of_tail",
+          "x": 157.97,
+          "y": 97.43,
+          "rawScore": 1.1174
+        },
+        {
+          "name": "left_shoulder",
+          "x": 254.87,
+          "y": 147.52,
+          "rawScore": 1.4678
+        },
+        {
+          "name": "left_elbow",
+          "x": 260.14,
+          "y": 167.3,
+          "rawScore": 1.3388
+        },
+        {
+          "name": "left_front_paw",
+          "x": 268.71,
+          "y": 186.42,
+          "rawScore": 1.3105
+        },
+        {
+          "name": "right_shoulder",
+          "x": 241.69,
+          "y": 144.89,
+          "rawScore": 1.3133
+        },
+        {
+          "name": "right_elbow",
+          "x": 237.07,
+          "y": 166.64,
+          "rawScore": 1.1534
+        },
+        {
+          "name": "right_front_paw",
+          "x": 225.21,
+          "y": 183.12,
+          "rawScore": 0.9547
+        },
+        {
+          "name": "left_hip",
+          "x": 167.86,
+          "y": 137.64,
+          "rawScore": 1.0924
+        },
+        {
+          "name": "left_knee",
+          "x": 154.01,
+          "y": 158.73,
+          "rawScore": 1.2848
+        },
+        {
+          "name": "left_back_paw",
+          "x": 154.01,
+          "y": 185.1,
+          "rawScore": 1.2019
+        },
+        {
+          "name": "right_hip",
+          "x": 182.36,
+          "y": 138.96,
+          "rawScore": 1.1959
+        },
+        {
+          "name": "right_knee",
+          "x": 171.81,
+          "y": 163.34,
+          "rawScore": 1.2375
+        },
+        {
+          "name": "right_back_paw",
+          "x": 186.31,
+          "y": 183.78,
+          "rawScore": 1.2002
+        }
+      ],
+      "torsoReference": {
+        "centerX": 211.69,
+        "centerY": 142.25,
+        "shoulderToHipLength": 73.6
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.7747,
+          "yBodyLengths": 0.6001,
+          "rawScore": 1.3105
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.1836,
+          "yBodyLengths": 0.5553,
+          "rawScore": 0.9547
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.7838,
+          "yBodyLengths": 0.5822,
+          "rawScore": 1.2019
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.3449,
+          "yBodyLengths": 0.5643,
+          "rawScore": 1.2002
+        }
+      }
+    },
+    {
+      "ordinal": 4,
+      "frameIndex": 70,
+      "timestampSeconds": 2.3357,
+      "bboxXyxy": [
+        81,
+        55,
+        351,
+        215
+      ],
+      "inferenceSeconds": 0.1824,
+      "meanRawKeypointScore": 1.1783,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 322.13,
+          "y": 121.16,
+          "rawScore": 1.1839
+        },
+        {
+          "name": "right_eye",
+          "x": 314.88,
+          "y": 122.48,
+          "rawScore": 1.3456
+        },
+        {
+          "name": "nose",
+          "x": 329.38,
+          "y": 140.93,
+          "rawScore": 1.3799
+        },
+        {
+          "name": "neck",
+          "x": 264.78,
+          "y": 116.54,
+          "rawScore": 0.8987
+        },
+        {
+          "name": "root_of_tail",
+          "x": 159.31,
+          "y": 97.43,
+          "rawScore": 1.0658
+        },
+        {
+          "name": "left_shoulder",
+          "x": 252.91,
+          "y": 147.52,
+          "rawScore": 1.268
+        },
+        {
+          "name": "left_elbow",
+          "x": 257.53,
+          "y": 167.96,
+          "rawScore": 1.2704
+        },
+        {
+          "name": "left_front_paw",
+          "x": 264.78,
+          "y": 185.76,
+          "rawScore": 1.2113
+        },
+        {
+          "name": "right_shoulder",
+          "x": 243.69,
+          "y": 144.89,
+          "rawScore": 1.3084
+        },
+        {
+          "name": "right_elbow",
+          "x": 248.3,
+          "y": 165.32,
+          "rawScore": 0.9716
+        },
+        {
+          "name": "right_front_paw",
+          "x": 246.32,
+          "y": 180.48,
+          "rawScore": 0.7879
+        },
+        {
+          "name": "left_hip",
+          "x": 165.9,
+          "y": 138.96,
+          "rawScore": 1.1366
+        },
+        {
+          "name": "left_knee",
+          "x": 149.42,
+          "y": 158.07,
+          "rawScore": 1.3143
+        },
+        {
+          "name": "left_back_paw",
+          "x": 149.42,
+          "y": 185.1,
+          "rawScore": 1.2867
+        },
+        {
+          "name": "right_hip",
+          "x": 183.7,
+          "y": 138.96,
+          "rawScore": 1.1149
+        },
+        {
+          "name": "right_knee",
+          "x": 179.75,
+          "y": 165.32,
+          "rawScore": 1.25
+        },
+        {
+          "name": "right_back_paw",
+          "x": 194.91,
+          "y": 185.76,
+          "rawScore": 1.2378
+        }
+      ],
+      "torsoReference": {
+        "centerX": 211.55,
+        "centerY": 142.58,
+        "shoulderToHipLength": 73.86
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.7207,
+          "yBodyLengths": 0.5846,
+          "rawScore": 1.2113
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.4708,
+          "yBodyLengths": 0.5131,
+          "rawScore": 0.7879
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.8412,
+          "yBodyLengths": 0.5757,
+          "rawScore": 1.2867
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.2253,
+          "yBodyLengths": 0.5846,
+          "rawScore": 1.2378
+        }
+      }
+    },
+    {
+      "ordinal": 5,
+      "frameIndex": 71,
+      "timestampSeconds": 2.369,
+      "bboxXyxy": [
+        83,
+        55,
+        353,
+        215
+      ],
+      "inferenceSeconds": 0.185,
+      "meanRawKeypointScore": 1.1515,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 322.15,
+          "y": 121.16,
+          "rawScore": 1.1777
+        },
+        {
+          "name": "right_eye",
+          "x": 315.56,
+          "y": 121.82,
+          "rawScore": 1.3717
+        },
+        {
+          "name": "nose",
+          "x": 330.06,
+          "y": 140.93,
+          "rawScore": 1.3998
+        },
+        {
+          "name": "neck",
+          "x": 266.78,
+          "y": 115.88,
+          "rawScore": 0.9485
+        },
+        {
+          "name": "root_of_tail",
+          "x": 159.99,
+          "y": 96.77,
+          "rawScore": 1.1058
+        },
+        {
+          "name": "left_shoulder",
+          "x": 248.98,
+          "y": 148.84,
+          "rawScore": 1.019
+        },
+        {
+          "name": "left_elbow",
+          "x": 252.94,
+          "y": 169.28,
+          "rawScore": 1.0908
+        },
+        {
+          "name": "left_front_paw",
+          "x": 256.23,
+          "y": 185.1,
+          "rawScore": 0.9909
+        },
+        {
+          "name": "right_shoulder",
+          "x": 247.0,
+          "y": 145.55,
+          "rawScore": 1.3154
+        },
+        {
+          "name": "right_elbow",
+          "x": 255.57,
+          "y": 165.98,
+          "rawScore": 0.9216
+        },
+        {
+          "name": "right_front_paw",
+          "x": 252.28,
+          "y": 184.44,
+          "rawScore": 0.8873
+        },
+        {
+          "name": "left_hip",
+          "x": 162.63,
+          "y": 136.98,
+          "rawScore": 1.1456
+        },
+        {
+          "name": "left_knee",
+          "x": 146.15,
+          "y": 157.41,
+          "rawScore": 1.2616
+        },
+        {
+          "name": "left_back_paw",
+          "x": 144.17,
+          "y": 185.76,
+          "rawScore": 1.2993
+        },
+        {
+          "name": "right_hip",
+          "x": 182.4,
+          "y": 138.96,
+          "rawScore": 1.0947
+        },
+        {
+          "name": "right_knee",
+          "x": 182.4,
+          "y": 165.32,
+          "rawScore": 1.2535
+        },
+        {
+          "name": "right_back_paw",
+          "x": 195.59,
+          "y": 189.05,
+          "rawScore": 1.2928
+        }
+      ],
+      "torsoReference": {
+        "centerX": 210.25,
+        "centerY": 142.58,
+        "shoulderToHipLength": 76.04
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.6047,
+          "yBodyLengths": 0.5592,
+          "rawScore": 0.9909
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.5527,
+          "yBodyLengths": 0.5505,
+          "rawScore": 0.8873
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.8691,
+          "yBodyLengths": 0.5679,
+          "rawScore": 1.2993
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.1928,
+          "yBodyLengths": 0.6111,
+          "rawScore": 1.2928
+        }
+      }
+    },
+    {
+      "ordinal": 6,
+      "frameIndex": 72,
+      "timestampSeconds": 2.4024,
+      "bboxXyxy": [
+        85,
+        55,
+        355,
+        215
+      ],
+      "inferenceSeconds": 0.1828,
+      "meanRawKeypointScore": 1.1722,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 323.49,
+          "y": 119.84,
+          "rawScore": 1.146
+        },
+        {
+          "name": "right_eye",
+          "x": 316.9,
+          "y": 121.16,
+          "rawScore": 1.393
+        },
+        {
+          "name": "nose",
+          "x": 330.08,
+          "y": 140.27,
+          "rawScore": 1.4029
+        },
+        {
+          "name": "neck",
+          "x": 268.12,
+          "y": 114.57,
+          "rawScore": 0.9882
+        },
+        {
+          "name": "root_of_tail",
+          "x": 160.01,
+          "y": 97.43,
+          "rawScore": 1.127
+        },
+        {
+          "name": "left_shoulder",
+          "x": 249.0,
+          "y": 148.18,
+          "rawScore": 1.158
+        },
+        {
+          "name": "left_elbow",
+          "x": 253.62,
+          "y": 167.3,
+          "rawScore": 1.0988
+        },
+        {
+          "name": "left_front_paw",
+          "x": 253.62,
+          "y": 185.76,
+          "rawScore": 1.1684
+        },
+        {
+          "name": "right_shoulder",
+          "x": 252.96,
+          "y": 146.21,
+          "rawScore": 1.3248
+        },
+        {
+          "name": "right_elbow",
+          "x": 270.76,
+          "y": 165.32,
+          "rawScore": 1.0226
+        },
+        {
+          "name": "right_front_paw",
+          "x": 259.55,
+          "y": 184.44,
+          "rawScore": 0.9426
+        },
+        {
+          "name": "left_hip",
+          "x": 161.33,
+          "y": 136.98,
+          "rawScore": 1.1323
+        },
+        {
+          "name": "left_knee",
+          "x": 142.22,
+          "y": 156.75,
+          "rawScore": 1.2244
+        },
+        {
+          "name": "left_back_paw",
+          "x": 140.24,
+          "y": 185.1,
+          "rawScore": 1.3032
+        },
+        {
+          "name": "right_hip",
+          "x": 181.11,
+          "y": 140.93,
+          "rawScore": 1.0883
+        },
+        {
+          "name": "right_knee",
+          "x": 177.81,
+          "y": 165.98,
+          "rawScore": 1.1265
+        },
+        {
+          "name": "right_back_paw",
+          "x": 191.0,
+          "y": 189.71,
+          "rawScore": 1.2802
+        }
+      ],
+      "torsoReference": {
+        "centerX": 211.1,
+        "centerY": 143.07,
+        "shoulderToHipLength": 80.18
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.5303,
+          "yBodyLengths": 0.5323,
+          "rawScore": 1.1684
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.6042,
+          "yBodyLengths": 0.5159,
+          "rawScore": 0.9426
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.8837,
+          "yBodyLengths": 0.5241,
+          "rawScore": 1.3032
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.2507,
+          "yBodyLengths": 0.5816,
+          "rawScore": 1.2802
+        }
+      }
+    },
+    {
+      "ordinal": 7,
+      "frameIndex": 73,
+      "timestampSeconds": 2.4358,
+      "bboxXyxy": [
+        87,
+        55,
+        357,
+        215
+      ],
+      "inferenceSeconds": 0.1922,
+      "meanRawKeypointScore": 1.1638,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 324.17,
+          "y": 117.86,
+          "rawScore": 1.1324
+        },
+        {
+          "name": "right_eye",
+          "x": 316.26,
+          "y": 120.5,
+          "rawScore": 1.3588
+        },
+        {
+          "name": "nose",
+          "x": 330.11,
+          "y": 139.61,
+          "rawScore": 1.3943
+        },
+        {
+          "name": "neck",
+          "x": 268.8,
+          "y": 113.91,
+          "rawScore": 0.985
+        },
+        {
+          "name": "root_of_tail",
+          "x": 160.7,
+          "y": 98.09,
+          "rawScore": 1.0987
+        },
+        {
+          "name": "left_shoulder",
+          "x": 249.69,
+          "y": 147.52,
+          "rawScore": 1.2576
+        },
+        {
+          "name": "left_elbow",
+          "x": 249.03,
+          "y": 167.3,
+          "rawScore": 1.1765
+        },
+        {
+          "name": "left_front_paw",
+          "x": 251.0,
+          "y": 186.42,
+          "rawScore": 1.1901
+        },
+        {
+          "name": "right_shoulder",
+          "x": 256.94,
+          "y": 145.55,
+          "rawScore": 1.3343
+        },
+        {
+          "name": "right_elbow",
+          "x": 278.03,
+          "y": 162.69,
+          "rawScore": 1.0191
+        },
+        {
+          "name": "right_front_paw",
+          "x": 276.05,
+          "y": 184.44,
+          "rawScore": 0.9454
+        },
+        {
+          "name": "left_hip",
+          "x": 160.7,
+          "y": 136.98,
+          "rawScore": 1.0855
+        },
+        {
+          "name": "left_knee",
+          "x": 139.6,
+          "y": 154.78,
+          "rawScore": 1.2114
+        },
+        {
+          "name": "left_back_paw",
+          "x": 137.62,
+          "y": 183.78,
+          "rawScore": 1.271
+        },
+        {
+          "name": "right_hip",
+          "x": 179.15,
+          "y": 140.93,
+          "rawScore": 1.0569
+        },
+        {
+          "name": "right_knee",
+          "x": 173.22,
+          "y": 165.98,
+          "rawScore": 1.0339
+        },
+        {
+          "name": "right_back_paw",
+          "x": 187.72,
+          "y": 189.05,
+          "rawScore": 1.2331
+        }
+      ],
+      "torsoReference": {
+        "centerX": 211.62,
+        "centerY": 142.75,
+        "shoulderToHipLength": 83.73
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.4703,
+          "yBodyLengths": 0.5216,
+          "rawScore": 1.1901
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.7695,
+          "yBodyLengths": 0.4979,
+          "rawScore": 0.9454
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.8838,
+          "yBodyLengths": 0.4901,
+          "rawScore": 1.271
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.2854,
+          "yBodyLengths": 0.553,
+          "rawScore": 1.2331
+        }
+      }
+    },
+    {
+      "ordinal": 8,
+      "frameIndex": 74,
+      "timestampSeconds": 2.4691,
+      "bboxXyxy": [
+        90,
+        55,
+        360,
+        215
+      ],
+      "inferenceSeconds": 0.2122,
+      "meanRawKeypointScore": 1.1869,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 324.54,
+          "y": 116.54,
+          "rawScore": 1.1646
+        },
+        {
+          "name": "right_eye",
+          "x": 315.97,
+          "y": 119.18,
+          "rawScore": 1.342
+        },
+        {
+          "name": "nose",
+          "x": 331.13,
+          "y": 138.3,
+          "rawScore": 1.4157
+        },
+        {
+          "name": "neck",
+          "x": 270.48,
+          "y": 114.57,
+          "rawScore": 0.9843
+        },
+        {
+          "name": "root_of_tail",
+          "x": 161.06,
+          "y": 97.43,
+          "rawScore": 1.1083
+        },
+        {
+          "name": "left_shoulder",
+          "x": 250.05,
+          "y": 146.21,
+          "rawScore": 1.3923
+        },
+        {
+          "name": "left_elbow",
+          "x": 247.41,
+          "y": 165.98,
+          "rawScore": 1.2147
+        },
+        {
+          "name": "left_front_paw",
+          "x": 246.75,
+          "y": 185.76,
+          "rawScore": 1.3386
+        },
+        {
+          "name": "right_shoulder",
+          "x": 262.57,
+          "y": 145.55,
+          "rawScore": 1.3328
+        },
+        {
+          "name": "right_elbow",
+          "x": 282.35,
+          "y": 163.34,
+          "rawScore": 1.0256
+        },
+        {
+          "name": "right_front_paw",
+          "x": 291.58,
+          "y": 185.76,
+          "rawScore": 1.0622
+        },
+        {
+          "name": "left_hip",
+          "x": 161.72,
+          "y": 136.98,
+          "rawScore": 1.0611
+        },
+        {
+          "name": "left_knee",
+          "x": 139.97,
+          "y": 154.12,
+          "rawScore": 1.185
+        },
+        {
+          "name": "left_back_paw",
+          "x": 137.33,
+          "y": 183.78,
+          "rawScore": 1.2265
+        },
+        {
+          "name": "right_hip",
+          "x": 177.54,
+          "y": 140.93,
+          "rawScore": 1.0891
+        },
+        {
+          "name": "right_knee",
+          "x": 168.97,
+          "y": 164.66,
+          "rawScore": 1.0241
+        },
+        {
+          "name": "right_back_paw",
+          "x": 183.47,
+          "y": 189.05,
+          "rawScore": 1.2111
+        }
+      ],
+      "torsoReference": {
+        "centerX": 212.97,
+        "centerY": 142.42,
+        "shoulderToHipLength": 86.96
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.3885,
+          "yBodyLengths": 0.4984,
+          "rawScore": 1.3386
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.904,
+          "yBodyLengths": 0.4984,
+          "rawScore": 1.0622
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.8699,
+          "yBodyLengths": 0.4757,
+          "rawScore": 1.2265
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.3393,
+          "yBodyLengths": 0.5363,
+          "rawScore": 1.2111
+        }
+      }
+    },
+    {
+      "ordinal": 9,
+      "frameIndex": 75,
+      "timestampSeconds": 2.5025,
+      "bboxXyxy": [
+        92,
+        55,
+        362,
+        215
+      ],
+      "inferenceSeconds": 0.1844,
+      "meanRawKeypointScore": 1.193,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 325.22,
+          "y": 115.22,
+          "rawScore": 1.1677
+        },
+        {
+          "name": "right_eye",
+          "x": 314.67,
+          "y": 117.2,
+          "rawScore": 1.399
+        },
+        {
+          "name": "nose",
+          "x": 331.15,
+          "y": 135.66,
+          "rawScore": 1.4049
+        },
+        {
+          "name": "neck",
+          "x": 271.82,
+          "y": 114.57,
+          "rawScore": 0.9862
+        },
+        {
+          "name": "root_of_tail",
+          "x": 161.08,
+          "y": 97.43,
+          "rawScore": 1.1085
+        },
+        {
+          "name": "left_shoulder",
+          "x": 247.43,
+          "y": 145.55,
+          "rawScore": 1.465
+        },
+        {
+          "name": "left_elbow",
+          "x": 243.48,
+          "y": 165.32,
+          "rawScore": 1.2333
+        },
+        {
+          "name": "left_front_paw",
+          "x": 242.16,
+          "y": 184.44,
+          "rawScore": 1.37
+        },
+        {
+          "name": "right_shoulder",
+          "x": 267.21,
+          "y": 146.21,
+          "rawScore": 1.3289
+        },
+        {
+          "name": "right_elbow",
+          "x": 283.03,
+          "y": 164.66,
+          "rawScore": 1.0991
+        },
+        {
+          "name": "right_front_paw",
+          "x": 296.21,
+          "y": 185.76,
+          "rawScore": 1.2073
+        },
+        {
+          "name": "left_hip",
+          "x": 161.74,
+          "y": 136.32,
+          "rawScore": 0.9946
+        },
+        {
+          "name": "left_knee",
+          "x": 143.28,
+          "y": 152.8,
+          "rawScore": 1.0887
+        },
+        {
+          "name": "left_back_paw",
+          "x": 142.62,
+          "y": 183.78,
+          "rawScore": 1.124
+        },
+        {
+          "name": "right_hip",
+          "x": 176.9,
+          "y": 140.27,
+          "rawScore": 1.0669
+        },
+        {
+          "name": "right_knee",
+          "x": 165.7,
+          "y": 162.69,
+          "rawScore": 1.0647
+        },
+        {
+          "name": "right_back_paw",
+          "x": 178.88,
+          "y": 187.73,
+          "rawScore": 1.1718
+        }
+      ],
+      "torsoReference": {
+        "centerX": 213.32,
+        "centerY": 142.09,
+        "shoulderToHipLength": 88.33
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.3265,
+          "yBodyLengths": 0.4795,
+          "rawScore": 1.37
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.9385,
+          "yBodyLengths": 0.4944,
+          "rawScore": 1.2073
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.8004,
+          "yBodyLengths": 0.472,
+          "rawScore": 1.124
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.3899,
+          "yBodyLengths": 0.5167,
+          "rawScore": 1.1718
+        }
+      }
+    },
+    {
+      "ordinal": 10,
+      "frameIndex": 76,
+      "timestampSeconds": 2.5359,
+      "bboxXyxy": [
+        94,
+        55,
+        364,
+        215
+      ],
+      "inferenceSeconds": 0.1852,
+      "meanRawKeypointScore": 1.1772,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 325.24,
+          "y": 114.57,
+          "rawScore": 1.2802
+        },
+        {
+          "name": "right_eye",
+          "x": 314.03,
+          "y": 116.54,
+          "rawScore": 1.411
+        },
+        {
+          "name": "nose",
+          "x": 329.85,
+          "y": 133.02,
+          "rawScore": 1.4782
+        },
+        {
+          "name": "neck",
+          "x": 274.48,
+          "y": 115.88,
+          "rawScore": 0.9235
+        },
+        {
+          "name": "root_of_tail",
+          "x": 163.74,
+          "y": 94.79,
+          "rawScore": 1.0515
+        },
+        {
+          "name": "left_shoulder",
+          "x": 246.14,
+          "y": 144.89,
+          "rawScore": 1.4209
+        },
+        {
+          "name": "left_elbow",
+          "x": 239.55,
+          "y": 165.32,
+          "rawScore": 1.221
+        },
+        {
+          "name": "left_front_paw",
+          "x": 238.23,
+          "y": 183.78,
+          "rawScore": 1.3837
+        },
+        {
+          "name": "right_shoulder",
+          "x": 267.89,
+          "y": 146.21,
+          "rawScore": 1.2261
+        },
+        {
+          "name": "right_elbow",
+          "x": 281.08,
+          "y": 166.64,
+          "rawScore": 1.1731
+        },
+        {
+          "name": "right_front_paw",
+          "x": 295.58,
+          "y": 188.39,
+          "rawScore": 1.1939
+        },
+        {
+          "name": "left_hip",
+          "x": 167.04,
+          "y": 135.0,
+          "rawScore": 0.9675
+        },
+        {
+          "name": "left_knee",
+          "x": 152.54,
+          "y": 153.46,
+          "rawScore": 1.0549
+        },
+        {
+          "name": "left_back_paw",
+          "x": 156.49,
+          "y": 183.12,
+          "rawScore": 1.0177
+        },
+        {
+          "name": "right_hip",
+          "x": 176.92,
+          "y": 139.61,
+          "rawScore": 1.0407
+        },
+        {
+          "name": "right_knee",
+          "x": 164.4,
+          "y": 162.03,
+          "rawScore": 1.1215
+        },
+        {
+          "name": "right_back_paw",
+          "x": 174.29,
+          "y": 187.73,
+          "rawScore": 1.0463
+        }
+      ],
+      "torsoReference": {
+        "centerX": 214.5,
+        "centerY": 141.43,
+        "shoulderToHipLength": 85.43
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.2778,
+          "yBodyLengths": 0.4957,
+          "rawScore": 1.3837
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.9491,
+          "yBodyLengths": 0.5497,
+          "rawScore": 1.1939
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.679,
+          "yBodyLengths": 0.488,
+          "rawScore": 1.0177
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.4706,
+          "yBodyLengths": 0.542,
+          "rawScore": 1.0463
+        }
+      }
+    },
+    {
+      "ordinal": 11,
+      "frameIndex": 77,
+      "timestampSeconds": 2.5692,
+      "bboxXyxy": [
+        96,
+        55,
+        366,
+        215
+      ],
+      "inferenceSeconds": 0.185,
+      "meanRawKeypointScore": 1.1853,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 325.26,
+          "y": 114.57,
+          "rawScore": 1.3117
+        },
+        {
+          "name": "right_eye",
+          "x": 314.06,
+          "y": 115.88,
+          "rawScore": 1.4124
+        },
+        {
+          "name": "nose",
+          "x": 329.88,
+          "y": 132.36,
+          "rawScore": 1.5404
+        },
+        {
+          "name": "neck",
+          "x": 275.17,
+          "y": 113.91,
+          "rawScore": 1.015
+        },
+        {
+          "name": "root_of_tail",
+          "x": 166.4,
+          "y": 93.47,
+          "rawScore": 1.066
+        },
+        {
+          "name": "left_shoulder",
+          "x": 243.52,
+          "y": 144.89,
+          "rawScore": 1.4451
+        },
+        {
+          "name": "left_elbow",
+          "x": 237.59,
+          "y": 165.32,
+          "rawScore": 1.2438
+        },
+        {
+          "name": "left_front_paw",
+          "x": 234.3,
+          "y": 183.78,
+          "rawScore": 1.3868
+        },
+        {
+          "name": "right_shoulder",
+          "x": 268.57,
+          "y": 147.52,
+          "rawScore": 1.3
+        },
+        {
+          "name": "right_elbow",
+          "x": 279.12,
+          "y": 167.96,
+          "rawScore": 1.2651
+        },
+        {
+          "name": "right_front_paw",
+          "x": 291.64,
+          "y": 188.39,
+          "rawScore": 1.2627
+        },
+        {
+          "name": "left_hip",
+          "x": 169.7,
+          "y": 135.0,
+          "rawScore": 0.8943
+        },
+        {
+          "name": "left_knee",
+          "x": 154.54,
+          "y": 151.48,
+          "rawScore": 0.885
+        },
+        {
+          "name": "left_back_paw",
+          "x": 163.1,
+          "y": 181.8,
+          "rawScore": 0.7433
+        },
+        {
+          "name": "right_hip",
+          "x": 178.27,
+          "y": 139.61,
+          "rawScore": 1.0969
+        },
+        {
+          "name": "right_knee",
+          "x": 162.45,
+          "y": 161.37,
+          "rawScore": 1.163
+        },
+        {
+          "name": "right_back_paw",
+          "x": 171.01,
+          "y": 188.39,
+          "rawScore": 1.1181
+        }
+      ],
+      "torsoReference": {
+        "centerX": 215.02,
+        "centerY": 141.75,
+        "shoulderToHipLength": 82.54
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.2336,
+          "yBodyLengths": 0.5091,
+          "rawScore": 1.3868
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.9283,
+          "yBodyLengths": 0.565,
+          "rawScore": 1.2627
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.629,
+          "yBodyLengths": 0.4852,
+          "rawScore": 0.7433
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.5331,
+          "yBodyLengths": 0.565,
+          "rawScore": 1.1181
+        }
+      }
+    },
+    {
+      "ordinal": 12,
+      "frameIndex": 78,
+      "timestampSeconds": 2.6026,
+      "bboxXyxy": [
+        98,
+        55,
+        368,
+        215
+      ],
+      "inferenceSeconds": 0.1864,
+      "meanRawKeypointScore": 1.2515,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 326.6,
+          "y": 113.91,
+          "rawScore": 1.3791
+        },
+        {
+          "name": "right_eye",
+          "x": 315.4,
+          "y": 115.88,
+          "rawScore": 1.4796
+        },
+        {
+          "name": "nose",
+          "x": 329.9,
+          "y": 131.7,
+          "rawScore": 1.558
+        },
+        {
+          "name": "neck",
+          "x": 275.19,
+          "y": 113.25,
+          "rawScore": 1.039
+        },
+        {
+          "name": "root_of_tail",
+          "x": 167.08,
+          "y": 94.79,
+          "rawScore": 1.1135
+        },
+        {
+          "name": "left_shoulder",
+          "x": 243.55,
+          "y": 144.89,
+          "rawScore": 1.4848
+        },
+        {
+          "name": "left_elbow",
+          "x": 236.3,
+          "y": 164.66,
+          "rawScore": 1.2584
+        },
+        {
+          "name": "left_front_paw",
+          "x": 231.02,
+          "y": 182.46,
+          "rawScore": 1.4017
+        },
+        {
+          "name": "right_shoulder",
+          "x": 267.94,
+          "y": 146.87,
+          "rawScore": 1.3517
+        },
+        {
+          "name": "right_elbow",
+          "x": 275.85,
+          "y": 167.3,
+          "rawScore": 1.337
+        },
+        {
+          "name": "right_front_paw",
+          "x": 287.05,
+          "y": 187.08,
+          "rawScore": 1.3915
+        },
+        {
+          "name": "left_hip",
+          "x": 182.24,
+          "y": 136.98,
+          "rawScore": 0.9342
+        },
+        {
+          "name": "left_knee",
+          "x": 173.67,
+          "y": 160.71,
+          "rawScore": 0.96
+        },
+        {
+          "name": "left_back_paw",
+          "x": 184.88,
+          "y": 183.12,
+          "rawScore": 1.0494
+        },
+        {
+          "name": "right_hip",
+          "x": 176.31,
+          "y": 138.96,
+          "rawScore": 1.1419
+        },
+        {
+          "name": "right_knee",
+          "x": 163.13,
+          "y": 162.03,
+          "rawScore": 1.2667
+        },
+        {
+          "name": "right_back_paw",
+          "x": 165.76,
+          "y": 189.71,
+          "rawScore": 1.1281
+        }
+      ],
+      "torsoReference": {
+        "centerX": 217.51,
+        "centerY": 141.93,
+        "shoulderToHipLength": 76.88
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.1757,
+          "yBodyLengths": 0.5273,
+          "rawScore": 1.4017
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.9045,
+          "yBodyLengths": 0.5874,
+          "rawScore": 1.3915
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.4244,
+          "yBodyLengths": 0.5358,
+          "rawScore": 1.0494
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.6731,
+          "yBodyLengths": 0.6216,
+          "rawScore": 1.1281
+        }
+      }
+    },
+    {
+      "ordinal": 13,
+      "frameIndex": 79,
+      "timestampSeconds": 2.636,
+      "bboxXyxy": [
+        100,
+        55,
+        370,
+        215
+      ],
+      "inferenceSeconds": 0.1852,
+      "meanRawKeypointScore": 1.3159,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 327.94,
+          "y": 113.91,
+          "rawScore": 1.3892
+        },
+        {
+          "name": "right_eye",
+          "x": 316.74,
+          "y": 115.88,
+          "rawScore": 1.5371
+        },
+        {
+          "name": "nose",
+          "x": 331.9,
+          "y": 132.36,
+          "rawScore": 1.5845
+        },
+        {
+          "name": "neck",
+          "x": 276.53,
+          "y": 113.25,
+          "rawScore": 1.0159
+        },
+        {
+          "name": "root_of_tail",
+          "x": 167.76,
+          "y": 96.77,
+          "rawScore": 1.1945
+        },
+        {
+          "name": "left_shoulder",
+          "x": 245.55,
+          "y": 144.89,
+          "rawScore": 1.4821
+        },
+        {
+          "name": "left_elbow",
+          "x": 238.96,
+          "y": 164.66,
+          "rawScore": 1.2615
+        },
+        {
+          "name": "left_front_paw",
+          "x": 231.7,
+          "y": 181.14,
+          "rawScore": 1.37
+        },
+        {
+          "name": "right_shoulder",
+          "x": 266.64,
+          "y": 145.55,
+          "rawScore": 1.4388
+        },
+        {
+          "name": "right_elbow",
+          "x": 272.57,
+          "y": 165.98,
+          "rawScore": 1.3418
+        },
+        {
+          "name": "right_front_paw",
+          "x": 283.12,
+          "y": 186.42,
+          "rawScore": 1.4319
+        },
+        {
+          "name": "left_hip",
+          "x": 190.83,
+          "y": 139.61,
+          "rawScore": 1.2372
+        },
+        {
+          "name": "left_knee",
+          "x": 184.24,
+          "y": 162.69,
+          "rawScore": 1.1354
+        },
+        {
+          "name": "left_back_paw",
+          "x": 200.06,
+          "y": 183.78,
+          "rawScore": 1.1379
+        },
+        {
+          "name": "right_hip",
+          "x": 174.36,
+          "y": 138.96,
+          "rawScore": 1.2305
+        },
+        {
+          "name": "right_knee",
+          "x": 161.83,
+          "y": 161.37,
+          "rawScore": 1.3326
+        },
+        {
+          "name": "right_back_paw",
+          "x": 159.85,
+          "y": 189.71,
+          "rawScore": 1.2488
+        }
+      ],
+      "torsoReference": {
+        "centerX": 219.35,
+        "centerY": 142.25,
+        "shoulderToHipLength": 73.74
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.1675,
+          "yBodyLengths": 0.5274,
+          "rawScore": 1.37
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.8649,
+          "yBodyLengths": 0.599,
+          "rawScore": 1.4319
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.2615,
+          "yBodyLengths": 0.5632,
+          "rawScore": 1.1379
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.8068,
+          "yBodyLengths": 0.6436,
+          "rawScore": 1.2488
+        }
+      }
+    },
+    {
+      "ordinal": 14,
+      "frameIndex": 80,
+      "timestampSeconds": 2.6693,
+      "bboxXyxy": [
+        102,
+        55,
+        372,
+        215
+      ],
+      "inferenceSeconds": 0.1829,
+      "meanRawKeypointScore": 1.3219,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 328.63,
+          "y": 115.22,
+          "rawScore": 1.4192
+        },
+        {
+          "name": "right_eye",
+          "x": 317.42,
+          "y": 116.54,
+          "rawScore": 1.574
+        },
+        {
+          "name": "nose",
+          "x": 332.58,
+          "y": 132.36,
+          "rawScore": 1.5723
+        },
+        {
+          "name": "neck",
+          "x": 277.21,
+          "y": 113.25,
+          "rawScore": 1.0055
+        },
+        {
+          "name": "root_of_tail",
+          "x": 169.76,
+          "y": 97.43,
+          "rawScore": 1.2256
+        },
+        {
+          "name": "left_shoulder",
+          "x": 248.21,
+          "y": 144.89,
+          "rawScore": 1.4034
+        },
+        {
+          "name": "left_elbow",
+          "x": 246.23,
+          "y": 165.98,
+          "rawScore": 1.2593
+        },
+        {
+          "name": "left_front_paw",
+          "x": 233.7,
+          "y": 179.82,
+          "rawScore": 1.1378
+        },
+        {
+          "name": "right_shoulder",
+          "x": 266.66,
+          "y": 145.55,
+          "rawScore": 1.4239
+        },
+        {
+          "name": "right_elbow",
+          "x": 269.3,
+          "y": 165.98,
+          "rawScore": 1.3388
+        },
+        {
+          "name": "right_front_paw",
+          "x": 279.19,
+          "y": 187.08,
+          "rawScore": 1.4353
+        },
+        {
+          "name": "left_hip",
+          "x": 194.15,
+          "y": 138.96,
+          "rawScore": 1.2692
+        },
+        {
+          "name": "left_knee",
+          "x": 191.52,
+          "y": 163.34,
+          "rawScore": 1.1877
+        },
+        {
+          "name": "left_back_paw",
+          "x": 208.0,
+          "y": 185.1,
+          "rawScore": 1.193
+        },
+        {
+          "name": "right_hip",
+          "x": 173.72,
+          "y": 137.64,
+          "rawScore": 1.2297
+        },
+        {
+          "name": "right_knee",
+          "x": 159.22,
+          "y": 160.71,
+          "rawScore": 1.3439
+        },
+        {
+          "name": "right_back_paw",
+          "x": 155.26,
+          "y": 189.05,
+          "rawScore": 1.4537
+        }
+      ],
+      "torsoReference": {
+        "centerX": 220.69,
+        "centerY": 141.76,
+        "shoulderToHipLength": 73.83
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.1763,
+          "yBodyLengths": 0.5155,
+          "rawScore": 1.1378
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.7925,
+          "yBodyLengths": 0.6139,
+          "rawScore": 1.4353
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.1718,
+          "yBodyLengths": 0.5871,
+          "rawScore": 1.193
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.8862,
+          "yBodyLengths": 0.6406,
+          "rawScore": 1.4537
+        }
+      }
+    },
+    {
+      "ordinal": 15,
+      "frameIndex": 81,
+      "timestampSeconds": 2.7027,
+      "bboxXyxy": [
+        104,
+        55,
+        374,
+        215
+      ],
+      "inferenceSeconds": 0.2016,
+      "meanRawKeypointScore": 1.2735,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 329.97,
+          "y": 115.88,
+          "rawScore": 1.4719
+        },
+        {
+          "name": "right_eye",
+          "x": 318.76,
+          "y": 117.2,
+          "rawScore": 1.5851
+        },
+        {
+          "name": "nose",
+          "x": 333.92,
+          "y": 133.02,
+          "rawScore": 1.5881
+        },
+        {
+          "name": "neck",
+          "x": 280.53,
+          "y": 114.57,
+          "rawScore": 0.894
+        },
+        {
+          "name": "root_of_tail",
+          "x": 171.76,
+          "y": 97.43,
+          "rawScore": 1.1811
+        },
+        {
+          "name": "left_shoulder",
+          "x": 252.18,
+          "y": 144.89,
+          "rawScore": 1.3004
+        },
+        {
+          "name": "left_elbow",
+          "x": 254.82,
+          "y": 164.0,
+          "rawScore": 1.1186
+        },
+        {
+          "name": "left_front_paw",
+          "x": 254.16,
+          "y": 180.48,
+          "rawScore": 0.9212
+        },
+        {
+          "name": "right_shoulder",
+          "x": 266.69,
+          "y": 144.89,
+          "rawScore": 1.3527
+        },
+        {
+          "name": "right_elbow",
+          "x": 266.69,
+          "y": 165.32,
+          "rawScore": 1.3057
+        },
+        {
+          "name": "right_front_paw",
+          "x": 273.94,
+          "y": 186.42,
+          "rawScore": 1.2919
+        },
+        {
+          "name": "left_hip",
+          "x": 196.15,
+          "y": 138.3,
+          "rawScore": 1.2765
+        },
+        {
+          "name": "left_knee",
+          "x": 196.81,
+          "y": 164.0,
+          "rawScore": 1.1876
+        },
+        {
+          "name": "left_back_paw",
+          "x": 215.93,
+          "y": 184.44,
+          "rawScore": 1.1927
+        },
+        {
+          "name": "right_hip",
+          "x": 172.42,
+          "y": 136.32,
+          "rawScore": 1.1792
+        },
+        {
+          "name": "right_knee",
+          "x": 155.94,
+          "y": 160.05,
+          "rawScore": 1.3175
+        },
+        {
+          "name": "right_back_paw",
+          "x": 150.67,
+          "y": 188.39,
+          "rawScore": 1.4852
+        }
+      ],
+      "torsoReference": {
+        "centerX": 221.86,
+        "centerY": 141.1,
+        "shoulderToHipLength": 75.53
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.4276,
+          "yBodyLengths": 0.5214,
+          "rawScore": 0.9212
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.6895,
+          "yBodyLengths": 0.6,
+          "rawScore": 1.2919
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.0785,
+          "yBodyLengths": 0.5738,
+          "rawScore": 1.1927
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.9425,
+          "yBodyLengths": 0.6261,
+          "rawScore": 1.4852
+        }
+      }
+    },
+    {
+      "ordinal": 16,
+      "frameIndex": 82,
+      "timestampSeconds": 2.7361,
+      "bboxXyxy": [
+        106,
+        55,
+        376,
+        215
+      ],
+      "inferenceSeconds": 0.1877,
+      "meanRawKeypointScore": 1.2276,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 330.65,
+          "y": 115.22,
+          "rawScore": 1.4934
+        },
+        {
+          "name": "right_eye",
+          "x": 319.44,
+          "y": 116.54,
+          "rawScore": 1.5755
+        },
+        {
+          "name": "nose",
+          "x": 335.26,
+          "y": 133.02,
+          "rawScore": 1.5672
+        },
+        {
+          "name": "neck",
+          "x": 279.23,
+          "y": 114.57,
+          "rawScore": 0.9761
+        },
+        {
+          "name": "root_of_tail",
+          "x": 173.1,
+          "y": 98.09,
+          "rawScore": 1.2091
+        },
+        {
+          "name": "left_shoulder",
+          "x": 263.41,
+          "y": 146.87,
+          "rawScore": 1.0451
+        },
+        {
+          "name": "left_elbow",
+          "x": 263.41,
+          "y": 165.98,
+          "rawScore": 0.9212
+        },
+        {
+          "name": "left_front_paw",
+          "x": 262.75,
+          "y": 182.46,
+          "rawScore": 0.7377
+        },
+        {
+          "name": "right_shoulder",
+          "x": 260.78,
+          "y": 144.89,
+          "rawScore": 1.2718
+        },
+        {
+          "name": "right_elbow",
+          "x": 264.07,
+          "y": 165.32,
+          "rawScore": 1.2529
+        },
+        {
+          "name": "right_front_paw",
+          "x": 268.03,
+          "y": 185.76,
+          "rawScore": 1.1771
+        },
+        {
+          "name": "left_hip",
+          "x": 196.18,
+          "y": 139.61,
+          "rawScore": 1.3135
+        },
+        {
+          "name": "left_knee",
+          "x": 196.18,
+          "y": 165.32,
+          "rawScore": 1.1989
+        },
+        {
+          "name": "left_back_paw",
+          "x": 213.31,
+          "y": 185.76,
+          "rawScore": 1.2998
+        },
+        {
+          "name": "right_hip",
+          "x": 171.79,
+          "y": 137.64,
+          "rawScore": 1.1861
+        },
+        {
+          "name": "right_knee",
+          "x": 153.99,
+          "y": 158.73,
+          "rawScore": 1.2633
+        },
+        {
+          "name": "right_back_paw",
+          "x": 147.4,
+          "y": 187.73,
+          "rawScore": 1.3801
+        }
+      ],
+      "torsoReference": {
+        "centerX": 223.04,
+        "centerY": 142.25,
+        "shoulderToHipLength": 78.45
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.5062,
+          "yBodyLengths": 0.5125,
+          "rawScore": 0.7377
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.5735,
+          "yBodyLengths": 0.5546,
+          "rawScore": 1.1771
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.124,
+          "yBodyLengths": 0.5546,
+          "rawScore": 1.2998
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.9642,
+          "yBodyLengths": 0.5797,
+          "rawScore": 1.3801
+        }
+      }
+    },
+    {
+      "ordinal": 17,
+      "frameIndex": 83,
+      "timestampSeconds": 2.7694,
+      "bboxXyxy": [
+        107,
+        55,
+        377,
+        215
+      ],
+      "inferenceSeconds": 0.183,
+      "meanRawKeypointScore": 1.2792,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 331.65,
+          "y": 114.57,
+          "rawScore": 1.4877
+        },
+        {
+          "name": "right_eye",
+          "x": 321.1,
+          "y": 115.88,
+          "rawScore": 1.5903
+        },
+        {
+          "name": "nose",
+          "x": 335.6,
+          "y": 132.36,
+          "rawScore": 1.5815
+        },
+        {
+          "name": "neck",
+          "x": 280.89,
+          "y": 115.88,
+          "rawScore": 0.9684
+        },
+        {
+          "name": "root_of_tail",
+          "x": 174.1,
+          "y": 98.75,
+          "rawScore": 1.2211
+        },
+        {
+          "name": "left_shoulder",
+          "x": 269.03,
+          "y": 146.87,
+          "rawScore": 1.1796
+        },
+        {
+          "name": "left_elbow",
+          "x": 279.57,
+          "y": 164.66,
+          "rawScore": 1.0359
+        },
+        {
+          "name": "left_front_paw",
+          "x": 272.98,
+          "y": 181.8,
+          "rawScore": 1.1343
+        },
+        {
+          "name": "right_shoulder",
+          "x": 261.12,
+          "y": 144.89,
+          "rawScore": 1.3628
+        },
+        {
+          "name": "right_elbow",
+          "x": 263.09,
+          "y": 165.98,
+          "rawScore": 1.2611
+        },
+        {
+          "name": "right_front_paw",
+          "x": 262.43,
+          "y": 185.76,
+          "rawScore": 1.3064
+        },
+        {
+          "name": "left_hip",
+          "x": 197.18,
+          "y": 140.27,
+          "rawScore": 1.3464
+        },
+        {
+          "name": "left_knee",
+          "x": 193.22,
+          "y": 165.98,
+          "rawScore": 1.2259
+        },
+        {
+          "name": "left_back_paw",
+          "x": 209.04,
+          "y": 187.73,
+          "rawScore": 1.2783
+        },
+        {
+          "name": "right_hip",
+          "x": 171.47,
+          "y": 138.3,
+          "rawScore": 1.209
+        },
+        {
+          "name": "right_knee",
+          "x": 153.67,
+          "y": 158.73,
+          "rawScore": 1.2485
+        },
+        {
+          "name": "right_back_paw",
+          "x": 144.44,
+          "y": 187.73,
+          "rawScore": 1.3093
+        }
+      ],
+      "torsoReference": {
+        "centerX": 224.7,
+        "centerY": 142.58,
+        "shoulderToHipLength": 81.02
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.5959,
+          "yBodyLengths": 0.4841,
+          "rawScore": 1.1343
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.4657,
+          "yBodyLengths": 0.5329,
+          "rawScore": 1.3064
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.1933,
+          "yBodyLengths": 0.5572,
+          "rawScore": 1.2783
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.9906,
+          "yBodyLengths": 0.5572,
+          "rawScore": 1.3093
+        }
+      }
+    },
+    {
+      "ordinal": 18,
+      "frameIndex": 84,
+      "timestampSeconds": 2.8028,
+      "bboxXyxy": [
+        109,
+        55,
+        379,
+        215
+      ],
+      "inferenceSeconds": 0.1988,
+      "meanRawKeypointScore": 1.286,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 332.33,
+          "y": 112.59,
+          "rawScore": 1.5047
+        },
+        {
+          "name": "right_eye",
+          "x": 321.78,
+          "y": 114.57,
+          "rawScore": 1.5401
+        },
+        {
+          "name": "nose",
+          "x": 336.94,
+          "y": 130.39,
+          "rawScore": 1.5314
+        },
+        {
+          "name": "neck",
+          "x": 281.57,
+          "y": 115.88,
+          "rawScore": 0.9735
+        },
+        {
+          "name": "root_of_tail",
+          "x": 176.1,
+          "y": 98.75,
+          "rawScore": 1.1566
+        },
+        {
+          "name": "left_shoulder",
+          "x": 274.32,
+          "y": 145.55,
+          "rawScore": 1.2197
+        },
+        {
+          "name": "left_elbow",
+          "x": 289.48,
+          "y": 161.37,
+          "rawScore": 1.2937
+        },
+        {
+          "name": "left_front_paw",
+          "x": 296.73,
+          "y": 181.8,
+          "rawScore": 1.2404
+        },
+        {
+          "name": "right_shoulder",
+          "x": 261.14,
+          "y": 143.57,
+          "rawScore": 1.3092
+        },
+        {
+          "name": "right_elbow",
+          "x": 259.16,
+          "y": 164.66,
+          "rawScore": 1.273
+        },
+        {
+          "name": "right_front_paw",
+          "x": 259.16,
+          "y": 185.76,
+          "rawScore": 1.2804
+        },
+        {
+          "name": "left_hip",
+          "x": 197.86,
+          "y": 140.27,
+          "rawScore": 1.3078
+        },
+        {
+          "name": "left_knee",
+          "x": 189.95,
+          "y": 165.98,
+          "rawScore": 1.2406
+        },
+        {
+          "name": "left_back_paw",
+          "x": 205.77,
+          "y": 188.39,
+          "rawScore": 1.286
+        },
+        {
+          "name": "right_hip",
+          "x": 173.47,
+          "y": 138.3,
+          "rawScore": 1.1632
+        },
+        {
+          "name": "right_knee",
+          "x": 154.35,
+          "y": 158.07,
+          "rawScore": 1.2289
+        },
+        {
+          "name": "right_back_paw",
+          "x": 141.83,
+          "y": 187.73,
+          "rawScore": 1.312
+        }
+      ],
+      "torsoReference": {
+        "centerX": 226.7,
+        "centerY": 141.92,
+        "shoulderToHipLength": 82.23
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.8516,
+          "yBodyLengths": 0.4849,
+          "rawScore": 1.2404
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.3948,
+          "yBodyLengths": 0.5331,
+          "rawScore": 1.2804
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.2545,
+          "yBodyLengths": 0.5651,
+          "rawScore": 1.286
+        },
+        "right_back_paw": {
+          "xBodyLengths": -1.032,
+          "yBodyLengths": 0.557,
+          "rawScore": 1.312
+        }
+      }
+    },
+    {
+      "ordinal": 19,
+      "frameIndex": 85,
+      "timestampSeconds": 2.8362,
+      "bboxXyxy": [
+        111,
+        55,
+        381,
+        215
+      ],
+      "inferenceSeconds": 0.1881,
+      "meanRawKeypointScore": 1.296,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 333.01,
+          "y": 111.27,
+          "rawScore": 1.4946
+        },
+        {
+          "name": "right_eye",
+          "x": 323.12,
+          "y": 113.25,
+          "rawScore": 1.5573
+        },
+        {
+          "name": "nose",
+          "x": 338.94,
+          "y": 128.41,
+          "rawScore": 1.5015
+        },
+        {
+          "name": "neck",
+          "x": 282.91,
+          "y": 115.88,
+          "rawScore": 0.9818
+        },
+        {
+          "name": "root_of_tail",
+          "x": 178.76,
+          "y": 98.75,
+          "rawScore": 1.1228
+        },
+        {
+          "name": "left_shoulder",
+          "x": 274.34,
+          "y": 145.55,
+          "rawScore": 1.3182
+        },
+        {
+          "name": "left_elbow",
+          "x": 291.48,
+          "y": 160.71,
+          "rawScore": 1.2849
+        },
+        {
+          "name": "left_front_paw",
+          "x": 304.67,
+          "y": 178.51,
+          "rawScore": 1.2489
+        },
+        {
+          "name": "right_shoulder",
+          "x": 260.5,
+          "y": 143.57,
+          "rawScore": 1.2857
+        },
+        {
+          "name": "right_elbow",
+          "x": 256.55,
+          "y": 165.32,
+          "rawScore": 1.2594
+        },
+        {
+          "name": "right_front_paw",
+          "x": 254.57,
+          "y": 185.1,
+          "rawScore": 1.3156
+        },
+        {
+          "name": "left_hip",
+          "x": 197.88,
+          "y": 140.27,
+          "rawScore": 1.3096
+        },
+        {
+          "name": "left_knee",
+          "x": 186.67,
+          "y": 164.0,
+          "rawScore": 1.26
+        },
+        {
+          "name": "left_back_paw",
+          "x": 201.18,
+          "y": 187.73,
+          "rawScore": 1.3654
+        },
+        {
+          "name": "right_hip",
+          "x": 177.45,
+          "y": 138.3,
+          "rawScore": 1.1371
+        },
+        {
+          "name": "right_knee",
+          "x": 157.01,
+          "y": 156.75,
+          "rawScore": 1.2892
+        },
+        {
+          "name": "right_back_paw",
+          "x": 144.49,
+          "y": 186.42,
+          "rawScore": 1.2999
+        }
+      ],
+      "torsoReference": {
+        "centerX": 227.54,
+        "centerY": 141.92,
+        "shoulderToHipLength": 79.93
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.9649,
+          "yBodyLengths": 0.4577,
+          "rawScore": 1.2489
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.3381,
+          "yBodyLengths": 0.5402,
+          "rawScore": 1.3156
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.3298,
+          "yBodyLengths": 0.5731,
+          "rawScore": 1.3654
+        },
+        "right_back_paw": {
+          "xBodyLengths": -1.0391,
+          "yBodyLengths": 0.5567,
+          "rawScore": 1.2999
+        }
+      }
+    },
+    {
+      "ordinal": 20,
+      "frameIndex": 86,
+      "timestampSeconds": 2.8695,
+      "bboxXyxy": [
+        113,
+        55,
+        383,
+        215
+      ],
+      "inferenceSeconds": 0.2646,
+      "meanRawKeypointScore": 1.2755,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 333.69,
+          "y": 109.29,
+          "rawScore": 1.515
+        },
+        {
+          "name": "right_eye",
+          "x": 323.81,
+          "y": 111.93,
+          "rawScore": 1.5505
+        },
+        {
+          "name": "nose",
+          "x": 340.94,
+          "y": 126.43,
+          "rawScore": 1.4993
+        },
+        {
+          "name": "neck",
+          "x": 282.94,
+          "y": 113.25,
+          "rawScore": 1.0051
+        },
+        {
+          "name": "root_of_tail",
+          "x": 181.42,
+          "y": 98.09,
+          "rawScore": 1.0995
+        },
+        {
+          "name": "left_shoulder",
+          "x": 275.69,
+          "y": 144.89,
+          "rawScore": 1.3483
+        },
+        {
+          "name": "left_elbow",
+          "x": 292.17,
+          "y": 162.03,
+          "rawScore": 1.3822
+        },
+        {
+          "name": "left_front_paw",
+          "x": 306.01,
+          "y": 179.82,
+          "rawScore": 1.2841
+        },
+        {
+          "name": "right_shoulder",
+          "x": 260.52,
+          "y": 142.25,
+          "rawScore": 1.2557
+        },
+        {
+          "name": "right_elbow",
+          "x": 253.27,
+          "y": 164.66,
+          "rawScore": 1.1293
+        },
+        {
+          "name": "right_front_paw",
+          "x": 250.64,
+          "y": 185.1,
+          "rawScore": 1.2453
+        },
+        {
+          "name": "left_hip",
+          "x": 197.9,
+          "y": 140.93,
+          "rawScore": 1.216
+        },
+        {
+          "name": "left_knee",
+          "x": 182.74,
+          "y": 163.34,
+          "rawScore": 1.2181
+        },
+        {
+          "name": "left_back_paw",
+          "x": 196.58,
+          "y": 186.42,
+          "rawScore": 1.2803
+        },
+        {
+          "name": "right_hip",
+          "x": 182.08,
+          "y": 138.96,
+          "rawScore": 1.1153
+        },
+        {
+          "name": "right_knee",
+          "x": 160.33,
+          "y": 156.09,
+          "rawScore": 1.2859
+        },
+        {
+          "name": "right_back_paw",
+          "x": 149.78,
+          "y": 184.44,
+          "rawScore": 1.254
+        }
+      ],
+      "torsoReference": {
+        "centerX": 229.05,
+        "centerY": 141.76,
+        "shoulderToHipLength": 78.2
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.9842,
+          "yBodyLengths": 0.4867,
+          "rawScore": 1.2841
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.2761,
+          "yBodyLengths": 0.5543,
+          "rawScore": 1.2453
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.4152,
+          "yBodyLengths": 0.5711,
+          "rawScore": 1.2803
+        },
+        "right_back_paw": {
+          "xBodyLengths": -1.0137,
+          "yBodyLengths": 0.5458,
+          "rawScore": 1.254
+        }
+      }
+    },
+    {
+      "ordinal": 21,
+      "frameIndex": 87,
+      "timestampSeconds": 2.9029,
+      "bboxXyxy": [
+        114,
+        55,
+        384,
+        215
+      ],
+      "inferenceSeconds": 0.1951,
+      "meanRawKeypointScore": 1.1398,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 334.69,
+          "y": 108.63,
+          "rawScore": 1.4549
+        },
+        {
+          "name": "right_eye",
+          "x": 325.46,
+          "y": 110.61,
+          "rawScore": 1.4852
+        },
+        {
+          "name": "nose",
+          "x": 341.94,
+          "y": 125.77,
+          "rawScore": 1.4744
+        },
+        {
+          "name": "neck",
+          "x": 282.62,
+          "y": 111.93,
+          "rawScore": 1.0305
+        },
+        {
+          "name": "root_of_tail",
+          "x": 183.74,
+          "y": 96.77,
+          "rawScore": 1.0448
+        },
+        {
+          "name": "left_shoulder",
+          "x": 275.37,
+          "y": 143.57,
+          "rawScore": 1.3316
+        },
+        {
+          "name": "left_elbow",
+          "x": 287.23,
+          "y": 162.03,
+          "rawScore": 1.327
+        },
+        {
+          "name": "left_front_paw",
+          "x": 301.08,
+          "y": 179.17,
+          "rawScore": 1.3386
+        },
+        {
+          "name": "right_shoulder",
+          "x": 259.55,
+          "y": 142.25,
+          "rawScore": 1.2627
+        },
+        {
+          "name": "right_elbow",
+          "x": 251.64,
+          "y": 163.34,
+          "rawScore": 1.1826
+        },
+        {
+          "name": "right_front_paw",
+          "x": 246.36,
+          "y": 185.1,
+          "rawScore": 1.1793
+        },
+        {
+          "name": "left_hip",
+          "x": 188.36,
+          "y": 137.64,
+          "rawScore": 0.9326
+        },
+        {
+          "name": "left_knee",
+          "x": 173.19,
+          "y": 157.41,
+          "rawScore": 0.901
+        },
+        {
+          "name": "left_back_paw",
+          "x": 183.08,
+          "y": 184.44,
+          "rawScore": 0.6324
+        },
+        {
+          "name": "right_hip",
+          "x": 191.65,
+          "y": 138.96,
+          "rawScore": 0.9989
+        },
+        {
+          "name": "right_knee",
+          "x": 171.88,
+          "y": 157.41,
+          "rawScore": 1.1348
+        },
+        {
+          "name": "right_back_paw",
+          "x": 171.88,
+          "y": 184.44,
+          "rawScore": 0.6651
+        }
+      ],
+      "torsoReference": {
+        "centerX": 228.73,
+        "centerY": 140.61,
+        "shoulderToHipLength": 77.59
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.9324,
+          "yBodyLengths": 0.497,
+          "rawScore": 1.3386
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.2272,
+          "yBodyLengths": 0.5734,
+          "rawScore": 1.1793
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.5884,
+          "yBodyLengths": 0.5649,
+          "rawScore": 0.6324
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.7327,
+          "yBodyLengths": 0.5649,
+          "rawScore": 0.6651
+        }
+      }
+    },
+    {
+      "ordinal": 22,
+      "frameIndex": 88,
+      "timestampSeconds": 2.9363,
+      "bboxXyxy": [
+        116,
+        55,
+        386,
+        215
+      ],
+      "inferenceSeconds": 0.1928,
+      "meanRawKeypointScore": 1.2068,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 336.69,
+          "y": 109.29,
+          "rawScore": 1.4201
+        },
+        {
+          "name": "right_eye",
+          "x": 328.12,
+          "y": 111.93,
+          "rawScore": 1.4786
+        },
+        {
+          "name": "nose",
+          "x": 343.29,
+          "y": 125.77,
+          "rawScore": 1.4989
+        },
+        {
+          "name": "neck",
+          "x": 283.96,
+          "y": 110.61,
+          "rawScore": 1.0557
+        },
+        {
+          "name": "root_of_tail",
+          "x": 183.76,
+          "y": 96.11,
+          "rawScore": 1.0984
+        },
+        {
+          "name": "left_shoulder",
+          "x": 276.05,
+          "y": 142.91,
+          "rawScore": 1.389
+        },
+        {
+          "name": "left_elbow",
+          "x": 284.62,
+          "y": 163.34,
+          "rawScore": 1.3757
+        },
+        {
+          "name": "left_front_paw",
+          "x": 295.82,
+          "y": 179.82,
+          "rawScore": 1.4472
+        },
+        {
+          "name": "right_shoulder",
+          "x": 260.23,
+          "y": 141.59,
+          "rawScore": 1.2934
+        },
+        {
+          "name": "right_elbow",
+          "x": 250.34,
+          "y": 163.34,
+          "rawScore": 1.2386
+        },
+        {
+          "name": "right_front_paw",
+          "x": 242.43,
+          "y": 185.1,
+          "rawScore": 1.2374
+        },
+        {
+          "name": "left_hip",
+          "x": 188.38,
+          "y": 136.98,
+          "rawScore": 0.9345
+        },
+        {
+          "name": "left_knee",
+          "x": 171.9,
+          "y": 154.78,
+          "rawScore": 0.9209
+        },
+        {
+          "name": "left_back_paw",
+          "x": 177.17,
+          "y": 181.14,
+          "rawScore": 0.7647
+        },
+        {
+          "name": "right_hip",
+          "x": 197.61,
+          "y": 140.27,
+          "rawScore": 1.1161
+        },
+        {
+          "name": "right_knee",
+          "x": 175.85,
+          "y": 158.07,
+          "rawScore": 1.1826
+        },
+        {
+          "name": "right_back_paw",
+          "x": 182.45,
+          "y": 185.1,
+          "rawScore": 1.0647
+        }
+      ],
+      "torsoReference": {
+        "centerX": 230.57,
+        "centerY": 140.44,
+        "shoulderToHipLength": 75.23
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.8673,
+          "yBodyLengths": 0.5235,
+          "rawScore": 1.4472
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.1577,
+          "yBodyLengths": 0.5937,
+          "rawScore": 1.2374
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.7098,
+          "yBodyLengths": 0.541,
+          "rawScore": 0.7647
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.6396,
+          "yBodyLengths": 0.5937,
+          "rawScore": 1.0647
+        }
+      }
+    },
+    {
+      "ordinal": 23,
+      "frameIndex": 89,
+      "timestampSeconds": 2.9696,
+      "bboxXyxy": [
+        118,
+        55,
+        388,
+        215
+      ],
+      "inferenceSeconds": 0.1835,
+      "meanRawKeypointScore": 1.2269,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 337.38,
+          "y": 110.61,
+          "rawScore": 1.3823
+        },
+        {
+          "name": "right_eye",
+          "x": 330.12,
+          "y": 113.25,
+          "rawScore": 1.4504
+        },
+        {
+          "name": "nose",
+          "x": 345.29,
+          "y": 127.75,
+          "rawScore": 1.491
+        },
+        {
+          "name": "neck",
+          "x": 283.98,
+          "y": 110.61,
+          "rawScore": 1.0892
+        },
+        {
+          "name": "root_of_tail",
+          "x": 185.76,
+          "y": 96.77,
+          "rawScore": 1.1574
+        },
+        {
+          "name": "left_shoulder",
+          "x": 274.09,
+          "y": 142.91,
+          "rawScore": 1.4084
+        },
+        {
+          "name": "left_elbow",
+          "x": 281.34,
+          "y": 163.34,
+          "rawScore": 1.4048
+        },
+        {
+          "name": "left_front_paw",
+          "x": 290.57,
+          "y": 179.82,
+          "rawScore": 1.4184
+        },
+        {
+          "name": "right_shoulder",
+          "x": 261.57,
+          "y": 142.25,
+          "rawScore": 1.3122
+        },
+        {
+          "name": "right_elbow",
+          "x": 251.02,
+          "y": 162.69,
+          "rawScore": 1.2786
+        },
+        {
+          "name": "right_front_paw",
+          "x": 241.13,
+          "y": 184.44,
+          "rawScore": 1.2349
+        },
+        {
+          "name": "left_hip",
+          "x": 190.38,
+          "y": 136.32,
+          "rawScore": 1.0015
+        },
+        {
+          "name": "left_knee",
+          "x": 175.88,
+          "y": 156.09,
+          "rawScore": 0.9585
+        },
+        {
+          "name": "left_back_paw",
+          "x": 181.15,
+          "y": 181.14,
+          "rawScore": 0.7918
+        },
+        {
+          "name": "right_hip",
+          "x": 201.58,
+          "y": 140.27,
+          "rawScore": 1.1517
+        },
+        {
+          "name": "right_knee",
+          "x": 179.17,
+          "y": 158.73,
+          "rawScore": 1.2231
+        },
+        {
+          "name": "right_back_paw",
+          "x": 184.45,
+          "y": 184.44,
+          "rawScore": 1.1038
+        }
+      ],
+      "torsoReference": {
+        "centerX": 231.91,
+        "centerY": 140.44,
+        "shoulderToHipLength": 71.98
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.815,
+          "yBodyLengths": 0.5471,
+          "rawScore": 1.4184
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.1282,
+          "yBodyLengths": 0.6113,
+          "rawScore": 1.2349
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.7051,
+          "yBodyLengths": 0.5655,
+          "rawScore": 0.7918
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.6593,
+          "yBodyLengths": 0.6113,
+          "rawScore": 1.1038
+        }
+      }
+    },
+    {
+      "ordinal": 24,
+      "frameIndex": 90,
+      "timestampSeconds": 3.003,
+      "bboxXyxy": [
+        120,
+        55,
+        390,
+        215
+      ],
+      "inferenceSeconds": 0.1828,
+      "meanRawKeypointScore": 1.1833,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 339.38,
+          "y": 113.25,
+          "rawScore": 1.3489
+        },
+        {
+          "name": "right_eye",
+          "x": 332.12,
+          "y": 115.22,
+          "rawScore": 1.3988
+        },
+        {
+          "name": "nose",
+          "x": 345.97,
+          "y": 131.04,
+          "rawScore": 1.5419
+        },
+        {
+          "name": "neck",
+          "x": 285.98,
+          "y": 109.95,
+          "rawScore": 1.0381
+        },
+        {
+          "name": "root_of_tail",
+          "x": 188.42,
+          "y": 96.11,
+          "rawScore": 1.1441
+        },
+        {
+          "name": "left_shoulder",
+          "x": 273.46,
+          "y": 142.91,
+          "rawScore": 1.394
+        },
+        {
+          "name": "left_elbow",
+          "x": 279.39,
+          "y": 163.34,
+          "rawScore": 1.3167
+        },
+        {
+          "name": "left_front_paw",
+          "x": 287.96,
+          "y": 179.82,
+          "rawScore": 1.377
+        },
+        {
+          "name": "right_shoulder",
+          "x": 260.93,
+          "y": 141.59,
+          "rawScore": 1.3536
+        },
+        {
+          "name": "right_elbow",
+          "x": 254.34,
+          "y": 163.34,
+          "rawScore": 1.2639
+        },
+        {
+          "name": "right_front_paw",
+          "x": 243.13,
+          "y": 183.12,
+          "rawScore": 1.1263
+        },
+        {
+          "name": "left_hip",
+          "x": 195.01,
+          "y": 136.32,
+          "rawScore": 0.9999
+        },
+        {
+          "name": "left_knee",
+          "x": 181.83,
+          "y": 158.07,
+          "rawScore": 0.9369
+        },
+        {
+          "name": "left_back_paw",
+          "x": 196.33,
+          "y": 181.8,
+          "rawScore": 0.6648
+        },
+        {
+          "name": "right_hip",
+          "x": 204.24,
+          "y": 139.61,
+          "rawScore": 1.1484
+        },
+        {
+          "name": "right_knee",
+          "x": 181.83,
+          "y": 158.73,
+          "rawScore": 1.1423
+        },
+        {
+          "name": "right_back_paw",
+          "x": 182.49,
+          "y": 183.78,
+          "rawScore": 0.9204
+        }
+      ],
+      "torsoReference": {
+        "centerX": 233.41,
+        "centerY": 140.11,
+        "shoulderToHipLength": 67.71
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.8057,
+          "yBodyLengths": 0.5865,
+          "rawScore": 1.377
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.1436,
+          "yBodyLengths": 0.6353,
+          "rawScore": 1.1263
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.5477,
+          "yBodyLengths": 0.6158,
+          "rawScore": 0.6648
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.7521,
+          "yBodyLengths": 0.645,
+          "rawScore": 0.9204
+        }
+      }
+    },
+    {
+      "ordinal": 25,
+      "frameIndex": 91,
+      "timestampSeconds": 3.0364,
+      "bboxXyxy": [
+        121,
+        55,
+        391,
+        215
+      ],
+      "inferenceSeconds": 0.183,
+      "meanRawKeypointScore": 1.1803,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 340.38,
+          "y": 114.57,
+          "rawScore": 1.1566
+        },
+        {
+          "name": "right_eye",
+          "x": 334.44,
+          "y": 116.54,
+          "rawScore": 1.3069
+        },
+        {
+          "name": "nose",
+          "x": 346.97,
+          "y": 132.36,
+          "rawScore": 1.3933
+        },
+        {
+          "name": "neck",
+          "x": 286.32,
+          "y": 110.61,
+          "rawScore": 0.9769
+        },
+        {
+          "name": "root_of_tail",
+          "x": 187.45,
+          "y": 98.75,
+          "rawScore": 1.1289
+        },
+        {
+          "name": "left_shoulder",
+          "x": 272.48,
+          "y": 142.91,
+          "rawScore": 1.2571
+        },
+        {
+          "name": "left_elbow",
+          "x": 275.78,
+          "y": 162.03,
+          "rawScore": 1.2571
+        },
+        {
+          "name": "left_front_paw",
+          "x": 285.0,
+          "y": 179.17,
+          "rawScore": 1.3394
+        },
+        {
+          "name": "right_shoulder",
+          "x": 263.25,
+          "y": 141.59,
+          "rawScore": 1.3855
+        },
+        {
+          "name": "right_elbow",
+          "x": 261.27,
+          "y": 161.37,
+          "rawScore": 1.1132
+        },
+        {
+          "name": "right_front_paw",
+          "x": 252.7,
+          "y": 180.48,
+          "rawScore": 0.8932
+        },
+        {
+          "name": "left_hip",
+          "x": 190.08,
+          "y": 137.64,
+          "rawScore": 1.1211
+        },
+        {
+          "name": "left_knee",
+          "x": 171.62,
+          "y": 156.75,
+          "rawScore": 1.2366
+        },
+        {
+          "name": "left_back_paw",
+          "x": 170.97,
+          "y": 185.1,
+          "rawScore": 1.2644
+        },
+        {
+          "name": "right_hip",
+          "x": 211.83,
+          "y": 138.96,
+          "rawScore": 1.1919
+        },
+        {
+          "name": "right_knee",
+          "x": 199.97,
+          "y": 160.05,
+          "rawScore": 0.9547
+        },
+        {
+          "name": "right_back_paw",
+          "x": 218.43,
+          "y": 180.48,
+          "rawScore": 1.0889
+        }
+      ],
+      "torsoReference": {
+        "centerX": 234.41,
+        "centerY": 140.28,
+        "shoulderToHipLength": 67.03
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.7548,
+          "yBodyLengths": 0.5803,
+          "rawScore": 1.3394
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.2729,
+          "yBodyLengths": 0.5998,
+          "rawScore": 0.8932
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.9465,
+          "yBodyLengths": 0.6688,
+          "rawScore": 1.2644
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.2384,
+          "yBodyLengths": 0.5998,
+          "rawScore": 1.0889
+        }
+      }
+    },
+    {
+      "ordinal": 26,
+      "frameIndex": 92,
+      "timestampSeconds": 3.0697,
+      "bboxXyxy": [
+        123,
+        55,
+        393,
+        215
+      ],
+      "inferenceSeconds": 0.1869,
+      "meanRawKeypointScore": 1.0887,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 343.03,
+          "y": 117.86,
+          "rawScore": 1.2203
+        },
+        {
+          "name": "right_eye",
+          "x": 335.78,
+          "y": 119.18,
+          "rawScore": 1.3909
+        },
+        {
+          "name": "nose",
+          "x": 348.31,
+          "y": 135.66,
+          "rawScore": 1.4825
+        },
+        {
+          "name": "neck",
+          "x": 290.3,
+          "y": 112.59,
+          "rawScore": 0.9936
+        },
+        {
+          "name": "root_of_tail",
+          "x": 188.79,
+          "y": 96.77,
+          "rawScore": 1.1245
+        },
+        {
+          "name": "left_shoulder",
+          "x": 271.18,
+          "y": 145.55,
+          "rawScore": 1.0017
+        },
+        {
+          "name": "left_elbow",
+          "x": 275.14,
+          "y": 163.34,
+          "rawScore": 0.9156
+        },
+        {
+          "name": "left_front_paw",
+          "x": 280.41,
+          "y": 179.17,
+          "rawScore": 0.9594
+        },
+        {
+          "name": "right_shoulder",
+          "x": 267.23,
+          "y": 142.25,
+          "rawScore": 1.2957
+        },
+        {
+          "name": "right_elbow",
+          "x": 273.16,
+          "y": 162.03,
+          "rawScore": 0.9862
+        },
+        {
+          "name": "right_front_paw",
+          "x": 266.57,
+          "y": 180.48,
+          "rawScore": 0.7457
+        },
+        {
+          "name": "left_hip",
+          "x": 190.1,
+          "y": 136.98,
+          "rawScore": 1.0904
+        },
+        {
+          "name": "left_knee",
+          "x": 169.67,
+          "y": 156.09,
+          "rawScore": 1.1392
+        },
+        {
+          "name": "left_back_paw",
+          "x": 167.69,
+          "y": 185.76,
+          "rawScore": 1.1866
+        },
+        {
+          "name": "right_hip",
+          "x": 213.18,
+          "y": 136.98,
+          "rawScore": 1.1043
+        },
+        {
+          "name": "right_knee",
+          "x": 208.56,
+          "y": 162.03,
+          "rawScore": 0.8544
+        },
+        {
+          "name": "right_back_paw",
+          "x": 227.68,
+          "y": 181.14,
+          "rawScore": 1.0176
+        }
+      ],
+      "torsoReference": {
+        "centerX": 235.42,
+        "centerY": 140.44,
+        "shoulderToHipLength": 67.92
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.6624,
+          "yBodyLengths": 0.5702,
+          "rawScore": 0.9594
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.4586,
+          "yBodyLengths": 0.5895,
+          "rawScore": 0.7457
+        },
+        "left_back_paw": {
+          "xBodyLengths": -0.9973,
+          "yBodyLengths": 0.6673,
+          "rawScore": 1.1866
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.114,
+          "yBodyLengths": 0.5992,
+          "rawScore": 1.0176
+        }
+      }
+    },
+    {
+      "ordinal": 27,
+      "frameIndex": 93,
+      "timestampSeconds": 3.1031,
+      "bboxXyxy": [
+        125,
+        55,
+        395,
+        215
+      ],
+      "inferenceSeconds": 0.1824,
+      "meanRawKeypointScore": 1.053,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 343.72,
+          "y": 119.18,
+          "rawScore": 1.2026
+        },
+        {
+          "name": "right_eye",
+          "x": 337.12,
+          "y": 119.84,
+          "rawScore": 1.3755
+        },
+        {
+          "name": "nose",
+          "x": 349.65,
+          "y": 136.98,
+          "rawScore": 1.4124
+        },
+        {
+          "name": "neck",
+          "x": 290.32,
+          "y": 111.93,
+          "rawScore": 0.9821
+        },
+        {
+          "name": "root_of_tail",
+          "x": 190.13,
+          "y": 97.43,
+          "rawScore": 1.0686
+        },
+        {
+          "name": "left_shoulder",
+          "x": 270.55,
+          "y": 144.23,
+          "rawScore": 1.1546
+        },
+        {
+          "name": "left_elbow",
+          "x": 277.14,
+          "y": 162.69,
+          "rawScore": 0.8897
+        },
+        {
+          "name": "left_front_paw",
+          "x": 275.82,
+          "y": 179.17,
+          "rawScore": 0.9376
+        },
+        {
+          "name": "right_shoulder",
+          "x": 270.55,
+          "y": 142.25,
+          "rawScore": 1.1936
+        },
+        {
+          "name": "right_elbow",
+          "x": 279.12,
+          "y": 160.71,
+          "rawScore": 0.8732
+        },
+        {
+          "name": "right_front_paw",
+          "x": 270.55,
+          "y": 179.82,
+          "rawScore": 0.7422
+        },
+        {
+          "name": "left_hip",
+          "x": 190.79,
+          "y": 136.98,
+          "rawScore": 1.0335
+        },
+        {
+          "name": "left_knee",
+          "x": 169.03,
+          "y": 154.78,
+          "rawScore": 1.0249
+        },
+        {
+          "name": "left_back_paw",
+          "x": 163.76,
+          "y": 185.76,
+          "rawScore": 1.1193
+        },
+        {
+          "name": "right_hip",
+          "x": 213.2,
+          "y": 137.64,
+          "rawScore": 1.068
+        },
+        {
+          "name": "right_knee",
+          "x": 213.2,
+          "y": 162.69,
+          "rawScore": 0.8336
+        },
+        {
+          "name": "right_back_paw",
+          "x": 230.34,
+          "y": 182.46,
+          "rawScore": 0.9904
+        }
+      ],
+      "torsoReference": {
+        "centerX": 236.27,
+        "centerY": 140.28,
+        "shoulderToHipLength": 68.81
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.5747,
+          "yBodyLengths": 0.5652,
+          "rawScore": 0.9376
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.4981,
+          "yBodyLengths": 0.5747,
+          "rawScore": 0.7422
+        },
+        "left_back_paw": {
+          "xBodyLengths": -1.0538,
+          "yBodyLengths": 0.661,
+          "rawScore": 1.1193
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.0862,
+          "yBodyLengths": 0.6131,
+          "rawScore": 0.9904
+        }
+      }
+    },
+    {
+      "ordinal": 28,
+      "frameIndex": 94,
+      "timestampSeconds": 3.1365,
+      "bboxXyxy": [
+        127,
+        55,
+        397,
+        215
+      ],
+      "inferenceSeconds": 0.2014,
+      "meanRawKeypointScore": 1.0631,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 344.4,
+          "y": 119.18,
+          "rawScore": 1.0573
+        },
+        {
+          "name": "right_eye",
+          "x": 339.12,
+          "y": 119.84,
+          "rawScore": 1.2727
+        },
+        {
+          "name": "nose",
+          "x": 349.01,
+          "y": 136.32,
+          "rawScore": 1.2578
+        },
+        {
+          "name": "neck",
+          "x": 292.98,
+          "y": 111.93,
+          "rawScore": 0.972
+        },
+        {
+          "name": "root_of_tail",
+          "x": 189.49,
+          "y": 96.77,
+          "rawScore": 1.0485
+        },
+        {
+          "name": "left_shoulder",
+          "x": 266.61,
+          "y": 143.57,
+          "rawScore": 1.363
+        },
+        {
+          "name": "left_elbow",
+          "x": 270.57,
+          "y": 162.03,
+          "rawScore": 1.0723
+        },
+        {
+          "name": "left_front_paw",
+          "x": 271.89,
+          "y": 179.17,
+          "rawScore": 1.1021
+        },
+        {
+          "name": "right_shoulder",
+          "x": 279.14,
+          "y": 142.91,
+          "rawScore": 1.0703
+        },
+        {
+          "name": "right_elbow",
+          "x": 294.3,
+          "y": 160.05,
+          "rawScore": 1.0616
+        },
+        {
+          "name": "right_front_paw",
+          "x": 290.34,
+          "y": 180.48,
+          "rawScore": 0.9973
+        },
+        {
+          "name": "left_hip",
+          "x": 188.83,
+          "y": 135.66,
+          "rawScore": 0.9674
+        },
+        {
+          "name": "left_knee",
+          "x": 164.44,
+          "y": 154.78,
+          "rawScore": 0.9353
+        },
+        {
+          "name": "left_back_paw",
+          "x": 158.51,
+          "y": 184.44,
+          "rawScore": 0.9642
+        },
+        {
+          "name": "right_hip",
+          "x": 211.9,
+          "y": 138.3,
+          "rawScore": 1.0332
+        },
+        {
+          "name": "right_knee",
+          "x": 210.58,
+          "y": 162.69,
+          "rawScore": 0.8772
+        },
+        {
+          "name": "right_back_paw",
+          "x": 227.72,
+          "y": 183.78,
+          "rawScore": 1.0199
+        }
+      ],
+      "torsoReference": {
+        "centerX": 236.62,
+        "centerY": 140.11,
+        "shoulderToHipLength": 72.78
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.4846,
+          "yBodyLengths": 0.5367,
+          "rawScore": 1.1021
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.7381,
+          "yBodyLengths": 0.5547,
+          "rawScore": 0.9973
+        },
+        "left_back_paw": {
+          "xBodyLengths": -1.0732,
+          "yBodyLengths": 0.6091,
+          "rawScore": 0.9642
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.1223,
+          "yBodyLengths": 0.6,
+          "rawScore": 1.0199
+        }
+      }
+    },
+    {
+      "ordinal": 29,
+      "frameIndex": 95,
+      "timestampSeconds": 3.1698,
+      "bboxXyxy": [
+        128,
+        55,
+        398,
+        215
+      ],
+      "inferenceSeconds": 0.183,
+      "meanRawKeypointScore": 1.1179,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 345.4,
+          "y": 119.18,
+          "rawScore": 1.0647
+        },
+        {
+          "name": "right_eye",
+          "x": 339.46,
+          "y": 119.84,
+          "rawScore": 1.255
+        },
+        {
+          "name": "nose",
+          "x": 350.01,
+          "y": 135.66,
+          "rawScore": 1.3208
+        },
+        {
+          "name": "neck",
+          "x": 293.32,
+          "y": 111.27,
+          "rawScore": 0.9737
+        },
+        {
+          "name": "root_of_tail",
+          "x": 189.83,
+          "y": 97.43,
+          "rawScore": 1.072
+        },
+        {
+          "name": "left_shoulder",
+          "x": 266.96,
+          "y": 142.25,
+          "rawScore": 1.3864
+        },
+        {
+          "name": "left_elbow",
+          "x": 266.3,
+          "y": 161.37,
+          "rawScore": 1.1539
+        },
+        {
+          "name": "left_front_paw",
+          "x": 266.96,
+          "y": 178.51,
+          "rawScore": 1.2179
+        },
+        {
+          "name": "right_shoulder",
+          "x": 282.12,
+          "y": 141.59,
+          "rawScore": 1.1129
+        },
+        {
+          "name": "right_elbow",
+          "x": 299.25,
+          "y": 159.39,
+          "rawScore": 1.1181
+        },
+        {
+          "name": "right_front_paw",
+          "x": 303.87,
+          "y": 177.85,
+          "rawScore": 1.092
+        },
+        {
+          "name": "left_hip",
+          "x": 189.17,
+          "y": 135.66,
+          "rawScore": 0.9941
+        },
+        {
+          "name": "left_knee",
+          "x": 164.78,
+          "y": 153.46,
+          "rawScore": 0.9838
+        },
+        {
+          "name": "left_back_paw",
+          "x": 154.89,
+          "y": 183.78,
+          "rawScore": 1.0652
+        },
+        {
+          "name": "right_hip",
+          "x": 211.58,
+          "y": 139.61,
+          "rawScore": 1.0488
+        },
+        {
+          "name": "right_knee",
+          "x": 206.31,
+          "y": 163.34,
+          "rawScore": 0.9961
+        },
+        {
+          "name": "right_back_paw",
+          "x": 223.45,
+          "y": 183.78,
+          "rawScore": 1.1498
+        }
+      ],
+      "torsoReference": {
+        "centerX": 237.46,
+        "centerY": 139.78,
+        "shoulderToHipLength": 74.29
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.3971,
+          "yBodyLengths": 0.5214,
+          "rawScore": 1.2179
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.894,
+          "yBodyLengths": 0.5125,
+          "rawScore": 1.092
+        },
+        "left_back_paw": {
+          "xBodyLengths": -1.1114,
+          "yBodyLengths": 0.5923,
+          "rawScore": 1.0652
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.1886,
+          "yBodyLengths": 0.5923,
+          "rawScore": 1.1498
+        }
+      }
+    },
+    {
+      "ordinal": 30,
+      "frameIndex": 96,
+      "timestampSeconds": 3.2032,
+      "bboxXyxy": [
+        130,
+        55,
+        400,
+        215
+      ],
+      "inferenceSeconds": 0.1911,
+      "meanRawKeypointScore": 1.1338,
+      "keypoints": [
+        {
+          "name": "left_eye",
+          "x": 345.42,
+          "y": 119.18,
+          "rawScore": 1.0428
+        },
+        {
+          "name": "right_eye",
+          "x": 339.49,
+          "y": 119.84,
+          "rawScore": 1.2037
+        },
+        {
+          "name": "nose",
+          "x": 350.69,
+          "y": 134.34,
+          "rawScore": 1.3537
+        },
+        {
+          "name": "neck",
+          "x": 295.32,
+          "y": 111.93,
+          "rawScore": 0.9893
+        },
+        {
+          "name": "root_of_tail",
+          "x": 189.85,
+          "y": 98.75,
+          "rawScore": 1.0849
+        },
+        {
+          "name": "left_shoulder",
+          "x": 265.0,
+          "y": 142.25,
+          "rawScore": 1.3212
+        },
+        {
+          "name": "left_elbow",
+          "x": 262.36,
+          "y": 160.71,
+          "rawScore": 1.1913
+        },
+        {
+          "name": "left_front_paw",
+          "x": 262.36,
+          "y": 178.51,
+          "rawScore": 1.2786
+        },
+        {
+          "name": "right_shoulder",
+          "x": 286.75,
+          "y": 142.91,
+          "rawScore": 1.1904
+        },
+        {
+          "name": "right_elbow",
+          "x": 301.91,
+          "y": 160.05,
+          "rawScore": 1.2276
+        },
+        {
+          "name": "right_front_paw",
+          "x": 311.8,
+          "y": 179.17,
+          "rawScore": 1.3015
+        },
+        {
+          "name": "left_hip",
+          "x": 189.19,
+          "y": 136.32,
+          "rawScore": 0.9958
+        },
+        {
+          "name": "left_knee",
+          "x": 166.78,
+          "y": 152.8,
+          "rawScore": 0.9666
+        },
+        {
+          "name": "left_back_paw",
+          "x": 156.24,
+          "y": 181.8,
+          "rawScore": 1.0054
+        },
+        {
+          "name": "right_hip",
+          "x": 208.97,
+          "y": 139.61,
+          "rawScore": 1.0556
+        },
+        {
+          "name": "right_knee",
+          "x": 201.06,
+          "y": 162.69,
+          "rawScore": 0.9567
+        },
+        {
+          "name": "right_back_paw",
+          "x": 218.86,
+          "y": 183.78,
+          "rawScore": 1.1096
+        }
+      ],
+      "torsoReference": {
+        "centerX": 237.48,
+        "centerY": 140.27,
+        "shoulderToHipLength": 76.93
+      },
+      "pawPositionsRelativeToTorso": {
+        "left_front_paw": {
+          "xBodyLengths": 0.3234,
+          "yBodyLengths": 0.497,
+          "rawScore": 1.2786
+        },
+        "right_front_paw": {
+          "xBodyLengths": 0.9661,
+          "yBodyLengths": 0.5056,
+          "rawScore": 1.3015
+        },
+        "left_back_paw": {
+          "xBodyLengths": -1.0559,
+          "yBodyLengths": 0.5398,
+          "rawScore": 1.0054
+        },
+        "right_back_paw": {
+          "xBodyLengths": -0.242,
+          "yBodyLengths": 0.5655,
+          "rawScore": 1.1096
+        }
+      }
+    }
+  ],
+  "scoreNote": "Raw RTMPose scores; not calibrated probabilities."
+}

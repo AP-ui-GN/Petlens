@@ -1,0 +1,4075 @@
+{
+  "video": "tmp/4300700-sd_426_240_30fps.mp4",
+  "model": "PekingU/rtdetr_r50vd_coco_o365",
+  "device": "cpu",
+  "frameCount": 165,
+  "fps": 29.97002997002997,
+  "modelLoadSeconds": 0.5754,
+  "detectionThreshold": 0.3,
+  "successfulDogDetections": 161,
+  "meanDetectionInferenceSeconds": 2.1564,
+  "frames": [
+    {
+      "frameIndex": 0,
+      "timestampSeconds": 0.0,
+      "detectionInferenceSeconds": 2.336,
+      "detections": [
+        {
+          "bboxXyxy": [
+            164.44,
+            97.89,
+            312.25,
+            174.03
+          ],
+          "confidence": 0.92187
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          164.44,
+          97.89,
+          312.25,
+          174.03
+        ],
+        "confidence": 0.92187
+      }
+    },
+    {
+      "frameIndex": 1,
+      "timestampSeconds": 0.0334,
+      "detectionInferenceSeconds": 2.3201,
+      "detections": [
+        {
+          "bboxXyxy": [
+            165.27,
+            97.06,
+            311.61,
+            174.26
+          ],
+          "confidence": 0.811646
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          165.27,
+          97.06,
+          311.61,
+          174.26
+        ],
+        "confidence": 0.811646
+      }
+    },
+    {
+      "frameIndex": 2,
+      "timestampSeconds": 0.0667,
+      "detectionInferenceSeconds": 2.6312,
+      "detections": [
+        {
+          "bboxXyxy": [
+            164.28,
+            96.72,
+            311.33,
+            174.51
+          ],
+          "confidence": 0.58784
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          164.28,
+          96.72,
+          311.33,
+          174.51
+        ],
+        "confidence": 0.58784
+      }
+    },
+    {
+      "frameIndex": 3,
+      "timestampSeconds": 0.1001,
+      "detectionInferenceSeconds": 2.1443,
+      "detections": [
+        {
+          "bboxXyxy": [
+            162.28,
+            96.93,
+            309.86,
+            174.52
+          ],
+          "confidence": 0.880301
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          162.28,
+          96.93,
+          309.86,
+          174.52
+        ],
+        "confidence": 0.880301
+      }
+    },
+    {
+      "frameIndex": 4,
+      "timestampSeconds": 0.1335,
+      "detectionInferenceSeconds": 2.1535,
+      "detections": [],
+      "selectedDog": null
+    },
+    {
+      "frameIndex": 5,
+      "timestampSeconds": 0.1668,
+      "detectionInferenceSeconds": 2.1418,
+      "detections": [
+        {
+          "bboxXyxy": [
+            155.89,
+            97.77,
+            308.07,
+            174.99
+          ],
+          "confidence": 0.913903
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          155.89,
+          97.77,
+          308.07,
+          174.99
+        ],
+        "confidence": 0.913903
+      }
+    },
+    {
+      "frameIndex": 6,
+      "timestampSeconds": 0.2002,
+      "detectionInferenceSeconds": 2.2524,
+      "detections": [
+        {
+          "bboxXyxy": [
+            153.37,
+            98.61,
+            307.24,
+            175.45
+          ],
+          "confidence": 0.76384
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          153.37,
+          98.61,
+          307.24,
+          175.45
+        ],
+        "confidence": 0.76384
+      }
+    },
+    {
+      "frameIndex": 7,
+      "timestampSeconds": 0.2336,
+      "detectionInferenceSeconds": 2.0806,
+      "detections": [
+        {
+          "bboxXyxy": [
+            152.09,
+            98.84,
+            306.66,
+            175.95
+          ],
+          "confidence": 0.620215
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          152.09,
+          98.84,
+          306.66,
+          175.95
+        ],
+        "confidence": 0.620215
+      }
+    },
+    {
+      "frameIndex": 8,
+      "timestampSeconds": 0.2669,
+      "detectionInferenceSeconds": 2.1371,
+      "detections": [
+        {
+          "bboxXyxy": [
+            151.99,
+            98.8,
+            308.67,
+            176.2
+          ],
+          "confidence": 0.759004
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          151.99,
+          98.8,
+          308.67,
+          176.2
+        ],
+        "confidence": 0.759004
+      }
+    },
+    {
+      "frameIndex": 9,
+      "timestampSeconds": 0.3003,
+      "detectionInferenceSeconds": 2.1867,
+      "detections": [
+        {
+          "bboxXyxy": [
+            151.58,
+            98.31,
+            308.42,
+            177.05
+          ],
+          "confidence": 0.623144
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          151.58,
+          98.31,
+          308.42,
+          177.05
+        ],
+        "confidence": 0.623144
+      }
+    },
+    {
+      "frameIndex": 10,
+      "timestampSeconds": 0.3337,
+      "detectionInferenceSeconds": 2.1439,
+      "detections": [
+        {
+          "bboxXyxy": [
+            152.67,
+            97.67,
+            308.04,
+            178.05
+          ],
+          "confidence": 0.778082
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          152.67,
+          97.67,
+          308.04,
+          178.05
+        ],
+        "confidence": 0.778082
+      }
+    },
+    {
+      "frameIndex": 11,
+      "timestampSeconds": 0.367,
+      "detectionInferenceSeconds": 2.1304,
+      "detections": [
+        {
+          "bboxXyxy": [
+            153.62,
+            97.02,
+            308.94,
+            178.77
+          ],
+          "confidence": 0.894727
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          153.62,
+          97.02,
+          308.94,
+          178.77
+        ],
+        "confidence": 0.894727
+      }
+    },
+    {
+      "frameIndex": 12,
+      "timestampSeconds": 0.4004,
+      "detectionInferenceSeconds": 2.1123,
+      "detections": [
+        {
+          "bboxXyxy": [
+            150.09,
+            96.46,
+            308.72,
+            178.7
+          ],
+          "confidence": 0.94036
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          150.09,
+          96.46,
+          308.72,
+          178.7
+        ],
+        "confidence": 0.94036
+      }
+    },
+    {
+      "frameIndex": 13,
+      "timestampSeconds": 0.4338,
+      "detectionInferenceSeconds": 2.116,
+      "detections": [
+        {
+          "bboxXyxy": [
+            147.99,
+            96.45,
+            308.39,
+            178.98
+          ],
+          "confidence": 0.947986
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          147.99,
+          96.45,
+          308.39,
+          178.98
+        ],
+        "confidence": 0.947986
+      }
+    },
+    {
+      "frameIndex": 14,
+      "timestampSeconds": 0.4671,
+      "detectionInferenceSeconds": 2.1301,
+      "detections": [
+        {
+          "bboxXyxy": [
+            144.14,
+            96.72,
+            307.08,
+            178.82
+          ],
+          "confidence": 0.83977
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          144.14,
+          96.72,
+          307.08,
+          178.82
+        ],
+        "confidence": 0.83977
+      }
+    },
+    {
+      "frameIndex": 15,
+      "timestampSeconds": 0.5005,
+      "detectionInferenceSeconds": 2.1369,
+      "detections": [
+        {
+          "bboxXyxy": [
+            139.68,
+            96.69,
+            304.46,
+            178.66
+          ],
+          "confidence": 0.731658
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          139.68,
+          96.69,
+          304.46,
+          178.66
+        ],
+        "confidence": 0.731658
+      }
+    },
+    {
+      "frameIndex": 16,
+      "timestampSeconds": 0.5339,
+      "detectionInferenceSeconds": 2.1021,
+      "detections": [
+        {
+          "bboxXyxy": [
+            137.83,
+            97.05,
+            303.18,
+            178.33
+          ],
+          "confidence": 0.940232
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          137.83,
+          97.05,
+          303.18,
+          178.33
+        ],
+        "confidence": 0.940232
+      }
+    },
+    {
+      "frameIndex": 17,
+      "timestampSeconds": 0.5672,
+      "detectionInferenceSeconds": 2.0797,
+      "detections": [
+        {
+          "bboxXyxy": [
+            136.16,
+            97.19,
+            302.33,
+            179.14
+          ],
+          "confidence": 0.948706
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          136.16,
+          97.19,
+          302.33,
+          179.14
+        ],
+        "confidence": 0.948706
+      }
+    },
+    {
+      "frameIndex": 18,
+      "timestampSeconds": 0.6006,
+      "detectionInferenceSeconds": 2.0756,
+      "detections": [
+        {
+          "bboxXyxy": [
+            136.79,
+            97.57,
+            300.77,
+            179.58
+          ],
+          "confidence": 0.950435
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          136.79,
+          97.57,
+          300.77,
+          179.58
+        ],
+        "confidence": 0.950435
+      }
+    },
+    {
+      "frameIndex": 19,
+      "timestampSeconds": 0.634,
+      "detectionInferenceSeconds": 2.0839,
+      "detections": [
+        {
+          "bboxXyxy": [
+            137.77,
+            97.67,
+            299.61,
+            179.9
+          ],
+          "confidence": 0.94897
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          137.77,
+          97.67,
+          299.61,
+          179.9
+        ],
+        "confidence": 0.94897
+      }
+    },
+    {
+      "frameIndex": 20,
+      "timestampSeconds": 0.6673,
+      "detectionInferenceSeconds": 2.1326,
+      "detections": [
+        {
+          "bboxXyxy": [
+            137.7,
+            97.76,
+            298.77,
+            180.07
+          ],
+          "confidence": 0.952049
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          137.7,
+          97.76,
+          298.77,
+          180.07
+        ],
+        "confidence": 0.952049
+      }
+    },
+    {
+      "frameIndex": 21,
+      "timestampSeconds": 0.7007,
+      "detectionInferenceSeconds": 2.1073,
+      "detections": [
+        {
+          "bboxXyxy": [
+            137.37,
+            97.23,
+            299.1,
+            180.33
+          ],
+          "confidence": 0.932163
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          137.37,
+          97.23,
+          299.1,
+          180.33
+        ],
+        "confidence": 0.932163
+      }
+    },
+    {
+      "frameIndex": 22,
+      "timestampSeconds": 0.7341,
+      "detectionInferenceSeconds": 2.1233,
+      "detections": [
+        {
+          "bboxXyxy": [
+            136.86,
+            96.76,
+            299.22,
+            180.87
+          ],
+          "confidence": 0.935583
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          136.86,
+          96.76,
+          299.22,
+          180.87
+        ],
+        "confidence": 0.935583
+      }
+    },
+    {
+      "frameIndex": 23,
+      "timestampSeconds": 0.7674,
+      "detectionInferenceSeconds": 2.0828,
+      "detections": [
+        {
+          "bboxXyxy": [
+            137.88,
+            95.22,
+            299.25,
+            180.87
+          ],
+          "confidence": 0.933503
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          137.88,
+          95.22,
+          299.25,
+          180.87
+        ],
+        "confidence": 0.933503
+      }
+    },
+    {
+      "frameIndex": 24,
+      "timestampSeconds": 0.8008,
+      "detectionInferenceSeconds": 2.1537,
+      "detections": [
+        {
+          "bboxXyxy": [
+            140.8,
+            94.77,
+            299.6,
+            181.13
+          ],
+          "confidence": 0.933394
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          140.8,
+          94.77,
+          299.6,
+          181.13
+        ],
+        "confidence": 0.933394
+      }
+    },
+    {
+      "frameIndex": 25,
+      "timestampSeconds": 0.8342,
+      "detectionInferenceSeconds": 2.1633,
+      "detections": [
+        {
+          "bboxXyxy": [
+            133.59,
+            94.57,
+            299.14,
+            180.77
+          ],
+          "confidence": 0.929626
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          133.59,
+          94.57,
+          299.14,
+          180.77
+        ],
+        "confidence": 0.929626
+      }
+    },
+    {
+      "frameIndex": 26,
+      "timestampSeconds": 0.8675,
+      "detectionInferenceSeconds": 2.0513,
+      "detections": [
+        {
+          "bboxXyxy": [
+            142.27,
+            94.66,
+            301.69,
+            181.64
+          ],
+          "confidence": 0.904124
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          142.27,
+          94.66,
+          301.69,
+          181.64
+        ],
+        "confidence": 0.904124
+      }
+    },
+    {
+      "frameIndex": 27,
+      "timestampSeconds": 0.9009,
+      "detectionInferenceSeconds": 2.1058,
+      "detections": [
+        {
+          "bboxXyxy": [
+            140.76,
+            95.31,
+            299.72,
+            181.27
+          ],
+          "confidence": 0.509334
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          140.76,
+          95.31,
+          299.72,
+          181.27
+        ],
+        "confidence": 0.509334
+      }
+    },
+    {
+      "frameIndex": 28,
+      "timestampSeconds": 0.9343,
+      "detectionInferenceSeconds": 2.0807,
+      "detections": [
+        {
+          "bboxXyxy": [
+            136.57,
+            95.52,
+            297.63,
+            181.4
+          ],
+          "confidence": 0.916121
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          136.57,
+          95.52,
+          297.63,
+          181.4
+        ],
+        "confidence": 0.916121
+      }
+    },
+    {
+      "frameIndex": 29,
+      "timestampSeconds": 0.9676,
+      "detectionInferenceSeconds": 2.1263,
+      "detections": [
+        {
+          "bboxXyxy": [
+            131.84,
+            95.85,
+            299.51,
+            181.74
+          ],
+          "confidence": 0.947007
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          131.84,
+          95.85,
+          299.51,
+          181.74
+        ],
+        "confidence": 0.947007
+      }
+    },
+    {
+      "frameIndex": 30,
+      "timestampSeconds": 1.001,
+      "detectionInferenceSeconds": 2.2136,
+      "detections": [
+        {
+          "bboxXyxy": [
+            131.14,
+            96.15,
+            298.68,
+            182.79
+          ],
+          "confidence": 0.946806
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          131.14,
+          96.15,
+          298.68,
+          182.79
+        ],
+        "confidence": 0.946806
+      }
+    },
+    {
+      "frameIndex": 31,
+      "timestampSeconds": 1.0344,
+      "detectionInferenceSeconds": 2.0306,
+      "detections": [
+        {
+          "bboxXyxy": [
+            132.27,
+            95.74,
+            298.06,
+            184.47
+          ],
+          "confidence": 0.954642
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          132.27,
+          95.74,
+          298.06,
+          184.47
+        ],
+        "confidence": 0.954642
+      }
+    },
+    {
+      "frameIndex": 32,
+      "timestampSeconds": 1.0677,
+      "detectionInferenceSeconds": 2.1027,
+      "detections": [
+        {
+          "bboxXyxy": [
+            133.58,
+            95.28,
+            298.41,
+            187.13
+          ],
+          "confidence": 0.95394
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          133.58,
+          95.28,
+          298.41,
+          187.13
+        ],
+        "confidence": 0.95394
+      }
+    },
+    {
+      "frameIndex": 33,
+      "timestampSeconds": 1.1011,
+      "detectionInferenceSeconds": 2.1166,
+      "detections": [
+        {
+          "bboxXyxy": [
+            131.9,
+            94.57,
+            299.71,
+            187.31
+          ],
+          "confidence": 0.949829
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          131.9,
+          94.57,
+          299.71,
+          187.31
+        ],
+        "confidence": 0.949829
+      }
+    },
+    {
+      "frameIndex": 34,
+      "timestampSeconds": 1.1345,
+      "detectionInferenceSeconds": 2.08,
+      "detections": [
+        {
+          "bboxXyxy": [
+            127.67,
+            94.22,
+            300.87,
+            187.42
+          ],
+          "confidence": 0.946033
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          127.67,
+          94.22,
+          300.87,
+          187.42
+        ],
+        "confidence": 0.946033
+      }
+    },
+    {
+      "frameIndex": 35,
+      "timestampSeconds": 1.1678,
+      "detectionInferenceSeconds": 2.3347,
+      "detections": [
+        {
+          "bboxXyxy": [
+            131.29,
+            94.56,
+            302.28,
+            187.63
+          ],
+          "confidence": 0.942504
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          131.29,
+          94.56,
+          302.28,
+          187.63
+        ],
+        "confidence": 0.942504
+      }
+    },
+    {
+      "frameIndex": 36,
+      "timestampSeconds": 1.2012,
+      "detectionInferenceSeconds": 2.1096,
+      "detections": [
+        {
+          "bboxXyxy": [
+            129.35,
+            94.66,
+            302.77,
+            187.53
+          ],
+          "confidence": 0.861139
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          129.35,
+          94.66,
+          302.77,
+          187.53
+        ],
+        "confidence": 0.861139
+      }
+    },
+    {
+      "frameIndex": 37,
+      "timestampSeconds": 1.2346,
+      "detectionInferenceSeconds": 2.1626,
+      "detections": [
+        {
+          "bboxXyxy": [
+            129.97,
+            95.08,
+            303.27,
+            187.49
+          ],
+          "confidence": 0.858507
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          129.97,
+          95.08,
+          303.27,
+          187.49
+        ],
+        "confidence": 0.858507
+      }
+    },
+    {
+      "frameIndex": 38,
+      "timestampSeconds": 1.2679,
+      "detectionInferenceSeconds": 2.0478,
+      "detections": [
+        {
+          "bboxXyxy": [
+            129.58,
+            95.36,
+            303.66,
+            187.74
+          ],
+          "confidence": 0.95882
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          129.58,
+          95.36,
+          303.66,
+          187.74
+        ],
+        "confidence": 0.95882
+      }
+    },
+    {
+      "frameIndex": 39,
+      "timestampSeconds": 1.3013,
+      "detectionInferenceSeconds": 2.1235,
+      "detections": [
+        {
+          "bboxXyxy": [
+            127.65,
+            95.68,
+            304.57,
+            188.08
+          ],
+          "confidence": 0.950817
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          127.65,
+          95.68,
+          304.57,
+          188.08
+        ],
+        "confidence": 0.950817
+      }
+    },
+    {
+      "frameIndex": 40,
+      "timestampSeconds": 1.3347,
+      "detectionInferenceSeconds": 2.2066,
+      "detections": [
+        {
+          "bboxXyxy": [
+            127.37,
+            96.43,
+            305.22,
+            188.09
+          ],
+          "confidence": 0.953094
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          127.37,
+          96.43,
+          305.22,
+          188.09
+        ],
+        "confidence": 0.953094
+      }
+    },
+    {
+      "frameIndex": 41,
+      "timestampSeconds": 1.368,
+      "detectionInferenceSeconds": 2.0993,
+      "detections": [
+        {
+          "bboxXyxy": [
+            126.82,
+            96.46,
+            306.43,
+            188.02
+          ],
+          "confidence": 0.960818
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          126.82,
+          96.46,
+          306.43,
+          188.02
+        ],
+        "confidence": 0.960818
+      }
+    },
+    {
+      "frameIndex": 42,
+      "timestampSeconds": 1.4014,
+      "detectionInferenceSeconds": 2.1735,
+      "detections": [
+        {
+          "bboxXyxy": [
+            126.63,
+            96.06,
+            307.42,
+            188.91
+          ],
+          "confidence": 0.961543
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          126.63,
+          96.06,
+          307.42,
+          188.91
+        ],
+        "confidence": 0.961543
+      }
+    },
+    {
+      "frameIndex": 43,
+      "timestampSeconds": 1.4348,
+      "detectionInferenceSeconds": 2.1149,
+      "detections": [
+        {
+          "bboxXyxy": [
+            129.84,
+            95.25,
+            305.34,
+            189.31
+          ],
+          "confidence": 0.946208
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          129.84,
+          95.25,
+          305.34,
+          189.31
+        ],
+        "confidence": 0.946208
+      }
+    },
+    {
+      "frameIndex": 44,
+      "timestampSeconds": 1.4681,
+      "detectionInferenceSeconds": 2.1662,
+      "detections": [
+        {
+          "bboxXyxy": [
+            127.27,
+            94.1,
+            308.92,
+            189.25
+          ],
+          "confidence": 0.952707
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          127.27,
+          94.1,
+          308.92,
+          189.25
+        ],
+        "confidence": 0.952707
+      }
+    },
+    {
+      "frameIndex": 45,
+      "timestampSeconds": 1.5015,
+      "detectionInferenceSeconds": 2.1517,
+      "detections": [
+        {
+          "bboxXyxy": [
+            125.04,
+            93.27,
+            311.0,
+            189.42
+          ],
+          "confidence": 0.947538
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          125.04,
+          93.27,
+          311.0,
+          189.42
+        ],
+        "confidence": 0.947538
+      }
+    },
+    {
+      "frameIndex": 46,
+      "timestampSeconds": 1.5349,
+      "detectionInferenceSeconds": 2.0723,
+      "detections": [
+        {
+          "bboxXyxy": [
+            125.57,
+            92.73,
+            311.51,
+            189.23
+          ],
+          "confidence": 0.955208
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          125.57,
+          92.73,
+          311.51,
+          189.23
+        ],
+        "confidence": 0.955208
+      }
+    },
+    {
+      "frameIndex": 47,
+      "timestampSeconds": 1.5682,
+      "detectionInferenceSeconds": 2.1173,
+      "detections": [
+        {
+          "bboxXyxy": [
+            122.78,
+            92.72,
+            313.61,
+            188.69
+          ],
+          "confidence": 0.956519
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          122.78,
+          92.72,
+          313.61,
+          188.69
+        ],
+        "confidence": 0.956519
+      }
+    },
+    {
+      "frameIndex": 48,
+      "timestampSeconds": 1.6016,
+      "detectionInferenceSeconds": 2.1549,
+      "detections": [
+        {
+          "bboxXyxy": [
+            119.45,
+            92.85,
+            313.2,
+            188.56
+          ],
+          "confidence": 0.956258
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          119.45,
+          92.85,
+          313.2,
+          188.56
+        ],
+        "confidence": 0.956258
+      }
+    },
+    {
+      "frameIndex": 49,
+      "timestampSeconds": 1.635,
+      "detectionInferenceSeconds": 2.1865,
+      "detections": [
+        {
+          "bboxXyxy": [
+            117.65,
+            92.92,
+            314.17,
+            189.43
+          ],
+          "confidence": 0.948906
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          117.65,
+          92.92,
+          314.17,
+          189.43
+        ],
+        "confidence": 0.948906
+      }
+    },
+    {
+      "frameIndex": 50,
+      "timestampSeconds": 1.6683,
+      "detectionInferenceSeconds": 2.1627,
+      "detections": [
+        {
+          "bboxXyxy": [
+            119.83,
+            93.44,
+            315.26,
+            189.34
+          ],
+          "confidence": 0.941457
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          119.83,
+          93.44,
+          315.26,
+          189.34
+        ],
+        "confidence": 0.941457
+      }
+    },
+    {
+      "frameIndex": 51,
+      "timestampSeconds": 1.7017,
+      "detectionInferenceSeconds": 2.0636,
+      "detections": [
+        {
+          "bboxXyxy": [
+            119.95,
+            93.6,
+            316.24,
+            189.46
+          ],
+          "confidence": 0.960047
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          119.95,
+          93.6,
+          316.24,
+          189.46
+        ],
+        "confidence": 0.960047
+      }
+    },
+    {
+      "frameIndex": 52,
+      "timestampSeconds": 1.7351,
+      "detectionInferenceSeconds": 2.1619,
+      "detections": [
+        {
+          "bboxXyxy": [
+            119.64,
+            93.35,
+            316.22,
+            190.27
+          ],
+          "confidence": 0.919447
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          119.64,
+          93.35,
+          316.22,
+          190.27
+        ],
+        "confidence": 0.919447
+      }
+    },
+    {
+      "frameIndex": 53,
+      "timestampSeconds": 1.7684,
+      "detectionInferenceSeconds": 2.1321,
+      "detections": [
+        {
+          "bboxXyxy": [
+            118.85,
+            92.11,
+            312.54,
+            193.6
+          ],
+          "confidence": 0.833715
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          118.85,
+          92.11,
+          312.54,
+          193.6
+        ],
+        "confidence": 0.833715
+      }
+    },
+    {
+      "frameIndex": 54,
+      "timestampSeconds": 1.8018,
+      "detectionInferenceSeconds": 2.1839,
+      "detections": [
+        {
+          "bboxXyxy": [
+            126.07,
+            91.33,
+            318.44,
+            194.37
+          ],
+          "confidence": 0.884517
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          126.07,
+          91.33,
+          318.44,
+          194.37
+        ],
+        "confidence": 0.884517
+      }
+    },
+    {
+      "frameIndex": 55,
+      "timestampSeconds": 1.8352,
+      "detectionInferenceSeconds": 2.1213,
+      "detections": [
+        {
+          "bboxXyxy": [
+            125.17,
+            90.59,
+            316.5,
+            194.44
+          ],
+          "confidence": 0.925087
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          125.17,
+          90.59,
+          316.5,
+          194.44
+        ],
+        "confidence": 0.925087
+      }
+    },
+    {
+      "frameIndex": 56,
+      "timestampSeconds": 1.8685,
+      "detectionInferenceSeconds": 2.1454,
+      "detections": [
+        {
+          "bboxXyxy": [
+            123.62,
+            89.95,
+            318.85,
+            194.36
+          ],
+          "confidence": 0.768849
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          123.62,
+          89.95,
+          318.85,
+          194.36
+        ],
+        "confidence": 0.768849
+      }
+    },
+    {
+      "frameIndex": 57,
+      "timestampSeconds": 1.9019,
+      "detectionInferenceSeconds": 2.151,
+      "detections": [
+        {
+          "bboxXyxy": [
+            122.03,
+            89.98,
+            318.46,
+            194.22
+          ],
+          "confidence": 0.407404
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          122.03,
+          89.98,
+          318.46,
+          194.22
+        ],
+        "confidence": 0.407404
+      }
+    },
+    {
+      "frameIndex": 58,
+      "timestampSeconds": 1.9353,
+      "detectionInferenceSeconds": 2.7111,
+      "detections": [
+        {
+          "bboxXyxy": [
+            122.02,
+            90.0,
+            320.03,
+            194.26
+          ],
+          "confidence": 0.886741
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          122.02,
+          90.0,
+          320.03,
+          194.26
+        ],
+        "confidence": 0.886741
+      }
+    },
+    {
+      "frameIndex": 59,
+      "timestampSeconds": 1.9686,
+      "detectionInferenceSeconds": 2.5269,
+      "detections": [
+        {
+          "bboxXyxy": [
+            119.98,
+            90.07,
+            321.91,
+            194.36
+          ],
+          "confidence": 0.950628
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          119.98,
+          90.07,
+          321.91,
+          194.36
+        ],
+        "confidence": 0.950628
+      }
+    },
+    {
+      "frameIndex": 60,
+      "timestampSeconds": 2.002,
+      "detectionInferenceSeconds": 2.1175,
+      "detections": [
+        {
+          "bboxXyxy": [
+            119.69,
+            90.52,
+            324.16,
+            194.2
+          ],
+          "confidence": 0.949479
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          119.69,
+          90.52,
+          324.16,
+          194.2
+        ],
+        "confidence": 0.949479
+      }
+    },
+    {
+      "frameIndex": 61,
+      "timestampSeconds": 2.0354,
+      "detectionInferenceSeconds": 2.1336,
+      "detections": [
+        {
+          "bboxXyxy": [
+            119.44,
+            90.7,
+            324.71,
+            194.19
+          ],
+          "confidence": 0.94803
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          119.44,
+          90.7,
+          324.71,
+          194.19
+        ],
+        "confidence": 0.94803
+      }
+    },
+    {
+      "frameIndex": 62,
+      "timestampSeconds": 2.0687,
+      "detectionInferenceSeconds": 2.0714,
+      "detections": [
+        {
+          "bboxXyxy": [
+            120.28,
+            90.77,
+            323.47,
+            193.94
+          ],
+          "confidence": 0.939029
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          120.28,
+          90.77,
+          323.47,
+          193.94
+        ],
+        "confidence": 0.939029
+      }
+    },
+    {
+      "frameIndex": 63,
+      "timestampSeconds": 2.1021,
+      "detectionInferenceSeconds": 2.5153,
+      "detections": [
+        {
+          "bboxXyxy": [
+            123.76,
+            90.33,
+            320.99,
+            194.09
+          ],
+          "confidence": 0.941282
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          123.76,
+          90.33,
+          320.99,
+          194.09
+        ],
+        "confidence": 0.941282
+      }
+    },
+    {
+      "frameIndex": 64,
+      "timestampSeconds": 2.1355,
+      "detectionInferenceSeconds": 2.469,
+      "detections": [
+        {
+          "bboxXyxy": [
+            121.17,
+            89.79,
+            328.4,
+            194.14
+          ],
+          "confidence": 0.945435
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          121.17,
+          89.79,
+          328.4,
+          194.14
+        ],
+        "confidence": 0.945435
+      }
+    },
+    {
+      "frameIndex": 65,
+      "timestampSeconds": 2.1688,
+      "detectionInferenceSeconds": 2.222,
+      "detections": [
+        {
+          "bboxXyxy": [
+            116.45,
+            89.04,
+            329.99,
+            194.01
+          ],
+          "confidence": 0.913504
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          116.45,
+          89.04,
+          329.99,
+          194.01
+        ],
+        "confidence": 0.913504
+      }
+    },
+    {
+      "frameIndex": 66,
+      "timestampSeconds": 2.2022,
+      "detectionInferenceSeconds": 2.1151,
+      "detections": [
+        {
+          "bboxXyxy": [
+            122.88,
+            88.52,
+            331.03,
+            193.98
+          ],
+          "confidence": 0.944986
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          122.88,
+          88.52,
+          331.03,
+          193.98
+        ],
+        "confidence": 0.944986
+      }
+    },
+    {
+      "frameIndex": 67,
+      "timestampSeconds": 2.2356,
+      "detectionInferenceSeconds": 2.2714,
+      "detections": [
+        {
+          "bboxXyxy": [
+            121.64,
+            87.46,
+            332.07,
+            194.06
+          ],
+          "confidence": 0.932694
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          121.64,
+          87.46,
+          332.07,
+          194.06
+        ],
+        "confidence": 0.932694
+      }
+    },
+    {
+      "frameIndex": 68,
+      "timestampSeconds": 2.2689,
+      "detectionInferenceSeconds": 2.2073,
+      "detections": [
+        {
+          "bboxXyxy": [
+            126.24,
+            86.54,
+            332.07,
+            193.7
+          ],
+          "confidence": 0.940817
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          126.24,
+          86.54,
+          332.07,
+          193.7
+        ],
+        "confidence": 0.940817
+      }
+    },
+    {
+      "frameIndex": 69,
+      "timestampSeconds": 2.3023,
+      "detectionInferenceSeconds": 2.0859,
+      "detections": [
+        {
+          "bboxXyxy": [
+            126.42,
+            86.14,
+            332.66,
+            192.83
+          ],
+          "confidence": 0.9541
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          126.42,
+          86.14,
+          332.66,
+          192.83
+        ],
+        "confidence": 0.9541
+      }
+    },
+    {
+      "frameIndex": 70,
+      "timestampSeconds": 2.3357,
+      "detectionInferenceSeconds": 2.2218,
+      "detections": [
+        {
+          "bboxXyxy": [
+            129.23,
+            86.18,
+            333.59,
+            193.31
+          ],
+          "confidence": 0.955533
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          129.23,
+          86.18,
+          333.59,
+          193.31
+        ],
+        "confidence": 0.955533
+      }
+    },
+    {
+      "frameIndex": 71,
+      "timestampSeconds": 2.369,
+      "detectionInferenceSeconds": 2.0839,
+      "detections": [
+        {
+          "bboxXyxy": [
+            127.85,
+            86.62,
+            334.29,
+            194.68
+          ],
+          "confidence": 0.95681
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          127.85,
+          86.62,
+          334.29,
+          194.68
+        ],
+        "confidence": 0.95681
+      }
+    },
+    {
+      "frameIndex": 72,
+      "timestampSeconds": 2.4024,
+      "detectionInferenceSeconds": 2.2316,
+      "detections": [
+        {
+          "bboxXyxy": [
+            127.69,
+            87.28,
+            334.8,
+            195.12
+          ],
+          "confidence": 0.956679
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          127.69,
+          87.28,
+          334.8,
+          195.12
+        ],
+        "confidence": 0.956679
+      }
+    },
+    {
+      "frameIndex": 73,
+      "timestampSeconds": 2.4358,
+      "detectionInferenceSeconds": 2.202,
+      "detections": [
+        {
+          "bboxXyxy": [
+            127.07,
+            87.94,
+            335.05,
+            195.15
+          ],
+          "confidence": 0.950122
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          127.07,
+          87.94,
+          335.05,
+          195.15
+        ],
+        "confidence": 0.950122
+      }
+    },
+    {
+      "frameIndex": 74,
+      "timestampSeconds": 2.4691,
+      "detectionInferenceSeconds": 2.1267,
+      "detections": [
+        {
+          "bboxXyxy": [
+            127.67,
+            87.89,
+            336.46,
+            195.21
+          ],
+          "confidence": 0.956966
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          127.67,
+          87.89,
+          336.46,
+          195.21
+        ],
+        "confidence": 0.956966
+      }
+    },
+    {
+      "frameIndex": 75,
+      "timestampSeconds": 2.5025,
+      "detectionInferenceSeconds": 2.2232,
+      "detections": [
+        {
+          "bboxXyxy": [
+            131.05,
+            87.57,
+            335.05,
+            194.98
+          ],
+          "confidence": 0.961721
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          131.05,
+          87.57,
+          335.05,
+          194.98
+        ],
+        "confidence": 0.961721
+      }
+    },
+    {
+      "frameIndex": 76,
+      "timestampSeconds": 2.5359,
+      "detectionInferenceSeconds": 2.1198,
+      "detections": [
+        {
+          "bboxXyxy": [
+            132.0,
+            87.01,
+            334.94,
+            195.52
+          ],
+          "confidence": 0.958219
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          132.0,
+          87.01,
+          334.94,
+          195.52
+        ],
+        "confidence": 0.958219
+      }
+    },
+    {
+      "frameIndex": 77,
+      "timestampSeconds": 2.5692,
+      "detectionInferenceSeconds": 2.2488,
+      "detections": [
+        {
+          "bboxXyxy": [
+            132.79,
+            86.53,
+            334.71,
+            195.38
+          ],
+          "confidence": 0.955884
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          132.79,
+          86.53,
+          334.71,
+          195.38
+        ],
+        "confidence": 0.955884
+      }
+    },
+    {
+      "frameIndex": 78,
+      "timestampSeconds": 2.6026,
+      "detectionInferenceSeconds": 2.1414,
+      "detections": [
+        {
+          "bboxXyxy": [
+            132.78,
+            86.04,
+            334.36,
+            195.2
+          ],
+          "confidence": 0.957013
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          132.78,
+          86.04,
+          334.36,
+          195.2
+        ],
+        "confidence": 0.957013
+      }
+    },
+    {
+      "frameIndex": 79,
+      "timestampSeconds": 2.636,
+      "detectionInferenceSeconds": 2.109,
+      "detections": [
+        {
+          "bboxXyxy": [
+            134.84,
+            86.62,
+            335.52,
+            195.01
+          ],
+          "confidence": 0.945024
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          134.84,
+          86.62,
+          335.52,
+          195.01
+        ],
+        "confidence": 0.945024
+      }
+    },
+    {
+      "frameIndex": 80,
+      "timestampSeconds": 2.6693,
+      "detectionInferenceSeconds": 2.1408,
+      "detections": [
+        {
+          "bboxXyxy": [
+            135.08,
+            87.5,
+            335.79,
+            194.98
+          ],
+          "confidence": 0.958918
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          135.08,
+          87.5,
+          335.79,
+          194.98
+        ],
+        "confidence": 0.958918
+      }
+    },
+    {
+      "frameIndex": 81,
+      "timestampSeconds": 2.7027,
+      "detectionInferenceSeconds": 2.075,
+      "detections": [
+        {
+          "bboxXyxy": [
+            136.66,
+            88.27,
+            337.27,
+            195.02
+          ],
+          "confidence": 0.952399
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          136.66,
+          88.27,
+          337.27,
+          195.02
+        ],
+        "confidence": 0.952399
+      }
+    },
+    {
+      "frameIndex": 82,
+      "timestampSeconds": 2.7361,
+      "detectionInferenceSeconds": 2.2415,
+      "detections": [
+        {
+          "bboxXyxy": [
+            137.67,
+            89.43,
+            338.41,
+            194.9
+          ],
+          "confidence": 0.952366
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          137.67,
+          89.43,
+          338.41,
+          194.9
+        ],
+        "confidence": 0.952366
+      }
+    },
+    {
+      "frameIndex": 83,
+      "timestampSeconds": 2.7694,
+      "detectionInferenceSeconds": 2.1711,
+      "detections": [
+        {
+          "bboxXyxy": [
+            137.99,
+            90.11,
+            340.21,
+            194.93
+          ],
+          "confidence": 0.956917
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          137.99,
+          90.11,
+          340.21,
+          194.93
+        ],
+        "confidence": 0.956917
+      }
+    },
+    {
+      "frameIndex": 84,
+      "timestampSeconds": 2.8028,
+      "detectionInferenceSeconds": 2.1691,
+      "detections": [
+        {
+          "bboxXyxy": [
+            136.03,
+            90.16,
+            341.11,
+            194.69
+          ],
+          "confidence": 0.95128
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          136.03,
+          90.16,
+          341.11,
+          194.69
+        ],
+        "confidence": 0.95128
+      }
+    },
+    {
+      "frameIndex": 85,
+      "timestampSeconds": 2.8362,
+      "detectionInferenceSeconds": 2.1062,
+      "detections": [
+        {
+          "bboxXyxy": [
+            137.75,
+            89.91,
+            342.29,
+            193.43
+          ],
+          "confidence": 0.960142
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          137.75,
+          89.91,
+          342.29,
+          193.43
+        ],
+        "confidence": 0.960142
+      }
+    },
+    {
+      "frameIndex": 86,
+      "timestampSeconds": 2.8695,
+      "detectionInferenceSeconds": 2.242,
+      "detections": [
+        {
+          "bboxXyxy": [
+            144.92,
+            89.17,
+            343.69,
+            192.53
+          ],
+          "confidence": 0.962628
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          144.92,
+          89.17,
+          343.69,
+          192.53
+        ],
+        "confidence": 0.962628
+      }
+    },
+    {
+      "frameIndex": 87,
+      "timestampSeconds": 2.9029,
+      "detectionInferenceSeconds": 2.0883,
+      "detections": [
+        {
+          "bboxXyxy": [
+            151.62,
+            87.99,
+            345.02,
+            192.3
+          ],
+          "confidence": 0.955746
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          151.62,
+          87.99,
+          345.02,
+          192.3
+        ],
+        "confidence": 0.955746
+      }
+    },
+    {
+      "frameIndex": 88,
+      "timestampSeconds": 2.9363,
+      "detectionInferenceSeconds": 2.1708,
+      "detections": [
+        {
+          "bboxXyxy": [
+            152.31,
+            87.26,
+            346.57,
+            192.4
+          ],
+          "confidence": 0.958136
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          152.31,
+          87.26,
+          346.57,
+          192.4
+        ],
+        "confidence": 0.958136
+      }
+    },
+    {
+      "frameIndex": 89,
+      "timestampSeconds": 2.9696,
+      "detectionInferenceSeconds": 2.1069,
+      "detections": [
+        {
+          "bboxXyxy": [
+            152.21,
+            86.68,
+            348.08,
+            192.12
+          ],
+          "confidence": 0.956425
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          152.21,
+          86.68,
+          348.08,
+          192.12
+        ],
+        "confidence": 0.956425
+      }
+    },
+    {
+      "frameIndex": 90,
+      "timestampSeconds": 3.003,
+      "detectionInferenceSeconds": 2.0436,
+      "detections": [
+        {
+          "bboxXyxy": [
+            152.52,
+            86.38,
+            349.26,
+            191.95
+          ],
+          "confidence": 0.95966
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          152.52,
+          86.38,
+          349.26,
+          191.95
+        ],
+        "confidence": 0.95966
+      }
+    },
+    {
+      "frameIndex": 91,
+      "timestampSeconds": 3.0364,
+      "detectionInferenceSeconds": 2.2842,
+      "detections": [
+        {
+          "bboxXyxy": [
+            154.61,
+            87.36,
+            350.63,
+            191.83
+          ],
+          "confidence": 0.951215
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          154.61,
+          87.36,
+          350.63,
+          191.83
+        ],
+        "confidence": 0.951215
+      }
+    },
+    {
+      "frameIndex": 92,
+      "timestampSeconds": 3.0697,
+      "detectionInferenceSeconds": 2.1208,
+      "detections": [
+        {
+          "bboxXyxy": [
+            158.76,
+            87.21,
+            351.51,
+            192.27
+          ],
+          "confidence": 0.930768
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          158.76,
+          87.21,
+          351.51,
+          192.27
+        ],
+        "confidence": 0.930768
+      }
+    },
+    {
+      "frameIndex": 93,
+      "timestampSeconds": 3.1031,
+      "detectionInferenceSeconds": 2.1737,
+      "detections": [
+        {
+          "bboxXyxy": [
+            156.98,
+            87.38,
+            353.56,
+            192.58
+          ],
+          "confidence": 0.947104
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          156.98,
+          87.38,
+          353.56,
+          192.58
+        ],
+        "confidence": 0.947104
+      }
+    },
+    {
+      "frameIndex": 94,
+      "timestampSeconds": 3.1365,
+      "detectionInferenceSeconds": 2.0638,
+      "detections": [
+        {
+          "bboxXyxy": [
+            153.47,
+            88.25,
+            353.25,
+            192.58
+          ],
+          "confidence": 0.946859
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          153.47,
+          88.25,
+          353.25,
+          192.58
+        ],
+        "confidence": 0.946859
+      }
+    },
+    {
+      "frameIndex": 95,
+      "timestampSeconds": 3.1698,
+      "detectionInferenceSeconds": 2.0393,
+      "detections": [
+        {
+          "bboxXyxy": [
+            152.17,
+            88.69,
+            352.12,
+            192.24
+          ],
+          "confidence": 0.957734
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          152.17,
+          88.69,
+          352.12,
+          192.24
+        ],
+        "confidence": 0.957734
+      }
+    },
+    {
+      "frameIndex": 96,
+      "timestampSeconds": 3.2032,
+      "detectionInferenceSeconds": 2.238,
+      "detections": [
+        {
+          "bboxXyxy": [
+            152.11,
+            88.48,
+            354.66,
+            191.35
+          ],
+          "confidence": 0.954978
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          152.11,
+          88.48,
+          354.66,
+          191.35
+        ],
+        "confidence": 0.954978
+      }
+    },
+    {
+      "frameIndex": 97,
+      "timestampSeconds": 3.2366,
+      "detectionInferenceSeconds": 2.0658,
+      "detections": [
+        {
+          "bboxXyxy": [
+            157.45,
+            88.28,
+            352.11,
+            188.89
+          ],
+          "confidence": 0.955608
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          157.45,
+          88.28,
+          352.11,
+          188.89
+        ],
+        "confidence": 0.955608
+      }
+    },
+    {
+      "frameIndex": 98,
+      "timestampSeconds": 3.2699,
+      "detectionInferenceSeconds": 2.1344,
+      "detections": [
+        {
+          "bboxXyxy": [
+            162.71,
+            87.56,
+            351.69,
+            189.02
+          ],
+          "confidence": 0.902519
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          162.71,
+          87.56,
+          351.69,
+          189.02
+        ],
+        "confidence": 0.902519
+      }
+    },
+    {
+      "frameIndex": 99,
+      "timestampSeconds": 3.3033,
+      "detectionInferenceSeconds": 2.0656,
+      "detections": [
+        {
+          "bboxXyxy": [
+            158.34,
+            86.52,
+            351.59,
+            189.01
+          ],
+          "confidence": 0.941271
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          158.34,
+          86.52,
+          351.59,
+          189.01
+        ],
+        "confidence": 0.941271
+      }
+    },
+    {
+      "frameIndex": 100,
+      "timestampSeconds": 3.3367,
+      "detectionInferenceSeconds": 2.0779,
+      "detections": [
+        {
+          "bboxXyxy": [
+            151.53,
+            85.85,
+            354.23,
+            189.01
+          ],
+          "confidence": 0.811343
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          151.53,
+          85.85,
+          354.23,
+          189.01
+        ],
+        "confidence": 0.811343
+      }
+    },
+    {
+      "frameIndex": 101,
+      "timestampSeconds": 3.37,
+      "detectionInferenceSeconds": 2.2256,
+      "detections": [
+        {
+          "bboxXyxy": [
+            147.13,
+            85.65,
+            350.9,
+            189.6
+          ],
+          "confidence": 0.794727
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          147.13,
+          85.65,
+          350.9,
+          189.6
+        ],
+        "confidence": 0.794727
+      }
+    },
+    {
+      "frameIndex": 102,
+      "timestampSeconds": 3.4034,
+      "detectionInferenceSeconds": 2.0684,
+      "detections": [
+        {
+          "bboxXyxy": [
+            148.95,
+            86.28,
+            349.77,
+            189.65
+          ],
+          "confidence": 0.526007
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          148.95,
+          86.28,
+          349.77,
+          189.65
+        ],
+        "confidence": 0.526007
+      }
+    },
+    {
+      "frameIndex": 103,
+      "timestampSeconds": 3.4368,
+      "detectionInferenceSeconds": 2.0774,
+      "detections": [
+        {
+          "bboxXyxy": [
+            148.81,
+            87.3,
+            348.62,
+            190.13
+          ],
+          "confidence": 0.841533
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          148.81,
+          87.3,
+          348.62,
+          190.13
+        ],
+        "confidence": 0.841533
+      }
+    },
+    {
+      "frameIndex": 104,
+      "timestampSeconds": 3.4701,
+      "detectionInferenceSeconds": 2.1136,
+      "detections": [
+        {
+          "bboxXyxy": [
+            148.6,
+            88.04,
+            347.78,
+            190.26
+          ],
+          "confidence": 0.745359
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          148.6,
+          88.04,
+          347.78,
+          190.26
+        ],
+        "confidence": 0.745359
+      }
+    },
+    {
+      "frameIndex": 105,
+      "timestampSeconds": 3.5035,
+      "detectionInferenceSeconds": 2.0941,
+      "detections": [
+        {
+          "bboxXyxy": [
+            150.01,
+            89.12,
+            346.99,
+            190.75
+          ],
+          "confidence": 0.930316
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          150.01,
+          89.12,
+          346.99,
+          190.75
+        ],
+        "confidence": 0.930316
+      }
+    },
+    {
+      "frameIndex": 106,
+      "timestampSeconds": 3.5369,
+      "detectionInferenceSeconds": 2.1774,
+      "detections": [
+        {
+          "bboxXyxy": [
+            151.46,
+            89.4,
+            346.18,
+            190.32
+          ],
+          "confidence": 0.910757
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          151.46,
+          89.4,
+          346.18,
+          190.32
+        ],
+        "confidence": 0.910757
+      }
+    },
+    {
+      "frameIndex": 107,
+      "timestampSeconds": 3.5702,
+      "detectionInferenceSeconds": 2.0379,
+      "detections": [
+        {
+          "bboxXyxy": [
+            155.55,
+            89.17,
+            345.76,
+            190.81
+          ],
+          "confidence": 0.605771
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          155.55,
+          89.17,
+          345.76,
+          190.81
+        ],
+        "confidence": 0.605771
+      }
+    },
+    {
+      "frameIndex": 108,
+      "timestampSeconds": 3.6036,
+      "detectionInferenceSeconds": 2.098,
+      "detections": [
+        {
+          "bboxXyxy": [
+            158.92,
+            88.93,
+            345.4,
+            189.09
+          ],
+          "confidence": 0.340164
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          158.92,
+          88.93,
+          345.4,
+          189.09
+        ],
+        "confidence": 0.340164
+      }
+    },
+    {
+      "frameIndex": 109,
+      "timestampSeconds": 3.637,
+      "detectionInferenceSeconds": 2.0869,
+      "detections": [
+        {
+          "bboxXyxy": [
+            164.59,
+            88.37,
+            344.37,
+            188.09
+          ],
+          "confidence": 0.401937
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          164.59,
+          88.37,
+          344.37,
+          188.09
+        ],
+        "confidence": 0.401937
+      }
+    },
+    {
+      "frameIndex": 110,
+      "timestampSeconds": 3.6703,
+      "detectionInferenceSeconds": 2.0834,
+      "detections": [],
+      "selectedDog": null
+    },
+    {
+      "frameIndex": 111,
+      "timestampSeconds": 3.7037,
+      "detectionInferenceSeconds": 2.1851,
+      "detections": [],
+      "selectedDog": null
+    },
+    {
+      "frameIndex": 112,
+      "timestampSeconds": 3.7371,
+      "detectionInferenceSeconds": 2.176,
+      "detections": [
+        {
+          "bboxXyxy": [
+            172.49,
+            87.99,
+            342.26,
+            188.35
+          ],
+          "confidence": 0.82853
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          172.49,
+          87.99,
+          342.26,
+          188.35
+        ],
+        "confidence": 0.82853
+      }
+    },
+    {
+      "frameIndex": 113,
+      "timestampSeconds": 3.7704,
+      "detectionInferenceSeconds": 2.0769,
+      "detections": [
+        {
+          "bboxXyxy": [
+            173.57,
+            88.14,
+            341.26,
+            187.9
+          ],
+          "confidence": 0.333288
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          173.57,
+          88.14,
+          341.26,
+          187.9
+        ],
+        "confidence": 0.333288
+      }
+    },
+    {
+      "frameIndex": 114,
+      "timestampSeconds": 3.8038,
+      "detectionInferenceSeconds": 2.1291,
+      "detections": [
+        {
+          "bboxXyxy": [
+            172.29,
+            89.01,
+            341.42,
+            188.2
+          ],
+          "confidence": 0.908187
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          172.29,
+          89.01,
+          341.42,
+          188.2
+        ],
+        "confidence": 0.908187
+      }
+    },
+    {
+      "frameIndex": 115,
+      "timestampSeconds": 3.8372,
+      "detectionInferenceSeconds": 2.2616,
+      "detections": [
+        {
+          "bboxXyxy": [
+            172.09,
+            89.44,
+            341.13,
+            188.68
+          ],
+          "confidence": 0.396334
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          172.09,
+          89.44,
+          341.13,
+          188.68
+        ],
+        "confidence": 0.396334
+      }
+    },
+    {
+      "frameIndex": 116,
+      "timestampSeconds": 3.8705,
+      "detectionInferenceSeconds": 2.0715,
+      "detections": [],
+      "selectedDog": null
+    },
+    {
+      "frameIndex": 117,
+      "timestampSeconds": 3.9039,
+      "detectionInferenceSeconds": 2.2594,
+      "detections": [
+        {
+          "bboxXyxy": [
+            169.94,
+            91.92,
+            342.55,
+            189.06
+          ],
+          "confidence": 0.586375
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          169.94,
+          91.92,
+          342.55,
+          189.06
+        ],
+        "confidence": 0.586375
+      }
+    },
+    {
+      "frameIndex": 118,
+      "timestampSeconds": 3.9373,
+      "detectionInferenceSeconds": 2.069,
+      "detections": [
+        {
+          "bboxXyxy": [
+            167.98,
+            91.97,
+            342.8,
+            188.46
+          ],
+          "confidence": 0.816187
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          167.98,
+          91.97,
+          342.8,
+          188.46
+        ],
+        "confidence": 0.816187
+      }
+    },
+    {
+      "frameIndex": 119,
+      "timestampSeconds": 3.9706,
+      "detectionInferenceSeconds": 2.4685,
+      "detections": [
+        {
+          "bboxXyxy": [
+            167.71,
+            91.83,
+            343.3,
+            188.69
+          ],
+          "confidence": 0.650807
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          167.71,
+          91.83,
+          343.3,
+          188.69
+        ],
+        "confidence": 0.650807
+      }
+    },
+    {
+      "frameIndex": 120,
+      "timestampSeconds": 4.004,
+      "detectionInferenceSeconds": 2.7548,
+      "detections": [
+        {
+          "bboxXyxy": [
+            167.82,
+            91.24,
+            343.45,
+            186.93
+          ],
+          "confidence": 0.699607
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          167.82,
+          91.24,
+          343.45,
+          186.93
+        ],
+        "confidence": 0.699607
+      }
+    },
+    {
+      "frameIndex": 121,
+      "timestampSeconds": 4.0374,
+      "detectionInferenceSeconds": 2.195,
+      "detections": [
+        {
+          "bboxXyxy": [
+            168.09,
+            91.1,
+            343.18,
+            187.56
+          ],
+          "confidence": 0.822657
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          168.09,
+          91.1,
+          343.18,
+          187.56
+        ],
+        "confidence": 0.822657
+      }
+    },
+    {
+      "frameIndex": 122,
+      "timestampSeconds": 4.0707,
+      "detectionInferenceSeconds": 2.1205,
+      "detections": [
+        {
+          "bboxXyxy": [
+            166.53,
+            90.86,
+            343.81,
+            187.57
+          ],
+          "confidence": 0.957248
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          166.53,
+          90.86,
+          343.81,
+          187.57
+        ],
+        "confidence": 0.957248
+      }
+    },
+    {
+      "frameIndex": 123,
+      "timestampSeconds": 4.1041,
+      "detectionInferenceSeconds": 2.2251,
+      "detections": [
+        {
+          "bboxXyxy": [
+            165.2,
+            91.57,
+            343.84,
+            187.57
+          ],
+          "confidence": 0.956721
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          165.2,
+          91.57,
+          343.84,
+          187.57
+        ],
+        "confidence": 0.956721
+      }
+    },
+    {
+      "frameIndex": 124,
+      "timestampSeconds": 4.1375,
+      "detectionInferenceSeconds": 2.5808,
+      "detections": [
+        {
+          "bboxXyxy": [
+            162.97,
+            92.48,
+            344.66,
+            188.14
+          ],
+          "confidence": 0.960258
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          162.97,
+          92.48,
+          344.66,
+          188.14
+        ],
+        "confidence": 0.960258
+      }
+    },
+    {
+      "frameIndex": 125,
+      "timestampSeconds": 4.1708,
+      "detectionInferenceSeconds": 2.0644,
+      "detections": [
+        {
+          "bboxXyxy": [
+            161.53,
+            93.59,
+            344.16,
+            188.28
+          ],
+          "confidence": 0.961808
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          161.53,
+          93.59,
+          344.16,
+          188.28
+        ],
+        "confidence": 0.961808
+      }
+    },
+    {
+      "frameIndex": 126,
+      "timestampSeconds": 4.2042,
+      "detectionInferenceSeconds": 2.1788,
+      "detections": [
+        {
+          "bboxXyxy": [
+            162.78,
+            94.12,
+            343.47,
+            188.61
+          ],
+          "confidence": 0.961537
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          162.78,
+          94.12,
+          343.47,
+          188.61
+        ],
+        "confidence": 0.961537
+      }
+    },
+    {
+      "frameIndex": 127,
+      "timestampSeconds": 4.2376,
+      "detectionInferenceSeconds": 2.0504,
+      "detections": [
+        {
+          "bboxXyxy": [
+            163.92,
+            95.58,
+            343.87,
+            188.97
+          ],
+          "confidence": 0.960994
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          163.92,
+          95.58,
+          343.87,
+          188.97
+        ],
+        "confidence": 0.960994
+      }
+    },
+    {
+      "frameIndex": 128,
+      "timestampSeconds": 4.2709,
+      "detectionInferenceSeconds": 2.0591,
+      "detections": [
+        {
+          "bboxXyxy": [
+            168.08,
+            96.29,
+            342.5,
+            189.06
+          ],
+          "confidence": 0.944038
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          168.08,
+          96.29,
+          342.5,
+          189.06
+        ],
+        "confidence": 0.944038
+      }
+    },
+    {
+      "frameIndex": 129,
+      "timestampSeconds": 4.3043,
+      "detectionInferenceSeconds": 2.2071,
+      "detections": [
+        {
+          "bboxXyxy": [
+            169.89,
+            96.65,
+            341.78,
+            189.46
+          ],
+          "confidence": 0.96258
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          169.89,
+          96.65,
+          341.78,
+          189.46
+        ],
+        "confidence": 0.96258
+      }
+    },
+    {
+      "frameIndex": 130,
+      "timestampSeconds": 4.3377,
+      "detectionInferenceSeconds": 2.0574,
+      "detections": [
+        {
+          "bboxXyxy": [
+            174.99,
+            96.35,
+            340.38,
+            189.74
+          ],
+          "confidence": 0.958017
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          174.99,
+          96.35,
+          340.38,
+          189.74
+        ],
+        "confidence": 0.958017
+      }
+    },
+    {
+      "frameIndex": 131,
+      "timestampSeconds": 4.371,
+      "detectionInferenceSeconds": 2.1515,
+      "detections": [
+        {
+          "bboxXyxy": [
+            179.36,
+            96.04,
+            340.83,
+            189.11
+          ],
+          "confidence": 0.952048
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          179.36,
+          96.04,
+          340.83,
+          189.11
+        ],
+        "confidence": 0.952048
+      }
+    },
+    {
+      "frameIndex": 132,
+      "timestampSeconds": 4.4044,
+      "detectionInferenceSeconds": 2.1364,
+      "detections": [
+        {
+          "bboxXyxy": [
+            182.47,
+            95.76,
+            339.48,
+            188.19
+          ],
+          "confidence": 0.962358
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          182.47,
+          95.76,
+          339.48,
+          188.19
+        ],
+        "confidence": 0.962358
+      }
+    },
+    {
+      "frameIndex": 133,
+      "timestampSeconds": 4.4378,
+      "detectionInferenceSeconds": 2.1156,
+      "detections": [
+        {
+          "bboxXyxy": [
+            180.89,
+            95.01,
+            337.81,
+            188.07
+          ],
+          "confidence": 0.958185
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          180.89,
+          95.01,
+          337.81,
+          188.07
+        ],
+        "confidence": 0.958185
+      }
+    },
+    {
+      "frameIndex": 134,
+      "timestampSeconds": 4.4711,
+      "detectionInferenceSeconds": 2.188,
+      "detections": [
+        {
+          "bboxXyxy": [
+            184.66,
+            94.87,
+            336.37,
+            187.91
+          ],
+          "confidence": 0.959736
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          184.66,
+          94.87,
+          336.37,
+          187.91
+        ],
+        "confidence": 0.959736
+      }
+    },
+    {
+      "frameIndex": 135,
+      "timestampSeconds": 4.5045,
+      "detectionInferenceSeconds": 2.051,
+      "detections": [
+        {
+          "bboxXyxy": [
+            186.3,
+            95.16,
+            334.87,
+            187.97
+          ],
+          "confidence": 0.960358
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          186.3,
+          95.16,
+          334.87,
+          187.97
+        ],
+        "confidence": 0.960358
+      }
+    },
+    {
+      "frameIndex": 136,
+      "timestampSeconds": 4.5379,
+      "detectionInferenceSeconds": 2.2218,
+      "detections": [
+        {
+          "bboxXyxy": [
+            189.09,
+            95.83,
+            332.73,
+            188.21
+          ],
+          "confidence": 0.960071
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          189.09,
+          95.83,
+          332.73,
+          188.21
+        ],
+        "confidence": 0.960071
+      }
+    },
+    {
+      "frameIndex": 137,
+      "timestampSeconds": 4.5712,
+      "detectionInferenceSeconds": 2.1587,
+      "detections": [
+        {
+          "bboxXyxy": [
+            192.21,
+            96.33,
+            330.37,
+            188.61
+          ],
+          "confidence": 0.958664
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          192.21,
+          96.33,
+          330.37,
+          188.61
+        ],
+        "confidence": 0.958664
+      }
+    },
+    {
+      "frameIndex": 138,
+      "timestampSeconds": 4.6046,
+      "detectionInferenceSeconds": 2.1691,
+      "detections": [
+        {
+          "bboxXyxy": [
+            191.04,
+            96.74,
+            328.48,
+            188.98
+          ],
+          "confidence": 0.959986
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          191.04,
+          96.74,
+          328.48,
+          188.98
+        ],
+        "confidence": 0.959986
+      }
+    },
+    {
+      "frameIndex": 139,
+      "timestampSeconds": 4.638,
+      "detectionInferenceSeconds": 2.2424,
+      "detections": [
+        {
+          "bboxXyxy": [
+            188.37,
+            97.32,
+            326.32,
+            189.07
+          ],
+          "confidence": 0.957759
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          188.37,
+          97.32,
+          326.32,
+          189.07
+        ],
+        "confidence": 0.957759
+      }
+    },
+    {
+      "frameIndex": 140,
+      "timestampSeconds": 4.6713,
+      "detectionInferenceSeconds": 2.0701,
+      "detections": [
+        {
+          "bboxXyxy": [
+            184.69,
+            98.74,
+            324.27,
+            189.54
+          ],
+          "confidence": 0.947746
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          184.69,
+          98.74,
+          324.27,
+          189.54
+        ],
+        "confidence": 0.947746
+      }
+    },
+    {
+      "frameIndex": 141,
+      "timestampSeconds": 4.7047,
+      "detectionInferenceSeconds": 2.0654,
+      "detections": [
+        {
+          "bboxXyxy": [
+            181.26,
+            98.95,
+            322.41,
+            189.62
+          ],
+          "confidence": 0.934157
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          181.26,
+          98.95,
+          322.41,
+          189.62
+        ],
+        "confidence": 0.934157
+      }
+    },
+    {
+      "frameIndex": 142,
+      "timestampSeconds": 4.7381,
+      "detectionInferenceSeconds": 2.159,
+      "detections": [
+        {
+          "bboxXyxy": [
+            179.19,
+            98.99,
+            320.24,
+            190.22
+          ],
+          "confidence": 0.944804
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          179.19,
+          98.99,
+          320.24,
+          190.22
+        ],
+        "confidence": 0.944804
+      }
+    },
+    {
+      "frameIndex": 143,
+      "timestampSeconds": 4.7714,
+      "detectionInferenceSeconds": 2.1081,
+      "detections": [
+        {
+          "bboxXyxy": [
+            176.46,
+            98.71,
+            318.88,
+            190.54
+          ],
+          "confidence": 0.872302
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          176.46,
+          98.71,
+          318.88,
+          190.54
+        ],
+        "confidence": 0.872302
+      }
+    },
+    {
+      "frameIndex": 144,
+      "timestampSeconds": 4.8048,
+      "detectionInferenceSeconds": 2.2274,
+      "detections": [
+        {
+          "bboxXyxy": [
+            176.7,
+            99.09,
+            316.96,
+            186.79
+          ],
+          "confidence": 0.924556
+        },
+        {
+          "bboxXyxy": [
+            361.67,
+            103.87,
+            378.14,
+            116.35
+          ],
+          "confidence": 0.408612
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          176.7,
+          99.09,
+          316.96,
+          186.79
+        ],
+        "confidence": 0.924556
+      }
+    },
+    {
+      "frameIndex": 145,
+      "timestampSeconds": 4.8382,
+      "detectionInferenceSeconds": 2.0582,
+      "detections": [
+        {
+          "bboxXyxy": [
+            178.75,
+            99.15,
+            315.16,
+            186.38
+          ],
+          "confidence": 0.728316
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          178.75,
+          99.15,
+          315.16,
+          186.38
+        ],
+        "confidence": 0.728316
+      }
+    },
+    {
+      "frameIndex": 146,
+      "timestampSeconds": 4.8715,
+      "detectionInferenceSeconds": 2.038,
+      "detections": [
+        {
+          "bboxXyxy": [
+            169.64,
+            99.4,
+            314.02,
+            186.57
+          ],
+          "confidence": 0.894266
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          169.64,
+          99.4,
+          314.02,
+          186.57
+        ],
+        "confidence": 0.894266
+      }
+    },
+    {
+      "frameIndex": 147,
+      "timestampSeconds": 4.9049,
+      "detectionInferenceSeconds": 2.1168,
+      "detections": [
+        {
+          "bboxXyxy": [
+            163.52,
+            99.37,
+            312.69,
+            186.91
+          ],
+          "confidence": 0.954868
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          163.52,
+          99.37,
+          312.69,
+          186.91
+        ],
+        "confidence": 0.954868
+      }
+    },
+    {
+      "frameIndex": 148,
+      "timestampSeconds": 4.9383,
+      "detectionInferenceSeconds": 2.1456,
+      "detections": [
+        {
+          "bboxXyxy": [
+            160.18,
+            99.72,
+            311.08,
+            187.04
+          ],
+          "confidence": 0.95781
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          160.18,
+          99.72,
+          311.08,
+          187.04
+        ],
+        "confidence": 0.95781
+      }
+    },
+    {
+      "frameIndex": 149,
+      "timestampSeconds": 4.9716,
+      "detectionInferenceSeconds": 2.0451,
+      "detections": [
+        {
+          "bboxXyxy": [
+            156.42,
+            99.95,
+            309.68,
+            187.38
+          ],
+          "confidence": 0.952366
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          156.42,
+          99.95,
+          309.68,
+          187.38
+        ],
+        "confidence": 0.952366
+      }
+    },
+    {
+      "frameIndex": 150,
+      "timestampSeconds": 5.005,
+      "detectionInferenceSeconds": 2.1345,
+      "detections": [
+        {
+          "bboxXyxy": [
+            153.68,
+            100.73,
+            307.43,
+            187.88
+          ],
+          "confidence": 0.923668
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          153.68,
+          100.73,
+          307.43,
+          187.88
+        ],
+        "confidence": 0.923668
+      }
+    },
+    {
+      "frameIndex": 151,
+      "timestampSeconds": 5.0384,
+      "detectionInferenceSeconds": 2.0423,
+      "detections": [
+        {
+          "bboxXyxy": [
+            154.23,
+            101.15,
+            305.24,
+            187.99
+          ],
+          "confidence": 0.927796
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          154.23,
+          101.15,
+          305.24,
+          187.99
+        ],
+        "confidence": 0.927796
+      }
+    },
+    {
+      "frameIndex": 152,
+      "timestampSeconds": 5.0717,
+      "detectionInferenceSeconds": 2.1443,
+      "detections": [
+        {
+          "bboxXyxy": [
+            154.61,
+            101.15,
+            303.01,
+            188.75
+          ],
+          "confidence": 0.858734
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          154.61,
+          101.15,
+          303.01,
+          188.75
+        ],
+        "confidence": 0.858734
+      }
+    },
+    {
+      "frameIndex": 153,
+      "timestampSeconds": 5.1051,
+      "detectionInferenceSeconds": 2.1823,
+      "detections": [
+        {
+          "bboxXyxy": [
+            155.37,
+            101.26,
+            300.27,
+            189.09
+          ],
+          "confidence": 0.915984
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          155.37,
+          101.26,
+          300.27,
+          189.09
+        ],
+        "confidence": 0.915984
+      }
+    },
+    {
+      "frameIndex": 154,
+      "timestampSeconds": 5.1385,
+      "detectionInferenceSeconds": 2.1041,
+      "detections": [
+        {
+          "bboxXyxy": [
+            155.43,
+            101.45,
+            298.03,
+            189.22
+          ],
+          "confidence": 0.937802
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          155.43,
+          101.45,
+          298.03,
+          189.22
+        ],
+        "confidence": 0.937802
+      }
+    },
+    {
+      "frameIndex": 155,
+      "timestampSeconds": 5.1718,
+      "detectionInferenceSeconds": 2.145,
+      "detections": [
+        {
+          "bboxXyxy": [
+            160.05,
+            101.71,
+            296.19,
+            189.49
+          ],
+          "confidence": 0.851837
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          160.05,
+          101.71,
+          296.19,
+          189.49
+        ],
+        "confidence": 0.851837
+      }
+    },
+    {
+      "frameIndex": 156,
+      "timestampSeconds": 5.2052,
+      "detectionInferenceSeconds": 2.0519,
+      "detections": [
+        {
+          "bboxXyxy": [
+            159.31,
+            102.52,
+            293.8,
+            189.86
+          ],
+          "confidence": 0.708297
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          159.31,
+          102.52,
+          293.8,
+          189.86
+        ],
+        "confidence": 0.708297
+      }
+    },
+    {
+      "frameIndex": 157,
+      "timestampSeconds": 5.2386,
+      "detectionInferenceSeconds": 2.1065,
+      "detections": [
+        {
+          "bboxXyxy": [
+            158.6,
+            104.02,
+            292.42,
+            190.22
+          ],
+          "confidence": 0.758676
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          158.6,
+          104.02,
+          292.42,
+          190.22
+        ],
+        "confidence": 0.758676
+      }
+    },
+    {
+      "frameIndex": 158,
+      "timestampSeconds": 5.2719,
+      "detectionInferenceSeconds": 2.1485,
+      "detections": [
+        {
+          "bboxXyxy": [
+            157.83,
+            104.79,
+            289.64,
+            190.45
+          ],
+          "confidence": 0.620653
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          157.83,
+          104.79,
+          289.64,
+          190.45
+        ],
+        "confidence": 0.620653
+      }
+    },
+    {
+      "frameIndex": 159,
+      "timestampSeconds": 5.3053,
+      "detectionInferenceSeconds": 2.0437,
+      "detections": [
+        {
+          "bboxXyxy": [
+            159.19,
+            105.8,
+            287.58,
+            188.18
+          ],
+          "confidence": 0.940839
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          159.19,
+          105.8,
+          287.58,
+          188.18
+        ],
+        "confidence": 0.940839
+      }
+    },
+    {
+      "frameIndex": 160,
+      "timestampSeconds": 5.3387,
+      "detectionInferenceSeconds": 2.1084,
+      "detections": [
+        {
+          "bboxXyxy": [
+            159.67,
+            106.8,
+            284.25,
+            188.14
+          ],
+          "confidence": 0.934012
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          159.67,
+          106.8,
+          284.25,
+          188.14
+        ],
+        "confidence": 0.934012
+      }
+    },
+    {
+      "frameIndex": 161,
+      "timestampSeconds": 5.372,
+      "detectionInferenceSeconds": 2.039,
+      "detections": [
+        {
+          "bboxXyxy": [
+            163.82,
+            107.62,
+            281.84,
+            188.2
+          ],
+          "confidence": 0.944882
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          163.82,
+          107.62,
+          281.84,
+          188.2
+        ],
+        "confidence": 0.944882
+      }
+    },
+    {
+      "frameIndex": 162,
+      "timestampSeconds": 5.4054,
+      "detectionInferenceSeconds": 2.0887,
+      "detections": [
+        {
+          "bboxXyxy": [
+            165.22,
+            107.97,
+            278.89,
+            188.37
+          ],
+          "confidence": 0.86511
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          165.22,
+          107.97,
+          278.89,
+          188.37
+        ],
+        "confidence": 0.86511
+      }
+    },
+    {
+      "frameIndex": 163,
+      "timestampSeconds": 5.4388,
+      "detectionInferenceSeconds": 2.1739,
+      "detections": [
+        {
+          "bboxXyxy": [
+            164.24,
+            109.08,
+            274.8,
+            188.88
+          ],
+          "confidence": 0.764672
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          164.24,
+          109.08,
+          274.8,
+          188.88
+        ],
+        "confidence": 0.764672
+      }
+    },
+    {
+      "frameIndex": 164,
+      "timestampSeconds": 5.4721,
+      "detectionInferenceSeconds": 2.0864,
+      "detections": [
+        {
+          "bboxXyxy": [
+            162.58,
+            110.08,
+            272.98,
+            189.33
+          ],
+          "confidence": 0.848657
+        }
+      ],
+      "selectedDog": {
+        "bboxXyxy": [
+          162.58,
+          110.08,
+          272.98,
+          189.33
+        ],
+        "confidence": 0.848657
+      }
+    }
+  ]
+}

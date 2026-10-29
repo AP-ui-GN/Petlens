@@ -1,0 +1,2584 @@
+{
+  "experiment": "linear interpolation of unreliable torso references",
+  "source": "tmp/rtmpose-test/full-video/rtdetr-rtmpose-full-video.json",
+  "originalPredictionsModified": false,
+  "confidenceThreshold": 0.8,
+  "interpolation": "centerX, centerY, shoulderToHipLength; linear by frame index; gaps <=2; immediate original reliable bounds required",
+  "torsoReferenceStatusCounts": {
+    "original": 142,
+    "estimated": 21,
+    "unavailable": 2
+  },
+  "interpolatedSpans": [
+    {
+      "startFrame": 4,
+      "endFrame": 4,
+      "length": 1,
+      "leftAnchor": 3,
+      "rightAnchor": 5,
+      "frames": [
+        4
+      ]
+    },
+    {
+      "startFrame": 11,
+      "endFrame": 12,
+      "length": 2,
+      "leftAnchor": 10,
+      "rightAnchor": 13,
+      "frames": [
+        11,
+        12
+      ]
+    },
+    {
+      "startFrame": 22,
+      "endFrame": 23,
+      "length": 2,
+      "leftAnchor": 21,
+      "rightAnchor": 24,
+      "frames": [
+        22,
+        23
+      ]
+    },
+    {
+      "startFrame": 34,
+      "endFrame": 34,
+      "length": 1,
+      "leftAnchor": 33,
+      "rightAnchor": 35,
+      "frames": [
+        34
+      ]
+    },
+    {
+      "startFrame": 45,
+      "endFrame": 46,
+      "length": 2,
+      "leftAnchor": 44,
+      "rightAnchor": 47,
+      "frames": [
+        45,
+        46
+      ]
+    },
+    {
+      "startFrame": 55,
+      "endFrame": 55,
+      "length": 1,
+      "leftAnchor": 54,
+      "rightAnchor": 56,
+      "frames": [
+        55
+      ]
+    },
+    {
+      "startFrame": 67,
+      "endFrame": 67,
+      "length": 1,
+      "leftAnchor": 66,
+      "rightAnchor": 68,
+      "frames": [
+        67
+      ]
+    },
+    {
+      "startFrame": 77,
+      "endFrame": 77,
+      "length": 1,
+      "leftAnchor": 76,
+      "rightAnchor": 78,
+      "frames": [
+        77
+      ]
+    },
+    {
+      "startFrame": 88,
+      "endFrame": 88,
+      "length": 1,
+      "leftAnchor": 87,
+      "rightAnchor": 89,
+      "frames": [
+        88
+      ]
+    },
+    {
+      "startFrame": 100,
+      "endFrame": 100,
+      "length": 1,
+      "leftAnchor": 99,
+      "rightAnchor": 101,
+      "frames": [
+        100
+      ]
+    },
+    {
+      "startFrame": 110,
+      "endFrame": 111,
+      "length": 2,
+      "leftAnchor": 109,
+      "rightAnchor": 112,
+      "frames": [
+        110,
+        111
+      ]
+    },
+    {
+      "startFrame": 116,
+      "endFrame": 116,
+      "length": 1,
+      "leftAnchor": 115,
+      "rightAnchor": 117,
+      "frames": [
+        116
+      ]
+    },
+    {
+      "startFrame": 132,
+      "endFrame": 132,
+      "length": 1,
+      "leftAnchor": 131,
+      "rightAnchor": 133,
+      "frames": [
+        132
+      ]
+    },
+    {
+      "startFrame": 137,
+      "endFrame": 137,
+      "length": 1,
+      "leftAnchor": 136,
+      "rightAnchor": 138,
+      "frames": [
+        137
+      ]
+    },
+    {
+      "startFrame": 140,
+      "endFrame": 140,
+      "length": 1,
+      "leftAnchor": 139,
+      "rightAnchor": 141,
+      "frames": [
+        140
+      ]
+    },
+    {
+      "startFrame": 148,
+      "endFrame": 148,
+      "length": 1,
+      "leftAnchor": 147,
+      "rightAnchor": 149,
+      "frames": [
+        148
+      ]
+    },
+    {
+      "startFrame": 160,
+      "endFrame": 160,
+      "length": 1,
+      "leftAnchor": 159,
+      "rightAnchor": 161,
+      "frames": [
+        160
+      ]
+    }
+  ],
+  "rightBackPawUsableFrames": {
+    "before": {
+      "count": 139,
+      "longestRun": {
+        "frames": 15,
+        "range": [
+          117,
+          131
+        ]
+      }
+    },
+    "after": {
+      "count": 155,
+      "longestRun": {
+        "frames": 65,
+        "range": [
+          45,
+          109
+        ]
+      }
+    },
+    "addedFrames": [
+      11,
+      12,
+      23,
+      34,
+      45,
+      46,
+      55,
+      67,
+      77,
+      88,
+      100,
+      132,
+      137,
+      140,
+      148,
+      160
+    ]
+  },
+  "jumpCheck": {
+    "cutoffTorsoLengthsPerFrame": 0.35,
+    "basis": "same dog-detected frames with right_back_paw raw score >=0.80 before and after; check adjacent coordinate pairs regardless of jump-filter availability",
+    "beforePairsAboveCutoff": [
+      {
+        "fromFrame": 21,
+        "toFrame": 22,
+        "jumpTorsoLengths": 0.527311,
+        "usesEstimatedTorso": true
+      }
+    ],
+    "afterPairsAboveCutoff": [
+      {
+        "fromFrame": 21,
+        "toFrame": 22,
+        "jumpTorsoLengths": 0.453872,
+        "usesEstimatedTorso": true
+      }
+    ],
+    "newPairsAboveCutoffAfterInterpolation": [],
+    "existingPairsAboveCutoff": [
+      {
+        "fromFrame": 21,
+        "toFrame": 22,
+        "jumpTorsoLengths": 0.527311,
+        "usesEstimatedTorso": true
+      }
+    ],
+    "pairsNoLongerAboveCutoffAfterInterpolation": [],
+    "maximumAdjacentDisplacementBefore": {
+      "torsoLengths": 0.527311,
+      "pair": [
+        21,
+        22
+      ]
+    },
+    "maximumAdjacentDisplacementAfter": {
+      "torsoLengths": 0.453872,
+      "pair": [
+        21,
+        22
+      ]
+    }
+  },
+  "frames": [
+    {
+      "frameIndex": 0,
+      "torsoReference": {
+        "status": "unavailable",
+        "centerX": null,
+        "centerY": null,
+        "shoulderToHipLength": null
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "unavailable",
+        "normalizedX": null,
+        "normalizedY": null
+      }
+    },
+    {
+      "frameIndex": 1,
+      "torsoReference": {
+        "status": "unavailable",
+        "centerX": null,
+        "centerY": null,
+        "shoulderToHipLength": null
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "unavailable",
+        "normalizedX": null,
+        "normalizedY": null
+      }
+    },
+    {
+      "frameIndex": 2,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 223.18,
+        "centerY": 136.33,
+        "shoulderToHipLength": 53.55
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.410644,
+        "normalizedY": 0.596639
+      }
+    },
+    {
+      "frameIndex": 3,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 222.11,
+        "centerY": 136.09,
+        "shoulderToHipLength": 52.02
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.264898,
+        "normalizedY": 0.609381
+      }
+    },
+    {
+      "frameIndex": 4,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 220.82,
+        "centerY": 136.515,
+        "shoulderToHipLength": 52.905
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "unavailable",
+        "normalizedX": null,
+        "normalizedY": null
+      }
+    },
+    {
+      "frameIndex": 5,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 219.53,
+        "centerY": 136.94,
+        "shoulderToHipLength": 53.79
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.113962,
+        "normalizedY": 0.604387
+      }
+    },
+    {
+      "frameIndex": 6,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 217.81,
+        "centerY": 137.12,
+        "shoulderToHipLength": 56.13
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.145555,
+        "normalizedY": 0.600748
+      }
+    },
+    {
+      "frameIndex": 7,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 216.17,
+        "centerY": 137.58,
+        "shoulderToHipLength": 57.23
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.191333,
+        "normalizedY": 0.59025
+      }
+    },
+    {
+      "frameIndex": 8,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 214.46,
+        "centerY": 136.93,
+        "shoulderToHipLength": 59.53
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.22812,
+        "normalizedY": 0.587939
+      }
+    },
+    {
+      "frameIndex": 9,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 214.3,
+        "centerY": 137.11,
+        "shoulderToHipLength": 61.47
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.317716,
+        "normalizedY": 0.569871
+      }
+    },
+    {
+      "frameIndex": 10,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 212.91,
+        "centerY": 137.48,
+        "shoulderToHipLength": 63.19
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.360184,
+        "normalizedY": 0.546289
+      }
+    },
+    {
+      "frameIndex": 11,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 212.4867,
+        "centerY": 137.59,
+        "shoulderToHipLength": 60.41
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "estimated",
+        "normalizedX": -0.454671,
+        "normalizedY": 0.563648
+      }
+    },
+    {
+      "frameIndex": 12,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 212.0633,
+        "centerY": 137.7,
+        "shoulderToHipLength": 57.63
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "estimated",
+        "normalizedX": -0.572676,
+        "normalizedY": 0.596044
+      }
+    },
+    {
+      "frameIndex": 13,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 211.64,
+        "centerY": 137.81,
+        "shoulderToHipLength": 54.85
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.66928,
+        "normalizedY": 0.626618
+      }
+    },
+    {
+      "frameIndex": 14,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 211.09,
+        "centerY": 137.27,
+        "shoulderToHipLength": 54.45
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.770799,
+        "normalizedY": 0.65932
+      }
+    },
+    {
+      "frameIndex": 15,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 210.0,
+        "centerY": 137.57,
+        "shoulderToHipLength": 55.22
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.830496,
+        "normalizedY": 0.650308
+      }
+    },
+    {
+      "frameIndex": 16,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 209.2,
+        "centerY": 137.59,
+        "shoulderToHipLength": 58.07
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.87584,
+        "normalizedY": 0.620458
+      }
+    },
+    {
+      "frameIndex": 17,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 208.7,
+        "centerY": 138.47,
+        "shoulderToHipLength": 59.93
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.934257,
+        "normalizedY": 0.590689
+      }
+    },
+    {
+      "frameIndex": 18,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 207.27,
+        "centerY": 139.28,
+        "shoulderToHipLength": 62.82
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.95113,
+        "normalizedY": 0.543139
+      }
+    },
+    {
+      "frameIndex": 19,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 206.74,
+        "centerY": 139.38,
+        "shoulderToHipLength": 63.23
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.992092,
+        "normalizedY": 0.53424
+      }
+    },
+    {
+      "frameIndex": 20,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 206.93,
+        "centerY": 139.5,
+        "shoulderToHipLength": 64.14
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.994699,
+        "normalizedY": 0.518085
+      }
+    },
+    {
+      "frameIndex": 21,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 205.9,
+        "centerY": 139.47,
+        "shoulderToHipLength": 63.17
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "unavailable",
+        "normalizedX": null,
+        "normalizedY": null
+      }
+    },
+    {
+      "frameIndex": 22,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 205.0767,
+        "centerY": 139.8367,
+        "shoulderToHipLength": 62.65
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "unavailable",
+        "normalizedX": null,
+        "normalizedY": null
+      }
+    },
+    {
+      "frameIndex": 23,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 204.2533,
+        "centerY": 140.2033,
+        "shoulderToHipLength": 62.13
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "estimated",
+        "normalizedX": -0.606685,
+        "normalizedY": 0.542357
+      }
+    },
+    {
+      "frameIndex": 24,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 203.43,
+        "centerY": 140.57,
+        "shoulderToHipLength": 61.61
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.60883,
+        "normalizedY": 0.561597
+      }
+    },
+    {
+      "frameIndex": 25,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 203.33,
+        "centerY": 139.89,
+        "shoulderToHipLength": 60.22
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.367486,
+        "normalizedY": 0.546994
+      }
+    },
+    {
+      "frameIndex": 26,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 203.69,
+        "centerY": 139.41,
+        "shoulderToHipLength": 60.28
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.264764,
+        "normalizedY": 0.553749
+      }
+    },
+    {
+      "frameIndex": 27,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 202.29,
+        "centerY": 139.45,
+        "shoulderToHipLength": 59.26
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.168579,
+        "normalizedY": 0.582855
+      }
+    },
+    {
+      "frameIndex": 28,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 201.47,
+        "centerY": 139.64,
+        "shoulderToHipLength": 60.77
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.143986,
+        "normalizedY": 0.59536
+      }
+    },
+    {
+      "frameIndex": 29,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 200.73,
+        "centerY": 139.72,
+        "shoulderToHipLength": 64.67
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.18664,
+        "normalizedY": 0.561775
+      }
+    },
+    {
+      "frameIndex": 30,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 199.67,
+        "centerY": 139.88,
+        "shoulderToHipLength": 67.02
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.236497,
+        "normalizedY": 0.549239
+      }
+    },
+    {
+      "frameIndex": 31,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 199.38,
+        "centerY": 141.12,
+        "shoulderToHipLength": 68.93
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.287683,
+        "normalizedY": 0.519658
+      }
+    },
+    {
+      "frameIndex": 32,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 198.99,
+        "centerY": 141.31,
+        "shoulderToHipLength": 69.16
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.3476,
+        "normalizedY": 0.522123
+      }
+    },
+    {
+      "frameIndex": 33,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 197.06,
+        "centerY": 140.84,
+        "shoulderToHipLength": 67.33
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.403089,
+        "normalizedY": 0.536908
+      }
+    },
+    {
+      "frameIndex": 34,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 197.48,
+        "centerY": 140.5,
+        "shoulderToHipLength": 64.19
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "estimated",
+        "normalizedX": -0.522356,
+        "normalizedY": 0.571584
+      }
+    },
+    {
+      "frameIndex": 35,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 197.9,
+        "centerY": 140.16,
+        "shoulderToHipLength": 61.05
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.647993,
+        "normalizedY": 0.617035
+      }
+    },
+    {
+      "frameIndex": 36,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 199.23,
+        "centerY": 140.25,
+        "shoulderToHipLength": 58.54
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.761189,
+        "normalizedY": 0.665357
+      }
+    },
+    {
+      "frameIndex": 37,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 200.33,
+        "centerY": 141.39,
+        "shoulderToHipLength": 60.76
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.853028,
+        "normalizedY": 0.624918
+      }
+    },
+    {
+      "frameIndex": 38,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 200.47,
+        "centerY": 141.87,
+        "shoulderToHipLength": 64.04
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.896002,
+        "normalizedY": 0.579013
+      }
+    },
+    {
+      "frameIndex": 39,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 200.02,
+        "centerY": 141.88,
+        "shoulderToHipLength": 66.43
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.934668,
+        "normalizedY": 0.559235
+      }
+    },
+    {
+      "frameIndex": 40,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 199.47,
+        "centerY": 142.26,
+        "shoulderToHipLength": 68.56
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.957847,
+        "normalizedY": 0.531943
+      }
+    },
+    {
+      "frameIndex": 41,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 199.52,
+        "centerY": 142.35,
+        "shoulderToHipLength": 69.76
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.993119,
+        "normalizedY": 0.532683
+      }
+    },
+    {
+      "frameIndex": 42,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 199.59,
+        "centerY": 142.15,
+        "shoulderToHipLength": 70.56
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.985261,
+        "normalizedY": 0.505244
+      }
+    },
+    {
+      "frameIndex": 43,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 200.02,
+        "centerY": 141.53,
+        "shoulderToHipLength": 70.67
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.903354,
+        "normalizedY": 0.495684
+      }
+    },
+    {
+      "frameIndex": 44,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 198.47,
+        "centerY": 142.23,
+        "shoulderToHipLength": 70.59
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "unavailable",
+        "normalizedX": null,
+        "normalizedY": null
+      }
+    },
+    {
+      "frameIndex": 45,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 198.8733,
+        "centerY": 142.15,
+        "shoulderToHipLength": 69.63
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "estimated",
+        "normalizedX": -0.546508,
+        "normalizedY": 0.542726
+      }
+    },
+    {
+      "frameIndex": 46,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 199.2767,
+        "centerY": 142.07,
+        "shoulderToHipLength": 68.67
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "estimated",
+        "normalizedX": -0.585506,
+        "normalizedY": 0.565895
+      }
+    },
+    {
+      "frameIndex": 47,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 199.68,
+        "centerY": 141.99,
+        "shoulderToHipLength": 67.71
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.338946,
+        "normalizedY": 0.559002
+      }
+    },
+    {
+      "frameIndex": 48,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 199.77,
+        "centerY": 142.24,
+        "shoulderToHipLength": 68.09
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.208401,
+        "normalizedY": 0.55412
+      }
+    },
+    {
+      "frameIndex": 49,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 199.24,
+        "centerY": 142.37,
+        "shoulderToHipLength": 70.4
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.151705,
+        "normalizedY": 0.562358
+      }
+    },
+    {
+      "frameIndex": 50,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 199.18,
+        "centerY": 142.94,
+        "shoulderToHipLength": 71.48
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.170257,
+        "normalizedY": 0.572328
+      }
+    },
+    {
+      "frameIndex": 51,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 199.88,
+        "centerY": 142.85,
+        "shoulderToHipLength": 74.81
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.237,
+        "normalizedY": 0.54605
+      }
+    },
+    {
+      "frameIndex": 52,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 199.81,
+        "centerY": 142.17,
+        "shoulderToHipLength": 77.54
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.279985,
+        "normalizedY": 0.54617
+      }
+    },
+    {
+      "frameIndex": 53,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 200.44,
+        "centerY": 142.62,
+        "shoulderToHipLength": 80.13
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.328965,
+        "normalizedY": 0.522276
+      }
+    },
+    {
+      "frameIndex": 54,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 198.77,
+        "centerY": 141.56,
+        "shoulderToHipLength": 80.14
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.375094,
+        "normalizedY": 0.531819
+      }
+    },
+    {
+      "frameIndex": 55,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 199.995,
+        "centerY": 141.62,
+        "shoulderToHipLength": 75.255
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "estimated",
+        "normalizedX": -0.498904,
+        "normalizedY": 0.539499
+      }
+    },
+    {
+      "frameIndex": 56,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 201.22,
+        "centerY": 141.68,
+        "shoulderToHipLength": 70.37
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.562171,
+        "normalizedY": 0.589314
+      }
+    },
+    {
+      "frameIndex": 57,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 202.38,
+        "centerY": 141.26,
+        "shoulderToHipLength": 67.96
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.689818,
+        "normalizedY": 0.640377
+      }
+    },
+    {
+      "frameIndex": 58,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 203.26,
+        "centerY": 141.04,
+        "shoulderToHipLength": 65.99
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.7783,
+        "normalizedY": 0.67586
+      }
+    },
+    {
+      "frameIndex": 59,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 203.94,
+        "centerY": 141.72,
+        "shoulderToHipLength": 68.61
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.829908,
+        "normalizedY": 0.639557
+      }
+    },
+    {
+      "frameIndex": 60,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 204.95,
+        "centerY": 142.24,
+        "shoulderToHipLength": 73.53
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.882497,
+        "normalizedY": 0.585475
+      }
+    },
+    {
+      "frameIndex": 61,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 205.04,
+        "centerY": 142.57,
+        "shoulderToHipLength": 76.74
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.914256,
+        "normalizedY": 0.553427
+      }
+    },
+    {
+      "frameIndex": 62,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 204.26,
+        "centerY": 142.6,
+        "shoulderToHipLength": 78.89
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.927494,
+        "normalizedY": 0.531373
+      }
+    },
+    {
+      "frameIndex": 63,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 205.04,
+        "centerY": 142.69,
+        "shoulderToHipLength": 80.57
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.932357,
+        "normalizedY": 0.513963
+      }
+    },
+    {
+      "frameIndex": 64,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 206.7,
+        "centerY": 142.6,
+        "shoulderToHipLength": 81.68
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.912096,
+        "normalizedY": 0.506366
+      }
+    },
+    {
+      "frameIndex": 65,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 207.19,
+        "centerY": 142.7,
+        "shoulderToHipLength": 80.9
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.826452,
+        "normalizedY": 0.488133
+      }
+    },
+    {
+      "frameIndex": 66,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 205.36,
+        "centerY": 142.39,
+        "shoulderToHipLength": 82.2
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.510097,
+        "normalizedY": 0.505474
+      }
+    },
+    {
+      "frameIndex": 67,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 206.83,
+        "centerY": 142.7,
+        "shoulderToHipLength": 78.94
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "estimated",
+        "normalizedX": -0.546871,
+        "normalizedY": 0.53509
+      }
+    },
+    {
+      "frameIndex": 68,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 208.3,
+        "centerY": 143.01,
+        "shoulderToHipLength": 75.68
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.514535,
+        "normalizedY": 0.539508
+      }
+    },
+    {
+      "frameIndex": 69,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 210.28,
+        "centerY": 142.63,
+        "shoulderToHipLength": 74.73
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.328516,
+        "normalizedY": 0.557607
+      }
+    },
+    {
+      "frameIndex": 70,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 210.95,
+        "centerY": 141.99,
+        "shoulderToHipLength": 75.93
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.229949,
+        "normalizedY": 0.575003
+      }
+    },
+    {
+      "frameIndex": 71,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 210.53,
+        "centerY": 142.16,
+        "shoulderToHipLength": 76.39
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.206179,
+        "normalizedY": 0.613562
+      }
+    },
+    {
+      "frameIndex": 72,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 210.77,
+        "centerY": 142.72,
+        "shoulderToHipLength": 79.85
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.243832,
+        "normalizedY": 0.582592
+      }
+    },
+    {
+      "frameIndex": 73,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 211.13,
+        "centerY": 142.56,
+        "shoulderToHipLength": 81.9
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.289866,
+        "normalizedY": 0.57033
+      }
+    },
+    {
+      "frameIndex": 74,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 212.57,
+        "centerY": 142.44,
+        "shoulderToHipLength": 84.73
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.353476,
+        "normalizedY": 0.555057
+      }
+    },
+    {
+      "frameIndex": 75,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 213.5,
+        "centerY": 142.4,
+        "shoulderToHipLength": 86.35
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.402316,
+        "normalizedY": 0.540706
+      }
+    },
+    {
+      "frameIndex": 76,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 214.52,
+        "centerY": 142.13,
+        "shoulderToHipLength": 85.96
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.476966,
+        "normalizedY": 0.543276
+      }
+    },
+    {
+      "frameIndex": 77,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 215.985,
+        "centerY": 142.175,
+        "shoulderToHipLength": 80.78
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "estimated",
+        "normalizedX": -0.55515,
+        "normalizedY": 0.570748
+      }
+    },
+    {
+      "frameIndex": 78,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 217.45,
+        "centerY": 142.22,
+        "shoulderToHipLength": 75.6
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.691667,
+        "normalizedY": 0.603836
+      }
+    },
+    {
+      "frameIndex": 79,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 219.13,
+        "centerY": 142.04,
+        "shoulderToHipLength": 72.2
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.809141,
+        "normalizedY": 0.641274
+      }
+    },
+    {
+      "frameIndex": 80,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 221.1,
+        "centerY": 141.48,
+        "shoulderToHipLength": 71.78
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.913068,
+        "normalizedY": 0.651992
+      }
+    },
+    {
+      "frameIndex": 81,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 221.41,
+        "centerY": 141.89,
+        "shoulderToHipLength": 73.1
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.953078,
+        "normalizedY": 0.633105
+      }
+    },
+    {
+      "frameIndex": 82,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 223.34,
+        "centerY": 142.16,
+        "shoulderToHipLength": 79.73
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.965132,
+        "normalizedY": 0.577825
+      }
+    },
+    {
+      "frameIndex": 83,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 224.54,
+        "centerY": 143.01,
+        "shoulderToHipLength": 81.18
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -1.012688,
+        "normalizedY": 0.547425
+      }
+    },
+    {
+      "frameIndex": 84,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 224.93,
+        "centerY": 142.3,
+        "shoulderToHipLength": 81.47
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -1.043206,
+        "normalizedY": 0.554683
+      }
+    },
+    {
+      "frameIndex": 85,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 226.54,
+        "centerY": 142.17,
+        "shoulderToHipLength": 80.55
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -1.05388,
+        "normalizedY": 0.551707
+      }
+    },
+    {
+      "frameIndex": 86,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 228.41,
+        "centerY": 142.06,
+        "shoulderToHipLength": 78.47
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -1.009558,
+        "normalizedY": 0.541226
+      }
+    },
+    {
+      "frameIndex": 87,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 228.96,
+        "centerY": 141.68,
+        "shoulderToHipLength": 76.57
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.875669,
+        "normalizedY": 0.528797
+      }
+    },
+    {
+      "frameIndex": 88,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 229.81,
+        "centerY": 141.915,
+        "shoulderToHipLength": 74.78
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "estimated",
+        "normalizedX": -0.663413,
+        "normalizedY": 0.568267
+      }
+    },
+    {
+      "frameIndex": 89,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 230.66,
+        "centerY": 142.15,
+        "shoulderToHipLength": 72.99
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.637211,
+        "normalizedY": 0.584738
+      }
+    },
+    {
+      "frameIndex": 90,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 232.64,
+        "centerY": 140.85,
+        "shoulderToHipLength": 69.33
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.40877,
+        "normalizedY": 0.585317
+      }
+    },
+    {
+      "frameIndex": 91,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 234.79,
+        "centerY": 139.36,
+        "shoulderToHipLength": 66.49
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.257332,
+        "normalizedY": 0.6225
+      }
+    },
+    {
+      "frameIndex": 92,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 236.55,
+        "centerY": 139.86,
+        "shoulderToHipLength": 66.14
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.138796,
+        "normalizedY": 0.617176
+      }
+    },
+    {
+      "frameIndex": 93,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 235.95,
+        "centerY": 139.62,
+        "shoulderToHipLength": 66.83
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.098758,
+        "normalizedY": 0.630106
+      }
+    },
+    {
+      "frameIndex": 94,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 235.31,
+        "centerY": 138.71,
+        "shoulderToHipLength": 69.99
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.132305,
+        "normalizedY": 0.644521
+      }
+    },
+    {
+      "frameIndex": 95,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 236.04,
+        "centerY": 139.73,
+        "shoulderToHipLength": 71.41
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.177846,
+        "normalizedY": 0.625543
+      }
+    },
+    {
+      "frameIndex": 96,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 236.57,
+        "centerY": 139.92,
+        "shoulderToHipLength": 74.41
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.2458,
+        "normalizedY": 0.598038
+      }
+    },
+    {
+      "frameIndex": 97,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 237.08,
+        "centerY": 139.54,
+        "shoulderToHipLength": 77.13
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.300402,
+        "normalizedY": 0.585246
+      }
+    },
+    {
+      "frameIndex": 98,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 236.67,
+        "centerY": 139.33,
+        "shoulderToHipLength": 76.46
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.365027,
+        "normalizedY": 0.601883
+      }
+    },
+    {
+      "frameIndex": 99,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 236.56,
+        "centerY": 138.47,
+        "shoulderToHipLength": 75.5
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.437351,
+        "normalizedY": 0.609272
+      }
+    },
+    {
+      "frameIndex": 100,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 237.875,
+        "centerY": 138.42,
+        "shoulderToHipLength": 71.505
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "estimated",
+        "normalizedX": -0.516817,
+        "normalizedY": 0.622894
+      }
+    },
+    {
+      "frameIndex": 101,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 239.19,
+        "centerY": 138.37,
+        "shoulderToHipLength": 67.51
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.643016,
+        "normalizedY": 0.696341
+      }
+    },
+    {
+      "frameIndex": 102,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 241.76,
+        "centerY": 138.33,
+        "shoulderToHipLength": 65.42
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.790584,
+        "normalizedY": 0.713849
+      }
+    },
+    {
+      "frameIndex": 103,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 242.74,
+        "centerY": 138.35,
+        "shoulderToHipLength": 66.23
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.867281,
+        "normalizedY": 0.712668
+      }
+    },
+    {
+      "frameIndex": 104,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 243.81,
+        "centerY": 139.76,
+        "shoulderToHipLength": 69.03
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.908735,
+        "normalizedY": 0.660437
+      }
+    },
+    {
+      "frameIndex": 105,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 244.41,
+        "centerY": 139.57,
+        "shoulderToHipLength": 71.67
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.949491,
+        "normalizedY": 0.629134
+      }
+    },
+    {
+      "frameIndex": 106,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 243.83,
+        "centerY": 139.74,
+        "shoulderToHipLength": 73.11
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.965668,
+        "normalizedY": 0.606347
+      }
+    },
+    {
+      "frameIndex": 107,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 243.46,
+        "centerY": 139.87,
+        "shoulderToHipLength": 72.34
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.985485,
+        "normalizedY": 0.611557
+      }
+    },
+    {
+      "frameIndex": 108,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 243.28,
+        "centerY": 139.81,
+        "shoulderToHipLength": 72.24
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.948505,
+        "normalizedY": 0.587625
+      }
+    },
+    {
+      "frameIndex": 109,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 243.73,
+        "centerY": 140.21,
+        "shoulderToHipLength": 70.36
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.863985,
+        "normalizedY": 0.57689
+      }
+    },
+    {
+      "frameIndex": 110,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 244.1,
+        "centerY": 140.22,
+        "shoulderToHipLength": 67.9033
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "unavailable",
+        "normalizedX": null,
+        "normalizedY": null
+      }
+    },
+    {
+      "frameIndex": 111,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 244.47,
+        "centerY": 140.23,
+        "shoulderToHipLength": 65.4467
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "unavailable",
+        "normalizedX": null,
+        "normalizedY": null
+      }
+    },
+    {
+      "frameIndex": 112,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 244.84,
+        "centerY": 140.24,
+        "shoulderToHipLength": 62.99
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.458962,
+        "normalizedY": 0.625179
+      }
+    },
+    {
+      "frameIndex": 113,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 246.46,
+        "centerY": 139.76,
+        "shoulderToHipLength": 61.49
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.301187,
+        "normalizedY": 0.650838
+      }
+    },
+    {
+      "frameIndex": 114,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 246.02,
+        "centerY": 140.36,
+        "shoulderToHipLength": 59.64
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.185278,
+        "normalizedY": 0.669852
+      }
+    },
+    {
+      "frameIndex": 115,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 245.67,
+        "centerY": 140.3,
+        "shoulderToHipLength": 60.57
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.119201,
+        "normalizedY": 0.68136
+      }
+    },
+    {
+      "frameIndex": 116,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 245.27,
+        "centerY": 140.87,
+        "shoulderToHipLength": 62.65
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "unavailable",
+        "normalizedX": null,
+        "normalizedY": null
+      }
+    },
+    {
+      "frameIndex": 117,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 244.87,
+        "centerY": 141.44,
+        "shoulderToHipLength": 64.73
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.188784,
+        "normalizedY": 0.636336
+      }
+    },
+    {
+      "frameIndex": 118,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 244.4,
+        "centerY": 142.24,
+        "shoulderToHipLength": 65.64
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.235679,
+        "normalizedY": 0.619439
+      }
+    },
+    {
+      "frameIndex": 119,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 244.68,
+        "centerY": 141.76,
+        "shoulderToHipLength": 66.83
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.293431,
+        "normalizedY": 0.619033
+      }
+    },
+    {
+      "frameIndex": 120,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 244.49,
+        "centerY": 141.12,
+        "shoulderToHipLength": 66.19
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.356398,
+        "normalizedY": 0.636501
+      }
+    },
+    {
+      "frameIndex": 121,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 244.2,
+        "centerY": 141.15,
+        "shoulderToHipLength": 64.95
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.442648,
+        "normalizedY": 0.649885
+      }
+    },
+    {
+      "frameIndex": 122,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 243.92,
+        "centerY": 139.76,
+        "shoulderToHipLength": 63.64
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.51697,
+        "normalizedY": 0.678347
+      }
+    },
+    {
+      "frameIndex": 123,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 244.49,
+        "centerY": 140.44,
+        "shoulderToHipLength": 61.07
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.585558,
+        "normalizedY": 0.692812
+      }
+    },
+    {
+      "frameIndex": 124,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 245.83,
+        "centerY": 140.09,
+        "shoulderToHipLength": 58.6
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.703925,
+        "normalizedY": 0.745563
+      }
+    },
+    {
+      "frameIndex": 125,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 247.27,
+        "centerY": 140.38,
+        "shoulderToHipLength": 57.54
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.832986,
+        "normalizedY": 0.76121
+      }
+    },
+    {
+      "frameIndex": 126,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 247.94,
+        "centerY": 141.03,
+        "shoulderToHipLength": 58.41
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.908235,
+        "normalizedY": 0.738401
+      }
+    },
+    {
+      "frameIndex": 127,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 247.63,
+        "centerY": 142.17,
+        "shoulderToHipLength": 59.43
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.951708,
+        "normalizedY": 0.711425
+      }
+    },
+    {
+      "frameIndex": 128,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 247.84,
+        "centerY": 142.25,
+        "shoulderToHipLength": 61.18
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.998856,
+        "normalizedY": 0.689114
+      }
+    },
+    {
+      "frameIndex": 129,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 247.34,
+        "centerY": 142.43,
+        "shoulderToHipLength": 62.41
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -1.01378,
+        "normalizedY": 0.662234
+      }
+    },
+    {
+      "frameIndex": 130,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 247.49,
+        "centerY": 142.04,
+        "shoulderToHipLength": 62.05
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -1.026591,
+        "normalizedY": 0.666882
+      }
+    },
+    {
+      "frameIndex": 131,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 247.38,
+        "centerY": 141.98,
+        "shoulderToHipLength": 60.16
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -1.013963,
+        "normalizedY": 0.68484
+      }
+    },
+    {
+      "frameIndex": 132,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 246.135,
+        "centerY": 142.24,
+        "shoulderToHipLength": 58.355
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "estimated",
+        "normalizedX": -0.868906,
+        "normalizedY": 0.678605
+      }
+    },
+    {
+      "frameIndex": 133,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 244.89,
+        "centerY": 142.5,
+        "shoulderToHipLength": 56.55
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.652166,
+        "normalizedY": 0.701149
+      }
+    },
+    {
+      "frameIndex": 134,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 244.4,
+        "centerY": 142.78,
+        "shoulderToHipLength": 54.84
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.543581,
+        "normalizedY": 0.724289
+      }
+    },
+    {
+      "frameIndex": 135,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 243.9,
+        "centerY": 142.02,
+        "shoulderToHipLength": 51.16
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.439601,
+        "normalizedY": 0.742572
+      }
+    },
+    {
+      "frameIndex": 136,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 243.29,
+        "centerY": 142.02,
+        "shoulderToHipLength": 47.54
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.27114,
+        "normalizedY": 0.796592
+      }
+    },
+    {
+      "frameIndex": 137,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 242.34,
+        "centerY": 142.525,
+        "shoulderToHipLength": 47.03
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "estimated",
+        "normalizedX": -0.120561,
+        "normalizedY": 0.794918
+      }
+    },
+    {
+      "frameIndex": 138,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 241.39,
+        "centerY": 143.03,
+        "shoulderToHipLength": 46.52
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.095658,
+        "normalizedY": 0.818573
+      }
+    },
+    {
+      "frameIndex": 139,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 239.92,
+        "centerY": 143.36,
+        "shoulderToHipLength": 47.36
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.144003,
+        "normalizedY": 0.8144
+      }
+    },
+    {
+      "frameIndex": 140,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 238.04,
+        "centerY": 143.045,
+        "shoulderToHipLength": 49.71
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "estimated",
+        "normalizedX": -0.176624,
+        "normalizedY": 0.803561
+      }
+    },
+    {
+      "frameIndex": 141,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 236.16,
+        "centerY": 142.73,
+        "shoulderToHipLength": 52.06
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.208605,
+        "normalizedY": 0.771226
+      }
+    },
+    {
+      "frameIndex": 142,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 234.99,
+        "centerY": 142.37,
+        "shoulderToHipLength": 54.29
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.242586,
+        "normalizedY": 0.757966
+      }
+    },
+    {
+      "frameIndex": 143,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 233.41,
+        "centerY": 142.71,
+        "shoulderToHipLength": 56.05
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.279037,
+        "normalizedY": 0.741302
+      }
+    },
+    {
+      "frameIndex": 144,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 232.53,
+        "centerY": 143.62,
+        "shoulderToHipLength": 56.74
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.32129,
+        "normalizedY": 0.712196
+      }
+    },
+    {
+      "frameIndex": 145,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 231.39,
+        "centerY": 144.26,
+        "shoulderToHipLength": 56.84
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.376495,
+        "normalizedY": 0.706017
+      }
+    },
+    {
+      "frameIndex": 146,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 229.23,
+        "centerY": 144.22,
+        "shoulderToHipLength": 55.92
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.417561,
+        "normalizedY": 0.696531
+      }
+    },
+    {
+      "frameIndex": 147,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 227.82,
+        "centerY": 144.41,
+        "shoulderToHipLength": 54.52
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.479274,
+        "normalizedY": 0.698092
+      }
+    },
+    {
+      "frameIndex": 148,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 226.975,
+        "centerY": 143.755,
+        "shoulderToHipLength": 53.16
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "estimated",
+        "normalizedX": -0.495579,
+        "normalizedY": 0.741441
+      }
+    },
+    {
+      "frameIndex": 149,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 226.13,
+        "centerY": 143.1,
+        "shoulderToHipLength": 51.8
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.581467,
+        "normalizedY": 0.79112
+      }
+    },
+    {
+      "frameIndex": 150,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 226.99,
+        "centerY": 142.43,
+        "shoulderToHipLength": 50.47
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.717654,
+        "normalizedY": 0.840301
+      }
+    },
+    {
+      "frameIndex": 151,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 226.69,
+        "centerY": 143.37,
+        "shoulderToHipLength": 51.6
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.762597,
+        "normalizedY": 0.809109
+      }
+    },
+    {
+      "frameIndex": 152,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 226.27,
+        "centerY": 144.5,
+        "shoulderToHipLength": 53.73
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.802345,
+        "normalizedY": 0.750047
+      }
+    },
+    {
+      "frameIndex": 153,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 224.28,
+        "centerY": 144.91,
+        "shoulderToHipLength": 54.9
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.798907,
+        "normalizedY": 0.739344
+      }
+    },
+    {
+      "frameIndex": 154,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 222.47,
+        "centerY": 144.81,
+        "shoulderToHipLength": 55.6
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.825,
+        "normalizedY": 0.723201
+      }
+    },
+    {
+      "frameIndex": 155,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 220.81,
+        "centerY": 145.18,
+        "shoulderToHipLength": 55.95
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.855407,
+        "normalizedY": 0.714388
+      }
+    },
+    {
+      "frameIndex": 156,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 219.09,
+        "centerY": 145.04,
+        "shoulderToHipLength": 55.42
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.884338,
+        "normalizedY": 0.725731
+      }
+    },
+    {
+      "frameIndex": 157,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 216.53,
+        "centerY": 145.4,
+        "shoulderToHipLength": 53.69
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.903706,
+        "normalizedY": 0.725647
+      }
+    },
+    {
+      "frameIndex": 158,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 214.48,
+        "centerY": 145.93,
+        "shoulderToHipLength": 53.01
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.893794,
+        "normalizedY": 0.717789
+      }
+    },
+    {
+      "frameIndex": 159,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 212.41,
+        "centerY": 146.21,
+        "shoulderToHipLength": 51.13
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.870526,
+        "normalizedY": 0.726384
+      }
+    },
+    {
+      "frameIndex": 160,
+      "torsoReference": {
+        "status": "estimated",
+        "centerX": 210.09,
+        "centerY": 146.845,
+        "shoulderToHipLength": 50.995
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "estimated",
+        "normalizedX": -0.757329,
+        "normalizedY": 0.728013
+      }
+    },
+    {
+      "frameIndex": 161,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 207.77,
+        "centerY": 147.48,
+        "shoulderToHipLength": 50.86
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.599096,
+        "normalizedY": 0.699567
+      }
+    },
+    {
+      "frameIndex": 162,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 206.1,
+        "centerY": 148.59,
+        "shoulderToHipLength": 48.85
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.587922,
+        "normalizedY": 0.718526
+      }
+    },
+    {
+      "frameIndex": 163,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 204.27,
+        "centerY": 148.71,
+        "shoulderToHipLength": 47.52
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "original",
+        "normalizedX": -0.622054,
+        "normalizedY": 0.732744
+      }
+    },
+    {
+      "frameIndex": 164,
+      "torsoReference": {
+        "status": "original",
+        "centerX": 202.48,
+        "centerY": 149.17,
+        "shoulderToHipLength": 45.44
+      },
+      "rightBackPawTorsoRelative": {
+        "status": "unavailable",
+        "normalizedX": null,
+        "normalizedY": null
+      }
+    }
+  ]
+}

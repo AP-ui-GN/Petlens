@@ -1,0 +1,38 @@
+{
+  "description": "Manual left-hip clicks only. Coordinates are in original-frame pixels with origin at the top-left. RTMPose predictions are stored separately.",
+  "sourceVideo": "tmp/4300700-sd_426_240_30fps.mp4",
+  "frames": [
+    {
+      "frameIndex": 45,
+      "image": "frames/frame-045.jpg",
+      "imageWidth": 426,
+      "imageHeight": 240,
+      "manualX": null,
+      "manualY": null
+    },
+    {
+      "frameIndex": 55,
+      "image": "frames/frame-055.jpg",
+      "imageWidth": 426,
+      "imageHeight": 240,
+      "manualX": null,
+      "manualY": null
+    },
+    {
+      "frameIndex": 77,
+      "image": "frames/frame-077.jpg",
+      "imageWidth": 426,
+      "imageHeight": 240,
+      "manualX": null,
+      "manualY": null
+    },
+    {
+      "frameIndex": 100,
+      "image": "frames/frame-100.jpg",
+      "imageWidth": 426,
+      "imageHeight": 240,
+      "manualX": null,
+      "manualY": null
+    }
+  ]
+}

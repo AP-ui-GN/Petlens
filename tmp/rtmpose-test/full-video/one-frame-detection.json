@@ -1,0 +1,31 @@
+{
+  "video": "tmp/4300700-sd_426_240_30fps.mp4",
+  "model": "PekingU/rtdetr_r50vd_coco_o365",
+  "device": "cpu",
+  "frameCount": 165,
+  "fps": 29.97002997002997,
+  "frameIndex": 75,
+  "modelLoadSeconds": 0.5499,
+  "detectionInferenceSeconds": 10.0975,
+  "detectionThreshold": 0.3,
+  "detections": [
+    {
+      "bboxXyxy": [
+        131.05,
+        87.57,
+        335.05,
+        194.98
+      ],
+      "confidence": 0.961721
+    }
+  ],
+  "selectedDog": {
+    "bboxXyxy": [
+      131.05,
+      87.57,
+      335.05,
+      194.98
+    ],
+    "confidence": 0.961721
+  }
+}

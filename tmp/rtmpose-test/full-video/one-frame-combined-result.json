@@ -1,0 +1,139 @@
+{
+  "video": "tmp/4300700-sd_426_240_30fps.mp4",
+  "detectorModel": "PekingU/rtdetr_r50vd_coco_o365",
+  "poseModel": "OpenMMLab RTMPose-m AP-10K",
+  "device": "cpu",
+  "detectorConfidence": 0.961721,
+  "boundingBoxXyxy": [
+    131.05,
+    87.57,
+    335.05,
+    194.98
+  ],
+  "poseModelLoadSeconds": 6.7793,
+  "poseInferenceSeconds": 2.7348,
+  "frame": {
+    "frameIndex": 75,
+    "timestampSeconds": 2.5025,
+    "detectionInferenceSeconds": 10.0975,
+    "detectionSuccess": true,
+    "detectionConfidence": 0.961721,
+    "boundingBoxXyxy": [
+      131.05,
+      87.57,
+      335.05,
+      194.98
+    ],
+    "poseInferenceSeconds": 2.7348,
+    "keypoints": [
+      {
+        "name": "left_eye",
+        "x": 324.19,
+        "y": 115.38,
+        "rawScore": 1.2049
+      },
+      {
+        "name": "right_eye",
+        "x": 315.23,
+        "y": 116.87,
+        "rawScore": 1.3507
+      },
+      {
+        "name": "nose",
+        "x": 329.17,
+        "y": 134.8,
+        "rawScore": 1.3274
+      },
+      {
+        "name": "neck",
+        "x": 274.39,
+        "y": 112.89,
+        "rawScore": 0.7538
+      },
+      {
+        "name": "root_of_tail",
+        "x": 161.83,
+        "y": 95.95,
+        "rawScore": 1.0932
+      },
+      {
+        "name": "left_shoulder",
+        "x": 247.49,
+        "y": 145.26,
+        "rawScore": 1.3234
+      },
+      {
+        "name": "left_elbow",
+        "x": 243.51,
+        "y": 165.18,
+        "rawScore": 1.0865
+      },
+      {
+        "name": "left_front_paw",
+        "x": 243.01,
+        "y": 186.1,
+        "rawScore": 1.3767
+      },
+      {
+        "name": "right_shoulder",
+        "x": 265.42,
+        "y": 148.25,
+        "rawScore": 1.174
+      },
+      {
+        "name": "right_elbow",
+        "x": 283.35,
+        "y": 166.18,
+        "rawScore": 1.0584
+      },
+      {
+        "name": "right_front_paw",
+        "x": 296.3,
+        "y": 186.6,
+        "rawScore": 1.2975
+      },
+      {
+        "name": "left_hip",
+        "x": 162.33,
+        "y": 136.79,
+        "rawScore": 0.9129
+      },
+      {
+        "name": "left_knee",
+        "x": 145.39,
+        "y": 152.23,
+        "rawScore": 1.1405
+      },
+      {
+        "name": "left_back_paw",
+        "x": 143.4,
+        "y": 181.12,
+        "rawScore": 0.9761
+      },
+      {
+        "name": "right_hip",
+        "x": 178.76,
+        "y": 139.28,
+        "rawScore": 0.9505
+      },
+      {
+        "name": "right_knee",
+        "x": 168.3,
+        "y": 164.19,
+        "rawScore": 1.0733
+      },
+      {
+        "name": "right_back_paw",
+        "x": 178.76,
+        "y": 189.09,
+        "rawScore": 1.2704
+      }
+    ],
+    "torsoReference": {
+      "centerX": 213.5,
+      "centerY": 142.4,
+      "shoulderToHipLength": 86.35
+    }
+  },
+  "annotatedImage": "tmp/rtmpose-test/full-video/one-frame-combined-annotated.jpg"
+}
