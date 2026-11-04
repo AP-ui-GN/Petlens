@@ -1,0 +1,212 @@
+Fixed Reveal model for adjudication.
+
+Cause: the JavaScript handler blocked Reveal unless human labels were certain. Its error appeared only at the top of the page, so the button could seem unresponsive.
+
+Reveal now displays predictions even with uncertain or unmarked human labels. Definite swap/no-swap verdicts still require certain human labels and explicit model review. Loading, success, and failure messages appear beside the controls. Predictions remain hidden until Reveal is clicked and are hidden again when the frame pair changes.
+
+Tests passed for frames 21-22 with uncertain/unmarked labels, verdict restrictions, network/loading failures, and unchanged human paw labels. All 12 evaluator tests also passed. These are simulated interface interaction tests, not a live browser test.
+
+Refresh the annotation page to load the fix. Do not clear browser storage; saved annotations do not need to be reset. Production code, predictions, and saved annotation JSON files were unchanged.
+
+Multi-video RT-DETR + RTMPose evaluation workflow
+
+Implemented in tmp/rtmpose-test/multi-video-evaluation/.
+
+Instructions for processing a new video:
+  tmp/rtmpose-test/multi-video-evaluation/README.md
+Evaluation runner:
+  tmp/rtmpose-test/multi-video-evaluation/evaluate.py
+Validation results:
+  tmp/rtmpose-test/multi-video-evaluation/VALIDATION.md
+
+Each run gets a separate folder containing predictions, annotated video, trajectory graphs, availability statistics, identity flags, candidate cycles, and a provenance/failure manifest. Existing experimental analysis is reused; missing points remain missing.
+
+Validated: 33 tests passed, plus a complete 165-frame saved-prediction replay with video verification.
+
+Remaining limit: New model inference has not been executed here because the runtime and weights are absent. The instructions cover setup and the command to process another video. No production app files were changed.
+
+Multi-video inference readiness: Codespaces environment inspection
+
+The workflow is available, but new-video inference is not ready yet. Nothing was installed or modified during the inspection.
+
+1. Already available
+Evaluation scripts, saved predictions, OpenCV/NumPy in Python 3.14, and additional analysis packages under walking-cycle-tools. Python 3.12 and virtualenv are installed, so downloading Python 3.11 is unnecessary.
+
+2. Missing
+PyTorch, Transformers, RTMLib, ONNX Runtime, and a complete analysis environment for Python 3.12, including SciPy and Pillow. No RT-DETR or RTMPose weights were found in the accessible repository, Python environments, or model caches. The README also omits explicitly installing Pillow.
+
+3. Commands to run when setup is authorized
+Replace only /absolute/path/new-video.mp4. These commands were provided as instructions and have not been executed.
+
+cd /workspaces/Petlens
+E="$PWD/tmp/rtmpose-test/multi-video-evaluation"
+
+/usr/local/py-utils/bin/virtualenv --python /usr/bin/python3 "$E/.venv"
+source "$E/.venv/bin/activate"
+
+python -m pip install 'torch>=2.2,<3' torchvision \
+  --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -r "$E/requirements.txt" pillow
+
+export HF_HOME="$E/models/huggingface"
+mkdir -p "$E/models"
+
+curl -fL \
+  https://download.openmmlab.com/mmpose/v1/projects/rtmposev1/onnx_sdk/rtmpose-m_simcc-ap10k_pt-aic-coco_210e-256x256-7a041aa1_20230206.zip \
+  -o "$E/models/pose.zip"
+
+python - "$E/models" <<'PY'
+import sys, zipfile
+from pathlib import Path
+folder = Path(sys.argv[1])
+with zipfile.ZipFile(folder / "pose.zip") as archive:
+    models = [n for n in archive.namelist() if n.endswith(".onnx")]
+    assert len(models) == 1, models
+    (folder / "rtmpose-ap10k.onnx").write_bytes(archive.read(models[0]))
+PY
+
+python -m pip freeze > "$E/environment-lock.txt"
+POSE_HASH=$(sha256sum "$E/models/rtmpose-ap10k.onnx" | cut -d' ' -f1)
+
+OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python "$E/evaluate.py" \
+  --video /absolute/path/new-video.mp4 \
+  --run-id dog02-sideview-take01 \
+  --pose-onnx "$E/models/rtmpose-ap10k.onnx" \
+  --pose-sha256 "$POSE_HASH" \
+  --detector-revision 457857cec8ac28ddede40ecee9eed2beca321af8
+
+The detector downloads automatically on first use. Its revision was verified through Hugging Face. The pose archive is the official AP-10K export listed by RTMLib:
+https://github.com/Tau-J/rtmlib#animal
+Dependency compatibility still needs an actual inference smoke test.
+
+4. CPU practicality
+Reasonable for short offline clips. This Codespace has 2 CPUs, 7.8 GiB RAM, and approximately 15 GiB free workspace storage. Expect minutes rather than real-time processing. The historical run recorded about 2.34 seconds per frame, but that is not a benchmark of this current setup. Start with a 5-10-second clip.
+
+Results will appear in:
+tmp/rtmpose-test/multi-video-evaluation/runs/dog02-sideview-take01/
+
+
+Multi-video inference setup and smoke-test results — 2026-11-02
+
+This update supersedes the missing-runtime, missing-weights, and untested-inference status in the earlier readiness inspection above.
+
+# Environment revalidation — 2026-11-02
+
+PASS. Reused the existing isolated Python 3.12.3 `.venv` (system packages disabled), installed dependencies, official pose archive/ONNX and detector cache. No dependency installation or model download was needed in this run. All ten entries in `SHA256SUMS` match; ZIP CRC and ONNX checker pass. `pip check` passes. Original setup and download provenance remain in `SETUP-REPORT.md` and `models/provenance.json`.
+
+Installed: PyTorch 2.6.0+cpu, Transformers 4.49.0, RTMLib 0.0.13, ONNX Runtime 1.20.1, SciPy 1.15.2, Pillow 11.1.0, NumPy 1.26.4, headless OpenCV contrib 4.10.0.84. Exact versions: `environment-lock.txt`.
+
+Both models loaded and executed successfully on CPU, offline, using the unchanged evaluator adapter. Existing dog video frames 0, 30 and 60 each yielded one dog and 17 finite AP-10K keypoints. Errors: none. Combined model loading: 19.455 s. Peak process RSS after loading: 554.1 MiB; peak through inference: 938.1 MiB. Memory includes imports and both models; no per-model attribution. Two Torch CPU threads; default ONNX Runtime threading.
+
+| Frame | RT-DETR forward (s) | RTMPose call (s) | Combined adapter (s) |
+|---|---:|---:|---:|
+| 0 | 5.162 | 0.206 | 5.515 |
+| 30 | 3.014 | 0.090 | 3.112 |
+| 60 | 2.753 | 0.095 | 2.856 |
+
+First frame includes cold inference. Detector timing excludes processor preprocessing/postprocessing; pose timing includes RTMLib preprocessing/decoding. Three frames are a smoke test, not a benchmark or accuracy evaluation.
+
+Model SHA-256:
+
+- RT-DETR safetensors: `59abc0b00bea0cc8f7e9ce053c29189a348605bb337123609a7fe02e4ea830a0`
+- RTMPose ONNX: `1cfd1c86e0d9e5d5f95178bcd95ee9a4e8386a624cd3c57519f27ff58cac7f28`
+- Official pose ZIP: `2d75445331cf2f21d6e164430f96ffa765cd874872965ae1736932dda03987f0`
+
+Detector revision: `457857cec8ac28ddede40ecee9eed2beca321af8`. Pose hashes are recorded fingerprints, not independently published vendor checksums.
+
+Raw result: `result.json` in `smoke-20261102T012926Z/`; console log: `smoke-recheck-20261102.log`. Reproduction from repository root:
+
+```bash
+HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 bash tmp/rtmpose-test/multi-video-evaluation/python-env.sh tmp/rtmpose-test/multi-video-evaluation/smoke_test.py
+```
+
+Smoke gate passes. No new video or full multi-video evaluation was run. No production code was modified and no model was retrained. All new artifacts are under this study directory.
+
+
+Second-video evaluation readiness — 2026-11-02
+
+The CPU inference smoke test has passed. A workspace search found no suitable independent second dog-walking video. The available videos are the original tmp/4300700-sd_426_240_30fps.mp4 (165 frames) or annotated/trimmed derivatives of that same clip. PetLens-paw-review.mp4 is byte-identical to the existing annotated H.264 derivative; it is not a second input.
+
+Place a new video at:
+/workspaces/Petlens/tmp/rtmpose-test/multi-video-evaluation/inputs/dog02-walking.mp4
+
+The inputs directory has been created. Prefer a continuous side view of one dog walking, with all paws visible. Evaluation is waiting for this new input; no second-video inference has run.
+
+Once available, verify that the input is distinct from the original clip, then use the existing evaluation pipeline, isolated Python environment and cached model weights. Generate the annotated video, body-relative paw trajectories, identity audit, candidate gait cycles and tracking reliability report. Report actual processing time, missing detections, suspected identity swaps and the best supported candidate walking cycle, including uncertainty. Do not automatically correct uncertain paw identities or claim clinical accuracy. No production app changes or retraining are required.
+
+
+Second dog video evaluation completed — 2026-11-02
+
+# Second dog video: full evaluation results
+
+Completed using the existing CPU environment and cached RT-DETR + RTMPose models, with network downloads disabled. No dependency installations, production code changes, training, smoothing, interpolation, or identity corrections.
+
+Input: `test/Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s003.ogv`. This is distinct from the original 165-frame test clip. Original OGV preserved. OpenCV converted all 60 frames to a 960×544 MP4 at 12 fps, with identical decoded timestamps (maximum difference 0 seconds). Conversion is lossy MP4V and omits audio; provenance and hashes are in `../../inputs/dog02-conversion.json`.
+
+## Processing
+
+- Evaluation total: 155.319 seconds, including model loading, inference, analysis and rendering; excludes video conversion and interpreter startup/import of the evaluator.
+- Inference loop: 146.587 seconds for 60 frames (2.443 seconds/frame), including decoding/preprocessing; excludes model loading.
+- Analysis: 1.826 seconds; annotated video render and decode verification: 1.062 seconds.
+- Peak process RSS: 918.2 MiB, including imports, loading and processing.
+- Dog detections: 60/60. Detector/pose errors: none. Body reference: usable in 60/60.
+- All four paws usable together: 47/60 (78.3%). Longest uninterrupted all-paw segment: frames 37–59, 3.083–4.917 seconds (23 samples).
+- Annotated output: all 60 frames written and decoded successfully, without audio.
+
+## Paw availability
+
+Frame indices are zero-based. Missing means rejected by the existing score threshold, not imputed.
+
+| Model paw label | Usable frames | Missing frames |
+|---|---:|---|
+| left_front_paw | 54/60 (90.0%) | 30, 31, 32, 34, 35, 36 |
+| right_front_paw | 51/60 (85.0%) | 0, 1, 2, 3, 4, 9, 33, 34, 35 |
+| left_back_paw | 59/60 (98.3%) | 0 |
+| right_back_paw | 55/60 (91.7%) | 2, 3, 33, 34, 35 |
+
+## Temporal tracking problems
+
+Of 118 adjacent-frame pair comparisons (59 front and 59 hind), 95 are assessable and 23 cannot be assessed because accepted points are missing. Six comparisons have flags:
+
+- Hind frames 7→8 (0.583→0.667 s): one possible identity swap.
+- Hind frames 4→5, 8→9, 9→10: ambiguous overlap.
+- Front frames 37→38, 38→39: ambiguous overlap.
+
+The flagged-frame contact sheet is `tracking-review.jpg`. The hind labels visibly change association around overlapping paws; this supports reviewing the flagged interval but does not establish anatomical identities. These are provisional audit flags, not confirmed swaps. Missing/unflagged comparisons cannot establish correct identity. No points or labels were changed. The separate large-jump heuristic reports no suspicious jumps; that does not override the swap/overlap flags.
+
+## Candidate cycles
+
+One candidate interval: model-labeled right hind paw, frames 8–24, 0.667–2.000 seconds, duration 1.333 seconds, between two image-X maxima. It lacks a qualifying opposite extremum, so it is **not a complete numerical oscillation**. Hind overlap flags occur at 8→9 and 9→10, and the right-front paw is unavailable at frame 9. A possible hind identity swap immediately precedes its start at 7→8.
+
+There is no supported best complete walking-cycle candidate: `bestUnverifiedRawCycle` is null, complete numerical oscillations = 0, verified anatomical walking cycles = 0. The available interval is retained for review, not promoted to a valid stride or clinical measurement. No thresholds were relaxed to manufacture a cycle.
+
+## Artifacts
+
+- `annotated.mp4`: complete annotated video.
+- Four `*_paw.svg` files and `normalized-paws.csv`: body-relative raw paw trajectories with gaps.
+- `predictions.json` and `frame-log.jsonl`: raw model outputs.
+- `temporal-audit.json` and `identity-audit.csv`: temporal flags and unassessable comparisons.
+- `cycle-analysis.json`, `candidate-cycles.csv`, `candidate-events.csv`: numerical candidates and blockers.
+- `summary.json`, `REPORT.md`, `manifest.json`, `render-manifest.json`, `processing-time.json`: reliability, provenance and verification.
+- `tracking-review.jpg`: flagged-frame contact sheet.
+
+Normalization subtracts the neck/tail midpoint and divides by neck–tail distance, preserving image axes; it does not rotate into anatomical body axes. Results describe model output reliability, not clinical accuracy or validated foot contacts. Cross-video comparison is in `../../comparison.csv`; the original runs replay historical predictions with incomplete historical weight provenance, while this run executes the cached models, so this is not a controlled accuracy comparison.
+
+Results directory: tmp/rtmpose-test/multi-video-evaluation/runs/dog02-walking-20261102
+
+
+Second-video evaluation summary
+
+Completed evaluation of the uploaded OGV dog-walking video. The original was preserved and all 60 frames were converted to MP4.
+
+Processing time: 155.3 seconds. Peak process memory: 918.2 MiB.
+Dog detections succeeded in 60/60 frames, with no inference errors.
+All four paws were usable in 47/60 frames. The temporal audit flagged one possible hind-paw identity swap at frames 7–8, five overlap ambiguities, and 23 unassessable pair comparisons. These are provisional flags, not confirmed anatomical errors.
+One candidate interval was found at 0.667–2.000 seconds, but no complete numerical oscillation or verified walking cycle was established. No clinical accuracy is claimed.
+
+Generated: annotated video, paw trajectory graphs and CSV, temporal audit, and candidate-cycle files.
+Results directory: tmp/rtmpose-test/multi-video-evaluation/runs/dog02-walking-20261102/
+Annotated video: annotated.mp4
+Full results and artifact guide: RESULTS.md
+
+Existing dependencies and model weights were reused. No production changes, retraining, dependency installation, or identity corrections were made.

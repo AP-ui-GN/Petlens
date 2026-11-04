@@ -1,0 +1,13 @@
+load /workspaces/Petlens/tmp/rtmpose-test/multi-video-evaluation/models/rtmpose-ap10k.onnx with onnxruntime backend
+115 0 0.418
+115 15 0.146
+115 30 0.135
+115 45 0.154
+{'frames': 60, 'source_fps': 29.97002997002997, 'supplied_or_flow_tracked_box_frames': 60, 'median_seconds': 0.15190324549996603, 'p95_seconds': 0.25003769145006344, 'total_inference_seconds': 10.070906350999849, 'paws': {'left_front_paw': {'coverage_at_raw_score_0.5': 0.9833333333333333, 'median_step_box_diagonal': 0.023675731360890545, 'p95_step_box_diagonal': 0.12185614579418017}, 'right_front_paw': {'coverage_at_raw_score_0.5': 1.0, 'median_step_box_diagonal': 0.009538746324268902, 'p95_step_box_diagonal': 0.07128602142966359}, 'left_back_paw': {'coverage_at_raw_score_0.5': 0.9166666666666666, 'median_step_box_diagonal': 0.01393222762179914, 'p95_step_box_diagonal': 0.045271919065573915}, 'right_back_paw': {'coverage_at_raw_score_0.5': 1.0, 'median_step_box_diagonal': 0.011627372693509153, 'p95_step_box_diagonal': 0.07741999077505218}}}
+198 0 0.097
+198 15 0.123
+198 30 0.208
+198 45 0.109
+198 60 0.099
+198 75 0.097
+{'frames': 90, 'source_fps': 30.0, 'supplied_or_flow_tracked_box_frames': 90, 'median_seconds': 0.11837526150003441, 'p95_seconds': 0.1856702167999515, 'total_inference_seconds': 11.551220285999534, 'paws': {'left_front_paw': {'coverage_at_raw_score_0.5': 0.9777777777777777, 'median_step_box_diagonal': 0.048118027381667046, 'p95_step_box_diagonal': 0.242267607490723}, 'right_front_paw': {'coverage_at_raw_score_0.5': 0.9888888888888889, 'median_step_box_diagonal': 0.05285371313818427, 'p95_step_box_diagonal': 0.24587845733919664}, 'left_back_paw': {'coverage_at_raw_score_0.5': 1.0, 'median_step_box_diagonal': 0.03720837842924808, 'p95_step_box_diagonal': 0.219836738080996}, 'right_back_paw': {'coverage_at_raw_score_0.5': 0.9777777777777777, 'median_step_box_diagonal': 0.03741758726962417, 'p95_step_box_diagonal': 0.09017092284528337}}}

@@ -1,0 +1,405 @@
+{
+  "annotations": [],
+  "categories": [
+    {
+      "id": 1,
+      "keypoints": [
+        "left_eye",
+        "right_eye",
+        "nose",
+        "neck",
+        "root_of_tail",
+        "left_shoulder",
+        "left_elbow",
+        "left_front_paw",
+        "right_shoulder",
+        "right_elbow",
+        "right_front_paw",
+        "left_hip",
+        "left_knee",
+        "left_back_paw",
+        "right_hip",
+        "right_knee",
+        "right_back_paw"
+      ],
+      "name": "dog",
+      "skeleton": [],
+      "supercategory": "animal"
+    }
+  ],
+  "images": [
+    {
+      "file_name": "images/dalmatian/000045.png",
+      "frame_id": 45,
+      "height": 1920,
+      "id": 1,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000046.png",
+      "frame_id": 46,
+      "height": 1920,
+      "id": 2,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000047.png",
+      "frame_id": 47,
+      "height": 1920,
+      "id": 3,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000048.png",
+      "frame_id": 48,
+      "height": 1920,
+      "id": 4,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000049.png",
+      "frame_id": 49,
+      "height": 1920,
+      "id": 5,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000050.png",
+      "frame_id": 50,
+      "height": 1920,
+      "id": 6,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000051.png",
+      "frame_id": 51,
+      "height": 1920,
+      "id": 7,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000052.png",
+      "frame_id": 52,
+      "height": 1920,
+      "id": 8,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000053.png",
+      "frame_id": 53,
+      "height": 1920,
+      "id": 9,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000054.png",
+      "frame_id": 54,
+      "height": 1920,
+      "id": 10,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000055.png",
+      "frame_id": 55,
+      "height": 1920,
+      "id": 11,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000056.png",
+      "frame_id": 56,
+      "height": 1920,
+      "id": 12,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000057.png",
+      "frame_id": 57,
+      "height": 1920,
+      "id": 13,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000058.png",
+      "frame_id": 58,
+      "height": 1920,
+      "id": 14,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000059.png",
+      "frame_id": 59,
+      "height": 1920,
+      "id": 15,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000060.png",
+      "frame_id": 60,
+      "height": 1920,
+      "id": 16,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000061.png",
+      "frame_id": 61,
+      "height": 1920,
+      "id": 17,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000062.png",
+      "frame_id": 62,
+      "height": 1920,
+      "id": 18,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000063.png",
+      "frame_id": 63,
+      "height": 1920,
+      "id": 19,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000064.png",
+      "frame_id": 64,
+      "height": 1920,
+      "id": 20,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000065.png",
+      "frame_id": 65,
+      "height": 1920,
+      "id": 21,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000066.png",
+      "frame_id": 66,
+      "height": 1920,
+      "id": 22,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000067.png",
+      "frame_id": 67,
+      "height": 1920,
+      "id": 23,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000068.png",
+      "frame_id": 68,
+      "height": 1920,
+      "id": 24,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000069.png",
+      "frame_id": 69,
+      "height": 1920,
+      "id": 25,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000070.png",
+      "frame_id": 70,
+      "height": 1920,
+      "id": 26,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000071.png",
+      "frame_id": 71,
+      "height": 1920,
+      "id": 27,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000072.png",
+      "frame_id": 72,
+      "height": 1920,
+      "id": 28,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000073.png",
+      "frame_id": 73,
+      "height": 1920,
+      "id": 29,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000074.png",
+      "frame_id": 74,
+      "height": 1920,
+      "id": 30,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000075.png",
+      "frame_id": 75,
+      "height": 1920,
+      "id": 31,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000076.png",
+      "frame_id": 76,
+      "height": 1920,
+      "id": 32,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000077.png",
+      "frame_id": 77,
+      "height": 1920,
+      "id": 33,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000078.png",
+      "frame_id": 78,
+      "height": 1920,
+      "id": 34,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000079.png",
+      "frame_id": 79,
+      "height": 1920,
+      "id": 35,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000080.png",
+      "frame_id": 80,
+      "height": 1920,
+      "id": 36,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000081.png",
+      "frame_id": 81,
+      "height": 1920,
+      "id": 37,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000082.png",
+      "frame_id": 82,
+      "height": 1920,
+      "id": 38,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000083.png",
+      "frame_id": 83,
+      "height": 1920,
+      "id": 39,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000084.png",
+      "frame_id": 84,
+      "height": 1920,
+      "id": 40,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000085.png",
+      "frame_id": 85,
+      "height": 1920,
+      "id": 41,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000086.png",
+      "frame_id": 86,
+      "height": 1920,
+      "id": 42,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000087.png",
+      "frame_id": 87,
+      "height": 1920,
+      "id": 43,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000088.png",
+      "frame_id": 88,
+      "height": 1920,
+      "id": 44,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000089.png",
+      "frame_id": 89,
+      "height": 1920,
+      "id": 45,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    },
+    {
+      "file_name": "images/dalmatian/000090.png",
+      "frame_id": 90,
+      "height": 1920,
+      "id": 46,
+      "video_id": "petlens-dalmatian-day2-3c641f8418183512",
+      "width": 1080
+    }
+  ],
+  "info": {
+    "description": "Human-only partial AP-10K labels; zero triplets are unlabeled",
+    "model_selection_allowed": true,
+    "split": "train"
+  }
+}

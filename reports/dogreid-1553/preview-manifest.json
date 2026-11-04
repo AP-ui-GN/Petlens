@@ -1,0 +1,2002 @@
+[
+  {
+    "DOG_ID": "d87c8deb-e291-4a67-8183-f20b372c15eb",
+    "VIDEO_ID": "87c7f20d-3c30-421e-9f96-e4f40ef9fe7f",
+    "x_top_left": "28",
+    "y_top_left": "0",
+    "width": "775",
+    "height": "184",
+    "member": "Images/d87c8deb-e291-4a67-8183-f20b372c15eb/d87c8deb-e291-4a67-8183-f20b372c15eb-87c7f20d-3c30-421e-9f96-e4f40ef9fe7f.jpg",
+    "number": 1
+  },
+  {
+    "DOG_ID": "2756b8f6-cbc5-4a27-ac96-d32e6b4759ee",
+    "VIDEO_ID": "41fa2173-67a3-434d-98df-ec0aa94c34ec",
+    "x_top_left": "19",
+    "y_top_left": "359",
+    "width": "1901",
+    "height": "475",
+    "member": "Images/2756b8f6-cbc5-4a27-ac96-d32e6b4759ee/2756b8f6-cbc5-4a27-ac96-d32e6b4759ee-41fa2173-67a3-434d-98df-ec0aa94c34ec.jpg",
+    "number": 2
+  },
+  {
+    "DOG_ID": "b6dc624b-8bb7-463a-8757-5009080be42c",
+    "VIDEO_ID": "1e812527-e93a-4f9e-b3cf-26c0a20e7976",
+    "x_top_left": "82",
+    "y_top_left": "412",
+    "width": "1380",
+    "height": "348",
+    "member": "Images/b6dc624b-8bb7-463a-8757-5009080be42c/b6dc624b-8bb7-463a-8757-5009080be42c-1e812527-e93a-4f9e-b3cf-26c0a20e7976.jpg",
+    "number": 3
+  },
+  {
+    "DOG_ID": "7198e35a-9b50-4a26-bdb7-47998e4ca222",
+    "VIDEO_ID": "c502f703-af02-4145-983c-68f888396eae",
+    "x_top_left": "57",
+    "y_top_left": "752",
+    "width": "706",
+    "height": "211",
+    "member": "Images/7198e35a-9b50-4a26-bdb7-47998e4ca222/7198e35a-9b50-4a26-bdb7-47998e4ca222-c502f703-af02-4145-983c-68f888396eae.jpg",
+    "number": 4
+  },
+  {
+    "DOG_ID": "82e690ad-b972-4a1d-90e2-efe750b2e73d",
+    "VIDEO_ID": "db317f5a-0323-4d1e-9053-1e20dec47ba9",
+    "x_top_left": "7",
+    "y_top_left": "409",
+    "width": "1601",
+    "height": "489",
+    "member": "Images/82e690ad-b972-4a1d-90e2-efe750b2e73d/82e690ad-b972-4a1d-90e2-efe750b2e73d-db317f5a-0323-4d1e-9053-1e20dec47ba9.jpg",
+    "number": 5
+  },
+  {
+    "DOG_ID": "b2ab9cb8-b38f-4efe-b461-d5145412d346",
+    "VIDEO_ID": "7d912e47-1329-42f5-a321-1c141fb71f87",
+    "x_top_left": "2",
+    "y_top_left": "124",
+    "width": "686",
+    "height": "220",
+    "member": "Images/b2ab9cb8-b38f-4efe-b461-d5145412d346/b2ab9cb8-b38f-4efe-b461-d5145412d346-7d912e47-1329-42f5-a321-1c141fb71f87.jpg",
+    "number": 6
+  },
+  {
+    "DOG_ID": "a60d1449-868f-4404-ba29-98fa5de365d0",
+    "VIDEO_ID": "cee36af0-7334-49a6-bbc5-adb45df0f228",
+    "x_top_left": "480",
+    "y_top_left": "1102",
+    "width": "1027",
+    "height": "331",
+    "member": "Images/a60d1449-868f-4404-ba29-98fa5de365d0/a60d1449-868f-4404-ba29-98fa5de365d0-cee36af0-7334-49a6-bbc5-adb45df0f228.jpg",
+    "number": 7
+  },
+  {
+    "DOG_ID": "af67d060-0730-4c09-9417-ef6d1c6c70fb",
+    "VIDEO_ID": "db429234-f470-45b7-856e-5bf096e6d8db",
+    "x_top_left": "612",
+    "y_top_left": "739",
+    "width": "1238",
+    "height": "401",
+    "member": "Images/af67d060-0730-4c09-9417-ef6d1c6c70fb/af67d060-0730-4c09-9417-ef6d1c6c70fb-db429234-f470-45b7-856e-5bf096e6d8db.jpg",
+    "number": 8
+  },
+  {
+    "DOG_ID": "433ea826-99f4-41db-9d67-6da014bb87df",
+    "VIDEO_ID": "820106d1-d080-4f9f-bf65-cefde0bc7acb",
+    "x_top_left": "173",
+    "y_top_left": "293",
+    "width": "1082",
+    "height": "360",
+    "member": "Images/433ea826-99f4-41db-9d67-6da014bb87df/433ea826-99f4-41db-9d67-6da014bb87df-820106d1-d080-4f9f-bf65-cefde0bc7acb.jpg",
+    "number": 9
+  },
+  {
+    "DOG_ID": "22df082c-d47d-446f-97fd-e6d968f56c45",
+    "VIDEO_ID": "9d7ae55d-68c9-4035-b25b-e7a06a1f4e4f",
+    "x_top_left": "82",
+    "y_top_left": "83",
+    "width": "1548",
+    "height": "529",
+    "member": "Images/22df082c-d47d-446f-97fd-e6d968f56c45/22df082c-d47d-446f-97fd-e6d968f56c45-9d7ae55d-68c9-4035-b25b-e7a06a1f4e4f.jpg",
+    "number": 10
+  },
+  {
+    "DOG_ID": "4e6f21e2-89e7-4d9e-a9c5-1e4a8f23f60d",
+    "VIDEO_ID": "91c63b43-3398-4793-aa85-c453c0f9c52c",
+    "x_top_left": "278",
+    "y_top_left": "428",
+    "width": "3548",
+    "height": "1214",
+    "member": "Images/4e6f21e2-89e7-4d9e-a9c5-1e4a8f23f60d/4e6f21e2-89e7-4d9e-a9c5-1e4a8f23f60d-91c63b43-3398-4793-aa85-c453c0f9c52c.jpg",
+    "number": 11
+  },
+  {
+    "DOG_ID": "9ed5469a-3d82-4480-9758-56ffedb6e267",
+    "VIDEO_ID": "3cb82000-e413-4cc4-a1c6-393f1ed29479",
+    "x_top_left": "16",
+    "y_top_left": "123",
+    "width": "525",
+    "height": "185",
+    "member": "Images/9ed5469a-3d82-4480-9758-56ffedb6e267/9ed5469a-3d82-4480-9758-56ffedb6e267-3cb82000-e413-4cc4-a1c6-393f1ed29479.jpg",
+    "number": 12
+  },
+  {
+    "DOG_ID": "bbd3f93a-bb04-45b4-ab54-a43e2512173f",
+    "VIDEO_ID": "40586cd6-03f2-4909-8485-629ec16b5287",
+    "x_top_left": "5",
+    "y_top_left": "752",
+    "width": "3619",
+    "height": "1278",
+    "member": "Images/bbd3f93a-bb04-45b4-ab54-a43e2512173f/bbd3f93a-bb04-45b4-ab54-a43e2512173f-40586cd6-03f2-4909-8485-629ec16b5287.jpg",
+    "number": 13
+  },
+  {
+    "DOG_ID": "dcdcaa0e-5435-44c4-b9f8-17f914bab3bd",
+    "VIDEO_ID": "529b1796-3dba-40ee-af8a-18faaf014d1d",
+    "x_top_left": "679",
+    "y_top_left": "684",
+    "width": "1104",
+    "height": "392",
+    "member": "Images/dcdcaa0e-5435-44c4-b9f8-17f914bab3bd/dcdcaa0e-5435-44c4-b9f8-17f914bab3bd-529b1796-3dba-40ee-af8a-18faaf014d1d.jpg",
+    "number": 14
+  },
+  {
+    "DOG_ID": "de4c9d55-c869-4b94-a59d-b5d25efdfc57",
+    "VIDEO_ID": "83e83263-dd1b-4695-9024-b049733782e6",
+    "x_top_left": "27",
+    "y_top_left": "637",
+    "width": "756",
+    "height": "272",
+    "member": "Images/de4c9d55-c869-4b94-a59d-b5d25efdfc57/de4c9d55-c869-4b94-a59d-b5d25efdfc57-83e83263-dd1b-4695-9024-b049733782e6.jpg",
+    "number": 15
+  },
+  {
+    "DOG_ID": "6b9d95d4-43ac-44b2-a6fd-b52d8bd48040",
+    "VIDEO_ID": "c3eab774-2327-49c6-af40-5c84e058b73c",
+    "x_top_left": "223",
+    "y_top_left": "470",
+    "width": "1407",
+    "height": "509",
+    "member": "Images/6b9d95d4-43ac-44b2-a6fd-b52d8bd48040/6b9d95d4-43ac-44b2-a6fd-b52d8bd48040-c3eab774-2327-49c6-af40-5c84e058b73c.jpg",
+    "number": 16
+  },
+  {
+    "DOG_ID": "3f0a6e04-c788-4ce9-b811-8f01d583edee",
+    "VIDEO_ID": "6e81419f-ed61-406e-9035-2b0996942c20",
+    "x_top_left": "22",
+    "y_top_left": "947",
+    "width": "878",
+    "height": "320",
+    "member": "Images/3f0a6e04-c788-4ce9-b811-8f01d583edee/3f0a6e04-c788-4ce9-b811-8f01d583edee-6e81419f-ed61-406e-9035-2b0996942c20.jpg",
+    "number": 17
+  },
+  {
+    "DOG_ID": "6ab9f701-e577-4150-9c53-615f048fb24e",
+    "VIDEO_ID": "51bf0da1-421f-4ccb-b0e7-bf39e120e22d",
+    "x_top_left": "480",
+    "y_top_left": "351",
+    "width": "1236",
+    "height": "454",
+    "member": "Images/6ab9f701-e577-4150-9c53-615f048fb24e/6ab9f701-e577-4150-9c53-615f048fb24e-51bf0da1-421f-4ccb-b0e7-bf39e120e22d.jpg",
+    "number": 18
+  },
+  {
+    "DOG_ID": "c1c836fd-080a-4827-b9ea-2cf475c3ae69",
+    "VIDEO_ID": "57d4cdf0-fcf7-41ef-9879-4c4af4ff438e",
+    "x_top_left": "564",
+    "y_top_left": "391",
+    "width": "631",
+    "height": "234",
+    "member": "Images/c1c836fd-080a-4827-b9ea-2cf475c3ae69/c1c836fd-080a-4827-b9ea-2cf475c3ae69-57d4cdf0-fcf7-41ef-9879-4c4af4ff438e.jpg",
+    "number": 19
+  },
+  {
+    "DOG_ID": "e57d5080-40d7-48b7-ace1-c47bc53699b0",
+    "VIDEO_ID": "d5b071cf-779b-4b26-8ea6-b04bb29ba7af",
+    "x_top_left": "554",
+    "y_top_left": "178",
+    "width": "1229",
+    "height": "456",
+    "member": "Images/e57d5080-40d7-48b7-ace1-c47bc53699b0/e57d5080-40d7-48b7-ace1-c47bc53699b0-d5b071cf-779b-4b26-8ea6-b04bb29ba7af.jpg",
+    "number": 20
+  },
+  {
+    "DOG_ID": "bcec2162-d4a2-4962-89ae-ac2605d99ec1",
+    "VIDEO_ID": "195f6e07-9e17-44f7-bdff-58b7d3f2e388",
+    "x_top_left": "0",
+    "y_top_left": "459",
+    "width": "1354",
+    "height": "506",
+    "member": "Images/bcec2162-d4a2-4962-89ae-ac2605d99ec1/bcec2162-d4a2-4962-89ae-ac2605d99ec1-195f6e07-9e17-44f7-bdff-58b7d3f2e388.jpg",
+    "number": 21
+  },
+  {
+    "DOG_ID": "01e223be-039f-4c3a-acef-1b1e92245aba",
+    "VIDEO_ID": "4ab77bb5-8e77-4390-8ae9-2135b08b43db",
+    "x_top_left": "16",
+    "y_top_left": "107",
+    "width": "620",
+    "height": "236",
+    "member": "Images/01e223be-039f-4c3a-acef-1b1e92245aba/01e223be-039f-4c3a-acef-1b1e92245aba-4ab77bb5-8e77-4390-8ae9-2135b08b43db.jpg",
+    "number": 22
+  },
+  {
+    "DOG_ID": "15a4bfb8-fe80-4095-b01d-2c58f8a1e294",
+    "VIDEO_ID": "505a777d-19b4-49bf-8905-95f688b20faa",
+    "x_top_left": "372",
+    "y_top_left": "333",
+    "width": "1049",
+    "height": "400",
+    "member": "Images/15a4bfb8-fe80-4095-b01d-2c58f8a1e294/15a4bfb8-fe80-4095-b01d-2c58f8a1e294-505a777d-19b4-49bf-8905-95f688b20faa.jpg",
+    "number": 23
+  },
+  {
+    "DOG_ID": "752d025e-6b72-44c0-954f-dab1078780a0",
+    "VIDEO_ID": "01ddecff-a3dd-430e-abbf-b20e31de229a",
+    "x_top_left": "0",
+    "y_top_left": "746",
+    "width": "942",
+    "height": "361",
+    "member": "Images/752d025e-6b72-44c0-954f-dab1078780a0/752d025e-6b72-44c0-954f-dab1078780a0-01ddecff-a3dd-430e-abbf-b20e31de229a.jpg",
+    "number": 24
+  },
+  {
+    "DOG_ID": "ce5f6bd6-4cce-4d5e-9d8d-dbad7ff5b48e",
+    "VIDEO_ID": "cce75e8c-6b01-48c1-8bac-912954558b8f",
+    "x_top_left": "482",
+    "y_top_left": "560",
+    "width": "576",
+    "height": "221",
+    "member": "Images/ce5f6bd6-4cce-4d5e-9d8d-dbad7ff5b48e/ce5f6bd6-4cce-4d5e-9d8d-dbad7ff5b48e-cce75e8c-6b01-48c1-8bac-912954558b8f.jpg",
+    "number": 25
+  },
+  {
+    "DOG_ID": "dc675224-d694-4fca-9800-744862929caf",
+    "VIDEO_ID": "4d52760d-aaca-4b7f-811a-ba1f96bb9e4f",
+    "x_top_left": "63",
+    "y_top_left": "771",
+    "width": "983",
+    "height": "384",
+    "member": "Images/dc675224-d694-4fca-9800-744862929caf/dc675224-d694-4fca-9800-744862929caf-4d52760d-aaca-4b7f-811a-ba1f96bb9e4f.jpg",
+    "number": 26
+  },
+  {
+    "DOG_ID": "bee912b2-537d-4784-859a-255d212b3455",
+    "VIDEO_ID": "9fd1cda5-cdb4-4a42-9346-a50404bb9949",
+    "x_top_left": "5",
+    "y_top_left": "0",
+    "width": "1896",
+    "height": "749",
+    "member": "Images/bee912b2-537d-4784-859a-255d212b3455/bee912b2-537d-4784-859a-255d212b3455-9fd1cda5-cdb4-4a42-9346-a50404bb9949.jpg",
+    "number": 27
+  },
+  {
+    "DOG_ID": "dd6560d2-fbab-41d2-b03d-914e485fa632",
+    "VIDEO_ID": "9ca2dcb2-8a98-4533-8854-c7918995652b",
+    "x_top_left": "238",
+    "y_top_left": "338",
+    "width": "1413",
+    "height": "564",
+    "member": "Images/dd6560d2-fbab-41d2-b03d-914e485fa632/dd6560d2-fbab-41d2-b03d-914e485fa632-9ca2dcb2-8a98-4533-8854-c7918995652b.jpg",
+    "number": 28
+  },
+  {
+    "DOG_ID": "8971978d-2e9b-4e9f-a459-e18296002992",
+    "VIDEO_ID": "9b01ca46-cdf2-42be-af79-5eadff055829",
+    "x_top_left": "68",
+    "y_top_left": "832",
+    "width": "637",
+    "height": "256",
+    "member": "Images/8971978d-2e9b-4e9f-a459-e18296002992/8971978d-2e9b-4e9f-a459-e18296002992-9b01ca46-cdf2-42be-af79-5eadff055829.jpg",
+    "number": 29
+  },
+  {
+    "DOG_ID": "a06d8d1e-7060-4f9c-b9eb-a6f9f4fedf72",
+    "VIDEO_ID": "eff28684-6e6b-4bd3-a90a-956585d0a73e",
+    "x_top_left": "396",
+    "y_top_left": "11",
+    "width": "1366",
+    "height": "551",
+    "member": "Images/a06d8d1e-7060-4f9c-b9eb-a6f9f4fedf72/a06d8d1e-7060-4f9c-b9eb-a6f9f4fedf72-eff28684-6e6b-4bd3-a90a-956585d0a73e.jpg",
+    "number": 30
+  },
+  {
+    "DOG_ID": "2545c72d-a1f9-4d8d-822d-79e3422afeea",
+    "VIDEO_ID": "6cc0be77-8cf9-438d-a89a-65e5193b4754",
+    "x_top_left": "175",
+    "y_top_left": "524",
+    "width": "1246",
+    "height": "509",
+    "member": "Images/2545c72d-a1f9-4d8d-822d-79e3422afeea/2545c72d-a1f9-4d8d-822d-79e3422afeea-6cc0be77-8cf9-438d-a89a-65e5193b4754.jpg",
+    "number": 31
+  },
+  {
+    "DOG_ID": "103f43db-a710-44f9-8a7f-5607cc571dd2",
+    "VIDEO_ID": "906218f8-fd96-4600-9ae7-eb9a1eadf4e3",
+    "x_top_left": "9",
+    "y_top_left": "586",
+    "width": "562",
+    "height": "230",
+    "member": "Images/103f43db-a710-44f9-8a7f-5607cc571dd2/103f43db-a710-44f9-8a7f-5607cc571dd2-906218f8-fd96-4600-9ae7-eb9a1eadf4e3.jpg",
+    "number": 32
+  },
+  {
+    "DOG_ID": "69ff7e56-0a3d-4a30-b064-4b0b0849b63a",
+    "VIDEO_ID": "71d6b6a2-99a6-4c54-bd60-6aeda0206d04",
+    "x_top_left": "986",
+    "y_top_left": "1203",
+    "width": "1042",
+    "height": "429",
+    "member": "Images/69ff7e56-0a3d-4a30-b064-4b0b0849b63a/69ff7e56-0a3d-4a30-b064-4b0b0849b63a-71d6b6a2-99a6-4c54-bd60-6aeda0206d04.jpg",
+    "number": 33
+  },
+  {
+    "DOG_ID": "0a96b1fb-5ab4-48f5-8d67-debd76937aaA",
+    "VIDEO_ID": "cd921fb0-ca5b-42f8-8f8b-cf083cf358d6",
+    "x_top_left": "422",
+    "y_top_left": "254",
+    "width": "1469",
+    "height": "606",
+    "member": "Images/0a96b1fb-5ab4-48f5-8d67-debd76937aaA/0a96b1fb-5ab4-48f5-8d67-debd76937aaA-cd921fb0-ca5b-42f8-8f8b-cf083cf358d6.jpg",
+    "number": 34
+  },
+  {
+    "DOG_ID": "0f554cfa-ec3a-41fb-b10c-b1eff03bf969",
+    "VIDEO_ID": "518bc70c-9607-4ae4-97fd-211f14b63de4",
+    "x_top_left": "29",
+    "y_top_left": "308",
+    "width": "1421",
+    "height": "590",
+    "member": "Images/0f554cfa-ec3a-41fb-b10c-b1eff03bf969/0f554cfa-ec3a-41fb-b10c-b1eff03bf969-518bc70c-9607-4ae4-97fd-211f14b63de4.jpg",
+    "number": 35
+  },
+  {
+    "DOG_ID": "0dcad7dc-cd03-41ae-975e-87e2c37d547B",
+    "VIDEO_ID": "9041c448-b016-4d2e-8665-e502db8d4a02",
+    "x_top_left": "190",
+    "y_top_left": "403",
+    "width": "1024",
+    "height": "427",
+    "member": "Images/0dcad7dc-cd03-41ae-975e-87e2c37d547B/0dcad7dc-cd03-41ae-975e-87e2c37d547B-9041c448-b016-4d2e-8665-e502db8d4a02.jpg",
+    "number": 36
+  },
+  {
+    "DOG_ID": "aaf20a5a-c8f2-4c8a-b478-384b99559124",
+    "VIDEO_ID": "c1b43bb5-c5c1-4a04-8f49-f8def9be4283",
+    "x_top_left": "294",
+    "y_top_left": "627",
+    "width": "781",
+    "height": "327",
+    "member": "Images/aaf20a5a-c8f2-4c8a-b478-384b99559124/aaf20a5a-c8f2-4c8a-b478-384b99559124-c1b43bb5-c5c1-4a04-8f49-f8def9be4283.jpg",
+    "number": 37
+  },
+  {
+    "DOG_ID": "c100f6b2-71a4-48b6-94fb-89be8b773e99",
+    "VIDEO_ID": "6af39009-63e6-49b4-b18a-3cd3f820c108",
+    "x_top_left": "115",
+    "y_top_left": "362",
+    "width": "962",
+    "height": "406",
+    "member": "Images/c100f6b2-71a4-48b6-94fb-89be8b773e99/c100f6b2-71a4-48b6-94fb-89be8b773e99-6af39009-63e6-49b4-b18a-3cd3f820c108.jpg",
+    "number": 38
+  },
+  {
+    "DOG_ID": "eb7aaac7-9da8-4ddb-97f6-2eb146287e35",
+    "VIDEO_ID": "3156fd75-37b5-4c8b-9466-571ede94568c",
+    "x_top_left": "514",
+    "y_top_left": "439",
+    "width": "720",
+    "height": "306",
+    "member": "Images/eb7aaac7-9da8-4ddb-97f6-2eb146287e35/eb7aaac7-9da8-4ddb-97f6-2eb146287e35-3156fd75-37b5-4c8b-9466-571ede94568c.jpg",
+    "number": 39
+  },
+  {
+    "DOG_ID": "e2ab7867-bf4e-4ef8-abc2-4f110300a00c",
+    "VIDEO_ID": "ba042c04-9c7d-4ce8-accb-e44f4df1af3d",
+    "x_top_left": "31",
+    "y_top_left": "169",
+    "width": "1385",
+    "height": "589",
+    "member": "Images/e2ab7867-bf4e-4ef8-abc2-4f110300a00c/e2ab7867-bf4e-4ef8-abc2-4f110300a00c-ba042c04-9c7d-4ce8-accb-e44f4df1af3d.jpg",
+    "number": 40
+  },
+  {
+    "DOG_ID": "048c6400-4b66-4eed-8d3b-739ea4e72a78",
+    "VIDEO_ID": "809084a8-09ee-4397-80c8-5e1ecdc75dce",
+    "x_top_left": "113",
+    "y_top_left": "454",
+    "width": "1406",
+    "height": "599",
+    "member": "Images/048c6400-4b66-4eed-8d3b-739ea4e72a78/048c6400-4b66-4eed-8d3b-739ea4e72a78-809084a8-09ee-4397-80c8-5e1ecdc75dce.jpg",
+    "number": 41
+  },
+  {
+    "DOG_ID": "1ea2470c-123a-4c5a-b7b8-784dc7a239c0",
+    "VIDEO_ID": "db3fed2b-568e-4b89-9fba-008d133910fb",
+    "x_top_left": "126",
+    "y_top_left": "233",
+    "width": "869",
+    "height": "371",
+    "member": "Images/1ea2470c-123a-4c5a-b7b8-784dc7a239c0/1ea2470c-123a-4c5a-b7b8-784dc7a239c0-db3fed2b-568e-4b89-9fba-008d133910fb.jpg",
+    "number": 42
+  },
+  {
+    "DOG_ID": "e90362b8-25a7-4cd1-84f4-bf08a0dec416",
+    "VIDEO_ID": "bbc51a2a-ea61-41b8-ac8a-482f85bcaa9d",
+    "x_top_left": "4",
+    "y_top_left": "566",
+    "width": "982",
+    "height": "420",
+    "member": "Images/e90362b8-25a7-4cd1-84f4-bf08a0dec416/e90362b8-25a7-4cd1-84f4-bf08a0dec416-bbc51a2a-ea61-41b8-ac8a-482f85bcaa9d.jpg",
+    "number": 43
+  },
+  {
+    "DOG_ID": "45218355-2e04-4f4a-a8ab-0081b654bdeA",
+    "VIDEO_ID": "903b04b3-4157-4ae9-8552-f1b6bbcbb024",
+    "x_top_left": "269",
+    "y_top_left": "529",
+    "width": "1298",
+    "height": "558",
+    "member": "Images/45218355-2e04-4f4a-a8ab-0081b654bdeA/45218355-2e04-4f4a-a8ab-0081b654bdeA-903b04b3-4157-4ae9-8552-f1b6bbcbb024.jpg",
+    "number": 44
+  },
+  {
+    "DOG_ID": "0a6a1018-509f-4264-afe8-db00b33ad7c1",
+    "VIDEO_ID": "cfa863b6-cc27-412f-9866-d1f9e131c3da",
+    "x_top_left": "3",
+    "y_top_left": "1472",
+    "width": "1957",
+    "height": "845",
+    "member": "Images/0a6a1018-509f-4264-afe8-db00b33ad7c1/0a6a1018-509f-4264-afe8-db00b33ad7c1-cfa863b6-cc27-412f-9866-d1f9e131c3da.jpg",
+    "number": 45
+  },
+  {
+    "DOG_ID": "364c3143-f8a3-4259-b119-0d74daba6c66",
+    "VIDEO_ID": "763a3de8-b0ee-4872-a6b9-fe392421e580",
+    "x_top_left": "8",
+    "y_top_left": "598",
+    "width": "874",
+    "height": "378",
+    "member": "Images/364c3143-f8a3-4259-b119-0d74daba6c66/364c3143-f8a3-4259-b119-0d74daba6c66-763a3de8-b0ee-4872-a6b9-fe392421e580.jpg",
+    "number": 46
+  },
+  {
+    "DOG_ID": "3f3d4326-5e39-4900-a7f2-67fb07a0d7eb",
+    "VIDEO_ID": "4663fcc8-8737-40da-9acf-dbc0cee39b00",
+    "x_top_left": "593",
+    "y_top_left": "383",
+    "width": "943",
+    "height": "409",
+    "member": "Images/3f3d4326-5e39-4900-a7f2-67fb07a0d7eb/3f3d4326-5e39-4900-a7f2-67fb07a0d7eb-4663fcc8-8737-40da-9acf-dbc0cee39b00.jpg",
+    "number": 47
+  },
+  {
+    "DOG_ID": "8e2651da-51b2-4bb2-ab4e-05f9d9fd8b67",
+    "VIDEO_ID": "a5351fe3-293d-4c22-9b06-1447558a0a6e",
+    "x_top_left": "57",
+    "y_top_left": "454",
+    "width": "580",
+    "height": "253",
+    "member": "Images/8e2651da-51b2-4bb2-ab4e-05f9d9fd8b67/8e2651da-51b2-4bb2-ab4e-05f9d9fd8b67-a5351fe3-293d-4c22-9b06-1447558a0a6e.jpg",
+    "number": 48
+  },
+  {
+    "DOG_ID": "50221f9f-14d3-461a-a9bf-ed03ec2ecb11",
+    "VIDEO_ID": "92362c4f-1257-436f-b05c-8700fe759077",
+    "x_top_left": "335",
+    "y_top_left": "608",
+    "width": "623",
+    "height": "272",
+    "member": "Images/50221f9f-14d3-461a-a9bf-ed03ec2ecb11/50221f9f-14d3-461a-a9bf-ed03ec2ecb11-92362c4f-1257-436f-b05c-8700fe759077.jpg",
+    "number": 49
+  },
+  {
+    "DOG_ID": "710030a3-64dd-4dd8-80ae-39354c048b98",
+    "VIDEO_ID": "5270d667-72db-4bf1-bd73-5e94e06231da",
+    "x_top_left": "10",
+    "y_top_left": "2",
+    "width": "1908",
+    "height": "839",
+    "member": "Images/710030a3-64dd-4dd8-80ae-39354c048b98/710030a3-64dd-4dd8-80ae-39354c048b98-5270d667-72db-4bf1-bd73-5e94e06231da.jpg",
+    "number": 50
+  },
+  {
+    "DOG_ID": "2850afad-8655-4f53-b8ec-3815603bac11",
+    "VIDEO_ID": "b0dfc853-fca6-4bc7-8e67-6c680ec96f0b",
+    "x_top_left": "499",
+    "y_top_left": "461",
+    "width": "809",
+    "height": "356",
+    "member": "Images/2850afad-8655-4f53-b8ec-3815603bac11/2850afad-8655-4f53-b8ec-3815603bac11-b0dfc853-fca6-4bc7-8e67-6c680ec96f0b.jpg",
+    "number": 51
+  },
+  {
+    "DOG_ID": "851a5102-1859-4b6c-b117-ceb3f87b8ef8",
+    "VIDEO_ID": "2cc26b39-e5d1-49a7-ba49-121db155bcc0",
+    "x_top_left": "70",
+    "y_top_left": "336",
+    "width": "982",
+    "height": "438",
+    "member": "Images/851a5102-1859-4b6c-b117-ceb3f87b8ef8/851a5102-1859-4b6c-b117-ceb3f87b8ef8-2cc26b39-e5d1-49a7-ba49-121db155bcc0.jpg",
+    "number": 52
+  },
+  {
+    "DOG_ID": "695541cc-87f0-499b-a562-f9c9daa9b2f6",
+    "VIDEO_ID": "c37b7786-e03a-4f81-af50-13b27df95057",
+    "x_top_left": "341",
+    "y_top_left": "238",
+    "width": "1085",
+    "height": "484",
+    "member": "Images/695541cc-87f0-499b-a562-f9c9daa9b2f6/695541cc-87f0-499b-a562-f9c9daa9b2f6-c37b7786-e03a-4f81-af50-13b27df95057.jpg",
+    "number": 53
+  },
+  {
+    "DOG_ID": "6257a741-1ab6-4138-993a-324e447e2ccb",
+    "VIDEO_ID": "736c3c8b-9687-4228-8ef4-bd77280ed62d",
+    "x_top_left": "1054",
+    "y_top_left": "220",
+    "width": "403",
+    "height": "180",
+    "member": "Images/6257a741-1ab6-4138-993a-324e447e2ccb/6257a741-1ab6-4138-993a-324e447e2ccb-736c3c8b-9687-4228-8ef4-bd77280ed62d.jpg",
+    "number": 54
+  },
+  {
+    "DOG_ID": "82fed0cd-a029-4138-b018-224c647e017f",
+    "VIDEO_ID": "2893c11a-9905-4b37-b2d8-86b1ae2da781",
+    "x_top_left": "5",
+    "y_top_left": "230",
+    "width": "1589",
+    "height": "711",
+    "member": "Images/82fed0cd-a029-4138-b018-224c647e017f/82fed0cd-a029-4138-b018-224c647e017f-2893c11a-9905-4b37-b2d8-86b1ae2da781.jpg",
+    "number": 55
+  },
+  {
+    "DOG_ID": "40a66516-028e-41e4-9e79-b8db2421e42b",
+    "VIDEO_ID": "a22ee1d0-da68-47d1-b2a5-84b04cf85b44",
+    "x_top_left": "5",
+    "y_top_left": "72",
+    "width": "1387",
+    "height": "621",
+    "member": "Images/40a66516-028e-41e4-9e79-b8db2421e42b/40a66516-028e-41e4-9e79-b8db2421e42b-a22ee1d0-da68-47d1-b2a5-84b04cf85b44.jpg",
+    "number": 56
+  },
+  {
+    "DOG_ID": "60967a26-2ccc-46e0-ac9c-e6b8afec79c8",
+    "VIDEO_ID": "8e66ac9a-d014-4a02-8eb3-9a9c38b7f911",
+    "x_top_left": "173",
+    "y_top_left": "544",
+    "width": "3518",
+    "height": "1580",
+    "member": "Images/60967a26-2ccc-46e0-ac9c-e6b8afec79c8/60967a26-2ccc-46e0-ac9c-e6b8afec79c8-8e66ac9a-d014-4a02-8eb3-9a9c38b7f911.jpg",
+    "number": 57
+  },
+  {
+    "DOG_ID": "eb3dd878-4098-441f-9886-02ebc74b8121",
+    "VIDEO_ID": "adb4840f-431f-4144-b6c8-a33626c155ec",
+    "x_top_left": "358",
+    "y_top_left": "886",
+    "width": "399",
+    "height": "180",
+    "member": "Images/eb3dd878-4098-441f-9886-02ebc74b8121/eb3dd878-4098-441f-9886-02ebc74b8121-adb4840f-431f-4144-b6c8-a33626c155ec.jpg",
+    "number": 58
+  },
+  {
+    "DOG_ID": "709338b9-8b95-46d9-b4ac-890b6402be0f",
+    "VIDEO_ID": "9fdbb74a-7a8f-4cd2-a2eb-8582f3327a21",
+    "x_top_left": "149",
+    "y_top_left": "9",
+    "width": "1757",
+    "height": "794",
+    "member": "Images/709338b9-8b95-46d9-b4ac-890b6402be0f/709338b9-8b95-46d9-b4ac-890b6402be0f-9fdbb74a-7a8f-4cd2-a2eb-8582f3327a21.jpg",
+    "number": 59
+  },
+  {
+    "DOG_ID": "3e4cbaa7-9379-45f9-9cbb-5696dd936f4d",
+    "VIDEO_ID": "8b29b3a9-901c-47af-906c-c6d0fca845ce",
+    "x_top_left": "367",
+    "y_top_left": "432",
+    "width": "672",
+    "height": "304",
+    "member": "Images/3e4cbaa7-9379-45f9-9cbb-5696dd936f4d/3e4cbaa7-9379-45f9-9cbb-5696dd936f4d-8b29b3a9-901c-47af-906c-c6d0fca845ce.jpg",
+    "number": 60
+  },
+  {
+    "DOG_ID": "4b2a47cd-a5e6-4ce6-b688-85d49b1a8f8e",
+    "VIDEO_ID": "7455357f-9b7f-4e45-ae31-147c1722e931",
+    "x_top_left": "622",
+    "y_top_left": "146",
+    "width": "806",
+    "height": "365",
+    "member": "Images/4b2a47cd-a5e6-4ce6-b688-85d49b1a8f8e/4b2a47cd-a5e6-4ce6-b688-85d49b1a8f8e-7455357f-9b7f-4e45-ae31-147c1722e931.jpg",
+    "number": 61
+  },
+  {
+    "DOG_ID": "e8db0a0b-0b7f-4cf5-aba1-8af65eb1e455",
+    "VIDEO_ID": "e3276a34-6958-41a2-b568-55f4332f92e9",
+    "x_top_left": "411",
+    "y_top_left": "281",
+    "width": "467",
+    "height": "212",
+    "member": "Images/e8db0a0b-0b7f-4cf5-aba1-8af65eb1e455/e8db0a0b-0b7f-4cf5-aba1-8af65eb1e455-e3276a34-6958-41a2-b568-55f4332f92e9.jpg",
+    "number": 62
+  },
+  {
+    "DOG_ID": "81db49a7-ae5e-4802-b56d-2a0b64e13a25",
+    "VIDEO_ID": "759c0419-9435-4ad2-b06a-43319545176b",
+    "x_top_left": "543",
+    "y_top_left": "1152",
+    "width": "1077",
+    "height": "493",
+    "member": "Images/81db49a7-ae5e-4802-b56d-2a0b64e13a25/81db49a7-ae5e-4802-b56d-2a0b64e13a25-759c0419-9435-4ad2-b06a-43319545176b.jpg",
+    "number": 63
+  },
+  {
+    "DOG_ID": "6c29c5c4-bf7b-4201-ba6a-130e656c003e",
+    "VIDEO_ID": "9d73ed62-5c6f-4b93-916a-e7ba8a6d939d",
+    "x_top_left": "20",
+    "y_top_left": "736",
+    "width": "651",
+    "height": "298",
+    "member": "Images/6c29c5c4-bf7b-4201-ba6a-130e656c003e/6c29c5c4-bf7b-4201-ba6a-130e656c003e-9d73ed62-5c6f-4b93-916a-e7ba8a6d939d.jpg",
+    "number": 64
+  },
+  {
+    "DOG_ID": "e6b3bf89-bdf4-4c9a-be5c-022bf2715396",
+    "VIDEO_ID": "b9c7f585-12ec-4ae9-9a15-e6e6aa8abab7",
+    "x_top_left": "343",
+    "y_top_left": "394",
+    "width": "1539",
+    "height": "706",
+    "member": "Images/e6b3bf89-bdf4-4c9a-be5c-022bf2715396/e6b3bf89-bdf4-4c9a-be5c-022bf2715396-b9c7f585-12ec-4ae9-9a15-e6e6aa8abab7.jpg",
+    "number": 65
+  },
+  {
+    "DOG_ID": "60d39f72-7d4e-42c7-b316-b6a7d5e35562",
+    "VIDEO_ID": "d1bb8fd4-a150-4d9d-8a41-89ef97574e6a",
+    "x_top_left": "523",
+    "y_top_left": "211",
+    "width": "755",
+    "height": "347",
+    "member": "Images/60d39f72-7d4e-42c7-b316-b6a7d5e35562/60d39f72-7d4e-42c7-b316-b6a7d5e35562-d1bb8fd4-a150-4d9d-8a41-89ef97574e6a.jpg",
+    "number": 66
+  },
+  {
+    "DOG_ID": "af01d066-60d4-42fa-8d4a-5439f283e7d2",
+    "VIDEO_ID": "e11a9156-1f26-4312-bd3d-1f35d0164c32",
+    "x_top_left": "355",
+    "y_top_left": "497",
+    "width": "461",
+    "height": "212",
+    "member": "Images/af01d066-60d4-42fa-8d4a-5439f283e7d2/af01d066-60d4-42fa-8d4a-5439f283e7d2-e11a9156-1f26-4312-bd3d-1f35d0164c32.jpg",
+    "number": 67
+  },
+  {
+    "DOG_ID": "4c4c19de-4552-47bb-9043-927e0ade1919",
+    "VIDEO_ID": "2e43fcc8-fb5a-4426-b1c9-ae36616984a7",
+    "x_top_left": "141",
+    "y_top_left": "746",
+    "width": "541",
+    "height": "249",
+    "member": "Images/4c4c19de-4552-47bb-9043-927e0ade1919/4c4c19de-4552-47bb-9043-927e0ade1919-2e43fcc8-fb5a-4426-b1c9-ae36616984a7.jpg",
+    "number": 68
+  },
+  {
+    "DOG_ID": "145abafe-09f2-44ad-8110-c97fccda79d1",
+    "VIDEO_ID": "3eec4c4c-7f2c-442e-b0a8-5354ca02fce0",
+    "x_top_left": "119",
+    "y_top_left": "278",
+    "width": "433",
+    "height": "201",
+    "member": "Images/145abafe-09f2-44ad-8110-c97fccda79d1/145abafe-09f2-44ad-8110-c97fccda79d1-3eec4c4c-7f2c-442e-b0a8-5354ca02fce0.jpg",
+    "number": 69
+  },
+  {
+    "DOG_ID": "ecba0f27-d896-47bc-b1c1-ed7073b36b48",
+    "VIDEO_ID": "c94f8f9a-bbf9-4650-8217-1152cd827208",
+    "x_top_left": "61",
+    "y_top_left": "149",
+    "width": "1216",
+    "height": "565",
+    "member": "Images/ecba0f27-d896-47bc-b1c1-ed7073b36b48/ecba0f27-d896-47bc-b1c1-ed7073b36b48-c94f8f9a-bbf9-4650-8217-1152cd827208.jpg",
+    "number": 70
+  },
+  {
+    "DOG_ID": "c0b1b024-ec87-4a0d-8112-29f8484e0f41",
+    "VIDEO_ID": "b7d0a436-037f-438f-a057-397775e6101a",
+    "x_top_left": "150",
+    "y_top_left": "444",
+    "width": "836",
+    "height": "389",
+    "member": "Images/c0b1b024-ec87-4a0d-8112-29f8484e0f41/c0b1b024-ec87-4a0d-8112-29f8484e0f41-b7d0a436-037f-438f-a057-397775e6101a.jpg",
+    "number": 71
+  },
+  {
+    "DOG_ID": "53c5ae73-b88c-4f58-bae8-b1d7b61baaf7",
+    "VIDEO_ID": "64815857-66fc-4552-a6fe-9a5bfac4eb6e",
+    "x_top_left": "658",
+    "y_top_left": "283",
+    "width": "523",
+    "height": "244",
+    "member": "Images/53c5ae73-b88c-4f58-bae8-b1d7b61baaf7/53c5ae73-b88c-4f58-bae8-b1d7b61baaf7-64815857-66fc-4552-a6fe-9a5bfac4eb6e.jpg",
+    "number": 72
+  },
+  {
+    "DOG_ID": "089d6f6f-361f-4b69-a9b8-756cabfbc80d",
+    "VIDEO_ID": "f29ba6fa-f9fd-4537-9104-9ee333633994",
+    "x_top_left": "1",
+    "y_top_left": "595",
+    "width": "945",
+    "height": "442",
+    "member": "Images/089d6f6f-361f-4b69-a9b8-756cabfbc80d/089d6f6f-361f-4b69-a9b8-756cabfbc80d-f29ba6fa-f9fd-4537-9104-9ee333633994.jpg",
+    "number": 73
+  },
+  {
+    "DOG_ID": "a8dabff3-56fe-4737-a2f6-a8ca009d5243",
+    "VIDEO_ID": "6fddaad6-2cd1-47be-be3a-36b91346048f",
+    "x_top_left": "9",
+    "y_top_left": "592",
+    "width": "1039",
+    "height": "486",
+    "member": "Images/a8dabff3-56fe-4737-a2f6-a8ca009d5243/a8dabff3-56fe-4737-a2f6-a8ca009d5243-6fddaad6-2cd1-47be-be3a-36b91346048f.jpg",
+    "number": 74
+  },
+  {
+    "DOG_ID": "ce9b25f1-3ce1-4f0c-9448-6a914862792f",
+    "VIDEO_ID": "74be69a3-29ae-4a9c-aa78-774140056e23",
+    "x_top_left": "5",
+    "y_top_left": "74",
+    "width": "1901",
+    "height": "891",
+    "member": "Images/ce9b25f1-3ce1-4f0c-9448-6a914862792f/ce9b25f1-3ce1-4f0c-9448-6a914862792f-74be69a3-29ae-4a9c-aa78-774140056e23.jpg",
+    "number": 75
+  },
+  {
+    "DOG_ID": "42794ece-e5b7-4f7e-92ca-7605b827ec55",
+    "VIDEO_ID": "cbddbe85-0d16-4761-9c8c-585551abce7b",
+    "x_top_left": "8",
+    "y_top_left": "806",
+    "width": "921",
+    "height": "432",
+    "member": "Images/42794ece-e5b7-4f7e-92ca-7605b827ec55/42794ece-e5b7-4f7e-92ca-7605b827ec55-cbddbe85-0d16-4761-9c8c-585551abce7b.jpg",
+    "number": 76
+  },
+  {
+    "DOG_ID": "02ad7461-dffb-476e-a812-4f894be8920b",
+    "VIDEO_ID": "d525ca9e-710a-435d-974d-225f6bffa75b",
+    "x_top_left": "372",
+    "y_top_left": "401",
+    "width": "986",
+    "height": "463",
+    "member": "Images/02ad7461-dffb-476e-a812-4f894be8920b/02ad7461-dffb-476e-a812-4f894be8920b-d525ca9e-710a-435d-974d-225f6bffa75b.jpg",
+    "number": 77
+  },
+  {
+    "DOG_ID": "63d29767-85d7-45fe-a4ba-e91965cc08a0",
+    "VIDEO_ID": "4459745a-05ad-433c-9fb3-d38857c1b78f",
+    "x_top_left": "227",
+    "y_top_left": "720",
+    "width": "817",
+    "height": "384",
+    "member": "Images/63d29767-85d7-45fe-a4ba-e91965cc08a0/63d29767-85d7-45fe-a4ba-e91965cc08a0-4459745a-05ad-433c-9fb3-d38857c1b78f.jpg",
+    "number": 78
+  },
+  {
+    "DOG_ID": "23aa587c-5810-41a0-ba7d-61a9fe4fd7b1",
+    "VIDEO_ID": "beef5127-1a58-4958-ad76-5af9300e489d",
+    "x_top_left": "0",
+    "y_top_left": "3",
+    "width": "530",
+    "height": "250",
+    "member": "Images/23aa587c-5810-41a0-ba7d-61a9fe4fd7b1/23aa587c-5810-41a0-ba7d-61a9fe4fd7b1-beef5127-1a58-4958-ad76-5af9300e489d.jpg",
+    "number": 79
+  },
+  {
+    "DOG_ID": "7d894dd7-49db-41a1-add2-fa3dd116d651",
+    "VIDEO_ID": "30e269e5-e179-44a7-992f-602e85b6b0b5",
+    "x_top_left": "677",
+    "y_top_left": "495",
+    "width": "991",
+    "height": "468",
+    "member": "Images/7d894dd7-49db-41a1-add2-fa3dd116d651/7d894dd7-49db-41a1-add2-fa3dd116d651-30e269e5-e179-44a7-992f-602e85b6b0b5.jpg",
+    "number": 80
+  },
+  {
+    "DOG_ID": "b000a50d-e5a9-4293-a58c-af51b13177a6",
+    "VIDEO_ID": "38cc3ad8-5c05-403d-aafa-86d7d34552f4",
+    "x_top_left": "2",
+    "y_top_left": "197",
+    "width": "780",
+    "height": "369",
+    "member": "Images/b000a50d-e5a9-4293-a58c-af51b13177a6/b000a50d-e5a9-4293-a58c-af51b13177a6-38cc3ad8-5c05-403d-aafa-86d7d34552f4.jpg",
+    "number": 81
+  },
+  {
+    "DOG_ID": "4f8ad794-e7b6-4dfa-869c-5d04e2c6c332",
+    "VIDEO_ID": "3b94d08b-b137-49cd-a1a5-900d1821a315",
+    "x_top_left": "30",
+    "y_top_left": "95",
+    "width": "797",
+    "height": "379",
+    "member": "Images/4f8ad794-e7b6-4dfa-869c-5d04e2c6c332/4f8ad794-e7b6-4dfa-869c-5d04e2c6c332-3b94d08b-b137-49cd-a1a5-900d1821a315.jpg",
+    "number": 82
+  },
+  {
+    "DOG_ID": "0ec69a09-3b55-45c9-bb10-e536e8da5ccb",
+    "VIDEO_ID": "0e82a6b1-e759-4524-9cf0-42dd50c12d2b",
+    "x_top_left": "72",
+    "y_top_left": "374",
+    "width": "1358",
+    "height": "646",
+    "member": "Images/0ec69a09-3b55-45c9-bb10-e536e8da5ccb/0ec69a09-3b55-45c9-bb10-e536e8da5ccb-0e82a6b1-e759-4524-9cf0-42dd50c12d2b.jpg",
+    "number": 83
+  },
+  {
+    "DOG_ID": "20c5c7a8-c2ff-40c8-951f-3253978606d0",
+    "VIDEO_ID": "35284c78-7681-4c0e-b7aa-a653702e92b5",
+    "x_top_left": "389",
+    "y_top_left": "130",
+    "width": "1469",
+    "height": "700",
+    "member": "Images/20c5c7a8-c2ff-40c8-951f-3253978606d0/20c5c7a8-c2ff-40c8-951f-3253978606d0-35284c78-7681-4c0e-b7aa-a653702e92b5.jpg",
+    "number": 84
+  },
+  {
+    "DOG_ID": "6edec60a-fabd-43d8-9583-f3c95928f15d",
+    "VIDEO_ID": "56ccb44c-2d61-4735-a456-dea0180aaf58",
+    "x_top_left": "70",
+    "y_top_left": "976",
+    "width": "1005",
+    "height": "480",
+    "member": "Images/6edec60a-fabd-43d8-9583-f3c95928f15d/6edec60a-fabd-43d8-9583-f3c95928f15d-56ccb44c-2d61-4735-a456-dea0180aaf58.jpg",
+    "number": 85
+  },
+  {
+    "DOG_ID": "acccecb4-1ca0-413c-bc21-5dc9d3f3090c",
+    "VIDEO_ID": "b9643827-5380-4495-bd79-17a06f591b3a",
+    "x_top_left": "211",
+    "y_top_left": "337",
+    "width": "1445",
+    "height": "691",
+    "member": "Images/acccecb4-1ca0-413c-bc21-5dc9d3f3090c/acccecb4-1ca0-413c-bc21-5dc9d3f3090c-b9643827-5380-4495-bd79-17a06f591b3a.jpg",
+    "number": 86
+  },
+  {
+    "DOG_ID": "48f4d193-eab4-4b77-9bf2-6de56b3c3223",
+    "VIDEO_ID": "c6d5a517-136c-4340-971d-62ef02eea2ae",
+    "x_top_left": "154",
+    "y_top_left": "4",
+    "width": "1756",
+    "height": "840",
+    "member": "Images/48f4d193-eab4-4b77-9bf2-6de56b3c3223/48f4d193-eab4-4b77-9bf2-6de56b3c3223-c6d5a517-136c-4340-971d-62ef02eea2ae.jpg",
+    "number": 87
+  },
+  {
+    "DOG_ID": "33172276-f71a-439d-95b4-71789912c920",
+    "VIDEO_ID": "92b1a2c9-e346-4029-82f3-bd0a74fafc41",
+    "x_top_left": "5",
+    "y_top_left": "845",
+    "width": "1404",
+    "height": "672",
+    "member": "Images/33172276-f71a-439d-95b4-71789912c920/33172276-f71a-439d-95b4-71789912c920-92b1a2c9-e346-4029-82f3-bd0a74fafc41.jpg",
+    "number": 88
+  },
+  {
+    "DOG_ID": "1bd5e98e-e33f-4e86-b6d3-ca5b056ea387",
+    "VIDEO_ID": "44b87b80-4625-48e9-8265-b6dcd801d307",
+    "x_top_left": "530",
+    "y_top_left": "497",
+    "width": "376",
+    "height": "180",
+    "member": "Images/1bd5e98e-e33f-4e86-b6d3-ca5b056ea387/1bd5e98e-e33f-4e86-b6d3-ca5b056ea387-44b87b80-4625-48e9-8265-b6dcd801d307.jpg",
+    "number": 89
+  },
+  {
+    "DOG_ID": "82b16d8a-a50a-43c8-8319-c49f1c74b9eB",
+    "VIDEO_ID": "79a96546-40b7-4878-901b-31a3548ce803",
+    "x_top_left": "298",
+    "y_top_left": "877",
+    "width": "781",
+    "height": "374",
+    "member": "Images/82b16d8a-a50a-43c8-8319-c49f1c74b9eB/82b16d8a-a50a-43c8-8319-c49f1c74b9eB-79a96546-40b7-4878-901b-31a3548ce803.jpg",
+    "number": 90
+  },
+  {
+    "DOG_ID": "1c832ee3-caae-4834-9010-81d652cca72d",
+    "VIDEO_ID": "2d415982-ea50-4e4f-a6fc-60f3d592053e",
+    "x_top_left": "26",
+    "y_top_left": "544",
+    "width": "960",
+    "height": "464",
+    "member": "Images/1c832ee3-caae-4834-9010-81d652cca72d/1c832ee3-caae-4834-9010-81d652cca72d-2d415982-ea50-4e4f-a6fc-60f3d592053e.jpg",
+    "number": 91
+  },
+  {
+    "DOG_ID": "de83d45a-177a-414b-a527-55d7b391d426",
+    "VIDEO_ID": "acdb97b6-360a-4593-8a27-addd06a971b3",
+    "x_top_left": "560",
+    "y_top_left": "934",
+    "width": "423",
+    "height": "205",
+    "member": "Images/de83d45a-177a-414b-a527-55d7b391d426/de83d45a-177a-414b-a527-55d7b391d426-acdb97b6-360a-4593-8a27-addd06a971b3.jpg",
+    "number": 92
+  },
+  {
+    "DOG_ID": "2a4d0f25-c8c5-4873-8e5e-54899e076613",
+    "VIDEO_ID": "143aa0a6-470c-42ff-81b8-8acd8b0b4fca",
+    "x_top_left": "235",
+    "y_top_left": "582",
+    "width": "701",
+    "height": "340",
+    "member": "Images/2a4d0f25-c8c5-4873-8e5e-54899e076613/2a4d0f25-c8c5-4873-8e5e-54899e076613-143aa0a6-470c-42ff-81b8-8acd8b0b4fca.jpg",
+    "number": 93
+  },
+  {
+    "DOG_ID": "2613bb36-8845-4fa5-84ba-cfa1646a76a4",
+    "VIDEO_ID": "7bdaaa23-5c7e-474d-88d6-05675aae75de",
+    "x_top_left": "4",
+    "y_top_left": "300",
+    "width": "472",
+    "height": "229",
+    "member": "Images/2613bb36-8845-4fa5-84ba-cfa1646a76a4/2613bb36-8845-4fa5-84ba-cfa1646a76a4-7bdaaa23-5c7e-474d-88d6-05675aae75de.jpg",
+    "number": 94
+  },
+  {
+    "DOG_ID": "5b8036a8-25ac-4ed9-aed1-009ae4f73bbd",
+    "VIDEO_ID": "6217f9c5-a474-4316-a022-c0a2749aade7",
+    "x_top_left": "140",
+    "y_top_left": "474",
+    "width": "580",
+    "height": "283",
+    "member": "Images/5b8036a8-25ac-4ed9-aed1-009ae4f73bbd/5b8036a8-25ac-4ed9-aed1-009ae4f73bbd-6217f9c5-a474-4316-a022-c0a2749aade7.jpg",
+    "number": 95
+  },
+  {
+    "DOG_ID": "b4f17049-28c3-4e2f-8937-bc320e22808A",
+    "VIDEO_ID": "0f3d004d-00d9-4852-ad4d-cc8e5ee01831",
+    "x_top_left": "371",
+    "y_top_left": "451",
+    "width": "529",
+    "height": "259",
+    "member": "Images/b4f17049-28c3-4e2f-8937-bc320e22808A/b4f17049-28c3-4e2f-8937-bc320e22808A-0f3d004d-00d9-4852-ad4d-cc8e5ee01831.jpg",
+    "number": 96
+  },
+  {
+    "DOG_ID": "8bfaebcb-6bf3-4b90-9bdc-f13b685e4394",
+    "VIDEO_ID": "ba21c52c-385b-4705-908d-740a95b15280",
+    "x_top_left": "76",
+    "y_top_left": "819",
+    "width": "804",
+    "height": "394",
+    "member": "Images/8bfaebcb-6bf3-4b90-9bdc-f13b685e4394/8bfaebcb-6bf3-4b90-9bdc-f13b685e4394-ba21c52c-385b-4705-908d-740a95b15280.jpg",
+    "number": 97
+  },
+  {
+    "DOG_ID": "cc8319d2-dc79-418d-863c-6b8e126de86a",
+    "VIDEO_ID": "3f425a9c-bb6a-4f7f-b868-15cc1b1cce75",
+    "x_top_left": "8",
+    "y_top_left": "662",
+    "width": "608",
+    "height": "298",
+    "member": "Images/cc8319d2-dc79-418d-863c-6b8e126de86a/cc8319d2-dc79-418d-863c-6b8e126de86a-3f425a9c-bb6a-4f7f-b868-15cc1b1cce75.jpg",
+    "number": 98
+  },
+  {
+    "DOG_ID": "53c31141-0385-4923-b444-37fbac9a6369",
+    "VIDEO_ID": "5ed2d8be-5e4c-4456-93e9-f0c65014bfce",
+    "x_top_left": "170",
+    "y_top_left": "1702",
+    "width": "1868",
+    "height": "916",
+    "member": "Images/53c31141-0385-4923-b444-37fbac9a6369/53c31141-0385-4923-b444-37fbac9a6369-5ed2d8be-5e4c-4456-93e9-f0c65014bfce.jpg",
+    "number": 99
+  },
+  {
+    "DOG_ID": "affff388-e85e-4a20-8598-3571d3120a29",
+    "VIDEO_ID": "a5fa1e75-eaa7-47be-9759-9b1b06709c9e",
+    "x_top_left": "4",
+    "y_top_left": "1",
+    "width": "582",
+    "height": "286",
+    "member": "Images/affff388-e85e-4a20-8598-3571d3120a29/affff388-e85e-4a20-8598-3571d3120a29-a5fa1e75-eaa7-47be-9759-9b1b06709c9e.jpg",
+    "number": 100
+  },
+  {
+    "DOG_ID": "fc2caae0-2fe3-4256-80bf-123e2b949d02",
+    "VIDEO_ID": "35153aed-2e1d-4c71-b9b8-cdaae7a7fed0",
+    "x_top_left": "19",
+    "y_top_left": "512",
+    "width": "1035",
+    "height": "627",
+    "member": "Images/fc2caae0-2fe3-4256-80bf-123e2b949d02/fc2caae0-2fe3-4256-80bf-123e2b949d02-35153aed-2e1d-4c71-b9b8-cdaae7a7fed0.jpg",
+    "number": 101
+  },
+  {
+    "DOG_ID": "56323f45-41a6-46e8-8d1f-de33e44256df",
+    "VIDEO_ID": "caffcb39-98b9-47b0-9501-31cf65e06fb4",
+    "x_top_left": "11",
+    "y_top_left": "1190",
+    "width": "1731",
+    "height": "1050",
+    "member": "Images/56323f45-41a6-46e8-8d1f-de33e44256df/56323f45-41a6-46e8-8d1f-de33e44256df-caffcb39-98b9-47b0-9501-31cf65e06fb4.jpg",
+    "number": 102
+  },
+  {
+    "DOG_ID": "e7dbe774-7911-40cc-99cc-781d2aa28d80",
+    "VIDEO_ID": "02d5bb70-f2d1-401a-a4c4-b5d5bb03fcd2",
+    "x_top_left": "16",
+    "y_top_left": "1626",
+    "width": "2147",
+    "height": "1299",
+    "member": "Images/e7dbe774-7911-40cc-99cc-781d2aa28d80/e7dbe774-7911-40cc-99cc-781d2aa28d80-02d5bb70-f2d1-401a-a4c4-b5d5bb03fcd2.jpg",
+    "number": 103
+  },
+  {
+    "DOG_ID": "f579edee-1d9c-46a8-82a5-1d8e54caa24f",
+    "VIDEO_ID": "4fe9761a-f237-4f6e-9001-a0cd4feb1a0b",
+    "x_top_left": "36",
+    "y_top_left": "7",
+    "width": "1507",
+    "height": "916",
+    "member": "Images/f579edee-1d9c-46a8-82a5-1d8e54caa24f/f579edee-1d9c-46a8-82a5-1d8e54caa24f-4fe9761a-f237-4f6e-9001-a0cd4feb1a0b.jpg",
+    "number": 104
+  },
+  {
+    "DOG_ID": "f1d2c467-9cbf-4f2a-9e53-d9c6bfb0028A",
+    "VIDEO_ID": "64e93c5d-937e-4a21-adb3-afec41266a49",
+    "x_top_left": "73",
+    "y_top_left": "458",
+    "width": "768",
+    "height": "464",
+    "member": "Images/f1d2c467-9cbf-4f2a-9e53-d9c6bfb0028A/f1d2c467-9cbf-4f2a-9e53-d9c6bfb0028A-64e93c5d-937e-4a21-adb3-afec41266a49.jpg",
+    "number": 105
+  },
+  {
+    "DOG_ID": "bd428c27-7f61-443c-a917-3969290ae317",
+    "VIDEO_ID": "04765d8f-484c-4419-943a-4c396c82d916",
+    "x_top_left": "337",
+    "y_top_left": "727",
+    "width": "904",
+    "height": "546",
+    "member": "Images/bd428c27-7f61-443c-a917-3969290ae317/bd428c27-7f61-443c-a917-3969290ae317-04765d8f-484c-4419-943a-4c396c82d916.jpg",
+    "number": 106
+  },
+  {
+    "DOG_ID": "347346e7-8de9-456f-a216-0a4abc3971f8",
+    "VIDEO_ID": "db5e05b0-c108-470c-b500-c445c4b8c8e5",
+    "x_top_left": "115",
+    "y_top_left": "18",
+    "width": "1723",
+    "height": "1048",
+    "member": "Images/347346e7-8de9-456f-a216-0a4abc3971f8/347346e7-8de9-456f-a216-0a4abc3971f8-db5e05b0-c108-470c-b500-c445c4b8c8e5.jpg",
+    "number": 107
+  },
+  {
+    "DOG_ID": "63ec1843-b999-486b-a141-740bdf0e84b2",
+    "VIDEO_ID": "fddf611f-1630-4c8f-8104-d340df7b848e",
+    "x_top_left": "285",
+    "y_top_left": "586",
+    "width": "794",
+    "height": "483",
+    "member": "Images/63ec1843-b999-486b-a141-740bdf0e84b2/63ec1843-b999-486b-a141-740bdf0e84b2-fddf611f-1630-4c8f-8104-d340df7b848e.jpg",
+    "number": 108
+  },
+  {
+    "DOG_ID": "d43d5070-2998-4f32-997c-b3756f7c72dc",
+    "VIDEO_ID": "619fa77a-5e10-44e8-bb19-f2474cd81fa6",
+    "x_top_left": "11",
+    "y_top_left": "579",
+    "width": "684",
+    "height": "413",
+    "member": "Images/d43d5070-2998-4f32-997c-b3756f7c72dc/d43d5070-2998-4f32-997c-b3756f7c72dc-619fa77a-5e10-44e8-bb19-f2474cd81fa6.jpg",
+    "number": 109
+  },
+  {
+    "DOG_ID": "7f48e3fa-2862-493b-84b6-9f3d3de62025",
+    "VIDEO_ID": "788c0177-d113-4d12-a661-013ef49c476b",
+    "x_top_left": "22",
+    "y_top_left": "187",
+    "width": "1456",
+    "height": "879",
+    "member": "Images/7f48e3fa-2862-493b-84b6-9f3d3de62025/7f48e3fa-2862-493b-84b6-9f3d3de62025-788c0177-d113-4d12-a661-013ef49c476b.jpg",
+    "number": 110
+  },
+  {
+    "DOG_ID": "180ecc87-bc8b-4c14-a671-b0a9cbbff1c0",
+    "VIDEO_ID": "a391e15d-ac73-489f-800c-5cfe3ce19487",
+    "x_top_left": "678",
+    "y_top_left": "1408",
+    "width": "902",
+    "height": "544",
+    "member": "Images/180ecc87-bc8b-4c14-a671-b0a9cbbff1c0/180ecc87-bc8b-4c14-a671-b0a9cbbff1c0-a391e15d-ac73-489f-800c-5cfe3ce19487.jpg",
+    "number": 111
+  },
+  {
+    "DOG_ID": "4b644241-cd0c-431a-b5f2-3795bc61f921",
+    "VIDEO_ID": "18a4e7b0-5628-4f5c-89fe-9f6f40147ade",
+    "x_top_left": "8",
+    "y_top_left": "496",
+    "width": "1052",
+    "height": "634",
+    "member": "Images/4b644241-cd0c-431a-b5f2-3795bc61f921/4b644241-cd0c-431a-b5f2-3795bc61f921-18a4e7b0-5628-4f5c-89fe-9f6f40147ade.jpg",
+    "number": 112
+  },
+  {
+    "DOG_ID": "c5690085-4fdf-4dc5-ac46-37d59b0a8f68",
+    "VIDEO_ID": "b1a0c56d-1558-4db1-9770-6e3b5ab0e161",
+    "x_top_left": "174",
+    "y_top_left": "842",
+    "width": "903",
+    "height": "544",
+    "member": "Images/c5690085-4fdf-4dc5-ac46-37d59b0a8f68/c5690085-4fdf-4dc5-ac46-37d59b0a8f68-b1a0c56d-1558-4db1-9770-6e3b5ab0e161.jpg",
+    "number": 113
+  },
+  {
+    "DOG_ID": "aeef7ffa-e7d8-4208-b08e-88e2899bc86d",
+    "VIDEO_ID": "8663865a-e142-4126-87cf-9f7aeea82377",
+    "x_top_left": "322",
+    "y_top_left": "800",
+    "width": "567",
+    "height": "346",
+    "member": "Images/aeef7ffa-e7d8-4208-b08e-88e2899bc86d/aeef7ffa-e7d8-4208-b08e-88e2899bc86d-8663865a-e142-4126-87cf-9f7aeea82377.jpg",
+    "number": 114
+  },
+  {
+    "DOG_ID": "649b4b97-a590-40b5-b252-ff71f231b16e",
+    "VIDEO_ID": "524a386d-3812-44a0-86a2-f9c14592e646",
+    "x_top_left": "272",
+    "y_top_left": "509",
+    "width": "1047",
+    "height": "640",
+    "member": "Images/649b4b97-a590-40b5-b252-ff71f231b16e/649b4b97-a590-40b5-b252-ff71f231b16e-524a386d-3812-44a0-86a2-f9c14592e646.jpg",
+    "number": 115
+  },
+  {
+    "DOG_ID": "52f2f233-a43f-4109-9c39-3e34ea905f30",
+    "VIDEO_ID": "1893b7ca-b0d5-407f-bca2-7ebeb8fe6390",
+    "x_top_left": "698",
+    "y_top_left": "337",
+    "width": "512",
+    "height": "313",
+    "member": "Images/52f2f233-a43f-4109-9c39-3e34ea905f30/52f2f233-a43f-4109-9c39-3e34ea905f30-1893b7ca-b0d5-407f-bca2-7ebeb8fe6390.jpg",
+    "number": 116
+  },
+  {
+    "DOG_ID": "8bfdd47a-c34f-4409-b095-d8b0fdd7ec4c",
+    "VIDEO_ID": "b469c92f-e0ba-4078-9119-83d56d876ddc",
+    "x_top_left": "7",
+    "y_top_left": "2",
+    "width": "1755",
+    "height": "1073",
+    "member": "Images/8bfdd47a-c34f-4409-b095-d8b0fdd7ec4c/8bfdd47a-c34f-4409-b095-d8b0fdd7ec4c-b469c92f-e0ba-4078-9119-83d56d876ddc.jpg",
+    "number": 117
+  },
+  {
+    "DOG_ID": "96242e26-0f9f-43c4-b4eb-c3bc2478f7df",
+    "VIDEO_ID": "17220fb9-4500-4195-9888-a46fe41c0434",
+    "x_top_left": "317",
+    "y_top_left": "720",
+    "width": "543",
+    "height": "326",
+    "member": "Images/96242e26-0f9f-43c4-b4eb-c3bc2478f7df/96242e26-0f9f-43c4-b4eb-c3bc2478f7df-17220fb9-4500-4195-9888-a46fe41c0434.jpg",
+    "number": 118
+  },
+  {
+    "DOG_ID": "5c18c1bc-d6e7-46b3-8649-b0c752571c5b",
+    "VIDEO_ID": "bd434420-8271-4d96-8026-174617e17046",
+    "x_top_left": "50",
+    "y_top_left": "384",
+    "width": "525",
+    "height": "322",
+    "member": "Images/5c18c1bc-d6e7-46b3-8649-b0c752571c5b/5c18c1bc-d6e7-46b3-8649-b0c752571c5b-bd434420-8271-4d96-8026-174617e17046.jpg",
+    "number": 119
+  },
+  {
+    "DOG_ID": "0306db0b-0e06-4343-ab9d-ea3ec4777d9a",
+    "VIDEO_ID": "5d56638a-aeb2-47b4-ba1f-57fa588df005",
+    "x_top_left": "36",
+    "y_top_left": "1066",
+    "width": "790",
+    "height": "473",
+    "member": "Images/0306db0b-0e06-4343-ab9d-ea3ec4777d9a/0306db0b-0e06-4343-ab9d-ea3ec4777d9a-5d56638a-aeb2-47b4-ba1f-57fa588df005.jpg",
+    "number": 120
+  },
+  {
+    "DOG_ID": "d7d2226e-f16e-4d6a-aa5a-0efe9966c613",
+    "VIDEO_ID": "8effa809-be65-4c6f-b5a5-0aaeecca2966",
+    "x_top_left": "76",
+    "y_top_left": "637",
+    "width": "839",
+    "height": "515",
+    "member": "Images/d7d2226e-f16e-4d6a-aa5a-0efe9966c613/d7d2226e-f16e-4d6a-aa5a-0efe9966c613-8effa809-be65-4c6f-b5a5-0aaeecca2966.jpg",
+    "number": 121
+  },
+  {
+    "DOG_ID": "9a4abbb3-7068-4a0e-b8e0-8265235c95dd",
+    "VIDEO_ID": "6f7e4a3b-4f82-4614-8ae2-04011087e376",
+    "x_top_left": "499",
+    "y_top_left": "236",
+    "width": "1411",
+    "height": "844",
+    "member": "Images/9a4abbb3-7068-4a0e-b8e0-8265235c95dd/9a4abbb3-7068-4a0e-b8e0-8265235c95dd-6f7e4a3b-4f82-4614-8ae2-04011087e376.jpg",
+    "number": 122
+  },
+  {
+    "DOG_ID": "c7bc5d04-b04d-4323-bde1-7d7825146f1e",
+    "VIDEO_ID": "8e3f39a8-97c7-4d47-85eb-d410ade44ba8",
+    "x_top_left": "0",
+    "y_top_left": "2",
+    "width": "1769",
+    "height": "1089",
+    "member": "Images/c7bc5d04-b04d-4323-bde1-7d7825146f1e/c7bc5d04-b04d-4323-bde1-7d7825146f1e-8e3f39a8-97c7-4d47-85eb-d410ade44ba8.jpg",
+    "number": 123
+  },
+  {
+    "DOG_ID": "506cbcfd-c0d9-4781-8c43-c938ee1dbe20",
+    "VIDEO_ID": "c5dd7c37-091d-4f94-9692-24cd2f22f4c5",
+    "x_top_left": "316",
+    "y_top_left": "566",
+    "width": "734",
+    "height": "452",
+    "member": "Images/506cbcfd-c0d9-4781-8c43-c938ee1dbe20/506cbcfd-c0d9-4781-8c43-c938ee1dbe20-c5dd7c37-091d-4f94-9692-24cd2f22f4c5.jpg",
+    "number": 124
+  },
+  {
+    "DOG_ID": "cb262afb-516c-487d-9aa1-6056d2b4b9b1",
+    "VIDEO_ID": "fd2eee6f-4059-4008-8a5b-a7a1f6a9d9a6",
+    "x_top_left": "176",
+    "y_top_left": "851",
+    "width": "737",
+    "height": "439",
+    "member": "Images/cb262afb-516c-487d-9aa1-6056d2b4b9b1/cb262afb-516c-487d-9aa1-6056d2b4b9b1-fd2eee6f-4059-4008-8a5b-a7a1f6a9d9a6.jpg",
+    "number": 125
+  },
+  {
+    "DOG_ID": "5ef1097b-3fbb-4981-b443-994275601d9e",
+    "VIDEO_ID": "0aee7a1a-85da-4ac0-9c9d-a113cb08d193",
+    "x_top_left": "2",
+    "y_top_left": "1",
+    "width": "763",
+    "height": "471",
+    "member": "Images/5ef1097b-3fbb-4981-b443-994275601d9e/5ef1097b-3fbb-4981-b443-994275601d9e-0aee7a1a-85da-4ac0-9c9d-a113cb08d193.jpg",
+    "number": 126
+  },
+  {
+    "DOG_ID": "9e85d69e-7742-4adf-814d-1be5d5345929",
+    "VIDEO_ID": "f79e13e5-8ec3-48e8-9b74-3b6cae30bd35",
+    "x_top_left": "197",
+    "y_top_left": "909",
+    "width": "554",
+    "height": "342",
+    "member": "Images/9e85d69e-7742-4adf-814d-1be5d5345929/9e85d69e-7742-4adf-814d-1be5d5345929-f79e13e5-8ec3-48e8-9b74-3b6cae30bd35.jpg",
+    "number": 127
+  },
+  {
+    "DOG_ID": "7a6b11ff-ace3-454c-b7d9-d0c1fd3d0c13",
+    "VIDEO_ID": "392a906f-f887-4dea-a07a-7f4e96990268",
+    "x_top_left": "93",
+    "y_top_left": "427",
+    "width": "625",
+    "height": "386",
+    "member": "Images/7a6b11ff-ace3-454c-b7d9-d0c1fd3d0c13/7a6b11ff-ace3-454c-b7d9-d0c1fd3d0c13-392a906f-f887-4dea-a07a-7f4e96990268.jpg",
+    "number": 128
+  },
+  {
+    "DOG_ID": "f434ae6e-964a-4c6e-aec6-488399584c45",
+    "VIDEO_ID": "63ba571a-e48d-4673-93d0-68a2ed1ff966",
+    "x_top_left": "2",
+    "y_top_left": "7",
+    "width": "1558",
+    "height": "963",
+    "member": "Images/f434ae6e-964a-4c6e-aec6-488399584c45/f434ae6e-964a-4c6e-aec6-488399584c45-63ba571a-e48d-4673-93d0-68a2ed1ff966.jpg",
+    "number": 129
+  },
+  {
+    "DOG_ID": "f324f6df-0396-4f85-8703-19cbf49ab898",
+    "VIDEO_ID": "662bcb3e-8030-45a5-943d-b7d11b9627c7",
+    "x_top_left": "228",
+    "y_top_left": "148",
+    "width": "1490",
+    "height": "921",
+    "member": "Images/f324f6df-0396-4f85-8703-19cbf49ab898/f324f6df-0396-4f85-8703-19cbf49ab898-662bcb3e-8030-45a5-943d-b7d11b9627c7.jpg",
+    "number": 130
+  },
+  {
+    "DOG_ID": "535b5148-3787-4a83-8af0-0cddad634d61",
+    "VIDEO_ID": "a1093879-c301-421a-8d9f-b103bdb53f40",
+    "x_top_left": "93",
+    "y_top_left": "515",
+    "width": "986",
+    "height": "586",
+    "member": "Images/535b5148-3787-4a83-8af0-0cddad634d61/535b5148-3787-4a83-8af0-0cddad634d61-a1093879-c301-421a-8d9f-b103bdb53f40.jpg",
+    "number": 131
+  },
+  {
+    "DOG_ID": "17662869-dcdc-451d-b0e0-84babe728909",
+    "VIDEO_ID": "f865946f-374d-4d7d-93ac-7d67b59a03c4",
+    "x_top_left": "74",
+    "y_top_left": "707",
+    "width": "847",
+    "height": "503",
+    "member": "Images/17662869-dcdc-451d-b0e0-84babe728909/17662869-dcdc-451d-b0e0-84babe728909-f865946f-374d-4d7d-93ac-7d67b59a03c4.jpg",
+    "number": 132
+  },
+  {
+    "DOG_ID": "0155cce1-1fcf-4b7d-adf3-2a7f5bf48040",
+    "VIDEO_ID": "c9136a7f-12a9-4dc8-8d4e-30da68f04132",
+    "x_top_left": "3",
+    "y_top_left": "714",
+    "width": "802",
+    "height": "476",
+    "member": "Images/0155cce1-1fcf-4b7d-adf3-2a7f5bf48040/0155cce1-1fcf-4b7d-adf3-2a7f5bf48040-c9136a7f-12a9-4dc8-8d4e-30da68f04132.jpg",
+    "number": 133
+  },
+  {
+    "DOG_ID": "451006dd-a388-474b-b698-877e2fa0180a",
+    "VIDEO_ID": "6311a63b-ac2d-4521-8c85-f12f90264879",
+    "x_top_left": "3",
+    "y_top_left": "386",
+    "width": "551",
+    "height": "327",
+    "member": "Images/451006dd-a388-474b-b698-877e2fa0180a/451006dd-a388-474b-b698-877e2fa0180a-6311a63b-ac2d-4521-8c85-f12f90264879.jpg",
+    "number": 134
+  },
+  {
+    "DOG_ID": "ffc9c2d8-429e-4dff-8aa4-466da35d9d2B",
+    "VIDEO_ID": "84e2c56b-5482-42fc-b97d-a726949f15af",
+    "x_top_left": "354",
+    "y_top_left": "736",
+    "width": "723",
+    "height": "429",
+    "member": "Images/ffc9c2d8-429e-4dff-8aa4-466da35d9d2B/ffc9c2d8-429e-4dff-8aa4-466da35d9d2B-84e2c56b-5482-42fc-b97d-a726949f15af.jpg",
+    "number": 135
+  },
+  {
+    "DOG_ID": "3f0dc7fd-ae4b-41e4-8045-620a45fe9075",
+    "VIDEO_ID": "4f353e2f-7c1a-46b4-8bd7-6df23b01018d",
+    "x_top_left": "610",
+    "y_top_left": "232",
+    "width": "708",
+    "height": "420",
+    "member": "Images/3f0dc7fd-ae4b-41e4-8045-620a45fe9075/3f0dc7fd-ae4b-41e4-8045-620a45fe9075-4f353e2f-7c1a-46b4-8bd7-6df23b01018d.jpg",
+    "number": 136
+  },
+  {
+    "DOG_ID": "a9491514-ca56-4af1-8717-766fb29d2b1d",
+    "VIDEO_ID": "bb605474-7ca9-4a5f-b13c-583cbc085b7a",
+    "x_top_left": "192",
+    "y_top_left": "778",
+    "width": "723",
+    "height": "448",
+    "member": "Images/a9491514-ca56-4af1-8717-766fb29d2b1d/a9491514-ca56-4af1-8717-766fb29d2b1d-bb605474-7ca9-4a5f-b13c-583cbc085b7a.jpg",
+    "number": 137
+  },
+  {
+    "DOG_ID": "7fdeb5e8-cf93-43b8-b436-2b503dd6c048",
+    "VIDEO_ID": "2bbd4ea8-3e57-44e9-953b-42366442c5c7",
+    "x_top_left": "3",
+    "y_top_left": "493",
+    "width": "955",
+    "height": "592",
+    "member": "Images/7fdeb5e8-cf93-43b8-b436-2b503dd6c048/7fdeb5e8-cf93-43b8-b436-2b503dd6c048-2bbd4ea8-3e57-44e9-953b-42366442c5c7.jpg",
+    "number": 138
+  },
+  {
+    "DOG_ID": "535949ee-f28d-4a28-b81b-6a7bda16abc4",
+    "VIDEO_ID": "aaca812b-c1e7-4769-93e3-4af568ef4503",
+    "x_top_left": "115",
+    "y_top_left": "346",
+    "width": "569",
+    "height": "337",
+    "member": "Images/535949ee-f28d-4a28-b81b-6a7bda16abc4/535949ee-f28d-4a28-b81b-6a7bda16abc4-aaca812b-c1e7-4769-93e3-4af568ef4503.jpg",
+    "number": 139
+  },
+  {
+    "DOG_ID": "812e0901-2a22-4adf-87c1-f1b8b550181f",
+    "VIDEO_ID": "c4c93351-6824-499e-9dd1-9629ae40b5b3",
+    "x_top_left": "38",
+    "y_top_left": "560",
+    "width": "933",
+    "height": "579",
+    "member": "Images/812e0901-2a22-4adf-87c1-f1b8b550181f/812e0901-2a22-4adf-87c1-f1b8b550181f-c4c93351-6824-499e-9dd1-9629ae40b5b3.jpg",
+    "number": 140
+  },
+  {
+    "DOG_ID": "5dc6384d-c637-46cc-a80d-03b29717b450",
+    "VIDEO_ID": "89767a33-c86b-4f97-a118-97eedc6fc6e2",
+    "x_top_left": "507",
+    "y_top_left": "41",
+    "width": "768",
+    "height": "477",
+    "member": "Images/5dc6384d-c637-46cc-a80d-03b29717b450/5dc6384d-c637-46cc-a80d-03b29717b450-89767a33-c86b-4f97-a118-97eedc6fc6e2.jpg",
+    "number": 141
+  },
+  {
+    "DOG_ID": "e812f858-10e5-4f6e-89be-5db4811d07c0",
+    "VIDEO_ID": "25d82ce2-1cff-4bb2-85ba-3f0e3d0d1116",
+    "x_top_left": "22",
+    "y_top_left": "22",
+    "width": "1788",
+    "height": "1058",
+    "member": "Images/e812f858-10e5-4f6e-89be-5db4811d07c0/e812f858-10e5-4f6e-89be-5db4811d07c0-25d82ce2-1cff-4bb2-85ba-3f0e3d0d1116.jpg",
+    "number": 142
+  },
+  {
+    "DOG_ID": "e478d79a-500c-4c39-b0b1-bd3772fb53f0",
+    "VIDEO_ID": "66142e5f-f6c2-48cc-a039-561e64954411",
+    "x_top_left": "16",
+    "y_top_left": "755",
+    "width": "803",
+    "height": "499",
+    "member": "Images/e478d79a-500c-4c39-b0b1-bd3772fb53f0/e478d79a-500c-4c39-b0b1-bd3772fb53f0-66142e5f-f6c2-48cc-a039-561e64954411.jpg",
+    "number": 143
+  },
+  {
+    "DOG_ID": "3b51b1ed-322c-44ea-bc21-24faa69b1348",
+    "VIDEO_ID": "239c75bf-b52c-4814-b03b-5a44ddfd7f75",
+    "x_top_left": "581",
+    "y_top_left": "488",
+    "width": "782",
+    "height": "486",
+    "member": "Images/3b51b1ed-322c-44ea-bc21-24faa69b1348/3b51b1ed-322c-44ea-bc21-24faa69b1348-239c75bf-b52c-4814-b03b-5a44ddfd7f75.jpg",
+    "number": 144
+  },
+  {
+    "DOG_ID": "6b6c9900-c35d-43e2-aaec-60dc17b471fa",
+    "VIDEO_ID": "b5931393-8343-4e14-b43a-6b44764b0c5e",
+    "x_top_left": "557",
+    "y_top_left": "115",
+    "width": "677",
+    "height": "421",
+    "member": "Images/6b6c9900-c35d-43e2-aaec-60dc17b471fa/6b6c9900-c35d-43e2-aaec-60dc17b471fa-b5931393-8343-4e14-b43a-6b44764b0c5e.jpg",
+    "number": 145
+  },
+  {
+    "DOG_ID": "eb68c3c4-bd33-471f-8881-8572716ebe7b",
+    "VIDEO_ID": "c5e6712a-759f-4df4-b5bd-f59603e16339",
+    "x_top_left": "286",
+    "y_top_left": "717",
+    "width": "628",
+    "height": "371",
+    "member": "Images/eb68c3c4-bd33-471f-8881-8572716ebe7b/eb68c3c4-bd33-471f-8881-8572716ebe7b-c5e6712a-759f-4df4-b5bd-f59603e16339.jpg",
+    "number": 146
+  },
+  {
+    "DOG_ID": "482803e2-cc0a-4b67-9758-405b85faf7d3",
+    "VIDEO_ID": "db59d3ca-657f-4d50-ba16-644492a021ad",
+    "x_top_left": "9",
+    "y_top_left": "50",
+    "width": "657",
+    "height": "409",
+    "member": "Images/482803e2-cc0a-4b67-9758-405b85faf7d3/482803e2-cc0a-4b67-9758-405b85faf7d3-db59d3ca-657f-4d50-ba16-644492a021ad.jpg",
+    "number": 147
+  },
+  {
+    "DOG_ID": "91b11058-e102-499b-a525-efdd9deb7fb7",
+    "VIDEO_ID": "1688b5d0-efba-402f-a5aa-3ce605b1ffd6",
+    "x_top_left": "268",
+    "y_top_left": "694",
+    "width": "1163",
+    "height": "724",
+    "member": "Images/91b11058-e102-499b-a525-efdd9deb7fb7/91b11058-e102-499b-a525-efdd9deb7fb7-1688b5d0-efba-402f-a5aa-3ce605b1ffd6.jpg",
+    "number": 148
+  },
+  {
+    "DOG_ID": "34651747-ba54-43e6-9671-3009743db725",
+    "VIDEO_ID": "1479a4c4-d777-4564-913c-489a6cc0c405",
+    "x_top_left": "162",
+    "y_top_left": "346",
+    "width": "914",
+    "height": "569",
+    "member": "Images/34651747-ba54-43e6-9671-3009743db725/34651747-ba54-43e6-9671-3009743db725-1479a4c4-d777-4564-913c-489a6cc0c405.jpg",
+    "number": 149
+  },
+  {
+    "DOG_ID": "04acc452-fb04-4ca0-a471-15f33c045da2",
+    "VIDEO_ID": "797dddc4-e427-4284-8db5-f46be95667c4",
+    "x_top_left": "232",
+    "y_top_left": "774",
+    "width": "514",
+    "height": "320",
+    "member": "Images/04acc452-fb04-4ca0-a471-15f33c045da2/04acc452-fb04-4ca0-a471-15f33c045da2-797dddc4-e427-4284-8db5-f46be95667c4.jpg",
+    "number": 150
+  },
+  {
+    "DOG_ID": "317bfafb-0f03-4f02-b7f7-04b1a0378a57",
+    "VIDEO_ID": "566c99dc-5511-4075-a581-6e0185de2ba2",
+    "x_top_left": "38",
+    "y_top_left": "5",
+    "width": "1469",
+    "height": "917",
+    "member": "Images/317bfafb-0f03-4f02-b7f7-04b1a0378a57/317bfafb-0f03-4f02-b7f7-04b1a0378a57-566c99dc-5511-4075-a581-6e0185de2ba2.jpg",
+    "number": 151
+  },
+  {
+    "DOG_ID": "a8c28188-2a0d-4020-9ff8-6546272cbf1A",
+    "VIDEO_ID": "82dc100e-47b0-4775-84f4-6260fc00aa7b",
+    "x_top_left": "243",
+    "y_top_left": "851",
+    "width": "722",
+    "height": "451",
+    "member": "Images/a8c28188-2a0d-4020-9ff8-6546272cbf1A/a8c28188-2a0d-4020-9ff8-6546272cbf1A-82dc100e-47b0-4775-84f4-6260fc00aa7b.jpg",
+    "number": 152
+  },
+  {
+    "DOG_ID": "5b1a5163-cdc5-4c35-9bc9-bbb427b7821f",
+    "VIDEO_ID": "520c3a8a-e520-46ef-9ee6-c4339291e45d",
+    "x_top_left": "7",
+    "y_top_left": "755",
+    "width": "588",
+    "height": "346",
+    "member": "Images/5b1a5163-cdc5-4c35-9bc9-bbb427b7821f/5b1a5163-cdc5-4c35-9bc9-bbb427b7821f-520c3a8a-e520-46ef-9ee6-c4339291e45d.jpg",
+    "number": 153
+  },
+  {
+    "DOG_ID": "98e28b50-23ad-402b-acf2-4c04f516b65e",
+    "VIDEO_ID": "989aad58-5eb6-48b3-be4e-05d7ea985d25",
+    "x_top_left": "-3",
+    "y_top_left": "359",
+    "width": "573",
+    "height": "358",
+    "member": "Images/98e28b50-23ad-402b-acf2-4c04f516b65e/98e28b50-23ad-402b-acf2-4c04f516b65e-989aad58-5eb6-48b3-be4e-05d7ea985d25.jpg",
+    "number": 154
+  },
+  {
+    "DOG_ID": "dd7cc069-7849-4ac9-8fac-d78e9a11b31b",
+    "VIDEO_ID": "17a1b91f-82ce-4e05-998f-5b69cc7bb915",
+    "x_top_left": "251",
+    "y_top_left": "454",
+    "width": "702",
+    "height": "413",
+    "member": "Images/dd7cc069-7849-4ac9-8fac-d78e9a11b31b/dd7cc069-7849-4ac9-8fac-d78e9a11b31b-17a1b91f-82ce-4e05-998f-5b69cc7bb915.jpg",
+    "number": 155
+  },
+  {
+    "DOG_ID": "f58f87da-8ef7-4e0a-8181-c23a6d1c063b",
+    "VIDEO_ID": "392cbe0d-65c9-4bb2-8c1a-36cba4eaada0",
+    "x_top_left": "187",
+    "y_top_left": "18",
+    "width": "3629",
+    "height": "2135",
+    "member": "Images/f58f87da-8ef7-4e0a-8181-c23a6d1c063b/f58f87da-8ef7-4e0a-8181-c23a6d1c063b-392cbe0d-65c9-4bb2-8c1a-36cba4eaada0.jpg",
+    "number": 156
+  },
+  {
+    "DOG_ID": "ff0cf2f8-7696-4086-b774-a1d83b21ca9a",
+    "VIDEO_ID": "372b982c-ef06-4c59-a79b-612783d8f2c9",
+    "x_top_left": "580",
+    "y_top_left": "1805",
+    "width": "1348",
+    "height": "793",
+    "member": "Images/ff0cf2f8-7696-4086-b774-a1d83b21ca9a/ff0cf2f8-7696-4086-b774-a1d83b21ca9a-372b982c-ef06-4c59-a79b-612783d8f2c9.jpg",
+    "number": 157
+  },
+  {
+    "DOG_ID": "7cbd707f-7986-43e2-ae7f-220b8be4adb7",
+    "VIDEO_ID": "6ebf668a-7083-4d84-8dc4-b74d9f7bc8f0",
+    "x_top_left": "161",
+    "y_top_left": "2",
+    "width": "1749",
+    "height": "1028",
+    "member": "Images/7cbd707f-7986-43e2-ae7f-220b8be4adb7/7cbd707f-7986-43e2-ae7f-220b8be4adb7-6ebf668a-7083-4d84-8dc4-b74d9f7bc8f0.jpg",
+    "number": 158
+  },
+  {
+    "DOG_ID": "7718ee12-8460-4d28-9c0c-d9eea6677951",
+    "VIDEO_ID": "b8781f82-e68f-44dd-8ab1-bbd43f2291e4",
+    "x_top_left": "113",
+    "y_top_left": "480",
+    "width": "895",
+    "height": "560",
+    "member": "Images/7718ee12-8460-4d28-9c0c-d9eea6677951/7718ee12-8460-4d28-9c0c-d9eea6677951-b8781f82-e68f-44dd-8ab1-bbd43f2291e4.jpg",
+    "number": 159
+  },
+  {
+    "DOG_ID": "58f5dee2-babc-42bf-8ca6-b5533eaa3dd3",
+    "VIDEO_ID": "2ae2ab20-2a82-4a7e-b0c9-6ddc43be62f5",
+    "x_top_left": "4",
+    "y_top_left": "611",
+    "width": "1008",
+    "height": "631",
+    "member": "Images/58f5dee2-babc-42bf-8ca6-b5533eaa3dd3/58f5dee2-babc-42bf-8ca6-b5533eaa3dd3-2ae2ab20-2a82-4a7e-b0c9-6ddc43be62f5.jpg",
+    "number": 160
+  },
+  {
+    "DOG_ID": "e4e6bc65-dc41-47e5-8378-be8dfcd277dd",
+    "VIDEO_ID": "44bdbfb4-958e-461a-bea2-f4259fd3d49e",
+    "x_top_left": "274",
+    "y_top_left": "566",
+    "width": "675",
+    "height": "423",
+    "member": "Images/e4e6bc65-dc41-47e5-8378-be8dfcd277dd/e4e6bc65-dc41-47e5-8378-be8dfcd277dd-44bdbfb4-958e-461a-bea2-f4259fd3d49e.jpg",
+    "number": 161
+  },
+  {
+    "DOG_ID": "8d26c3c4-5ea8-4b21-b8c5-9074557cb781",
+    "VIDEO_ID": "ce22ee5c-5041-4a39-8a6e-67a675d52b8c",
+    "x_top_left": "128",
+    "y_top_left": "348",
+    "width": "588",
+    "height": "345",
+    "member": "Images/8d26c3c4-5ea8-4b21-b8c5-9074557cb781/8d26c3c4-5ea8-4b21-b8c5-9074557cb781-ce22ee5c-5041-4a39-8a6e-67a675d52b8c.jpg",
+    "number": 162
+  },
+  {
+    "DOG_ID": "c5df2dbe-2f8d-48da-8313-2e7fdd5084b8",
+    "VIDEO_ID": "e5fedbdc-949d-4eed-be33-1d47c514a486",
+    "x_top_left": "7",
+    "y_top_left": "778",
+    "width": "694",
+    "height": "435",
+    "member": "Images/c5df2dbe-2f8d-48da-8313-2e7fdd5084b8/c5df2dbe-2f8d-48da-8313-2e7fdd5084b8-e5fedbdc-949d-4eed-be33-1d47c514a486.jpg",
+    "number": 163
+  },
+  {
+    "DOG_ID": "47432381-510e-4b6c-b1ca-fbca5f80bca4",
+    "VIDEO_ID": "26d2e6d9-b104-46f6-8e95-9bab657c2050",
+    "x_top_left": "9",
+    "y_top_left": "294",
+    "width": "828",
+    "height": "519",
+    "member": "Images/47432381-510e-4b6c-b1ca-fbca5f80bca4/47432381-510e-4b6c-b1ca-fbca5f80bca4-26d2e6d9-b104-46f6-8e95-9bab657c2050.jpg",
+    "number": 164
+  },
+  {
+    "DOG_ID": "c8d770d5-d3d7-472e-b4e8-9f88f00257d8",
+    "VIDEO_ID": "faafc695-4b55-49ac-a810-6c72a3e45632",
+    "x_top_left": "250",
+    "y_top_left": "220",
+    "width": "1881",
+    "height": "1180",
+    "member": "Images/c8d770d5-d3d7-472e-b4e8-9f88f00257d8/c8d770d5-d3d7-472e-b4e8-9f88f00257d8-faafc695-4b55-49ac-a810-6c72a3e45632.jpg",
+    "number": 165
+  },
+  {
+    "DOG_ID": "f81194a0-45b1-463e-ac81-785c94732146",
+    "VIDEO_ID": "42b52e02-4bc2-4783-9f8b-e136ea955c19",
+    "x_top_left": "7",
+    "y_top_left": "515",
+    "width": "947",
+    "height": "595",
+    "member": "Images/f81194a0-45b1-463e-ac81-785c94732146/f81194a0-45b1-463e-ac81-785c94732146-42b52e02-4bc2-4783-9f8b-e136ea955c19.jpg",
+    "number": 166
+  },
+  {
+    "DOG_ID": "86fff4c9-3919-4da4-8df1-ea25a9b49523",
+    "VIDEO_ID": "121b55e6-87de-4622-a5d5-71eb48f4cbeb",
+    "x_top_left": "11",
+    "y_top_left": "448",
+    "width": "856",
+    "height": "538",
+    "member": "Images/86fff4c9-3919-4da4-8df1-ea25a9b49523/86fff4c9-3919-4da4-8df1-ea25a9b49523-121b55e6-87de-4622-a5d5-71eb48f4cbeb.jpg",
+    "number": 167
+  },
+  {
+    "DOG_ID": "4302e040-4e92-4530-a28b-b94deea07df4",
+    "VIDEO_ID": "bdf25ac7-5a8a-4bd0-8961-f8e82facfc67",
+    "x_top_left": "331",
+    "y_top_left": "854",
+    "width": "679",
+    "height": "397",
+    "member": "Images/4302e040-4e92-4530-a28b-b94deea07df4/4302e040-4e92-4530-a28b-b94deea07df4-bdf25ac7-5a8a-4bd0-8961-f8e82facfc67.jpg",
+    "number": 168
+  },
+  {
+    "DOG_ID": "5866f01e-9d74-40d2-87a7-6845b104b0e8",
+    "VIDEO_ID": "bf87b652-8f03-486f-9f8f-948de46e087c",
+    "x_top_left": "8",
+    "y_top_left": "477",
+    "width": "1040",
+    "height": "608",
+    "member": "Images/5866f01e-9d74-40d2-87a7-6845b104b0e8/5866f01e-9d74-40d2-87a7-6845b104b0e8-bf87b652-8f03-486f-9f8f-948de46e087c.jpg",
+    "number": 169
+  },
+  {
+    "DOG_ID": "9d5918b2-0224-42bd-9f97-8ae35795f248",
+    "VIDEO_ID": "efa2e8c4-0287-4c1b-8936-7def4ef316e9",
+    "x_top_left": "0",
+    "y_top_left": "765",
+    "width": "707",
+    "height": "445",
+    "member": "Images/9d5918b2-0224-42bd-9f97-8ae35795f248/9d5918b2-0224-42bd-9f97-8ae35795f248-efa2e8c4-0287-4c1b-8936-7def4ef316e9.jpg",
+    "number": 170
+  },
+  {
+    "DOG_ID": "d825e2f4-e0c5-4b7c-a987-4a33e34f2e5c",
+    "VIDEO_ID": "67068d84-4af9-42aa-b1d3-e7c78e46ac8e",
+    "x_top_left": "182",
+    "y_top_left": "563",
+    "width": "729",
+    "height": "426",
+    "member": "Images/d825e2f4-e0c5-4b7c-a987-4a33e34f2e5c/d825e2f4-e0c5-4b7c-a987-4a33e34f2e5c-67068d84-4af9-42aa-b1d3-e7c78e46ac8e.jpg",
+    "number": 171
+  },
+  {
+    "DOG_ID": "3726719b-943b-40e8-a75d-775986506a5c",
+    "VIDEO_ID": "c98af12e-9ce5-43e4-906e-5a3e5b275ce4",
+    "x_top_left": "449",
+    "y_top_left": "328",
+    "width": "705",
+    "height": "444",
+    "member": "Images/3726719b-943b-40e8-a75d-775986506a5c/3726719b-943b-40e8-a75d-775986506a5c-c98af12e-9ce5-43e4-906e-5a3e5b275ce4.jpg",
+    "number": 172
+  },
+  {
+    "DOG_ID": "0e3d8915-6873-42d5-a08f-030c97452249",
+    "VIDEO_ID": "14790b85-6089-4f12-a86e-3fbe28dd4e5c",
+    "x_top_left": "193",
+    "y_top_left": "749",
+    "width": "649",
+    "height": "409",
+    "member": "Images/0e3d8915-6873-42d5-a08f-030c97452249/0e3d8915-6873-42d5-a08f-030c97452249-14790b85-6089-4f12-a86e-3fbe28dd4e5c.jpg",
+    "number": 173
+  },
+  {
+    "DOG_ID": "0ec511ac-fa83-4d06-8965-d6fc5885de7a",
+    "VIDEO_ID": "e88d3d2a-399c-42a3-9ee9-db58699ea0c3",
+    "x_top_left": "8",
+    "y_top_left": "541",
+    "width": "898",
+    "height": "566",
+    "member": "Images/0ec511ac-fa83-4d06-8965-d6fc5885de7a/0ec511ac-fa83-4d06-8965-d6fc5885de7a-e88d3d2a-399c-42a3-9ee9-db58699ea0c3.jpg",
+    "number": 174
+  },
+  {
+    "DOG_ID": "288660a7-814a-4a56-8b5f-2f6daa2379e7",
+    "VIDEO_ID": "4d8c154f-667b-4dc5-9e21-b994f229ba8e",
+    "x_top_left": "0",
+    "y_top_left": "602",
+    "width": "964",
+    "height": "608",
+    "member": "Images/288660a7-814a-4a56-8b5f-2f6daa2379e7/288660a7-814a-4a56-8b5f-2f6daa2379e7-4d8c154f-667b-4dc5-9e21-b994f229ba8e.jpg",
+    "number": 175
+  },
+  {
+    "DOG_ID": "44833f04-7e94-4e7b-9549-4a0b19cd4f5f",
+    "VIDEO_ID": "284a7202-69f8-4764-8969-40d80df66cf6",
+    "x_top_left": "353",
+    "y_top_left": "171",
+    "width": "1557",
+    "height": "907",
+    "member": "Images/44833f04-7e94-4e7b-9549-4a0b19cd4f5f/44833f04-7e94-4e7b-9549-4a0b19cd4f5f-284a7202-69f8-4764-8969-40d80df66cf6.jpg",
+    "number": 176
+  },
+  {
+    "DOG_ID": "e37bb559-b1f8-4e01-8a2b-57b56b99a706",
+    "VIDEO_ID": "01284ffa-7d75-4adf-aee0-3b81c7206a27",
+    "x_top_left": "28",
+    "y_top_left": "431",
+    "width": "513",
+    "height": "324",
+    "member": "Images/e37bb559-b1f8-4e01-8a2b-57b56b99a706/e37bb559-b1f8-4e01-8a2b-57b56b99a706-01284ffa-7d75-4adf-aee0-3b81c7206a27.jpg",
+    "number": 177
+  },
+  {
+    "DOG_ID": "b11eb4c2-b9e5-4f55-a55c-e3d939847df8",
+    "VIDEO_ID": "17ae7468-31a4-47c1-86dc-bdf4a60be552",
+    "x_top_left": "446",
+    "y_top_left": "1952",
+    "width": "1112",
+    "height": "704",
+    "member": "Images/b11eb4c2-b9e5-4f55-a55c-e3d939847df8/b11eb4c2-b9e5-4f55-a55c-e3d939847df8-17ae7468-31a4-47c1-86dc-bdf4a60be552.jpg",
+    "number": 178
+  },
+  {
+    "DOG_ID": "0621c5e0-3275-4c3c-99b0-c7fe9b40d87d",
+    "VIDEO_ID": "1bc4baa1-4048-45fe-95b2-dc75fea960cd",
+    "x_top_left": "0",
+    "y_top_left": "822",
+    "width": "728",
+    "height": "461",
+    "member": "Images/0621c5e0-3275-4c3c-99b0-c7fe9b40d87d/0621c5e0-3275-4c3c-99b0-c7fe9b40d87d-1bc4baa1-4048-45fe-95b2-dc75fea960cd.jpg",
+    "number": 179
+  },
+  {
+    "DOG_ID": "ca4e2454-7f0d-4d05-b4df-cf4359040715",
+    "VIDEO_ID": "1c2eb6cc-8cf1-44a3-97b4-18b5f74c9123",
+    "x_top_left": "46",
+    "y_top_left": "6",
+    "width": "673",
+    "height": "391",
+    "member": "Images/ca4e2454-7f0d-4d05-b4df-cf4359040715/ca4e2454-7f0d-4d05-b4df-cf4359040715-1c2eb6cc-8cf1-44a3-97b4-18b5f74c9123.jpg",
+    "number": 180
+  },
+  {
+    "DOG_ID": "3155ede4-8963-4ef0-8f8e-eeb26b9da5ce",
+    "VIDEO_ID": "9b762e15-f6d5-4f16-b577-6d274a3fe588",
+    "x_top_left": "162",
+    "y_top_left": "156",
+    "width": "963",
+    "height": "559",
+    "member": "Images/3155ede4-8963-4ef0-8f8e-eeb26b9da5ce/3155ede4-8963-4ef0-8f8e-eeb26b9da5ce-9b762e15-f6d5-4f16-b577-6d274a3fe588.jpg",
+    "number": 181
+  },
+  {
+    "DOG_ID": "56e09a78-7a21-4aed-98b0-b9035d9393eA",
+    "VIDEO_ID": "3caa68a6-7a54-439a-975b-7f2676a0d37b",
+    "x_top_left": "416",
+    "y_top_left": "986",
+    "width": "756",
+    "height": "480",
+    "member": "Images/56e09a78-7a21-4aed-98b0-b9035d9393eA/56e09a78-7a21-4aed-98b0-b9035d9393eA-3caa68a6-7a54-439a-975b-7f2676a0d37b.jpg",
+    "number": 182
+  },
+  {
+    "DOG_ID": "693e891a-b1d1-4dbf-b537-74475b4d50ba",
+    "VIDEO_ID": "720e866e-a141-49ec-9a01-0f9b28c63b6a",
+    "x_top_left": "36",
+    "y_top_left": "229",
+    "width": "1450",
+    "height": "840",
+    "member": "Images/693e891a-b1d1-4dbf-b537-74475b4d50ba/693e891a-b1d1-4dbf-b537-74475b4d50ba-720e866e-a141-49ec-9a01-0f9b28c63b6a.jpg",
+    "number": 183
+  },
+  {
+    "DOG_ID": "98a18e12-c656-452b-bf3f-79550fb0ec9f",
+    "VIDEO_ID": "fc94545f-7956-4a17-a414-1f1d23613ab0",
+    "x_top_left": "1",
+    "y_top_left": "1",
+    "width": "745",
+    "height": "474",
+    "member": "Images/98a18e12-c656-452b-bf3f-79550fb0ec9f/98a18e12-c656-452b-bf3f-79550fb0ec9f-fc94545f-7956-4a17-a414-1f1d23613ab0.jpg",
+    "number": 184
+  },
+  {
+    "DOG_ID": "7c1a2fa7-6f35-43f4-a101-ec3131c63f65",
+    "VIDEO_ID": "88db5128-b9d2-46e3-9518-c20a984e778f",
+    "x_top_left": "11",
+    "y_top_left": "682",
+    "width": "896",
+    "height": "518",
+    "member": "Images/7c1a2fa7-6f35-43f4-a101-ec3131c63f65/7c1a2fa7-6f35-43f4-a101-ec3131c63f65-88db5128-b9d2-46e3-9518-c20a984e778f.jpg",
+    "number": 185
+  },
+  {
+    "DOG_ID": "9c49e47c-9432-404c-98bc-c4a7d6c3ebf5",
+    "VIDEO_ID": "61d16f96-fa8d-4853-91aa-66b3a1fa9ee7",
+    "x_top_left": "373",
+    "y_top_left": "1587",
+    "width": "1163",
+    "height": "672",
+    "member": "Images/9c49e47c-9432-404c-98bc-c4a7d6c3ebf5/9c49e47c-9432-404c-98bc-c4a7d6c3ebf5-61d16f96-fa8d-4853-91aa-66b3a1fa9ee7.jpg",
+    "number": 186
+  },
+  {
+    "DOG_ID": "6e419a21-5a52-40c4-aae1-42bfbf3434d9",
+    "VIDEO_ID": "824df636-97c8-4cb2-a4bb-649e153dac75",
+    "x_top_left": "492",
+    "y_top_left": "169",
+    "width": "1409",
+    "height": "898",
+    "member": "Images/6e419a21-5a52-40c4-aae1-42bfbf3434d9/6e419a21-5a52-40c4-aae1-42bfbf3434d9-824df636-97c8-4cb2-a4bb-649e153dac75.jpg",
+    "number": 187
+  },
+  {
+    "DOG_ID": "5b723c15-7fbd-43d1-998d-71e0ce67a0ca",
+    "VIDEO_ID": "abc2f143-d7b6-4a9d-8ea0-deb57c6f8b42",
+    "x_top_left": "7",
+    "y_top_left": "637",
+    "width": "979",
+    "height": "624",
+    "member": "Images/5b723c15-7fbd-43d1-998d-71e0ce67a0ca/5b723c15-7fbd-43d1-998d-71e0ce67a0ca-abc2f143-d7b6-4a9d-8ea0-deb57c6f8b42.jpg",
+    "number": 188
+  },
+  {
+    "DOG_ID": "97f3bbf0-3956-4222-8725-45850a4decb3",
+    "VIDEO_ID": "9f6ecff3-eeea-4a5d-aa9d-39d8c0ebc6f0",
+    "x_top_left": "0",
+    "y_top_left": "739",
+    "width": "760",
+    "height": "439",
+    "member": "Images/97f3bbf0-3956-4222-8725-45850a4decb3/97f3bbf0-3956-4222-8725-45850a4decb3-9f6ecff3-eeea-4a5d-aa9d-39d8c0ebc6f0.jpg",
+    "number": 189
+  },
+  {
+    "DOG_ID": "edbb2dff-3577-4f3e-b2e2-b16492567a27",
+    "VIDEO_ID": "c320fbec-c104-404f-8ac6-c26501667581",
+    "x_top_left": "173",
+    "y_top_left": "175",
+    "width": "1548",
+    "height": "894",
+    "member": "Images/edbb2dff-3577-4f3e-b2e2-b16492567a27/edbb2dff-3577-4f3e-b2e2-b16492567a27-c320fbec-c104-404f-8ac6-c26501667581.jpg",
+    "number": 190
+  },
+  {
+    "DOG_ID": "c5991b0b-cd68-4267-ab46-34c892733ff8",
+    "VIDEO_ID": "e720a01a-4251-44d5-93fe-6443f1a48d69",
+    "x_top_left": "58",
+    "y_top_left": "2",
+    "width": "1855",
+    "height": "1069",
+    "member": "Images/c5991b0b-cd68-4267-ab46-34c892733ff8/c5991b0b-cd68-4267-ab46-34c892733ff8-e720a01a-4251-44d5-93fe-6443f1a48d69.jpg",
+    "number": 191
+  },
+  {
+    "DOG_ID": "90f457c2-1f49-4930-abb7-95b73df58ffe",
+    "VIDEO_ID": "bd86c236-daf6-4ce7-9c00-a3cf3db6f94f",
+    "x_top_left": "17",
+    "y_top_left": "478",
+    "width": "697",
+    "height": "446",
+    "member": "Images/90f457c2-1f49-4930-abb7-95b73df58ffe/90f457c2-1f49-4930-abb7-95b73df58ffe-bd86c236-daf6-4ce7-9c00-a3cf3db6f94f.jpg",
+    "number": 192
+  },
+  {
+    "DOG_ID": "4442ddfd-ba4b-4f40-8d94-915a88fcd96a",
+    "VIDEO_ID": "a98ee02a-f720-493d-98d3-9f382e1729e3",
+    "x_top_left": "9",
+    "y_top_left": "992",
+    "width": "550",
+    "height": "352",
+    "member": "Images/4442ddfd-ba4b-4f40-8d94-915a88fcd96a/4442ddfd-ba4b-4f40-8d94-915a88fcd96a-a98ee02a-f720-493d-98d3-9f382e1729e3.jpg",
+    "number": 193
+  },
+  {
+    "DOG_ID": "d10b05f3-04e3-42bc-872a-21f724d82ee2",
+    "VIDEO_ID": "93f15f8d-fa31-4480-b823-8f402434d563",
+    "x_top_left": "540",
+    "y_top_left": "117",
+    "width": "545",
+    "height": "349",
+    "member": "Images/d10b05f3-04e3-42bc-872a-21f724d82ee2/d10b05f3-04e3-42bc-872a-21f724d82ee2-93f15f8d-fa31-4480-b823-8f402434d563.jpg",
+    "number": 194
+  },
+  {
+    "DOG_ID": "98c66392-edf5-485d-b280-b30e374f7b9a",
+    "VIDEO_ID": "4bb58c0e-ba91-4373-b2e2-cec528a23465",
+    "x_top_left": "557",
+    "y_top_left": "299",
+    "width": "974",
+    "height": "624",
+    "member": "Images/98c66392-edf5-485d-b280-b30e374f7b9a/98c66392-edf5-485d-b280-b30e374f7b9a-4bb58c0e-ba91-4373-b2e2-cec528a23465.jpg",
+    "number": 195
+  },
+  {
+    "DOG_ID": "8a42f378-5ca3-4129-9462-e696a766ea49",
+    "VIDEO_ID": "7eee53dd-e8e8-48ec-9766-7d93410ac44a",
+    "x_top_left": "431",
+    "y_top_left": "957",
+    "width": "569",
+    "height": "365",
+    "member": "Images/8a42f378-5ca3-4129-9462-e696a766ea49/8a42f378-5ca3-4129-9462-e696a766ea49-7eee53dd-e8e8-48ec-9766-7d93410ac44a.jpg",
+    "number": 196
+  },
+  {
+    "DOG_ID": "fd1d0358-8ca7-4512-9836-6296186b763c",
+    "VIDEO_ID": "3acd0862-c54c-4cdc-b398-064ac5ea0a9d",
+    "x_top_left": "190",
+    "y_top_left": "653",
+    "width": "887",
+    "height": "569",
+    "member": "Images/fd1d0358-8ca7-4512-9836-6296186b763c/fd1d0358-8ca7-4512-9836-6296186b763c-3acd0862-c54c-4cdc-b398-064ac5ea0a9d.jpg",
+    "number": 197
+  },
+  {
+    "DOG_ID": "f11706aa-361d-49e8-b532-f6d1bc231864",
+    "VIDEO_ID": "11e11bba-d6a0-4086-b392-3bb05aab469e",
+    "x_top_left": "672",
+    "y_top_left": "202",
+    "width": "720",
+    "height": "462",
+    "member": "Images/f11706aa-361d-49e8-b532-f6d1bc231864/f11706aa-361d-49e8-b532-f6d1bc231864-11e11bba-d6a0-4086-b392-3bb05aab469e.jpg",
+    "number": 198
+  },
+  {
+    "DOG_ID": "add2271e-c711-45e3-b4b1-d900fd6d602a",
+    "VIDEO_ID": "8b78cf06-b2b9-4a32-a9cd-3199f522f331",
+    "x_top_left": "126",
+    "y_top_left": "445",
+    "width": "603",
+    "height": "387",
+    "member": "Images/add2271e-c711-45e3-b4b1-d900fd6d602a/add2271e-c711-45e3-b4b1-d900fd6d602a-8b78cf06-b2b9-4a32-a9cd-3199f522f331.jpg",
+    "number": 199
+  },
+  {
+    "DOG_ID": "4b9da415-88d6-4f09-aa9a-b8cfdf258e72",
+    "VIDEO_ID": "e52238ff-7f57-4ae9-9913-3ff1917b9174",
+    "x_top_left": "58",
+    "y_top_left": "79",
+    "width": "1118",
+    "height": "718",
+    "member": "Images/4b9da415-88d6-4f09-aa9a-b8cfdf258e72/4b9da415-88d6-4f09-aa9a-b8cfdf258e72-e52238ff-7f57-4ae9-9913-3ff1917b9174.jpg",
+    "number": 200
+  }
+]

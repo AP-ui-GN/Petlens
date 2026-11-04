@@ -1,0 +1,27 @@
+PetLens Day 2 — initial video assessment
+
+Recommendation: Review dog02 first. Its larger, mostly side-on view gives a better chance of following a physical hind paw than the 426 x 240 outdoor clip. Whether it supports two certain touchdowns of the same paw remains unresolved: the paws overlap, contact is sometimes obscured by blur and shadow, and its 12 FPS sampling leaves 83 ms between frames.
+
+Independent recordings
+
+1. dog02 original: test/Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s003.ogv
+   - 5.0 seconds, 12 FPS, 960 x 544, 60 frames.
+   - Continuous walking with repeated limb motion is visible. The number of complete same-paw touchdown cycles cannot be determined from the available review.
+   - Converted input: tmp/rtmpose-test/multi-video-evaluation/inputs/dog02-walking.mp4
+   - Existing predictions: tmp/rtmpose-test/multi-video-evaluation/runs/dog02-walking-20261102/predictions.json
+
+2. Outdoor dog clip: 4300700-sd_426_240_30fps.mp4
+   - 5.51 seconds, 29.97 FPS, 426 x 240, 165 frames.
+   - Several walking movements are visible; a complete touchdown cycle is not established. Paws are small, and the dog turns toward the camera near the end.
+   - Existing predictions: tmp/rtmpose-test/multi-video-evaluation/runs/original165-final-validation/predictions.json
+   - Three numerical oscillation candidates are not verified strides.
+
+The other MP4s are annotated copies or short excerpts of these recordings, not additional independent footage. PetLens-paw-review.mp4 is an annotated version of the outdoor clip. No contact events are claimed as verified here.
+
+If human review cannot resolve dog02's paw identity and contacts, record a continuous 10–15 second side-on walk at at least 30 FPS, preferably 60 FPS, and 1080p or better. Keep one dog's full body and the floor in frame, with the paws large and sharp enough to distinguish ground contact; use even lighting, a contrasting floor, a steady camera, and a straight walk without turns or obstructions. Save the original under test/ alongside the existing source video; MP4 files are git-ignored.
+
+Next command, from the repository root, opens the existing human annotation workflow:
+
+python -m http.server 8765 --bind 0.0.0.0 --directory tmp/rtmpose-test/paw-tracking-experiment/manual-annotation
+
+Open the private forwarded port at /?dataset=dog02. Review the original frames and mark identity or contact uncertain when they cannot be resolved. The event-review mode covers frames 0–30; it does not establish contacts elsewhere in the 60-frame clip.

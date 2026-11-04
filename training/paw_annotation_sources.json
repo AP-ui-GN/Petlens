@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "keypointSchema": {
+    "path": "training/canine_keypoint_schema.json",
+    "sha256": "b44942d61544488c7fbe6fd5ad77db641e7615adf82e8924f4316b04cfbef579"
+  },
+  "sequences": [
+    {
+      "group": "dalmatian",
+      "split": "train",
+      "metadata": {
+        "path": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/dalmatian/manifest.json",
+        "sha256": "5de5968fe9a3d00f2aaae3311c106ca2d2af31b7fecc7fcb39ebaef9fa3594a6"
+      },
+      "video": {
+        "path": "tmp/rtmpose-test/multi-video-evaluation/inputs/dalmatian-lossless-cfr.mp4",
+        "sha256": "13efcd61041c8795852ad377ca4a969d117c907fcb8d4a9298c61303bb7881d8"
+      },
+      "predictions": {
+        "path": "tmp/rtmpose-test/multi-video-evaluation/runs/dalmatian-day2-cfr-20261103/predictions.json",
+        "sha256": "3c641f8418183512d5693acd9eeeae39ce1bff9847e2433bef839df13bd414a9"
+      },
+      "annotations": [
+        {
+          "path": "tests/petlens-dalmatian-day2-3c641f8418183512-physical-hind-tracks (3).json",
+          "sha256": "3479491ea5845734055a2e1fb28a21f55ef87aaf582c6d8a21a1ba0097f224f6"
+        }
+      ],
+      "originalVideo": {
+        "path": "tests/13792872-hd_1080_1920_30fps (1).mp4",
+        "sha256": "de45e7d69e6173576f51347ebe8ce21fe5095e7e7de4447bacc865b2c6c19535"
+      }
+    },
+    {
+      "group": "dog02",
+      "split": "exploratory_evaluation",
+      "metadata": {
+        "path": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/dog02/evaluation-manifest.json",
+        "sha256": "981dc012f14a11713c74215a3c98e937c24df87ef3909341ce6361a6099ae96f"
+      },
+      "video": {
+        "path": "tmp/rtmpose-test/multi-video-evaluation/inputs/dog02-walking.mp4",
+        "sha256": "d16ea683300bdc992abdd73d3d527754e34745e03840be6dd669090300f3d93c"
+      },
+      "predictions": {
+        "path": "tmp/rtmpose-test/multi-video-evaluation/runs/dog02-walking-20261102/predictions.json",
+        "sha256": "ac5013c8ed782060e54f58749b955cfc2bc2f5f44fda5003356596f4e62c5a54"
+      },
+      "annotations": [
+        {
+          "path": "tests/dog02-localization-20-v1-physical-hind-tracks.json",
+          "sha256": "e80eef8307129ec72f936289021403e737424530cf8a6230aaed9d27ddae2d39"
+        },
+        {
+          "path": "tests/petlens-dog02-0-30-ac5013c8ed782060-physical-hind-tracks.json",
+          "sha256": "0cb4eceb2a4b71e757cccad85361b45021efac768d4c85f16fb3dfc1c7225ce2"
+        }
+      ]
+    }
+  ]
+}

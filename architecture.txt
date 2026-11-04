@@ -1,0 +1,38 @@
+Implemented the annotation builder, tests, and usage/report:
+
+- training/prepare_paw_annotations.py
+- tests/test_paw_annotation_data.py
+- training/PAW_ANNOTATIONS.md
+
+Generated data and provenance are recorded in:
+reports/paw-annotation-data-v1/manifest.json
+
+DATASET INVENTORY
+
+Source                              Frames with visible labels  Unique human points  Verified anatomical targets
+Dalmatian — training                42                          79                   0
+dog02 — exploratory evaluation       28                          55                   0
+
+The pipeline preserves human coordinates independently of predictions, removes six duplicate labels, validates source hashes and video timing, and preserves nonvisible/ambiguous states. Anatomical COCO targets require explicit human review; missing channels remain unlabeled.
+
+VALIDATION
+
+16 automated tests passed, and the builder completed on both existing videos. No training, inference, downloads, or production-app changes occurred.
+
+NEXT ANNOTATION PASS
+
+Verify anatomical identity and landmark consistency for the 79 Dalmatian points intended for training; verify the 55 dog02 points before anatomical evaluation. Unresolvable points stay unlabeled.
+
+FIRST EXPERIMENT
+
+A small masked hind-paw localization fine-tuning pilot using the existing pretrained RTMPose-m and reviewed Dalmatian labels. The matching trainable checkpoint and RTMPose training integration are still required. Keep dog02 outside training and model selection. This would establish feasibility, not generalization or stride accuracy.
+
+GITHUB UPDATE
+
+Committed and pushed all non-ignored repository changes to:
+https://github.com/AP-ui-GN/Petlens
+Branch: main
+
+Includes the annotation pipeline, tests, dataset manifests, human annotations, earlier screening reports, and review artifacts. Existing Git ignore rules keep local videos, caches, and generated frame images out of the commit.
+
+Validation: all 16 annotation-pipeline tests passed. No training or pose inference was run.

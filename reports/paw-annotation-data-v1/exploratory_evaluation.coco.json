@@ -1,0 +1,269 @@
+{
+  "annotations": [],
+  "categories": [
+    {
+      "id": 1,
+      "keypoints": [
+        "left_eye",
+        "right_eye",
+        "nose",
+        "neck",
+        "root_of_tail",
+        "left_shoulder",
+        "left_elbow",
+        "left_front_paw",
+        "right_shoulder",
+        "right_elbow",
+        "right_front_paw",
+        "left_hip",
+        "left_knee",
+        "left_back_paw",
+        "right_hip",
+        "right_knee",
+        "right_back_paw"
+      ],
+      "name": "dog",
+      "skeleton": [],
+      "supercategory": "animal"
+    }
+  ],
+  "images": [
+    {
+      "file_name": "images/dog02/000000.png",
+      "frame_id": 0,
+      "height": 544,
+      "id": 1,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000002.png",
+      "frame_id": 2,
+      "height": 544,
+      "id": 2,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000004.png",
+      "frame_id": 4,
+      "height": 544,
+      "id": 3,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000007.png",
+      "frame_id": 7,
+      "height": 544,
+      "id": 4,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000008.png",
+      "frame_id": 8,
+      "height": 544,
+      "id": 5,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000009.png",
+      "frame_id": 9,
+      "height": 544,
+      "id": 6,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000010.png",
+      "frame_id": 10,
+      "height": 544,
+      "id": 7,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000011.png",
+      "frame_id": 11,
+      "height": 544,
+      "id": 8,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000012.png",
+      "frame_id": 12,
+      "height": 544,
+      "id": 9,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000013.png",
+      "frame_id": 13,
+      "height": 544,
+      "id": 10,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000014.png",
+      "frame_id": 14,
+      "height": 544,
+      "id": 11,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000015.png",
+      "frame_id": 15,
+      "height": 544,
+      "id": 12,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000016.png",
+      "frame_id": 16,
+      "height": 544,
+      "id": 13,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000017.png",
+      "frame_id": 17,
+      "height": 544,
+      "id": 14,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000018.png",
+      "frame_id": 18,
+      "height": 544,
+      "id": 15,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000019.png",
+      "frame_id": 19,
+      "height": 544,
+      "id": 16,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000020.png",
+      "frame_id": 20,
+      "height": 544,
+      "id": 17,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000030.png",
+      "frame_id": 30,
+      "height": 544,
+      "id": 18,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000031.png",
+      "frame_id": 31,
+      "height": 544,
+      "id": 19,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000032.png",
+      "frame_id": 32,
+      "height": 544,
+      "id": 20,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000033.png",
+      "frame_id": 33,
+      "height": 544,
+      "id": 21,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000034.png",
+      "frame_id": 34,
+      "height": 544,
+      "id": 22,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000035.png",
+      "frame_id": 35,
+      "height": 544,
+      "id": 23,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000039.png",
+      "frame_id": 39,
+      "height": 544,
+      "id": 24,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000042.png",
+      "frame_id": 42,
+      "height": 544,
+      "id": 25,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000045.png",
+      "frame_id": 45,
+      "height": 544,
+      "id": 26,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000046.png",
+      "frame_id": 46,
+      "height": 544,
+      "id": 27,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000047.png",
+      "frame_id": 47,
+      "height": 544,
+      "id": 28,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    },
+    {
+      "file_name": "images/dog02/000055.png",
+      "frame_id": 55,
+      "height": 544,
+      "id": 29,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "width": 960
+    }
+  ],
+  "info": {
+    "description": "Human-only partial AP-10K labels; zero triplets are unlabeled",
+    "model_selection_allowed": false,
+    "split": "exploratory_evaluation"
+  }
+}

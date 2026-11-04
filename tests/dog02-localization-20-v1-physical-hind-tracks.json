@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 1,
+  "annotationType": "physical-hind-tracks",
+  "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+  "videoSha256": "d16ea683300bdc992abdd73d3d527754e34745e03840be6dd669090300f3d93c",
+  "predictionSha256": "ac5013c8ed782060e54f58749b955cfc2bc2f5f44fda5003356596f4e62c5a54",
+  "annotator": "",
+  "identityDefinition": "Reviewer-defined physical hind paws A/B; no anatomical LH/RH mapping.",
+  "frames": {
+    "0": {
+      "A": {
+        "status": "unmarked",
+        "x": null,
+        "y": null
+      },
+      "B": {
+        "status": "unmarked",
+        "x": null,
+        "y": null
+      },
+      "modelExposed": false
+    },
+    "2": {
+      "A": {
+        "status": "visible",
+        "x": 830.4086786552832,
+        "y": 461.6174720426021
+      },
+      "B": {
+        "status": "visible",
+        "x": 840.5310420600294,
+        "y": 432.380070219637
+      },
+      "modelExposed": false
+    },
+    "4": {
+      "A": {
+        "status": "visible",
+        "x": 833.7827997901986,
+        "y": 454.87037931422554
+      },
+      "B": {
+        "status": "visible",
+        "x": 792.1686391262423,
+        "y": 436.87813203855467
+      },
+      "modelExposed": false
+    },
+    "7": {
+      "A": {
+        "status": "visible",
+        "x": 842.7804561499729,
+        "y": 453.9957638088778
+      },
+      "B": {
+        "status": "visible",
+        "x": 746.0556502823988,
+        "y": 440.251678402743
+      },
+      "modelExposed": false
+    },
+    "8": {
+      "A": {
+        "status": "visible",
+        "x": 832.6580927452268,
+        "y": 455.12027926360724
+      },
+      "B": {
+        "status": "visible",
+        "x": 730.3097516527938,
+        "y": 440.251678402743
+      },
+      "modelExposed": false
+    },
+    "9": {
+      "A": {
+        "status": "visible",
+        "x": 831.533385700255,
+        "y": 453.9957638088778
+      },
+      "B": {
+        "status": "visible",
+        "x": 715.6885600681604,
+        "y": 441.3761938574724
+      },
+      "modelExposed": false
+    },
+    "10": {
+      "A": {
+        "status": "visible",
+        "x": 827.0345575203678,
+        "y": 455.12027926360724
+      },
+      "B": {
+        "status": "visible",
+        "x": 697.6932473486117,
+        "y": 442.5007093122018
+      },
+      "modelExposed": false
+    },
+    "11": {
+      "A": {
+        "status": "visible",
+        "x": 834.9075068351704,
+        "y": 455.12027926360724
+      },
+      "B": {
+        "status": "visible",
+        "x": 683.0720557639784,
+        "y": 442.5007093122018
+      },
+      "modelExposed": false
+    },
+    "12": {
+      "A": {
+        "status": "visible",
+        "x": 830.4086786552832,
+        "y": 451.74673289941893
+      },
+      "B": {
+        "status": "visible",
+        "x": 667.3261571343734,
+        "y": 443.62522476693124
+      },
+      "modelExposed": false
+    },
+    "13": {
+      "A": {
+        "status": "visible",
+        "x": 822.5357293404808,
+        "y": 450.37231749530787
+      },
+      "B": {
+        "status": "visible",
+        "x": 658.328500774599,
+        "y": 444.7497402216607
+      },
+      "modelExposed": false
+    },
+    "14": {
+      "A": {
+        "status": "visible",
+        "x": 820.2863152505371,
+        "y": 450.37231749530787
+      },
+      "B": {
+        "status": "visible",
+        "x": 647.0814303248811,
+        "y": 444.7497402216607
+      },
+      "modelExposed": false
+    },
+    "15": {
+      "A": {
+        "status": "visible",
+        "x": 821.4110222955089,
+        "y": 451.4968329500373
+      },
+      "B": {
+        "status": "visible",
+        "x": 635.8343598751632,
+        "y": 445.87425567639013
+      },
+      "modelExposed": false
+    },
+    "16": {
+      "A": {
+        "status": "visible",
+        "x": 820.2863152505371,
+        "y": 449.24780204057845
+      },
+      "B": {
+        "status": "visible",
+        "x": 631.335531695276,
+        "y": 445.87425567639013
+      },
+      "modelExposed": false
+    },
+    "17": {
+      "A": {
+        "status": "visible",
+        "x": 819.1616082055654,
+        "y": 450.37231749530787
+      },
+      "B": {
+        "status": "visible",
+        "x": 626.8367035153889,
+        "y": 452.62134840476665
+      },
+      "modelExposed": false
+    },
+    "18": {
+      "A": {
+        "status": "visible",
+        "x": 816.9121941156217,
+        "y": 450.37231749530787
+      },
+      "B": {
+        "status": "visible",
+        "x": 623.4625823804733,
+        "y": 454.87037931422554
+      },
+      "modelExposed": false
+    },
+    "19": {
+      "A": {
+        "status": "visible",
+        "x": 812.4133659357345,
+        "y": 454.87037931422554
+      },
+      "B": {
+        "status": "visible",
+        "x": 629.0861176053324,
+        "y": 460.4929565878727
+      },
+      "modelExposed": false
+    },
+    "20": {
+      "A": {
+        "status": "visible",
+        "x": 809.0392448008191,
+        "y": 448.123286585849
+      },
+      "B": {
+        "status": "visible",
+        "x": 627.9614105603606,
+        "y": 457.1194102236844
+      },
+      "modelExposed": false
+    },
+    "30": {
+      "A": {
+        "status": "visible",
+        "x": 712.314438933245,
+        "y": 435.75361658382525
+      },
+      "B": {
+        "status": "visible",
+        "x": 627.9614105603606,
+        "y": 457.1194102236844
+      },
+      "modelExposed": false
+    },
+    "31": {
+      "A": {
+        "status": "visible",
+        "x": 703.3167825734707,
+        "y": 436.1284665078978
+      },
+      "B": {
+        "status": "visible",
+        "x": 633.5849457852196,
+        "y": 455.2452292382981
+      },
+      "modelExposed": false
+    },
+    "32": {
+      "A": {
+        "status": "visible",
+        "x": 685.321469853922,
+        "y": 446.24910560046266
+      },
+      "B": {
+        "status": "visible",
+        "x": 622.3378753355017,
+        "y": 466.49038378559237
+      },
+      "modelExposed": false
+    },
+    "33": {
+      "A": {
+        "status": "visible",
+        "x": 686.4461768988938,
+        "y": 429.3813737795212
+      },
+      "B": {
+        "status": "visible",
+        "x": 630.2108246503043,
+        "y": 454.1207137835687
+      },
+      "modelExposed": false
+    },
+    "34": {
+      "A": {
+        "status": "occluded",
+        "x": null,
+        "y": null
+      },
+      "B": {
+        "status": "visible",
+        "x": 634.7096528301913,
+        "y": 452.9961983288392
+      },
+      "modelExposed": false
+    },
+    "35": {
+      "A": {
+        "status": "visible",
+        "x": 625.711996470417,
+        "y": 431.6304046889801
+      },
+      "B": {
+        "status": "visible",
+        "x": 632.4602387402477,
+        "y": 454.1207137835687
+      },
+      "modelExposed": false
+    },
+    "39": {
+      "A": {
+        "status": "visible",
+        "x": 561.6036949070249,
+        "y": 435.0039510531684
+      },
+      "B": {
+        "status": "visible",
+        "x": 636.959066920135,
+        "y": 454.1207137835687
+      },
+      "modelExposed": false
+    },
+    "42": {
+      "A": {
+        "status": "visible",
+        "x": 507.61775674837884,
+        "y": 432.7549201437095
+      },
+      "B": {
+        "status": "visible",
+        "x": 630.2108246503043,
+        "y": 465.36586833086295
+      },
+      "modelExposed": false
+    },
+    "45": {
+      "A": {
+        "status": "visible",
+        "x": 466.00359608442255,
+        "y": 439.5020128720861
+      },
+      "B": {
+        "status": "visible",
+        "x": 627.9614105603606,
+        "y": 459.74329105721586
+      },
+      "modelExposed": false
+    },
+    "46": {
+      "A": {
+        "status": "visible",
+        "x": 453.6318185897328,
+        "y": 437.25298196262725
+      },
+      "B": {
+        "status": "visible",
+        "x": 623.4625823804733,
+        "y": 454.1207137835687
+      },
+      "modelExposed": false
+    },
+    "47": {
+      "A": {
+        "status": "visible",
+        "x": 435.6365058701841,
+        "y": 436.1284665078978
+      },
+      "B": {
+        "status": "visible",
+        "x": 627.9614105603606,
+        "y": 452.9961983288392
+      },
+      "modelExposed": false
+    },
+    "55": {
+      "A": {
+        "status": "visible",
+        "x": 379.4011536215945,
+        "y": 447.3736210551921
+      },
+      "B": {
+        "status": "visible",
+        "x": 604.342562615953,
+        "y": 441.751043781545
+      },
+      "modelExposed": false
+    }
+  },
+  "evaluationId": "dog02-localization-20-v1",
+  "evaluationSplit": {
+    "development": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "holdout": [
+      2,
+      4,
+      13,
+      16,
+      18,
+      30,
+      31,
+      32,
+      39,
+      42,
+      45,
+      46,
+      47,
+      55
+    ]
+  }
+}

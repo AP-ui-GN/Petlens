@@ -1,0 +1,1861 @@
+[
+  {
+    "document": {
+      "annotationType": "physical-hind-tracks",
+      "annotator": "Sudar",
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frames": {
+        "45": {
+          "A": {
+            "status": "unmarked",
+            "x": null,
+            "y": null
+          },
+          "B": {
+            "status": "unmarked",
+            "x": null,
+            "y": null
+          },
+          "continuity": {
+            "A": "unreviewed",
+            "B": "unreviewed"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 45,
+          "modelExposed": false,
+          "timestampSeconds": 1.5015
+        },
+        "46": {
+          "A": {
+            "status": "visible",
+            "x": 342.051504309545,
+            "y": 1347.2105785817607
+          },
+          "B": {
+            "status": "visible",
+            "x": 277.5214376042884,
+            "y": 1345.3827358988704
+          },
+          "continuity": {
+            "A": "start",
+            "B": "start"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": "uncertain",
+              "type": "touchdown"
+            }
+          },
+          "frameIndex": 46,
+          "modelExposed": false,
+          "timestampSeconds": 1.5348666666666668
+        },
+        "47": {
+          "A": {
+            "status": "visible",
+            "x": 371.17972017007725,
+            "y": 1349.2567612120076
+          },
+          "B": {
+            "status": "visible",
+            "x": 264.76642155476503,
+            "y": 1350.2698349938928
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 47,
+          "modelExposed": false,
+          "timestampSeconds": 1.5682333333333334
+        },
+        "48": {
+          "A": {
+            "status": "visible",
+            "x": 388.91526993929597,
+            "y": 1350.5230744557543
+          },
+          "B": {
+            "status": "visible",
+            "x": 253.3649967031244,
+            "y": 1345.457821480768
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 48,
+          "modelExposed": false,
+          "timestampSeconds": 1.6016000000000001
+        },
+        "49": {
+          "A": {
+            "status": "visible",
+            "x": 383.48671561716077,
+            "y": 1360.9615919414146
+          },
+          "B": {
+            "status": "visible",
+            "x": 241.73585043854027,
+            "y": 1343.242591848716
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": "certain",
+              "type": "touchdown"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 49,
+          "modelExposed": false,
+          "timestampSeconds": 1.6349666666666667
+        },
+        "50": {
+          "A": {
+            "status": "visible",
+            "x": 364.5022247450241,
+            "y": 1355.899020486358
+          },
+          "B": {
+            "status": "visible",
+            "x": 244.2671158881585,
+            "y": 1339.4456632574236
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": "certain",
+              "type": "toe_off"
+            }
+          },
+          "frameIndex": 50,
+          "modelExposed": false,
+          "timestampSeconds": 1.6683333333333334
+        },
+        "51": {
+          "A": {
+            "status": "visible",
+            "x": 350.5802647721238,
+            "y": 1355.899020486358
+          },
+          "B": {
+            "status": "visible",
+            "x": 270.84540310914986,
+            "y": 1336.914377529895
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 51,
+          "modelExposed": false,
+          "timestampSeconds": 1.7017
+        },
+        "52": {
+          "A": {
+            "status": "visible",
+            "x": 334.12703934960535,
+            "y": 1358.4303062138863
+          },
+          "B": {
+            "status": "visible",
+            "x": 298.6893230549503,
+            "y": 1343.242591848716
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 52,
+          "modelExposed": false,
+          "timestampSeconds": 1.7350666666666668
+        },
+        "53": {
+          "A": {
+            "status": "visible",
+            "x": 313.8769157526596,
+            "y": 1355.899020486358
+          },
+          "B": {
+            "status": "visible",
+            "x": 336.6583047992236,
+            "y": 1344.5082347124803
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 53,
+          "modelExposed": false,
+          "timestampSeconds": 1.7684333333333335
+        },
+        "54": {
+          "A": {
+            "status": "visible",
+            "x": 299.7820457685586,
+            "y": 1360.5858686223078
+          },
+          "B": {
+            "status": "visible",
+            "x": 368.0868156905086,
+            "y": 1347.617270253782
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 54,
+          "modelExposed": false,
+          "timestampSeconds": 1.8018000000000003
+        },
+        "55": {
+          "A": {
+            "status": "visible",
+            "x": 285.868111154828,
+            "y": 1361.5347904541513
+          },
+          "B": {
+            "status": "visible",
+            "x": 398.44449121137535,
+            "y": 1348.8824993629064
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 55,
+          "modelExposed": false,
+          "timestampSeconds": 1.8351666666666668
+        },
+        "56": {
+          "A": {
+            "status": "visible",
+            "x": 269.4243702476919,
+            "y": 1360.9021758995889
+          },
+          "B": {
+            "status": "visible",
+            "x": 413.6233289718087,
+            "y": 1354.5760303539664
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 56,
+          "modelExposed": false,
+          "timestampSeconds": 1.8685333333333334
+        },
+        "57": {
+          "A": {
+            "status": "visible",
+            "x": 258.0402419273669,
+            "y": 1356.4738740176533
+          },
+          "B": {
+            "status": "visible",
+            "x": 400.9742975047809,
+            "y": 1360.5858686223078
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": "certain",
+              "type": "touchdown"
+            }
+          },
+          "frameIndex": 57,
+          "modelExposed": false,
+          "timestampSeconds": 1.9019000000000001
+        },
+        "58": {
+          "A": {
+            "status": "visible",
+            "x": 255.6578104114405,
+            "y": 1357.164663350122
+          },
+          "B": {
+            "status": "visible",
+            "x": 384.5305565976448,
+            "y": 1359.3206395131833
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": "uncertain",
+              "type": "toe_off"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 58,
+          "modelExposed": false,
+          "timestampSeconds": 1.9352666666666667
+        },
+        "59": {
+          "A": {
+            "status": "visible",
+            "x": 275.74888598120583,
+            "y": 1361.8510977314322
+          },
+          "B": {
+            "status": "visible",
+            "x": 368.0868156905086,
+            "y": 1363.1163268405567
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 59,
+          "modelExposed": false,
+          "timestampSeconds": 1.9686333333333335
+        },
+        "60": {
+          "A": {
+            "status": "visible",
+            "x": 303.5767552086669,
+            "y": 1360.9021758995889
+          },
+          "B": {
+            "status": "visible",
+            "x": 354.1728810767781,
+            "y": 1366.279399613368
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 60,
+          "modelExposed": false,
+          "timestampSeconds": 2.0020000000000002
+        },
+        "61": {
+          "A": {
+            "status": "visible",
+            "x": 340.2589464630475,
+            "y": 1366.9120141679302
+          },
+          "B": {
+            "status": "occluded",
+            "x": null,
+            "y": null
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 61,
+          "modelExposed": false,
+          "timestampSeconds": 2.0353666666666665
+        },
+        "62": {
+          "A": {
+            "status": "visible",
+            "x": 371.88152513061704,
+            "y": 1359.6369467904644
+          },
+          "B": {
+            "status": "visible",
+            "x": 312.43107723558643,
+            "y": 1363.4326341178378
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 62,
+          "modelExposed": false,
+          "timestampSeconds": 2.0687333333333333
+        },
+        "63": {
+          "A": {
+            "status": "visible",
+            "x": 400.9742975047809,
+            "y": 1365.9630923360867
+          },
+          "B": {
+            "status": "visible",
+            "x": 290.9277237416391,
+            "y": 1363.1163268405567
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "none"
+            }
+          },
+          "frameIndex": 63,
+          "modelExposed": false,
+          "timestampSeconds": 2.1021
+        },
+        "64": {
+          "A": {
+            "status": "visible",
+            "x": 419.9478447053226,
+            "y": 1369.126165108898
+          },
+          "B": {
+            "status": "visible",
+            "x": 275.74888598120583,
+            "y": 1362.8000195632758
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 64,
+          "modelExposed": false,
+          "timestampSeconds": 2.135466666666667
+        },
+        "65": {
+          "A": {
+            "status": "visible",
+            "x": 416.15313526521425,
+            "y": 1370.7077014953036
+          },
+          "B": {
+            "status": "visible",
+            "x": 268.1594671009891,
+            "y": 1360.5858686223078
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": "certain",
+              "type": "touchdown"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 65,
+          "modelExposed": false,
+          "timestampSeconds": 2.1688333333333336
+        },
+        "66": {
+          "A": {
+            "status": "visible",
+            "x": 395.9146849179698,
+            "y": 1376.0849252090825
+          },
+          "B": {
+            "status": "visible",
+            "x": 266.89456395428635,
+            "y": 1357.1064885722155
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": "certain",
+              "type": "toe_off"
+            }
+          },
+          "frameIndex": 66,
+          "modelExposed": false,
+          "timestampSeconds": 2.2022
+        },
+        "67": {
+          "A": {
+            "status": "visible",
+            "x": 376.9411377174281,
+            "y": 1372.9218524362711
+          },
+          "B": {
+            "status": "visible",
+            "x": 289.6628205949363,
+            "y": 1359.9532540677455
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 67,
+          "modelExposed": false,
+          "timestampSeconds": 2.2355666666666667
+        },
+        "68": {
+          "A": {
+            "status": "visible",
+            "x": 361.76229995699475,
+            "y": 1376.4012324863638
+          },
+          "B": {
+            "status": "visible",
+            "x": 313.6959803822891,
+            "y": 1359.9532540677455
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 68,
+          "modelExposed": false,
+          "timestampSeconds": 2.2689333333333335
+        },
+        "69": {
+          "A": {
+            "status": "visible",
+            "x": 336.4642370229392,
+            "y": 1377.350154318207
+          },
+          "B": {
+            "status": "visible",
+            "x": 352.90797793007533,
+            "y": 1359.9532540677455
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 69,
+          "modelExposed": false,
+          "timestampSeconds": 2.3023000000000002
+        },
+        "70": {
+          "A": {
+            "status": "visible",
+            "x": 322.5503024092086,
+            "y": 1375.1360033772391
+          },
+          "B": {
+            "status": "visible",
+            "x": 385.7954597443475,
+            "y": 1365.0141705042436
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 70,
+          "modelExposed": false,
+          "timestampSeconds": 2.3356666666666666
+        },
+        "71": {
+          "A": {
+            "status": "visible",
+            "x": 304.8416583553697,
+            "y": 1377.666461595488
+          },
+          "B": {
+            "status": "visible",
+            "x": 417.41803841191705,
+            "y": 1363.748941395119
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "none"
+            }
+          },
+          "frameIndex": 71,
+          "modelExposed": false,
+          "timestampSeconds": 2.3690333333333333
+        },
+        "72": {
+          "A": {
+            "status": "visible",
+            "x": 290.9277237416391,
+            "y": 1376.7175397636447
+          },
+          "B": {
+            "status": "visible",
+            "x": 437.6564887591615,
+            "y": 1367.8609359997736
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 72,
+          "modelExposed": false,
+          "timestampSeconds": 2.4024
+        },
+        "73": {
+          "A": {
+            "status": "visible",
+            "x": 269.57977038434075,
+            "y": 1373.6180205790563
+          },
+          "B": {
+            "status": "visible",
+            "x": 425.2525955358615,
+            "y": 1377.4149491703488
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "none"
+            },
+            "B": {
+              "certainty": "certain",
+              "type": "touchdown"
+            }
+          },
+          "frameIndex": 73,
+          "modelExposed": false,
+          "timestampSeconds": 2.435766666666667
+        },
+        "74": {
+          "A": {
+            "status": "visible",
+            "x": 273.3766685587681,
+            "y": 1369.8210919877638
+          },
+          "B": {
+            "status": "visible",
+            "x": 406.2681046637248,
+            "y": 1381.2118777616415
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": "certain",
+              "type": "toe_off"
+            },
+            "B": {
+              "certainty": null,
+              "type": "none"
+            }
+          },
+          "frameIndex": 74,
+          "modelExposed": false,
+          "timestampSeconds": 2.4691333333333336
+        },
+        "75": {
+          "A": {
+            "status": "visible",
+            "x": 288.5642612564774,
+            "y": 1369.8210919877638
+          },
+          "B": {
+            "status": "visible",
+            "x": 388.5492465163972,
+            "y": 1382.4775206254055
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "unreviewed"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "none"
+            },
+            "B": {
+              "certainty": null,
+              "type": "none"
+            }
+          },
+          "frameIndex": 75,
+          "modelExposed": false,
+          "timestampSeconds": 2.5025
+        },
+        "76": {
+          "A": {
+            "status": "visible",
+            "x": 316.40818120227783,
+            "y": 1379.9462348978773
+          },
+          "B": {
+            "status": "visible",
+            "x": 365.7678574698332,
+            "y": 1379.9462348978773
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "none"
+            },
+            "B": {
+              "certainty": null,
+              "type": "none"
+            }
+          },
+          "frameIndex": 76,
+          "modelExposed": false,
+          "timestampSeconds": 2.5358666666666667
+        },
+        "77": {
+          "A": {
+            "status": "visible",
+            "x": 350.5802647721238,
+            "y": 1381.2118777616415
+          },
+          "B": {
+            "status": "visible",
+            "x": 330.3301411751781,
+            "y": 1374.8836634428205
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "none"
+            },
+            "B": {
+              "certainty": null,
+              "type": "none"
+            }
+          },
+          "frameIndex": 77,
+          "modelExposed": false,
+          "timestampSeconds": 2.5692333333333335
+        },
+        "78": {
+          "A": {
+            "status": "visible",
+            "x": 386.017981066779,
+            "y": 1386.274449216698
+          },
+          "B": {
+            "status": "visible",
+            "x": 321.47071210151427,
+            "y": 1381.2118777616415
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "none"
+            },
+            "B": {
+              "certainty": null,
+              "type": "none"
+            }
+          },
+          "frameIndex": 78,
+          "modelExposed": false,
+          "timestampSeconds": 2.6026000000000002
+        },
+        "79": {
+          "A": {
+            "status": "visible",
+            "x": 418.9244319118159,
+            "y": 1383.7431634891698
+          },
+          "B": {
+            "status": "visible",
+            "x": 303.75185395418674,
+            "y": 1382.4775206254055
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "none"
+            },
+            "B": {
+              "certainty": null,
+              "type": "none"
+            }
+          },
+          "frameIndex": 79,
+          "modelExposed": false,
+          "timestampSeconds": 2.635966666666667
+        },
+        "80": {
+          "A": {
+            "status": "visible",
+            "x": 435.37765733433434,
+            "y": 1388.8057349442265
+          },
+          "B": {
+            "status": "visible",
+            "x": 287.29862853166827,
+            "y": 1382.4775206254055
+          },
+          "continuity": {
+            "A": "unreviewed",
+            "B": "unreviewed"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 80,
+          "modelExposed": false,
+          "timestampSeconds": 2.6693333333333333
+        },
+        "81": {
+          "A": {
+            "status": "occluded",
+            "x": null,
+            "y": null
+          },
+          "B": {
+            "status": "visible",
+            "x": 283.50173035724094,
+            "y": 1373.6180205790563
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": "uncertain",
+              "type": "toe_off"
+            }
+          },
+          "frameIndex": 81,
+          "modelExposed": false,
+          "timestampSeconds": 2.7027
+        },
+        "82": {
+          "A": {
+            "status": "visible",
+            "x": 375.89291926830606,
+            "y": 1376.1493063065845
+          },
+          "B": {
+            "status": "visible",
+            "x": 298.6893230549503,
+            "y": 1369.8210919877638
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "none"
+            }
+          },
+          "frameIndex": 82,
+          "modelExposed": false,
+          "timestampSeconds": 2.736066666666667
+        },
+        "83": {
+          "A": {
+            "status": "occluded",
+            "x": null,
+            "y": null
+          },
+          "B": {
+            "status": "visible",
+            "x": 326.5332430007507,
+            "y": 1378.680592034113
+          },
+          "continuity": {
+            "A": "unreviewed",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "none"
+            }
+          },
+          "frameIndex": 83,
+          "modelExposed": false,
+          "timestampSeconds": 2.7694333333333336
+        },
+        "84": {
+          "A": {
+            "status": "occluded",
+            "x": null,
+            "y": null
+          },
+          "B": {
+            "status": "occluded",
+            "x": null,
+            "y": null
+          },
+          "continuity": {
+            "A": "unreviewed",
+            "B": "unreviewed"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 84,
+          "modelExposed": false,
+          "timestampSeconds": 2.8028000000000004
+        },
+        "85": {
+          "A": {
+            "status": "visible",
+            "x": 397.40867559006097,
+            "y": 1381.2118777616415
+          },
+          "B": {
+            "status": "occluded",
+            "x": null,
+            "y": null
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "unreviewed"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "none"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 85,
+          "modelExposed": false,
+          "timestampSeconds": 2.8361666666666667
+        },
+        "86": {
+          "A": {
+            "status": "occluded",
+            "x": null,
+            "y": null
+          },
+          "B": {
+            "status": "occluded",
+            "x": null,
+            "y": null
+          },
+          "continuity": {
+            "A": "unreviewed",
+            "B": "unreviewed"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 86,
+          "modelExposed": false,
+          "timestampSeconds": 2.8695333333333335
+        },
+        "87": {
+          "A": {
+            "status": "occluded",
+            "x": null,
+            "y": null
+          },
+          "B": {
+            "status": "occluded",
+            "x": null,
+            "y": null
+          },
+          "continuity": {
+            "A": "unreviewed",
+            "B": "unreviewed"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "unreviewed"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 87,
+          "modelExposed": false,
+          "timestampSeconds": 2.9029000000000003
+        },
+        "88": {
+          "A": {
+            "status": "visible",
+            "x": 432.8463918847161,
+            "y": 1397.6652349905758
+          },
+          "B": {
+            "status": "unmarked",
+            "x": null,
+            "y": null
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "unreviewed"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "uncertain"
+            },
+            "B": {
+              "certainty": null,
+              "type": "unreviewed"
+            }
+          },
+          "frameIndex": 88,
+          "modelExposed": false,
+          "timestampSeconds": 2.936266666666667
+        },
+        "89": {
+          "A": {
+            "status": "visible",
+            "x": 405.0024719389156,
+            "y": 1405.2590921731608
+          },
+          "B": {
+            "status": "visible",
+            "x": 292.3611594309047,
+            "y": 1390.0713778079905
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "uncertain"
+            },
+            "B": {
+              "certainty": null,
+              "type": "uncertain"
+            }
+          },
+          "frameIndex": 89,
+          "modelExposed": false,
+          "timestampSeconds": 2.9696333333333333
+        },
+        "90": {
+          "A": {
+            "status": "visible",
+            "x": 306.28311940380496,
+            "y": 1393.868306399283
+          },
+          "B": {
+            "status": "visible",
+            "x": 384.7523483419699,
+            "y": 1402.7278064456323
+          },
+          "continuity": {
+            "A": "continuous",
+            "B": "continuous"
+          },
+          "events": {
+            "A": {
+              "certainty": null,
+              "type": "none"
+            },
+            "B": {
+              "certainty": null,
+              "type": "none"
+            }
+          },
+          "frameIndex": 90,
+          "modelExposed": false,
+          "timestampSeconds": 3.003
+        }
+      },
+      "identityDefinition": "Reviewer-defined physical hind paws A/B; no anatomical LH/RH mapping.",
+      "originalVideoSha256": "de45e7d69e6173576f51347ebe8ce21fe5095e7e7de4447bacc865b2c6c19535",
+      "predictionSha256": "3c641f8418183512d5693acd9eeeae39ce1bff9847e2433bef839df13bd414a9",
+      "schemaVersion": 1,
+      "videoSha256": "13efcd61041c8795852ad377ca4a969d117c907fcb8d4a9298c61303bb7881d8"
+    },
+    "path": "tests/petlens-dalmatian-day2-3c641f8418183512-physical-hind-tracks (3).json"
+  },
+  {
+    "document": {
+      "annotationType": "physical-hind-tracks",
+      "annotator": "",
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "evaluationId": "dog02-localization-20-v1",
+      "evaluationSplit": {
+        "development": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "holdout": [
+          2,
+          4,
+          13,
+          16,
+          18,
+          30,
+          31,
+          32,
+          39,
+          42,
+          45,
+          46,
+          47,
+          55
+        ]
+      },
+      "frames": {
+        "0": {
+          "A": {
+            "status": "unmarked",
+            "x": null,
+            "y": null
+          },
+          "B": {
+            "status": "unmarked",
+            "x": null,
+            "y": null
+          },
+          "modelExposed": false
+        },
+        "10": {
+          "A": {
+            "status": "visible",
+            "x": 827.0345575203678,
+            "y": 455.12027926360724
+          },
+          "B": {
+            "status": "visible",
+            "x": 697.6932473486117,
+            "y": 442.5007093122018
+          },
+          "modelExposed": false
+        },
+        "11": {
+          "A": {
+            "status": "visible",
+            "x": 834.9075068351704,
+            "y": 455.12027926360724
+          },
+          "B": {
+            "status": "visible",
+            "x": 683.0720557639784,
+            "y": 442.5007093122018
+          },
+          "modelExposed": false
+        },
+        "12": {
+          "A": {
+            "status": "visible",
+            "x": 830.4086786552832,
+            "y": 451.74673289941893
+          },
+          "B": {
+            "status": "visible",
+            "x": 667.3261571343734,
+            "y": 443.62522476693124
+          },
+          "modelExposed": false
+        },
+        "13": {
+          "A": {
+            "status": "visible",
+            "x": 822.5357293404808,
+            "y": 450.37231749530787
+          },
+          "B": {
+            "status": "visible",
+            "x": 658.328500774599,
+            "y": 444.7497402216607
+          },
+          "modelExposed": false
+        },
+        "14": {
+          "A": {
+            "status": "visible",
+            "x": 820.2863152505371,
+            "y": 450.37231749530787
+          },
+          "B": {
+            "status": "visible",
+            "x": 647.0814303248811,
+            "y": 444.7497402216607
+          },
+          "modelExposed": false
+        },
+        "15": {
+          "A": {
+            "status": "visible",
+            "x": 821.4110222955089,
+            "y": 451.4968329500373
+          },
+          "B": {
+            "status": "visible",
+            "x": 635.8343598751632,
+            "y": 445.87425567639013
+          },
+          "modelExposed": false
+        },
+        "16": {
+          "A": {
+            "status": "visible",
+            "x": 820.2863152505371,
+            "y": 449.24780204057845
+          },
+          "B": {
+            "status": "visible",
+            "x": 631.335531695276,
+            "y": 445.87425567639013
+          },
+          "modelExposed": false
+        },
+        "17": {
+          "A": {
+            "status": "visible",
+            "x": 819.1616082055654,
+            "y": 450.37231749530787
+          },
+          "B": {
+            "status": "visible",
+            "x": 626.8367035153889,
+            "y": 452.62134840476665
+          },
+          "modelExposed": false
+        },
+        "18": {
+          "A": {
+            "status": "visible",
+            "x": 816.9121941156217,
+            "y": 450.37231749530787
+          },
+          "B": {
+            "status": "visible",
+            "x": 623.4625823804733,
+            "y": 454.87037931422554
+          },
+          "modelExposed": false
+        },
+        "19": {
+          "A": {
+            "status": "visible",
+            "x": 812.4133659357345,
+            "y": 454.87037931422554
+          },
+          "B": {
+            "status": "visible",
+            "x": 629.0861176053324,
+            "y": 460.4929565878727
+          },
+          "modelExposed": false
+        },
+        "2": {
+          "A": {
+            "status": "visible",
+            "x": 830.4086786552832,
+            "y": 461.6174720426021
+          },
+          "B": {
+            "status": "visible",
+            "x": 840.5310420600294,
+            "y": 432.380070219637
+          },
+          "modelExposed": false
+        },
+        "20": {
+          "A": {
+            "status": "visible",
+            "x": 809.0392448008191,
+            "y": 448.123286585849
+          },
+          "B": {
+            "status": "visible",
+            "x": 627.9614105603606,
+            "y": 457.1194102236844
+          },
+          "modelExposed": false
+        },
+        "30": {
+          "A": {
+            "status": "visible",
+            "x": 712.314438933245,
+            "y": 435.75361658382525
+          },
+          "B": {
+            "status": "visible",
+            "x": 627.9614105603606,
+            "y": 457.1194102236844
+          },
+          "modelExposed": false
+        },
+        "31": {
+          "A": {
+            "status": "visible",
+            "x": 703.3167825734707,
+            "y": 436.1284665078978
+          },
+          "B": {
+            "status": "visible",
+            "x": 633.5849457852196,
+            "y": 455.2452292382981
+          },
+          "modelExposed": false
+        },
+        "32": {
+          "A": {
+            "status": "visible",
+            "x": 685.321469853922,
+            "y": 446.24910560046266
+          },
+          "B": {
+            "status": "visible",
+            "x": 622.3378753355017,
+            "y": 466.49038378559237
+          },
+          "modelExposed": false
+        },
+        "33": {
+          "A": {
+            "status": "visible",
+            "x": 686.4461768988938,
+            "y": 429.3813737795212
+          },
+          "B": {
+            "status": "visible",
+            "x": 630.2108246503043,
+            "y": 454.1207137835687
+          },
+          "modelExposed": false
+        },
+        "34": {
+          "A": {
+            "status": "occluded",
+            "x": null,
+            "y": null
+          },
+          "B": {
+            "status": "visible",
+            "x": 634.7096528301913,
+            "y": 452.9961983288392
+          },
+          "modelExposed": false
+        },
+        "35": {
+          "A": {
+            "status": "visible",
+            "x": 625.711996470417,
+            "y": 431.6304046889801
+          },
+          "B": {
+            "status": "visible",
+            "x": 632.4602387402477,
+            "y": 454.1207137835687
+          },
+          "modelExposed": false
+        },
+        "39": {
+          "A": {
+            "status": "visible",
+            "x": 561.6036949070249,
+            "y": 435.0039510531684
+          },
+          "B": {
+            "status": "visible",
+            "x": 636.959066920135,
+            "y": 454.1207137835687
+          },
+          "modelExposed": false
+        },
+        "4": {
+          "A": {
+            "status": "visible",
+            "x": 833.7827997901986,
+            "y": 454.87037931422554
+          },
+          "B": {
+            "status": "visible",
+            "x": 792.1686391262423,
+            "y": 436.87813203855467
+          },
+          "modelExposed": false
+        },
+        "42": {
+          "A": {
+            "status": "visible",
+            "x": 507.61775674837884,
+            "y": 432.7549201437095
+          },
+          "B": {
+            "status": "visible",
+            "x": 630.2108246503043,
+            "y": 465.36586833086295
+          },
+          "modelExposed": false
+        },
+        "45": {
+          "A": {
+            "status": "visible",
+            "x": 466.00359608442255,
+            "y": 439.5020128720861
+          },
+          "B": {
+            "status": "visible",
+            "x": 627.9614105603606,
+            "y": 459.74329105721586
+          },
+          "modelExposed": false
+        },
+        "46": {
+          "A": {
+            "status": "visible",
+            "x": 453.6318185897328,
+            "y": 437.25298196262725
+          },
+          "B": {
+            "status": "visible",
+            "x": 623.4625823804733,
+            "y": 454.1207137835687
+          },
+          "modelExposed": false
+        },
+        "47": {
+          "A": {
+            "status": "visible",
+            "x": 435.6365058701841,
+            "y": 436.1284665078978
+          },
+          "B": {
+            "status": "visible",
+            "x": 627.9614105603606,
+            "y": 452.9961983288392
+          },
+          "modelExposed": false
+        },
+        "55": {
+          "A": {
+            "status": "visible",
+            "x": 379.4011536215945,
+            "y": 447.3736210551921
+          },
+          "B": {
+            "status": "visible",
+            "x": 604.342562615953,
+            "y": 441.751043781545
+          },
+          "modelExposed": false
+        },
+        "7": {
+          "A": {
+            "status": "visible",
+            "x": 842.7804561499729,
+            "y": 453.9957638088778
+          },
+          "B": {
+            "status": "visible",
+            "x": 746.0556502823988,
+            "y": 440.251678402743
+          },
+          "modelExposed": false
+        },
+        "8": {
+          "A": {
+            "status": "visible",
+            "x": 832.6580927452268,
+            "y": 455.12027926360724
+          },
+          "B": {
+            "status": "visible",
+            "x": 730.3097516527938,
+            "y": 440.251678402743
+          },
+          "modelExposed": false
+        },
+        "9": {
+          "A": {
+            "status": "visible",
+            "x": 831.533385700255,
+            "y": 453.9957638088778
+          },
+          "B": {
+            "status": "visible",
+            "x": 715.6885600681604,
+            "y": 441.3761938574724
+          },
+          "modelExposed": false
+        }
+      },
+      "identityDefinition": "Reviewer-defined physical hind paws A/B; no anatomical LH/RH mapping.",
+      "predictionSha256": "ac5013c8ed782060e54f58749b955cfc2bc2f5f44fda5003356596f4e62c5a54",
+      "schemaVersion": 1,
+      "videoSha256": "d16ea683300bdc992abdd73d3d527754e34745e03840be6dd669090300f3d93c"
+    },
+    "path": "tests/dog02-localization-20-v1-physical-hind-tracks.json"
+  },
+  {
+    "document": {
+      "annotationType": "physical-hind-tracks",
+      "annotator": "",
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frames": {
+        "10": {
+          "A": {
+            "status": "visible",
+            "x": 827.0345575203678,
+            "y": 455.12027926360724
+          },
+          "B": {
+            "status": "unmarked",
+            "x": null,
+            "y": null
+          },
+          "modelExposed": false
+        },
+        "11": {
+          "A": {
+            "status": "visible",
+            "x": 834.9075068351704,
+            "y": 455.12027926360724
+          },
+          "B": {
+            "status": "unmarked",
+            "x": null,
+            "y": null
+          },
+          "modelExposed": false
+        },
+        "12": {
+          "A": {
+            "status": "visible",
+            "x": 830.4086786552832,
+            "y": 451.74673289941893
+          },
+          "B": {
+            "status": "unmarked",
+            "x": null,
+            "y": null
+          },
+          "modelExposed": false
+        },
+        "7": {
+          "A": {
+            "status": "visible",
+            "x": 842.7804561499729,
+            "y": 453.9957638088778
+          },
+          "B": {
+            "status": "unmarked",
+            "x": null,
+            "y": null
+          },
+          "modelExposed": false
+        },
+        "8": {
+          "A": {
+            "status": "visible",
+            "x": 832.6580927452268,
+            "y": 455.12027926360724
+          },
+          "B": {
+            "status": "unmarked",
+            "x": null,
+            "y": null
+          },
+          "modelExposed": false
+        },
+        "9": {
+          "A": {
+            "status": "visible",
+            "x": 831.533385700255,
+            "y": 453.9957638088778
+          },
+          "B": {
+            "status": "unmarked",
+            "x": null,
+            "y": null
+          },
+          "modelExposed": false
+        }
+      },
+      "identityDefinition": "Reviewer-defined physical hind paws A/B; no anatomical LH/RH mapping.",
+      "predictionSha256": "ac5013c8ed782060e54f58749b955cfc2bc2f5f44fda5003356596f4e62c5a54",
+      "schemaVersion": 1,
+      "videoSha256": "d16ea683300bdc992abdd73d3d527754e34745e03840be6dd669090300f3d93c"
+    },
+    "path": "tests/petlens-dog02-0-30-ac5013c8ed782060-physical-hind-tracks.json"
+  }
+]

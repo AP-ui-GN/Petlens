@@ -1,0 +1,203 @@
+{
+  "builderSha256": "14df6b7ef0b929303c6e206e5ca12b6dca396fabde782387fb4ae4bebf96be68",
+  "coordinatePolicy": "Human coordinates are never snapped to, filtered by, or filled from predictions",
+  "counts": {
+    "dalmatian": {
+      "bothPawsVisibleFrames": 37,
+      "decodedSourceFrames": 177,
+      "duplicateCompletedPawLabelsRemoved": 0,
+      "exportedAnatomicalPoints": 0,
+      "exportedPoseInstances": 0,
+      "frames": 46,
+      "framesWithVisibleLabels": 42,
+      "physicalStatusCounts": {
+        "occluded": 10,
+        "unmarked": 3,
+        "visible": 79
+      },
+      "rejectionReasons": {
+        "anatomical_identity_unverified": 79,
+        "no_coordinate_occluded": 10,
+        "no_coordinate_unmarked": 3
+      },
+      "split": "train"
+    },
+    "dog02": {
+      "bothPawsVisibleFrames": 27,
+      "decodedSourceFrames": 60,
+      "duplicateCompletedPawLabelsRemoved": 6,
+      "exportedAnatomicalPoints": 0,
+      "exportedPoseInstances": 0,
+      "frames": 29,
+      "framesWithVisibleLabels": 28,
+      "physicalStatusCounts": {
+        "occluded": 1,
+        "unmarked": 2,
+        "visible": 55
+      },
+      "rejectionReasons": {
+        "anatomical_identity_unverified": 55,
+        "no_coordinate_occluded": 1,
+        "no_coordinate_unmarked": 2
+      },
+      "split": "exploratory_evaluation"
+    }
+  },
+  "limitations": [
+    "No verified anatomical targets exist in the original physical A/B exports",
+    "COCO bbox is full image extent, not a dog crop annotation",
+    "No independent validation sequence or validated stride measurements",
+    "AP-10K COCO data layout only; no RTMPose training/configuration or checkpoint conversion tested"
+  ],
+  "modelSelectionPolicy": "dog02 excluded from training and model selection; exploratory evaluation only",
+  "opencvVersion": "5.0.0",
+  "outputSha256": {
+    ".gitignore": "345db60985520d3662f6a06d7c3fa5eeb9f64aa74d9028599f0886fd0ce0391b",
+    "accepted-anatomical-reviews.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "anatomical-review-template.json": "2c8023a4d3ef25208166a0f24c52d7d16989c69e00c1f1b262cc3d1a0408a32c",
+    "exploratory_evaluation.coco.json": "c3d16636689a2318b84e60c4bd2ba64e5e1960cccd3decd70b7c98c49184f094",
+    "images/dalmatian/000045.png": "66a9d864fb9e4f62ca63e7d1058b88fa6038fa8b39362b9eeb618912efcfc93f",
+    "images/dalmatian/000046.png": "614cbcf0243181b59795bbc9a49e86160f5bde95b5b8b04eb3a2e72d2427d223",
+    "images/dalmatian/000047.png": "057b9ecdb46a2f619e8cfe11b28361bdc94bd5bd830d34a9e279700d73c5fcac",
+    "images/dalmatian/000048.png": "85d38cf1094b98ca370fbf35684dcb7d3a9517fd7d9a6991b802804ae4d35d5f",
+    "images/dalmatian/000049.png": "ff2698811dd3bb4b823e3e043509b556d4f670ae51d453d4a9e1c0ad47a7c9ae",
+    "images/dalmatian/000050.png": "3a8417af1745f0c4b2aa16a57b0106acfdd8c3f6b824788fd9631b024f5083e2",
+    "images/dalmatian/000051.png": "e1708d9f5f90eb2873db9d2c5cf82950e50f87fbc1aab2cb754eb85e7e0e87b9",
+    "images/dalmatian/000052.png": "e4006bb353baf89948890e23f0446300df0eff1432464775081441b7e6bea19b",
+    "images/dalmatian/000053.png": "b1bb3fa01025c79bd3acab74413c0efd53158ef0bbccf4b1b7954b429e7f9868",
+    "images/dalmatian/000054.png": "eefce41be10fa9cb08d9c7ef88fce17d05f1d2b1bbf197991cf19d17451ea96e",
+    "images/dalmatian/000055.png": "327fb33250811c80db6a6bec1b67ad01707c117bde3529a1bb362b700358865d",
+    "images/dalmatian/000056.png": "6f24fd49d313c3772b6018731acdce68c678f57a9befa2978376d76f82bbe333",
+    "images/dalmatian/000057.png": "24e5213692d1cfec9bc09ed2078ac1fd3e2013f54720c83483c2695315cfa18a",
+    "images/dalmatian/000058.png": "f24c98db1c34241bbecfb5f568c82fbdc8c4d26a2b83ed950a40cd8b0d990231",
+    "images/dalmatian/000059.png": "f59b92e7e124b64aaa99501102155c5ab6ca47ae428723a61c0b0f00a814a23c",
+    "images/dalmatian/000060.png": "b42fbc22c13ee5b1dfd7671c45a5b330018a4a48cf0f3d1800c9dc0b1bbfca3f",
+    "images/dalmatian/000061.png": "00cbb84e46a57ff1f19709bd6570d067973a4cc3f70e11f188e9fdd6524586e8",
+    "images/dalmatian/000062.png": "02886cf7e997e76fa2d7dcdb5799490d2c139da26084b6928ce5c24d1fbc3235",
+    "images/dalmatian/000063.png": "1f16ce03396809f7d879f23f00c43143ca2f4147be5b7e83a9725e2cabdcb9b8",
+    "images/dalmatian/000064.png": "583a606589e181f910fa8731b2b01ca0618d5061fb5c0efc8614cc98af59e39f",
+    "images/dalmatian/000065.png": "94d2877af636f6d16c81dc6c43cefa506330fbecf1643044d84c07a88eba0406",
+    "images/dalmatian/000066.png": "3ee9a144478d8571b2bb862ee60a4e76a43b794270d76711d7dc79b75bf138a4",
+    "images/dalmatian/000067.png": "6672ba4f5e7ef08afcdaeae9b1640a2eeb6f0e08913ddf2c0cd3caca85b3b70f",
+    "images/dalmatian/000068.png": "49e03f5e453177d495f6cd3bf2b1b309a12065cfa9e375975ce7f5625bfdaae2",
+    "images/dalmatian/000069.png": "a1d25ab231ad09158b2f3ff37fcbd0dfed6726a21332ee8cd6751a71e88c14fa",
+    "images/dalmatian/000070.png": "f40798860eb694c379dd6dafe6e8e68f5eb36cb5a3744b18dcb08e40644230b8",
+    "images/dalmatian/000071.png": "b6260d3f1fa6f05bc012dd650595c9194a068fed9509a6c8295cea3f6c6f4f6c",
+    "images/dalmatian/000072.png": "24e90b38c1fca0fc32001adb4d121b91f8b881b8204fbd72cc895128c74128d4",
+    "images/dalmatian/000073.png": "384e769a057e2e7a87f46be26af9a9865de032d3ceca2f1f42b0dafc795aac3b",
+    "images/dalmatian/000074.png": "fc524d62bdda1420af316aaa7b2d6fe2106dec967f0db75613752a712999521b",
+    "images/dalmatian/000075.png": "db350791005a49f8b8e7dca298c3492db0f421f5c7fec439c076fceba0e900ca",
+    "images/dalmatian/000076.png": "436fa456d67da92e10bf9836c452c2d31b5af3409fcd743fa5ec06211330e1ce",
+    "images/dalmatian/000077.png": "6dc1a248f9cc10194fa03df6df8da5669bed880c9bca60c0d2cb1e8b8c6eb21a",
+    "images/dalmatian/000078.png": "5f0a6bf04c07a7d86df76dffa6a47da38002d533c78226841a2e1defc31a6b60",
+    "images/dalmatian/000079.png": "bd4a8796d2f2e49b224da3eebb2084fd959e4f5b0d0103c3a35e42073be8e4ae",
+    "images/dalmatian/000080.png": "0ed1fa12fc0381b1e4355369f515ae304b8eb65bb420570d6184692406822e3b",
+    "images/dalmatian/000081.png": "e708dd8c8927a206c3bc46fbd6983ea3ae7e36835e08580bdcdb4b8a3e661987",
+    "images/dalmatian/000082.png": "9ca703621d7a36e54c3053456a3ba288b4fad8cbee1b5fe6b34b54da6857f341",
+    "images/dalmatian/000083.png": "4cc5970d82bc43ea3facddfc0e2eaafe76cb7d71f84c48b29548f0981d10bc40",
+    "images/dalmatian/000084.png": "7615aa02db41bc17f8bb519ab6afd32dad43215622a896abf7fc5cd3cf5f54d6",
+    "images/dalmatian/000085.png": "61ad885834617182b6b68a55fca101ac21e80de8299682d1b0b0935dc0be119e",
+    "images/dalmatian/000086.png": "87db05a660e2215ab1e47fb80f635f9a0f508b626813c71c6ee461bb82b3dd91",
+    "images/dalmatian/000087.png": "e5f3668027d3b730c7ef7eb6ce32d7f3229a9eb7ab4c01b9caf255556b4cfcc3",
+    "images/dalmatian/000088.png": "72710b5fa06bfc6a51c544ffcf339cf7f33df4650c8b5827dcb6b99b1ba824b7",
+    "images/dalmatian/000089.png": "839543af24b3a143b28aa9ba7ac66ac0b07e33a8a554ca31fbb76258f924c0fa",
+    "images/dalmatian/000090.png": "67c91f664edcebcf0de2231b2abce3d2cde063a43155271568246f7d1405a685",
+    "images/dog02/000000.png": "299d9eaf65ad7fc860ccf834b9f407228429a99aec35ca50213b637a73e14714",
+    "images/dog02/000002.png": "c455d6604e045b9a03986be284b328880e518867b76ff678b7a6318709480a34",
+    "images/dog02/000004.png": "3d80bd42f388f5c9dd38a05d1f8f91a95f62f2cfaa39d4deefab0afded7794a2",
+    "images/dog02/000007.png": "1a32a2d86f22636c4054db6785f72def1d0b74f94fd8a4f67817c7234587410c",
+    "images/dog02/000008.png": "c04b1fbd85f195ceabfb3a398d6f4ab1932018c4ede87ab2e5a33a4a29310f12",
+    "images/dog02/000009.png": "9e7370efa9b1c6f821e823e082294e61635a56933be9a28e3570f5e19ba450f5",
+    "images/dog02/000010.png": "ebcc250410d0b31023ab14b3823dbb2fd7c78282b16a0d8fbd22a73bfbedc1d7",
+    "images/dog02/000011.png": "e165bce7f94a5d939d641f4dd2a255fa5c7baabb2f419d031b66796a563d6853",
+    "images/dog02/000012.png": "0ad2cebaf404322e381cc1241465230893c16b84f49c4f5525c0a7a5e684ffec",
+    "images/dog02/000013.png": "ac689998b0df81d94de14037648aee25e295a60f05c01058b4aed522c7c76d0d",
+    "images/dog02/000014.png": "434386fc58e9dc5dfe58760f1d9031c78e3dcb09a5f1a920f7db5706a16b76c2",
+    "images/dog02/000015.png": "bfb26184639ed051fcbdabae47b2376d21e65110c64c6536281259c43854d4dc",
+    "images/dog02/000016.png": "fc04eb30aa40f1355ab15947670432b78af1702bbc7e9c5dce12f8fcc1094135",
+    "images/dog02/000017.png": "4d002fae80ebdf43019ccb850ba121c97763128f6fc454e23bf5a83784e32afd",
+    "images/dog02/000018.png": "3ed630806612a8af5e8c5650b92437dcce873ac2ce12585dd1b4f270550c459f",
+    "images/dog02/000019.png": "c4144b773103794ab0d7a698c2d71456b2ed2132d17f65ccba991ddfc17ad37d",
+    "images/dog02/000020.png": "e768eb3fea622735cb1fb28f614efa69d420b179393b2f2854e8aef7bca8a8e1",
+    "images/dog02/000030.png": "f9fbfc9eafe0c10061f0bcfddd391524d7315f54f666a7e79b3e36182c841058",
+    "images/dog02/000031.png": "a099b5c32b7fc87aced4b54bf5d8f4feab1a6fc950df6332303800c9f77f81d2",
+    "images/dog02/000032.png": "27c60f011a22b1d238adb37a36c062e371eba3754329b044896a6028eeadd02f",
+    "images/dog02/000033.png": "891474e60e427a3bd474e6665eeda41380ffdf156f4f11c1b5cbce035584eae5",
+    "images/dog02/000034.png": "6a7d8e9b4a8d42f9524fa3a461e4b92c6cd62208d413e6c66ba4c56fcfadf339",
+    "images/dog02/000035.png": "42652927a04a49ff44b9535d178e7d45b8a225de175e6e9b5fbe1e4ceb6fb972",
+    "images/dog02/000039.png": "a0c6b64f786522b7f8070b5fcf634610cfbbd2eb521b0bd123c0af5cf6c4a177",
+    "images/dog02/000042.png": "8eed1274dd475fff611bba56245429120317618e36bd39342148054b7c22bc06",
+    "images/dog02/000045.png": "52ac3c1a7f4c1a51d1d1c20b232369b472f97a28237bc0ca119eea9dc829088f",
+    "images/dog02/000046.png": "8f41d9f9c1bc3d2ac73bc9179f34f553ad61b15772262162a47c49ef99f52e65",
+    "images/dog02/000047.png": "37c0c539627071f4c5da9ba3e5517e5755258fb08398e18dedd2885700104208",
+    "images/dog02/000055.png": "3f0105268f5edc63137db106e95bd201c7d707507a7696d31ffea35da6e26f4e",
+    "original-annotations.json": "4d3a5ac826a725822bcad0d0e41599ebab8c51a25c758cf7f5366e056e5158ec",
+    "physical-reference.json": "ae9cd7796fa8295f06700405d1c32172dc8ec0ef18c2e50edb1f1b8781b439b6",
+    "train.coco.json": "71ec24c949e45988c7a0ed4d8895cf0eab94e60c6bde52fff738cbe452d81f15"
+  },
+  "reviewSha256": null,
+  "schemaVersion": 1,
+  "sourceConfiguration": {
+    "keypointSchema": {
+      "path": "training/canine_keypoint_schema.json",
+      "sha256": "b44942d61544488c7fbe6fd5ad77db641e7615adf82e8924f4316b04cfbef579"
+    },
+    "schemaVersion": 1,
+    "sequences": [
+      {
+        "annotations": [
+          {
+            "path": "tests/petlens-dalmatian-day2-3c641f8418183512-physical-hind-tracks (3).json",
+            "sha256": "3479491ea5845734055a2e1fb28a21f55ef87aaf582c6d8a21a1ba0097f224f6"
+          }
+        ],
+        "group": "dalmatian",
+        "metadata": {
+          "path": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/dalmatian/manifest.json",
+          "sha256": "5de5968fe9a3d00f2aaae3311c106ca2d2af31b7fecc7fcb39ebaef9fa3594a6"
+        },
+        "originalVideo": {
+          "path": "tests/13792872-hd_1080_1920_30fps (1).mp4",
+          "sha256": "de45e7d69e6173576f51347ebe8ce21fe5095e7e7de4447bacc865b2c6c19535"
+        },
+        "predictions": {
+          "path": "tmp/rtmpose-test/multi-video-evaluation/runs/dalmatian-day2-cfr-20261103/predictions.json",
+          "sha256": "3c641f8418183512d5693acd9eeeae39ce1bff9847e2433bef839df13bd414a9"
+        },
+        "split": "train",
+        "video": {
+          "path": "tmp/rtmpose-test/multi-video-evaluation/inputs/dalmatian-lossless-cfr.mp4",
+          "sha256": "13efcd61041c8795852ad377ca4a969d117c907fcb8d4a9298c61303bb7881d8"
+        }
+      },
+      {
+        "annotations": [
+          {
+            "path": "tests/dog02-localization-20-v1-physical-hind-tracks.json",
+            "sha256": "e80eef8307129ec72f936289021403e737424530cf8a6230aaed9d27ddae2d39"
+          },
+          {
+            "path": "tests/petlens-dog02-0-30-ac5013c8ed782060-physical-hind-tracks.json",
+            "sha256": "0cb4eceb2a4b71e757cccad85361b45021efac768d4c85f16fb3dfc1c7225ce2"
+          }
+        ],
+        "group": "dog02",
+        "metadata": {
+          "path": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/dog02/evaluation-manifest.json",
+          "sha256": "981dc012f14a11713c74215a3c98e937c24df87ef3909341ce6361a6099ae96f"
+        },
+        "predictions": {
+          "path": "tmp/rtmpose-test/multi-video-evaluation/runs/dog02-walking-20261102/predictions.json",
+          "sha256": "ac5013c8ed782060e54f58749b955cfc2bc2f5f44fda5003356596f4e62c5a54"
+        },
+        "split": "exploratory_evaluation",
+        "video": {
+          "path": "tmp/rtmpose-test/multi-video-evaluation/inputs/dog02-walking.mp4",
+          "sha256": "d16ea683300bdc992abdd73d3d527754e34745e03840be6dd669090300f3d93c"
+        }
+      }
+    ]
+  },
+  "sourceConfigurationSha256": "76b59a4b007fb7223cb973e54ea49f6fddcabb7aa8cbbb9b2039f61a7b2f77a7",
+  "visibilityPolicy": "COCO v=2 only for visible, anatomically reviewed human points; all other channels [0,0,0] with zero loss weight; no v=1 inferred coordinates"
+}

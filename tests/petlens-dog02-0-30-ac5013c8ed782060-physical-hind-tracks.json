@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "annotationType": "physical-hind-tracks",
+  "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+  "videoSha256": "d16ea683300bdc992abdd73d3d527754e34745e03840be6dd669090300f3d93c",
+  "predictionSha256": "ac5013c8ed782060e54f58749b955cfc2bc2f5f44fda5003356596f4e62c5a54",
+  "annotator": "",
+  "identityDefinition": "Reviewer-defined physical hind paws A/B; no anatomical LH/RH mapping.",
+  "frames": {
+    "7": {
+      "A": {
+        "status": "visible",
+        "x": 842.7804561499729,
+        "y": 453.9957638088778
+      },
+      "B": {
+        "status": "unmarked",
+        "x": null,
+        "y": null
+      },
+      "modelExposed": false
+    },
+    "8": {
+      "A": {
+        "status": "visible",
+        "x": 832.6580927452268,
+        "y": 455.12027926360724
+      },
+      "B": {
+        "status": "unmarked",
+        "x": null,
+        "y": null
+      },
+      "modelExposed": false
+    },
+    "9": {
+      "A": {
+        "status": "visible",
+        "x": 831.533385700255,
+        "y": 453.9957638088778
+      },
+      "B": {
+        "status": "unmarked",
+        "x": null,
+        "y": null
+      },
+      "modelExposed": false
+    },
+    "10": {
+      "A": {
+        "status": "visible",
+        "x": 827.0345575203678,
+        "y": 455.12027926360724
+      },
+      "B": {
+        "status": "unmarked",
+        "x": null,
+        "y": null
+      },
+      "modelExposed": false
+    },
+    "11": {
+      "A": {
+        "status": "visible",
+        "x": 834.9075068351704,
+        "y": 455.12027926360724
+      },
+      "B": {
+        "status": "unmarked",
+        "x": null,
+        "y": null
+      },
+      "modelExposed": false
+    },
+    "12": {
+      "A": {
+        "status": "visible",
+        "x": 830.4086786552832,
+        "y": 451.74673289941893
+      },
+      "B": {
+        "status": "unmarked",
+        "x": null,
+        "y": null
+      },
+      "modelExposed": false
+    }
+  }
+}

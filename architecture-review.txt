@@ -1,0 +1,90 @@
+# Why dog02 produced zero complete numerical oscillations
+
+The direct numerical cause is **peak selection**, especially prominence filtering and an interaction between spacing and prominence. High usable-frame fractions do not ensure two accepted same-type extrema with an accepted opposite extremum between them. Body-axis projection improves directional meaning but does not recover a complete cycle under unchanged rules. Detection failures are not the cause. Identity ambiguity independently prevents interpreting the available interval as a verified stride.
+
+## Visual comparison
+
+Open [comparison.svg](comparison.svg) for original OGV thumbnails at exact source times, four gapped paw signals under each coordinate system, accepted extrema, flagged identity intervals, and reference length/angle traces. [index.html](index.html) also contains every local extremum and its acceptance/rejection reason. [trajectories.csv](trajectories.csv) preserves every coordinate and missing value.
+
+Only existing predictions were analyzed. No inference, model downloads, production changes, interpolation, smoothing, or relabeling occurred. Input artifact hashes are in comparison.json. Source prediction/CSV/audit agreement was checked using the existing validator; the original candidate list was reproduced exactly. Missing masks match in both coordinate systems, and the rotation preserves normalized 2-D distances within each frame. The existing image-coordinate audit is deliberately held fixed, not silently recomputed with uncalibrated rotated-motion thresholds.
+
+## Availability and reference stability
+
+- Dog detection: 60/60; body reference: 60/60. All-four-paw availability: 47/60.
+- Left front: 54/60, runs 0–29, 33, 37–59. Right front: 51/60, runs 5–8, 10–32, 36–59.
+- Left hind: 59/60, one uninterrupted run 1–59. Right hind: 55/60, runs 0–1, 4–32, 36–59.
+- Gaps partition front/right-hind observations, reduce peak prominence near run boundaries, and exclude boundary extrema. They cannot explain the left hind result alone: its nearly continuous trace still contains only one accepted extremum.
+- Neck–tail length: 292.81–342.35 pixels, mean 319.14, SD 14.71 (CV 4.61%); maximum adjacent change 10.05 pixels. This is measurable scale variation, not a collapsed reference.
+- Axis angle: 175.38–180.00 degrees, range 4.62 degrees; maximum adjacent change 1.87 degrees. Neck scores stay ≥0.7267; tail-root scores ≥0.9118.
+
+These predictions show a usable, nearly horizontal reference throughout. Reference motion can perturb amplitudes, but there is no evidence here that reference failure is the principal numerical blocker. No anatomical reference ground truth is available.
+
+## What the rules actually do
+
+Unchanged provisional rules: usable paw score ≥0.80, neck ≥0.70, tail root ≥0.80; finite contiguous runs of at least 5 samples; prominence ≥0.15 normalized body lengths; same-kind extrema separated by `round(0.4 / median_dt)` = 5 samples at 12 fps (0.417 seconds); candidate duration 0.4–2.5 seconds. Run endpoints are not peaks. A full numerical oscillation additionally requires an accepted opposite-type event inside the interval and no selected-paw gap.
+
+SciPy applies distance selection **before** prominence rejection. Distance priority uses extremum height, not prominence. This matters for the right-hind troughs at frames 7 and 9, just two samples apart:
+
+| Signal | Frame | Prominence | Outcome under existing rules |
+|---|---:|---:|---|
+| Image X minimum | 7 | 0.09538 | Wins spacing competition, then fails prominence |
+| Image X minimum | 9 | 0.27906 | Suppressed by frame 7 before prominence is evaluated |
+| Body-axis maximum | 7 | 0.09764 | Wins spacing competition, then fails prominence |
+| Body-axis maximum | 9 | 0.27864 | Suppressed by frame 7 before prominence is evaluated |
+
+Thus **neither** trough/opposite event survives. Frame 9 would pass the prominence threshold by itself. It lies inside the only candidate interval, frames 8–24. Its removal directly makes that interval numerically incomplete.
+
+Across local extrema, 25 image-X extrema fall below prominence and 7 are removed by spacing; 24 body-axis extrema fall below prominence and 7 are removed by spacing. These counts overlap. Each signal has 30 raw local extrema; 4 image-X and 5 projected extrema survive. Most remaining weak oscillations are rejected even though overall run range is larger than 0.15: total range and local prominence measure different things.
+
+## Directional comparison
+
+Current signal: `x = (paw_x - midpoint_x) / L`, positive to image right.
+
+Projected signal: `q = ((paw - midpoint) dot u) / L`, with `u = (neck - tail_root) / L`, positive toward the neck. Transverse coordinates use the perpendicular vector. Identical original confidence gates and missing masks are retained. Since this dog faces left, projected maxima correspond approximately to image-X minima: a sign reversal changes names, not cycle count. The pipeline's event labels are legacy image-axis names; they do not establish anatomical forward/rearward motion.
+
+The headward signal and sign-reversed image X correlate 0.99874–0.99949 across paws. RMS coordinate differences are 0.0314–0.0347 body lengths, maximum 0.0562. Projection is a more interpretable image-plane longitudinal coordinate and more orientation-aware than image X, but this almost-horizontal clip makes the signals very similar. It does not remove depth/perspective effects or landmark errors.
+
+| Paw | Current image-X accepted events | Projected accepted events | Why no complete cycle |
+|---|---|---|---|
+| Left front | None | None | All interior extrema below prominence (largest: 0.11844 image X, 0.14453 projected); gaps and endpoints limit runs |
+| Right front | Minimum at 16 | Maximum at 16 | Only one accepted extremum; gaps split runs, other extrema too weak |
+| Left hind | Minimum at 15 | Maximum at 15 | Only one accepted extremum despite 59 consecutive usable frames; other local extrema too weak |
+| Right hind | Maxima at 8 and 24 | Minima at 8 and 24; maximum at 51 | Frame 9 opposite event suppressed; projected event 51 is isolated with no matching accepted maximum, and separated from 8–24 by a gap |
+
+## Exact candidate outcomes
+
+| Approach / rules | Candidate | Numerical outcome | Reliability blockers |
+|---|---|---|---|
+| Image X, unchanged | Right hind maxima 8–24, 0.667–2.000 s, 1.333 s | Duration and selected-paw continuity pass; **fails** because no accepted minimum inside | Hind overlap at 8→9 and 9→10; right-front point missing at frame 9; physical identities/events not verified |
+| Body axis, unchanged | Right hind minima 8–24, same times | Duration and continuity pass; **fails** because no accepted maximum inside | Same blockers |
+| Image X, explicit prominence-first diagnostic | Same interval, opposite event 9 retained | **Passes numerical definition only** | Same blockers, plus possible swap immediately before start at 7→8 |
+| Body axis, explicit prominence-first diagnostic | Same interval, opposite event 9 retained | **Passes numerical definition only** | Same blockers, plus possible swap immediately before start at 7→8 |
+
+The last two rows are an explicitly labeled experimental counterfactual, not changes to the evaluator or reported full-run results. They retain the same cutoffs but filter by prominence before greedy height-priority spacing. The resulting 8→9 change lasts one frame (0.0833 s), coincides with overlapping/possibly reassigned paws, and does not establish a physiological cycle. No minimum opposite-phase duration exists in the current numerical definition. This counterfactual exposes filter-order sensitivity; it does not validate the extra cycle.
+
+For every adjacent pair of unfiltered same-type local extrema, interval-diagnostics.csv records duration, rejected endpoint peaks, missing samples, absence of accepted opposite extrema, and anatomical blockers. These exploratory pairs are separate from the actual candidate list. comparison.json retains complete candidate objects, numerical events, per-run diagnostics and all counterfactual results.
+
+## Identity ambiguity versus numerical failure
+
+One possible hind identity swap at 7→8; overlaps at hind 4→5, 8→9, 9→10 and front 37→38, 38→39. The audit cannot assess 23/118 comparisons. These flags do **not** themselves set `completeRawOscillation` to false: numerical completeness and anatomical reliability are separate in the existing code. They do block confident biological interpretation. All candidate rows remain `reliableWalkingCycle = false`, including the diagnostic numerical pass. Zero verified anatomical strides remain established.
+
+## Smallest justified improvement
+
+Keep the current inference and thresholds. Add the experimental rejected-extremum diagnostics and separate counts for (a) numerical incompleteness and (b) identity/coverage reliability blockers to evaluation reporting. This directly explains zero cycles without manufacturing valid strides. Retain body-axis projection as an additional, explicitly headward-positive experimental plot; it improves coordinate meaning but does not solve this clip's outcome.
+
+If peak selection is later revised, test prominence-before-spacing on labeled examples with real crossings, identity swaps and short opposite-phase transients before adoption. Do not lower prominence or accept run boundaries merely to obtain cycles here. Human review of physical paw identity/contact events and a longer uninterrupted usable sequence are needed before calling any interval a walking stride. No clinical conclusion follows from this numerical analysis.
+
+Reproduce from repository root:
+
+```bash
+bash tmp/rtmpose-test/multi-video-evaluation/python-env.sh tmp/rtmpose-test/multi-video-evaluation/axis-comparison-dog02/check_rules.py
+bash tmp/rtmpose-test/multi-video-evaluation/python-env.sh tmp/rtmpose-test/multi-video-evaluation/axis-comparison-dog02/report.py
+```
+
+
+Experimental artifacts directory:
+tmp/rtmpose-test/multi-video-evaluation/axis-comparison-dog02/
+Visual comparison: comparison.svg
+Interactive document and extrema table: index.html
+Exact numerical results: comparison.json
+Every exploratory interval and its reasons: interval-diagnostics.csv
