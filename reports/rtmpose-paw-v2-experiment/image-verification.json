@@ -1,0 +1,13 @@
+{
+  "opencv": "4.10.0",
+  "fully_decoded_pngs": 46,
+  "source_video_sha256": "13efcd61041c8795852ad377ca4a969d117c907fcb8d4a9298c61303bb7881d8",
+  "source_frame_best_matches": 46,
+  "comparison": "zero-based source frame versus adjacent frames; no resize or rotation",
+  "mean_absolute_color_difference_range": [
+    1.2157677469135801,
+    1.4058619470164608
+  ],
+  "maximum_channel_difference": 14,
+  "note": "PNG export used OpenCV 5.0.0; current 4.10.0 decoding has small color differences. Reviewed PNG hashes are authoritative."
+}

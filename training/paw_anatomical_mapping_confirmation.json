@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "source": "reviewer-provided",
+  "confirmed": true,
+  "independentlyVerified": false,
+  "referenceSha256": "ae9cd7796fa8295f06700405d1c32172dc8ec0ef18c2e50edb1f1b8781b439b6",
+  "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+  "reviewer": "requesting user",
+  "reviewerIdentityKind": "conversation participant; personal name not supplied",
+  "mapping": {
+    "A": "right_back_paw",
+    "B": "left_back_paw"
+  },
+  "frameRange": [
+    46,
+    90
+  ],
+  "expectedAnnotationCount": 79,
+  "expectedFrameCount": 42,
+  "coordinateReviewStatement": "The Dalmatian annotations have already been reviewed.",
+  "mappingStatement": "Confirmed mapping:\n- Physical A = Right hind paw\n- Physical B = Left hind paw\n- Frames 46–90\n- 79 eligible annotations across 42 frames",
+  "authorizationStatement": "Use my previously supplied anatomical mapping and continuity confirmation as reviewer-provided evidence.",
+  "exportAuthorizationStatement": "Prepare the validated anatomical annotation export directly from the existing data, without requiring me to repeat the browser review.",
+  "continuityEvidence": {
+    "schemaVersion": 1,
+    "referenceSha256": "ae9cd7796fa8295f06700405d1c32172dc8ec0ef18c2e50edb1f1b8781b439b6",
+    "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+    "frameRange": [
+      75,
+      90
+    ],
+    "physicalPaws": [
+      "A",
+      "B"
+    ],
+    "source": "reviewer-provided",
+    "reviewer": "requesting user",
+    "recordedOn": "2026-11-04",
+    "independentlyVerified": false,
+    "statement": "I manually reviewed Dalmatian frames 75–90 and confirmed that physical Paw A and Paw B maintain consistent identities throughout.",
+    "mapping": {
+      "A": "right_back_paw",
+      "B": "left_back_paw"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "onnx_sha256": "1cfd1c86e0d9e5d5f95178bcd95ee9a4e8386a624cd3c57519f27ff58cac7f28",
+  "head_initializer_shapes": {
+    "head.final_layer.weight": [
+      17,
+      768,
+      7,
+      7
+    ],
+    "head.final_layer.bias": [
+      17
+    ],
+    "head.mlp.0.g": [
+      1
+    ],
+    "head.gau.beta": [
+      2,
+      128
+    ],
+    "head.gau.ln.g": [
+      1
+    ],
+    "head.gau.res_scale.scale": [
+      256
+    ]
+  },
+  "input_output_shapes": {
+    "input": [
+      "batch",
+      3,
+      256,
+      256
+    ],
+    "simcc_x": [
+      "batch",
+      "MatMulsimcc_x_dim_1",
+      512
+    ],
+    "simcc_y": [
+      "batch",
+      "MatMulsimcc_x_dim_1",
+      512
+    ]
+  },
+  "note": "Graph inspection only; no ONNX inference or weight conversion."
+}

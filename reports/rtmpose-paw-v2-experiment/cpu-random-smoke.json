@@ -1,0 +1,41 @@
+{
+  "mode": "random architecture only",
+  "checkpoint_sha256": null,
+  "trainable": {
+    "head.paw_delta.weight": 75264,
+    "head.paw_delta.bias": 2
+  },
+  "datasets": {
+    "train": {
+      "frames": 20,
+      "supervised_targets": 39
+    },
+    "diagnostic": {
+      "frames": 10,
+      "supervised_targets": null
+    }
+  },
+  "python": "3.10.16 (main, Mar 17 2025, 21:01:46) [Clang 20.1.0 ]",
+  "versions": {
+    "torch": "2.1.0+cpu",
+    "torchvision": "0.16.0+cpu",
+    "mmcv": "2.1.0",
+    "mmengine": "0.10.7",
+    "mmpose": "1.3.2",
+    "mmdet": "3.2.0",
+    "numpy": "1.26.4",
+    "opencv-python": "4.10.0.84"
+  },
+  "device": "cpu",
+  "cuda_available": false,
+  "full_training_run": false,
+  "smoke": {
+    "optimizer_steps": 1,
+    "loss": 0.001905031269416213,
+    "adapter_gradient_norm": 0.01875051110982895,
+    "zero_adapter_matches_stock_head": true,
+    "frozen_weights_and_buffers_unchanged": true,
+    "protected_15_logits_bitwise_equal_after_update": true,
+    "checkpoint_saved": false
+  }
+}

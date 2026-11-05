@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "referenceSha256": "ae9cd7796fa8295f06700405d1c32172dc8ec0ef18c2e50edb1f1b8781b439b6",
+  "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+  "frameRange": [75, 90],
+  "physicalPaws": ["A", "B"],
+  "source": "reviewer-provided",
+  "reviewer": "requesting user",
+  "recordedOn": "2026-11-04",
+  "independentlyVerified": false,
+  "statement": "I manually reviewed Dalmatian frames 75–90 and confirmed that physical Paw A and Paw B maintain consistent identities throughout.",
+  "mapping": {"A": "right_back_paw", "B": "left_back_paw"}
+}

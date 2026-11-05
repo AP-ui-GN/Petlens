@@ -1,0 +1,436 @@
+{
+  "duplicateAssignments": 0,
+  "inconsistencies": 0,
+  "missingPhysicalSlots": 0,
+  "verifiedIdentities": 79,
+  "missingVisibleIdentities": [
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 2,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 2,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 4,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 4,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 7,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 7,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 8,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 8,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 9,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 9,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 10,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 10,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 11,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 11,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 12,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 12,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 13,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 13,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 14,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 14,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 15,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 15,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 16,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 16,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 17,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 17,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 18,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 18,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 19,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 19,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 20,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 20,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 30,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 30,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 31,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 31,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 32,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 32,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 33,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 33,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 34,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 35,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 35,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 39,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 39,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 42,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 42,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 45,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 45,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 46,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 46,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 47,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 47,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 55,
+      "physicalPaw": "A",
+      "identityState": "unreviewed"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 55,
+      "physicalPaw": "B",
+      "identityState": "unreviewed"
+    }
+  ],
+  "nonvisibleSlots": [
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 45,
+      "physicalPaw": "A",
+      "status": "unmarked"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 45,
+      "physicalPaw": "B",
+      "status": "unmarked"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 61,
+      "physicalPaw": "B",
+      "status": "occluded"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 81,
+      "physicalPaw": "A",
+      "status": "occluded"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 83,
+      "physicalPaw": "A",
+      "status": "occluded"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 84,
+      "physicalPaw": "A",
+      "status": "occluded"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 84,
+      "physicalPaw": "B",
+      "status": "occluded"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 85,
+      "physicalPaw": "B",
+      "status": "occluded"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 86,
+      "physicalPaw": "A",
+      "status": "occluded"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 86,
+      "physicalPaw": "B",
+      "status": "occluded"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 87,
+      "physicalPaw": "A",
+      "status": "occluded"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 87,
+      "physicalPaw": "B",
+      "status": "occluded"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 88,
+      "physicalPaw": "B",
+      "status": "unmarked"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 0,
+      "physicalPaw": "A",
+      "status": "unmarked"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 0,
+      "physicalPaw": "B",
+      "status": "unmarked"
+    },
+    {
+      "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frameIndex": 34,
+      "physicalPaw": "A",
+      "status": "occluded"
+    }
+  ]
+}

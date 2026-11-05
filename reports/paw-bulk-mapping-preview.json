@@ -1,0 +1,2216 @@
+{
+  "mapping": {
+    "A": "right_back_paw",
+    "B": "left_back_paw"
+  },
+  "frameRange": [
+    46,
+    90
+  ],
+  "affected": [
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 46,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 342.051504309545,
+            "y": 1347.2105785817607
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 277.5214376042884,
+            "y": 1345.3827358988704
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 47,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 371.17972017007725,
+            "y": 1349.2567612120076
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 264.76642155476503,
+            "y": 1350.2698349938928
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 48,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 388.91526993929597,
+            "y": 1350.5230744557543
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 253.3649967031244,
+            "y": 1345.457821480768
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 49,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 383.48671561716077,
+            "y": 1360.9615919414146
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 241.73585043854027,
+            "y": 1343.242591848716
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 50,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 364.5022247450241,
+            "y": 1355.899020486358
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 244.2671158881585,
+            "y": 1339.4456632574236
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 51,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 350.5802647721238,
+            "y": 1355.899020486358
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 270.84540310914986,
+            "y": 1336.914377529895
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 52,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 334.12703934960535,
+            "y": 1358.4303062138863
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 298.6893230549503,
+            "y": 1343.242591848716
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 53,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 313.8769157526596,
+            "y": 1355.899020486358
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 336.6583047992236,
+            "y": 1344.5082347124803
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 54,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 299.7820457685586,
+            "y": 1360.5858686223078
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 368.0868156905086,
+            "y": 1347.617270253782
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 55,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 285.868111154828,
+            "y": 1361.5347904541513
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 398.44449121137535,
+            "y": 1348.8824993629064
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 56,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 269.4243702476919,
+            "y": 1360.9021758995889
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 413.6233289718087,
+            "y": 1354.5760303539664
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 57,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 258.0402419273669,
+            "y": 1356.4738740176533
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 400.9742975047809,
+            "y": 1360.5858686223078
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 58,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 255.6578104114405,
+            "y": 1357.164663350122
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 384.5305565976448,
+            "y": 1359.3206395131833
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 59,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 275.74888598120583,
+            "y": 1361.8510977314322
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 368.0868156905086,
+            "y": 1363.1163268405567
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 60,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 303.5767552086669,
+            "y": 1360.9021758995889
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 354.1728810767781,
+            "y": 1366.279399613368
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 61,
+      "physicalPaws": [
+        "A"
+      ],
+      "annotationCount": 1,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 340.2589464630475,
+            "y": 1366.9120141679302
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 62,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 371.88152513061704,
+            "y": 1359.6369467904644
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 312.43107723558643,
+            "y": 1363.4326341178378
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 63,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 400.9742975047809,
+            "y": 1365.9630923360867
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 290.9277237416391,
+            "y": 1363.1163268405567
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 64,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 419.9478447053226,
+            "y": 1369.126165108898
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 275.74888598120583,
+            "y": 1362.8000195632758
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 65,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 416.15313526521425,
+            "y": 1370.7077014953036
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 268.1594671009891,
+            "y": 1360.5858686223078
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 66,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 395.9146849179698,
+            "y": 1376.0849252090825
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 266.89456395428635,
+            "y": 1357.1064885722155
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 67,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 376.9411377174281,
+            "y": 1372.9218524362711
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 289.6628205949363,
+            "y": 1359.9532540677455
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 68,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 361.76229995699475,
+            "y": 1376.4012324863638
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 313.6959803822891,
+            "y": 1359.9532540677455
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 69,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 336.4642370229392,
+            "y": 1377.350154318207
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 352.90797793007533,
+            "y": 1359.9532540677455
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 70,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 322.5503024092086,
+            "y": 1375.1360033772391
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 385.7954597443475,
+            "y": 1365.0141705042436
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 71,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 304.8416583553697,
+            "y": 1377.666461595488
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 417.41803841191705,
+            "y": 1363.748941395119
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 72,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 290.9277237416391,
+            "y": 1376.7175397636447
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 437.6564887591615,
+            "y": 1367.8609359997736
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 73,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 269.57977038434075,
+            "y": 1373.6180205790563
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 425.2525955358615,
+            "y": 1377.4149491703488
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 74,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 273.3766685587681,
+            "y": 1369.8210919877638
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 406.2681046637248,
+            "y": 1381.2118777616415
+          }
+        }
+      ],
+      "continuitySource": "source-annotation"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 75,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 288.5642612564774,
+            "y": 1369.8210919877638
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 388.5492465163972,
+            "y": 1382.4775206254055
+          }
+        }
+      ],
+      "continuitySource": "reviewer-provided"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 76,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 316.40818120227783,
+            "y": 1379.9462348978773
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 365.7678574698332,
+            "y": 1379.9462348978773
+          }
+        }
+      ],
+      "continuitySource": "reviewer-provided"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 77,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 350.5802647721238,
+            "y": 1381.2118777616415
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 330.3301411751781,
+            "y": 1374.8836634428205
+          }
+        }
+      ],
+      "continuitySource": "reviewer-provided"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 78,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 386.017981066779,
+            "y": 1386.274449216698
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 321.47071210151427,
+            "y": 1381.2118777616415
+          }
+        }
+      ],
+      "continuitySource": "reviewer-provided"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 79,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 418.9244319118159,
+            "y": 1383.7431634891698
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 303.75185395418674,
+            "y": 1382.4775206254055
+          }
+        }
+      ],
+      "continuitySource": "reviewer-provided"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 80,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 435.37765733433434,
+            "y": 1388.8057349442265
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 287.29862853166827,
+            "y": 1382.4775206254055
+          }
+        }
+      ],
+      "continuitySource": "reviewer-provided"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 81,
+      "physicalPaws": [
+        "B"
+      ],
+      "annotationCount": 1,
+      "annotations": [
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 283.50173035724094,
+            "y": 1373.6180205790563
+          }
+        }
+      ],
+      "continuitySource": "reviewer-provided"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 82,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 375.89291926830606,
+            "y": 1376.1493063065845
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 298.6893230549503,
+            "y": 1369.8210919877638
+          }
+        }
+      ],
+      "continuitySource": "reviewer-provided"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 83,
+      "physicalPaws": [
+        "B"
+      ],
+      "annotationCount": 1,
+      "annotations": [
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 326.5332430007507,
+            "y": 1378.680592034113
+          }
+        }
+      ],
+      "continuitySource": "reviewer-provided"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 85,
+      "physicalPaws": [
+        "A"
+      ],
+      "annotationCount": 1,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 397.40867559006097,
+            "y": 1381.2118777616415
+          }
+        }
+      ],
+      "continuitySource": "reviewer-provided"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 88,
+      "physicalPaws": [
+        "A"
+      ],
+      "annotationCount": 1,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 432.8463918847161,
+            "y": 1397.6652349905758
+          }
+        }
+      ],
+      "continuitySource": "reviewer-provided"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 89,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 405.0024719389156,
+            "y": 1405.2590921731608
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 292.3611594309047,
+            "y": 1390.0713778079905
+          }
+        }
+      ],
+      "continuitySource": "reviewer-provided"
+    },
+    {
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameIndex": 90,
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "annotationCount": 2,
+      "annotations": [
+        {
+          "physicalPaw": "A",
+          "anatomicalKeypoint": "right_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 306.28311940380496,
+            "y": 1393.868306399283
+          }
+        },
+        {
+          "physicalPaw": "B",
+          "anatomicalKeypoint": "left_back_paw",
+          "label": {
+            "status": "visible",
+            "x": 384.7523483419699,
+            "y": 1402.7278064456323
+          }
+        }
+      ],
+      "continuitySource": "reviewer-provided"
+    }
+  ],
+  "excluded": [
+    {
+      "frameIndex": 61,
+      "physicalPaw": "B",
+      "reason": "Nonvisible occluded label preserved"
+    },
+    {
+      "frameIndex": 81,
+      "physicalPaw": "A",
+      "reason": "Nonvisible occluded label preserved"
+    },
+    {
+      "frameIndex": 83,
+      "physicalPaw": "A",
+      "reason": "Nonvisible occluded label preserved"
+    },
+    {
+      "frameIndex": 84,
+      "physicalPaw": "A",
+      "reason": "Nonvisible occluded label preserved"
+    },
+    {
+      "frameIndex": 84,
+      "physicalPaw": "B",
+      "reason": "Nonvisible occluded label preserved"
+    },
+    {
+      "frameIndex": 85,
+      "physicalPaw": "B",
+      "reason": "Nonvisible occluded label preserved"
+    },
+    {
+      "frameIndex": 86,
+      "physicalPaw": "A",
+      "reason": "Nonvisible occluded label preserved"
+    },
+    {
+      "frameIndex": 86,
+      "physicalPaw": "B",
+      "reason": "Nonvisible occluded label preserved"
+    },
+    {
+      "frameIndex": 87,
+      "physicalPaw": "A",
+      "reason": "Nonvisible occluded label preserved"
+    },
+    {
+      "frameIndex": 87,
+      "physicalPaw": "B",
+      "reason": "Nonvisible occluded label preserved"
+    },
+    {
+      "frameIndex": 88,
+      "physicalPaw": "B",
+      "reason": "Nonvisible unmarked label preserved"
+    }
+  ],
+  "continuityEvidence": {
+    "schemaVersion": 1,
+    "referenceSha256": "ae9cd7796fa8295f06700405d1c32172dc8ec0ef18c2e50edb1f1b8781b439b6",
+    "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+    "frameRange": [
+      75,
+      90
+    ],
+    "physicalPaws": [
+      "A",
+      "B"
+    ],
+    "source": "reviewer-provided",
+    "reviewer": "requesting user",
+    "recordedOn": "2026-11-04",
+    "independentlyVerified": false,
+    "statement": "I manually reviewed Dalmatian frames 75\u201390 and confirmed that physical Paw A and Paw B maintain consistent identities throughout.",
+    "mapping": {
+      "A": "right_back_paw",
+      "B": "left_back_paw"
+    }
+  },
+  "frameCount": 42,
+  "annotationCount": 79,
+  "previewToken": "2391d8fd8143b0a3c0028738cd605fa7c03d5461417495a233c12f70c0c97ad9",
+  "draftSource": "Original source annotations; browser drafts are not accessible",
+  "status": "Awaiting explicit reviewer confirmation; no anatomical labels changed",
+  "currentValidation": {
+    "duplicateAssignments": 0,
+    "inconsistencies": 0,
+    "missingPhysicalSlots": 0,
+    "verifiedIdentities": 0,
+    "missingVisibleIdentities": [
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 46,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 46,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 47,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 47,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 48,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 48,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 49,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 49,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 50,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 50,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 51,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 51,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 52,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 52,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 53,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 53,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 54,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 54,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 55,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 55,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 56,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 56,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 57,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 57,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 58,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 58,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 59,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 59,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 60,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 60,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 61,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 62,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 62,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 63,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 63,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 64,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 64,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 65,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 65,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 66,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 66,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 67,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 67,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 68,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 68,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 69,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 69,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 70,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 70,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 71,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 71,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 72,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 72,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 73,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 73,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 74,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 74,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 75,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 75,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 76,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 76,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 77,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 77,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 78,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 78,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 79,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 79,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 80,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 80,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 81,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 82,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 82,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 83,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 85,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 88,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 89,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 89,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 90,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 90,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 2,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 2,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 4,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 4,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 7,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 7,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 8,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 8,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 9,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 9,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 10,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 10,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 11,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 11,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 12,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 12,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 13,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 13,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 14,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 14,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 15,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 15,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 16,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 16,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 17,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 17,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 18,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 18,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 19,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 19,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 20,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 20,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 30,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 30,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 31,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 31,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 32,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 32,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 33,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 33,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 34,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 35,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 35,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 39,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 39,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 42,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 42,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 45,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 45,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 46,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 46,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 47,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 47,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 55,
+        "physicalPaw": "A",
+        "identityState": "unreviewed"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 55,
+        "physicalPaw": "B",
+        "identityState": "unreviewed"
+      }
+    ],
+    "nonvisibleSlots": [
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 45,
+        "physicalPaw": "A",
+        "status": "unmarked"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 45,
+        "physicalPaw": "B",
+        "status": "unmarked"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 61,
+        "physicalPaw": "B",
+        "status": "occluded"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 81,
+        "physicalPaw": "A",
+        "status": "occluded"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 83,
+        "physicalPaw": "A",
+        "status": "occluded"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 84,
+        "physicalPaw": "A",
+        "status": "occluded"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 84,
+        "physicalPaw": "B",
+        "status": "occluded"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 85,
+        "physicalPaw": "B",
+        "status": "occluded"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 86,
+        "physicalPaw": "A",
+        "status": "occluded"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 86,
+        "physicalPaw": "B",
+        "status": "occluded"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 87,
+        "physicalPaw": "A",
+        "status": "occluded"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 87,
+        "physicalPaw": "B",
+        "status": "occluded"
+      },
+      {
+        "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+        "frameIndex": 88,
+        "physicalPaw": "B",
+        "status": "unmarked"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 0,
+        "physicalPaw": "A",
+        "status": "unmarked"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 0,
+        "physicalPaw": "B",
+        "status": "unmarked"
+      },
+      {
+        "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+        "frameIndex": 34,
+        "physicalPaw": "A",
+        "status": "occluded"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "status": "validated",
+  "exportPath": "reports/paw-annotation-data-v2/dalmatian-reviewed.zip",
+  "exportSha256": "6f4023a3af09ed5f4b03aad10d53e356d44344ce24929675ae54444b70b6ed65",
+  "trainCocoPath": "reports/paw-annotation-data-v2/train.coco.json",
+  "imageRoot": "reports/paw-annotation-data-v1",
+  "frameRange": [
+    46,
+    90
+  ],
+  "annotatedFrames": 42,
+  "verifiedAnnotations": 79,
+  "rightHind": 40,
+  "leftHind": 39,
+  "reviewer": "requesting user",
+  "reviewerPersonalName": null,
+  "evidenceSource": "reviewer-provided conversation confirmation",
+  "coordinatesPreserved": true,
+  "originalAndCorrectedPhysicalReferencesIdentical": true,
+  "sourceImageHashesVerified": 75,
+  "manifestPayloadHashesVerified": true,
+  "incompleteReviewRecords": [],
+  "unresolvedIssues": [
+    "11 nonvisible Dalmatian slots excluded; no coordinates inferred.",
+    "Browser-only drafts unavailable; not merged or overwritten.",
+    "55 dog02 visible slots remain anatomically unreviewed; exploratory only, excluded from training."
+  ],
+  "sourceScope": "On-disk source annotations; browser-only drafts were unavailable and were not modified or merged"
+}

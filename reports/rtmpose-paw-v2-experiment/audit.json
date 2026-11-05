@@ -1,0 +1,652 @@
+{
+  "source_sha256": "e9a283f41f36de70582f23237cf9950557f27de67e6d1e6aebc86c45207142b9",
+  "zip_sha256": "6f4023a3af09ed5f4b03aad10d53e356d44344ce24929675ae54444b70b6ed65",
+  "image_root": "reports/paw-annotation-data-v1",
+  "image_count": 46,
+  "annotated_frames": 42,
+  "image_dimensions": [
+    1080,
+    1920
+  ],
+  "image_sha256": {
+    "images/dalmatian/000045.png": "66a9d864fb9e4f62ca63e7d1058b88fa6038fa8b39362b9eeb618912efcfc93f",
+    "images/dalmatian/000046.png": "614cbcf0243181b59795bbc9a49e86160f5bde95b5b8b04eb3a2e72d2427d223",
+    "images/dalmatian/000047.png": "057b9ecdb46a2f619e8cfe11b28361bdc94bd5bd830d34a9e279700d73c5fcac",
+    "images/dalmatian/000048.png": "85d38cf1094b98ca370fbf35684dcb7d3a9517fd7d9a6991b802804ae4d35d5f",
+    "images/dalmatian/000049.png": "ff2698811dd3bb4b823e3e043509b556d4f670ae51d453d4a9e1c0ad47a7c9ae",
+    "images/dalmatian/000050.png": "3a8417af1745f0c4b2aa16a57b0106acfdd8c3f6b824788fd9631b024f5083e2",
+    "images/dalmatian/000051.png": "e1708d9f5f90eb2873db9d2c5cf82950e50f87fbc1aab2cb754eb85e7e0e87b9",
+    "images/dalmatian/000052.png": "e4006bb353baf89948890e23f0446300df0eff1432464775081441b7e6bea19b",
+    "images/dalmatian/000053.png": "b1bb3fa01025c79bd3acab74413c0efd53158ef0bbccf4b1b7954b429e7f9868",
+    "images/dalmatian/000054.png": "eefce41be10fa9cb08d9c7ef88fce17d05f1d2b1bbf197991cf19d17451ea96e",
+    "images/dalmatian/000055.png": "327fb33250811c80db6a6bec1b67ad01707c117bde3529a1bb362b700358865d",
+    "images/dalmatian/000056.png": "6f24fd49d313c3772b6018731acdce68c678f57a9befa2978376d76f82bbe333",
+    "images/dalmatian/000057.png": "24e5213692d1cfec9bc09ed2078ac1fd3e2013f54720c83483c2695315cfa18a",
+    "images/dalmatian/000058.png": "f24c98db1c34241bbecfb5f568c82fbdc8c4d26a2b83ed950a40cd8b0d990231",
+    "images/dalmatian/000059.png": "f59b92e7e124b64aaa99501102155c5ab6ca47ae428723a61c0b0f00a814a23c",
+    "images/dalmatian/000060.png": "b42fbc22c13ee5b1dfd7671c45a5b330018a4a48cf0f3d1800c9dc0b1bbfca3f",
+    "images/dalmatian/000061.png": "00cbb84e46a57ff1f19709bd6570d067973a4cc3f70e11f188e9fdd6524586e8",
+    "images/dalmatian/000062.png": "02886cf7e997e76fa2d7dcdb5799490d2c139da26084b6928ce5c24d1fbc3235",
+    "images/dalmatian/000063.png": "1f16ce03396809f7d879f23f00c43143ca2f4147be5b7e83a9725e2cabdcb9b8",
+    "images/dalmatian/000064.png": "583a606589e181f910fa8731b2b01ca0618d5061fb5c0efc8614cc98af59e39f",
+    "images/dalmatian/000065.png": "94d2877af636f6d16c81dc6c43cefa506330fbecf1643044d84c07a88eba0406",
+    "images/dalmatian/000066.png": "3ee9a144478d8571b2bb862ee60a4e76a43b794270d76711d7dc79b75bf138a4",
+    "images/dalmatian/000067.png": "6672ba4f5e7ef08afcdaeae9b1640a2eeb6f0e08913ddf2c0cd3caca85b3b70f",
+    "images/dalmatian/000068.png": "49e03f5e453177d495f6cd3bf2b1b309a12065cfa9e375975ce7f5625bfdaae2",
+    "images/dalmatian/000069.png": "a1d25ab231ad09158b2f3ff37fcbd0dfed6726a21332ee8cd6751a71e88c14fa",
+    "images/dalmatian/000070.png": "f40798860eb694c379dd6dafe6e8e68f5eb36cb5a3744b18dcb08e40644230b8",
+    "images/dalmatian/000071.png": "b6260d3f1fa6f05bc012dd650595c9194a068fed9509a6c8295cea3f6c6f4f6c",
+    "images/dalmatian/000072.png": "24e90b38c1fca0fc32001adb4d121b91f8b881b8204fbd72cc895128c74128d4",
+    "images/dalmatian/000073.png": "384e769a057e2e7a87f46be26af9a9865de032d3ceca2f1f42b0dafc795aac3b",
+    "images/dalmatian/000074.png": "fc524d62bdda1420af316aaa7b2d6fe2106dec967f0db75613752a712999521b",
+    "images/dalmatian/000075.png": "db350791005a49f8b8e7dca298c3492db0f421f5c7fec439c076fceba0e900ca",
+    "images/dalmatian/000076.png": "436fa456d67da92e10bf9836c452c2d31b5af3409fcd743fa5ec06211330e1ce",
+    "images/dalmatian/000077.png": "6dc1a248f9cc10194fa03df6df8da5669bed880c9bca60c0d2cb1e8b8c6eb21a",
+    "images/dalmatian/000078.png": "5f0a6bf04c07a7d86df76dffa6a47da38002d533c78226841a2e1defc31a6b60",
+    "images/dalmatian/000079.png": "bd4a8796d2f2e49b224da3eebb2084fd959e4f5b0d0103c3a35e42073be8e4ae",
+    "images/dalmatian/000080.png": "0ed1fa12fc0381b1e4355369f515ae304b8eb65bb420570d6184692406822e3b",
+    "images/dalmatian/000081.png": "e708dd8c8927a206c3bc46fbd6983ea3ae7e36835e08580bdcdb4b8a3e661987",
+    "images/dalmatian/000082.png": "9ca703621d7a36e54c3053456a3ba288b4fad8cbee1b5fe6b34b54da6857f341",
+    "images/dalmatian/000083.png": "4cc5970d82bc43ea3facddfc0e2eaafe76cb7d71f84c48b29548f0981d10bc40",
+    "images/dalmatian/000084.png": "7615aa02db41bc17f8bb519ab6afd32dad43215622a896abf7fc5cd3cf5f54d6",
+    "images/dalmatian/000085.png": "61ad885834617182b6b68a55fca101ac21e80de8299682d1b0b0935dc0be119e",
+    "images/dalmatian/000086.png": "87db05a660e2215ab1e47fb80f635f9a0f508b626813c71c6ee461bb82b3dd91",
+    "images/dalmatian/000087.png": "e5f3668027d3b730c7ef7eb6ce32d7f3229a9eb7ab4c01b9caf255556b4cfcc3",
+    "images/dalmatian/000088.png": "72710b5fa06bfc6a51c544ffcf339cf7f33df4650c8b5827dcb6b99b1ba824b7",
+    "images/dalmatian/000089.png": "839543af24b3a143b28aa9ba7ac66ac0b07e33a8a554ca31fbb76258f924c0fa",
+    "images/dalmatian/000090.png": "67c91f664edcebcf0de2231b2abce3d2cde063a43155271568246f7d1405a685"
+  },
+  "keypoint_order": [
+    "left_eye",
+    "right_eye",
+    "nose",
+    "neck",
+    "root_of_tail",
+    "left_shoulder",
+    "left_elbow",
+    "left_front_paw",
+    "right_shoulder",
+    "right_elbow",
+    "right_front_paw",
+    "left_hip",
+    "left_knee",
+    "left_back_paw",
+    "right_hip",
+    "right_knee",
+    "right_back_paw"
+  ],
+  "targets": {
+    "left_back_paw": 39,
+    "right_back_paw": 40
+  },
+  "visibility": "79 visible v=2; every other slot unknown v=0",
+  "splits": {
+    "pilot-train": {
+      "frames": 20,
+      "targets": 39,
+      "frame_ids": [
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65
+      ],
+      "sha256": "7fc0c588bce89c32743dbe37b4e58568ec6c9f5cd54786ca456d6dc818c6d198"
+    },
+    "buffer-excluded": {
+      "frames": 10,
+      "targets": 20,
+      "frame_ids": [
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75
+      ],
+      "sha256": "ee8664dbffcd714d1419af7d90ac3ac63338f2c7b3ef76b5f93197813d571507"
+    },
+    "temporal-diagnostic": {
+      "frames": 10,
+      "targets": 17,
+      "frame_ids": [
+        76,
+        77,
+        79,
+        80,
+        81,
+        82,
+        83,
+        88,
+        89,
+        90
+      ],
+      "sha256": "f513f64eb736f6327f63591599706f736eb41b9233054b3cf058d13377adfb05"
+    },
+    "all-reviewed": {
+      "frames": 40,
+      "targets": 76,
+      "frame_ids": [
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        79,
+        80,
+        81,
+        82,
+        83,
+        88,
+        89,
+        90
+      ],
+      "sha256": "f52bea92bffacfba4848e5748faffd6be9e1a9fe8e3224e30e75540abe41e03e"
+    }
+  },
+  "unique_videos": 1,
+  "bbox": "saved single-dog RT-DETR boxes; no interpolation/expansion from paw labels",
+  "box_source": "tmp/rtmpose-test/multi-video-evaluation/runs/dalmatian-day2-cfr-20261103/predictions.json",
+  "box_source_sha256": "3c641f8418183512d5693acd9eeeae39ce1bff9847e2433bef839df13bd414a9",
+  "box_evidence": [
+    {
+      "frame_id": 46,
+      "bbox_xyxy": [
+        198.886474609375,
+        1055.9761962890625,
+        662.7593994140625,
+        1368.022705078125
+      ],
+      "confidence": 0.9532790780067444,
+      "image_sha256": "614cbcf0243181b59795bbc9a49e86160f5bde95b5b8b04eb3a2e72d2427d223"
+    },
+    {
+      "frame_id": 47,
+      "bbox_xyxy": [
+        208.02647399902344,
+        1047.0570068359375,
+        669.1123657226562,
+        1367.64453125
+      ],
+      "confidence": 0.9526501893997192,
+      "image_sha256": "057b9ecdb46a2f619e8cfe11b28361bdc94bd5bd830d34a9e279700d73c5fcac"
+    },
+    {
+      "frame_id": 48,
+      "bbox_xyxy": [
+        217.8343963623047,
+        1040.423583984375,
+        672.6708374023438,
+        1368.53125
+      ],
+      "confidence": 0.96010422706604,
+      "image_sha256": "85d38cf1094b98ca370fbf35684dcb7d3a9517fd7d9a6991b802804ae4d35d5f"
+    },
+    {
+      "frame_id": 49,
+      "bbox_xyxy": [
+        225.0464324951172,
+        1042.5269775390625,
+        675.54345703125,
+        1372.7611083984375
+      ],
+      "confidence": 0.9546012282371521,
+      "image_sha256": "ff2698811dd3bb4b823e3e043509b556d4f670ae51d453d4a9e1c0ad47a7c9ae"
+    },
+    {
+      "frame_id": 50,
+      "bbox_xyxy": [
+        226.0547637939453,
+        1054.221435546875,
+        680.367919921875,
+        1371.96728515625
+      ],
+      "confidence": 0.9576889276504517,
+      "image_sha256": "3a8417af1745f0c4b2aa16a57b0106acfdd8c3f6b824788fd9631b024f5083e2"
+    },
+    {
+      "frame_id": 51,
+      "bbox_xyxy": [
+        220.15830993652344,
+        1060.8660888671875,
+        685.5225219726562,
+        1373.2764892578125
+      ],
+      "confidence": 0.9643396139144897,
+      "image_sha256": "e1708d9f5f90eb2873db9d2c5cf82950e50f87fbc1aab2cb754eb85e7e0e87b9"
+    },
+    {
+      "frame_id": 52,
+      "bbox_xyxy": [
+        213.31103515625,
+        1067.39794921875,
+        689.6415405273438,
+        1376.0426025390625
+      ],
+      "confidence": 0.9618563652038574,
+      "image_sha256": "e4006bb353baf89948890e23f0446300df0eff1432464775081441b7e6bea19b"
+    },
+    {
+      "frame_id": 53,
+      "bbox_xyxy": [
+        214.48341369628906,
+        1068.22607421875,
+        691.4242553710938,
+        1374.968994140625
+      ],
+      "confidence": 0.9541914463043213,
+      "image_sha256": "b1bb3fa01025c79bd3acab74413c0efd53158ef0bbccf4b1b7954b429e7f9868"
+    },
+    {
+      "frame_id": 54,
+      "bbox_xyxy": [
+        221.0853271484375,
+        1066.3770751953125,
+        694.4458618164062,
+        1377.3265380859375
+      ],
+      "confidence": 0.9461671113967896,
+      "image_sha256": "eefce41be10fa9cb08d9c7ef88fce17d05f1d2b1bbf197991cf19d17451ea96e"
+    },
+    {
+      "frame_id": 55,
+      "bbox_xyxy": [
+        229.11251831054688,
+        1050.103515625,
+        696.64501953125,
+        1377.7200927734375
+      ],
+      "confidence": 0.9444094896316528,
+      "image_sha256": "327fb33250811c80db6a6bec1b67ad01707c117bde3529a1bb362b700358865d"
+    },
+    {
+      "frame_id": 56,
+      "bbox_xyxy": [
+        234.512939453125,
+        1030.7427978515625,
+        697.367431640625,
+        1377.668212890625
+      ],
+      "confidence": 0.9482741951942444,
+      "image_sha256": "6f24fd49d313c3772b6018731acdce68c678f57a9befa2978376d76f82bbe333"
+    },
+    {
+      "frame_id": 57,
+      "bbox_xyxy": [
+        240.06118774414062,
+        1048.974365234375,
+        698.503662109375,
+        1380.102294921875
+      ],
+      "confidence": 0.9492440223693848,
+      "image_sha256": "24e5213692d1cfec9bc09ed2078ac1fd3e2013f54720c83483c2695315cfa18a"
+    },
+    {
+      "frame_id": 58,
+      "bbox_xyxy": [
+        242.14096069335938,
+        1064.521240234375,
+        702.3095092773438,
+        1381.2147216796875
+      ],
+      "confidence": 0.9454041719436646,
+      "image_sha256": "f24c98db1c34241bbecfb5f568c82fbdc8c4d26a2b83ed950a40cd8b0d990231"
+    },
+    {
+      "frame_id": 59,
+      "bbox_xyxy": [
+        235.68032836914062,
+        1072.6932373046875,
+        704.5618896484375,
+        1385.041015625
+      ],
+      "confidence": 0.9478273987770081,
+      "image_sha256": "f59b92e7e124b64aaa99501102155c5ab6ca47ae428723a61c0b0f00a814a23c"
+    },
+    {
+      "frame_id": 60,
+      "bbox_xyxy": [
+        227.97027587890625,
+        1079.155029296875,
+        705.3584594726562,
+        1384.59228515625
+      ],
+      "confidence": 0.9549246430397034,
+      "image_sha256": "b42fbc22c13ee5b1dfd7671c45a5b330018a4a48cf0f3d1800c9dc0b1bbfca3f"
+    },
+    {
+      "frame_id": 61,
+      "bbox_xyxy": [
+        233.86656188964844,
+        1075.1573486328125,
+        706.1380004882812,
+        1384.636962890625
+      ],
+      "confidence": 0.8867359161376953,
+      "image_sha256": "00cbb84e46a57ff1f19709bd6570d067973a4cc3f70e11f188e9fdd6524586e8"
+    },
+    {
+      "frame_id": 62,
+      "bbox_xyxy": [
+        240.3319854736328,
+        1072.9151611328125,
+        708.1226196289062,
+        1383.8740234375
+      ],
+      "confidence": 0.9450713992118835,
+      "image_sha256": "02886cf7e997e76fa2d7dcdb5799490d2c139da26084b6928ce5c24d1fbc3235"
+    },
+    {
+      "frame_id": 63,
+      "bbox_xyxy": [
+        250.96145629882812,
+        1056.10888671875,
+        710.2735595703125,
+        1387.5771484375
+      ],
+      "confidence": 0.8815907835960388,
+      "image_sha256": "1f16ce03396809f7d879f23f00c43143ca2f4147be5b7e83a9725e2cabdcb9b8"
+    },
+    {
+      "frame_id": 64,
+      "bbox_xyxy": [
+        251.54330444335938,
+        1059.8045654296875,
+        711.1611938476562,
+        1388.1273193359375
+      ],
+      "confidence": 0.957771897315979,
+      "image_sha256": "583a606589e181f910fa8731b2b01ca0618d5061fb5c0efc8614cc98af59e39f"
+    },
+    {
+      "frame_id": 65,
+      "bbox_xyxy": [
+        248.49871826171875,
+        1065.201416015625,
+        713.3652954101562,
+        1388.7325439453125
+      ],
+      "confidence": 0.9588037133216858,
+      "image_sha256": "94d2877af636f6d16c81dc6c43cefa506330fbecf1643044d84c07a88eba0406"
+    },
+    {
+      "frame_id": 66,
+      "bbox_xyxy": [
+        243.3426513671875,
+        1078.9873046875,
+        714.4091796875,
+        1390.200927734375
+      ],
+      "confidence": 0.9563671350479126,
+      "image_sha256": "3ee9a144478d8571b2bb862ee60a4e76a43b794270d76711d7dc79b75bf138a4"
+    },
+    {
+      "frame_id": 67,
+      "bbox_xyxy": [
+        237.04722595214844,
+        1090.3868408203125,
+        716.1092529296875,
+        1390.0692138671875
+      ],
+      "confidence": 0.952522337436676,
+      "image_sha256": "6672ba4f5e7ef08afcdaeae9b1640a2eeb6f0e08913ddf2c0cd3caca85b3b70f"
+    },
+    {
+      "frame_id": 68,
+      "bbox_xyxy": [
+        228.8666229248047,
+        1098.064208984375,
+        717.4389038085938,
+        1391.401611328125
+      ],
+      "confidence": 0.9293678402900696,
+      "image_sha256": "49e03f5e453177d495f6cd3bf2b1b309a12065cfa9e375975ce7f5625bfdaae2"
+    },
+    {
+      "frame_id": 69,
+      "bbox_xyxy": [
+        227.6856689453125,
+        1105.3544921875,
+        717.813720703125,
+        1395.939208984375
+      ],
+      "confidence": 0.9247803092002869,
+      "image_sha256": "a1d25ab231ad09158b2f3ff37fcbd0dfed6726a21332ee8cd6751a71e88c14fa"
+    },
+    {
+      "frame_id": 70,
+      "bbox_xyxy": [
+        224.61790466308594,
+        1113.751953125,
+        718.6719360351562,
+        1394.38232421875
+      ],
+      "confidence": 0.9411956071853638,
+      "image_sha256": "f40798860eb694c379dd6dafe6e8e68f5eb36cb5a3744b18dcb08e40644230b8"
+    },
+    {
+      "frame_id": 71,
+      "bbox_xyxy": [
+        218.78489685058594,
+        1117.566650390625,
+        719.5459594726562,
+        1393.967529296875
+      ],
+      "confidence": 0.9375652074813843,
+      "image_sha256": "b6260d3f1fa6f05bc012dd650595c9194a068fed9509a6c8295cea3f6c6f4f6c"
+    },
+    {
+      "frame_id": 72,
+      "bbox_xyxy": [
+        215.429931640625,
+        1132.43798828125,
+        720.556640625,
+        1395.626953125
+      ],
+      "confidence": 0.9394596219062805,
+      "image_sha256": "24e90b38c1fca0fc32001adb4d121b91f8b881b8204fbd72cc895128c74128d4"
+    },
+    {
+      "frame_id": 73,
+      "bbox_xyxy": [
+        214.98260498046875,
+        1135.6561279296875,
+        722.10107421875,
+        1396.74462890625
+      ],
+      "confidence": 0.9433289170265198,
+      "image_sha256": "384e769a057e2e7a87f46be26af9a9865de032d3ceca2f1f42b0dafc795aac3b"
+    },
+    {
+      "frame_id": 74,
+      "bbox_xyxy": [
+        217.0386505126953,
+        1134.921875,
+        709.0067749023438,
+        1404.855712890625
+      ],
+      "confidence": 0.9442908763885498,
+      "image_sha256": "fc524d62bdda1420af316aaa7b2d6fe2106dec967f0db75613752a712999521b"
+    },
+    {
+      "frame_id": 75,
+      "bbox_xyxy": [
+        216.15756225585938,
+        1148.1083984375,
+        688.839111328125,
+        1401.8946533203125
+      ],
+      "confidence": 0.9358636140823364,
+      "image_sha256": "db350791005a49f8b8e7dca298c3492db0f421f5c7fec439c076fceba0e900ca"
+    },
+    {
+      "frame_id": 76,
+      "bbox_xyxy": [
+        213.18829345703125,
+        1149.5394287109375,
+        663.4969482421875,
+        1405.1004638671875
+      ],
+      "confidence": 0.8238331079483032,
+      "image_sha256": "436fa456d67da92e10bf9836c452c2d31b5af3409fcd743fa5ec06211330e1ce"
+    },
+    {
+      "frame_id": 77,
+      "bbox_xyxy": [
+        212.6388702392578,
+        1148.892578125,
+        624.3286743164062,
+        1396.55322265625
+      ],
+      "confidence": 0.9141660332679749,
+      "image_sha256": "6dc1a248f9cc10194fa03df6df8da5669bed880c9bca60c0d2cb1e8b8c6eb21a"
+    },
+    {
+      "frame_id": 79,
+      "bbox_xyxy": [
+        222.60789489746094,
+        1114.82568359375,
+        596.1436767578125,
+        1411.683837890625
+      ],
+      "confidence": 0.8948461413383484,
+      "image_sha256": "bd4a8796d2f2e49b224da3eebb2084fd959e4f5b0d0103c3a35e42073be8e4ae"
+    },
+    {
+      "frame_id": 80,
+      "bbox_xyxy": [
+        229.48410034179688,
+        1108.263427734375,
+        638.2920532226562,
+        1407.280029296875
+      ],
+      "confidence": 0.8784962892532349,
+      "image_sha256": "0ed1fa12fc0381b1e4355369f515ae304b8eb65bb420570d6184692406822e3b"
+    },
+    {
+      "frame_id": 81,
+      "bbox_xyxy": [
+        240.56143188476562,
+        1101.5096435546875,
+        719.459228515625,
+        1407.356689453125
+      ],
+      "confidence": 0.5049606561660767,
+      "image_sha256": "e708dd8c8927a206c3bc46fbd6983ea3ae7e36835e08580bdcdb4b8a3e661987"
+    },
+    {
+      "frame_id": 82,
+      "bbox_xyxy": [
+        243.5518798828125,
+        1097.9381103515625,
+        726.2653198242188,
+        1408.4202880859375
+      ],
+      "confidence": 0.8610588312149048,
+      "image_sha256": "9ca703621d7a36e54c3053456a3ba288b4fad8cbee1b5fe6b34b54da6857f341"
+    },
+    {
+      "frame_id": 83,
+      "bbox_xyxy": [
+        308.8322448730469,
+        1168.964111328125,
+        728.238037109375,
+        1401.010009765625
+      ],
+      "confidence": 0.6961669325828552,
+      "image_sha256": "4cc5970d82bc43ea3facddfc0e2eaafe76cb7d71f84c48b29548f0981d10bc40"
+    },
+    {
+      "frame_id": 88,
+      "bbox_xyxy": [
+        298.8172912597656,
+        1166.560302734375,
+        731.6281127929688,
+        1414.5816650390625
+      ],
+      "confidence": 0.9292455315589905,
+      "image_sha256": "72710b5fa06bfc6a51c544ffcf339cf7f33df4650c8b5827dcb6b99b1ba824b7"
+    },
+    {
+      "frame_id": 89,
+      "bbox_xyxy": [
+        273.85125732421875,
+        1168.56787109375,
+        732.3275756835938,
+        1413.0677490234375
+      ],
+      "confidence": 0.9422819018363953,
+      "image_sha256": "839543af24b3a143b28aa9ba7ac66ac0b07e33a8a554ca31fbb76258f924c0fa"
+    },
+    {
+      "frame_id": 90,
+      "bbox_xyxy": [
+        262.64385986328125,
+        1145.566162109375,
+        734.3762817382812,
+        1415.2928466796875
+      ],
+      "confidence": 0.9364386200904846,
+      "image_sha256": "67c91f664edcebcf0de2231b2abce3d2cde063a43155271568246f7d1405a685"
+    }
+  ],
+  "box_exclusions": [
+    {
+      "frame_id": 78,
+      "targets": 2,
+      "reason": "multiple_dogs_identity_ambiguous"
+    },
+    {
+      "frame_id": 85,
+      "targets": 1,
+      "reason": "multiple_dogs_identity_ambiguous"
+    }
+  ],
+  "checks": "schema, bounds, PNG dimensions, review coordinates, image and payload SHA256, ZIP parity, video-bound detection hashes, box bounds and paw coverage"
+}

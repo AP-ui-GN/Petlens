@@ -1,0 +1,30 @@
+{
+  "status": "exact original checkpoint downloaded and CPU preservation smoke passed",
+  "model": "RTMPose-m AP-10K, 17 channels, 256x256",
+  "original_checkpoint_url_from_deployment_metadata": "https://download.openmmlab.com/mmpose/v1/projects/rtmposev1/rtmpose-m_simcc-ap10k_pt-aic-coco_210e-256x256-7a041aa1_20230206.pth",
+  "original_training_codebase_version": "1.1.0",
+  "available_assets": {
+    "rtmpose-m_simcc-ap10k_pt-aic-coco_210e-256x256-7a041aa1_20230206.zip": {
+      "sha256": "2d75445331cf2f21d6e164430f96ffa765cd874872965ae1736932dda03987f0",
+      "bytes": 50709303
+    },
+    "rtmpose-ap10k.onnx": {
+      "sha256": "1cfd1c86e0d9e5d5f95178bcd95ee9a4e8386a624cd3c57519f27ff58cac7f28",
+      "bytes": 54478120
+    }
+  },
+  "provenance_path": "tmp/rtmpose-test/multi-video-evaluation/models/provenance.json",
+  "inference_manifest": "tmp/rtmpose-test/multi-video-evaluation/runs/dalmatian-day2-cfr-20261103/manifest.json",
+  "searched_roots": [
+    "/workspaces",
+    "/tmp",
+    "/home/codespace/.cache"
+  ],
+  "checkpoint_downloaded": true,
+  "different_model_downloaded": false,
+  "note": "ONNX deployment weights are not silently converted into a PyTorch training checkpoint.",
+  "checkpoint_path": "tmp/rtmpose-paw-v2/models/rtmpose-m_simcc-ap10k_pt-aic-coco_210e-256x256-7a041aa1_20230206.pth",
+  "checkpoint_sha256": "896e3665d849ef7eb9b6ec0995955796cc9810f024fa0aa0bdc18acb0d68bf52",
+  "checkpoint_bytes": 54721413,
+  "verification_report": "reports/rtmpose-paw-v2-experiment/cpu-preflight.json"
+}

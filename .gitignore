@@ -75,3 +75,8 @@ attached_assets/
 # Local generated reports and private agent-asset metadata
 reports/archive/*.pdf
 .agents/agent_assets_metadata.toml
+
+# PetLens Colab training assets
+/artifacts/petlens-colab-100step.zip
+/artifacts/petlens-colab-100step/
+/artifacts/petlens-colab-100step.zip.sha256

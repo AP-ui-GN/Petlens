@@ -1,0 +1,269 @@
+{
+  "info": {
+    "description": "Human-only partial AP-10K labels; zero triplets are unlabeled",
+    "split": "exploratory_evaluation",
+    "model_selection_allowed": false
+  },
+  "images": [
+    {
+      "id": 1,
+      "file_name": "images/dog02/000000.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 0
+    },
+    {
+      "id": 2,
+      "file_name": "images/dog02/000002.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 2
+    },
+    {
+      "id": 3,
+      "file_name": "images/dog02/000004.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 4
+    },
+    {
+      "id": 4,
+      "file_name": "images/dog02/000007.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 7
+    },
+    {
+      "id": 5,
+      "file_name": "images/dog02/000008.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 8
+    },
+    {
+      "id": 6,
+      "file_name": "images/dog02/000009.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 9
+    },
+    {
+      "id": 7,
+      "file_name": "images/dog02/000010.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 10
+    },
+    {
+      "id": 8,
+      "file_name": "images/dog02/000011.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 11
+    },
+    {
+      "id": 9,
+      "file_name": "images/dog02/000012.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 12
+    },
+    {
+      "id": 10,
+      "file_name": "images/dog02/000013.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 13
+    },
+    {
+      "id": 11,
+      "file_name": "images/dog02/000014.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 14
+    },
+    {
+      "id": 12,
+      "file_name": "images/dog02/000015.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 15
+    },
+    {
+      "id": 13,
+      "file_name": "images/dog02/000016.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 16
+    },
+    {
+      "id": 14,
+      "file_name": "images/dog02/000017.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 17
+    },
+    {
+      "id": 15,
+      "file_name": "images/dog02/000018.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 18
+    },
+    {
+      "id": 16,
+      "file_name": "images/dog02/000019.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 19
+    },
+    {
+      "id": 17,
+      "file_name": "images/dog02/000020.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 20
+    },
+    {
+      "id": 18,
+      "file_name": "images/dog02/000030.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 30
+    },
+    {
+      "id": 19,
+      "file_name": "images/dog02/000031.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 31
+    },
+    {
+      "id": 20,
+      "file_name": "images/dog02/000032.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 32
+    },
+    {
+      "id": 21,
+      "file_name": "images/dog02/000033.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 33
+    },
+    {
+      "id": 22,
+      "file_name": "images/dog02/000034.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 34
+    },
+    {
+      "id": 23,
+      "file_name": "images/dog02/000035.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 35
+    },
+    {
+      "id": 24,
+      "file_name": "images/dog02/000039.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 39
+    },
+    {
+      "id": 25,
+      "file_name": "images/dog02/000042.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 42
+    },
+    {
+      "id": 26,
+      "file_name": "images/dog02/000045.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 45
+    },
+    {
+      "id": 27,
+      "file_name": "images/dog02/000046.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 46
+    },
+    {
+      "id": 28,
+      "file_name": "images/dog02/000047.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 47
+    },
+    {
+      "id": 29,
+      "file_name": "images/dog02/000055.png",
+      "width": 960,
+      "height": 544,
+      "video_id": "petlens-dog02-0-30-ac5013c8ed782060",
+      "frame_id": 55
+    }
+  ],
+  "annotations": [],
+  "categories": [
+    {
+      "id": 1,
+      "name": "dog",
+      "supercategory": "animal",
+      "keypoints": [
+        "left_eye",
+        "right_eye",
+        "nose",
+        "neck",
+        "root_of_tail",
+        "left_shoulder",
+        "left_elbow",
+        "left_front_paw",
+        "right_shoulder",
+        "right_elbow",
+        "right_front_paw",
+        "left_hip",
+        "left_knee",
+        "left_back_paw",
+        "right_hip",
+        "right_knee",
+        "right_back_paw"
+      ],
+      "skeleton": []
+    }
+  ]
+}
