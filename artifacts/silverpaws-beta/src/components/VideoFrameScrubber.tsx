@@ -76,7 +76,7 @@ export default function VideoFrameScrubber({
   return (
     <section
       aria-labelledby="video-frame-scrubber-title"
-      className="mt-5 rounded-2xl border border-[#1669aa]/50 border-t-[#3794a4]/40 bg-[#0a2b3e] p-6 text-white shadow-2xl backdrop-blur-md"
+      className="panel-outline mt-5 rounded-2xl bg-petlens-deep p-6 text-white shadow-2xl backdrop-blur-md"
       data-testid="video-frame-scrubber"
     >
       <div>
@@ -106,7 +106,7 @@ export default function VideoFrameScrubber({
           ) : (
             <div className="grid aspect-video place-items-center rounded-xl border border-slate-700 bg-slate-950/70 p-6 text-center">
               <div>
-                <Play aria-hidden="true" className="mx-auto text-[#3794a4]" size={30} />
+                <Play aria-hidden="true" className="mx-auto text-petlens-teal" size={30} />
                 <p className="mt-3 text-sm font-semibold text-white">Video preview unavailable</p>
                 <p className="body-muted mt-1 max-w-md text-xs leading-relaxed">
                   The selected video is not available for playback.
@@ -118,7 +118,7 @@ export default function VideoFrameScrubber({
           <div className="mt-4 flex flex-wrap items-center gap-2">
             <button
               aria-label="Step backward one frame"
-              className="rounded-lg border border-[#1669aa]/40 bg-[#1669aa]/30 p-2 text-white hover:bg-[#1669aa]/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#5e17eb] disabled:opacity-40"
+              className="rounded-lg border border-petlens-azure/40 bg-petlens-azure/30 p-2 text-white hover:bg-petlens-azure/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-petlens-trim disabled:opacity-40"
               disabled={!videoUrl || frameCount === 0}
               onClick={() => seekToFrame(frameIndex - 1)}
               type="button"
@@ -127,7 +127,7 @@ export default function VideoFrameScrubber({
             </button>
             <button
               aria-label={isPlaying ? 'Pause video' : 'Play video'}
-              className="rounded-lg border border-[#1669aa]/40 bg-[#1669aa]/30 p-2 text-white hover:bg-[#1669aa]/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#5e17eb] disabled:opacity-40"
+              className="rounded-lg border border-petlens-azure/40 bg-petlens-azure/30 p-2 text-white hover:bg-petlens-azure/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-petlens-trim disabled:opacity-40"
               disabled={!videoUrl}
               onClick={togglePlayback}
               type="button"
@@ -136,7 +136,7 @@ export default function VideoFrameScrubber({
             </button>
             <button
               aria-label="Step forward one frame"
-              className="rounded-lg border border-[#1669aa]/40 bg-[#1669aa]/30 p-2 text-white hover:bg-[#1669aa]/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#5e17eb] disabled:opacity-40"
+              className="rounded-lg border border-petlens-azure/40 bg-petlens-azure/30 p-2 text-white hover:bg-petlens-azure/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-petlens-trim disabled:opacity-40"
               disabled={!videoUrl || frameCount === 0}
               onClick={() => seekToFrame(frameIndex + 1)}
               type="button"
@@ -145,7 +145,7 @@ export default function VideoFrameScrubber({
             </button>
             <input
               aria-label="Video frame timeline"
-              className="min-w-[8rem] flex-1 accent-[#3eb49c]"
+              className="min-w-[8rem] flex-1 accent-petlens-emerald"
               disabled={!videoUrl || frameCount === 0}
               max={frameCount}
               min={0}

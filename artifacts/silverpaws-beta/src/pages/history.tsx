@@ -1,12 +1,11 @@
 ﻿import { type CSSProperties, useState } from 'react';
-import { ArrowRight, CalendarDays, CircleAlert, Download, FileVideo, Gauge, Stethoscope, Trash2 } from 'lucide-react';
+import { ArrowRight, CalendarDays, CircleAlert, Download, FileVideo, Stethoscope, Trash2 } from 'lucide-react';
 import { Link, useParams } from 'wouter';
 import { displayScore, type Analysis, type Pet } from '@/lib/storage';
 import { aiUseResultLines } from '@/lib/ai-use';
 import { formatDate, formatDuration, formatPoseFrames, formatRelative } from '@/lib/format';
 import { downloadAnalysisReport } from '@/lib/report';
 import { downloadTelemetryCsv, downloadTelemetryJson } from '@/lib/telemetry-export';
-import { TrendPanel } from '@/components/trend-panel';
 import ProductTour from '@/components/ProductTour';
 import VetReportModal from '@/components/VetReportModal';
 
@@ -103,7 +102,7 @@ function PipelineVisual({ analysis }: { analysis: Analysis }) {
   const measurements = analysis.measurements;
   const [selectedPoint, setSelectedPoint] = useState<PosePoint | null>(null);
   const sample = measurements?.poseSample;
-  const legacy = analysis.pipeline === 'movenet' ? measurements?.poseKeypoints : undefined;
+  const legacy = analysis.pipeline === 'movenet' || analysis.sampleData ? measurements?.poseKeypoints : undefined;
   const rawPoints = Array.isArray(sample) && sample.length > 0 ? sample : legacy;
   const points = Array.isArray(rawPoints) ? rawPoints.filter(isPosePoint) : [];
   const sampleFrame = Array.isArray(sample) && sample.length > 0;
@@ -153,7 +152,7 @@ function PipelineVisual({ analysis }: { analysis: Analysis }) {
         <>
           <div className="grid md:grid-cols-[1.2fr_.8fr] gap-5 items-center mt-5">
             <svg
-              className="w-full rounded-xl bg-[#0a4267]"
+              className="w-full rounded-xl bg-petlens-navy"
               style={{ aspectRatio: '10 / 7' }}
               viewBox="0 0 100 70"
               role="img"
@@ -170,7 +169,7 @@ function PipelineVisual({ analysis }: { analysis: Analysis }) {
                     y1={start.y * 70}
                     x2={end.x * 100}
                     y2={end.y * 70}
-                    stroke="#3794a4"
+                    stroke="var(--color-petlens-teal)"
                     strokeWidth="1.2"
                   />
                 ) : null;
@@ -181,8 +180,8 @@ function PipelineVisual({ analysis }: { analysis: Analysis }) {
                   cx={point.x * 100}
                   cy={point.y * 70}
                   r="2.2"
-                  fill="#3eb49c"
-                  stroke="#e8f7fb"
+                  fill="var(--color-petlens-emerald)"
+                  stroke="var(--color-white)"
                   strokeWidth="0.6"
                   role="button"
                   tabIndex={0}
@@ -225,7 +224,7 @@ function PipelineVisual({ analysis }: { analysis: Analysis }) {
               </div>
             </div>
           </div>
-          <div className="mt-5 rounded-2xl border border-[#3eb49c]/60 bg-[#3eb49c]/15 px-5 py-4 flex flex-wrap items-center gap-x-5 gap-y-2" data-testid="text-keypoint-confidence">
+          <div className="mt-5 rounded-2xl border border-petlens-emerald/60 bg-petlens-emerald/15 px-5 py-4 flex flex-wrap items-center gap-x-5 gap-y-2" data-testid="text-keypoint-confidence">
             {selectedPoint ? (
               <>
                 <span className="font-mono font-bold text-3xl text-white">{Math.round(selectedPoint.confidence * 100)}%</span>
@@ -275,10 +274,79 @@ function FactorRow({ label, help, score }: { label: string; help: string; score:
   );
 }
 
+function SimpleModeDetails({ analysis }: { analysis: Analysis }) {
+  const factors = analysis.factors;
+  const explanations = FACTOR_LABELS.map((factor) => ({
+    ...factor,
+    measured: typeof factors?.[factor.key] === 'number' && Number.isFinite(factors[factor.key]),
+  }));
+  const signalExplanation = analysis.signalQuality === 'unusable'
+    ? 'The video did not give the movement reader a clear enough view to make a reliable movement summary.'
+    : analysis.signalQuality === 'limited' || analysis.lowConfidence
+      ? 'Only part of the movement could be read clearly, so some observations may be missing.'
+      : 'The video provided a usable view for the movement details listed below.';
+
+  return (
+    <section className="normal-mode-only panel panel-padded mt-5" data-testid="simple-mode-analysis-explanations">
+      <div className="eyebrow">Understanding this observation</div>
+      <h2 className="display-title text-2xl mt-2">What the movement summary means</h2>
+      <p className="body-muted text-sm leading-relaxed mt-3">{signalExplanation}</p>
+      <p className="body-muted text-sm leading-relaxed mt-2">
+        The overall movement indicator brings together the details that could be read from this one clip. It is not a diagnosis or a complete measure of your pet’s health. Missing details are left out rather than treated as zero.
+      </p>
+      <div className="soft-note mt-5 flex flex-wrap items-center justify-between gap-3 p-4" data-testid="simple-mode-overall-score">
+        <span className="font-semibold text-sm">Overall movement score</span>
+        <span className="font-mono font-bold text-xl">
+          {typeof analysis.overallScore === 'number' && Number.isFinite(analysis.overallScore)
+            ? `${analysis.overallScore}/100`
+            : 'Not scored'}
+        </span>
+      </div>
+      <div className="grid gap-3 mt-5">
+        {explanations.map((item) => (
+          <div className="soft-note p-4" key={String(item.key)} data-testid={`simple-explanation-${String(item.key)}`}>
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div className="min-w-0">
+                <h3 className="font-bold text-sm">{item.label}</h3>
+                <p className="body-muted text-sm leading-relaxed mt-1">{item.help}</p>
+              </div>
+              <span className="shrink-0 font-mono font-bold text-lg" data-testid={`simple-score-${String(item.key)}`}>
+                {item.measured ? `${factors?.[item.key]}/100` : 'Not scored'}
+              </span>
+            </div>
+            {item.measured && (
+              <div
+                className="progress-track mt-3"
+                role="progressbar"
+                aria-label={`${item.label} score`}
+                aria-valuemin={0}
+                aria-valuemax={100}
+                aria-valuenow={factors?.[item.key] ?? undefined}
+              >
+                <div className="progress-fill" style={{ width: `${factors?.[item.key]}%` }} />
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+      {analysis.concerningChange && (
+        <p className="body-muted text-sm leading-relaxed mt-4">
+          This clip differed enough from an earlier comparable observation to be flagged for a closer look. Video analysis cannot explain the reason for a change; consider discussing it with your veterinarian.
+        </p>
+      )}
+      {!analysis.concerningChange && explanations.some((item) => item.key === 'historicalChange' && item.measured) && (
+        <p className="body-muted text-sm leading-relaxed mt-4">
+          The comparison uses a previous walk analyzed with the same measurement method. It describes a difference between clips, not the cause of that difference.
+        </p>
+      )}
+    </section>
+  );
+}
+
 function getScoreColor(score: number) {
-  if (score >= 80) return '#16a34a';
-  if (score >= 60) return '#d97706';
-  return '#dc2626';
+  if (score >= 80) return 'var(--color-status-success)';
+  if (score >= 60) return 'var(--color-status-warning)';
+  return 'var(--color-status-danger)';
 }
 
 function AnalysisList({ analyses, pets }: { analyses: Analysis[]; pets: Pet[] }) {
@@ -290,8 +358,8 @@ function AnalysisList({ analyses, pets }: { analyses: Analysis[]; pets: Pet[] })
       const pet = pets.find((item) => item.id === analysis.petId);
       const score = displayScore(analysis);
       return <Link href={`/history/${analysis.id}`} className="analysis-row no-underline" key={analysis.id} data-testid={`link-history-analysis-${analysis.id}`}>
-        <div className="flex gap-3 items-center min-w-0"><div className="video-icon"><FileVideo size={16} /></div><div className="min-w-0"><div className="font-semibold truncate text-sm">{analysis.fileName}</div><div className="body-muted text-xs mt-1">{pet?.name ?? 'Unknown pet'} · {formatRelative(analysis.createdAt)} · {formatDuration(analysis.durationSeconds)}</div></div></div>
-        <div className="flex items-center gap-5"><div className="text-right"><div className="font-bold text-sm">{score === null ? 'Not scored' : `${score}/100`}</div><div className="body-muted text-[10px] mt-1">{analysis.signalQuality ? SIGNAL_LABELS[analysis.signalQuality] ?? analysis.signalQuality : 'overall'}</div></div><ArrowRight size={16} className="body-muted" /></div>
+        <div className="flex gap-3 items-center min-w-0"><div className="video-icon"><FileVideo size={16} /></div><div className="min-w-0"><div className="font-semibold truncate text-sm">{analysis.fileName}</div><div className="body-muted text-xs mt-1">{analysis.sampleData ? 'Sample data · ' : ''}{pet?.name ?? 'Unknown pet'} · {formatRelative(analysis.createdAt)} · {formatDuration(analysis.durationSeconds)}</div><p className="normal-mode-only body-muted text-sm leading-relaxed mt-2 line-clamp-2">{analysis.observation ?? 'No written movement observation was saved for this video.'}</p><p className="normal-mode-only body-muted text-xs leading-relaxed mt-1">{analysis.signalQuality === 'unusable' ? 'The clip was not clear enough for a reliable movement summary.' : analysis.signalQuality === 'limited' || analysis.lowConfidence ? 'Only some movement details could be read clearly.' : 'This is an observation of one clip; repeated walks help build a picture over time.'}</p></div></div>
+        <div className="flex items-center gap-5"><div className="analytical-only text-right"><div className="font-bold text-sm">{score === null ? 'Not scored' : `${score}/100`}</div><div className="body-muted text-[10px] mt-1">{analysis.signalQuality ? SIGNAL_LABELS[analysis.signalQuality] ?? analysis.signalQuality : 'overall'}</div></div><ArrowRight size={16} className="body-muted" /></div>
       </Link>;
     })}
   </div>;
@@ -318,15 +386,21 @@ function ResultDetail({
 
   return <div className="page-frame max-w-5xl">
     <div className="flex flex-wrap items-end justify-between gap-5 stagger">
-      <div><h1 className="display-title text-5xl">{analysis.demo ? "A breakdown of the sample pet's walk" : `A breakdown of ${pet?.name ?? 'your pet'}'s walk`}</h1></div>
+      <div><h1 className="display-title text-5xl">A <span className="text-petlens-trim">breakdown</span> of {analysis.demo ? "the sample pet's walk" : `${pet?.name ?? 'your pet'}'s walk`}</h1></div>
        <div className="flex flex-wrap gap-2">
          <button id="vet-summary-export" type="button" className="btn-secondary" onClick={() => setShowReport(true)} data-testid={`button-vet-summary-report-${analysis.id}`}>Export Movement Report PDF</button>
          {!analysis.demo && <button className="btn-quiet" onClick={() => { if (window.confirm('Remove this saved observation from this device?')) onDelete(); }} data-testid={`button-delete-analysis-${analysis.id}`}><Trash2 size={15} /> Remove</button>}
        </div>
     </div>
 
+    {analysis.sampleData && (
+      <section className="soft-note p-4 mt-5" data-testid="text-sample-data-notice">
+        <p className="text-sm leading-relaxed"><strong>Sample data;</strong> This example is included in app charts for demonstration. Clear sample walks from Home or Analyze, to efficiently upload your own walks</p>
+      </section>
+    )}
+
     {!analysis.demo && (
-      <section className="panel panel-padded mt-5" aria-label="Export Options">
+      <section className="analytical-only panel panel-padded mt-5" aria-label="Export Options">
         <div className="eyebrow">Export Options</div>
         <div className="flex flex-wrap items-start gap-3 mt-3">
           <button
@@ -340,7 +414,7 @@ function ResultDetail({
           <div className="relative">
             <button
               type="button"
-              className="btn-secondary"
+              className="analytical-only btn-secondary"
               aria-expanded={telemetryMenuOpen}
               aria-controls={`telemetry-export-options-${analysis.id}`}
               onClick={() => setTelemetryMenuOpen((open) => !open)}
@@ -412,43 +486,45 @@ function ResultDetail({
     )}
 
     <div className="detail-grid mt-7 stagger-2">
-      <div className="panel panel-padded">
+      <div className="panel panel-padded col-span-full">
         <div className="flex flex-wrap justify-between items-center gap-5">
           <div>
             <div className="eyebrow">Overall wellness indicator</div>
-            <div className="metric-number mt-4" data-testid="text-overall-score">{score === null ? 'Not scored' : <>{score}<span className="text-2xl tracking-normal">/100</span></>}</div>
+            <div className="analytical-only metric-number mt-4" data-testid="text-overall-score">{score === null ? 'Not scored' : <>{score}<span className="text-2xl tracking-normal">/100</span></>}</div>
             <p className="body-muted text-sm mt-3">It describes this clip, not your pet’s health.</p>
+            <p className="normal-mode-only body-muted text-sm leading-relaxed mt-3" data-testid="simple-mode-overall-explanation">
+              {score === null
+                ? 'There was not enough usable information in this clip to create an overall movement summary.'
+                : 'This is a short summary of the movement details that could be read in this clip. It does not say whether your pet is healthy or explain why a movement pattern occurred.'}
+            </p>
           </div>
-          {score !== null && <div className="score-ring" style={{ '--score': `${score * 3.6}deg` } as CSSProperties}><div><div className="metric-number text-3xl">{score}</div><div className="text-[9px] body-muted mt-1">SCORE</div></div></div>}
+          {score !== null && <div className="analytical-only score-ring" style={{ '--score': `${score * 3.6}deg` } as CSSProperties}><div><div className="metric-number text-3xl">{score}</div><div className="text-[9px] body-muted mt-1">SCORE</div></div></div>}
         </div>
-        <div className="flex flex-wrap gap-2 mt-7">
+        <div className="analytical-only flex flex-wrap gap-2 mt-7">
           {analysis.signalQuality && <span className="tag">{SIGNAL_LABELS[analysis.signalQuality] ?? analysis.signalQuality}</span>}
           {analysis.pipeline && <span className="tag">{PIPELINE_LABELS[analysis.pipeline] ?? analysis.pipeline}</span>}
           {analysis.modelInfo && <span className="tag">{analysis.modelInfo.modelName}</span>}
           {analysis.usedLlm && <span className="tag">Model-written summary</span>}
         </div>
-        {analysis.signalNote && <p className="body-muted text-xs leading-relaxed mt-4">{analysis.signalNote}</p>}
-        {analysis.modelInfo && <p className="body-muted text-xs leading-relaxed mt-2">Measured on the server with {analysis.modelInfo.modelName}, version {analysis.modelInfo.modelVersion}.</p>}
+        {analysis.signalNote && <p className="analytical-only body-muted text-xs leading-relaxed mt-4">{analysis.signalNote}</p>}
+        {analysis.modelInfo && <p className="analytical-only body-muted text-xs leading-relaxed mt-2">Measured on the server with {analysis.modelInfo.modelName}, version {analysis.modelInfo.modelVersion}.</p>}
         {aiUseResultLines(analysis.aiUse).length > 0 && (
-          <ul className="mt-3 flex flex-col gap-1" data-testid="text-ai-use-lines">
+          <ul className="analytical-only mt-3 flex flex-col gap-1" data-testid="text-ai-use-lines">
             {aiUseResultLines(analysis.aiUse).map((line) => (
               <li key={line} className="body-muted text-xs leading-relaxed">{line}</li>
             ))}
           </ul>
         )}
       </div>
-      <div className="panel panel-padded">
-        <div className="flex items-center gap-2"><Gauge size={18} style={{ color: '#3eb49c' }} /><div className="eyebrow">What we noticed</div></div>
-        <p className="text-base leading-relaxed mt-5" data-testid="text-observation">{analysis.observation ?? 'No interpretation was saved for this observation.'}</p>
-        <div className="video-meta mt-7"><div className="video-icon"><FileVideo size={16} /></div><div><div className="font-semibold text-sm">{analysis.fileName}</div><div className="body-muted text-xs mt-1">{formatDuration(analysis.durationSeconds)} · {analysis.demo ? 'Sample pet' : pet?.name ?? 'Pet'}</div></div></div>
-      </div>
     </div>
 
-    <PipelineVisual analysis={analysis} />
+    <SimpleModeDetails analysis={analysis} />
+
+    <div className="analytical-only"><PipelineVisual analysis={analysis} /></div>
     {/* Per-frame pose tracks are not stored; avoid implying that aggregate mean landmarks are frame-synchronized. */}
 
     {factors && (
-      <section id="factor-scores" className="panel panel-padded mt-5 stagger-3 telemetry-card">
+      <section id="factor-scores" className="analytical-only panel panel-padded mt-5 stagger-3 telemetry-card">
         <div className="eyebrow">Where the score came from</div>
         <h2 className="display-title text-2xl mt-2">Factor breakdown</h2>
         <p className="body-muted text-sm mt-2 max-w-2xl">Each factor is measured separately. A factor with no score means this clip did not carry enough signal to measure it — it does not mean zero.</p>
@@ -466,7 +542,7 @@ function ResultDetail({
     )}
 
     {measurements && (
-      <section className="panel panel-padded mt-5 stagger-3">
+      <section className="analytical-only panel panel-padded mt-5 stagger-3">
         <div className="eyebrow">Raw measurements</div>
         <div className="measure-grid mt-5">
           {([
@@ -523,13 +599,11 @@ export default function History({ pets, analyses, deleteAnalysis, demoAnalysis, 
     return <ResultDetail analysis={selected} pet={pets.find((pet) => pet.id === selected.petId)} onDelete={() => deleteAnalysis(selected.id)} demoTourActive={demoTourActive} onDemoTourComplete={onDemoTourComplete} />;
   }
   if (params.id && !selected) {
-    return <div className="page-frame"><div className="panel panel-padded text-center max-w-lg mx-auto mt-16"><CircleAlert size={28} className="mx-auto" style={{ color: '#ff8b84' }} /><h1 className="display-title text-3xl mt-5">That observation moved on.</h1><p className="body-muted mt-3">It may have been removed from local storage.</p><Link href="/history" className="btn-primary mt-6" data-testid="link-return-history">Back to history</Link></div></div>;
+    return <div className="page-frame"><div className="panel panel-padded text-center max-w-lg mx-auto mt-16"><CircleAlert size={28} className="mx-auto text-status-error" /><h1 className="display-title text-3xl mt-5">That <span className="text-petlens-trim">observation</span> moved on.</h1><p className="body-muted mt-3">It may have been removed from local storage.</p><Link href="/history" className="btn-primary mt-6" data-testid="link-return-history">Back to history</Link></div></div>;
   }
   return <div className="page-frame max-w-5xl">
-    <div className="flex flex-wrap justify-between items-end gap-5 stagger"><h1 className="display-title text-5xl">Your pet’s history</h1><Link href="/analyze" className="btn-primary" data-testid="link-history-new-analysis"><FileVideo size={16} /> New analysis</Link></div>
-    <div className="flex items-center gap-2 body-muted text-xs mt-8"><CalendarDays size={14} /> {analyses.length} saved observation{analyses.length === 1 ? '' : 's'} on this device</div>
-    <TrendPanel analyses={analyses} />
+    <div className="flex flex-wrap justify-between items-end gap-5 stagger"><h1 className="display-title text-5xl">Your pet’s <span className="text-petlens-trim">history</span></h1><Link href="/analyze" className="btn-primary" data-testid="link-history-new-analysis"><FileVideo size={16} /> New analysis</Link></div>
+    <div className="analytical-only flex items-center gap-2 body-muted text-xs mt-8"><CalendarDays size={14} /> {analyses.length} saved observation{analyses.length === 1 ? '' : 's'} on this device</div>
     <div className="mt-4 stagger-2"><AnalysisList analyses={analyses} pets={pets} /></div>
-    <div className="soft-note p-4 mt-5 text-xs leading-relaxed">A score is just a snapshot of one walk. It isn't a diagnosis.</div>
   </div>;
 }

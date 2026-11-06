@@ -68,6 +68,8 @@ export type Analysis = {
   aiUse?: string[];
   /** Demo results are held in memory and must never be added to saved history. */
   demo?: boolean;
+  /** Locally generated sample walks, removable as a group without touching real observations. */
+  sampleData?: boolean;
 };
 
 /** The fields the app supplies itself, alongside the analysis result. */

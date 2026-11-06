@@ -12,7 +12,7 @@ function PetLensHeader() {
     <View style={{ flexDirection: 'row', alignItems: 'center', gap: 9 }}>
       <Image
         accessibilityLabel="PetLens analysis for dogs"
-        source={require('../../assets/petlens-dog-mark.png')}
+        source={require('../../assets/petlens.logo-removedbg.png')}
         style={{ width: 42, height: 42, borderRadius: 13, backgroundColor: 'transparent' }}
       />
       <View>

@@ -78,3 +78,41 @@ export function createSampleAnalysis(): Analysis {
     demo: true,
   };
 }
+
+export function createSampleWalks(count: number, petId: string, pipeline = 'movenet'): Analysis[] {
+  const now = Date.now();
+  return Array.from({ length: count }, (_, index) => {
+    const sample = createSampleAnalysis();
+    const sampleNumber = count - index;
+    const variation = (sampleNumber % 6) * 2;
+    const daysAgo = index * 7;
+
+    return {
+      ...sample,
+      id: `sample-${now}-${index}-${Math.random().toString(36).slice(2, 7)}`,
+      petId,
+      fileName: `Sample walk ${sampleNumber}.mp4`,
+      createdAt: new Date(now - daysAgo * 24 * 60 * 60 * 1000).toISOString(),
+      pipeline,
+      overallScore: Math.min(94, 68 + variation + index),
+      factors: {
+        movementConsistency: Math.min(95, 72 + variation),
+        symmetry: Math.min(93, 70 + variation),
+        mobility: Math.min(92, 69 + variation),
+        activity: Math.min(96, 74 + variation),
+        historicalChange: sampleNumber === 1 ? null : variation,
+      },
+      strideSymmetryScore: Math.min(93, 70 + variation),
+      measurements: {
+        ...sample.measurements,
+        hipStability: Math.min(0.92, 0.68 + variation / 100),
+        strideSymmetry: Math.min(0.95, 0.72 + variation / 100),
+      },
+      observation: 'Sample walk data illustrates how movement observations appear over time. These values were generated for demonstration and were not measured from your pet.',
+      signalNote: 'Sample values only; no video was analyzed.',
+      modelInfo: sample.modelInfo ? { ...sample.modelInfo, pipeline } : undefined,
+      demo: false,
+      sampleData: true,
+    };
+  });
+}

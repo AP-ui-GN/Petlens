@@ -16,5 +16,19 @@
       "ui": "@/components/ui",
       "lib": "@/lib",
       "hooks": "@/hooks"
+    },
+    "registries": {
+      "@reactbits-starter": {
+        "url": "https://reactbits.dev/r/{name}.json",
+        "headers": {
+          "Authorization": "Bearer ${REACTBITS_LICENSE_KEY}"
+        }
+      },
+      "@reactbits-pro": {
+        "url": "https://pro.reactbits.dev/r/{name}.json",
+        "headers": {
+          "Authorization": "Bearer ${REACTBITS_LICENSE_KEY}"
+        }
+      }
     }
 }

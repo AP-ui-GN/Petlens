@@ -6,6 +6,13 @@
     "allowImportingTsExtensions": true,
     "noUncheckedIndexedAccess": false
   },
-  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"],
-  "exclude": ["node_modules", "tests", ".expo/export-check"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "tests",
+    ".expo/export-check"
+  ]
 }

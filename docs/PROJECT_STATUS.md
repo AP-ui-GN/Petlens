@@ -87,7 +87,7 @@ Error mapping seen by the user:
 | `src/pages/home.tsx` | fixed | Uses the overall score; no longer shows "Age not set years" |
 | `src/lib/report.ts` | extended | PDF now lists overall score, every factor, raw measurements, whether the text was rule-based or model-written |
 | `src/components/app-shell.tsx` | extended | Persistent safety + emergency disclaimer footer on every page |
-| `src/components/trend-panel.tsx` | mounted | Placeholder is now visible on History for Kavin to replace |
+| `src/components/trend-panel.tsx` | **removed** | Removed from web History; the separate mobile trend panel is unchanged |
 | `vite.config.ts` | extended | `/api` proxied to the API server in dev and preview |
 | `analyze-client.ts`, `local-motion-probe.ts`, `wellness.ts` | **removed** | Orphaned duplicate pipeline living in UI code |
 
@@ -206,15 +206,7 @@ schema (`lib/api-spec/openapi.yaml`, then `pnpm --filter @workspace/api-spec run
 
 ### 5.2 Kavin — UI, validation, tests
 
-Marked in code with `TEAM TASK: KAVIN` in `trend-panel.tsx` and `pet.tsx`.
-
-**K1. Trend panel**
-File: `artifacts/silverpaws-beta/src/components/trend-panel.tsx`
-Replace the placeholder body. Show date, overall score, movement consistency,
-and symmetry across saved walks. Only compare records with the same `pipeline`
-field. Handle 0, 1, and many walks. Use only fields already in `Analysis`
-(`createdAt`, `overallScore`, `factors`, `pipeline`). No invented data.
-It is already mounted on the History page, so you can see it as you work.
+Marked in code with `TEAM TASK: KAVIN` in `pet.tsx`.
 
 **K2. Pet form validation**
 File: `artifacts/silverpaws-beta/src/pages/pet.tsx` → `submit`
@@ -367,7 +359,8 @@ were not started.
   `CONCERNING_DROP` stays 10 and `CONCERNING_ASYMMETRY` stays 20.
 - The web trend panel lists date, overall score, movement consistency,
   and symmetry from saved walks only. Different `pipeline` values are separate
-  series.
+  series. This panel was later removed from web History; the mobile view is
+  separate and unchanged.
 - The pet form shows a message for a blank name, and for an age
   or weight that is filled in but is not a positive number. Save does not run
   until those checks pass. The web `/pet` route now renders `PetProfile` as a

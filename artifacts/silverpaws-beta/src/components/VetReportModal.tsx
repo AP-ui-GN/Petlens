@@ -89,8 +89,8 @@ export default function VetReportModal({ analysis, pet, onClose }: VetReportModa
 
         <div className="min-h-0 overflow-y-auto p-5 print:overflow-visible print:p-0">
           <article className="vet-report-page mx-auto min-h-[10.5in] max-w-[8.5in] bg-white p-8 font-sans text-slate-900 shadow-xl print:min-h-0 print:max-w-none print:p-0 print:shadow-none">
-            <div className="border-b-4 border-[#0a4267] pb-5">
-              <div className="text-xs font-bold uppercase tracking-[0.16em] text-[#1669aa]">Pet movement observation report</div>
+            <div className="border-b-4 border-petlens-navy pb-5">
+              <div className="text-xs font-bold uppercase tracking-[0.16em] text-petlens-azure">Pet movement observation report</div>
               <h1 className="mt-2 text-2xl font-extrabold leading-tight" id="vet-report-document-title">
                 SILVER PAWS AI — Movement Observation Summary
               </h1>
@@ -118,7 +118,7 @@ export default function VetReportModal({ analysis, pet, onClose }: VetReportModa
             </section>
 
             <section className="mt-5 grid grid-cols-[1.15fr_1fr] gap-3">
-              <div className="rounded-xl bg-[#0a4267] p-4 text-white">
+              <div className="rounded-xl bg-petlens-navy p-4 text-white">
                 <div className="text-xs font-semibold uppercase tracking-wide text-white/75">Overall movement indicator</div>
                 <div className="mt-2 font-mono text-4xl font-bold">{overallScore === null ? 'Not scored' : `${overallScore}/100`}</div>
                 <div className="mt-2 text-xs text-white/75">A clip-level educational indicator, not a diagnosis.</div>
@@ -149,7 +149,7 @@ export default function VetReportModal({ analysis, pet, onClose }: VetReportModa
                     <div className="grid grid-cols-[9rem_1fr_4rem] items-center gap-3 text-xs" key={key}>
                       <span className="font-semibold">{label}</span>
                       <div aria-label={`${label}: ${isMeasured ? `${score}/100` : 'Not measured'}`} className="h-2 overflow-hidden rounded-full bg-slate-200" role="img">
-                        {isMeasured && <div className="h-full rounded-full bg-[#3794a4]" style={{ width: `${boundedScore}%` }} />}
+                        {isMeasured && <div className="h-full rounded-full bg-petlens-teal" style={{ width: `${boundedScore}%` }} />}
                       </div>
                       <span className="text-right font-mono">{isMeasured ? `${score}/100` : 'N/M'}</span>
                     </div>
@@ -179,7 +179,7 @@ export default function VetReportModal({ analysis, pet, onClose }: VetReportModa
           <article className="vet-report-page mx-auto mt-5 min-h-[10.5in] max-w-[8.5in] bg-white p-8 font-sans text-slate-900 shadow-xl print:mt-0 print:min-h-0 print:max-w-none print:p-0 print:shadow-none">
             <div className="flex items-start justify-between border-b border-slate-300 pb-4">
               <div>
-                <div className="text-xs font-bold uppercase tracking-[0.16em] text-[#1669aa]">Supplemental telemetry</div>
+                <div className="text-xs font-bold uppercase tracking-[0.16em] text-petlens-azure">Supplemental telemetry</div>
                 <h2 className="mt-2 text-xl font-extrabold">Measurement details &amp; interpretation notes</h2>
               </div>
               <div className="text-right text-xs text-slate-500">Reference {analysis.id.slice(0, 12).toUpperCase()}</div>

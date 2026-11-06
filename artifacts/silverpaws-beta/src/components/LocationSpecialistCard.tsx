@@ -62,9 +62,9 @@ export default function LocationSpecialistCard() {
   }
 
   return (
-    <section aria-labelledby="nearby-care-title" className="rounded-2xl border border-[#1669aa]/50 border-t-[#3794a4]/40 bg-[#0a2b3e] p-6 text-white shadow-2xl backdrop-blur-md">
+    <section aria-labelledby="nearby-care-title" className="panel-outline rounded-2xl bg-petlens-deep p-6 text-white shadow-2xl backdrop-blur-md">
       <div className="flex items-center gap-2">
-        <MapPin aria-hidden="true" className="h-5 w-5 text-[#3eb49c]" />
+        <MapPin aria-hidden="true" className="h-5 w-5 text-petlens-emerald" />
         <h2 className="text-lg font-bold text-white" id="nearby-care-title">
           Find Care Nearby
         </h2>
@@ -79,7 +79,7 @@ export default function LocationSpecialistCard() {
         </label>
         <input
           autoComplete="postal-code"
-          className="min-w-0 flex-1 rounded-xl border border-[#1669aa]/60 bg-slate-900/80 px-3 py-2 text-sm text-white placeholder:text-slate-400 focus:border-[#3794a4] focus:outline-none focus:ring-1 focus:ring-[#5e17eb]"
+          className="min-w-0 flex-1 rounded-xl border border-petlens-azure/60 bg-slate-900/80 px-3 py-2 text-sm text-white placeholder:text-slate-400 focus:border-petlens-teal focus:outline-none focus:ring-1 focus:ring-petlens-trim"
           id="specialist-location"
           onChange={(event) => setLocation(event.target.value)}
           placeholder="ZIP code or city"
@@ -87,7 +87,7 @@ export default function LocationSpecialistCard() {
           value={location}
         />
         <button
-          className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#3eb49c] px-5 py-2.5 text-sm font-bold text-slate-950 transition-all hover:bg-[#3794a4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5e17eb]"
+          className="inline-flex items-center justify-center gap-2 rounded-xl bg-petlens-emerald px-5 py-2.5 text-sm font-bold text-slate-950 transition-all hover:bg-petlens-teal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petlens-trim"
           type="submit"
         >
           <Search aria-hidden="true" className="h-4 w-4" />
@@ -96,7 +96,7 @@ export default function LocationSpecialistCard() {
       </form>
 
       <button
-        className="mt-3 w-full rounded-xl border border-slate-700 bg-slate-900/60 py-2.5 text-sm font-medium text-slate-300 transition-all hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5e17eb]"
+        className="mt-3 w-full rounded-xl border border-slate-700 bg-slate-900/60 py-2.5 text-sm font-medium text-slate-300 transition-all hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petlens-trim"
         onClick={searchCurrentLocation}
         type="button"
       >

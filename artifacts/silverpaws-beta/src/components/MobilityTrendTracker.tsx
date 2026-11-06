@@ -23,8 +23,8 @@ type MetricDefinition = {
 };
 
 const METRICS: MetricDefinition[] = [
-  { key: 'overall', label: 'Overall mobility', color: '#3eb49c' },
-  { key: 'hip', label: 'Hip stability', color: '#1669aa' },
+  { key: 'overall', label: 'Overall mobility', color: 'var(--color-petlens-emerald)' },
+  { key: 'hip', label: 'Hip stability', color: 'var(--color-petlens-azure)' },
 ];
 
 function previewPoints(): TrackerPoint[] {
@@ -42,7 +42,7 @@ function previewPoints(): TrackerPoint[] {
   }));
 }
 
-const CHART = { width: 760, height: 250, left: 42, right: 18, top: 18, bottom: 34 };
+const CHART = { width: 760, height: 280, left: 52, right: 18, top: 18, bottom: 52 };
 
 function normalizedHipScore(value: number | null | undefined): number | null {
   if (typeof value !== 'number' || !Number.isFinite(value)) return null;
@@ -128,7 +128,7 @@ export default function MobilityTrendTracker({ analyses, petId, petName }: { ana
   const [hovered, setHovered] = useState<{ point: TrackerPoint; x: number; y: number } | null>(null);
 
   const { savedPoints, pipelineCount } = useMemo(() => {
-    const petAnalyses = analyses.filter((analysis) => analysis.petId === petId && !analysis.demo);
+    const petAnalyses = analyses.filter((analysis) => analysis.petId === petId && (!analysis.demo || analysis.sampleData));
     const series = trendSeries(petAnalyses);
     const latestPipelineSeries = series[0];
     if (!latestPipelineSeries) return { savedPoints: [], pipelineCount: 0 };
@@ -172,24 +172,23 @@ export default function MobilityTrendTracker({ analyses, petId, petName }: { ana
 
   return (
     <section
-      className="mt-5 rounded-2xl border border-[#1669aa]/50 border-t-[#3794a4]/40 bg-[#0a2b3e] p-6 text-white shadow-2xl backdrop-blur-md"
+      className="panel-outline mt-5 rounded-2xl bg-petlens-deep p-6 text-white shadow-2xl backdrop-blur-md"
       data-testid="mobility-trend-tracker"
     >
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <div className="eyebrow">Longitudinal mobility</div>
-          <h2 className="mt-2 font-sans text-xl font-bold leading-snug tracking-normal">Gait baseline &amp; trend</h2>
+          <h2 className="mt-2 font-sans text-xl font-bold leading-snug tracking-normal">Your dog's progress</h2>
           <p className="body-muted mt-2 max-w-2xl text-sm leading-relaxed">
             {isPreview
               ? `Sample trajectory shown below. Once you upload and analyze a video of ${petName ?? 'your pet'}, your real gait measurements will automatically plot here.`
               : 'Longitudinal movement trends tracked across recorded walk observations.'}
           </p>
         </div>
-        <div className="flex rounded-xl border border-slate-700 bg-slate-950/50 p-1" aria-label="Trend time range" role="group">
+        <div className="analytical-only flex rounded-xl border border-slate-700 bg-slate-950/50 p-1" aria-label="Trend time range" role="group">
           {(['30', '60', '90', 'all'] as const).map((item) => (
             <button
               aria-pressed={range === item}
-              className={`rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors ${range === item ? 'border-[#5e17eb] bg-[#1669aa]/20 text-white' : 'border-transparent text-slate-300 hover:bg-white/5'}`}
+              className={`rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors ${range === item ? 'border-petlens-trim bg-petlens-azure/20 text-white' : 'border-transparent text-slate-300 hover:bg-white/5'}`}
               key={item}
               onClick={() => setRange(item)}
               type="button"
@@ -200,7 +199,7 @@ export default function MobilityTrendTracker({ analyses, petId, petName }: { ana
         </div>
       </div>
 
-      <div className="mt-5 flex flex-wrap gap-2" role="group" aria-label="Chart metrics">
+      <div className="analytical-only mt-5 flex flex-wrap gap-2" role="group" aria-label="Chart metrics">
         {METRICS.map(({ key, label, color }) => (
           <button
             aria-pressed={enabled[key]}
@@ -215,7 +214,7 @@ export default function MobilityTrendTracker({ analyses, petId, petName }: { ana
         ))}
       </div>
 
-      <div className="relative mt-4">
+      <div className="analytical-only relative mt-4">
         {hasRangeFallback ? (
           <div className="grid min-h-[250px] place-items-center rounded-xl border border-slate-700/70 bg-slate-950/30 px-6 text-center">
             <p className="body-muted max-w-md text-sm leading-relaxed">
@@ -224,7 +223,7 @@ export default function MobilityTrendTracker({ analyses, petId, petName }: { ana
           </div>
         ) : (
           <svg
-            aria-label="Mobility scores across observation dates, with a dashed baseline at 80 out of 100"
+            aria-label="Movement score from 0 to 100 on the vertical axis across walk dates on the horizontal axis, with a dashed baseline at 80"
             className="w-full"
             role="img"
             viewBox={`0 0 ${CHART.width} ${CHART.height}`}
@@ -238,14 +237,14 @@ export default function MobilityTrendTracker({ analyses, petId, petName }: { ana
                     x2={CHART.width - CHART.right}
                     y1={y}
                     y2={y}
-                    stroke={value === 80 ? '#5e17eb' : 'rgba(148,163,184,.17)'}
+                    stroke={value === 80 ? 'var(--color-petlens-trim)' : 'rgba(148,163,184,.17)'}
                     strokeDasharray={value === 80 ? '6 5' : undefined}
                   />
                   <text fill="#94a3b8" fontSize="10" textAnchor="end" x={CHART.left - 8} y={y + 3}>{value}</text>
                 </g>
               );
             })}
-            <text fill="#c4b5fd" fontSize="10" x={CHART.width - CHART.right - 48} y={CHART.top + ((100 - 80) / 100) * (CHART.height - CHART.top - CHART.bottom) - 5}>Baseline 80</text>
+            <text fill="var(--color-petlens-trim)" fontSize="10" x={CHART.width - CHART.right - 48} y={CHART.top + ((100 - 80) / 100) * (CHART.height - CHART.top - CHART.bottom) - 5}>Baseline 80</text>
             {visibleMetrics.map(({ key }) => (
               <path
                 d={linePath(displayedPoints, key)}
@@ -284,13 +283,25 @@ export default function MobilityTrendTracker({ analyses, petId, petName }: { ana
                 })}
               </g>
             ))}
-            <text fill="#94a3b8" fontSize="10" textAnchor="start" x={CHART.left} y={CHART.height - 8}>{dateLabel(displayedPoints[0]?.createdAt ?? '')}</text>
-            <text fill="#94a3b8" fontSize="10" textAnchor="end" x={CHART.width - CHART.right} y={CHART.height - 8}>{dateLabel(displayedPoints[displayedPoints.length - 1]?.createdAt ?? '')}</text>
+            <text fill="#94a3b8" fontSize="10" textAnchor="start" x={CHART.left} y={CHART.height - 25}>{dateLabel(displayedPoints[0]?.createdAt ?? '')}</text>
+            <text fill="#94a3b8" fontSize="10" textAnchor="end" x={CHART.width - CHART.right} y={CHART.height - 25}>{dateLabel(displayedPoints[displayedPoints.length - 1]?.createdAt ?? '')}</text>
+            <text fill="#c1d0d5" fontSize="11" fontWeight="600" textAnchor="middle" x={CHART.width / 2} y={CHART.height - 8}>Walk date</text>
+            <text
+              fill="#c1d0d5"
+              fontSize="11"
+              fontWeight="600"
+              textAnchor="middle"
+              transform={`rotate(-90 14 ${CHART.height / 2})`}
+              x="14"
+              y={CHART.height / 2}
+            >
+              Movement score (0–100)
+            </text>
           </svg>
         )}
         {hovered && !hasRangeFallback && (
           <div
-            className="pointer-events-none absolute z-10 w-56 rounded-xl border border-[#1669aa]/50 bg-slate-950/95 p-3 shadow-xl"
+            className="pointer-events-none absolute z-10 w-56 rounded-xl border border-petlens-azure/50 bg-slate-950/95 p-3 shadow-xl"
             style={{
               left: `clamp(0px, calc(${hovered.x}% - 7rem), calc(100% - 14rem))`,
               top: `clamp(0px, calc(${hovered.y}% - 6rem), calc(100% - 7rem))`,
@@ -315,7 +326,7 @@ export default function MobilityTrendTracker({ analyses, petId, petName }: { ana
         )}
       </div>
 
-      <div className="mt-3 flex flex-wrap items-center justify-between gap-3 border-t border-slate-700/70 pt-4">
+      <div className="analytical-only mt-3 flex flex-wrap items-center justify-between gap-3 border-t border-slate-700/70 pt-4">
         <div className="flex items-center gap-2">
           {delta === null ? (
             <span className="rounded-full bg-slate-800 px-3 py-1.5 text-xs font-semibold text-slate-300">
@@ -340,7 +351,7 @@ export default function MobilityTrendTracker({ analyses, petId, petName }: { ana
         )}
       </div>
       {savedPoints.length > 0 && pipelineCount > 1 && (
-        <p className="body-muted mt-3 text-xs">
+        <p className="analytical-only body-muted mt-3 text-xs">
           Showing the newest measurement method only; different pipelines are not combined in one trend.
         </p>
       )}

@@ -9,13 +9,14 @@ import { findBaseline, toAnalysisRecord, type Analysis, type Pet } from '@/lib/s
 import { checkClip, describeAnalysisError, MAX_UPLOAD_MB, requestAnalysis } from '@/lib/analysis-api';
 import { formatDuration } from '@/lib/format';
 import { observationFromResult } from '@/lib/saved-observation';
-import { createSampleAnalysis } from '@/lib/sample-analysis';
 
 type Props = {
   pets: Pet[];
   analyses: Analysis[];
   addAnalysis: (analysis: Omit<Analysis, 'id' | 'createdAt'>) => Analysis;
-  openDemoAnalysis: (analysis: Analysis, continueTour: boolean) => void;
+  addSampleWalks: (petId: string, count: number) => Analysis[];
+  clearSampleWalks: () => void;
+  openSampleWalk: (analysis: Analysis, continueTour: boolean) => void;
 };
 
 type Phase = 'upload' | 'review' | 'processing' | 'done';
@@ -26,7 +27,7 @@ type Phase = 'upload' | 'review' | 'processing' | 'done';
 // loading. The service owns the deadline now.
 const PROCESSING_STATUS = 'Measuring this clip';
 
-export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis }: Props) {
+export default function Analyze({ pets, analyses, addAnalysis, addSampleWalks, clearSampleWalks, openSampleWalk }: Props) {
   const [, setLocation] = useLocation();
   const [petId, setPetId] = useState(pets[0]?.id ?? '');
   const [file, setFile] = useState<File | null>(null);
@@ -38,6 +39,7 @@ export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis 
   const [sourceUrl, setSourceUrl] = useState('');
   const [phase, setPhase] = useState<Phase>('upload');
   const [showTour, setShowTour] = useState(false);
+  const [sampleWalkCount, setSampleWalkCount] = useState(4);
   const [elapsed, setElapsed] = useState(0);
   const [error, setError] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
@@ -121,7 +123,17 @@ export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis 
 
   const tryDemo = () => {
     requestRef.current?.abort();
-    openDemoAnalysis(createSampleAnalysis(), showTour);
+    if (!petId) return;
+    const samples = addSampleWalks(petId, sampleWalkCount);
+    toast.success(`Added ${samples.length} sample walk${samples.length === 1 ? '' : 's'} to your pet’s history.`);
+    if (showTour && samples[0]) openSampleWalk(samples[0], true);
+  };
+
+  const clearSamples = () => {
+    const sampleCount = analyses.filter((analysis) => analysis.sampleData).length;
+    if (!sampleCount || !window.confirm('Clear all generated sample walks? Your real video observations will not be changed.')) return;
+    clearSampleWalks();
+    toast.success('Sample walks cleared. Your real observations are unchanged.');
   };
 
   const runAnalysis = async () => {
@@ -188,8 +200,8 @@ export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis 
     <div className={`page-frame max-w-4xl${showTour ? ' pb-60' : ''}`}>
       <div className="mt-6 flex flex-wrap items-start justify-between gap-4 stagger">
         <div>
-          <h1 className="display-title text-3xl sm:text-4xl">Analyze how your dog walks</h1>
-          <p className="max-w-2xl text-sm font-normal leading-relaxed text-slate-300/90 sm:text-base mt-3">Choose a video of your dog. We’ll look for patterns in your pet’s movement and give you an easy-to-understand observation.</p>
+          <h1 className="display-title text-3xl sm:text-4xl">Analyze how your dog <span className="text-petlens-trim">walks</span></h1>
+          <p className="max-w-2xl text-sm font-normal leading-relaxed text-slate-300/90 sm:text-base mt-3">Choose a video of your dog. We’ll look for patterns in your pet’s movement and give you a data-backed observation.</p>
         </div>
         <button
           className="btn-secondary"
@@ -202,38 +214,52 @@ export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis 
       </div>
 
       <div className="flex items-center gap-2 mt-9 text-xs font-semibold">
-        {['Choose video', 'Review clip', 'Analysis'].map((label, index) => {
+        {['Upload video', 'Review clip', 'Analysis'].map((label, index) => {
           const active = index === 0 ? phase === 'upload' : index === 1 ? phase === 'review' : phase === 'processing' || phase === 'done';
           const complete = (index === 0 && phase !== 'upload') || (index === 1 && (phase === 'processing' || phase === 'done'));
-          return <div key={label} className="flex items-center gap-2"><span className={`grid h-7 w-7 place-items-center rounded-full ${active ? 'bg-[#1669aa] text-white ring-2 ring-[#5e17eb] shadow-[0_0_10px_rgba(94,23,235,0.4)]' : 'border border-slate-700 bg-slate-800 text-slate-300'}`}>{complete ? <Check size={14} /> : index + 1}</span><span className={active ? 'text-white' : 'text-slate-300'}>{label}</span>{index < 2 && <span className="w-8 h-px bg-border mx-1" />}</div>;
+          return <div key={label} className="flex items-center gap-2"><span className={`analysis-step-indicator grid h-7 w-7 place-items-center rounded-full ${active ? 'is-active bg-petlens-azure text-white ring-2 ring-petlens-trim' : 'border border-slate-700 bg-slate-800 text-slate-300'}`} style={active ? { boxShadow: '0 0 10px color-mix(in srgb, var(--color-petlens-trim) 40%, transparent)' } : undefined}>{complete ? <Check size={14} /> : index + 1}</span><span className={active ? 'text-white' : 'text-slate-300'}>{label}</span>{index < 2 && <span className="w-8 h-px bg-border mx-1" />}</div>;
         })}
       </div>
 
       {phase === 'upload' && (
-        <section className="mt-7 rounded-2xl border border-[#1669aa]/50 border-t-[#3794a4]/40 bg-[#0a2b3e] p-6 shadow-2xl backdrop-blur-md stagger-2">
+        <section className="panel-outline mt-7 rounded-2xl bg-petlens-deep p-6 shadow-2xl backdrop-blur-md stagger-2">
           <div className="grid md:grid-cols-[1fr_220px] gap-7">
             <div>
               
               {pets.length
-                ? <select id="pet-select" className="field-input border-[#1669aa]/60 text-white placeholder:text-slate-400" value={petId} onChange={(event) => setPetId(event.target.value)} data-testid="select-analysis-pet">{pets.map((pet) => <option value={pet.id} key={pet.id}>{pet.name} · {pet.species}</option>)}</select>
+                ? <select id="pet-select" className="field-input border-petlens-azure/60 text-white placeholder:text-slate-400" value={petId} onChange={(event) => setPetId(event.target.value)} data-testid="select-analysis-pet">{pets.map((pet) => <option value={pet.id} key={pet.id}>{pet.name} · {pet.species}</option>)}</select>
                 : <div className="soft-note p-3 text-sm" data-testid="text-no-pet-warning">Create a pet profile before starting an analysis. <Link href="/pet" className="font-bold underline">Add a pet</Link></div>}
               <div id="tour-upload-dropzone" className="dotted-drop mt-6 min-h-[245px] flex flex-col items-center justify-center text-center p-7">
                 
                 <h2 className="font-bold text-lg mt-5">Please upload a side video of your dog walking.</h2>
                 <p className="body-muted text-sm mt-2">Side view, steady camera. A useful walk is about 5 to 15 seconds. The server accepts a longer clip, up to 120 seconds.</p>
-                <div className="flex flex-wrap justify-center gap-3 mt-5">
-                  <button type="button" className="btn-secondary" onClick={() => inputRef.current?.click()} disabled={!pets.length} data-testid="button-choose-video">Choose video</button>
-                  <button id="try-sample-btn" type="button" className="btn-quiet scroll-mt-20 font-semibold text-[#3eb49c] transition-colors hover:text-white" onClick={tryDemo} data-testid="button-try-demo">Try Sample Dog Walk</button>
+                <div className="flex justify-center mt-5">
+                  <button type="button" className="btn-secondary" onClick={() => inputRef.current?.click()} disabled={!pets.length} data-testid="button-choose-video">Upload video</button>
                 </div>
-                <p className="body-muted text-xs mt-3">Click 'Try Sample Dog Walk' below to run a sample movement tracking test.</p>
                 <input ref={inputRef} className="hidden" type="file" accept="video/*" onChange={(event) => selectFile(event.target.files?.[0])} data-testid="input-walking-video" />
               </div>
-              {error && <div className="text-sm mt-3 flex items-center gap-2" style={{ color: '#ff8b84' }} role="alert" data-testid="text-upload-error"><CircleAlert size={15} />{error}</div>}
+              {error && <div className="text-status-error text-sm mt-3 flex items-center gap-2" role="alert" data-testid="text-upload-error"><CircleAlert size={15} />{error}</div>}
             </div>
-            <div className="soft-note p-4 h-fit">
-              <LockKeyhole size={17} />
-              <h3 className="font-bold text-sm mt-3">Sent only for analysis</h3>
-              <p className="body-muted text-xs leading-relaxed mt-2">The clip is sent to the PetLens analysis service and deleted right after. Only the numbers and summary are saved in your current browser.</p>
+            <div className="grid gap-4 content-start">
+              <div className="soft-note p-4 h-fit">
+                <LockKeyhole size={17} />
+                <h3 className="font-bold text-sm mt-3">Sent only for analysis</h3>
+                <p className="body-muted text-xs leading-relaxed mt-2">The clip is sent to the PetLens analysis server and deleted right after. Only the numbers and summary are saved in your current browser.</p>
+              </div>
+              <div className="soft-note p-4 h-fit">
+                <h4 className="font-bold text-sm">Explore sample walks</h4>
+                <p className="body-muted text-xs leading-relaxed mt-2">Add generated examples to see how summaries and trends look. They’re labeled as sample data.</p>
+                <label className="flex items-center justify-between gap-2 text-xs font-semibold mt-3">
+                  Number of walks
+                  <select className="field-input w-16" aria-label="Number of sample walks" value={sampleWalkCount} onChange={(event) => setSampleWalkCount(Number(event.target.value))} data-testid="select-sample-walk-count">
+                    {Array.from({ length: 12 }, (_, index) => index + 1).map((count) => <option key={count} value={count}>{count}</option>)}
+                  </select>
+                </label>
+                <button id="try-sample-btn" type="button" className="btn-quiet scroll-mt-20 mt-2 w-full justify-center font-semibold text-petlens-emerald transition-colors hover:text-white" onClick={tryDemo} disabled={!pets.length} data-testid="button-try-demo">Add sample walks</button>
+                {analyses.some((analysis) => analysis.sampleData) && (
+                  <button type="button" className="btn-quiet mt-1 w-full justify-center font-semibold" onClick={clearSamples} data-testid="button-clear-sample-walks">Clear sample walks</button>
+                )}
+              </div>
             </div>
           </div>
         </section>
@@ -243,8 +269,8 @@ export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis 
         <section className="panel panel-padded mt-7 stagger-2">
           <div className="flex justify-between items-start gap-4"><div><div className="eyebrow">Step two · check your clip</div><h2 className="display-title text-3xl mt-2">Looks ready to read.</h2></div><button className="btn-quiet" onClick={reset} data-testid="button-replace-video"><RotateCcw size={15} /> Replace</button></div>
           <div className="grid md:grid-cols-[1.1fr_.9fr] gap-7 mt-7">
-            <div className="rounded-2xl overflow-hidden aspect-video bg-[#0a4267] flex items-center justify-center relative">
-              {previewUrl ? <video src={previewUrl} controls className="w-full h-full object-contain" data-testid="video-preview" /> : <FileVideo size={42} style={{ color: '#3eb49c' }} />}
+            <div className="rounded-2xl overflow-hidden aspect-video bg-petlens-navy flex items-center justify-center relative">
+              {previewUrl ? <video src={previewUrl} controls className="w-full h-full object-contain" data-testid="video-preview" /> : <FileVideo size={42} className="text-petlens-emerald" />}
               {!previewUrl && <div className="absolute inset-0 grid place-items-center"><Play size={25} /></div>}
             </div>
             <div>
@@ -271,7 +297,7 @@ export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis 
                    <input id="analysis-source-url" type="url" className="field-input" value={sourceUrl} onChange={(event) => setSourceUrl(event.target.value)} placeholder="https://..." data-testid="input-analysis-source-url" />
                  </div>
                </div>
-              {error && <div className="text-sm mt-4 flex items-start gap-2" style={{ color: '#ff8b84' }} role="alert" data-testid="text-analysis-error"><CircleAlert size={15} className="mt-[2px] shrink-0" />{error}</div>}
+              {error && <div className="text-status-error text-sm mt-4 flex items-start gap-2" role="alert" data-testid="text-analysis-error"><CircleAlert size={15} className="mt-[2px] shrink-0" />{error}</div>}
               <button className="btn-primary w-full mt-6" onClick={runAnalysis} disabled={!petId} data-testid="button-run-analysis">Run analysis <ArrowRight size={15} /></button>
               <p className="body-muted text-[11px] leading-relaxed mt-4">The result describes visible movement only. It is not a diagnosis and should never replace veterinary advice.</p>
             </div>

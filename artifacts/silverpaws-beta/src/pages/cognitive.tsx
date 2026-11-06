@@ -84,7 +84,7 @@ export default function CognitivePage({
   return (
     <div className="page-frame max-w-3xl">
       <div className="eyebrow">Daily notes</div>
-      <h1 className="display-title text-5xl mt-3">Quick check</h1>
+      <h1 className="display-title text-5xl mt-3">Quick <span className="text-petlens-trim">check</span></h1>
       <p className="body-muted mt-4 max-w-lg leading-relaxed">
         These are team-defined weights, not a clinical scale. The score describes what you tapped. It is not a diagnosis.
       </p>

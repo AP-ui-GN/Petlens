@@ -56,9 +56,10 @@ COMPLETION CRITERIA:
 # Finish the trend view, form validation, and selected tests.
 # ==================================================
 
-STATUS: Done. The web trend panel compares saved walks and keeps
-different pipelines apart. The pet form blocks a blank name and an
-age or weight that is present but not a positive number. Automated checks:
+STATUS: Done. The web trend panel compared saved walks and kept
+different pipelines apart; it was later removed from web History. The pet
+form blocks a blank name and an age or weight that is present but not a
+positive number. Automated checks:
 `pnpm --filter @workspace/silverpaws-beta run test`.
 
 TEAM MEMBER: Kavin

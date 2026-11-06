@@ -5,6 +5,7 @@ type ProductTourProps = {
   onComplete: () => void;
   onStepChange?: (step: number) => void;
   initialStep?: number;
+  steps?: { targetId: string; title: string; description: string }[];
 };
 
 type TargetRect = {
@@ -18,7 +19,7 @@ const TOUR_STEPS = [
   {
     targetId: 'try-sample-btn',
     title: 'Try a sample walk',
-    description: "Click 'Try Sample Dog Walk' below to run a sample movement tracking test.",
+    description: "Add generated sample walks to your pet's history and see how observations appear across PetLens.",
   },
   {
     targetId: 'movenet-card',
@@ -39,12 +40,13 @@ const TOUR_STEPS = [
 
 const SPOTLIGHT_PADDING = 8;
 
-export default function ProductTour({ onComplete, onStepChange, initialStep = 0 }: ProductTourProps) {
+export default function ProductTour({ onComplete, onStepChange, initialStep = 0, steps = TOUR_STEPS }: ProductTourProps) {
   const [currentStep, setCurrentStep] = useState(() =>
-    Math.max(0, Math.min(TOUR_STEPS.length - 1, initialStep)),
+    Math.max(0, Math.min(steps.length - 1, initialStep)),
   );
   const [targetRect, setTargetRect] = useState<TargetRect | null>(null);
-  const step = TOUR_STEPS[currentStep];
+  const step = steps[currentStep] ?? steps[0] ?? TOUR_STEPS[0];
+  const stepCount = steps.length || TOUR_STEPS.length;
 
   useEffect(() => {
     let animationFrame = 0;
@@ -103,10 +105,10 @@ export default function ProductTour({ onComplete, onStepChange, initialStep = 0 
     };
   }, [step.targetId]);
 
-  const isLastStep = currentStep === TOUR_STEPS.length - 1;
+  const isLastStep = currentStep === stepCount - 1;
 
   function goBack() {
-    const nextStep = Math.max(0, currentStep - 1);
+    const nextStep = Math.max(0, Math.min(stepCount - 1, currentStep - 1));
     setCurrentStep(nextStep);
     onStepChange?.(nextStep);
   }
@@ -116,7 +118,7 @@ export default function ProductTour({ onComplete, onStepChange, initialStep = 0 
       onComplete();
       return;
     }
-    const nextStep = Math.min(TOUR_STEPS.length - 1, currentStep + 1);
+    const nextStep = Math.min(stepCount - 1, currentStep + 1);
     setCurrentStep(nextStep);
     onStepChange?.(nextStep);
   }
@@ -160,10 +162,10 @@ export default function ProductTour({ onComplete, onStepChange, initialStep = 0 
             height={targetRect.height + SPOTLIGHT_PADDING * 2}
             rx="12"
             fill="none"
-            stroke="#5e17eb"
+            stroke="var(--color-petlens-trim)"
             strokeWidth="3"
             className={currentStep === 0 ? 'animate-pulse' : undefined}
-            style={{ filter: 'drop-shadow(0 0 15px rgba(94,23,235,0.5))' }}
+            style={{ filter: 'drop-shadow(0 0 15px color-mix(in srgb, var(--color-petlens-trim) 50%, transparent))' }}
           />
         )}
       </svg>
@@ -172,12 +174,13 @@ export default function ProductTour({ onComplete, onStepChange, initialStep = 0 
         aria-describedby="product-tour-description"
         aria-labelledby="product-tour-title"
         aria-modal="true"
-        className="pointer-events-auto fixed bottom-6 left-1/2 z-[1000000] w-[92vw] max-w-lg -translate-x-1/2 rounded-2xl border-2 border-[#5e17eb]/60 bg-[#061826]/95 p-5 text-white shadow-[0_10px_30px_rgba(10,66,103,0.4)] backdrop-blur-xl"
+        className="pointer-events-auto fixed bottom-6 left-1/2 z-[1000000] w-[92vw] max-w-lg -translate-x-1/2 rounded-2xl border-2 border-petlens-trim/60 bg-petlens-ink/95 p-5 text-white backdrop-blur-xl"
+        style={{ boxShadow: '0 10px 30px color-mix(in srgb, var(--color-petlens-navy) 40%, transparent)' }}
         role="dialog"
       >
         <div className="flex items-center justify-between gap-3">
           <span className="font-sans text-xs font-bold uppercase tracking-wider text-slate-400/90">
-            Step {currentStep + 1} of {TOUR_STEPS.length}
+            Step {currentStep + 1} of {stepCount}
           </span>
           <button
             className="rounded px-2 py-1 text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white"
@@ -204,7 +207,7 @@ export default function ProductTour({ onComplete, onStepChange, initialStep = 0 
             Back
           </button>
           <button
-            className="rounded-lg bg-[#1669aa] px-5 py-2 text-sm font-bold text-white hover:brightness-110"
+            className="rounded-lg bg-petlens-azure px-5 py-2 text-sm font-bold text-white hover:brightness-110"
             onClick={goNext}
             type="button"
           >
