@@ -11,6 +11,7 @@ import zipfile
 from urllib.parse import parse_qs, urlsplit
 
 from training import prepare_paw_annotations as p
+from training import blind_paw_annotations as blind_review
 
 UI = Path('tmp/rtmpose-test/paw-tracking-experiment/manual-annotation')
 REFERENCE = Path('reports/paw-annotation-data-v1')
@@ -369,30 +370,47 @@ def export_review(base, draft):
     return result.getvalue()
 
 
-def serve(port):
-    base = session()
-    # Hash binding is computed in Python to match the existing canonical label digest.
-    for r in base['records']:
-        r['labelHashes'] = {paw: p.label_digest(r['human'][paw]) for paw in p.PAWS}
+def annotation_script(js):
+    """Reuse the existing navigation/canvas with an isolated blind boot path."""
+    p.require('const datasetBase=' in js and 'async function boot(){' in js and
+              'boot().catch(error);' in js, 'Unsupported existing annotation UI')
+    js = js.replace('const datasetBase=', "const datasetBase=new URLSearchParams(globalThis.location?.search||'').get('dataset')==='husky-evaluation'?'husky-evaluation/':", 1)
+    js = js.replace('async function boot(){', "async function boot(){\n if(datasetBase==='husky-evaluation/')return pawReview.bootBlind();", 1)
+    return js.replace('boot().catch(error);', 'boot().then(()=>pawReview.boot()).catch(error);')
+
+
+def make_handler(get_base, blind_base=None, blind_frames=None):
     class Handler(SimpleHTTPRequestHandler):
         def __init__(self, *a, **kw):
             super().__init__(*a, directory=str(p.ROOT / UI), **kw)
-        def send_bytes(self, body, mime, status=200):
+        def send_bytes(self, body, mime, status=200, headers=None):
             self.send_response(status)
             self.send_header('Content-Type', mime)
             self.send_header('Content-Length', str(len(body)))
             self.send_header('Cache-Control', 'no-store')
+            for key, value in (headers or {}).items():
+                self.send_header(key, value)
             self.end_headers()
             self.wfile.write(body)
         def do_GET(self):
             url = urlsplit(self.path)
+            group = parse_qs(url.query).get('group', ['dalmatian'])[0]
             if url.path == '/api/session':
+                if group == blind_review.GROUP:
+                    if blind_base is None:
+                        return self.send_bytes(b'Husky manifest not registered; start with --husky-manifest', 'text/plain', 404)
+                    public = dict(blind_base, draft=blind_review.initial_draft(blind_base))
+                    return self.send_bytes(json.dumps(public).encode(), 'application/json')
+                base = get_base()
                 return self.send_bytes(json.dumps(base).encode(), 'application/json')
             if url.path == '/dog02/manifest.json':
+                base = get_base()
                 spec = next(s for s in base['sourceConfiguration']['sequences'] if s['group'] == 'dog02')
                 return self.send_bytes((p.ROOT / spec['metadata']['path']).read_bytes(), 'application/json')
             if url.path == '/api/predictions':
-                group = parse_qs(url.query).get('group', ['dalmatian'])[0]
+                if group == blind_review.GROUP:
+                    return self.send_bytes(b'Predictions are disabled for blind Husky evaluation', 'text/plain', 403)
+                base = get_base()
                 spec = next((s for s in base['sourceConfiguration']['sequences'] if s['group'] == group), None)
                 if spec is None:
                     return self.send_bytes(b'Unknown group', 'text/plain', 400)
@@ -401,15 +419,23 @@ def serve(port):
                 return self.send_bytes((p.ROOT / 'training/paw-review.js').read_bytes(), 'text/javascript')
             if url.path in ('/', '/index.html'):
                 html = (p.ROOT / UI / 'index.html').read_text()
+                if blind_base is not None:
+                    html = html.replace('Dataset: ', 'Dataset: <a href="?dataset=husky-evaluation">Husky: blind evaluation</a> · ', 1)
                 html = html.replace('<script src="annotation.js', '<script src="/review.js"></script><script src="annotation.js')
                 return self.send_bytes(html.encode(), 'text/html')
             if url.path == '/annotation.js':
-                js = (p.ROOT / UI / 'annotation.js').read_text().replace('boot().catch(error);', 'boot().then(()=>pawReview.boot()).catch(error);')
+                js = annotation_script((p.ROOT / UI / 'annotation.js').read_text())
                 return self.send_bytes(js.encode(), 'text/javascript')
             if url.path == '/api/frame':
                 try:
                     import cv2
                     q = parse_qs(url.query)
+                    if group == blind_review.GROUP:
+                        p.require(blind_base is not None and blind_frames is not None, 'Husky manifest not registered')
+                        i = int(q['index'][0])
+                        p.require(i in blind_frames, 'Invalid prepared Husky frame index')
+                        return self.send_bytes(blind_frames[i], 'image/png')
+                    base = get_base()
                     spec = next(s for s in base['sourceConfiguration']['sequences'] if s['group'] == q['group'][0])
                     meta = p.load_json(p.ROOT / spec['metadata']['path'])
                     i = int(q['index'][0])
@@ -433,27 +459,58 @@ def serve(port):
             return super().do_GET()
         def do_POST(self):
             try:
-                p.require(self.path in ('/api/export', '/api/bulk-preview', '/api/bulk-apply', '/api/validate'), 'Unknown endpoint')
+                url = urlsplit(self.path)
+                p.require(url.path in ('/api/export', '/api/bulk-preview', '/api/bulk-apply', '/api/validate'), 'Unknown endpoint')
                 size = int(self.headers.get('Content-Length', '0'))
                 p.require(0 < size < 2_000_000, 'Invalid export size')
                 draft = json.loads(self.rfile.read(size))
-                if self.path == '/api/validate':
+                group = parse_qs(url.query).get('group', ['dalmatian'])[0]
+                if group == blind_review.GROUP:
+                    p.require(blind_base is not None, 'Husky manifest not registered')
+                    p.require(url.path in ('/api/export', '/api/validate'), 'Bulk mapping disabled for Husky')
+                    if url.path == '/api/validate':
+                        return self.send_bytes(json.dumps(blind_review.validate(blind_base, draft)).encode(), 'application/json')
+                    payload = blind_review.export_review(blind_base, draft)
+                    output = blind_review.save_export(payload, root=p.ROOT)
+                    return self.send_bytes(payload, 'application/zip', headers={
+                        'Content-Disposition': f'attachment; filename="{output.name}"',
+                        'X-PetLens-Export-Path': str(output.relative_to(p.ROOT))})
+                base = get_base()
+                if url.path == '/api/validate':
                     return self.send_bytes(json.dumps(review_diagnostics(base, draft)).encode(), 'application/json')
-                if self.path == '/api/bulk-preview':
+                if url.path == '/api/bulk-preview':
                     return self.send_bytes(json.dumps(bulk_preview(base, draft)).encode(), 'application/json')
-                if self.path == '/api/bulk-apply':
+                if url.path == '/api/bulk-apply':
                     result = bulk_apply(base, draft['draft'], draft)
                     return self.send_bytes(json.dumps(result).encode(), 'application/json')
                 return self.send_bytes(export_review(base, draft), 'application/zip')
             except (ValueError, KeyError, TypeError) as exc:
                 return self.send_bytes(str(exc).encode(), 'text/plain', 400)
+    return Handler
+
+
+def serve(port, husky_manifest=None):
+    # Opening blind Husky review never loads the existing prediction/label session.
+    existing = None
+    def get_base():
+        nonlocal existing
+        if existing is None:
+            existing = session()
+            for r in existing['records']:
+                r['labelHashes'] = {paw: p.label_digest(r['human'][paw]) for paw in p.PAWS}
+        return existing
+    blind_base, blind_frames = blind_review.session(husky_manifest) if husky_manifest else (None, None)
+    Handler = make_handler(get_base, blind_base, blind_frames)
     print(f'Review: http://localhost:{port}/?dataset=dalmatian', flush=True)
+    if blind_base:
+        print(f'Blind Husky: http://localhost:{port}/?dataset=husky-evaluation', flush=True)
     ThreadingHTTPServer(('0.0.0.0', port), Handler).serve_forever()
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--port', type=int, default=8765)
+    parser.add_argument('--husky-manifest', type=Path, help='Register an isolated, verified blind Husky dataset')
     parser.add_argument('--preview-output', type=Path, help='Write a read-only bulk preview and exit')
     parser.add_argument('--draft', type=Path, help='Preview a saved review draft, preserving its decisions')
     parser.add_argument('--diagnostics-output', type=Path, help='Write read-only validation diagnostics and exit')
@@ -490,4 +547,4 @@ if __name__ == '__main__':
         args.preview_output.write_text(json.dumps(preview, indent=2) + '\n')
         print(f"{preview['annotationCount']} eligible annotations across {preview['frameCount']} frames")
     else:
-        serve(args.port)
+        serve(args.port, args.husky_manifest)

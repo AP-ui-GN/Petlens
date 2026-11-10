@@ -1,0 +1,11 @@
+{
+  "archive": "artifacts/petlens-colab-100step.zip",
+  "archive_bytes": 165132110,
+  "uncompressed_bytes": 180677459,
+  "payload_files": 75,
+  "checkpoint_sha256": "896e3665d849ef7eb9b6ec0995955796cc9810f024fa0aa0bdc18acb0d68bf52",
+  "archive_sha256": "de3b1f01b1590c35cbba7269e2845290a1ca6af9b99922b52cd5533ff20fc8cd",
+  "archive_members_verified": true,
+  "training_started": false,
+  "cuda_test_run_here": false
+}

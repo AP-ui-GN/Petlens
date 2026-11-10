@@ -1,38 +1,75 @@
-Implemented the annotation builder, tests, and usage/report:
+PETLENS — DAY 2 OF 21
+Goal: Prepare reliable canine gait-event detection.
 
-- training/prepare_paw_annotations.py
-- tests/test_paw_annotation_data.py
-- training/PAW_ANNOTATIONS.md
+Start with Dalmatian source-frame review and a ground-relative event detector. Existing position peaks remain separate kinematic candidates. No code changed during the Day 2 inspection and planning task.
 
-Generated data and provenance are recorded in:
-reports/paw-annotation-data-v1/manifest.json
+The inspected code has no ground-contact detector: cycles.py finds position peaks, and legacy foot_strike_frames() also returns peaks. Existing identity association can supply segment-local IDs and uncertainty, but cannot establish physical identity by itself.
 
-DATASET INVENTORY
+Available footage
 
-Source                              Frames with visible labels  Unique human points  Verified anatomical targets
-Dalmatian — training                42                          79                   0
-dog02 — exploratory evaluation       28                          55                   0
+| Footage | Timing and visibility evidence | Initial use |
+|---|---|---|
+| Dalmatian original / lossless derivative | 177 frames, 29.97 fps. Saved timestamps match original PTS within rounding precision; source/prediction hashes match. Paw A is human-visible throughout frames 49–65. | First validation target, using surrounding frames 46–74. |
+| Dog02 / S003 | 60 frames, native 12 fps; saved timestamps match source PTS. Side view, but crossings and missing paws occur. | Coarse event validation: approximately 83 ms sampling. |
+| S004 | 60 frames, native 12 fps; timestamps match. Walking motion and visible hind legs, but overlap and localization problems occur. | Second source for coarse validation and abstention checks. |
+| Husky screen recording | Recording timestamps do not establish native movement timing. | Exclude from timing validation. |
+| dog-walking-test-01.mp4 | Saved predictions exist for 299 nominal 60-fps frames, but native recording provenance is unestablished. | Exclude until provenance is resolved; nominal fps alone is insufficient. |
 
-The pipeline preserves human coordinates independently of predictions, removes six duplicate labels, validates source hashes and video timing, and preserves nonvisible/ambiguous states. Anatomical COCO targets require explicit human review; missing channels remain unlabeled.
+Existing Dalmatian labels include A contacts at 49/65 and B contacts at 57/73. A's lift-off at 58 is uncertain; B is occluded at 61. These are review starting points, not accepted automatic detections.
 
-VALIDATION
+Existing human-versus-AI report:
+tmp/dalmatian-human-ai-evaluation/REPORT.md
 
-16 automated tests passed, and the builder completed on both existing videos. No training, inference, downloads, or production-app changes occurred.
+Operational event definitions
 
-NEXT ANNOTATION PASS
+- Initial contact: transition from visibly airborne to visibly touching the support surface. Store the last definitely airborne and first definitely contacting frames.
+- Lift-off: transition from contact to visible separation, bracketed by the last contacting and first airborne frames.
+- Next contact: the next airborne-to-contact transition of the SAME physical paw, following lift-off.
+- Complete stride: contact -> lift-off -> next contact, with continuous, sufficiently certain physical identity. Duration comes from source timestamps; uncertain boundaries produce timing bounds.
 
-Verify anatomical identity and landmark consistency for the 79 Dalmatian points intended for training; verify the 55 dog02 points before anatomical evaluation. Unresolvable points stay unlabeled.
+These are visual contact definitions, not measurements of force or weight bearing.
 
-FIRST EXPERIMENT
+One chosen method: ground-relative velocity and clearance, with a state machine
 
-A small masked hind-paw localization fine-tuning pilot using the existing pretrained RTMPose-m and reviewed Dalmatian labels. The matching trainable checkpoint and RTMPose training integration are still required. Keep dog02 outside training and model selection. This would establish feasibility, not generalization or stride accuracy.
+Use saved RTMPose coordinates plus the corresponding original video frames:
 
-GITHUB UPDATE
+1. Register visible ground texture between frames using OpenCV, masking the dog and people. This supplies ground motion, including camera movement. Reject unreliable registration or unsupported moving-surface conditions.
+2. Measure paw displacement relative to that ground motion and projected clearance from a separately specified ground band. Normalize using the existing body reference.
+3. Classify consecutive observations as contact_supported, swing_supported, or unknown. Contact requires near-ground position and low ground-relative motion; lift-off requires departure with supporting motion evidence. Use hysteresis and consecutive supporting observations.
+4. Emit CANDIDATE contact/lift-off transitions. Assemble candidate strides only within one identity segment.
 
-Committed and pushed all non-ignored repository changes to:
-https://github.com/AP-ui-GN/Petlens
-Branch: main
+Missing paws, unresolved identity, or inadequate ground evidence reset the state to unknown; they cannot support a complete stride. Preserve raw observations unchanged. Body-relative speed alone is insufficient because the body moves during stance.
 
-Includes the annotation pipeline, tests, dataset manifests, human annotations, earlier screening reports, and review artifacts. Existing Git ignore rules keep local videos, caches, and generated frame images out of the commit.
+Use one shared rule configuration, frozen against synthetic cases before scoring animal footage. Ground geometry is input calibration, not dog-specific threshold tuning.
 
-Validation: all 16 annotation-pipeline tests passed. No training or pose inference was run.
+Independent comparison
+
+Reuse the existing physical-paw annotation interface:
+tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/index.html
+
+Have two reviewers inspect original frames with predictions and prior event labels hidden, marking A/B continuity, visibility, event brackets, and uncertainty. Adjudicate disagreements before scoring.
+
+Match detections one-to-one by event type and physical identity, using one fixed identity alignment per segment; never remap each event. Report precision, recall, boundary error in frames/milliseconds, abstention, and reviewed coverage. Missing predictions and abstentions count as misses for adjudicated events. Unreviewed frames are not negative labels.
+
+Minimum Day 3/4 files
+
+| File | Change |
+|---|---|
+| src/petlens_gait/events.py — new | Ground-relative features, state machine, candidate event/stride records. |
+| src/petlens_gait/pipeline.py, src/petlens_gait/integration.py | Pass optional event context and expose results separately from position cycles. |
+| scripts/analyze_v2_experimental.py | Saved-prediction mode that bypasses model loading; verify source/frame alignment. |
+| scripts/evaluate_gait_events.py — new | Read independent references and produce event metrics. |
+| tests/test_gait_events.py — new; related integration tests | Synthetic behavior, camera-motion invariance, abstention, matching, and offline replay. |
+
+Reuse existing body-reference calculations, association status, annotation conventions, and provenance checks. Leave Day 1's detector fixes untouched.
+
+Acceptance and stopping rule
+
+- Synthetic contact/lift-off sequences produce expected transitions; camera transformations preserve event boundaries within one sample.
+- Stationary paws, isolated spikes, uncertain identity, and unsupported ground motion cannot establish complete strides.
+- Offline replay preserves predictions exactly and never loads models.
+- Before a real-footage pass: obtain at least three adjudicated strides across two source videos.
+- Proposed pilot gate: at least 80% precision and recall for each event type, with matched boundaries within one native frame of the reviewed bracket. Report each video separately; this is preliminary engineering acceptance.
+- Stop after one frozen implementation and evaluation. If annotation or detector gates fail, report the blocker without tuning thresholds against these dogs.
+
+Next coding task: implement the candidate event state machine with explicit ground-motion, clearance, and identity inputs, plus synthetic tests. Add real-video preprocessing and evaluation only after that contract passes.

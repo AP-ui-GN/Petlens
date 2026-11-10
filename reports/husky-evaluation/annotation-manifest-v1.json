@@ -1,0 +1,469 @@
+{
+  "schemaVersion": 1,
+  "annotationType": "blind-hind-paw-evaluation",
+  "group": "husky-evaluation",
+  "datasetId": "petlens-husky-evaluation-b8bbebcd6163d741",
+  "split": "exploratory_evaluation",
+  "modelSelectionAllowed": false,
+  "blind": true,
+  "video": {
+    "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/husky_screenrecord_clean.mp4",
+    "sha256": "b8bbebcd6163d741ccc068b8586e743284dd6df6eb7033651458a4da8b27005f"
+  },
+  "preparation": {
+    "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/PREPARATION_MANIFEST.json",
+    "sha256": "f3b04e6d13fcdaceda45c20f78cd3ac1668a583a65a1a866775dde6fefea296f"
+  },
+  "frameIndexSource": {
+    "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/FRAME_INDEX.json",
+    "sha256": "ce6f1f6dfaf0807fe141082a30d6b9cd1ae00b311ecf2dc980ce86139afd3297"
+  },
+  "originalSource": {
+    "file": "Screen recording 2026-11-10 8.41.35 AM.webm",
+    "sha256": "f6edd2a3b18362a1d910fce968ac2a93affa3ec682dbedd2acf6de86f7cb2ce8",
+    "verification": "Claim from preparation manifest; original recording unavailable"
+  },
+  "frameWidth": 1228,
+  "frameHeight": 754,
+  "frameCount": 63,
+  "fps": 8.81542699724518,
+  "selectedFrames": [
+    0,
+    3,
+    7,
+    10,
+    13,
+    16,
+    20,
+    23,
+    26,
+    29,
+    33,
+    36,
+    39,
+    42,
+    46,
+    49,
+    52,
+    55,
+    59,
+    62
+  ],
+  "frames": [
+    {
+      "frameIndex": 0,
+      "timestampSeconds": 0.0,
+      "pixelSha256": "ac3346bb75f3b1b120f06a9fff24830ad01fdfd04b5c2a3e50220fb7631f4158",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_000.png",
+        "sha256": "becbf081535ef497c91f66b794022dfe7f5a861e235b8ef6a8155de531e1a675"
+      }
+    },
+    {
+      "frameIndex": 1,
+      "timestampSeconds": 0.25,
+      "pixelSha256": "1d21fc0572630d44b96c72becfd94711330853577fd3c7405e9891b42c3b0411"
+    },
+    {
+      "frameIndex": 2,
+      "timestampSeconds": 0.4,
+      "pixelSha256": "e8d8529bd91f3f8feac3d153df540c9edc28531340b89701fe0b36edc1a43a47"
+    },
+    {
+      "frameIndex": 3,
+      "timestampSeconds": 0.5660000000000001,
+      "pixelSha256": "4b8af67bfba60d13d63e2b1d2de4c71c4c8f314534170b64e4930ed3503e21ae",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_003.png",
+        "sha256": "41b48bbc6ad46eb9c96d3f7bb9cc2798c7569b0d1138839ac69326945fd1ef8b"
+      }
+    },
+    {
+      "frameIndex": 4,
+      "timestampSeconds": 0.666,
+      "pixelSha256": "e2c5532bd18a557059f977823d5f831c3945661747cfe84c278318abf8158637"
+    },
+    {
+      "frameIndex": 5,
+      "timestampSeconds": 0.7000000000000001,
+      "pixelSha256": "8187418eb792c45de1ccdb4a36e2379ec19262fc7149141573d1a6870c086c1a"
+    },
+    {
+      "frameIndex": 6,
+      "timestampSeconds": 0.799,
+      "pixelSha256": "aef5a5dc06956ee57f7e415c7f3ba4f2745fa34a516aed5f58e53adcf8d6dafa"
+    },
+    {
+      "frameIndex": 7,
+      "timestampSeconds": 0.899,
+      "pixelSha256": "4a5ed7b1708b15a0ae6195b3d753a2716027a6a21afce4f84310c62c951aa721",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_007.png",
+        "sha256": "ea404d9071557d8edc7849af297a6f9e12a9e84e2f83a9c26c6d61abdd83ab96"
+      }
+    },
+    {
+      "frameIndex": 8,
+      "timestampSeconds": 0.966,
+      "pixelSha256": "f2a67b15e2080af475b0dcd88f3c95448c2218c80bd52e19dafadd39e25ea1bd"
+    },
+    {
+      "frameIndex": 9,
+      "timestampSeconds": 1.066,
+      "pixelSha256": "22993dec08df7fcad981e938787e43c74a4dbb384724762b280f75ee42eeee7c"
+    },
+    {
+      "frameIndex": 10,
+      "timestampSeconds": 1.166,
+      "pixelSha256": "739affe861566d6376abbd12e3f83f4a1ae30ead2f6ff0fa766f7b95809f867f",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_010.png",
+        "sha256": "48939af805c2adfae6c70112f713e56ac5c3c71cb2ab82ac543765b2e627ab02"
+      }
+    },
+    {
+      "frameIndex": 11,
+      "timestampSeconds": 1.266,
+      "pixelSha256": "be69ee9dfba73ef04c863f81b63000db9bc6a454a6847f92fd62a649f5ed95a7"
+    },
+    {
+      "frameIndex": 12,
+      "timestampSeconds": 1.665,
+      "pixelSha256": "1b2008f9869449ec50203735d97aed88da1a1aa080efcfde36839709f852bc5e"
+    },
+    {
+      "frameIndex": 13,
+      "timestampSeconds": 2.065,
+      "pixelSha256": "8ffc31935a1899f4c5202c331433aa770ee9169ce4296594ab2bf0fba59228d3",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_013.png",
+        "sha256": "bd3f70c6a4015225b186977a904aa302d8c5093328395bbfde2bc2e0d810b9ba"
+      }
+    },
+    {
+      "frameIndex": 14,
+      "timestampSeconds": 2.331,
+      "pixelSha256": "fce3fada00f07e1a94401b607e486b8d58e8a04d84023159a7936eaaf35fe3eb"
+    },
+    {
+      "frameIndex": 15,
+      "timestampSeconds": 2.531,
+      "pixelSha256": "b229b4e385c60490adb8a7861e31652efeaed8fbde13d74edf2b8cc83ecce03d"
+    },
+    {
+      "frameIndex": 16,
+      "timestampSeconds": 2.698,
+      "pixelSha256": "c644ce9ab6288e5911635159e2c23409e1c4065a6c6ba4f0ad5eb773fd22a2e1",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_016.png",
+        "sha256": "0d61c0bf367aa1681ccdbfab93c25779df5e13cea0f09e9589d1ac93c810b867"
+      }
+    },
+    {
+      "frameIndex": 17,
+      "timestampSeconds": 3.097,
+      "pixelSha256": "573e897fc1ab2b652bc91f3f8e7c02788810d0427d555456a506d1c7bfd87466"
+    },
+    {
+      "frameIndex": 18,
+      "timestampSeconds": 3.131,
+      "pixelSha256": "3f3fd3866d9b7a531a70b190830bc34c577ead7e53821dfc179f65005c3dd736"
+    },
+    {
+      "frameIndex": 19,
+      "timestampSeconds": 3.297,
+      "pixelSha256": "cfebddafa8269b82ca89760e9420f99745eb25f1a0e653ead9cefaf52790f884"
+    },
+    {
+      "frameIndex": 20,
+      "timestampSeconds": 3.464,
+      "pixelSha256": "0d97997fb6f615145e71b11fe209d9340878a7ec6fe492812f98fcbf435a826e",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_020.png",
+        "sha256": "87e6198c65693d3958ce8e5b810bc73a13c0f5921f35c55ef93c828b6ce6b80a"
+      }
+    },
+    {
+      "frameIndex": 21,
+      "timestampSeconds": 3.564,
+      "pixelSha256": "6374b83fb0b4397f0b3f36791f1fce7fa011ed674c187a0c2b9376b02280b575"
+    },
+    {
+      "frameIndex": 22,
+      "timestampSeconds": 3.6630000000000003,
+      "pixelSha256": "74c31d930834bd8744ac83f91bea8b8227c21981c1bd67ea03dcd1ddfa9be9f3"
+    },
+    {
+      "frameIndex": 23,
+      "timestampSeconds": 3.763,
+      "pixelSha256": "12bc9d61e0a7ae02539af784edc36895558ea6853c79f4fc4db102af1691e5ea",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_023.png",
+        "sha256": "ed3bb6b0473d81f0ceb58c7efb3a31e137168b53b1588eab16586d7561225c96"
+      }
+    },
+    {
+      "frameIndex": 24,
+      "timestampSeconds": 3.863,
+      "pixelSha256": "00699d83be69d1a6f9f13cc60e6c40d5f59daddc4d11ef0079438741ab6f95f7"
+    },
+    {
+      "frameIndex": 25,
+      "timestampSeconds": 3.963,
+      "pixelSha256": "368a1e51eef85f9771ad4df5b9f6ef8bbef93a1e175bc70b0a2f84fca74f0dba"
+    },
+    {
+      "frameIndex": 26,
+      "timestampSeconds": 4.063,
+      "pixelSha256": "6db4d16ce1f6608b07ebfa2315ee00b4e6b8167ea3d4fb8ef6882222f1c92c32",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_026.png",
+        "sha256": "f5b8a51e04e0a72e21a7354946a151bbdb749d76b2af97eb98e73f7cc43ef6f0"
+      }
+    },
+    {
+      "frameIndex": 27,
+      "timestampSeconds": 4.163,
+      "pixelSha256": "1a337d9d7ca0ae6186b5e3e4bdc475fe88514755b67bb8f26f67c50f53b09e9a"
+    },
+    {
+      "frameIndex": 28,
+      "timestampSeconds": 4.23,
+      "pixelSha256": "8039ffc03de045486470eaf8c8bcf9b26706f893dc0ba9a5b1ef1c56071cf2d8"
+    },
+    {
+      "frameIndex": 29,
+      "timestampSeconds": 4.296,
+      "pixelSha256": "277fbcfcbef25b532b423afbe88687ffbc1fd268402c9bc101d1d39f3130ac30",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_029.png",
+        "sha256": "10ab75d9524b1b6c84d0cba0796670830713e2df685bcf141410841eb29889be"
+      }
+    },
+    {
+      "frameIndex": 30,
+      "timestampSeconds": 4.563,
+      "pixelSha256": "9e823984386c0e63c012ed2d0077c2eaac3d40a0210f963c7f2f840fb3f4892c"
+    },
+    {
+      "frameIndex": 31,
+      "timestampSeconds": 4.596,
+      "pixelSha256": "72b251a1e4e3e99910a941faf59ae52ff417d167d6e657278a03656cdc7f1879"
+    },
+    {
+      "frameIndex": 32,
+      "timestampSeconds": 4.696,
+      "pixelSha256": "837d507d286a86ca0c07c12e35e1a4ae6463d0b84b5ab29dad376e2760a73dd0"
+    },
+    {
+      "frameIndex": 33,
+      "timestampSeconds": 4.762,
+      "pixelSha256": "1772fba8222c96c2282f9738bc95ed716d73184aa0a7bac3a4d828b0b3754252",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_033.png",
+        "sha256": "f1f71752e8584777ee56666e2ed35dcccc9dea46245f0a7ca5424891f4160316"
+      }
+    },
+    {
+      "frameIndex": 34,
+      "timestampSeconds": 4.862,
+      "pixelSha256": "25e5a86dca5c48edd4224b9735e08f72436d7f15211b55cf5e0056d4a6503b28"
+    },
+    {
+      "frameIndex": 35,
+      "timestampSeconds": 5.129,
+      "pixelSha256": "1e5150f7e5cdc5617d5271c98b3ba4c63d67fff0ee64edd4e898699e2802da47"
+    },
+    {
+      "frameIndex": 36,
+      "timestampSeconds": 5.162,
+      "pixelSha256": "8368ae5626494f670808d61151da0075f2ad5c2efae12d680c5e76dab4e2e425",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_036.png",
+        "sha256": "947aefe099b092d56df652bd7f159037623cb7e781efc6cef3aca71a198b518c"
+      }
+    },
+    {
+      "frameIndex": 37,
+      "timestampSeconds": 5.229,
+      "pixelSha256": "d7718873050d1e7edd5c9e324482372048884b436b9e2ea682d18127773a08d2"
+    },
+    {
+      "frameIndex": 38,
+      "timestampSeconds": 5.295,
+      "pixelSha256": "a11f4d2dc576a219d598f89cb1f4d0a41ba1d35b65c4178907b8c965ad42bfac"
+    },
+    {
+      "frameIndex": 39,
+      "timestampSeconds": 5.329,
+      "pixelSha256": "2c49e99bfb05512b8a0ab79aa4a113fef71df5879954ec271dfdce4a68a01365",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_039.png",
+        "sha256": "a311d15fe502047e871b3e5830e83d8e7ff129c4f9f8f293a68d84c9aea13ffc"
+      }
+    },
+    {
+      "frameIndex": 40,
+      "timestampSeconds": 5.395000000000001,
+      "pixelSha256": "0e69955e23bf3dc7436851cd5fdd242637668470fd80ad9445b2c11b3b8e5b06"
+    },
+    {
+      "frameIndex": 41,
+      "timestampSeconds": 5.462,
+      "pixelSha256": "611c57b4434d1701b7a304f1a0ba7c168ab3b7895ee8b7f9e80bc3bb3fe9cf11"
+    },
+    {
+      "frameIndex": 42,
+      "timestampSeconds": 5.5280000000000005,
+      "pixelSha256": "fee13c5a8e0721f09ffac532a6f9f8660a2277a33425ac434204f639595a5310",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_042.png",
+        "sha256": "830d11d368c281b063eee6439ab75fdc209e5957b5c320fb9a6f2efd00321051"
+      }
+    },
+    {
+      "frameIndex": 43,
+      "timestampSeconds": 5.595,
+      "pixelSha256": "947d59c12b0fb9a1d8329e8c0bd88908f2fbe9fa47fa9cf7e308b964a5104814"
+    },
+    {
+      "frameIndex": 44,
+      "timestampSeconds": 5.628,
+      "pixelSha256": "9199c4a819dd21117018764bfc9e97065bfccae547fc493beddd899692745317"
+    },
+    {
+      "frameIndex": 45,
+      "timestampSeconds": 5.695,
+      "pixelSha256": "125aca23d49f688a8cf82a09c1541902ab674825b8adf2fa72a9fd379aa5ba57"
+    },
+    {
+      "frameIndex": 46,
+      "timestampSeconds": 5.795,
+      "pixelSha256": "efa22001e83ac7891a10d9cc2d999ec055fa04f72412162a65a01dcb6bae4002",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_046.png",
+        "sha256": "7031ed6d5e3ae46f8b77c38d89159f468d844473fc76c94c9443e491a8d3eda1"
+      }
+    },
+    {
+      "frameIndex": 47,
+      "timestampSeconds": 5.828,
+      "pixelSha256": "95e4703d95e654791663e1a679b96f3377bc314d460cb408ff7be3f31522a683"
+    },
+    {
+      "frameIndex": 48,
+      "timestampSeconds": 5.895000000000001,
+      "pixelSha256": "1faa318258f98828303b55876370cab152938bf4d7b9dab26db857ecb0052d1b"
+    },
+    {
+      "frameIndex": 49,
+      "timestampSeconds": 5.961,
+      "pixelSha256": "f6129d46c6b3c66e6bca9c9df56d2d8f2b7b5fc8a6b256b29b636668457e679f",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_049.png",
+        "sha256": "383eb8cafb5d10fa1341156ba0832e85a2d8b147aef75415a92402a1d0961ac5"
+      }
+    },
+    {
+      "frameIndex": 50,
+      "timestampSeconds": 5.995,
+      "pixelSha256": "17cbce221a0b562fe9709916867a809d095f359243501651b08f6b8c541e9b13"
+    },
+    {
+      "frameIndex": 51,
+      "timestampSeconds": 6.261,
+      "pixelSha256": "023e11cdaabafbee5e9fd716b7d003c69566d3eec47146694f4cd94c0806a5a4"
+    },
+    {
+      "frameIndex": 52,
+      "timestampSeconds": 6.2940000000000005,
+      "pixelSha256": "5d770a09378daa3dea4223cc0b8a7914aba8a68a9d0f3e1fcd16e94d2e94fcef",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_052.png",
+        "sha256": "8e76845dd86b9c0101b8bc84d2837a5528efb29b4addb4edd27fc2c1f2ace7bb"
+      }
+    },
+    {
+      "frameIndex": 53,
+      "timestampSeconds": 6.328,
+      "pixelSha256": "bfdb97f0b776860a15e55f4aa6b1ef8bc136096d5545680ef83f2528730b9e57"
+    },
+    {
+      "frameIndex": 54,
+      "timestampSeconds": 6.361,
+      "pixelSha256": "2e64328fa5e7108b253687e31891b98d9f08e3735a83fc6bfa43fe80d9fce8cb"
+    },
+    {
+      "frameIndex": 55,
+      "timestampSeconds": 6.378,
+      "pixelSha256": "59a7feeb9887ec85a224b0502a3d7965c4bc89b5247d6773096fe923f7f2654e",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_055.png",
+        "sha256": "4387226f8345e8f9717c73e4beb9fe9f4c843723d2aa10e44ed58d441a8c9f31"
+      }
+    },
+    {
+      "frameIndex": 56,
+      "timestampSeconds": 6.461,
+      "pixelSha256": "b73cd05676c8e1dfbedd8d04219c8b3789abfb5a81e3d2504239b4ae49b68a5e"
+    },
+    {
+      "frameIndex": 57,
+      "timestampSeconds": 6.561,
+      "pixelSha256": "32c7c773b3bc30ac863c79299bc00325384037687ff66b17a7d3fa646483676f"
+    },
+    {
+      "frameIndex": 58,
+      "timestampSeconds": 6.594,
+      "pixelSha256": "65524ae4fc80146167bb727ee663b7bb0777ffa668a08bc08fd210d6be585949"
+    },
+    {
+      "frameIndex": 59,
+      "timestampSeconds": 6.6610000000000005,
+      "pixelSha256": "82ca215fedc502b0b0eb52e5b8e8f2f4a8df779e89c58f798450fbcb45793df2",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_059.png",
+        "sha256": "7dd7da0bd4d3789255be362677453841502e82eaf35fbf935f97410efc987a88"
+      }
+    },
+    {
+      "frameIndex": 60,
+      "timestampSeconds": 6.761,
+      "pixelSha256": "0e18fe61c69f4dc5ba6aad1d314c3517c986a70cc603bad636ecbd8f89fe351b"
+    },
+    {
+      "frameIndex": 61,
+      "timestampSeconds": 6.86,
+      "pixelSha256": "a24521f198aec1c5f2f363ebf1ac183613c51529fd51eec895d53c751786c0aa"
+    },
+    {
+      "frameIndex": 62,
+      "timestampSeconds": 7.127,
+      "pixelSha256": "0a337643482c15d004b5a05e77ec579d744c9f1087485402c10652414d16c170",
+      "sample": {
+        "path": "tmp/petlens-husky-evaluation/PetLens_Husky_Evaluation/annotation_frames/frame_062.png",
+        "sha256": "283975fe2a30deb183d75b69f6b0bd4348321993a1c5fe600db9c73732005f19"
+      }
+    }
+  ],
+  "frameCountDiscrepancy": {
+    "declaredSourceFrameRangeInclusive": [
+      39,
+      102
+    ],
+    "impliedSourceFrameCount": 64,
+    "containerReportedFrameCount": 64,
+    "preparationDeclaredFrameCount": 63,
+    "decodedPreparedFrameCount": 63,
+    "resolution": "Use sequentially decoded prepared-video indices 0-62. Source range and container imply 64; only 63 decode. The absent source correspondence is unresolved; no source-frame offset or gap is fabricated."
+  },
+  "timestampPolicy": "Decoded prepared-video timestamps, relative to first retained frame; screen-recording sampling is variable, not native gait timing",
+  "annotationPolicy": "Sampled frames only. Human physical A/B paw-tip points; visible coordinates can retain uncertain anatomy. No forced left/right mapping. Context frames are read-only.",
+  "limitations": [
+    "Not native dog-video timestamps: screen capture is variably sampled and may include dropped or duplicated frames. Do not validate gait-cycle timing/cadence from this clip.",
+    "The video has not been established as completely absent from any third-party pretrained training corpora.",
+    "This evaluation is new to the PetLens development process, if it was not previously used. Do not use the video to tune the model and still call it an untouched test.",
+    "Frames are source screen recording from a green-screen controlled environment, which may not represent real-world walking."
+  ],
+  "opencvVersion": "5.0.0"
+}
