@@ -1,0 +1,302 @@
+{
+  "status": "draft_awaiting_user_confirmation",
+  "finalized": false,
+  "requiresUserConfirmation": true,
+  "sourceReview": {
+    "path": "reports/gait-event-review-v1/reviews/review-d684d28c840a475ba7833f1c045d2504.zip",
+    "sha256": "e0f0bd2a6ca14ff6cc6cddf89a3495959c3a39ecbc5e0cf99b208589601bda82",
+    "liveBrowserStorageAccessed": false,
+    "originalFileUnchanged": true
+  },
+  "sourceVideo": {
+    "path": "test/Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s003.ogv",
+    "sha256": "6863e5046808ff5559c5b068ec3ab942d9de63ebbdc5a5d9d14bf9e00ebdcad6"
+  },
+  "datasetId": "gait-dog02-6863e5046808ff55",
+  "manifestSha256": "ad0e2b3e9029fc67d397b8622c078ba61022fdb9bf45783902de48ee2eb442e8",
+  "reviewer": "reviewer-1",
+  "independence": {
+    "savedDeclaration": "no_prior_exposure",
+    "proposedDeclaration": "prior_exposure",
+    "reason": "The user explicitly states prior exposure to model outputs. The saved no_prior_exposure declaration is retained in the unchanged source ZIP; this correction requires confirmation.",
+    "legacyViewerSessionFlagsRetained": {
+      "blind": true,
+      "modelExposed": false,
+      "previousLabelsExposed": false
+    },
+    "legacyFlagMeaning": "Existing schema requires these viewer-session flags; they do not override the explicit prior_exposure declaration."
+  },
+  "observationStart": {
+    "frame": {
+      "frameIndex": 0,
+      "originalPts": 0,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 0.0,
+      "pixelSha256": "5b63e63861a60638849ea572c91a6a49ffc05945e631417e36726122086e2440",
+      "imageSha256": "b3a3ca7c938c528002f46cd268e3aefc98332ac087302207b557c1031ae927e0"
+    },
+    "physicalPaws": [
+      "A",
+      "B"
+    ],
+    "eventType": null,
+    "supportStateEstablished": false
+  },
+  "identityContinuityStatements": [
+    {
+      "physicalPaw": "A",
+      "frameRange": [
+        0,
+        59
+      ],
+      "statement": "I was able to follow this same physical hind paw consistently throughout frames 0\u201359. I observed no ambiguity or loss of identity continuity.",
+      "certainty": "human_reported_no_ambiguity",
+      "scope": "Physical identity only; does not establish visibility, support states, events, or anatomical side",
+      "originalDescriptionPointer": "/pawDescriptions/A"
+    },
+    {
+      "physicalPaw": "B",
+      "frameRange": [
+        0,
+        59
+      ],
+      "statement": "I was able to follow this same physical hind paw consistently throughout frames 0\u201359. I observed no ambiguity or loss of identity continuity.",
+      "certainty": "human_reported_no_ambiguity",
+      "scope": "Physical identity only; does not establish visibility, support states, events, or anatomical side",
+      "originalDescriptionPointer": "/pawDescriptions/B"
+    }
+  ],
+  "events": [
+    {
+      "id": "A-touchdown-19",
+      "physicalPaw": "A",
+      "eventType": "contact",
+      "certainty": "human_reported_observed",
+      "observation": {
+        "frameIndex": 19,
+        "originalPts": 19,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 1.5833333333333333,
+        "pixelSha256": "9f61c076fb50fddae8a6aacb76e2f66caa48483a0d57f6058119722dba5d854d",
+        "imageSha256": "f8bb408fc6e165100be9b731cfe185a06bd7411394955b65281519d7672b491c"
+      },
+      "existingFormatBoundary": "initialContactFirstContacting",
+      "lastDefinitelyAirborne": null,
+      "automaticallyConfirmed": false
+    },
+    {
+      "id": "A-lift-off-55-56",
+      "physicalPaw": "A",
+      "eventType": "lift_off",
+      "certainty": "human_reported_airborne_at_56_transition_timing_uncertain",
+      "possibleTransitionObservation": {
+        "frameIndex": 55,
+        "originalPts": 55,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 4.583333333333333,
+        "pixelSha256": "e1282c9c596f1998b642860300d0efa9346f936de14dfd5e8899f419046eca2b",
+        "imageSha256": "b002f13f55b2c9b7cc80f9252908174967ac4c9bdad3df90014a5467489c577b"
+      },
+      "confirmedAirborneObservation": {
+        "frameIndex": 56,
+        "originalPts": 56,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 4.666666666666667,
+        "pixelSha256": "004d6b74e57551eb8a1bd9ad6a150d17d668927c8f66829de9c6a8c8ed8d44d0",
+        "imageSha256": "f0b0ff038686277ff55b3ad45cee4c2933a6d7de5037bc7298eb702192106c14"
+      },
+      "lastDefinitelyContacting": null,
+      "exactTransitionFrame": null,
+      "automaticallyConfirmed": false
+    },
+    {
+      "id": "B-lift-off-23",
+      "physicalPaw": "B",
+      "eventType": "lift_off",
+      "certainty": "human_reported_observed",
+      "observation": {
+        "frameIndex": 23,
+        "originalPts": 23,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 1.9166666666666667,
+        "pixelSha256": "c59c42418c42678239a87584ecb59f6b5cb5a72bed7e2b097c0c0a4de4a11612",
+        "imageSha256": "c6f63296f9e41f8533ba2d29caa0f64f4e9c063a2a962c933c54d5d52cb7b2b5"
+      },
+      "existingFormatBoundary": "liftOffFirstAirborne",
+      "lastDefinitelyContacting": null,
+      "automaticallyConfirmed": false
+    },
+    {
+      "id": "B-touchdown-52-59",
+      "physicalPaw": "B",
+      "eventType": "contact",
+      "certainty": "uncertain_timing",
+      "possibleTouchdownObservation": {
+        "frameIndex": 52,
+        "originalPts": 52,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 4.333333333333333,
+        "pixelSha256": "ab2ed88fe9cc6cf3e7677d79ed0776e6f20bf684f9aa6fa056949928124debf7",
+        "imageSha256": "21a9581c967dedd5b20258ba9473642191bbe97befa6facbfecc2e3c1f6d4994"
+      },
+      "humanReportedTimingWindow": {
+        "start": {
+          "frameIndex": 52,
+          "originalPts": 52,
+          "originalTimeBase": "1/12",
+          "timestampSeconds": 4.333333333333333,
+          "pixelSha256": "ab2ed88fe9cc6cf3e7677d79ed0776e6f20bf684f9aa6fa056949928124debf7",
+          "imageSha256": "21a9581c967dedd5b20258ba9473642191bbe97befa6facbfecc2e3c1f6d4994"
+        },
+        "end": {
+          "frameIndex": 59,
+          "originalPts": 59,
+          "originalTimeBase": "1/12",
+          "timestampSeconds": 4.916666666666667,
+          "pixelSha256": "0988ac788fd377344da9041cdea0413a391bb91c04f743f75c1c63c9b180227d",
+          "imageSha256": "1d888edc963e0a0c9db1f19518a384bc714d1e63a32f4c113d2a42fb03c1e2e0"
+        },
+        "semantics": "Reported possible event timing; endpoints are not definite support states"
+      },
+      "firstDefinitelyContacting": null,
+      "lastDefinitelyAirborne": null,
+      "exactTransitionFrame": null,
+      "automaticallyConfirmed": false
+    }
+  ],
+  "missingBoundaries": {
+    "A": [
+      "initialContactLastAirborne",
+      "liftOffLastContacting",
+      "nextContactLastAirborne",
+      "nextContactFirstContacting"
+    ],
+    "B": [
+      "initialContactLastAirborne",
+      "initialContactFirstContacting",
+      "liftOffLastContacting",
+      "nextContactLastAirborne",
+      "nextContactFirstContacting"
+    ]
+  },
+  "completeStrideCount": 0,
+  "validation": {
+    "valid": true,
+    "humanAssertedCompleteStrides": 0,
+    "adjudicated": false,
+    "independenceDeclared": false,
+    "unreviewedPawFrames": 113,
+    "note": "Human assertions only. Partial and uncertain reviews are retained. Two independent reviews and adjudication are still required."
+  },
+  "proposedChanges": [
+    {
+      "path": "/independenceDeclaration",
+      "previousValue": "no_prior_exposure",
+      "proposedValue": "prior_exposure"
+    },
+    {
+      "path": "/observations/0/A/supportState",
+      "previousValue": "airborne",
+      "proposedValue": "unreviewed"
+    },
+    {
+      "path": "/observations/0/A/notes",
+      "previousValue": "",
+      "proposedValue": "PROPOSED FROM HUMAN WRITTEN OBSERVATIONS; awaiting confirmation. Frame 0: Start of observation. No contact/lift-off event or support state is established by that statement. The original exported airborne label is preserved in the source ZIP; its removal here is a proposed correction only."
+    },
+    {
+      "path": "/observations/0/B/supportState",
+      "previousValue": "airborne",
+      "proposedValue": "unreviewed"
+    },
+    {
+      "path": "/observations/0/B/notes",
+      "previousValue": "",
+      "proposedValue": "PROPOSED FROM HUMAN WRITTEN OBSERVATIONS; awaiting confirmation. Frame 0: Start of observation. No contact/lift-off event or support state is established by that statement. The original exported airborne label is preserved in the source ZIP; its removal here is a proposed correction only."
+    },
+    {
+      "path": "/observations/19/A/notes",
+      "previousValue": "",
+      "proposedValue": "PROPOSED FROM HUMAN WRITTEN OBSERVATIONS; awaiting confirmation. Frame 19: Touchdown observed. Human-reported definite contact at frame 19; preceding last definitely airborne frame was not supplied."
+    },
+    {
+      "path": "/observations/23/B/supportState",
+      "previousValue": "contacting",
+      "proposedValue": "airborne"
+    },
+    {
+      "path": "/observations/23/B/notes",
+      "previousValue": "",
+      "proposedValue": "PROPOSED FROM HUMAN WRITTEN OBSERVATIONS; awaiting confirmation. Frame 23: Paw leaves the ground. Proposed correction of the saved contacting label to airborne, based only on the current human report. Last definitely contacting frame was not supplied."
+    },
+    {
+      "path": "/observations/52/B/supportState",
+      "previousValue": "contacting",
+      "proposedValue": "uncertain"
+    },
+    {
+      "path": "/observations/52/B/notes",
+      "previousValue": "",
+      "proposedValue": "PROPOSED FROM HUMAN WRITTEN OBSERVATIONS; awaiting confirmation. Frame 52: Possible touchdown. Video quality is very poor. The human reports touchdown somewhere within frames 52\u201359 but cannot confidently identify the exact frame. This is a reported timing window, not a bracket made from definite support-state endpoints. Neither 52 nor 59 is assigned as first definitely contacting."
+    },
+    {
+      "path": "/observations/55/A/supportState",
+      "previousValue": "unreviewed",
+      "proposedValue": "uncertain"
+    },
+    {
+      "path": "/observations/55/A/notes",
+      "previousValue": "",
+      "proposedValue": "PROPOSED FROM HUMAN WRITTEN OBSERVATIONS; awaiting confirmation. Lift-off might have occurred at frame 55 because video quality is poor. Possible timing only; neither definite airborne nor definite contacting state is assigned here."
+    },
+    {
+      "path": "/observations/56/A/notes",
+      "previousValue": "",
+      "proposedValue": "PROPOSED FROM HUMAN WRITTEN OBSERVATIONS; awaiting confirmation. Frame 56: Paw leaves the ground. The video quality is poor. Lift-off might have occurred at frame 55, but frame 56 is the confirmed observation. Record definite human-reported airborne observation at 56, not an exact transition proven at 56. Last definitely contacting frame is missing."
+    },
+    {
+      "path": "/strides",
+      "previousValue": [],
+      "proposedValue": [
+        {
+          "id": "dog02-e0f0bd2a6ca1-written-observations-A-v1",
+          "physicalPaw": "A",
+          "status": "uncertain",
+          "boundaries": {
+            "initialContactLastAirborne": null,
+            "initialContactFirstContacting": {
+              "frameIndex": 19,
+              "timestampSeconds": 1.5833333333333333
+            },
+            "liftOffLastContacting": null,
+            "liftOffFirstAirborne": {
+              "frameIndex": 56,
+              "timestampSeconds": 4.666666666666667
+            },
+            "nextContactLastAirborne": null,
+            "nextContactFirstContacting": null
+          },
+          "notes": "DRAFT ONLY; not finalized. Human-reported observations, not automated confirmation. Human reports touchdown at 19 and definite airborne/lift-off observation at 56; actual lift-off may have been at 55. Frame 55 is possible timing only. No last definitely airborne frame before initial contact, last definitely contacting frame before lift-off, or next-contact bracket was supplied. Physical identity continuity is a human sequence-level statement retained verbatim in pawDescriptions; intervening visibility/support states have not been filled."
+        },
+        {
+          "id": "dog02-e0f0bd2a6ca1-written-observations-B-v1",
+          "physicalPaw": "B",
+          "status": "uncertain",
+          "boundaries": {
+            "initialContactLastAirborne": null,
+            "initialContactFirstContacting": null,
+            "liftOffLastContacting": null,
+            "liftOffFirstAirborne": {
+              "frameIndex": 23,
+              "timestampSeconds": 1.9166666666666667
+            },
+            "nextContactLastAirborne": null,
+            "nextContactFirstContacting": null
+          },
+          "notes": "DRAFT ONLY; not finalized. Human-reported observations, not automated confirmation. Human reports lift-off at 23. A possible touchdown is reported at 52, with the touchdown occurring somewhere in 52\u201359 but no exact definite-contact frame supplied. That interval is not a definite airborne/contact bracket. No initial-contact bracket before 23, last definitely contacting frame before 23, or definite next-contact bracket was supplied. Physical identity continuity is a human sequence-level statement retained verbatim in pawDescriptions; intervening visibility/support states have not been filled."
+        }
+      ]
+    }
+  ],
+  "mergeInstructions": "No merge or browser import has been performed. Inspect proposedChanges, including conflicting saved labels and independence declaration. Finalization/merge requires explicit user confirmation; retain the original archive and avoid creating duplicate assertions."
+}

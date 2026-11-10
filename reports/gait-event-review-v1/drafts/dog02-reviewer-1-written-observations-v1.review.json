@@ -1,0 +1,896 @@
+{
+  "schemaVersion": 1,
+  "annotationType": "blind-gait-event-review",
+  "blind": true,
+  "manifestSha256": "ad0e2b3e9029fc67d397b8622c078ba61022fdb9bf45783902de48ee2eb442e8",
+  "datasetId": "gait-dog02-6863e5046808ff55",
+  "reviewer": "reviewer-1",
+  "independenceDeclaration": "prior_exposure",
+  "modelExposed": false,
+  "previousLabelsExposed": false,
+  "pawDescriptions": {
+    "A": "Frame 0: start\nFrame 19: Touchdown\nFrame 56: removes paw from ground(quality bad, so it could be 55, but 56 is confirmed)\nPhysical A: I was able to follow this same physical hind paw consistently throughout frames 0\u201359. I observed no ambiguity or loss of identity continuity.",
+    "B": "Frame 0: Start\nFrame 23: Paw leaves ground\nFrame 52: Touchdown I think(quality is horrible but like definitely 52-59 a confirmed touchdown happens)\nPhysical B: I was able to follow this same physical hind paw consistently throughout frames 0\u201359. I observed no ambiguity or loss of identity continuity."
+  },
+  "observations": {
+    "0": {
+      "A": {
+        "visibility": "visible",
+        "continuity": "start",
+        "supportState": "unreviewed",
+        "notes": "PROPOSED FROM HUMAN WRITTEN OBSERVATIONS; awaiting confirmation. Frame 0: Start of observation. No contact/lift-off event or support state is established by that statement. The original exported airborne label is preserved in the source ZIP; its removal here is a proposed correction only."
+      },
+      "B": {
+        "visibility": "visible",
+        "continuity": "start",
+        "supportState": "unreviewed",
+        "notes": "PROPOSED FROM HUMAN WRITTEN OBSERVATIONS; awaiting confirmation. Frame 0: Start of observation. No contact/lift-off event or support state is established by that statement. The original exported airborne label is preserved in the source ZIP; its removal here is a proposed correction only."
+      }
+    },
+    "1": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "2": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "3": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "4": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "5": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "6": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "7": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "8": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "9": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "10": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "11": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "12": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "13": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "14": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "15": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "16": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "17": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "18": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "19": {
+      "A": {
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportState": "contacting",
+        "notes": "PROPOSED FROM HUMAN WRITTEN OBSERVATIONS; awaiting confirmation. Frame 19: Touchdown observed. Human-reported definite contact at frame 19; preceding last definitely airborne frame was not supplied."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "20": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "21": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "22": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "23": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportState": "airborne",
+        "notes": "PROPOSED FROM HUMAN WRITTEN OBSERVATIONS; awaiting confirmation. Frame 23: Paw leaves the ground. Proposed correction of the saved contacting label to airborne, based only on the current human report. Last definitely contacting frame was not supplied."
+      }
+    },
+    "24": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "25": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "26": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "27": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "28": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "29": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "30": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "31": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "32": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "33": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "34": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "35": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "36": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "37": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "38": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "39": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "40": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "41": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "42": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "43": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "44": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "45": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "46": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "47": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "48": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "49": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "50": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "51": {
+      "A": {
+        "visibility": "visible",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "52": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportState": "uncertain",
+        "notes": "PROPOSED FROM HUMAN WRITTEN OBSERVATIONS; awaiting confirmation. Frame 52: Possible touchdown. Video quality is very poor. The human reports touchdown somewhere within frames 52\u201359 but cannot confidently identify the exact frame. This is a reported timing window, not a bracket made from definite support-state endpoints. Neither 52 nor 59 is assigned as first definitely contacting."
+      }
+    },
+    "53": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "54": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "55": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "uncertain",
+        "notes": "PROPOSED FROM HUMAN WRITTEN OBSERVATIONS; awaiting confirmation. Lift-off might have occurred at frame 55 because video quality is poor. Possible timing only; neither definite airborne nor definite contacting state is assigned here."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "56": {
+      "A": {
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportState": "airborne",
+        "notes": "PROPOSED FROM HUMAN WRITTEN OBSERVATIONS; awaiting confirmation. Frame 56: Paw leaves the ground. The video quality is poor. Lift-off might have occurred at frame 55, but frame 56 is the confirmed observation. Record definite human-reported airborne observation at 56, not an exact transition proven at 56. Last definitely contacting frame is missing."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "57": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "58": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    },
+    "59": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": ""
+      }
+    }
+  },
+  "strides": [
+    {
+      "id": "dog02-e0f0bd2a6ca1-written-observations-A-v1",
+      "physicalPaw": "A",
+      "status": "uncertain",
+      "boundaries": {
+        "initialContactLastAirborne": null,
+        "initialContactFirstContacting": {
+          "frameIndex": 19,
+          "timestampSeconds": 1.5833333333333333
+        },
+        "liftOffLastContacting": null,
+        "liftOffFirstAirborne": {
+          "frameIndex": 56,
+          "timestampSeconds": 4.666666666666667
+        },
+        "nextContactLastAirborne": null,
+        "nextContactFirstContacting": null
+      },
+      "notes": "DRAFT ONLY; not finalized. Human-reported observations, not automated confirmation. Human reports touchdown at 19 and definite airborne/lift-off observation at 56; actual lift-off may have been at 55. Frame 55 is possible timing only. No last definitely airborne frame before initial contact, last definitely contacting frame before lift-off, or next-contact bracket was supplied. Physical identity continuity is a human sequence-level statement retained verbatim in pawDescriptions; intervening visibility/support states have not been filled."
+    },
+    {
+      "id": "dog02-e0f0bd2a6ca1-written-observations-B-v1",
+      "physicalPaw": "B",
+      "status": "uncertain",
+      "boundaries": {
+        "initialContactLastAirborne": null,
+        "initialContactFirstContacting": null,
+        "liftOffLastContacting": null,
+        "liftOffFirstAirborne": {
+          "frameIndex": 23,
+          "timestampSeconds": 1.9166666666666667
+        },
+        "nextContactLastAirborne": null,
+        "nextContactFirstContacting": null
+      },
+      "notes": "DRAFT ONLY; not finalized. Human-reported observations, not automated confirmation. Human reports lift-off at 23. A possible touchdown is reported at 52, with the touchdown occurring somewhere in 52\u201359 but no exact definite-contact frame supplied. That interval is not a definite airborne/contact bracket. No initial-contact bracket before 23, last definitely contacting frame before 23, or definite next-contact bracket was supplied. Physical identity continuity is a human sequence-level statement retained verbatim in pawDescriptions; intervening visibility/support states have not been filled."
+    }
+  ]
+}

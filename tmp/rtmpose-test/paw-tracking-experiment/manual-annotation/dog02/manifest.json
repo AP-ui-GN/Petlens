@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+  "predictionSha256": "ac5013c8ed782060e54f58749b955cfc2bc2f5f44fda5003356596f4e62c5a54",
+  "videoSha256": "d16ea683300bdc992abdd73d3d527754e34745e03840be6dd669090300f3d93c",
+  "frameWidth": 960,
+  "frameHeight": 544,
+  "frameCount": 31,
+  "sourceFrameCount": 60,
+  "fps": 12.0,
+  "initialFrame": 0,
+  "eventAnnotation": true,
+  "priorityFrames": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "randomFrames": [],
+  "auditSelectedFrames": [],
+  "selectedFrames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "frames": [
+    {
+      "frameIndex": 0,
+      "timestampSeconds": 0.0,
+      "image": "frames/000.jpg"
+    },
+    {
+      "frameIndex": 1,
+      "timestampSeconds": 0.08333333333333333,
+      "image": "frames/001.jpg"
+    },
+    {
+      "frameIndex": 2,
+      "timestampSeconds": 0.16666666666666666,
+      "image": "frames/002.jpg"
+    },
+    {
+      "frameIndex": 3,
+      "timestampSeconds": 0.25,
+      "image": "frames/003.jpg"
+    },
+    {
+      "frameIndex": 4,
+      "timestampSeconds": 0.3333333333333333,
+      "image": "frames/004.jpg"
+    },
+    {
+      "frameIndex": 5,
+      "timestampSeconds": 0.41666666666666663,
+      "image": "frames/005.jpg"
+    },
+    {
+      "frameIndex": 6,
+      "timestampSeconds": 0.5,
+      "image": "frames/006.jpg"
+    },
+    {
+      "frameIndex": 7,
+      "timestampSeconds": 0.5833333333333333,
+      "image": "frames/007.jpg"
+    },
+    {
+      "frameIndex": 8,
+      "timestampSeconds": 0.6666666666666666,
+      "image": "frames/008.jpg"
+    },
+    {
+      "frameIndex": 9,
+      "timestampSeconds": 0.75,
+      "image": "frames/009.jpg"
+    },
+    {
+      "frameIndex": 10,
+      "timestampSeconds": 0.8333333333333333,
+      "image": "frames/010.jpg"
+    },
+    {
+      "frameIndex": 11,
+      "timestampSeconds": 0.9166666666666666,
+      "image": "frames/011.jpg"
+    },
+    {
+      "frameIndex": 12,
+      "timestampSeconds": 1.0,
+      "image": "frames/012.jpg"
+    },
+    {
+      "frameIndex": 13,
+      "timestampSeconds": 1.0833333333333333,
+      "image": "frames/013.jpg"
+    },
+    {
+      "frameIndex": 14,
+      "timestampSeconds": 1.1666666666666665,
+      "image": "frames/014.jpg"
+    },
+    {
+      "frameIndex": 15,
+      "timestampSeconds": 1.25,
+      "image": "frames/015.jpg"
+    },
+    {
+      "frameIndex": 16,
+      "timestampSeconds": 1.3333333333333333,
+      "image": "frames/016.jpg"
+    },
+    {
+      "frameIndex": 17,
+      "timestampSeconds": 1.4166666666666665,
+      "image": "frames/017.jpg"
+    },
+    {
+      "frameIndex": 18,
+      "timestampSeconds": 1.5,
+      "image": "frames/018.jpg"
+    },
+    {
+      "frameIndex": 19,
+      "timestampSeconds": 1.5833333333333333,
+      "image": "frames/019.jpg"
+    },
+    {
+      "frameIndex": 20,
+      "timestampSeconds": 1.6666666666666665,
+      "image": "frames/020.jpg"
+    },
+    {
+      "frameIndex": 21,
+      "timestampSeconds": 1.75,
+      "image": "frames/021.jpg"
+    },
+    {
+      "frameIndex": 22,
+      "timestampSeconds": 1.8333333333333333,
+      "image": "frames/022.jpg"
+    },
+    {
+      "frameIndex": 23,
+      "timestampSeconds": 1.9166666666666665,
+      "image": "frames/023.jpg"
+    },
+    {
+      "frameIndex": 24,
+      "timestampSeconds": 2.0,
+      "image": "frames/024.jpg"
+    },
+    {
+      "frameIndex": 25,
+      "timestampSeconds": 2.083333333333333,
+      "image": "frames/025.jpg"
+    },
+    {
+      "frameIndex": 26,
+      "timestampSeconds": 2.1666666666666665,
+      "image": "frames/026.jpg"
+    },
+    {
+      "frameIndex": 27,
+      "timestampSeconds": 2.25,
+      "image": "frames/027.jpg"
+    },
+    {
+      "frameIndex": 28,
+      "timestampSeconds": 2.333333333333333,
+      "image": "frames/028.jpg"
+    },
+    {
+      "frameIndex": 29,
+      "timestampSeconds": 2.4166666666666665,
+      "image": "frames/029.jpg"
+    },
+    {
+      "frameIndex": 30,
+      "timestampSeconds": 2.5,
+      "image": "frames/030.jpg"
+    }
+  ],
+  "reviewPairs": [
+    {
+      "fromFrame": 0,
+      "toFrame": 1,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 1,
+      "toFrame": 2,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 2,
+      "toFrame": 3,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 3,
+      "toFrame": 4,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 4,
+      "toFrame": 5,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 5,
+      "toFrame": 6,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 6,
+      "toFrame": 7,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 7,
+      "toFrame": 8,
+      "cohort": "priority"
+    },
+    {
+      "fromFrame": 8,
+      "toFrame": 9,
+      "cohort": "priority"
+    },
+    {
+      "fromFrame": 9,
+      "toFrame": 10,
+      "cohort": "priority"
+    },
+    {
+      "fromFrame": 10,
+      "toFrame": 11,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 11,
+      "toFrame": 12,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 12,
+      "toFrame": 13,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 13,
+      "toFrame": 14,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 14,
+      "toFrame": 15,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 15,
+      "toFrame": 16,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 16,
+      "toFrame": 17,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 17,
+      "toFrame": 18,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 18,
+      "toFrame": 19,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 19,
+      "toFrame": 20,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 20,
+      "toFrame": 21,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 21,
+      "toFrame": 22,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 22,
+      "toFrame": 23,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 23,
+      "toFrame": 24,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 24,
+      "toFrame": 25,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 25,
+      "toFrame": 26,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 26,
+      "toFrame": 27,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 27,
+      "toFrame": 28,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 28,
+      "toFrame": 29,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 29,
+      "toFrame": 30,
+      "cohort": "consecutive"
+    }
+  ]
+}

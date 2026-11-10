@@ -1,0 +1,5 @@
+# Offline gait-review runtime and regression tests; Python 3.12 recommended.
+# ffprobe (from system FFmpeg) and Node.js for the optional UI tests are external.
+# Does not install model, training, or inference dependencies.
+-r requirements-opencv.txt
+pytest==9.2.0

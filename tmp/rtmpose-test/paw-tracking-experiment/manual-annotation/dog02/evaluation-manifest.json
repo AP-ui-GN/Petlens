@@ -1,0 +1,547 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "petlens-dog02-0-30-ac5013c8ed782060",
+  "predictionSha256": "ac5013c8ed782060e54f58749b955cfc2bc2f5f44fda5003356596f4e62c5a54",
+  "videoSha256": "d16ea683300bdc992abdd73d3d527754e34745e03840be6dd669090300f3d93c",
+  "frameWidth": 960,
+  "frameHeight": 544,
+  "frameCount": 60,
+  "sourceFrameCount": 60,
+  "fps": 12.0,
+  "initialFrame": 7,
+  "eventAnnotation": false,
+  "priorityFrames": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "randomFrames": [
+    2,
+    4,
+    13,
+    16,
+    18,
+    30,
+    31,
+    32,
+    39,
+    42,
+    45,
+    46,
+    47,
+    55
+  ],
+  "auditSelectedFrames": [],
+  "selectedFrames": [
+    2,
+    4,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    16,
+    18,
+    30,
+    31,
+    32,
+    39,
+    42,
+    45,
+    46,
+    47,
+    55
+  ],
+  "frames": [
+    {
+      "frameIndex": 0,
+      "timestampSeconds": 0.0,
+      "image": "frames/000.jpg"
+    },
+    {
+      "frameIndex": 1,
+      "timestampSeconds": 0.08333333333333333,
+      "image": "frames/001.jpg"
+    },
+    {
+      "frameIndex": 2,
+      "timestampSeconds": 0.16666666666666666,
+      "image": "frames/002.jpg"
+    },
+    {
+      "frameIndex": 3,
+      "timestampSeconds": 0.25,
+      "image": "frames/003.jpg"
+    },
+    {
+      "frameIndex": 4,
+      "timestampSeconds": 0.3333333333333333,
+      "image": "frames/004.jpg"
+    },
+    {
+      "frameIndex": 5,
+      "timestampSeconds": 0.41666666666666663,
+      "image": "frames/005.jpg"
+    },
+    {
+      "frameIndex": 6,
+      "timestampSeconds": 0.5,
+      "image": "frames/006.jpg"
+    },
+    {
+      "frameIndex": 7,
+      "timestampSeconds": 0.5833333333333333,
+      "image": "frames/007.jpg"
+    },
+    {
+      "frameIndex": 8,
+      "timestampSeconds": 0.6666666666666666,
+      "image": "frames/008.jpg"
+    },
+    {
+      "frameIndex": 9,
+      "timestampSeconds": 0.75,
+      "image": "frames/009.jpg"
+    },
+    {
+      "frameIndex": 10,
+      "timestampSeconds": 0.8333333333333333,
+      "image": "frames/010.jpg"
+    },
+    {
+      "frameIndex": 11,
+      "timestampSeconds": 0.9166666666666666,
+      "image": "frames/011.jpg"
+    },
+    {
+      "frameIndex": 12,
+      "timestampSeconds": 1.0,
+      "image": "frames/012.jpg"
+    },
+    {
+      "frameIndex": 13,
+      "timestampSeconds": 1.0833333333333333,
+      "image": "frames/013.jpg"
+    },
+    {
+      "frameIndex": 14,
+      "timestampSeconds": 1.1666666666666665,
+      "image": "frames/014.jpg"
+    },
+    {
+      "frameIndex": 15,
+      "timestampSeconds": 1.25,
+      "image": "frames/015.jpg"
+    },
+    {
+      "frameIndex": 16,
+      "timestampSeconds": 1.3333333333333333,
+      "image": "frames/016.jpg"
+    },
+    {
+      "frameIndex": 17,
+      "timestampSeconds": 1.4166666666666665,
+      "image": "frames/017.jpg"
+    },
+    {
+      "frameIndex": 18,
+      "timestampSeconds": 1.5,
+      "image": "frames/018.jpg"
+    },
+    {
+      "frameIndex": 19,
+      "timestampSeconds": 1.5833333333333333,
+      "image": "frames/019.jpg"
+    },
+    {
+      "frameIndex": 20,
+      "timestampSeconds": 1.6666666666666665,
+      "image": "frames/020.jpg"
+    },
+    {
+      "frameIndex": 21,
+      "timestampSeconds": 1.75,
+      "image": "frames/021.jpg"
+    },
+    {
+      "frameIndex": 22,
+      "timestampSeconds": 1.8333333333333333,
+      "image": "frames/022.jpg"
+    },
+    {
+      "frameIndex": 23,
+      "timestampSeconds": 1.9166666666666665,
+      "image": "frames/023.jpg"
+    },
+    {
+      "frameIndex": 24,
+      "timestampSeconds": 2.0,
+      "image": "frames/024.jpg"
+    },
+    {
+      "frameIndex": 25,
+      "timestampSeconds": 2.083333333333333,
+      "image": "frames/025.jpg"
+    },
+    {
+      "frameIndex": 26,
+      "timestampSeconds": 2.1666666666666665,
+      "image": "frames/026.jpg"
+    },
+    {
+      "frameIndex": 27,
+      "timestampSeconds": 2.25,
+      "image": "frames/027.jpg"
+    },
+    {
+      "frameIndex": 28,
+      "timestampSeconds": 2.333333333333333,
+      "image": "frames/028.jpg"
+    },
+    {
+      "frameIndex": 29,
+      "timestampSeconds": 2.4166666666666665,
+      "image": "frames/029.jpg"
+    },
+    {
+      "frameIndex": 30,
+      "timestampSeconds": 2.5,
+      "image": "frames/030.jpg"
+    },
+    {
+      "frameIndex": 31,
+      "timestampSeconds": 2.583333333333333,
+      "image": "frames/031.jpg"
+    },
+    {
+      "frameIndex": 32,
+      "timestampSeconds": 2.6666666666666665,
+      "image": "frames/032.jpg"
+    },
+    {
+      "frameIndex": 33,
+      "timestampSeconds": 2.75,
+      "image": "frames/033.jpg"
+    },
+    {
+      "frameIndex": 34,
+      "timestampSeconds": 2.833333333333333,
+      "image": "frames/034.jpg"
+    },
+    {
+      "frameIndex": 35,
+      "timestampSeconds": 2.9166666666666665,
+      "image": "frames/035.jpg"
+    },
+    {
+      "frameIndex": 36,
+      "timestampSeconds": 3.0,
+      "image": "frames/036.jpg"
+    },
+    {
+      "frameIndex": 37,
+      "timestampSeconds": 3.083333333333333,
+      "image": "frames/037.jpg"
+    },
+    {
+      "frameIndex": 38,
+      "timestampSeconds": 3.1666666666666665,
+      "image": "frames/038.jpg"
+    },
+    {
+      "frameIndex": 39,
+      "timestampSeconds": 3.25,
+      "image": "frames/039.jpg"
+    },
+    {
+      "frameIndex": 40,
+      "timestampSeconds": 3.333333333333333,
+      "image": "frames/040.jpg"
+    },
+    {
+      "frameIndex": 41,
+      "timestampSeconds": 3.4166666666666665,
+      "image": "frames/041.jpg"
+    },
+    {
+      "frameIndex": 42,
+      "timestampSeconds": 3.5,
+      "image": "frames/042.jpg"
+    },
+    {
+      "frameIndex": 43,
+      "timestampSeconds": 3.583333333333333,
+      "image": "frames/043.jpg"
+    },
+    {
+      "frameIndex": 44,
+      "timestampSeconds": 3.6666666666666665,
+      "image": "frames/044.jpg"
+    },
+    {
+      "frameIndex": 45,
+      "timestampSeconds": 3.75,
+      "image": "frames/045.jpg"
+    },
+    {
+      "frameIndex": 46,
+      "timestampSeconds": 3.833333333333333,
+      "image": "frames/046.jpg"
+    },
+    {
+      "frameIndex": 47,
+      "timestampSeconds": 3.9166666666666665,
+      "image": "frames/047.jpg"
+    },
+    {
+      "frameIndex": 48,
+      "timestampSeconds": 4.0,
+      "image": "frames/048.jpg"
+    },
+    {
+      "frameIndex": 49,
+      "timestampSeconds": 4.083333333333333,
+      "image": "frames/049.jpg"
+    },
+    {
+      "frameIndex": 50,
+      "timestampSeconds": 4.166666666666666,
+      "image": "frames/050.jpg"
+    },
+    {
+      "frameIndex": 51,
+      "timestampSeconds": 4.25,
+      "image": "frames/051.jpg"
+    },
+    {
+      "frameIndex": 52,
+      "timestampSeconds": 4.333333333333333,
+      "image": "frames/052.jpg"
+    },
+    {
+      "frameIndex": 53,
+      "timestampSeconds": 4.416666666666666,
+      "image": "frames/053.jpg"
+    },
+    {
+      "frameIndex": 54,
+      "timestampSeconds": 4.5,
+      "image": "frames/054.jpg"
+    },
+    {
+      "frameIndex": 55,
+      "timestampSeconds": 4.583333333333333,
+      "image": "frames/055.jpg"
+    },
+    {
+      "frameIndex": 56,
+      "timestampSeconds": 4.666666666666666,
+      "image": "frames/056.jpg"
+    },
+    {
+      "frameIndex": 57,
+      "timestampSeconds": 4.75,
+      "image": "frames/057.jpg"
+    },
+    {
+      "frameIndex": 58,
+      "timestampSeconds": 4.833333333333333,
+      "image": "frames/058.jpg"
+    },
+    {
+      "frameIndex": 59,
+      "timestampSeconds": 4.916666666666666,
+      "image": "frames/059.jpg"
+    }
+  ],
+  "reviewPairs": [
+    {
+      "fromFrame": 0,
+      "toFrame": 1,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 1,
+      "toFrame": 2,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 2,
+      "toFrame": 3,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 3,
+      "toFrame": 4,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 4,
+      "toFrame": 5,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 5,
+      "toFrame": 6,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 6,
+      "toFrame": 7,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 7,
+      "toFrame": 8,
+      "cohort": "priority"
+    },
+    {
+      "fromFrame": 8,
+      "toFrame": 9,
+      "cohort": "priority"
+    },
+    {
+      "fromFrame": 9,
+      "toFrame": 10,
+      "cohort": "priority"
+    },
+    {
+      "fromFrame": 10,
+      "toFrame": 11,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 11,
+      "toFrame": 12,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 12,
+      "toFrame": 13,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 13,
+      "toFrame": 14,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 14,
+      "toFrame": 15,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 15,
+      "toFrame": 16,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 16,
+      "toFrame": 17,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 17,
+      "toFrame": 18,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 18,
+      "toFrame": 19,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 19,
+      "toFrame": 20,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 20,
+      "toFrame": 21,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 21,
+      "toFrame": 22,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 22,
+      "toFrame": 23,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 23,
+      "toFrame": 24,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 24,
+      "toFrame": 25,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 25,
+      "toFrame": 26,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 26,
+      "toFrame": 27,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 27,
+      "toFrame": 28,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 28,
+      "toFrame": 29,
+      "cohort": "consecutive"
+    },
+    {
+      "fromFrame": 29,
+      "toFrame": 30,
+      "cohort": "consecutive"
+    }
+  ],
+  "localizationEvaluation": true,
+  "evaluationId": "dog02-localization-20-v1",
+  "evaluationSplit": {
+    "development": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "holdout": [
+      2,
+      4,
+      13,
+      16,
+      18,
+      30,
+      31,
+      32,
+      39,
+      42,
+      45,
+      46,
+      47,
+      55
+    ]
+  },
+  "sampling": {
+    "method": "random.Random(seed).sample(sorted frame indices excluding development, 14)",
+    "seed": 20261102
+  },
+  "holdoutPolicy": "Frozen prospective evaluation only. Do not use holdout labels for tracker or threshold tuning. Same previously inspected video, not independent video validation."
+}

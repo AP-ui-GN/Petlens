@@ -1,0 +1,2465 @@
+{
+  "benchmarkVersion": 2,
+  "evaluation": "identity-agnostic localization",
+  "limitations": [
+    "Identity-agnostic localization: an optimistic upper bound, NOT proof of correct anatomical or temporal identity. No independent identity accuracy is estimated; per-frame assignments may switch freely.",
+    "Dog02 is exploratory, not an independent confirmatory evaluation.",
+    "Existing human labels may have been model-exposed; exposure counts are reported."
+  ],
+  "policies": {
+    "assignment": "Per-frame maximum-cardinality one-to-one minimum total Euclidean distance; deterministic input-order ties; no threshold-based rematching",
+    "thresholdsPx": [
+      10,
+      20
+    ],
+    "thresholdComparison": "distance <= threshold",
+    "denominator": "All visible merged human A/B labels, identical for both methods; absent predictions are misses",
+    "rawRTMPose": "Successful detection, saved finite hind-paw coordinates, no score or image-bound filtering",
+    "trackerRecovery": "Existing defaults; associated non-null points from accepted recovery segments only; unresolved/rejected/absent frames are misses",
+    "predictionAvailability": "One-to-one assigned visible labels / all visible labels, regardless of distance",
+    "wholeVideoCoverage": "Available paw points / (2 * all saved video frames), including unannotated frames"
+  },
+  "sourceManifestSha256": "76b59a4b007fb7223cb973e54ea49f6fddcabb7aa8cbbb9b2039f61a7b2f77a7",
+  "sourceManifest": {
+    "schemaVersion": 1,
+    "keypointSchema": {
+      "path": "training/canine_keypoint_schema.json",
+      "sha256": "b44942d61544488c7fbe6fd5ad77db641e7615adf82e8924f4316b04cfbef579"
+    },
+    "sequences": [
+      {
+        "group": "dalmatian",
+        "split": "train",
+        "metadata": {
+          "path": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/dalmatian/manifest.json",
+          "sha256": "5de5968fe9a3d00f2aaae3311c106ca2d2af31b7fecc7fcb39ebaef9fa3594a6"
+        },
+        "video": {
+          "path": "tmp/rtmpose-test/multi-video-evaluation/inputs/dalmatian-lossless-cfr.mp4",
+          "sha256": "13efcd61041c8795852ad377ca4a969d117c907fcb8d4a9298c61303bb7881d8"
+        },
+        "predictions": {
+          "path": "tmp/rtmpose-test/multi-video-evaluation/runs/dalmatian-day2-cfr-20261103/predictions.json",
+          "sha256": "3c641f8418183512d5693acd9eeeae39ce1bff9847e2433bef839df13bd414a9"
+        },
+        "annotations": [
+          {
+            "path": "tests/petlens-dalmatian-day2-3c641f8418183512-physical-hind-tracks (3).json",
+            "sha256": "3479491ea5845734055a2e1fb28a21f55ef87aaf582c6d8a21a1ba0097f224f6"
+          }
+        ],
+        "originalVideo": {
+          "path": "tests/13792872-hd_1080_1920_30fps (1).mp4",
+          "sha256": "de45e7d69e6173576f51347ebe8ce21fe5095e7e7de4447bacc865b2c6c19535"
+        }
+      },
+      {
+        "group": "dog02",
+        "split": "exploratory_evaluation",
+        "metadata": {
+          "path": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/dog02/evaluation-manifest.json",
+          "sha256": "981dc012f14a11713c74215a3c98e937c24df87ef3909341ce6361a6099ae96f"
+        },
+        "video": {
+          "path": "tmp/rtmpose-test/multi-video-evaluation/inputs/dog02-walking.mp4",
+          "sha256": "d16ea683300bdc992abdd73d3d527754e34745e03840be6dd669090300f3d93c"
+        },
+        "predictions": {
+          "path": "tmp/rtmpose-test/multi-video-evaluation/runs/dog02-walking-20261102/predictions.json",
+          "sha256": "ac5013c8ed782060e54f58749b955cfc2bc2f5f44fda5003356596f4e62c5a54"
+        },
+        "annotations": [
+          {
+            "path": "tests/dog02-localization-20-v1-physical-hind-tracks.json",
+            "sha256": "e80eef8307129ec72f936289021403e737424530cf8a6230aaed9d27ddae2d39"
+          },
+          {
+            "path": "tests/petlens-dog02-0-30-ac5013c8ed782060-physical-hind-tracks.json",
+            "sha256": "0cb4eceb2a4b71e757cccad85361b45021efac768d4c85f16fb3dfc1c7225ce2"
+          }
+        ]
+      }
+    ]
+  },
+  "algorithmHashes": {
+    "association": "3515bf33b0b09ec106c6c755bbad9fa5110b81dbf0d81500f0dff020c8d6a644",
+    "observationTracker": "048929a411d7a74ab8f55ebe411e9487251dc6c4c0f8e61958c43071d87f0904",
+    "recovery": "0677e21cd98f4189e24d1c14f93da34a421467acef0a1fde983cc9d48313f03d"
+  },
+  "evaluatorSha256": "d00f6e9bf0ec62e0fe35236b79524598ac39be9a59ca32d310cf7e5e29e390f8",
+  "annotationUtilitiesSha256": "14df6b7ef0b929303c6e206e5ca12b6dca396fabde782387fb4ae4bebf96be68",
+  "results": [
+    {
+      "group": "dalmatian",
+      "split": "train",
+      "exploratory": false,
+      "annotatedFrames": 46,
+      "duplicateCompletedLabelsRemoved": 0,
+      "modelExposedAnnotatedFrames": 0,
+      "acceptedRecoverySegments": 3,
+      "methods": {
+        "rawRTMPose": {
+          "visibleHumanPawLabels": 79,
+          "visibleLabelsReceivingPredictions": 76,
+          "visibleLabelsMissingPredictions": 3,
+          "predictionAvailability": 0.9620253164556962,
+          "localization": {
+            "10": {
+              "thresholdPx": 10,
+              "hits": 65,
+              "misses": 14,
+              "denominator": 79,
+              "recall": 0.8227848101265823
+            },
+            "20": {
+              "thresholdPx": 20,
+              "hits": 71,
+              "misses": 8,
+              "denominator": 79,
+              "recall": 0.8987341772151899
+            }
+          },
+          "frames": [
+            {
+              "frameIndex": 45,
+              "predictedPaws": 2,
+              "visibleLabels": []
+            },
+            {
+              "frameIndex": 46,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 7.504367527625867
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 4.297983862276724
+                }
+              ]
+            },
+            {
+              "frameIndex": 47,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 1.4374856218417755
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 6.306684274684868
+                }
+              ]
+            },
+            {
+              "frameIndex": 48,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 1.519744905600878
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 5.7022134283458135
+                }
+              ]
+            },
+            {
+              "frameIndex": 49,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 6.934830212201283
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 2.2815997955369935
+                }
+              ]
+            },
+            {
+              "frameIndex": 50,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 2.2593368825897393
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 7.780609517158091
+                }
+              ]
+            },
+            {
+              "frameIndex": 51,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 6.033814854867247
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 7.814703961626313
+                }
+              ]
+            },
+            {
+              "frameIndex": 52,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 5.942156626202789
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 9.065025270439971
+                }
+              ]
+            },
+            {
+              "frameIndex": 53,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 3.140572391705079
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 6.19933421789634
+                }
+              ]
+            },
+            {
+              "frameIndex": 54,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 4.91101000101986
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 1.4345390336987878
+                }
+              ]
+            },
+            {
+              "frameIndex": 55,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 3.4490578813542783
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 5.6728869089910905
+                }
+              ]
+            },
+            {
+              "frameIndex": 56,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 5.422736900937339
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 3.229905284308118
+                }
+              ]
+            },
+            {
+              "frameIndex": 57,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 0.8502086545052854
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 5.192273959773501
+                }
+              ]
+            },
+            {
+              "frameIndex": 58,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 7.9772318116891965
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 7.641021337142737
+                }
+              ]
+            },
+            {
+              "frameIndex": 59,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 10.53743022141399
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 9.218325333463294
+                }
+              ]
+            },
+            {
+              "frameIndex": 60,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 11.67055608018522
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 15.788526124039404
+                }
+              ]
+            },
+            {
+              "frameIndex": 61,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 5.162024785947661
+                }
+              ]
+            },
+            {
+              "frameIndex": 62,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 8.96630265325924
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 1.4655995927579797
+                }
+              ]
+            },
+            {
+              "frameIndex": 63,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 4.065718315547568
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 4.664195305259398
+                }
+              ]
+            },
+            {
+              "frameIndex": 64,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 2.060260686488523
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 5.875155217194272
+                }
+              ]
+            },
+            {
+              "frameIndex": 65,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 4.3818022004892425
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 1.0224945635595417
+                }
+              ]
+            },
+            {
+              "frameIndex": 66,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 0.15997501195941236
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 4.203759892462025
+                }
+              ]
+            },
+            {
+              "frameIndex": 67,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 1.8220737112974132
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 6.812754145333501
+                }
+              ]
+            },
+            {
+              "frameIndex": 68,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 4.335932390929314
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 11.899742702094523
+                }
+              ]
+            },
+            {
+              "frameIndex": 69,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 3.710415083356424
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 5.659135649630815
+                }
+              ]
+            },
+            {
+              "frameIndex": 70,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 2.982301138542821
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 4.53721561059674
+                }
+              ]
+            },
+            {
+              "frameIndex": 71,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 7.238884790197083
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 8.32115202340016
+                }
+              ]
+            },
+            {
+              "frameIndex": 72,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 8.581695650791795
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 6.294902735667529
+                }
+              ]
+            },
+            {
+              "frameIndex": 73,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 6.216281965156524
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 1.4515654086040066
+                }
+              ]
+            },
+            {
+              "frameIndex": 74,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 1.1010861938457637
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 5.761286408814493
+                }
+              ]
+            },
+            {
+              "frameIndex": 75,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 5.137501711584313
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 4.2566690855893965
+                }
+              ]
+            },
+            {
+              "frameIndex": 76,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 6.665872533169597
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 11.127686183361284
+                }
+              ]
+            },
+            {
+              "frameIndex": 77,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 3.6196239283729907
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 6.654588008148186
+                }
+              ]
+            },
+            {
+              "frameIndex": 78,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 79,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 3.709397512976703
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 7.999720673525711
+                }
+              ]
+            },
+            {
+              "frameIndex": 80,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 10.848353644266938
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 145.59445252906426
+                }
+              ]
+            },
+            {
+              "frameIndex": 81,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 112.47564999462556
+                }
+              ]
+            },
+            {
+              "frameIndex": 82,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 85.62638212795474
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 91.26670301647374
+                }
+              ]
+            },
+            {
+              "frameIndex": 83,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 98.24813515465097
+                }
+              ]
+            },
+            {
+              "frameIndex": 84,
+              "predictedPaws": 2,
+              "visibleLabels": []
+            },
+            {
+              "frameIndex": 85,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 86,
+              "predictedPaws": 2,
+              "visibleLabels": []
+            },
+            {
+              "frameIndex": 87,
+              "predictedPaws": 2,
+              "visibleLabels": []
+            },
+            {
+              "frameIndex": 88,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 3.28607726483649
+                }
+              ]
+            },
+            {
+              "frameIndex": 89,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 5.908836681026741
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 5.126560485310991
+                }
+              ]
+            },
+            {
+              "frameIndex": 90,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 2.271515501829753
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 3.9595634873375274
+                }
+              ]
+            }
+          ],
+          "wholeVideo": {
+            "frames": 177,
+            "predictedPaws": 348,
+            "pawOpportunities": 354,
+            "coverage": 0.9830508474576272
+          }
+        },
+        "trackerRecovery": {
+          "visibleHumanPawLabels": 79,
+          "visibleLabelsReceivingPredictions": 62,
+          "visibleLabelsMissingPredictions": 17,
+          "predictionAvailability": 0.7848101265822784,
+          "localization": {
+            "10": {
+              "thresholdPx": 10,
+              "hits": 57,
+              "misses": 22,
+              "denominator": 79,
+              "recall": 0.7215189873417721
+            },
+            "20": {
+              "thresholdPx": 20,
+              "hits": 62,
+              "misses": 17,
+              "denominator": 79,
+              "recall": 0.7848101265822784
+            }
+          },
+          "frames": [
+            {
+              "frameIndex": 45,
+              "predictedPaws": 1,
+              "visibleLabels": []
+            },
+            {
+              "frameIndex": 46,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 7.504367527625867
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 4.297983862276724
+                }
+              ]
+            },
+            {
+              "frameIndex": 47,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 1.4374856218417755
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 6.306684274684868
+                }
+              ]
+            },
+            {
+              "frameIndex": 48,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 1.519744905600878
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 5.7022134283458135
+                }
+              ]
+            },
+            {
+              "frameIndex": 49,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 6.934830212201283
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 2.2815997955369935
+                }
+              ]
+            },
+            {
+              "frameIndex": 50,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 2.2593368825897393
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 7.780609517158091
+                }
+              ]
+            },
+            {
+              "frameIndex": 51,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 6.033814854867247
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 7.814703961626313
+                }
+              ]
+            },
+            {
+              "frameIndex": 52,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 5.942156626202789
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 9.065025270439971
+                }
+              ]
+            },
+            {
+              "frameIndex": 53,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 3.140572391705079
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 6.19933421789634
+                }
+              ]
+            },
+            {
+              "frameIndex": 54,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 4.91101000101986
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 1.4345390336987878
+                }
+              ]
+            },
+            {
+              "frameIndex": 55,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 3.4490578813542783
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 5.6728869089910905
+                }
+              ]
+            },
+            {
+              "frameIndex": 56,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 5.422736900937339
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 3.229905284308118
+                }
+              ]
+            },
+            {
+              "frameIndex": 57,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 0.8502086545052854
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 5.192273959773501
+                }
+              ]
+            },
+            {
+              "frameIndex": 58,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 7.9772318116891965
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 7.641021337142737
+                }
+              ]
+            },
+            {
+              "frameIndex": 59,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 10.53743022141399
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 9.218325333463294
+                }
+              ]
+            },
+            {
+              "frameIndex": 60,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 11.67055608018522
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 15.788526124039404
+                }
+              ]
+            },
+            {
+              "frameIndex": 61,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 62,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 8.96630265325924
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 1.4655995927579797
+                }
+              ]
+            },
+            {
+              "frameIndex": 63,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 4.065718315547568
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 4.664195305259398
+                }
+              ]
+            },
+            {
+              "frameIndex": 64,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 2.060260686488523
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 5.875155217194272
+                }
+              ]
+            },
+            {
+              "frameIndex": 65,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 4.3818022004892425
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 1.0224945635595417
+                }
+              ]
+            },
+            {
+              "frameIndex": 66,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 0.15997501195941236
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 4.203759892462025
+                }
+              ]
+            },
+            {
+              "frameIndex": 67,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 1.8220737112974132
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 6.812754145333501
+                }
+              ]
+            },
+            {
+              "frameIndex": 68,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 4.335932390929314
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 11.899742702094523
+                }
+              ]
+            },
+            {
+              "frameIndex": 69,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 70,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 2.982301138542821
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 4.53721561059674
+                }
+              ]
+            },
+            {
+              "frameIndex": 71,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 7.238884790197083
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 8.32115202340016
+                }
+              ]
+            },
+            {
+              "frameIndex": 72,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 8.581695650791795
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 6.294902735667529
+                }
+              ]
+            },
+            {
+              "frameIndex": 73,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 6.216281965156524
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 1.4515654086040066
+                }
+              ]
+            },
+            {
+              "frameIndex": 74,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 1.1010861938457637
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 5.761286408814493
+                }
+              ]
+            },
+            {
+              "frameIndex": 75,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 5.137501711584313
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 4.2566690855893965
+                }
+              ]
+            },
+            {
+              "frameIndex": 76,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 6.665872533169597
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 11.127686183361284
+                }
+              ]
+            },
+            {
+              "frameIndex": 77,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 78,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 79,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 80,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 81,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "B",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 82,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 83,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "B",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 84,
+              "predictedPaws": 0,
+              "visibleLabels": []
+            },
+            {
+              "frameIndex": 85,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 86,
+              "predictedPaws": 0,
+              "visibleLabels": []
+            },
+            {
+              "frameIndex": 87,
+              "predictedPaws": 0,
+              "visibleLabels": []
+            },
+            {
+              "frameIndex": 88,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 89,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 5.908836681026741
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 5.126560485310991
+                }
+              ]
+            },
+            {
+              "frameIndex": 90,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 2.271515501829753
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 3.9595634873375274
+                }
+              ]
+            }
+          ],
+          "wholeVideo": {
+            "frames": 177,
+            "predictedPaws": 287,
+            "pawOpportunities": 354,
+            "coverage": 0.8107344632768362
+          }
+        }
+      }
+    },
+    {
+      "group": "dog02",
+      "split": "exploratory_evaluation",
+      "exploratory": true,
+      "annotatedFrames": 29,
+      "duplicateCompletedLabelsRemoved": 6,
+      "modelExposedAnnotatedFrames": 0,
+      "acceptedRecoverySegments": 1,
+      "methods": {
+        "rawRTMPose": {
+          "visibleHumanPawLabels": 55,
+          "visibleLabelsReceivingPredictions": 55,
+          "visibleLabelsMissingPredictions": 0,
+          "predictionAvailability": 1.0,
+          "localization": {
+            "10": {
+              "thresholdPx": 10,
+              "hits": 29,
+              "misses": 26,
+              "denominator": 55,
+              "recall": 0.5272727272727272
+            },
+            "20": {
+              "thresholdPx": 20,
+              "hits": 51,
+              "misses": 4,
+              "denominator": 55,
+              "recall": 0.9272727272727272
+            }
+          },
+          "frames": [
+            {
+              "frameIndex": 0,
+              "predictedPaws": 2,
+              "visibleLabels": []
+            },
+            {
+              "frameIndex": 2,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 7.802682451567612
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 13.247222150157874
+                }
+              ]
+            },
+            {
+              "frameIndex": 4,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 12.781378430308441
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 14.565676932817587
+                }
+              ]
+            },
+            {
+              "frameIndex": 7,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 55.09303027049622
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 12.010003149882692
+                }
+              ]
+            },
+            {
+              "frameIndex": 8,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 10.060139877151894
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 13.121216219892858
+                }
+              ]
+            },
+            {
+              "frameIndex": 9,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 87.39920807728646
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 10.203701022868856
+                }
+              ]
+            },
+            {
+              "frameIndex": 10,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 9.624668586878665
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 4.436169784806101
+                }
+              ]
+            },
+            {
+              "frameIndex": 11,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 10.032060771150563
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 9.324709439360044
+                }
+              ]
+            },
+            {
+              "frameIndex": 12,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 4.4874769603820495
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 12.37274706739391
+                }
+              ]
+            },
+            {
+              "frameIndex": 13,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 4.457370355322372
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 9.991219933186379
+                }
+              ]
+            },
+            {
+              "frameIndex": 14,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 7.692764553525504
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 11.581521298274279
+                }
+              ]
+            },
+            {
+              "frameIndex": 15,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 3.7537739735695124
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 12.986434900311682
+                }
+              ]
+            },
+            {
+              "frameIndex": 16,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 3.6415107064361445
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 13.639420948610903
+                }
+              ]
+            },
+            {
+              "frameIndex": 17,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 2.578864164519201
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 11.755119154263307
+                }
+              ]
+            },
+            {
+              "frameIndex": 18,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 5.197054248139182
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 16.367368969838434
+                }
+              ]
+            },
+            {
+              "frameIndex": 19,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 11.845287962214917
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 14.062261158083716
+                }
+              ]
+            },
+            {
+              "frameIndex": 20,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 8.653760377359477
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 9.665312133588815
+                }
+              ]
+            },
+            {
+              "frameIndex": 30,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 6.166648292555129
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 7.214748763409671
+                }
+              ]
+            },
+            {
+              "frameIndex": 31,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 11.670457226356165
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 2.3389723732822794
+                }
+              ]
+            },
+            {
+              "frameIndex": 32,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 6.021473374203839
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 14.936452472480765
+                }
+              ]
+            },
+            {
+              "frameIndex": 33,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 21.1943571847412
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 3.1472479001615983
+                }
+              ]
+            },
+            {
+              "frameIndex": 34,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 6.837260706765968
+                }
+              ]
+            },
+            {
+              "frameIndex": 35,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 20.348227183249794
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 8.663854916080592
+                }
+              ]
+            },
+            {
+              "frameIndex": 39,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 7.673141570621518
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 13.853042258788266
+                }
+              ]
+            },
+            {
+              "frameIndex": 42,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 10.827873870948977
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 3.8520232406832786
+                }
+              ]
+            },
+            {
+              "frameIndex": 45,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 5.777774143048648
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 1.8870291367861705
+                }
+              ]
+            },
+            {
+              "frameIndex": 46,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 9.20347837952967
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 9.944258494556083
+                }
+              ]
+            },
+            {
+              "frameIndex": 47,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 14.373696221550523
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 6.285456769124575
+                }
+              ]
+            },
+            {
+              "frameIndex": 55,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 1,
+                  "distancePx": 10.65155724795245
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 6.876532309013867
+                }
+              ]
+            }
+          ],
+          "wholeVideo": {
+            "frames": 60,
+            "predictedPaws": 120,
+            "pawOpportunities": 120,
+            "coverage": 1.0
+          }
+        },
+        "trackerRecovery": {
+          "visibleHumanPawLabels": 55,
+          "visibleLabelsReceivingPredictions": 34,
+          "visibleLabelsMissingPredictions": 21,
+          "predictionAvailability": 0.6181818181818182,
+          "localization": {
+            "10": {
+              "thresholdPx": 10,
+              "hits": 19,
+              "misses": 36,
+              "denominator": 55,
+              "recall": 0.34545454545454546
+            },
+            "20": {
+              "thresholdPx": 20,
+              "hits": 33,
+              "misses": 22,
+              "denominator": 55,
+              "recall": 0.6
+            }
+          },
+          "frames": [
+            {
+              "frameIndex": 0,
+              "predictedPaws": 0,
+              "visibleLabels": []
+            },
+            {
+              "frameIndex": 2,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 4,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 7,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 55.09303027049622
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 12.010003149882692
+                }
+              ]
+            },
+            {
+              "frameIndex": 8,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 10.060139877151894
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 13.121216219892858
+                }
+              ]
+            },
+            {
+              "frameIndex": 9,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 10,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 9.624668586878665
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 4.436169784806101
+                }
+              ]
+            },
+            {
+              "frameIndex": 11,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 10.032060771150563
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 9.324709439360044
+                }
+              ]
+            },
+            {
+              "frameIndex": 12,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 4.4874769603820495
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 12.37274706739391
+                }
+              ]
+            },
+            {
+              "frameIndex": 13,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 4.457370355322372
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 9.991219933186379
+                }
+              ]
+            },
+            {
+              "frameIndex": 14,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 7.692764553525504
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 11.581521298274279
+                }
+              ]
+            },
+            {
+              "frameIndex": 15,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 3.7537739735695124
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 12.986434900311682
+                }
+              ]
+            },
+            {
+              "frameIndex": 16,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 3.6415107064361445
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 13.639420948610903
+                }
+              ]
+            },
+            {
+              "frameIndex": 17,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 2.578864164519201
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 11.755119154263307
+                }
+              ]
+            },
+            {
+              "frameIndex": 18,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 5.197054248139182
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 16.367368969838434
+                }
+              ]
+            },
+            {
+              "frameIndex": 19,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 11.845287962214917
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 14.062261158083716
+                }
+              ]
+            },
+            {
+              "frameIndex": 20,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 8.653760377359477
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 9.665312133588815
+                }
+              ]
+            },
+            {
+              "frameIndex": 30,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 6.166648292555129
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 7.214748763409671
+                }
+              ]
+            },
+            {
+              "frameIndex": 31,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 11.670457226356165
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 2.3389723732822794
+                }
+              ]
+            },
+            {
+              "frameIndex": 32,
+              "predictedPaws": 2,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": 0,
+                  "distancePx": 6.021473374203839
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 1,
+                  "distancePx": 14.936452472480765
+                }
+              ]
+            },
+            {
+              "frameIndex": 33,
+              "predictedPaws": 1,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 3.1472479001615983
+                }
+              ]
+            },
+            {
+              "frameIndex": 34,
+              "predictedPaws": 1,
+              "visibleLabels": [
+                {
+                  "paw": "B",
+                  "predictionIndex": 0,
+                  "distancePx": 6.837260706765968
+                }
+              ]
+            },
+            {
+              "frameIndex": 35,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 39,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 42,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 45,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 46,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 47,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            },
+            {
+              "frameIndex": 55,
+              "predictedPaws": 0,
+              "visibleLabels": [
+                {
+                  "paw": "A",
+                  "predictionIndex": null,
+                  "distancePx": null
+                },
+                {
+                  "paw": "B",
+                  "predictionIndex": null,
+                  "distancePx": null
+                }
+              ]
+            }
+          ],
+          "wholeVideo": {
+            "frames": 60,
+            "predictedPaws": 56,
+            "pawOpportunities": 120,
+            "coverage": 0.4666666666666667
+          }
+        }
+      }
+    }
+  ]
+}

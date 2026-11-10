@@ -1,38 +1,72 @@
-Implemented the annotation builder, tests, and usage/report:
+PETLENS — MILESTONE 3
+TASK: Convert written gait observations into structured annotations
 
-- training/prepare_paw_annotations.py
-- tests/test_paw_annotation_data.py
-- training/PAW_ANNOTATIONS.md
+STATUS: DRAFT ONLY — awaiting user confirmation before finalization.
 
-Generated data and provenance are recorded in:
-reports/paw-annotation-data-v1/manifest.json
+Prepared a separate draft using the user's prompt and saved review ZIP, not
+live browser storage. The original ZIP and A/B descriptions remain unchanged.
 
-DATASET INVENTORY
+Proposed records
 
-Source                              Frames with visible labels  Unique human points  Verified anatomical targets
-Dalmatian — training                42                          79                   0
-dog02 — exploratory evaluation       28                          55                   0
+| Paw | Source frame / time | Proposed record | Evidence |
+| --- | --- | --- | --- |
+| A/B | 0 / 0 s | Observation started | No event or support state inferred |
+| A | 19 / 1.583333 s | Initial contact: first definitely contacting | Human-reported touchdown |
+| A | 55 / 4.583333 s | Possible lift-off, retained as uncertainty | No definite support state assigned |
+| A | 56 / 4.666667 s | Lift-off: first definitely airborne observation | Human-confirmed observation; actual transition may have been at 55 |
+| B | 23 / 1.916667 s | Lift-off: first definitely airborne observation | Human-reported paw leaving ground |
+| B | 52–59 / 4.333333–4.916667 s | Reported touchdown window; 52 is possible | Exact definite-contact frame remains unknown |
+| A/B | 0–59 | Sequence-level identity-continuity statements | No anatomical mapping or bulk frame labels |
 
-The pipeline preserves human coordinates independently of predictions, removes six duplicate labels, validates source hashes and video timing, and preserves nonvisible/ambiguous states. Anatomical COCO targets require explicit human review; missing channels remain unlabeled.
+These are human reports, without automated confirmation.
 
-VALIDATION
+Complete strides established: ZERO.
 
-16 automated tests passed, and the builder completed on both existing videos. No training, inference, downloads, or production-app changes occurred.
+Missing event boundaries
 
-NEXT ANNOTATION PASS
+Paw A:
+- Last definitely airborne before contact at 19.
+- Last definitely contacting before lift-off.
+- Both boundaries of the next contact after lift-off.
 
-Verify anatomical identity and landmark consistency for the 79 Dalmatian points intended for training; verify the 55 dog02 points before anatomical evaluation. Unresolvable points stay unlabeled.
+Paw B:
+- Both boundaries of the initial contact before lift-off at 23.
+- Last definitely contacting before lift-off.
+- Both definite boundaries of the subsequent contact. The 52–59 timing window
+  does not supply those states.
 
-FIRST EXPERIMENT
+Conflicts with the saved review
 
-A small masked hind-paw localization fine-tuning pilot using the existing pretrained RTMPose-m and reviewed Dalmatian labels. The matching trainable checkpoint and RTMPose training integration are still required. Keep dog02 outside training and model selection. This would establish feasibility, not generalization or stride accuracy.
+The separate draft proposes these corrections:
+- no_prior_exposure -> prior_exposure, following the user's explicit statement.
+- Frame-0 airborne states -> unreviewed.
+- B23 contacting -> airborne.
+- B52 contacting -> uncertain.
 
-GITHUB UPDATE
+Every proposed change is recorded with its previous value. Nothing has been
+merged or finalized. The original saved review remains intact:
+reports/gait-event-review-v1/reviews/review-d684d28c840a475ba7833f1c045d2504.zip
 
-Committed and pushed all non-ignored repository changes to:
-https://github.com/AP-ui-GN/Petlens
-Branch: main
+Draft files
 
-Includes the annotation pipeline, tests, dataset manifests, human annotations, earlier screening reports, and review artifacts. Existing Git ignore rules keep local videos, caches, and generated frame images out of the commit.
+Compatible review JSON:
+reports/gait-event-review-v1/drafts/dog02-reviewer-1-written-observations-v1.review.json
 
-Validation: all 16 annotation-pipeline tests passed. No training or pose inference was run.
+Change and uncertainty records:
+reports/gait-event-review-v1/drafts/dog02-reviewer-1-written-observations-v1.proposal.json
+
+Readable proposal:
+reports/gait-event-review-v1/drafts/dog02-reviewer-1-written-observations-v1.md
+
+Validation passed: compatible format, zero complete strides, non-independent
+declaration, preserved originals, and no bulk visibility/continuity filling.
+
+No pose inference, training, gait-algorithm changes, new viewer, commits, or
+pushes were performed.
+
+CONFIRMATION REQUIRED
+
+Do you approve this draft, including the proposed corrections, for finalization?
+
+This request to save the response in architecture.txt does not itself approve
+or finalize the annotations. They remain drafts awaiting explicit confirmation.

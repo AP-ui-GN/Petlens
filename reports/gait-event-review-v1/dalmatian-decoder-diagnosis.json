@@ -1,0 +1,198 @@
+{
+  "framesExamined": [
+    46,
+    60,
+    74
+  ],
+  "opencvVersion": "5.0.0",
+  "sourceSha256Matches": true,
+  "hashMethod": "SHA256 of contiguous uint8 HWC BGR bytes via image.tobytes(); PNG hash separately over encoded file bytes",
+  "decoderBuild": [
+    "FFMPEG:                      YES",
+    "avcodec:                   YES (62.28.101)",
+    "avformat:                  YES (62.12.101)",
+    "swscale:                   YES (9.5.101)"
+  ],
+  "frames": [
+    {
+      "frameIndex": 46,
+      "shape": [
+        1920,
+        1080,
+        3
+      ],
+      "dtype": "uint8",
+      "contiguous": true,
+      "currentPixelSha256": "64dd44b88c5c01c46125e61efaedb72657f777a1cc1c0ba987a9ef0f4258e9b5",
+      "expectedPixelSha256": "d427fa2b7e18b2cbb8f0be99a04523a93dcf4941d9230783a2c8e58615033cc4",
+      "currentPixelMatches": false,
+      "currentRgbOrderMatches": false,
+      "currentPngMatches": false,
+      "legacyPngPath": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/dalmatian/frames/046.png",
+      "legacyShape": [
+        1920,
+        1080,
+        3
+      ],
+      "legacyPixelMatches": true,
+      "legacyPngMatches": true,
+      "ffmpegPixelMatches": false,
+      "currentVsLegacy": {
+        "meanAbsoluteChannelDifference": 1.3908251350308642,
+        "maxAbsoluteChannelDifference": 8,
+        "p99AbsoluteChannelDifference": 5.0,
+        "changedPixelFraction": 0.937896412037037
+      },
+      "currentVsSystemFfmpeg": {
+        "meanAbsoluteChannelDifference": 0.0,
+        "maxAbsoluteChannelDifference": 0,
+        "p99AbsoluteChannelDifference": 0.0,
+        "changedPixelFraction": 0.0
+      },
+      "systemFfmpegVsLegacy": {
+        "meanAbsoluteChannelDifference": 1.3908251350308642,
+        "maxAbsoluteChannelDifference": 8,
+        "p99AbsoluteChannelDifference": 5.0,
+        "changedPixelFraction": 0.937896412037037
+      }
+    },
+    {
+      "frameIndex": 60,
+      "shape": [
+        1920,
+        1080,
+        3
+      ],
+      "dtype": "uint8",
+      "contiguous": true,
+      "currentPixelSha256": "e7fcb898eb83096608655f4fa742d070f881b52b396dad75f0aaa4800d35a19c",
+      "expectedPixelSha256": "15176eae25551e6936f45740372210d2b72f86e41fd5479644412067986683e1",
+      "currentPixelMatches": false,
+      "currentRgbOrderMatches": false,
+      "currentPngMatches": false,
+      "legacyPngPath": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/dalmatian/frames/060.png",
+      "legacyShape": [
+        1920,
+        1080,
+        3
+      ],
+      "legacyPixelMatches": true,
+      "legacyPngMatches": true,
+      "ffmpegPixelMatches": false,
+      "currentVsLegacy": {
+        "meanAbsoluteChannelDifference": 1.4058619470164608,
+        "maxAbsoluteChannelDifference": 11,
+        "p99AbsoluteChannelDifference": 5.0,
+        "changedPixelFraction": 0.9364501350308642
+      },
+      "currentVsSystemFfmpeg": {
+        "meanAbsoluteChannelDifference": 0.0,
+        "maxAbsoluteChannelDifference": 0,
+        "p99AbsoluteChannelDifference": 0.0,
+        "changedPixelFraction": 0.0
+      },
+      "systemFfmpegVsLegacy": {
+        "meanAbsoluteChannelDifference": 1.4058619470164608,
+        "maxAbsoluteChannelDifference": 11,
+        "p99AbsoluteChannelDifference": 5.0,
+        "changedPixelFraction": 0.9364501350308642
+      }
+    },
+    {
+      "frameIndex": 74,
+      "shape": [
+        1920,
+        1080,
+        3
+      ],
+      "dtype": "uint8",
+      "contiguous": true,
+      "currentPixelSha256": "bf900bcdd432a8bb5308e1d0dc13ca089bfab765d48156ae9d74eaed876a2e53",
+      "expectedPixelSha256": "18357968c9a63167f0ac2bdc1aac3232ba3fd492799465d8812e9b298bd09614",
+      "currentPixelMatches": false,
+      "currentRgbOrderMatches": false,
+      "currentPngMatches": false,
+      "legacyPngPath": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/dalmatian/frames/074.png",
+      "legacyShape": [
+        1920,
+        1080,
+        3
+      ],
+      "legacyPixelMatches": true,
+      "legacyPngMatches": true,
+      "ffmpegPixelMatches": false,
+      "currentVsLegacy": {
+        "meanAbsoluteChannelDifference": 1.2305026684670781,
+        "maxAbsoluteChannelDifference": 10,
+        "p99AbsoluteChannelDifference": 5.0,
+        "changedPixelFraction": 0.8874170524691358
+      },
+      "currentVsSystemFfmpeg": {
+        "meanAbsoluteChannelDifference": 0.0,
+        "maxAbsoluteChannelDifference": 0,
+        "p99AbsoluteChannelDifference": 0.0,
+        "changedPixelFraction": 0.0
+      },
+      "systemFfmpegVsLegacy": {
+        "meanAbsoluteChannelDifference": 1.2305026684670781,
+        "maxAbsoluteChannelDifference": 10,
+        "p99AbsoluteChannelDifference": 5.0,
+        "changedPixelFraction": 0.8874170524691358
+      }
+    }
+  ],
+  "compatibleEnvironment": {
+    "environment": "tmp/rtmpose-test/multi-video-evaluation/.venv/bin/python",
+    "opencvVersion": "4.10.0",
+    "decoderBuild": [
+      "FFMPEG:                      YES",
+      "avcodec:                   YES (59.37.100)",
+      "avformat:                  YES (59.27.100)",
+      "swscale:                   YES (6.7.100)"
+    ],
+    "frames": [
+      {
+        "frameIndex": 46,
+        "shape": [
+          1920,
+          1080,
+          3
+        ],
+        "pixelMatches": true,
+        "pngMatches": true,
+        "meanAbsoluteChannelDifference": 0.0,
+        "maxAbsoluteChannelDifference": 0
+      },
+      {
+        "frameIndex": 60,
+        "shape": [
+          1920,
+          1080,
+          3
+        ],
+        "pixelMatches": true,
+        "pngMatches": true,
+        "meanAbsoluteChannelDifference": 0.0,
+        "maxAbsoluteChannelDifference": 0
+      },
+      {
+        "frameIndex": 74,
+        "shape": [
+          1920,
+          1080,
+          3
+        ],
+        "pixelMatches": true,
+        "pngMatches": true,
+        "meanAbsoluteChannelDifference": 0.0,
+        "maxAbsoluteChannelDifference": 0
+      }
+    ]
+  },
+  "manifestSha256": "ad0e2b3e9029fc67d397b8622c078ba61022fdb9bf45783902de48ee2eb442e8",
+  "conclusion": "The same three original source frames match saved pixel and PNG hashes exactly in the existing OpenCV 4.10 environment. Default OpenCV 5 and system FFmpeg agree with each other but differ slightly from those reference pixels. Evidence supports decoder/color-conversion variation, not substantial source-frame misalignment; the specific internal conversion change was not isolated.",
+  "fullDalmatianRevalidationPerformed": false,
+  "dalmatianStatus": "Blocked in the default environment and unavailable in the Dog02-only server. Three matching samples in the compatible environment do not authorize the full dataset.",
+  "noDependenciesInstalled": true,
+  "manifestVideosAndAnnotationsUnchanged": true
+}

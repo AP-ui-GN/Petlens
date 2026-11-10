@@ -28,8 +28,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install OpenCV, NumPy, and SciPy
-        run: python -m pip install -r requirements-opencv.txt
+      - name: Install OpenCV and offline review test dependencies
+        run: python -m pip install -r requirements-gait-review.txt
 
       - name: Run Python unit tests
         run: python -m unittest discover -s tests -t .
@@ -48,8 +48,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install OpenCV, NumPy, and SciPy
-        run: python -m pip install -r requirements-opencv.txt
+      - name: Install OpenCV and offline review test dependencies
+        run: python -m pip install -r requirements-gait-review.txt
 
       - name: Import the benchmark utility on Windows
         run: python -c "import scripts.time_clip; print('time_clip import passed on Windows')"

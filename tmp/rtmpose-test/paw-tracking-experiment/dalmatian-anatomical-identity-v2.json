@@ -1,0 +1,1155 @@
+{
+  "evaluation": "Provisional anatomical identity baseline conditional on reviewer-provided mapping",
+  "group": "dalmatian",
+  "split": "train",
+  "anatomyIndependentlyVerified": false,
+  "excludedSequences": {
+    "dog02": "Anatomical identities not verified; no identity scoring"
+  },
+  "humanMappingEvidence": {
+    "schemaVersion": 1,
+    "source": "reviewer-provided",
+    "confirmed": true,
+    "independentlyVerified": false,
+    "referenceSha256": "ae9cd7796fa8295f06700405d1c32172dc8ec0ef18c2e50edb1f1b8781b439b6",
+    "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+    "reviewer": "requesting user",
+    "reviewerIdentityKind": "conversation participant; personal name not supplied",
+    "mapping": {
+      "A": "right_back_paw",
+      "B": "left_back_paw"
+    },
+    "frameRange": [
+      46,
+      90
+    ],
+    "expectedAnnotationCount": 79,
+    "expectedFrameCount": 42,
+    "coordinateReviewStatement": "The Dalmatian annotations have already been reviewed.",
+    "mappingStatement": "Confirmed mapping:\n- Physical A = Right hind paw\n- Physical B = Left hind paw\n- Frames 46\u201390\n- 79 eligible annotations across 42 frames",
+    "authorizationStatement": "Use my previously supplied anatomical mapping and continuity confirmation as reviewer-provided evidence.",
+    "exportAuthorizationStatement": "Prepare the validated anatomical annotation export directly from the existing data, without requiring me to repeat the browser review.",
+    "continuityEvidence": {
+      "schemaVersion": 1,
+      "referenceSha256": "ae9cd7796fa8295f06700405d1c32172dc8ec0ef18c2e50edb1f1b8781b439b6",
+      "datasetId": "petlens-dalmatian-day2-3c641f8418183512",
+      "frameRange": [
+        75,
+        90
+      ],
+      "physicalPaws": [
+        "A",
+        "B"
+      ],
+      "source": "reviewer-provided",
+      "reviewer": "requesting user",
+      "recordedOn": "2026-11-04",
+      "independentlyVerified": false,
+      "statement": "I manually reviewed Dalmatian frames 75\u201390 and confirmed that physical Paw A and Paw B maintain consistent identities throughout.",
+      "mapping": {
+        "A": "right_back_paw",
+        "B": "left_back_paw"
+      }
+    }
+  },
+  "alignmentVerification": {
+    "decodedSourceFrames": 177,
+    "exactPixelVerifiedLabelFrames": 46,
+    "width": 1080,
+    "height": 1920,
+    "opencvVersion": "5.0.0",
+    "rescalingCroppingOrMirroring": false
+  },
+  "policies": {
+    "identity": "Raw left_back_paw only to human left hind; raw right_back_paw only to human right hind; no remapping",
+    "thresholdsPx": [
+      10,
+      20
+    ],
+    "thresholdComparison": "distance <= threshold",
+    "denominator": "Every visible human target; absent same-name prediction counts as miss",
+    "availability": "Successful detection and saved finite same-name coordinate, regardless of rawScore, distance or image bounds",
+    "swaps": "Both human paws visible and both channels available; swapped total Euclidean distance strictly below fixed total. Ties separate. Also count both cross distances <= each threshold. Diagnostic only; never alters scoring or targets.",
+    "tuning": "No mapping/threshold optimization; human mapping and existing 10px/20px thresholds fixed before scoring"
+  },
+  "rawRTMPose": {
+    "visibleHumanPawLabels": 79,
+    "visibleLabelsReceivingPredictions": 76,
+    "visibleLabelsMissingPredictions": 3,
+    "predictionAvailability": 0.9620253164556962,
+    "correctIdentityLocalization": {
+      "10": {
+        "thresholdPx": 10,
+        "hits": 62,
+        "misses": 17,
+        "denominator": 79,
+        "recall": 0.7848101265822784
+      },
+      "20": {
+        "thresholdPx": 20,
+        "hits": 66,
+        "misses": 13,
+        "denominator": 79,
+        "recall": 0.8354430379746836
+      }
+    },
+    "identitySwaps": {
+      "eligibleBothVisibleBothPredictedFrames": 36,
+      "swappedLowerTotalDistanceFrames": 4,
+      "equalCostFrames": 0,
+      "swappedFrameFraction": 0.1111111111111111,
+      "bothCrossDistancesWithinThresholdFrames": {
+        "10": 1,
+        "20": 2
+      }
+    },
+    "frames": [
+      {
+        "frameIndex": 46,
+        "sameNameDistancePx": {
+          "left_back_paw": 4.297983862276724,
+          "right_back_paw": 7.504367527625867
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 47,
+        "sameNameDistancePx": {
+          "left_back_paw": 6.306684274684868,
+          "right_back_paw": 1.4374856218417755
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 48,
+        "sameNameDistancePx": {
+          "left_back_paw": 5.7022134283458135,
+          "right_back_paw": 1.519744905600878
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 49,
+        "sameNameDistancePx": {
+          "left_back_paw": 2.2815997955369935,
+          "right_back_paw": 6.934830212201283
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 50,
+        "sameNameDistancePx": {
+          "left_back_paw": 7.780609517158091,
+          "right_back_paw": 2.2593368825897393
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 51,
+        "sameNameDistancePx": {
+          "left_back_paw": 7.814703961626313,
+          "right_back_paw": 6.033814854867247
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 52,
+        "sameNameDistancePx": {
+          "left_back_paw": 9.065025270439971,
+          "right_back_paw": 5.942156626202789
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 53,
+        "sameNameDistancePx": {
+          "left_back_paw": 6.19933421789634,
+          "right_back_paw": 3.140572391705079
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 54,
+        "sameNameDistancePx": {
+          "left_back_paw": 1.4345390336987878,
+          "right_back_paw": 4.91101000101986
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 55,
+        "sameNameDistancePx": {
+          "left_back_paw": 5.6728869089910905,
+          "right_back_paw": 3.4490578813542783
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 56,
+        "sameNameDistancePx": {
+          "left_back_paw": 3.229905284308118,
+          "right_back_paw": 5.422736900937339
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 57,
+        "sameNameDistancePx": {
+          "left_back_paw": 5.192273959773501,
+          "right_back_paw": 0.8502086545052854
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 58,
+        "sameNameDistancePx": {
+          "left_back_paw": 7.641021337142737,
+          "right_back_paw": 7.9772318116891965
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 59,
+        "sameNameDistancePx": {
+          "left_back_paw": 9.218325333463294,
+          "right_back_paw": 10.53743022141399
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 60,
+        "sameNameDistancePx": {
+          "left_back_paw": 15.788526124039404,
+          "right_back_paw": 11.67055608018522
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 61,
+        "sameNameDistancePx": {
+          "right_back_paw": 5.162024785947661
+        },
+        "spatialSwapDiagnostic": null
+      },
+      {
+        "frameIndex": 62,
+        "sameNameDistancePx": {
+          "left_back_paw": 1.4655995927579797,
+          "right_back_paw": 8.96630265325924
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 63,
+        "sameNameDistancePx": {
+          "left_back_paw": 4.664195305259398,
+          "right_back_paw": 4.065718315547568
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 64,
+        "sameNameDistancePx": {
+          "left_back_paw": 5.875155217194272,
+          "right_back_paw": 2.060260686488523
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 65,
+        "sameNameDistancePx": {
+          "left_back_paw": 1.0224945635595417,
+          "right_back_paw": 4.3818022004892425
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 66,
+        "sameNameDistancePx": {
+          "left_back_paw": 4.203759892462025,
+          "right_back_paw": 0.15997501195941236
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 67,
+        "sameNameDistancePx": {
+          "left_back_paw": 6.812754145333501,
+          "right_back_paw": 1.8220737112974132
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 68,
+        "sameNameDistancePx": {
+          "left_back_paw": 11.899742702094523,
+          "right_back_paw": 4.335932390929314
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 69,
+        "sameNameDistancePx": {
+          "left_back_paw": 5.659135649630815,
+          "right_back_paw": 3.710415083356424
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 70,
+        "sameNameDistancePx": {
+          "left_back_paw": 4.53721561059674,
+          "right_back_paw": 2.982301138542821
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 71,
+        "sameNameDistancePx": {
+          "left_back_paw": 8.32115202340016,
+          "right_back_paw": 7.238884790197083
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 72,
+        "sameNameDistancePx": {
+          "left_back_paw": 6.294902735667529,
+          "right_back_paw": 8.581695650791795
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 73,
+        "sameNameDistancePx": {
+          "left_back_paw": 1.4515654086040066,
+          "right_back_paw": 6.216281965156524
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 74,
+        "sameNameDistancePx": {
+          "left_back_paw": 5.761286408814493,
+          "right_back_paw": 1.1010861938457637
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 75,
+        "sameNameDistancePx": {
+          "left_back_paw": 4.2566690855893965,
+          "right_back_paw": 5.137501711584313
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 76,
+        "sameNameDistancePx": {
+          "left_back_paw": 42.88644448596727,
+          "right_back_paw": 38.4239863570985
+        },
+        "spatialSwapDiagnostic": "swapped"
+      },
+      {
+        "frameIndex": 77,
+        "sameNameDistancePx": {
+          "left_back_paw": 6.654588008148186,
+          "right_back_paw": 3.6196239283729907
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 78,
+        "sameNameDistancePx": {
+          "left_back_paw": null,
+          "right_back_paw": null
+        },
+        "spatialSwapDiagnostic": null
+      },
+      {
+        "frameIndex": 79,
+        "sameNameDistancePx": {
+          "left_back_paw": 7.999720673525711,
+          "right_back_paw": 3.709397512976703
+        },
+        "spatialSwapDiagnostic": "fixed"
+      },
+      {
+        "frameIndex": 80,
+        "sameNameDistancePx": {
+          "left_back_paw": 151.6309711452125,
+          "right_back_paw": 7.687415314636046
+        },
+        "spatialSwapDiagnostic": "swapped"
+      },
+      {
+        "frameIndex": 81,
+        "sameNameDistancePx": {
+          "left_back_paw": 151.65965965315937
+        },
+        "spatialSwapDiagnostic": null
+      },
+      {
+        "frameIndex": 82,
+        "sameNameDistancePx": {
+          "left_back_paw": 120.447877223319,
+          "right_back_paw": 81.11750053126832
+        },
+        "spatialSwapDiagnostic": "swapped"
+      },
+      {
+        "frameIndex": 83,
+        "sameNameDistancePx": {
+          "left_back_paw": 323.8245377233078
+        },
+        "spatialSwapDiagnostic": null
+      },
+      {
+        "frameIndex": 85,
+        "sameNameDistancePx": {
+          "right_back_paw": null
+        },
+        "spatialSwapDiagnostic": null
+      },
+      {
+        "frameIndex": 88,
+        "sameNameDistancePx": {
+          "right_back_paw": 139.08078217917168
+        },
+        "spatialSwapDiagnostic": null
+      },
+      {
+        "frameIndex": 89,
+        "sameNameDistancePx": {
+          "left_back_paw": 113.72943186549678,
+          "right_back_paw": 117.30287174996849
+        },
+        "spatialSwapDiagnostic": "swapped"
+      },
+      {
+        "frameIndex": 90,
+        "sameNameDistancePx": {
+          "left_back_paw": 3.9595634873375274,
+          "right_back_paw": 2.271515501829753
+        },
+        "spatialSwapDiagnostic": "fixed"
+      }
+    ]
+  },
+  "identityAgnosticOptimisticUpperBound": {
+    "visibleHumanPawLabels": 79,
+    "visibleLabelsReceivingPredictions": 76,
+    "visibleLabelsMissingPredictions": 3,
+    "predictionAvailability": 0.9620253164556962,
+    "localization": {
+      "10": {
+        "thresholdPx": 10,
+        "hits": 65,
+        "misses": 14,
+        "denominator": 79,
+        "recall": 0.8227848101265823
+      },
+      "20": {
+        "thresholdPx": 20,
+        "hits": 71,
+        "misses": 8,
+        "denominator": 79,
+        "recall": 0.8987341772151899
+      }
+    },
+    "frames": [
+      {
+        "frameIndex": 45,
+        "predictedPaws": 2,
+        "visibleLabels": []
+      },
+      {
+        "frameIndex": 46,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 7.504367527625867
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 4.297983862276724
+          }
+        ]
+      },
+      {
+        "frameIndex": 47,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 1.4374856218417755
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 6.306684274684868
+          }
+        ]
+      },
+      {
+        "frameIndex": 48,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 1.519744905600878
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 5.7022134283458135
+          }
+        ]
+      },
+      {
+        "frameIndex": 49,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 6.934830212201283
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 2.2815997955369935
+          }
+        ]
+      },
+      {
+        "frameIndex": 50,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 2.2593368825897393
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 7.780609517158091
+          }
+        ]
+      },
+      {
+        "frameIndex": 51,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 6.033814854867247
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 7.814703961626313
+          }
+        ]
+      },
+      {
+        "frameIndex": 52,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 5.942156626202789
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 9.065025270439971
+          }
+        ]
+      },
+      {
+        "frameIndex": 53,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 3.140572391705079
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 6.19933421789634
+          }
+        ]
+      },
+      {
+        "frameIndex": 54,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 4.91101000101986
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 1.4345390336987878
+          }
+        ]
+      },
+      {
+        "frameIndex": 55,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 3.4490578813542783
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 5.6728869089910905
+          }
+        ]
+      },
+      {
+        "frameIndex": 56,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 5.422736900937339
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 3.229905284308118
+          }
+        ]
+      },
+      {
+        "frameIndex": 57,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 0.8502086545052854
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 5.192273959773501
+          }
+        ]
+      },
+      {
+        "frameIndex": 58,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 7.9772318116891965
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 7.641021337142737
+          }
+        ]
+      },
+      {
+        "frameIndex": 59,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 10.53743022141399
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 9.218325333463294
+          }
+        ]
+      },
+      {
+        "frameIndex": 60,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 11.67055608018522
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 15.788526124039404
+          }
+        ]
+      },
+      {
+        "frameIndex": 61,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 5.162024785947661
+          }
+        ]
+      },
+      {
+        "frameIndex": 62,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 8.96630265325924
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 1.4655995927579797
+          }
+        ]
+      },
+      {
+        "frameIndex": 63,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 4.065718315547568
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 4.664195305259398
+          }
+        ]
+      },
+      {
+        "frameIndex": 64,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 2.060260686488523
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 5.875155217194272
+          }
+        ]
+      },
+      {
+        "frameIndex": 65,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 4.3818022004892425
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 1.0224945635595417
+          }
+        ]
+      },
+      {
+        "frameIndex": 66,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 0.15997501195941236
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 4.203759892462025
+          }
+        ]
+      },
+      {
+        "frameIndex": 67,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 1.8220737112974132
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 6.812754145333501
+          }
+        ]
+      },
+      {
+        "frameIndex": 68,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 4.335932390929314
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 11.899742702094523
+          }
+        ]
+      },
+      {
+        "frameIndex": 69,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 3.710415083356424
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 5.659135649630815
+          }
+        ]
+      },
+      {
+        "frameIndex": 70,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 2.982301138542821
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 4.53721561059674
+          }
+        ]
+      },
+      {
+        "frameIndex": 71,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 7.238884790197083
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 8.32115202340016
+          }
+        ]
+      },
+      {
+        "frameIndex": 72,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 8.581695650791795
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 6.294902735667529
+          }
+        ]
+      },
+      {
+        "frameIndex": 73,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 6.216281965156524
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 1.4515654086040066
+          }
+        ]
+      },
+      {
+        "frameIndex": 74,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 1.1010861938457637
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 5.761286408814493
+          }
+        ]
+      },
+      {
+        "frameIndex": 75,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 5.137501711584313
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 4.2566690855893965
+          }
+        ]
+      },
+      {
+        "frameIndex": 76,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 0,
+            "distancePx": 6.665872533169597
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 1,
+            "distancePx": 11.127686183361284
+          }
+        ]
+      },
+      {
+        "frameIndex": 77,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 3.6196239283729907
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 6.654588008148186
+          }
+        ]
+      },
+      {
+        "frameIndex": 78,
+        "predictedPaws": 0,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": null,
+            "distancePx": null
+          },
+          {
+            "paw": "B",
+            "predictionIndex": null,
+            "distancePx": null
+          }
+        ]
+      },
+      {
+        "frameIndex": 79,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 3.709397512976703
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 7.999720673525711
+          }
+        ]
+      },
+      {
+        "frameIndex": 80,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 0,
+            "distancePx": 10.848353644266938
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 1,
+            "distancePx": 145.59445252906426
+          }
+        ]
+      },
+      {
+        "frameIndex": 81,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "B",
+            "predictionIndex": 1,
+            "distancePx": 112.47564999462556
+          }
+        ]
+      },
+      {
+        "frameIndex": 82,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 0,
+            "distancePx": 85.62638212795474
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 1,
+            "distancePx": 91.26670301647374
+          }
+        ]
+      },
+      {
+        "frameIndex": 83,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "B",
+            "predictionIndex": 1,
+            "distancePx": 98.24813515465097
+          }
+        ]
+      },
+      {
+        "frameIndex": 84,
+        "predictedPaws": 2,
+        "visibleLabels": []
+      },
+      {
+        "frameIndex": 85,
+        "predictedPaws": 0,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": null,
+            "distancePx": null
+          }
+        ]
+      },
+      {
+        "frameIndex": 86,
+        "predictedPaws": 2,
+        "visibleLabels": []
+      },
+      {
+        "frameIndex": 87,
+        "predictedPaws": 2,
+        "visibleLabels": []
+      },
+      {
+        "frameIndex": 88,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 0,
+            "distancePx": 3.28607726483649
+          }
+        ]
+      },
+      {
+        "frameIndex": 89,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 0,
+            "distancePx": 5.908836681026741
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 1,
+            "distancePx": 5.126560485310991
+          }
+        ]
+      },
+      {
+        "frameIndex": 90,
+        "predictedPaws": 2,
+        "visibleLabels": [
+          {
+            "paw": "A",
+            "predictionIndex": 1,
+            "distancePx": 2.271515501829753
+          },
+          {
+            "paw": "B",
+            "predictionIndex": 0,
+            "distancePx": 3.9595634873375274
+          }
+        ]
+      }
+    ],
+    "wholeVideo": {
+      "frames": 177,
+      "predictedPaws": 348,
+      "pawOpportunities": 354,
+      "coverage": 0.9830508474576272
+    }
+  },
+  "limitations": [
+    "Anatomical sides and continuity are reviewer-provided provisional evidence, not independent verification; export verified flags are not additional evidence.",
+    "Spatial swap diagnostics are geometric candidates, not verified temporal identity switches; unavailable/single-visible/tied frames cannot establish a full swap.",
+    "Identity-agnostic localization is the existing optimistic upper bound with freely changing assignments; its minimum-distance assignment does not explicitly maximize threshold hits.",
+    "One existing training dog, 79 visible points in 42 frames; no independent generalization or validated gait cycles.",
+    "Model exposure flags are source declarations, not an independently audited review history; browser-only drafts were unavailable."
+  ],
+  "sourceHashes": {
+    "training/paw_annotation_sources.json": "76b59a4b007fb7223cb973e54ea49f6fddcabb7aa8cbbb9b2039f61a7b2f77a7",
+    "reports/paw-annotation-data-v1/manifest.json": "02a5ec9da7bd928060b9c596372baf8d27998525e7d92b7c5ef2a1f882c4e137",
+    "reports/paw-annotation-data-v2/manifest.json": "76d4ac8fcd677cf3393562c99c5dd1dd8cf1448dd6d14ab5d18a5f32f8408bec",
+    "training/paw_anatomical_mapping_confirmation.json": "3afe6cec08b16f3ff05e2e8af38565aa3967ace06a569f6f15101919b563ade4",
+    "training/paw_bulk_continuity_evidence.json": "80398d5c1355f37ce03911138dbcf11a50a6c0c7bab126176ee66d358fd09ed1",
+    "tmp/rtmpose-test/paw-tracking-experiment/multi-video-localization-v2.json": "cb69963441b8cf1021957919ec850761aa062750ad28d75b3a23ee26c7f27e58"
+  },
+  "evaluatorSha256": "e4fd03a715ed5d9e256ce487ce8ca0b56b727e8b00fc9a3d65c3fdfac313d07f",
+  "annotationUtilitiesSha256": "14df6b7ef0b929303c6e206e5ca12b6dca396fabde782387fb4ae4bebf96be68",
+  "localizationEvaluatorSha256": "d00f6e9bf0ec62e0fe35236b79524598ac39be9a59ca32d310cf7e5e29e390f8"
+}
