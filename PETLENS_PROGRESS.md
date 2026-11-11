@@ -1,3 +1,71 @@
+# PetLens checkpoint — November 11, 2026
+
+## Current status — Milestones 4 and 5
+
+This section supersedes the November 10 implementation plan below. The user
+explicitly authorized the candidate detector and one real-video evidence pilot.
+The annotation validation gate remains unmet; this work does not finalize any
+human annotations or establish biological accuracy.
+
+- Milestone 4: `src/petlens_gait/events.py` implements the shared conservative
+  CONTACT_SUPPORTED / SWING_SUPPORTED / UNKNOWN candidate state machine.
+  Its 108 synthetic tests pass; raw inputs and uncertainty are retained.
+- Milestone 5: `src/petlens_gait/ground.py` extracts masked, robust OpenCV ground
+  motion, checks an independent background region, and feeds the existing
+  detector. No new pose inference, training, identity tracker or UI was added.
+- One original Dog02 pilot processed all 60 strictly verified original frames:
+  59/59 ground registrations passed, with 197–322 ground inliers per pair.
+  Saved identity hypotheses permitted 52 physical-paw motion measurements.
+- All 120 hind-paw observations remain UNKNOWN. No justified paw-height reference
+  exists in this perspective view: usable clearance observations = 0, candidate
+  touchdown/lift-off events = 0, candidate complete sequences = 0.
+  Identity uncertainty and raw RTMPose scores outside the detector's [0,1]
+  contract cause additional abstentions. No scores were clipped or normalized.
+- Validation: 267 tests passed, zero final failures, plus five passing subtests
+  (41 extraction + 108 detector + 58 gait + 43 review + 17 legacy/formula tests).
+  The unchanged 224-test non-HTTP subset was checked again before checkpointing.
+- Original Dog02 human annotations remain non-independent, unfinalized and
+  unchanged. They are neither automatic inputs nor validation for these results.
+
+Read `docs/GROUND_EVIDENCE.md` for contracts, safeguards and reproduction.
+`architecture.txt` preserves the user's requested Milestone 5 response.
+The full traceable JSON and three-frame visual diagnostic are in
+`reports/dog02-ground-evidence-v1/`.
+
+## Resume and next step
+
+Branch: `feature/canine-gait-v2`; prior checkpoint: `cd38314`.
+The authorized save includes both milestones, tests, calibration, reports and
+four small, previously ignored pilot dependencies at their original paths:
+
+- `tmp/rtmpose-test/multi-video-evaluation/inputs/dog02-walking.mp4`
+- `tmp/rtmpose-test/multi-video-evaluation/inputs/dog02-conversion.json`
+- `tmp/rtmpose-test/multi-video-evaluation/runs/dog02-walking-20261102/manifest.json`
+- `tmp/rtmpose-test/paw-tracking-experiment/dog02-identity-association/associated-results.json`
+
+Their bytes remain unchanged and are hash-bound in the pilot diagnostic. Source
+video, saved predictions, original frame manifest and other required code were
+already tracked. The pilot therefore does not depend on uncommitted model weights
+or a rerun of inference or tracking.
+
+Use an existing compatible OpenCV/NumPy/SciPy/pytest environment (the pilot used
+`.venv-canine-v2/bin/python`, Python 3.11.18, OpenCV 4.11.0, NumPy 1.26.4).
+Virtual environments are local; dependency setup is described in the existing
+requirements files and the ground-evidence document. FFmpeg/ffprobe is required.
+
+The exact next scientific step is independently calibrated side-view footage
+with a measured support reference at the walking depth and a known depth
+corridor. Do not derive that reference from predicted paws or relax thresholds
+on Dog02. Independent reviewed strides are still required before event scoring.
+No further pilot or annotation experiment is part of this checkpoint.
+
+Older untracked experiment archives, comparison images, the optional Husky ZIP,
+empty scratch files, ignored caches, environments and weights remain local and
+are not included. Stopping the Codespace preserves saved local files; deleting
+it would remove local files that have no separate backup.
+
+---
+
 # PetLens end-of-session checkpoint — November 10, 2026
 
 ## Current milestone status

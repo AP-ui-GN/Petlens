@@ -1,72 +1,32 @@
-PETLENS — MILESTONE 3
-TASK: Convert written gait observations into structured annotations
+Implemented and ran one verified Dog02 pilot. **Real motion was measured; all event observations correctly abstained.**
 
-STATUS: DRAFT ONLY — awaiting user confirmation before finalization.
+1. **Files created:**
+   - [src/petlens_gait/ground.py](/workspaces/Petlens/src/petlens_gait/ground.py)
+   - [scripts/run_ground_evidence_pilot.py](/workspaces/Petlens/scripts/run_ground_evidence_pilot.py)
+   - [tests/test_ground_evidence.py](/workspaces/Petlens/tests/test_ground_evidence.py)
+   - [configs/dog02-ground-scene-v1.json](/workspaces/Petlens/configs/dog02-ground-scene-v1.json)
+   - [docs/GROUND_EVIDENCE.md](/workspaces/Petlens/docs/GROUND_EVIDENCE.md)
+   - [Diagnostic JSON](/workspaces/Petlens/reports/dog02-ground-evidence-v1/diagnostic.json)
+   - [Visual diagnostic](/workspaces/Petlens/reports/dog02-ground-evidence-v1/diagnostic.jpg)
 
-Prepared a separate draft using the user's prompt and saved review ZIP, not
-live browser storage. The original ZIP and A/B descriptions remain unchanged.
+2. **Tests:** **267 passed, 0 failed**, plus 5 passing subtests. This includes 41 new extraction tests and all 226 previous regressions.
 
-Proposed records
+3. **Ground motion:** Measured across **59/59 consecutive frame pairs**, with **197–322 ground inliers per pair**. Produced **52 paw-motion measurements** under saved identity hypotheses. Camera motion was estimated rather than assumed absent.
 
-| Paw | Source frame / time | Proposed record | Evidence |
-| --- | --- | --- | --- |
-| A/B | 0 / 0 s | Observation started | No event or support state inferred |
-| A | 19 / 1.583333 s | Initial contact: first definitely contacting | Human-reported touchdown |
-| A | 55 / 4.583333 s | Possible lift-off, retained as uncertainty | No definite support state assigned |
-| A | 56 / 4.666667 s | Lift-off: first definitely airborne observation | Human-confirmed observation; actual transition may have been at 55 |
-| B | 23 / 1.916667 s | Lift-off: first definitely airborne observation | Human-reported paw leaving ground |
-| B | 52–59 / 4.333333–4.916667 s | Reported touchdown window; 52 is possible | Exact definite-contact frame remains unknown |
-| A/B | 0–59 | Sequence-level identity-continuity statements | No anatomical mapping or bulk frame labels |
+4. **Ground proximity:** Floor-region overlap was measurable, but **usable clearance observations: 0**. The visible floor and rear seam do not establish paw height at the walking depth.
 
-These are human reports, without automated confirmation.
+5. **Candidate events:** **0 touchdowns, 0 lift-offs, 0 complete candidate sequences.**
 
-Complete strides established: ZERO.
+6. **UNKNOWN observations:** **120/120 hind-paw observations**. Overlapping reasons include:
+   - Clearance unavailable: 120
+   - Identity continuity unsupported: 68
+   - Associated paw position unavailable: 64
+   - Raw pose score outside the detector’s `[0,1]` contract: 48
 
-Missing event boundaries
+   Raw scores were preserved without clipping.
 
-Paw A:
-- Last definitely airborne before contact at 19.
-- Last definitely contacting before lift-off.
-- Both boundaries of the next contact after lift-off.
+7. **Main blocker:** An independently justified ground-height reference at the paws’ walking depth.
 
-Paw B:
-- Both boundaries of the initial contact before lift-off at 23.
-- Last definitely contacting before lift-off.
-- Both definite boundaries of the subsequent contact. The 52–59 timing window
-  does not supply those states.
+8. **Exact next step:** Obtain calibrated side-view footage with an independently measured support reference and known depth corridor, then process it through the unchanged pipeline.
 
-Conflicts with the saved review
-
-The separate draft proposes these corrections:
-- no_prior_exposure -> prior_exposure, following the user's explicit statement.
-- Frame-0 airborne states -> unreviewed.
-- B23 contacting -> airborne.
-- B52 contacting -> uncertain.
-
-Every proposed change is recorded with its previous value. Nothing has been
-merged or finalized. The original saved review remains intact:
-reports/gait-event-review-v1/reviews/review-d684d28c840a475ba7833f1c045d2504.zip
-
-Draft files
-
-Compatible review JSON:
-reports/gait-event-review-v1/drafts/dog02-reviewer-1-written-observations-v1.review.json
-
-Change and uncertainty records:
-reports/gait-event-review-v1/drafts/dog02-reviewer-1-written-observations-v1.proposal.json
-
-Readable proposal:
-reports/gait-event-review-v1/drafts/dog02-reviewer-1-written-observations-v1.md
-
-Validation passed: compatible format, zero complete strides, non-independent
-declaration, preserved originals, and no bulk visibility/continuity filling.
-
-No pose inference, training, gait-algorithm changes, new viewer, commits, or
-pushes were performed.
-
-CONFIRMATION REQUIRED
-
-Do you approve this draft, including the proposed corrections, for finalization?
-
-This request to save the response in architecture.txt does not itself approve
-or finalize the annotations. They remain drafts awaiting explicit confirmation.
+Checkpoint `cd38314` matches the remote branch. All 19 pre-existing changed/untracked files were preserved. No human annotations, historical predictions, detector rules, or UI were changed. No new inference, training, commits, or pushes occurred.

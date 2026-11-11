@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "6863e5046808ff5559c5b068ec3ab942d9de63ebbdc5a5d9d14bf9e00ebdcad6",
+  "referenceFrameIndex": 0,
+  "referencePixelSha256": "5b63e63861a60638849ea572c91a6a49ffc05945e631417e36726122086e2440",
+  "imageSize": [960, 544],
+  "surfaceType": "static",
+  "foregroundCoverageSupported": true,
+  "groundPolygon": [[130, 435], [950, 445], [950, 535], [130, 535]],
+  "backgroundPolygon": [[130, 40], [900, 40], [900, 170], [130, 170]],
+  "exclusionPolygons": [[[0, 0], [129, 0], [129, 543], [0, 543]]],
+  "exclusionCoordinateSystem": "Conservative image-coordinate strip, applied on every frame; saved dog boxes are additionally padded and excluded in each frame.",
+  "basis": "Visual inspection of original frames 0, 30 and 59 at source resolution and an all-60-frame contact sheet, without human gait labels: textured dark floor below the rear screen, separate upper screen texture, and handler confined to the left strip. Geometry selects scene texture independently of predicted paws. The floor appears to be a fixed mat; this is an explicit scene assumption checked against independent background motion, not proof that all surfaces are stationary.",
+  "clearanceReference": null,
+  "clearanceReason": "The wall/floor seam lies behind the dog's walking plane. The visible floor is an area in perspective, not a calibrated paw-height line. No supported same-depth support line or height uncertainty bound is available; floor overlap cannot provide clearance.",
+  "annotationPolicy": "No Dog02 human paw coordinates, gait labels, event times, continuity declarations or annotation scores are inputs. No calibration or rule is tuned to event output."
+}
