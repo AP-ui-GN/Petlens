@@ -1,0 +1,17 @@
+{
+  "source": {
+    "path": "tests/Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s004.ogv",
+    "sha256": "91620e1d029a2801cb47b894896d257c10efd0558af863949c6ccc6c53cc8650"
+  },
+  "credit": "Shin J-H, Greer B, Hakim CH, Zhou Z, Chung Y-c, Duan Y, He Z, Duan D (2013), Movie S4, Quantitative Phenotyping of Duchenne Muscular Dystrophy Dogs by Comprehensive Gait Analysis and Overnight Activity Monitoring, PLOS ONE, DOI 10.1371/journal.pone.0059875.",
+  "recordedRights": {
+    "status": "attribution_required",
+    "source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0059875",
+    "fileDescription": "https://commons.wikimedia.org/wiki/File:Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s004.ogv",
+    "embeddedLicense": "https://creativecommons.org/licenses/by/3.0/",
+    "commonsLicense": "https://creativecommons.org/licenses/by/2.5/",
+    "evidence": "Publication grants attributed reuse; embedded CC BY 3.0 and Commons CC BY 2.5 discrepancy retained. Commercial reuse permitted with attribution; source notices preserved."
+  },
+  "changes": "Original OGV unchanged. Existing lossless working-video conversion and frozen RTMPose predictions reused. Body-relative temporal features and a review-only observation packet generated. No training labels approved; no model trained.",
+  "endorsement": false
+}

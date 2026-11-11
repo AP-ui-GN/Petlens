@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "status": "human_report_not_owner_authorization",
+  "dataset": "gait-s004",
+  "sourceVideo": {
+    "path": "tests/Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s004.ogv",
+    "sha256": "91620e1d029a2801cb47b894896d257c10efd0558af863949c6ccc6c53cc8650"
+  },
+  "physicalOutput": {
+    "kind": "tracked_front",
+    "physicalPaw": "C",
+    "anatomicalSide": "unknown",
+    "firstFrame": 46,
+    "lastFrame": 50
+  },
+  "reviewer": "s004-requesting-user-written-v3",
+  "independenceDeclaration": "prior_exposure",
+  "continuityConfirmed": true,
+  "trainingApproved": false,
+  "ownerApproved": false,
+  "provenance": "Requesting human explicitly reconfirmed physical identity continuity in this task. No new visual or independent verification by the assistant.",
+  "verbatim": "The reviewer can confidently track Front C as the same physical paw throughout frames 46\u201350 but has not verified whether it is anatomically left or right.",
+  "observations": [
+    {
+      "id": "C-frame-46",
+      "physicalPaw": "C",
+      "physicalId": "Front C",
+      "frame": {
+        "frameIndex": 46,
+        "originalPts": 46,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 3.8333333333333335,
+        "pixelSha256": "ffded4dd746cc5089cbf37dbc01ab578c30688cb6d056b0623d2bb7631b0aa5d",
+        "imageSha256": "549c796821561e0094928b41e4389cb82c0d65658dc353954efb1bce47ab691d"
+      },
+      "reportedSupportState": "contacting",
+      "assessmentStatus": "definite",
+      "originalObservationVerbatim": "- Frame 46: CONTACT, approximately 80% confidence.",
+      "confidence": {
+        "percentage": 80,
+        "approximate": true,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "frameSpecificIdentityExplicitlyConfirmed": null,
+      "identityEvidence": {
+        "sequenceDeclaration": {
+          "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+          "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+        },
+        "scope": "Same human previously reported tracking all four physical paws throughout. Applied only to this explicit observation, not intervening frames; no independent verification."
+      },
+      "coreEncoding": {
+        "supportState": "contacting",
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportStatePointer": "/observations/46/C/supportState",
+        "visibilityEvidence": "Human direct visible support-state assertion",
+        "continuityEvidence": "V2 human sequence tracking declaration; frame-specific confirmation only for C11"
+      },
+      "conflicts": [],
+      "independentlyVerified": false,
+      "trainingApproved": false,
+      "trainingEligibility": {
+        "approved": false,
+        "reasons": [
+          "same_previously_exposed_reviewer",
+          "not_adjudicated",
+          "anatomical_mapping_unverified"
+        ]
+      }
+    },
+    {
+      "id": "C-frame-50",
+      "physicalPaw": "C",
+      "physicalId": "Front C",
+      "frame": {
+        "frameIndex": 50,
+        "originalPts": 50,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 4.166666666666667,
+        "pixelSha256": "b82f3df185f13180d8c7e9f0fa77fa0625c0b03694867644554e82b0a3197531",
+        "imageSha256": "3ee634fa52def5ecda23a803e596b9dd05119208861596c5b87d7cf49bdec06f"
+      },
+      "reportedSupportState": "airborne",
+      "assessmentStatus": "definite",
+      "originalObservationVerbatim": "- Frame 50: AIRBORNE, 100% confidence.",
+      "confidence": {
+        "percentage": 100,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "frameSpecificIdentityExplicitlyConfirmed": null,
+      "identityEvidence": {
+        "sequenceDeclaration": {
+          "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+          "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+        },
+        "scope": "Same human previously reported tracking all four physical paws throughout. Applied only to this explicit observation, not intervening frames; no independent verification."
+      },
+      "coreEncoding": {
+        "supportState": "airborne",
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportStatePointer": "/observations/50/C/supportState",
+        "visibilityEvidence": "Human direct visible support-state assertion",
+        "continuityEvidence": "V2 human sequence tracking declaration; frame-specific confirmation only for C11"
+      },
+      "conflicts": [],
+      "independentlyVerified": false,
+      "trainingApproved": false,
+      "trainingEligibility": {
+        "approved": false,
+        "reasons": [
+          "same_previously_exposed_reviewer",
+          "not_adjudicated",
+          "anatomical_mapping_unverified"
+        ]
+      }
+    }
+  ],
+  "anatomicalSide": "unknown",
+  "cameraEvidence": "Existing source contact sheet, camera metadata and V3 descriptions do not establish a trusted anatomical reference for Front C. No screen-position assignment made.",
+  "sourceDocuments": [
+    {
+      "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v3.frames.json",
+      "sha256": "58d8b17d823c2aaf56ed1470982de8780cc5a72ff231feb30efd8ac5e4a0a14a"
+    },
+    {
+      "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v3.review.json",
+      "sha256": "9cc9c66dd055a04eca0a1e1df4bd674c94152e390d94662476406cf1880ecccf"
+    },
+    {
+      "path": "tmp/wikimedia-s004-preparation/source-ffprobe.json",
+      "sha256": "d23d54fedc226e7556b6235079fee2e217e7d7dddbd178b3918ec3eea3f25db4"
+    },
+    {
+      "path": "tmp/wikimedia-s004-preparation/source-review.jpg",
+      "sha256": "9735bbf43d713ada0d668d364ac59d065c407ac1a4ae891a679b4dcc6bfebe9e"
+    }
+  ]
+}

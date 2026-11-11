@@ -1,0 +1,523 @@
+{
+  "schemaVersion": 1,
+  "annotationType": "human-gait-event-interval-sidecar",
+  "createdAt": "2026-11-11T17:57:06.965923+00:00",
+  "status": "draft_human_report",
+  "adjudicated": false,
+  "trainingApproved": false,
+  "datasetId": "gait-s004-91620e1d029a2801",
+  "manifestSha256": "5380e9416ec4727240f6dae6d26c770ff927723c7971c337d117181ed0b382cf",
+  "frameManifest": {
+    "path": "reports/canine-contact-batch-v1/frame-manifest.json",
+    "sha256": "5380e9416ec4727240f6dae6d26c770ff927723c7971c337d117181ed0b382cf"
+  },
+  "sourceVideo": {
+    "path": "tests/Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s004.ogv",
+    "sha256": "91620e1d029a2801cb47b894896d257c10efd0558af863949c6ccc6c53cc8650"
+  },
+  "review": {
+    "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v1.review.json",
+    "sha256": "5ac04fab9cb2dc9fa3984e385c083b2c04e19d2cb6333731744cb548a4d37fed"
+  },
+  "reviewer": "s004-requesting-user-written-v1",
+  "reviewerIdentityKind": "Requesting conversation participant; personal name not supplied. Not assigned the unrelated Dog02 reviewer ID.",
+  "independenceDeclaration": "prior_exposure",
+  "exposure": {
+    "priorFootageExposure": true,
+    "independenceDeclaration": "prior_exposure",
+    "independentlyVerified": false,
+    "modelOutputExposure": "not_specified",
+    "previousAnnotationExposure": "not_specified",
+    "legacyReviewFlagsMeaning": "blind=true, modelExposed=false and previousLabelsExposed=false are required viewer-session fields. No model or prior labels were used to populate this draft. They do not assert lifetime non-exposure or override prior_exposure."
+  },
+  "provenance": {
+    "source": "Human observations supplied in the current task; structured by assistant, not visually verified by assistant",
+    "verbatimRecord": {
+      "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v1.provenance.md",
+      "sha256": "4e19e128bc4d25241d7a64870bfcc5f192cfc5618981c2a6635cab765651b91e"
+    },
+    "originalObservationsVerbatim": "### Hind physical paw A\n\n- Frame 0: Recording begins; initial state not explicitly established.\n- Frames 5–10: Confirmed touchdown occurred somewhere within this range.\n- Frames 47–49: Confirmed transition to airborne occurred somewhere within this range.\n- Reviewer rechecked the Hind A observations and confirmed the recorded intervals.\n\n### Hind physical paw B\n\n- Frame 0: Recording begins; initial state not explicitly established.\n- Frames 7–8: Confirmed touchdown occurred somewhere within this range.\n- Frames 50–54: Confirmed transition to airborne occurred somewhere within this range.\n\n### Front physical paw C\n\n- Frame 0: Recording begins; initial state not explicitly established.\n- Frames 16–19: Confirmed transition to airborne occurred somewhere within this range.\n- Frames 44–49: Confirmed touchdown occurred somewhere within this range.\n\n### Front physical paw D\n\n- Frame 0: Recording begins; initial state not explicitly established.\n- Frames 8–12: Confirmed transition to airborne occurred somewhere within this range.\n- Frames 35–40: Confirmed touchdown occurred somewhere within this range.\n\n### Physical identity observations\n\nThe reviewer reports tracking all four physical paws throughout the video.\n\nThe reviewer used the stationary/reference position to distinguish the two paws within each front/hind pair, using relative positioning toward the dog's head or rear, and followed each identified physical paw through movement.\n\nPreserve the existing physical IDs:\n\n- Hind A\n- Hind B\n- Front C\n- Front D\n\nDo not infer anatomical left/right identity or silently swap paw identities.\n\nThe reviewer previously saw this footage. Preserve that exposure history. Do not describe this review as independent or first-time.\n\nThe reviewer used ranges because the video quality did not support reliable exact transition frames.\n"
+  },
+  "intervalSemantics": "Inclusive original frame-index intervals locate uncertain transitions. They do not assert support states at the endpoints or any interior frame. Do not interpolate, fill intervening spans, or infer cycles.",
+  "initialStates": {
+    "A": {
+      "frameIndex": 0,
+      "supportState": "unknown",
+      "eventType": null
+    },
+    "B": {
+      "frameIndex": 0,
+      "supportState": "unknown",
+      "eventType": null
+    },
+    "C": {
+      "frameIndex": 0,
+      "supportState": "unknown",
+      "eventType": null
+    },
+    "D": {
+      "frameIndex": 0,
+      "supportState": "unknown",
+      "eventType": null
+    }
+  },
+  "physicalIdentity": {
+    "physicalIds": {
+      "A": "Hind A",
+      "B": "Hind B",
+      "C": "Front C",
+      "D": "Front D"
+    },
+    "anatomicalMapping": {
+      "A": null,
+      "B": null,
+      "C": null,
+      "D": null
+    },
+    "sequenceFrameRange": [
+      0,
+      59
+    ],
+    "continuity": "human_reported_tracked_throughout",
+    "methodVerbatim": "The reviewer used the stationary/reference position to distinguish the two paws within each front/hind pair, using relative positioning toward the dog's head or rear, and followed each identified physical paw through movement.",
+    "independentlyVerified": false,
+    "reportedIdentityBreaks": [],
+    "referenceAnchor": "not_supplied_per_paw",
+    "limitation": "Human sequence-level physical continuity is retained separately; no per-frame visibility/continuity or anatomical side is inferred. A/B headward assignment and C/D headward assignment at a named reference frame remain unspecified."
+  },
+  "timing": {
+    "frameIndexing": "zero_based_original",
+    "frameRange": [
+      0,
+      59
+    ],
+    "originalTimeBase": "1/12",
+    "movieFps": 12,
+    "frameIntervalMilliseconds": 83.33333333333333,
+    "sensorNativeCaptureAttested": false,
+    "limitation": "Poor image quality prevents reliable exact transition frames. Retain the supplied ranges, no midpoint/exact-frame/subframe estimates."
+  },
+  "events": [
+    {
+      "id": "A-contact-5-10",
+      "physicalPaw": "A",
+      "physicalId": "Hind A",
+      "eventType": "contact",
+      "transitionToState": "contacting",
+      "occurrence": "human_confirmed",
+      "timingCertainty": "interval_only",
+      "humanReportedTimingWindow": {
+        "frameRange": [
+          5,
+          10
+        ],
+        "inclusive": true,
+        "start": {
+          "frameIndex": 5,
+          "originalPts": 5,
+          "originalTimeBase": "1/12",
+          "timestampSeconds": 0.4166666666666667,
+          "pixelSha256": "aee49367413f2cb332d8ce7abf0190eb937f30bc130fd9fb7ba997d8f1894265",
+          "imageSha256": "003793f4718892995c4f3e953470f50a00175cd5487002c16b8acaf362f605cc"
+        },
+        "end": {
+          "frameIndex": 10,
+          "originalPts": 10,
+          "originalTimeBase": "1/12",
+          "timestampSeconds": 0.8333333333333334,
+          "pixelSha256": "dc5d23cdac9866536dcb2cd7b3031139809857838ee2e2e4b2b6ca8c7f7131c2",
+          "imageSha256": "b0e6036be8e9a511ba792bc03ef31e539cc5f0d4f739a0222282a115fd50788b"
+        },
+        "semantics": "Transition occurred somewhere within this inclusive range; neither endpoints nor interior frames are definite support-state observations."
+      },
+      "exactTransitionFrame": null,
+      "lastDefinitelyAirborne": null,
+      "firstDefinitelyContacting": null,
+      "lastDefinitelyContacting": null,
+      "firstDefinitelyAirborne": null,
+      "reviewerRechecked": true,
+      "automaticallyConfirmed": false,
+      "trainingApproved": false
+    },
+    {
+      "id": "A-lift_off-47-49",
+      "physicalPaw": "A",
+      "physicalId": "Hind A",
+      "eventType": "lift_off",
+      "transitionToState": "airborne",
+      "occurrence": "human_confirmed",
+      "timingCertainty": "interval_only",
+      "humanReportedTimingWindow": {
+        "frameRange": [
+          47,
+          49
+        ],
+        "inclusive": true,
+        "start": {
+          "frameIndex": 47,
+          "originalPts": 47,
+          "originalTimeBase": "1/12",
+          "timestampSeconds": 3.9166666666666665,
+          "pixelSha256": "4ae11602321fce39d2250dc009f2a09494bb50607682e624887c4bc14718e59c",
+          "imageSha256": "50c6e1997dcf20d75ddecc923b1fb328d459d63a68f1f675c0ed0b63e3a8bbad"
+        },
+        "end": {
+          "frameIndex": 49,
+          "originalPts": 49,
+          "originalTimeBase": "1/12",
+          "timestampSeconds": 4.083333333333333,
+          "pixelSha256": "6ba9c9385560197ed20b3a37aa6e5eb80209ad0ab89b6f98ba40a519cfabdadd",
+          "imageSha256": "4b43032a94c8598be19f468928635fd763bd2e6da2adf2697bf8bbbe4a59fde3"
+        },
+        "semantics": "Transition occurred somewhere within this inclusive range; neither endpoints nor interior frames are definite support-state observations."
+      },
+      "exactTransitionFrame": null,
+      "lastDefinitelyAirborne": null,
+      "firstDefinitelyContacting": null,
+      "lastDefinitelyContacting": null,
+      "firstDefinitelyAirborne": null,
+      "reviewerRechecked": true,
+      "automaticallyConfirmed": false,
+      "trainingApproved": false
+    },
+    {
+      "id": "B-contact-7-8",
+      "physicalPaw": "B",
+      "physicalId": "Hind B",
+      "eventType": "contact",
+      "transitionToState": "contacting",
+      "occurrence": "human_confirmed",
+      "timingCertainty": "interval_only",
+      "humanReportedTimingWindow": {
+        "frameRange": [
+          7,
+          8
+        ],
+        "inclusive": true,
+        "start": {
+          "frameIndex": 7,
+          "originalPts": 7,
+          "originalTimeBase": "1/12",
+          "timestampSeconds": 0.5833333333333334,
+          "pixelSha256": "47b9fb4e61e1343d9b3cfb3c1364d67d1b1ace52d1762291de5563fa0a8636be",
+          "imageSha256": "79e6e1d06829836c8d4a808dadbd4252953baeaa7894dc296e9b45576b008305"
+        },
+        "end": {
+          "frameIndex": 8,
+          "originalPts": 8,
+          "originalTimeBase": "1/12",
+          "timestampSeconds": 0.6666666666666666,
+          "pixelSha256": "5cb463f9069530b1e89d7288f453bc46c960eef49e0b26bdd77ade41391745db",
+          "imageSha256": "5805b1b23421697e92b81e6fc376ac8337f936f52bcd7c8b1fbb92cf3da2bae4"
+        },
+        "semantics": "Transition occurred somewhere within this inclusive range; neither endpoints nor interior frames are definite support-state observations."
+      },
+      "exactTransitionFrame": null,
+      "lastDefinitelyAirborne": null,
+      "firstDefinitelyContacting": null,
+      "lastDefinitelyContacting": null,
+      "firstDefinitelyAirborne": null,
+      "reviewerRechecked": null,
+      "automaticallyConfirmed": false,
+      "trainingApproved": false
+    },
+    {
+      "id": "B-lift_off-50-54",
+      "physicalPaw": "B",
+      "physicalId": "Hind B",
+      "eventType": "lift_off",
+      "transitionToState": "airborne",
+      "occurrence": "human_confirmed",
+      "timingCertainty": "interval_only",
+      "humanReportedTimingWindow": {
+        "frameRange": [
+          50,
+          54
+        ],
+        "inclusive": true,
+        "start": {
+          "frameIndex": 50,
+          "originalPts": 50,
+          "originalTimeBase": "1/12",
+          "timestampSeconds": 4.166666666666667,
+          "pixelSha256": "b82f3df185f13180d8c7e9f0fa77fa0625c0b03694867644554e82b0a3197531",
+          "imageSha256": "3ee634fa52def5ecda23a803e596b9dd05119208861596c5b87d7cf49bdec06f"
+        },
+        "end": {
+          "frameIndex": 54,
+          "originalPts": 54,
+          "originalTimeBase": "1/12",
+          "timestampSeconds": 4.5,
+          "pixelSha256": "a2263a7dee0590c90678328e6bb0b752d9363632997e119a1b155eaab813d556",
+          "imageSha256": "1a451a78b7f81cbe39642c9729fa84c2b5d3716bfc280fa34a10c4d628b50e00"
+        },
+        "semantics": "Transition occurred somewhere within this inclusive range; neither endpoints nor interior frames are definite support-state observations."
+      },
+      "exactTransitionFrame": null,
+      "lastDefinitelyAirborne": null,
+      "firstDefinitelyContacting": null,
+      "lastDefinitelyContacting": null,
+      "firstDefinitelyAirborne": null,
+      "reviewerRechecked": null,
+      "automaticallyConfirmed": false,
+      "trainingApproved": false
+    },
+    {
+      "id": "C-lift_off-16-19",
+      "physicalPaw": "C",
+      "physicalId": "Front C",
+      "eventType": "lift_off",
+      "transitionToState": "airborne",
+      "occurrence": "human_confirmed",
+      "timingCertainty": "interval_only",
+      "humanReportedTimingWindow": {
+        "frameRange": [
+          16,
+          19
+        ],
+        "inclusive": true,
+        "start": {
+          "frameIndex": 16,
+          "originalPts": 16,
+          "originalTimeBase": "1/12",
+          "timestampSeconds": 1.3333333333333333,
+          "pixelSha256": "51e1517f6d77f5cd45451f660da925a459df22c9c213faa002dc68b8d9d4799f",
+          "imageSha256": "02d7a75a2d482d57fbac8137e42e30d02481b52b34e8e3128feff7ca1ec72fb9"
+        },
+        "end": {
+          "frameIndex": 19,
+          "originalPts": 19,
+          "originalTimeBase": "1/12",
+          "timestampSeconds": 1.5833333333333333,
+          "pixelSha256": "71321b906a720fa7e6549472ce52a9c4adebfc89282d7218e3d4d458f93ffd4f",
+          "imageSha256": "722388a1eb46639f2d55d35d32f9468c740eacdfb16529841c4758ec38d49409"
+        },
+        "semantics": "Transition occurred somewhere within this inclusive range; neither endpoints nor interior frames are definite support-state observations."
+      },
+      "exactTransitionFrame": null,
+      "lastDefinitelyAirborne": null,
+      "firstDefinitelyContacting": null,
+      "lastDefinitelyContacting": null,
+      "firstDefinitelyAirborne": null,
+      "reviewerRechecked": null,
+      "automaticallyConfirmed": false,
+      "trainingApproved": false
+    },
+    {
+      "id": "C-contact-44-49",
+      "physicalPaw": "C",
+      "physicalId": "Front C",
+      "eventType": "contact",
+      "transitionToState": "contacting",
+      "occurrence": "human_confirmed",
+      "timingCertainty": "interval_only",
+      "humanReportedTimingWindow": {
+        "frameRange": [
+          44,
+          49
+        ],
+        "inclusive": true,
+        "start": {
+          "frameIndex": 44,
+          "originalPts": 44,
+          "originalTimeBase": "1/12",
+          "timestampSeconds": 3.6666666666666665,
+          "pixelSha256": "bbd65b2b6ceded60f4eb4bf0bb5910152874be5b4df85723fa59f5b84706fa58",
+          "imageSha256": "210ebb9d781d50d36e6f18ad86ecc41d4a13db4d8fc1e7f2df76c5d88036246b"
+        },
+        "end": {
+          "frameIndex": 49,
+          "originalPts": 49,
+          "originalTimeBase": "1/12",
+          "timestampSeconds": 4.083333333333333,
+          "pixelSha256": "6ba9c9385560197ed20b3a37aa6e5eb80209ad0ab89b6f98ba40a519cfabdadd",
+          "imageSha256": "4b43032a94c8598be19f468928635fd763bd2e6da2adf2697bf8bbbe4a59fde3"
+        },
+        "semantics": "Transition occurred somewhere within this inclusive range; neither endpoints nor interior frames are definite support-state observations."
+      },
+      "exactTransitionFrame": null,
+      "lastDefinitelyAirborne": null,
+      "firstDefinitelyContacting": null,
+      "lastDefinitelyContacting": null,
+      "firstDefinitelyAirborne": null,
+      "reviewerRechecked": null,
+      "automaticallyConfirmed": false,
+      "trainingApproved": false
+    },
+    {
+      "id": "D-lift_off-8-12",
+      "physicalPaw": "D",
+      "physicalId": "Front D",
+      "eventType": "lift_off",
+      "transitionToState": "airborne",
+      "occurrence": "human_confirmed",
+      "timingCertainty": "interval_only",
+      "humanReportedTimingWindow": {
+        "frameRange": [
+          8,
+          12
+        ],
+        "inclusive": true,
+        "start": {
+          "frameIndex": 8,
+          "originalPts": 8,
+          "originalTimeBase": "1/12",
+          "timestampSeconds": 0.6666666666666666,
+          "pixelSha256": "5cb463f9069530b1e89d7288f453bc46c960eef49e0b26bdd77ade41391745db",
+          "imageSha256": "5805b1b23421697e92b81e6fc376ac8337f936f52bcd7c8b1fbb92cf3da2bae4"
+        },
+        "end": {
+          "frameIndex": 12,
+          "originalPts": 12,
+          "originalTimeBase": "1/12",
+          "timestampSeconds": 1.0,
+          "pixelSha256": "dca88769bacba5d96e989d03d37d61f54ecbcfe7d167cbcd5b5d138c592d45c7",
+          "imageSha256": "c11c6b52e24dd7cd8cc7453855e63bae7e10247bab728f85bb2225cda06519d2"
+        },
+        "semantics": "Transition occurred somewhere within this inclusive range; neither endpoints nor interior frames are definite support-state observations."
+      },
+      "exactTransitionFrame": null,
+      "lastDefinitelyAirborne": null,
+      "firstDefinitelyContacting": null,
+      "lastDefinitelyContacting": null,
+      "firstDefinitelyAirborne": null,
+      "reviewerRechecked": null,
+      "automaticallyConfirmed": false,
+      "trainingApproved": false
+    },
+    {
+      "id": "D-contact-35-40",
+      "physicalPaw": "D",
+      "physicalId": "Front D",
+      "eventType": "contact",
+      "transitionToState": "contacting",
+      "occurrence": "human_confirmed",
+      "timingCertainty": "interval_only",
+      "humanReportedTimingWindow": {
+        "frameRange": [
+          35,
+          40
+        ],
+        "inclusive": true,
+        "start": {
+          "frameIndex": 35,
+          "originalPts": 35,
+          "originalTimeBase": "1/12",
+          "timestampSeconds": 2.9166666666666665,
+          "pixelSha256": "c08cb9532c8a08ddbbdbd69d7e4f7aada159cc09f5d7ac370a57dc3b2e6a9061",
+          "imageSha256": "20e1c664a55dbb37b248c11aa459353e5da264bddce440302270337f784b5985"
+        },
+        "end": {
+          "frameIndex": 40,
+          "originalPts": 40,
+          "originalTimeBase": "1/12",
+          "timestampSeconds": 3.3333333333333335,
+          "pixelSha256": "d3fedfc27803a82410ddbc3bba9f8daec27b311358982374528ee4edfb3b9d6d",
+          "imageSha256": "85192658196b9790ee8b8f8496fef9aa9cba2e1e54449c22ad2898823055ff9e"
+        },
+        "semantics": "Transition occurred somewhere within this inclusive range; neither endpoints nor interior frames are definite support-state observations."
+      },
+      "exactTransitionFrame": null,
+      "lastDefinitelyAirborne": null,
+      "firstDefinitelyContacting": null,
+      "lastDefinitelyContacting": null,
+      "firstDefinitelyAirborne": null,
+      "reviewerRechecked": null,
+      "automaticallyConfirmed": false,
+      "trainingApproved": false
+    }
+  ],
+  "previousAnnotations": {
+    "sameSourceSavedHumanAnnotationsFound": false,
+    "scope": "Workspace JSON/Markdown records including ignored tmp paths, source/dataset/prediction/working-video hashes, relevant saved review ZIP JSON members. Browser localStorage was not accessed; absence here is not evidence of no earlier browser review.",
+    "inspectedRecords": [
+      {
+        "path": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/s004/manifest.json",
+        "sha256": "0f0f8bf4cafb31de4284850b5bb4618f06b7f64fea048c61cd82dab2e4bc7d7c"
+      },
+      {
+        "path": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/s004/README.md",
+        "sha256": "a7d59bc5644b53ab12c64985c21efc527adcb2a2417b411ff6149415af128201"
+      },
+      {
+        "path": "tmp/wikimedia-s004-preparation/REPORT.md",
+        "sha256": "829abe57b5fdfc04e8d733e27e285214dae456868c86eb421598ebae2f547d84"
+      },
+      {
+        "path": "reports/gait-event-review-v1/reviews/review-d684d28c840a475ba7833f1c045d2504.zip",
+        "sha256": "e0f0bd2a6ca14ff6cc6cddf89a3495959c3a39ecbc5e0cf99b208589601bda82"
+      },
+      {
+        "path": "reports/gait-event-review-v1/drafts/dog02-reviewer-1-written-observations-v1.proposal.json",
+        "sha256": "3aae39a680309b84f16dd37137ed6349dc437a805a1a5edf9aecd16d0016b076"
+      },
+      {
+        "path": "reports/paw-annotation-data-v2/dalmatian-reviewed.zip",
+        "sha256": "6f4023a3af09ed5f4b03aad10d53e356d44344ce24929675ae54444b70b6ed65"
+      },
+      {
+        "path": "tmp/rtmpose-test/PetLens-walking-cycle-review.zip",
+        "sha256": "d0631f936b2fe5950fc7e00e80345e037c845bf68ba3bece6bab9233eaf42edb"
+      },
+      {
+        "path": "tmp/rtmpose-test/paw-tracking-experiment/walking-cycle/PetLens-walking-cycle-review.zip",
+        "sha256": "d0631f936b2fe5950fc7e00e80345e037c845bf68ba3bece6bab9233eaf42edb"
+      }
+    ],
+    "sameSourceEarlierSetup": {
+      "path": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/s004/manifest.json",
+      "datasetId": "petlens-wikimedia-s004-4ef66928d9821638",
+      "originalVideoSha256": "91620e1d029a2801cb47b894896d257c10efd0558af863949c6ccc6c53cc8650",
+      "provenance": "2026-11-03 original-frame physical hind A/B annotation setup, source-bound, not human labels",
+      "exposureStatus": "No saved S004 reviewer declaration found. Browser-only exposure history unavailable. Current reviewer explicitly has prior footage exposure."
+    },
+    "otherContactReview": {
+      "path": "reports/gait-event-review-v1/reviews/review-d684d28c840a475ba7833f1c045d2504.zip",
+      "datasetId": "gait-dog02-6863e5046808ff55",
+      "sourceVideo": "test/Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s003.ogv",
+      "reviewer": "reviewer-1",
+      "savedDeclaration": "no_prior_exposure",
+      "laterExposureRecord": "reports/gait-event-review-v1/drafts/dog02-reviewer-1-written-observations-v1.proposal.json",
+      "laterExposureDeclaration": "prior_exposure",
+      "laterRecordStatus": "draft_awaiting_user_confirmation",
+      "comparison": "Different footage/source hash (S003), so its frame/event labels and reviewer ID are not reused or compared as S004 evidence."
+    },
+    "comparison": {
+      "sameSourcePriorLabelConflicts": [],
+      "internalNewObservationConflicts": [],
+      "conclusion": "No same-source saved human labels available to compare. Each paw has two temporally ordered opposite event types; completeness between them is not established. No merge performed."
+    },
+    "preserved": true,
+    "liveBrowserStorageAccessed": false,
+    "legacyBrowserStorageKey": "petlens-physical-hind-v1:petlens-wikimedia-s004-4ef66928d9821638"
+  },
+  "completeness": {
+    "knownFrameSupportStates": 0,
+    "unknownPawFrames": 240,
+    "completeStrides": 0,
+    "eventOccurrenceCount": 8,
+    "eventTimingExact": false,
+    "intermediateTransitionsVerified": false,
+    "missingInitialStates": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "conflictsFound": [],
+    "longIntervalsAreNotEvidenceOfError": true,
+    "trainingEvidenceMissing": [
+      "Visible per-frame CONTACT/AIRBORNE states and continuity on selected usable spans",
+      "Check for omitted transitions in each named gap; no complete cycle established",
+      "Reference-frame physical identity anchors and separately verified anatomical mapping",
+      "Independent reviews and human reconciliation under the current training gate; this exposed review remains non-independent",
+      "Dog identity/split approval and additional distinct-dog evidence for the existing pilot gate"
+    ]
+  },
+  "pipelineCompatibility": {
+    "existingReviewSchemaValid": true,
+    "sidecarIsSupervision": false,
+    "expectedValidTargets": 0,
+    "note": "Existing review loader can inspect the four-paw JSON. Interval evidence stays in this hashed sidecar, not binary targets. Existing pair-supervision mapping expects A/B for each pair: hind A/B can be mapped only after human evidence; front C/D needs an explicit provenance-preserving pair projection or adapter support before supervised import. Do not silently rename C/D or assign LF/RF/LH/RH. No adapter changes or training job approval made."
+  }
+}

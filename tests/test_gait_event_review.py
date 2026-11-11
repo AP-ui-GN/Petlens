@@ -129,6 +129,113 @@ def test_exports_are_new_files_and_never_overwrite_reviews():
         assert second.read_bytes() == b'second human review'
 
 
+def four_paw_fixture():
+    meta, _ = fixture()
+    meta['physicalPaws'] = ['A', 'B', 'C', 'D']
+    draft = review.initial_draft(meta, 'manifest')
+    draft.update(reviewer='reviewer one', independenceDeclaration='no_prior_exposure')
+    return meta, draft
+
+
+def test_four_paws_are_blank_and_unknown_preserves_occlusion():
+    meta, draft = four_paw_fixture()
+    assert review.validate(meta, 'manifest', draft)['unreviewedPawFrames'] == 32
+    assert set(draft['observations']['0']) == {'A', 'B', 'C', 'D'}
+    assert all(o['supportState'] == 'unreviewed'
+               for frame in draft['observations'].values() for o in frame.values())
+    draft['observations']['0']['C'].update(visibility='occluded', continuity='uncertain',
+        supportState='unknown', notes='Front limb hidden behind the other limb.')
+    with zipfile.ZipFile(io.BytesIO(review.export_review(meta, 'manifest', draft))) as archive:
+        assert json.loads(archive.read('review.json')) == draft
+        assert json.loads(archive.read('frame-manifest.json')) == meta
+    draft['observations']['0']['C']['supportState'] = 'airborne'
+    with pytest.raises(p.ValidationError, match='visible'):
+        review.validate(meta, 'manifest', draft)
+
+
+def test_four_paw_definite_contact_requires_physical_identity():
+    meta, draft = four_paw_fixture()
+    draft['observations']['0']['D'].update(visibility='visible', continuity='uncertain', supportState='contacting')
+    with pytest.raises(p.ValidationError, match='identity'):
+        review.validate(meta, 'manifest', draft)
+    draft['pawDescriptions']['D'] = 'Human-described front limb'
+    draft['observations']['0']['D']['continuity'] = 'start'
+    assert review.validate(meta, 'manifest', draft)['valid']
+
+
+def test_independent_comparison_needs_human_paw_correspondence_and_flags_differences(tmp_path):
+    meta, first = four_paw_fixture()
+    first['pawDescriptions'] = {paw: 'Human description ' + paw for paw in 'ABCD'}
+    second = copy.deepcopy(first)
+    second['reviewer'] = 'reviewer two'
+    first['observations']['0']['C'].update(visibility='occluded', continuity='uncertain', supportState='unknown')
+    second['observations']['0']['D'].update(visibility='visible', continuity='start', supportState='airborne')
+    a, b = tmp_path / 'one.zip', tmp_path / 'two.zip'
+    a.write_bytes(review.export_review(meta, 'manifest', first))
+    b.write_bytes(review.export_review(meta, 'manifest', second))
+    mapping = dict(A='A', B='B', C='D', D='C')
+    result = review.compare_exports(a, b, mapping)
+    assert len(result['disagreements']) == 1
+    assert result['disagreements'][0]['physicalPaw'] == 'C'
+    assert result['disagreements'][0]['secondPhysicalPaw'] == 'D'
+    assert result['disagreements'][0]['timestampSeconds'] == meta['frames'][0]['timestampSeconds']
+    assert result['trainingApproved'] is result['adjudicated'] is False
+    with pytest.raises(p.ValidationError, match='correspondence'):
+        review.compare_exports(a, b, {})
+    second['independenceDeclaration'] = 'prior_exposure'
+    b.write_bytes(review.export_review(meta, 'manifest', second))
+    with pytest.raises(p.ValidationError, match='independent'):
+        review.compare_exports(a, b, mapping)
+
+
+def test_four_paw_exports_use_batch_folder_without_overwriting_legacy(tmp_path):
+    old = review.save_export(b'legacy', tmp_path)
+    new = review.save_export(b'batch', tmp_path, 'reports/canine-contact-batch-v1/reviews')
+    assert old.read_bytes() == b'legacy'
+    assert new.read_bytes() == b'batch'
+    assert old.parent != new.parent
+
+
+def test_first_contact_batch_opens_source_frames_and_exports_blank_provenance(tmp_path):
+    pytest.importorskip('cv2')
+    path = Path('reports/canine-contact-batch-v1/frame-manifest.json')
+    original = p.ROOT / review.SOURCES['gait-s004'][0]
+    if not original.exists():
+        pytest.skip('Local S004 video is unavailable')
+    manifest, images, sha = review.session(path, group='gait-s004')
+    meta = manifest['datasets']['gait-s004']
+    assert len(images['gait-s004']) == meta['frameCount'] == 60
+    for i, encoded in images['gait-s004'].items():
+        assert hashlib.sha256(encoded).hexdigest() == meta['frames'][i]['imageSha256']
+    for relative in [review.UI / 'index.html', review.UI / 'annotation.js', Path('training/gait-event-review.js')]:
+        target = tmp_path / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(p.ROOT / relative, target)
+    server = ThreadingHTTPServer(('127.0.0.1', 0), review.make_handler(manifest, images, sha, tmp_path))
+    worker = threading.Thread(target=server.serve_forever, daemon=True)
+    worker.start()
+    url = f'http://127.0.0.1:{server.server_port}'
+    try:
+        with urlopen(url + '/?dataset=gait-s004') as response:
+            assert 'gait-s004' in response.read().decode()
+        for i in (0, 59):
+            with urlopen(url + f'/api/frame?group=gait-s004&index={i}') as response:
+                assert response.read() == images['gait-s004'][i]
+        with urlopen(url + '/api/session?group=gait-s004') as response:
+            draft = json.load(response)['draft']
+        assert review.validate(meta, sha, draft)['unreviewedPawFrames'] == 240
+        draft.update(reviewer='test-only blank export', independenceDeclaration='no_prior_exposure')
+        request = Request(url + '/api/export?group=gait-s004', method='POST', data=json.dumps(draft).encode())
+        with urlopen(request) as response:
+            target = tmp_path / response.headers['X-PetLens-Export-Path']
+            assert target.parent == tmp_path / 'reports/canine-contact-batch-v1/reviews'
+            with zipfile.ZipFile(io.BytesIO(response.read())) as archive:
+                assert json.loads(archive.read('review.json')) == draft
+                assert json.loads(archive.read('frame-manifest.json')) == meta
+    finally:
+        server.shutdown(); server.server_close(); worker.join()
+
+
 def test_manifest_changes_block_source_session(monkeypatch, tmp_path):
     (tmp_path / 'manifest.json').write_text(json.dumps({'stale': True}))
     monkeypatch.setattr(review, 'inspect_sources', lambda root: ({'actual': True}, {}))
@@ -204,9 +311,9 @@ def test_selected_dalmatian_pixel_mismatch_still_fails_closed(tmp_path, monkeypa
         review.session(path, tmp_path, group='gait-dalmatian')
 
 
-@pytest.mark.parametrize('group', ['gait-dalmatian', 'gait-dog02'])
+@pytest.mark.parametrize('group', ['gait-dalmatian', 'gait-dog02', 'gait-s004'])
 def test_http_uses_allowlist_and_never_serves_legacy_labels_or_models(tmp_path, group):
-    meta, draft = fixture()
+    meta, draft = four_paw_fixture() if group == 'gait-s004' else fixture()
     meta['group'] = group
     for relative in [review.UI / 'index.html', review.UI / 'annotation.js', Path('training/gait-event-review.js')]:
         target = tmp_path / relative

@@ -1,0 +1,1580 @@
+{
+  "schemaVersion": 1,
+  "annotationType": "blind-gait-event-review",
+  "blind": true,
+  "manifestSha256": "5380e9416ec4727240f6dae6d26c770ff927723c7971c337d117181ed0b382cf",
+  "datasetId": "gait-s004-91620e1d029a2801",
+  "reviewer": "s004-requesting-user-written-v3",
+  "independenceDeclaration": "prior_exposure",
+  "modelExposed": false,
+  "previousLabelsExposed": false,
+  "pawDescriptions": {
+    "A": "Hind A. V3 retains the V2 human report of visually tracking this physical paw throughout frames 0–59. No new per-paw stationary reference description supplied. Anatomical left/right is unverified. V3 supersedes V2 working observations; the human reviewer is the same as V1/V2, with prior footage and annotation exposure.",
+    "B": "Hind B. V3 retains the V2 human report of visually tracking this physical paw throughout frames 0–59. No new per-paw stationary reference description supplied. Anatomical left/right is unverified. V3 supersedes V2 working observations; the human reviewer is the same as V1/V2, with prior footage and annotation exposure.",
+    "C": "Front C. V3 retains the V2 human report of visually tracking this physical paw throughout frames 0–59. The reviewer described Front C as the paw closer to the dog's head in the stationary reference position. Exact reference frame not supplied. Anatomical left/right is unverified. V3 supersedes V2 working observations; the human reviewer is the same as V1/V2, with prior footage and annotation exposure.",
+    "D": "Front D. V3 retains the V2 human report of visually tracking this physical paw throughout frames 0–59. No new per-paw stationary reference description supplied. Anatomical left/right is unverified. V3 supersedes V2 working observations; the human reviewer is the same as V1/V2, with prior footage and annotation exposure."
+  },
+  "observations": {
+    "0": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "1": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "2": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "3": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "4": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "uncertain",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "- Frame 4: UNKNOWN. Video quality prevents determining contact. V3 human report; same previously exposed reviewer; not approved training ground truth."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "5": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "6": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "uncertain",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "- Frame 6: UNKNOWN. Paw extremely close to ground. V3 human report; same previously exposed reviewer; not approved training ground truth."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "7": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "uncertain",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "- Frame 7: UNKNOWN. Part of paw appears to touch ground, but frame quality makes assessment unreliable. V3 human report; same previously exposed reviewer; not approved training ground truth."
+      }
+    },
+    "8": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "9": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportState": "contacting",
+        "notes": "- Frame 9: CONTACT, described as \"very confident.\" V3 human report; same previously exposed reviewer; not approved training ground truth. Visibility records the direct human state report; continuity carries the V2 sequence-level human tracking declaration only."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "10": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "11": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportState": "contacting",
+        "notes": "- Frame 11: CONTACT, high confidence. Physical identity confirmed. V3 human report; same previously exposed reviewer; not approved training ground truth. Visibility records the direct human state report; continuity carries the V2 sequence-level human tracking declaration only."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "12": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "13": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportState": "uncertain",
+        "notes": "- Frame 13: AIRBORNE, moderate confidence. Provisional. V3 human report; same previously exposed reviewer; not approved training ground truth. PROVISIONAL: reported AIRBORNE; encoded uncertain to prevent definite binary supervision. Visibility records the direct human state report; continuity carries the V2 sequence-level human tracking declaration only."
+      }
+    },
+    "14": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "15": {
+      "A": {
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportState": "contacting",
+        "notes": "- Frame 15: CONTACT, 80% confidence. Part of paw appears to touch ground. V3 human report; same previously exposed reviewer; not approved training ground truth. Visibility records the direct human state report; continuity carries the V2 sequence-level human tracking declaration only."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "16": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "17": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "18": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "19": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "20": {
+      "A": {
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportState": "airborne",
+        "notes": "- Frame 20: AIRBORNE, 100% confidence. V3 human report; same previously exposed reviewer; not approved training ground truth. Visibility records the direct human state report; continuity carries the V2 sequence-level human tracking declaration only."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "21": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "22": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "23": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "24": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "25": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "26": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "27": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "28": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "29": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "30": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "31": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "32": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "33": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "34": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "uncertain",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "- Frame 34: UNKNOWN. Paw extremely close to ground; possible contact. V3 human report; same previously exposed reviewer; not approved training ground truth."
+      }
+    },
+    "35": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "36": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "37": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "38": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "39": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "40": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "41": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportState": "contacting",
+        "notes": "- Frame 41: CONTACT, 95% confidence. V3 human report; same previously exposed reviewer; not approved training ground truth. Visibility records the direct human state report; continuity carries the V2 sequence-level human tracking declaration only."
+      }
+    },
+    "42": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "43": {
+      "A": {
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportState": "contacting",
+        "notes": "- Frame 43: CONTACT, described as \"pretty confident.\" No numerical confidence given. V3 human report; same previously exposed reviewer; not approved training ground truth. Visibility records the direct human state report; continuity carries the V2 sequence-level human tracking declaration only. UNRESOLVED CONFLICT: CONTACT at 43 precedes originally reported touchdown 44–49. Preserve both; do not change the range or infer an exact event."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "44": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "45": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "46": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportState": "contacting",
+        "notes": "- Frame 46: CONTACT, approximately 80% confidence. V3 human report; same previously exposed reviewer; not approved training ground truth. Visibility records the direct human state report; continuity carries the V2 sequence-level human tracking declaration only."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "47": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "48": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "49": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportState": "contacting",
+        "notes": "- Frame 49: CONTACT. Part of paw visibly touching ground; no numerical confidence given. V3 human report; same previously exposed reviewer; not approved training ground truth. Visibility records the direct human state report; continuity carries the V2 sequence-level human tracking declaration only."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "50": {
+      "A": {
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportState": "contacting",
+        "notes": "- Frame 50: CONTACT, 100% confidence. V3 human report; same previously exposed reviewer; not approved training ground truth. Visibility records the direct human state report; continuity carries the V2 sequence-level human tracking declaration only."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportState": "airborne",
+        "notes": "- Frame 50: AIRBORNE, 100% confidence. V3 human report; same previously exposed reviewer; not approved training ground truth. Visibility records the direct human state report; continuity carries the V2 sequence-level human tracking declaration only."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "51": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "52": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "53": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "54": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "55": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportState": "airborne",
+        "notes": "- Frame 55: AIRBORNE, 100% confidence. V3 human report; same previously exposed reviewer; not approved training ground truth. Visibility records the direct human state report; continuity carries the V2 sequence-level human tracking declaration only."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "56": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "57": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "58": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    },
+    "59": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unreviewed",
+        "notes": "V3: no explicit human frame observation supplied here. Unverified; not a reviewed UNKNOWN. Do not fill from event ranges or neighboring labels."
+      }
+    }
+  },
+  "strides": []
+}

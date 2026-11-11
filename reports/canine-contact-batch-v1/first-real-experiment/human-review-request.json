@@ -1,0 +1,84 @@
+{
+  "status": "PENDING_HUMAN_REVIEW_NOT_APPROVAL",
+  "experimentPurpose": "S004-only exploratory train-only optimization check; no validation or generalization claims",
+  "requestedSpan": {
+    "physicalPaw": "C",
+    "firstFrame": 46,
+    "lastFrame": 50,
+    "knownReportedEndpoints": {
+      "46": "contacting",
+      "50": "airborne"
+    },
+    "instruction": "Independently inspect original frames. Confirm or correct endpoints; record visibility and physical continuity on all five frames. Interior contact states may remain UNKNOWN. Never show these expected states to blind reviewers."
+  },
+  "mapping": {
+    "A": {
+      "role": "Hind physical A",
+      "anatomicalPaw": null,
+      "verified": false,
+      "reviewer": null,
+      "evidence": null
+    },
+    "B": {
+      "role": "Hind physical B",
+      "anatomicalPaw": null,
+      "verified": false,
+      "reviewer": null,
+      "evidence": null
+    },
+    "C": {
+      "role": "Front physical C",
+      "anatomicalPaw": null,
+      "verified": false,
+      "reviewer": null,
+      "evidence": null
+    },
+    "D": {
+      "role": "Front physical D",
+      "anatomicalPaw": null,
+      "verified": false,
+      "reviewer": null,
+      "evidence": null
+    }
+  },
+  "dogIdentity": {
+    "proposedConservativeGroup": "shin-2013-s003-s004-unresolved",
+    "verified": false,
+    "reviewer": null,
+    "evidence": null,
+    "allRelatedSourcesTrainOnly": true
+  },
+  "rights": {
+    "recordedEvidence": {
+      "status": "attribution_required",
+      "source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0059875",
+      "fileDescription": "https://commons.wikimedia.org/wiki/File:Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s004.ogv",
+      "embeddedLicense": "https://creativecommons.org/licenses/by/3.0/",
+      "commonsLicense": "https://creativecommons.org/licenses/by/2.5/",
+      "evidence": "Publication grants attributed reuse; embedded CC BY 3.0 and Commons CC BY 2.5 discrepancy retained. Commercial reuse permitted with attribution; source notices preserved."
+    },
+    "attribution": "Shin J-H et al. (2013), Movie S4, DOI 10.1371/journal.pone.0059875. Original OGV unchanged; PNG extraction for review. No endorsement implied.",
+    "trainingRightsApproval": false,
+    "approver": null,
+    "evidence": null
+  },
+  "approvals": {
+    "trainingApproved": false,
+    "approver": null,
+    "evidence": null,
+    "independentReviews": [],
+    "adjudication": null
+  },
+  "policyDecisionsRequired": {
+    "trainOnlyWithoutValidationDog": false,
+    "partialPawSupervision": false,
+    "sourceMovieTimingWithoutSensorNativeAttestation": false,
+    "independentReviewRequirement": "Current policy requires two genuinely independent no-prior-exposure reviewers and a separate reconciliation record; V1/V2/V3 are one exposed human and do not qualify. No waiver requested or granted automatically."
+  },
+  "technicalChangesRequired": [
+    "Explicit exploratory train-only mode in existing preparer/trainer: no validation split or best-validation checkpoint; retain all dog/source isolation and approval checks.",
+    "Mode-specific approval for source-movie PTS and partial-paw class coverage; preserve native-timing and full-cohort requirements for measured evaluation.",
+    "Explicit source physical-paw mapping in pair import: existing importer reads A/B for both pairs, while S004 forepaws are C/D. Preserve original records and hashed remapping provenance.",
+    "Human-verified continuous identity span is needed for a multi-frame supervised window; sparse V3 endpoint observations alone do not establish it."
+  ]
+}

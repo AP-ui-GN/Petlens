@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "observationVersion": 3,
+  "datasetId": "gait-s004-91620e1d029a2801",
+  "manifestSha256": "5380e9416ec4727240f6dae6d26c770ff927723c7971c337d117181ed0b382cf",
+  "frameManifest": {
+    "path": "reports/canine-contact-batch-v1/frame-manifest.json",
+    "sha256": "5380e9416ec4727240f6dae6d26c770ff927723c7971c337d117181ed0b382cf"
+  },
+  "sourceVideo": {
+    "path": "tests/Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s004.ogv",
+    "sha256": "91620e1d029a2801cb47b894896d257c10efd0558af863949c6ccc6c53cc8650"
+  },
+  "reviewer": "s004-requesting-user-written-v3",
+  "reviewerIdentityKind": "Same requesting human as V1/V2. Versioned session IDs isolate storage, not independent reviewers.",
+  "independenceDeclaration": "prior_exposure",
+  "exposure": {
+    "priorFootageExposure": true,
+    "priorAnnotationExposure": true,
+    "previousAnnotationExposure": true,
+    "independenceDeclaration": "prior_exposure",
+    "independentlyVerified": false,
+    "modelOutputExposure": "not_specified",
+    "sameHumanReviewerAs": "s004-requesting-user-written-v2",
+    "previousReview": {
+      "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.review.json",
+      "sha256": "e5a8ddf035c6bbe35c92b9369c3d7b8afc893b4bf939ad45576b023762b30e32"
+    },
+    "legacyReviewFlagsMeaning": "blind=true/modelExposed=false/previousLabelsExposed=false are required viewer-workflow fields, not lifetime exposure claims. Prior footage and annotation exposure is explicitly true here. V1 is retained as lineage; no independent status or training approval is inferred.",
+    "sameHumanAsEarlierVersions": [
+      "s004-requesting-user-written-v1",
+      "s004-requesting-user-written-v2"
+    ]
+  },
+  "adjudicated": false,
+  "trainingApproved": false,
+  "annotationType": "targeted-human-verification-checklist",
+  "events": {
+    "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v3.events.json",
+    "sha256": "3d6f0554847f3f26c44dc8ca1cc0e3ecdd171b36f739a59b00e20bc7410b281c"
+  },
+  "frameObservations": {
+    "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v3.frames.json",
+    "sha256": "58d8b17d823c2aaf56ed1470982de8780cc5a72ff231feb30efd8ac5e4a0a14a"
+  },
+  "conflicts": {
+    "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v3.conflicts.json",
+    "sha256": "f4ae282de144b82002ac108096846720ff554e7c488cfe135352ea8a237f1b6a"
+  },
+  "supersedesChecklist": {
+    "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.verification.json",
+    "sha256": "b7210fc05e6a4db4278713c499d39a16417efb7256bde78a434efff84b1270e3"
+  },
+  "interfaceChanged": false,
+  "automatedContactSuggestions": false,
+  "completedTargetedObservations": [
+    {
+      "physicalPaw": "C",
+      "frameIndex": 4,
+      "status": "unknown"
+    },
+    {
+      "physicalPaw": "C",
+      "frameIndex": 11,
+      "status": "definite"
+    },
+    {
+      "physicalPaw": "C",
+      "frameIndex": 46,
+      "status": "definite"
+    },
+    {
+      "physicalPaw": "C",
+      "frameIndex": 50,
+      "status": "definite"
+    },
+    {
+      "physicalPaw": "D",
+      "frameIndex": 7,
+      "status": "unknown"
+    },
+    {
+      "physicalPaw": "D",
+      "frameIndex": 13,
+      "status": "provisional"
+    },
+    {
+      "physicalPaw": "D",
+      "frameIndex": 34,
+      "status": "unknown"
+    },
+    {
+      "physicalPaw": "D",
+      "frameIndex": 41,
+      "status": "definite"
+    },
+    {
+      "physicalPaw": "A",
+      "frameIndex": 15,
+      "status": "definite"
+    },
+    {
+      "physicalPaw": "A",
+      "frameIndex": 20,
+      "status": "definite"
+    },
+    {
+      "physicalPaw": "A",
+      "frameIndex": 43,
+      "status": "definite"
+    },
+    {
+      "physicalPaw": "A",
+      "frameIndex": 50,
+      "status": "definite"
+    },
+    {
+      "physicalPaw": "B",
+      "frameIndex": 6,
+      "status": "unknown"
+    },
+    {
+      "physicalPaw": "B",
+      "frameIndex": 9,
+      "status": "definite"
+    },
+    {
+      "physicalPaw": "B",
+      "frameIndex": 49,
+      "status": "definite"
+    },
+    {
+      "physicalPaw": "B",
+      "frameIndex": 55,
+      "status": "definite"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "hind-A-contact-43-vs-touchdown-44-49",
+      "priority": 1,
+      "physicalPaw": "A",
+      "frameRange": [
+        43,
+        49
+      ],
+      "reason": "Only recorded event/frame discrepancy requiring reconciliation.",
+      "action": "In original frames 43–49, reconcile A43 CONTACT with touchdown 44–49. Determine whether a reported state/range needs a documented correction or another transition is actually visible. Keep uncertainty if unresolved; never force an exact event frame. Preserve existing evidence and save any correction as a new version."
+    },
+    {
+      "id": "D13-provisional",
+      "priority": 2,
+      "physicalPaw": "D",
+      "framesToCheck": [
+        13
+      ],
+      "requiredNow": false,
+      "condition": "Only if this provisional point is needed as a definite target; otherwise leave excluded.",
+      "action": "Retain the supplied provisional AIRBORNE observation. Seek clarification or better evidence only if it would change target eligibility; do not automatically repeat the review."
+    }
+  ],
+  "unknownPolicy": "C4/D7/D34/B6 were explicitly reviewed UNKNOWN. Keep them masked; do not request the same unclear frames again absent new evidence.",
+  "unverifiedPolicy": "224 other paw-frame slots remain unreviewed. No full 240-label pass is requested; assess additional continuous spans only when needed for a specific training/stride gate.",
+  "startCommand": "python -m training.gait_event_review --dataset gait-s004 --manifest reports/canine-contact-batch-v1/frame-manifest.json --port 8767",
+  "url": "http://localhost:8767/?dataset=gait-s004",
+  "draftImport": {
+    "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v3.review.json",
+    "reviewer": "s004-requesting-user-written-v3",
+    "sameHumanAsEarlierVersions": true,
+    "instruction": "Start this separate V3 session with prior_exposure, then import V3 JSON using the existing backup control. Keep V1/V2 sessions untouched. Back up existing V3 work before importing a replacement. Sidecar confidence/conflicts are read alongside the UI and retained with exports; the core reviewer does not auto-load them."
+  },
+  "nextAction": "Reconcile only Hind A 43–49 in the existing reviewer; record a signed separate resolution or new observation version. Keep every supplied observation, confidence and original interval until explicitly corrected."
+}

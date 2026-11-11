@@ -1,0 +1,969 @@
+{
+  "schemaVersion": 1,
+  "observationVersion": 3,
+  "datasetId": "gait-s004-91620e1d029a2801",
+  "manifestSha256": "5380e9416ec4727240f6dae6d26c770ff927723c7971c337d117181ed0b382cf",
+  "frameManifest": {
+    "path": "reports/canine-contact-batch-v1/frame-manifest.json",
+    "sha256": "5380e9416ec4727240f6dae6d26c770ff927723c7971c337d117181ed0b382cf"
+  },
+  "sourceVideo": {
+    "path": "tests/Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s004.ogv",
+    "sha256": "91620e1d029a2801cb47b894896d257c10efd0558af863949c6ccc6c53cc8650"
+  },
+  "reviewer": "s004-requesting-user-written-v3",
+  "reviewerIdentityKind": "Same requesting human as V1/V2. Versioned session IDs isolate storage, not independent reviewers.",
+  "independenceDeclaration": "prior_exposure",
+  "exposure": {
+    "priorFootageExposure": true,
+    "priorAnnotationExposure": true,
+    "previousAnnotationExposure": true,
+    "independenceDeclaration": "prior_exposure",
+    "independentlyVerified": false,
+    "modelOutputExposure": "not_specified",
+    "sameHumanReviewerAs": "s004-requesting-user-written-v2",
+    "previousReview": {
+      "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.review.json",
+      "sha256": "e5a8ddf035c6bbe35c92b9369c3d7b8afc893b4bf939ad45576b023762b30e32"
+    },
+    "legacyReviewFlagsMeaning": "blind=true/modelExposed=false/previousLabelsExposed=false are required viewer-workflow fields, not lifetime exposure claims. Prior footage and annotation exposure is explicitly true here. V1 is retained as lineage; no independent status or training approval is inferred.",
+    "sameHumanAsEarlierVersions": [
+      "s004-requesting-user-written-v1",
+      "s004-requesting-user-written-v2"
+    ]
+  },
+  "adjudicated": false,
+  "trainingApproved": false,
+  "annotationType": "human-gait-frame-state-sidecar",
+  "status": "draft_human_report",
+  "createdAt": "2026-11-11T18:43:59.434941+00:00",
+  "versioning": {
+    "observationVersion": 3,
+    "supersedesObservationVersion": 2,
+    "currentWorkingObservations": true,
+    "supersedes": {
+      "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.review.json",
+      "sha256": "e5a8ddf035c6bbe35c92b9369c3d7b8afc893b4bf939ad45576b023762b30e32"
+    },
+    "previousVersionFiles": {
+      "s004-human-observations-v1.REVIEW.md": {
+        "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v1.REVIEW.md",
+        "sha256": "9f58963491106fec96e1bd2cff1596af461a1aa32a6a817d7f640ba326bbd39f"
+      },
+      "s004-human-observations-v1.events.json": {
+        "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v1.events.json",
+        "sha256": "0676318a7f3d2b444a3eeab765c9c3b0b811b93ed106d071a191a551d2a8a4e4"
+      },
+      "s004-human-observations-v1.provenance.md": {
+        "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v1.provenance.md",
+        "sha256": "4e19e128bc4d25241d7a64870bfcc5f192cfc5618981c2a6635cab765651b91e"
+      },
+      "s004-human-observations-v1.review.json": {
+        "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v1.review.json",
+        "sha256": "5ac04fab9cb2dc9fa3984e385c083b2c04e19d2cb6333731744cb548a4d37fed"
+      },
+      "s004-human-observations-v1.validation.json": {
+        "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v1.validation.json",
+        "sha256": "cd965cb413cb1a6a1dd37f3a8676871da3b76b156057f1d3d50aa0daa7d637e3"
+      },
+      "s004-human-observations-v1.verification.json": {
+        "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v1.verification.json",
+        "sha256": "d69b58e8493a568a9e711091f417e0bf3d0e7ed40365d64d2363a90cd5cb5b30"
+      },
+      "s004-human-observations-v2.REVIEW.md": {
+        "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.REVIEW.md",
+        "sha256": "608f71fa62d5822cdf2b43d96a5a42ecfb123d217192f53bdcd610719b6982ed"
+      },
+      "s004-human-observations-v2.events.json": {
+        "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+        "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+      },
+      "s004-human-observations-v2.provenance.md": {
+        "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.provenance.md",
+        "sha256": "9f6fb7d1070693c4bb7163f6d978bd3d19a1be35653a09916894bc4c18186a64"
+      },
+      "s004-human-observations-v2.review.json": {
+        "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.review.json",
+        "sha256": "e5a8ddf035c6bbe35c92b9369c3d7b8afc893b4bf939ad45576b023762b30e32"
+      },
+      "s004-human-observations-v2.validation.json": {
+        "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.validation.json",
+        "sha256": "369cf82cd33aad9d314100dbdf0583c52013c18524aa279830445717b7166a58"
+      },
+      "s004-human-observations-v2.verification.json": {
+        "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.verification.json",
+        "sha256": "b7210fc05e6a4db4278713c499d39a16417efb7256bde78a434efff84b1270e3"
+      }
+    },
+    "preservation": "All V1/V2 files remain unchanged. V3 adds 16 sparse frame observations; its eight event records are unchanged copies of V2, including the unresolved Hind A touchdown range."
+  },
+  "review": {
+    "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v3.review.json",
+    "sha256": "9cc9c66dd055a04eca0a1e1df4bd674c94152e390d94662476406cf1880ecccf"
+  },
+  "provenance": {
+    "source": "16 new explicit human frame observations supplied in this task; no automatic visual verification or model state inference.",
+    "verbatimRecord": {
+      "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v3.provenance.md",
+      "sha256": "ca79d8b5eec38cd978c57c2522473e64256a03983046b2d1623e286c825a61a7"
+    },
+    "originalObservationsVerbatim": "## Source and reviewer\n\nDataset: `gait-s004`\n\nSource: `reports/canine-contact-batch-v1/frame-manifest.json`\n\nThese observations come from the same previously exposed human reviewer. Do not describe them as independent ground truth.\n\n## PART 1 — PRESERVE V2 EVENT RANGES\n\nHind A:\n- Frames 16–19: Transition to AIRBORNE.\n- Frames 44–49: Originally reported TOUCHDOWN.\n\nHind B:\n- Frames 7–8: TOUCHDOWN.\n- Frames 50–54: Transition to AIRBORNE.\n\nFront C:\n- Frames 5–10: TOUCHDOWN.\n- Frames 47–49: Transition to AIRBORNE.\n\nFront D:\n- Frames 8–12: Transition to AIRBORNE.\n- Frames 35–40: TOUCHDOWN.\n\nPreserve these as uncertain event ranges, not exact event timestamps.\n\n## PART 2 — NEW HUMAN FRAME OBSERVATIONS\n\n### FRONT C\n\n- Frame 4: UNKNOWN. Video quality prevents determining contact.\n- Frame 11: CONTACT, high confidence. Physical identity confirmed.\n- Frame 46: CONTACT, approximately 80% confidence.\n- Frame 50: AIRBORNE, 100% confidence.\n\n### FRONT D\n\n- Frame 7: UNKNOWN. Part of paw appears to touch ground, but frame quality makes assessment unreliable.\n- Frame 13: AIRBORNE, moderate confidence. Provisional.\n- Frame 34: UNKNOWN. Paw extremely close to ground; possible contact.\n- Frame 41: CONTACT, 95% confidence.\n\n### HIND A\n\n- Frame 15: CONTACT, 80% confidence. Part of paw appears to touch ground.\n- Frame 20: AIRBORNE, 100% confidence.\n- Frame 43: CONTACT, described as \"pretty confident.\" No numerical confidence given.\n- Frame 50: CONTACT, 100% confidence.\n\nIMPORTANT: Frame 43 conflicts with the originally reported touchdown range of 44–49. Preserve both observations and explicitly flag the inconsistency. Do not silently change the original event range or infer an exact touchdown frame.\n\n### HIND B\n\n- Frame 6: UNKNOWN. Paw extremely close to ground.\n- Frame 9: CONTACT, described as \"very confident.\"\n- Frame 49: CONTACT. Part of paw visibly touching ground; no numerical confidence given.\n- Frame 55: AIRBORNE, 100% confidence.\n",
+    "verbatimScope": "Source/reviewer and original Part 1/Part 2 sections, before Encoding and evidence limits."
+  },
+  "frameStateSemantics": "Exactly 16 explicit paw-frame observations. Definite is a human state assertion, not independent/approved truth. Provisional state is preserved separately and core-encoded uncertain. All other slots remain unreviewed.",
+  "counts": {
+    "explicitFrameObservations": 16,
+    "definiteHumanAssertions": 11,
+    "definiteContact": 8,
+    "definiteAirborne": 3,
+    "provisionalAirborne": 1,
+    "reviewedUnknown": 4,
+    "unverifiedPawFrames": 224,
+    "approvedTrainingTargets": 0
+  },
+  "observations": [
+    {
+      "id": "C-frame-4",
+      "physicalPaw": "C",
+      "physicalId": "Front C",
+      "frame": {
+        "frameIndex": 4,
+        "originalPts": 4,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 0.3333333333333333,
+        "pixelSha256": "3560f90067c21863f9f5c0c3f072e3f014c145857b1bc91e2a606765556e0122",
+        "imageSha256": "4b2fe4caeb76535def87362133776cd657287202809275825ac832e8e17bccc2"
+      },
+      "reportedSupportState": "unknown",
+      "assessmentStatus": "unknown",
+      "originalObservationVerbatim": "- Frame 4: UNKNOWN. Video quality prevents determining contact.",
+      "confidence": {
+        "percentage": null,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "frameSpecificIdentityExplicitlyConfirmed": null,
+      "identityEvidence": {
+        "sequenceDeclaration": {
+          "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+          "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+        },
+        "scope": "Same human previously reported tracking all four physical paws throughout. Applied only to this explicit observation, not intervening frames; no independent verification."
+      },
+      "coreEncoding": {
+        "supportState": "unknown",
+        "visibility": "uncertain",
+        "continuity": "unreviewed",
+        "supportStatePointer": "/observations/4/C/supportState",
+        "visibilityEvidence": "Human reports image/contact evidence unreliable",
+        "continuityEvidence": "Not assessed in this frame observation"
+      },
+      "conflicts": [],
+      "independentlyVerified": false,
+      "trainingApproved": false,
+      "trainingEligibility": {
+        "approved": false,
+        "reasons": [
+          "same_previously_exposed_reviewer",
+          "not_adjudicated",
+          "anatomical_mapping_unverified",
+          "unknown_support_state"
+        ]
+      }
+    },
+    {
+      "id": "C-frame-11",
+      "physicalPaw": "C",
+      "physicalId": "Front C",
+      "frame": {
+        "frameIndex": 11,
+        "originalPts": 11,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 0.9166666666666666,
+        "pixelSha256": "dbaf238db850712f7ef3bf5b4fdfce47783118bc6ffae8f514f6c6c64a43735b",
+        "imageSha256": "bd0f619592ea18567ae3793bc1508af09eb330efa515e1b94895cd564ddba24d"
+      },
+      "reportedSupportState": "contacting",
+      "assessmentStatus": "definite",
+      "originalObservationVerbatim": "- Frame 11: CONTACT, high confidence. Physical identity confirmed.",
+      "confidence": {
+        "percentage": null,
+        "approximate": false,
+        "qualitative": "high confidence",
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "frameSpecificIdentityExplicitlyConfirmed": true,
+      "identityEvidence": {
+        "sequenceDeclaration": {
+          "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+          "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+        },
+        "scope": "Same human previously reported tracking all four physical paws throughout. Applied only to this explicit observation, not intervening frames; no independent verification."
+      },
+      "coreEncoding": {
+        "supportState": "contacting",
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportStatePointer": "/observations/11/C/supportState",
+        "visibilityEvidence": "Human direct visible support-state assertion",
+        "continuityEvidence": "V2 human sequence tracking declaration; frame-specific confirmation only for C11"
+      },
+      "conflicts": [],
+      "independentlyVerified": false,
+      "trainingApproved": false,
+      "trainingEligibility": {
+        "approved": false,
+        "reasons": [
+          "same_previously_exposed_reviewer",
+          "not_adjudicated",
+          "anatomical_mapping_unverified"
+        ]
+      }
+    },
+    {
+      "id": "C-frame-46",
+      "physicalPaw": "C",
+      "physicalId": "Front C",
+      "frame": {
+        "frameIndex": 46,
+        "originalPts": 46,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 3.8333333333333335,
+        "pixelSha256": "ffded4dd746cc5089cbf37dbc01ab578c30688cb6d056b0623d2bb7631b0aa5d",
+        "imageSha256": "549c796821561e0094928b41e4389cb82c0d65658dc353954efb1bce47ab691d"
+      },
+      "reportedSupportState": "contacting",
+      "assessmentStatus": "definite",
+      "originalObservationVerbatim": "- Frame 46: CONTACT, approximately 80% confidence.",
+      "confidence": {
+        "percentage": 80,
+        "approximate": true,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "frameSpecificIdentityExplicitlyConfirmed": null,
+      "identityEvidence": {
+        "sequenceDeclaration": {
+          "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+          "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+        },
+        "scope": "Same human previously reported tracking all four physical paws throughout. Applied only to this explicit observation, not intervening frames; no independent verification."
+      },
+      "coreEncoding": {
+        "supportState": "contacting",
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportStatePointer": "/observations/46/C/supportState",
+        "visibilityEvidence": "Human direct visible support-state assertion",
+        "continuityEvidence": "V2 human sequence tracking declaration; frame-specific confirmation only for C11"
+      },
+      "conflicts": [],
+      "independentlyVerified": false,
+      "trainingApproved": false,
+      "trainingEligibility": {
+        "approved": false,
+        "reasons": [
+          "same_previously_exposed_reviewer",
+          "not_adjudicated",
+          "anatomical_mapping_unverified"
+        ]
+      }
+    },
+    {
+      "id": "C-frame-50",
+      "physicalPaw": "C",
+      "physicalId": "Front C",
+      "frame": {
+        "frameIndex": 50,
+        "originalPts": 50,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 4.166666666666667,
+        "pixelSha256": "b82f3df185f13180d8c7e9f0fa77fa0625c0b03694867644554e82b0a3197531",
+        "imageSha256": "3ee634fa52def5ecda23a803e596b9dd05119208861596c5b87d7cf49bdec06f"
+      },
+      "reportedSupportState": "airborne",
+      "assessmentStatus": "definite",
+      "originalObservationVerbatim": "- Frame 50: AIRBORNE, 100% confidence.",
+      "confidence": {
+        "percentage": 100,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "frameSpecificIdentityExplicitlyConfirmed": null,
+      "identityEvidence": {
+        "sequenceDeclaration": {
+          "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+          "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+        },
+        "scope": "Same human previously reported tracking all four physical paws throughout. Applied only to this explicit observation, not intervening frames; no independent verification."
+      },
+      "coreEncoding": {
+        "supportState": "airborne",
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportStatePointer": "/observations/50/C/supportState",
+        "visibilityEvidence": "Human direct visible support-state assertion",
+        "continuityEvidence": "V2 human sequence tracking declaration; frame-specific confirmation only for C11"
+      },
+      "conflicts": [],
+      "independentlyVerified": false,
+      "trainingApproved": false,
+      "trainingEligibility": {
+        "approved": false,
+        "reasons": [
+          "same_previously_exposed_reviewer",
+          "not_adjudicated",
+          "anatomical_mapping_unverified"
+        ]
+      }
+    },
+    {
+      "id": "D-frame-7",
+      "physicalPaw": "D",
+      "physicalId": "Front D",
+      "frame": {
+        "frameIndex": 7,
+        "originalPts": 7,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 0.5833333333333334,
+        "pixelSha256": "47b9fb4e61e1343d9b3cfb3c1364d67d1b1ace52d1762291de5563fa0a8636be",
+        "imageSha256": "79e6e1d06829836c8d4a808dadbd4252953baeaa7894dc296e9b45576b008305"
+      },
+      "reportedSupportState": "unknown",
+      "assessmentStatus": "unknown",
+      "originalObservationVerbatim": "- Frame 7: UNKNOWN. Part of paw appears to touch ground, but frame quality makes assessment unreliable.",
+      "confidence": {
+        "percentage": null,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "frameSpecificIdentityExplicitlyConfirmed": null,
+      "identityEvidence": {
+        "sequenceDeclaration": {
+          "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+          "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+        },
+        "scope": "Same human previously reported tracking all four physical paws throughout. Applied only to this explicit observation, not intervening frames; no independent verification."
+      },
+      "coreEncoding": {
+        "supportState": "unknown",
+        "visibility": "uncertain",
+        "continuity": "unreviewed",
+        "supportStatePointer": "/observations/7/D/supportState",
+        "visibilityEvidence": "Human reports image/contact evidence unreliable",
+        "continuityEvidence": "Not assessed in this frame observation"
+      },
+      "conflicts": [],
+      "independentlyVerified": false,
+      "trainingApproved": false,
+      "trainingEligibility": {
+        "approved": false,
+        "reasons": [
+          "same_previously_exposed_reviewer",
+          "not_adjudicated",
+          "anatomical_mapping_unverified",
+          "unknown_support_state"
+        ]
+      }
+    },
+    {
+      "id": "D-frame-13",
+      "physicalPaw": "D",
+      "physicalId": "Front D",
+      "frame": {
+        "frameIndex": 13,
+        "originalPts": 13,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 1.0833333333333333,
+        "pixelSha256": "453de5656fef21e2ae9c93d3ce7012a6ea28477db350964a764d3a2f4775ae02",
+        "imageSha256": "fee69cab1d66ac9896a88b574812c14551c5b7abf87b61af2daa73d54f9eb23a"
+      },
+      "reportedSupportState": "airborne",
+      "assessmentStatus": "provisional",
+      "originalObservationVerbatim": "- Frame 13: AIRBORNE, moderate confidence. Provisional.",
+      "confidence": {
+        "percentage": null,
+        "approximate": false,
+        "qualitative": "moderate confidence",
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "frameSpecificIdentityExplicitlyConfirmed": null,
+      "identityEvidence": {
+        "sequenceDeclaration": {
+          "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+          "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+        },
+        "scope": "Same human previously reported tracking all four physical paws throughout. Applied only to this explicit observation, not intervening frames; no independent verification."
+      },
+      "coreEncoding": {
+        "supportState": "uncertain",
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportStatePointer": "/observations/13/D/supportState",
+        "visibilityEvidence": "Human direct visible support-state assertion",
+        "continuityEvidence": "V2 human sequence tracking declaration; frame-specific confirmation only for C11"
+      },
+      "conflicts": [],
+      "independentlyVerified": false,
+      "trainingApproved": false,
+      "trainingEligibility": {
+        "approved": false,
+        "reasons": [
+          "same_previously_exposed_reviewer",
+          "not_adjudicated",
+          "anatomical_mapping_unverified",
+          "provisional_support_state"
+        ]
+      }
+    },
+    {
+      "id": "D-frame-34",
+      "physicalPaw": "D",
+      "physicalId": "Front D",
+      "frame": {
+        "frameIndex": 34,
+        "originalPts": 34,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 2.8333333333333335,
+        "pixelSha256": "d59e540a5d518bf668dc586ed4cb5a567468ab4226fca2b88d6fedb79ea4381f",
+        "imageSha256": "933ab5649d05aade25d4de54351b37c8cbdae499f12e11909da09eff1dc66444"
+      },
+      "reportedSupportState": "unknown",
+      "assessmentStatus": "unknown",
+      "originalObservationVerbatim": "- Frame 34: UNKNOWN. Paw extremely close to ground; possible contact.",
+      "confidence": {
+        "percentage": null,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "frameSpecificIdentityExplicitlyConfirmed": null,
+      "identityEvidence": {
+        "sequenceDeclaration": {
+          "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+          "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+        },
+        "scope": "Same human previously reported tracking all four physical paws throughout. Applied only to this explicit observation, not intervening frames; no independent verification."
+      },
+      "coreEncoding": {
+        "supportState": "unknown",
+        "visibility": "uncertain",
+        "continuity": "unreviewed",
+        "supportStatePointer": "/observations/34/D/supportState",
+        "visibilityEvidence": "Human reports image/contact evidence unreliable",
+        "continuityEvidence": "Not assessed in this frame observation"
+      },
+      "conflicts": [],
+      "independentlyVerified": false,
+      "trainingApproved": false,
+      "trainingEligibility": {
+        "approved": false,
+        "reasons": [
+          "same_previously_exposed_reviewer",
+          "not_adjudicated",
+          "anatomical_mapping_unverified",
+          "unknown_support_state"
+        ]
+      }
+    },
+    {
+      "id": "D-frame-41",
+      "physicalPaw": "D",
+      "physicalId": "Front D",
+      "frame": {
+        "frameIndex": 41,
+        "originalPts": 41,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 3.4166666666666665,
+        "pixelSha256": "fe917f4cd40fd2390777a7f50ee020cd7e9a7f3744b63be68e4fbf174336bc62",
+        "imageSha256": "111f9eb63f3b9442aaa96c4e272937569de781fe83bed7dabbaa79671f17fd0f"
+      },
+      "reportedSupportState": "contacting",
+      "assessmentStatus": "definite",
+      "originalObservationVerbatim": "- Frame 41: CONTACT, 95% confidence.",
+      "confidence": {
+        "percentage": 95,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "frameSpecificIdentityExplicitlyConfirmed": null,
+      "identityEvidence": {
+        "sequenceDeclaration": {
+          "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+          "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+        },
+        "scope": "Same human previously reported tracking all four physical paws throughout. Applied only to this explicit observation, not intervening frames; no independent verification."
+      },
+      "coreEncoding": {
+        "supportState": "contacting",
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportStatePointer": "/observations/41/D/supportState",
+        "visibilityEvidence": "Human direct visible support-state assertion",
+        "continuityEvidence": "V2 human sequence tracking declaration; frame-specific confirmation only for C11"
+      },
+      "conflicts": [],
+      "independentlyVerified": false,
+      "trainingApproved": false,
+      "trainingEligibility": {
+        "approved": false,
+        "reasons": [
+          "same_previously_exposed_reviewer",
+          "not_adjudicated",
+          "anatomical_mapping_unverified"
+        ]
+      }
+    },
+    {
+      "id": "A-frame-15",
+      "physicalPaw": "A",
+      "physicalId": "Hind A",
+      "frame": {
+        "frameIndex": 15,
+        "originalPts": 15,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 1.25,
+        "pixelSha256": "de9f52c860713a115e7705fcabad4294893bdd8110b499b70365724607580502",
+        "imageSha256": "74bf5e7c348eab9fc62ed85e94fafb2cd8c75731542727093455a5f7067571e0"
+      },
+      "reportedSupportState": "contacting",
+      "assessmentStatus": "definite",
+      "originalObservationVerbatim": "- Frame 15: CONTACT, 80% confidence. Part of paw appears to touch ground.",
+      "confidence": {
+        "percentage": 80,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "frameSpecificIdentityExplicitlyConfirmed": null,
+      "identityEvidence": {
+        "sequenceDeclaration": {
+          "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+          "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+        },
+        "scope": "Same human previously reported tracking all four physical paws throughout. Applied only to this explicit observation, not intervening frames; no independent verification."
+      },
+      "coreEncoding": {
+        "supportState": "contacting",
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportStatePointer": "/observations/15/A/supportState",
+        "visibilityEvidence": "Human direct visible support-state assertion",
+        "continuityEvidence": "V2 human sequence tracking declaration; frame-specific confirmation only for C11"
+      },
+      "conflicts": [],
+      "independentlyVerified": false,
+      "trainingApproved": false,
+      "trainingEligibility": {
+        "approved": false,
+        "reasons": [
+          "same_previously_exposed_reviewer",
+          "not_adjudicated",
+          "anatomical_mapping_unverified"
+        ]
+      }
+    },
+    {
+      "id": "A-frame-20",
+      "physicalPaw": "A",
+      "physicalId": "Hind A",
+      "frame": {
+        "frameIndex": 20,
+        "originalPts": 20,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 1.6666666666666667,
+        "pixelSha256": "6b023b5ee3212977e53b7c34f2ac7321775c1c2a2ca35cc2d98c5fd6487c9148",
+        "imageSha256": "bb008562b6cdc0d89294b47ea5ef33c201264617c39977ec2fa7f546abc95554"
+      },
+      "reportedSupportState": "airborne",
+      "assessmentStatus": "definite",
+      "originalObservationVerbatim": "- Frame 20: AIRBORNE, 100% confidence.",
+      "confidence": {
+        "percentage": 100,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "frameSpecificIdentityExplicitlyConfirmed": null,
+      "identityEvidence": {
+        "sequenceDeclaration": {
+          "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+          "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+        },
+        "scope": "Same human previously reported tracking all four physical paws throughout. Applied only to this explicit observation, not intervening frames; no independent verification."
+      },
+      "coreEncoding": {
+        "supportState": "airborne",
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportStatePointer": "/observations/20/A/supportState",
+        "visibilityEvidence": "Human direct visible support-state assertion",
+        "continuityEvidence": "V2 human sequence tracking declaration; frame-specific confirmation only for C11"
+      },
+      "conflicts": [],
+      "independentlyVerified": false,
+      "trainingApproved": false,
+      "trainingEligibility": {
+        "approved": false,
+        "reasons": [
+          "same_previously_exposed_reviewer",
+          "not_adjudicated",
+          "anatomical_mapping_unverified"
+        ]
+      }
+    },
+    {
+      "id": "A-frame-43",
+      "physicalPaw": "A",
+      "physicalId": "Hind A",
+      "frame": {
+        "frameIndex": 43,
+        "originalPts": 43,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 3.5833333333333335,
+        "pixelSha256": "820b48ee88c1070baa52a0ead6e511b81a62a6ec163594cc749773f495234cd6",
+        "imageSha256": "66f07fc0a8ee7ea4cc2ed99cf6aff7a5cecb6d45a76dae16837711d7aa90c131"
+      },
+      "reportedSupportState": "contacting",
+      "assessmentStatus": "definite",
+      "originalObservationVerbatim": "- Frame 43: CONTACT, described as \"pretty confident.\" No numerical confidence given.",
+      "confidence": {
+        "percentage": null,
+        "approximate": false,
+        "qualitative": "pretty confident",
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "frameSpecificIdentityExplicitlyConfirmed": null,
+      "identityEvidence": {
+        "sequenceDeclaration": {
+          "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+          "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+        },
+        "scope": "Same human previously reported tracking all four physical paws throughout. Applied only to this explicit observation, not intervening frames; no independent verification."
+      },
+      "coreEncoding": {
+        "supportState": "contacting",
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportStatePointer": "/observations/43/A/supportState",
+        "visibilityEvidence": "Human direct visible support-state assertion",
+        "continuityEvidence": "V2 human sequence tracking declaration; frame-specific confirmation only for C11"
+      },
+      "conflicts": [
+        "hind-A-contact-43-vs-touchdown-44-49"
+      ],
+      "independentlyVerified": false,
+      "trainingApproved": false,
+      "trainingEligibility": {
+        "approved": false,
+        "reasons": [
+          "same_previously_exposed_reviewer",
+          "not_adjudicated",
+          "anatomical_mapping_unverified",
+          "unresolved_event_frame_conflict"
+        ]
+      }
+    },
+    {
+      "id": "A-frame-50",
+      "physicalPaw": "A",
+      "physicalId": "Hind A",
+      "frame": {
+        "frameIndex": 50,
+        "originalPts": 50,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 4.166666666666667,
+        "pixelSha256": "b82f3df185f13180d8c7e9f0fa77fa0625c0b03694867644554e82b0a3197531",
+        "imageSha256": "3ee634fa52def5ecda23a803e596b9dd05119208861596c5b87d7cf49bdec06f"
+      },
+      "reportedSupportState": "contacting",
+      "assessmentStatus": "definite",
+      "originalObservationVerbatim": "- Frame 50: CONTACT, 100% confidence.",
+      "confidence": {
+        "percentage": 100,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "frameSpecificIdentityExplicitlyConfirmed": null,
+      "identityEvidence": {
+        "sequenceDeclaration": {
+          "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+          "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+        },
+        "scope": "Same human previously reported tracking all four physical paws throughout. Applied only to this explicit observation, not intervening frames; no independent verification."
+      },
+      "coreEncoding": {
+        "supportState": "contacting",
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportStatePointer": "/observations/50/A/supportState",
+        "visibilityEvidence": "Human direct visible support-state assertion",
+        "continuityEvidence": "V2 human sequence tracking declaration; frame-specific confirmation only for C11"
+      },
+      "conflicts": [],
+      "independentlyVerified": false,
+      "trainingApproved": false,
+      "trainingEligibility": {
+        "approved": false,
+        "reasons": [
+          "same_previously_exposed_reviewer",
+          "not_adjudicated",
+          "anatomical_mapping_unverified"
+        ]
+      }
+    },
+    {
+      "id": "B-frame-6",
+      "physicalPaw": "B",
+      "physicalId": "Hind B",
+      "frame": {
+        "frameIndex": 6,
+        "originalPts": 6,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 0.5,
+        "pixelSha256": "dc28b12b62943a76dbb5923d3d0906e0a6472cf69d078110ac2ec45959fe7fe7",
+        "imageSha256": "8bebed2fc722a6415a4c970f9650015d83fa248331829a71a98c4ca9c7f35fcd"
+      },
+      "reportedSupportState": "unknown",
+      "assessmentStatus": "unknown",
+      "originalObservationVerbatim": "- Frame 6: UNKNOWN. Paw extremely close to ground.",
+      "confidence": {
+        "percentage": null,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "frameSpecificIdentityExplicitlyConfirmed": null,
+      "identityEvidence": {
+        "sequenceDeclaration": {
+          "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+          "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+        },
+        "scope": "Same human previously reported tracking all four physical paws throughout. Applied only to this explicit observation, not intervening frames; no independent verification."
+      },
+      "coreEncoding": {
+        "supportState": "unknown",
+        "visibility": "uncertain",
+        "continuity": "unreviewed",
+        "supportStatePointer": "/observations/6/B/supportState",
+        "visibilityEvidence": "Human reports image/contact evidence unreliable",
+        "continuityEvidence": "Not assessed in this frame observation"
+      },
+      "conflicts": [],
+      "independentlyVerified": false,
+      "trainingApproved": false,
+      "trainingEligibility": {
+        "approved": false,
+        "reasons": [
+          "same_previously_exposed_reviewer",
+          "not_adjudicated",
+          "anatomical_mapping_unverified",
+          "unknown_support_state"
+        ]
+      }
+    },
+    {
+      "id": "B-frame-9",
+      "physicalPaw": "B",
+      "physicalId": "Hind B",
+      "frame": {
+        "frameIndex": 9,
+        "originalPts": 9,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 0.75,
+        "pixelSha256": "0e6d6ad76af844c25c129d8fdef56ee2d96c2a93266c0ec697212829bfe61c07",
+        "imageSha256": "620be121b7117fea53287cf490aebe2628ac989b6b29e114fb8dd035648110e1"
+      },
+      "reportedSupportState": "contacting",
+      "assessmentStatus": "definite",
+      "originalObservationVerbatim": "- Frame 9: CONTACT, described as \"very confident.\"",
+      "confidence": {
+        "percentage": null,
+        "approximate": false,
+        "qualitative": "very confident",
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "frameSpecificIdentityExplicitlyConfirmed": null,
+      "identityEvidence": {
+        "sequenceDeclaration": {
+          "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+          "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+        },
+        "scope": "Same human previously reported tracking all four physical paws throughout. Applied only to this explicit observation, not intervening frames; no independent verification."
+      },
+      "coreEncoding": {
+        "supportState": "contacting",
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportStatePointer": "/observations/9/B/supportState",
+        "visibilityEvidence": "Human direct visible support-state assertion",
+        "continuityEvidence": "V2 human sequence tracking declaration; frame-specific confirmation only for C11"
+      },
+      "conflicts": [],
+      "independentlyVerified": false,
+      "trainingApproved": false,
+      "trainingEligibility": {
+        "approved": false,
+        "reasons": [
+          "same_previously_exposed_reviewer",
+          "not_adjudicated",
+          "anatomical_mapping_unverified"
+        ]
+      }
+    },
+    {
+      "id": "B-frame-49",
+      "physicalPaw": "B",
+      "physicalId": "Hind B",
+      "frame": {
+        "frameIndex": 49,
+        "originalPts": 49,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 4.083333333333333,
+        "pixelSha256": "6ba9c9385560197ed20b3a37aa6e5eb80209ad0ab89b6f98ba40a519cfabdadd",
+        "imageSha256": "4b43032a94c8598be19f468928635fd763bd2e6da2adf2697bf8bbbe4a59fde3"
+      },
+      "reportedSupportState": "contacting",
+      "assessmentStatus": "definite",
+      "originalObservationVerbatim": "- Frame 49: CONTACT. Part of paw visibly touching ground; no numerical confidence given.",
+      "confidence": {
+        "percentage": null,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "frameSpecificIdentityExplicitlyConfirmed": null,
+      "identityEvidence": {
+        "sequenceDeclaration": {
+          "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+          "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+        },
+        "scope": "Same human previously reported tracking all four physical paws throughout. Applied only to this explicit observation, not intervening frames; no independent verification."
+      },
+      "coreEncoding": {
+        "supportState": "contacting",
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportStatePointer": "/observations/49/B/supportState",
+        "visibilityEvidence": "Human direct visible support-state assertion",
+        "continuityEvidence": "V2 human sequence tracking declaration; frame-specific confirmation only for C11"
+      },
+      "conflicts": [],
+      "independentlyVerified": false,
+      "trainingApproved": false,
+      "trainingEligibility": {
+        "approved": false,
+        "reasons": [
+          "same_previously_exposed_reviewer",
+          "not_adjudicated",
+          "anatomical_mapping_unverified"
+        ]
+      }
+    },
+    {
+      "id": "B-frame-55",
+      "physicalPaw": "B",
+      "physicalId": "Hind B",
+      "frame": {
+        "frameIndex": 55,
+        "originalPts": 55,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 4.583333333333333,
+        "pixelSha256": "83da5289bd1b6039686f0b4280c0c6bf1604c47ae515c7a94fae8a6ad32e727a",
+        "imageSha256": "f6ec8f41db5de07847cb65c2b573de83b0e9bd8e1c5e7047c1df74b6b50e5db7"
+      },
+      "reportedSupportState": "airborne",
+      "assessmentStatus": "definite",
+      "originalObservationVerbatim": "- Frame 55: AIRBORNE, 100% confidence.",
+      "confidence": {
+        "percentage": 100,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "frameSpecificIdentityExplicitlyConfirmed": null,
+      "identityEvidence": {
+        "sequenceDeclaration": {
+          "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+          "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+        },
+        "scope": "Same human previously reported tracking all four physical paws throughout. Applied only to this explicit observation, not intervening frames; no independent verification."
+      },
+      "coreEncoding": {
+        "supportState": "airborne",
+        "visibility": "visible",
+        "continuity": "continuous",
+        "supportStatePointer": "/observations/55/B/supportState",
+        "visibilityEvidence": "Human direct visible support-state assertion",
+        "continuityEvidence": "V2 human sequence tracking declaration; frame-specific confirmation only for C11"
+      },
+      "conflicts": [],
+      "independentlyVerified": false,
+      "trainingApproved": false,
+      "trainingEligibility": {
+        "approved": false,
+        "reasons": [
+          "same_previously_exposed_reviewer",
+          "not_adjudicated",
+          "anatomical_mapping_unverified"
+        ]
+      }
+    }
+  ],
+  "physicalIdentity": {
+    "physicalIds": {
+      "A": "Hind A",
+      "B": "Hind B",
+      "C": "Front C",
+      "D": "Front D"
+    },
+    "anatomicalMapping": {
+      "A": null,
+      "B": null,
+      "C": null,
+      "D": null
+    },
+    "sequenceFrameRange": [
+      0,
+      59
+    ],
+    "continuity": "human_reported_tracked_throughout",
+    "continuityStatementVerbatim": "The reviewer reports visually tracking all four physical paws throughout the video.",
+    "referenceAnchors": {
+      "C": {
+        "descriptionVerbatim": "The reviewer described Front C as the paw closer to the dog's head in the stationary reference position.",
+        "frameIndex": null,
+        "anatomicalSide": null,
+        "source": "V2 human report"
+      }
+    },
+    "missingReferenceDescriptions": [
+      "A",
+      "B",
+      "D"
+    ],
+    "independentlyVerified": false,
+    "reportedIdentityBreaks": [],
+    "limitation": "C reference description retained; exact reference frame unspecified. A/B reference distinction is not newly supplied. Sequence tracking does not establish per-frame visibility, support, anatomical identity or independent verification."
+  },
+  "timing": {
+    "frameIndexing": "zero_based_original",
+    "frameRange": [
+      0,
+      59
+    ],
+    "originalTimeBase": "1/12",
+    "movieFps": 12,
+    "frameIntervalMilliseconds": 83.33333333333333,
+    "sensorNativeCaptureAttested": false,
+    "limitation": "Poor image quality prevents reliable exact transition frames. Retain the supplied ranges, no midpoint/exact-frame/subframe estimates."
+  },
+  "noInterpolation": true,
+  "noCompleteStrideInferred": true,
+  "noAnatomicalAssignment": true
+}

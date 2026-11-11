@@ -11,6 +11,8 @@ globalThis.gaitEventReview = (() => {
     ['nextContactFirstContacting', 'Next contact: first definitely contacting'],
   ];
   let base, draft = null, key, group, selectedPaw = 'A';
+  let paws = ['A', 'B'];
+  const pawName = paw => manifest.pawRoles?.[paw] || 'Physical ' + paw;
 
   function status(message) { $('eventStatus').textContent = message; }
   function save() {
@@ -59,7 +61,7 @@ globalThis.gaitEventReview = (() => {
       const heading = document.createElement('p');
       heading.textContent = 'Human stride assertion ' + stride.id.slice(0, 8);
       card.append(heading,
-        select('Stride ' + stride.id + ' physical paw', ['A', 'B'], stride.physicalPaw,
+        select('Stride ' + stride.id + ' physical paw', paws, stride.physicalPaw,
           value => { stride.physicalPaw = value; stride.status = 'unreviewed'; renderStrides(); }),
         select('Stride ' + stride.id + ' status',
           ['unreviewed', 'complete', 'occluded', 'uncertain', 'unassessable'], stride.status,
@@ -94,27 +96,38 @@ globalThis.gaitEventReview = (() => {
     if (!manifest.selectedFrames.includes(current)) {
       $('frameStatus').textContent = 'Original context frame only. No annotations are recorded here.'; return;
     }
-    $('frameStatus').textContent = 'Human-entered observations only. A/B are physical paws, not anatomical sides.';
-    const pawSelector = select('Physical paw to review', ['A', 'B'], selectedPaw,
+    $('frameStatus').textContent = 'Human-entered observations only. ' + paws.join('/') + ' follow physical limbs, not screen order. UNKNOWN is a valid reviewed label.';
+    const pawSelector = select('Physical paw to review', paws, selectedPaw,
       value => { selectedPaw = value; labels(); });
+    for (const option of pawSelector.children) option.textContent = pawName(option.value);
     $('paws').append(pawSelector);
     const observation = draft.observations[String(current)][selectedPaw];
     const choices = {
       visibility: ['unreviewed', 'visible', 'occluded', 'uncertain', 'unassessable'],
       continuity: ['unreviewed', 'start', 'continuous', 'broken', 'uncertain', 'unassessable'],
-      supportState: ['unreviewed', 'airborne', 'contacting', 'occluded', 'uncertain', 'unassessable'],
+      supportState: ['unreviewed', 'airborne', 'contacting', 'unknown', 'occluded', 'uncertain', 'unassessable'],
     };
     for (const [field, options] of Object.entries(choices)) {
       const row = document.createElement('label'); row.textContent = selectedPaw + ' ' + field;
-      row.append(select(selectedPaw + ' ' + field, options, observation[field], value => {
+      const dropdown = select(selectedPaw + ' ' + field, options, observation[field], value => {
         if (field === 'supportState' && ['airborne', 'contacting'].includes(value) && observation.visibility !== 'visible') {
           status('A definite support observation requires visibility = visible.'); labels(); return;
+        }
+        if (manifest.physicalPaws && field === 'supportState' && ['airborne', 'contacting'].includes(value) &&
+            (!draft.pawDescriptions[selectedPaw].trim() || !['start', 'continuous'].includes(observation.continuity))) {
+          status('Describe this physical paw and confirm its continuity before a definite contact label. Use UNKNOWN when identity is unclear.'); labels(); return;
         }
         observation[field] = value;
         if (field === 'visibility' && value !== 'visible' && ['airborne', 'contacting'].includes(observation.supportState))
           observation.supportState = 'unreviewed';
         labels();
-      }));
+      });
+      if (field === 'supportState') for (const option of dropdown.children) {
+        option.textContent = ({contacting: 'CONTACT', airborne: 'AIRBORNE', unknown: 'UNKNOWN',
+          unreviewed: 'Not reviewed', occluded: 'UNKNOWN — occluded', uncertain: 'UNKNOWN — uncertain',
+          unassessable: 'UNKNOWN — unassessable'})[option.value];
+      }
+      row.append(dropdown);
       $('paws').append(row);
     }
     const notes = control('textarea', selectedPaw + ' frame evidence', observation.notes);
@@ -122,15 +135,15 @@ globalThis.gaitEventReview = (() => {
     notes.oninput = () => { observation.notes = notes.value; save(); };
     $('paws').append(notes);
     $('progress').textContent = Object.values(draft.observations).reduce((n, paws) =>
-      n + Object.values(paws).filter(o => o.visibility !== 'unreviewed').length, 0) +
-      '/' + (manifest.selectedFrames.length * 2) + ' paw-frames marked; not adjudicated';
+      n + Object.values(paws).filter(o => o.supportState !== 'unreviewed').length, 0) +
+      '/' + (manifest.selectedFrames.length * paws.length) + ' paw-frames marked; not adjudicated';
   }
   async function boot() {
     group = new URLSearchParams(location.search).get('dataset') || 'gait-dalmatian';
-    if (!['gait-dalmatian', 'gait-dog02'].includes(group)) throw Error('Unknown blind event review source');
     const response = await fetch('/api/session?group=' + group);
     if (!response.ok) throw Error(await response.text());
     base = await response.json(); manifest = structuredClone(base.source);
+    paws = Object.keys(base.draft.pawDescriptions); selectedPaw = paws[0];
     data = {frames: {}, transitions: {}}; model = null; reveal = false; pairImages = null;
     // Existing paint()/load()/move() remain in use. Never draw any markers.
     markers = () => {}; showLabels = labels; renderPair = () => {};
@@ -145,9 +158,10 @@ globalThis.gaitEventReview = (() => {
     $('download').closest('details').hidden = true;
     $('physicalControls').hidden = true; $('clearPaw').hidden = true;
     $('frameNotes').disabled = true;
-    $('annotationIntro').textContent = 'Independent human event review. A/B must follow the same physical paws; never use screen order or infer anatomical sides. No predictions or previous labels are loaded.';
+    $('annotationIntro').textContent = 'Independent human contact review. ' + paws.map(pawName).join('; ') + '. Describe each limb and follow it through the clip. Never use screen order or infer anatomical sides. No predictions or previous labels are loaded.';
     document.querySelector('.warning').textContent = 'Mark only what you can see. Occluded, uncertain, broken continuity, and unassessable are valid outcomes. Do not force a complete stride.';
-    $('sourceAttribution').textContent = manifest.attribution + ' Source SHA256: ' + manifest.sourceVideo.sha256;
+    $('sourceAttribution').textContent = manifest.attribution + ' Source SHA256: ' + manifest.sourceVideo.sha256 +
+      (manifest.rights ? ' License records: ' + manifest.rights.embeddedLicense + ' ; ' + manifest.rights.commonsLicense : '');
     $('eventHelp').textContent = 'Review every intervening frame. Contact is bracketed by last definitely airborne / first definitely contacting. Lift-off is bracketed by last definitely contacting / first definitely airborne. Repeat the contact bracket for the SAME physical paw. Annotations describe visible contact, not force. A complete assertion requires all six boundaries and visible, continuous physical identity throughout.';
     $('imageHelp').textContent = 'Original source pixels, numbers and native PTS. No markers are drawn. Use arrows, frame jump, or slow playback; observe a full sequence before entering event brackets.';
     $('annotationIntro').insertAdjacentHTML('afterend', `
@@ -164,15 +178,14 @@ globalThis.gaitEventReview = (() => {
       </div>`);
     $('paws').insertAdjacentHTML('afterend', `
       <div class="card"><p>Describe the physical identities from visible leg anatomy; do not import an anatomical mapping.</p>
-      <label>Physical A description <textarea id="eventPawA" disabled></textarea></label>
-      <label>Physical B description <textarea id="eventPawB" disabled></textarea></label>
+      ${paws.map(paw => `<label>${pawName(paw)} description <textarea id="eventPaw${paw}" disabled></textarea></label>`).join('')}
       <button id="eventAddStride">Add blank assertion for selected physical paw</button>
       <div id="eventStrides"></div></div>`);
     function activate(incoming) {
       draft = incoming;
       $('eventIndependence').disabled = false;
       $('eventIndependence').value = draft.independenceDeclaration;
-      for (const paw of ['A', 'B']) {
+      for (const paw of paws) {
         $('eventPaw' + paw).disabled = false;
         $('eventPaw' + paw).value = draft.pawDescriptions[paw];
       }
@@ -194,7 +207,7 @@ globalThis.gaitEventReview = (() => {
       } catch (e) { status(e.message); }
     };
     $('eventIndependence').onchange = () => { if (draft) { draft.independenceDeclaration = $('eventIndependence').value; save(); } };
-    for (const paw of ['A', 'B']) $('eventPaw' + paw).oninput = () => {
+    for (const paw of paws) $('eventPaw' + paw).oninput = () => {
       if (draft) { draft.pawDescriptions[paw] = $('eventPaw' + paw).value; save(); }
     };
     $('eventAddStride').onclick = () => {

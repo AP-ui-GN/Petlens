@@ -1,0 +1,71 @@
+{
+  "converted": true,
+  "frameCount": 60,
+  "featureShape": [
+    60,
+    69
+  ],
+  "referenceValidFrames": 60,
+  "failedOrIncompletePoseFrames": 0,
+  "rawScoreRange": [
+    0.700904130935669,
+    1.5707082748413086
+  ],
+  "rawScoresAboveOne": 808,
+  "rawScoresAreProbabilities": false,
+  "observationReasons": {
+    "observed": 1020
+  },
+  "referenceReasons": {
+    "valid": 60
+  },
+  "targetReasons": {
+    "unreviewed": 56,
+    "excluded_source_state": 1,
+    "observation_not_approved": 1,
+    "valid": 2
+  },
+  "identityEligiblePawFrames": {
+    "physical:C": 5
+  },
+  "visibleReviewedPawFrames": {
+    "physical:C": 2
+  },
+  "excludedFeatureFrames": 0,
+  "reviewEvidence": [
+    {
+      "policy": "exploratory_train_only",
+      "owner": "requesting project owner in this conversation",
+      "physicalOutput": {
+        "kind": "tracked_front",
+        "physicalPaw": "C",
+        "anatomicalSide": "unknown",
+        "firstFrame": 46,
+        "lastFrame": 50,
+        "sourceVideoSha256": "91620e1d029a2801cb47b894896d257c10efd0558af863949c6ccc6c53cc8650",
+        "dogId": "shin-2013-s003-s004-unresolved",
+        "datasetId": "gait-s004-91620e1d029a2801"
+      },
+      "originalReviewer": "s004-requesting-user-written-v3",
+      "exposure": "prior_exposure",
+      "independentValidation": false,
+      "authorization": {
+        "path": "reports/canine-contact-batch-v1/identity-neutral-exploratory/owner-authorization.CONVERSATION-v1.json",
+        "sha256": "2ed691f290e4ce30ed63fa072256fe98b9b3565662616efe8f34518a533417b0"
+      }
+    }
+  ],
+  "temporalWindows": 3,
+  "supervisedWindows": 1,
+  "featureOnlyWindows": 2,
+  "nativeTimingEvaluationEligible": false,
+  "trainingReady": true,
+  "blockers": [],
+  "approvedTargets": {
+    "physical:C": {
+      "valid": 2,
+      "contacting": 1,
+      "airborne": 1
+    }
+  }
+}

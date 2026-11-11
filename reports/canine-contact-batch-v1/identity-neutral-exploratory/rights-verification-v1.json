@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-11-11T19:39:56Z",
+  "verificationBy": "assistant: source-evidence verification, not an owner signature",
+  "status": "cleared_for_this_bounded_local_experiment",
+  "sourceVideo": {
+    "path": "tests/Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s004.ogv",
+    "sha256": "91620e1d029a2801cb47b894896d257c10efd0558af863949c6ccc6c53cc8650"
+  },
+  "previousRightsRecord": {
+    "path": "reports/canine-contact-batch-v1/readiness.json",
+    "sha256": "d3973cf3ae451023bca79465528d2379179fe8458d24658f50eee2f7603eb8a9"
+  },
+  "localEmbeddedEvidence": {
+    "path": "tmp/wikimedia-s004-preparation/source-ffprobe.json",
+    "sha256": "d23d54fedc226e7556b6235079fee2e217e7d7dddbd178b3918ec3eea3f25db4"
+  },
+  "embeddedLicense": "http://creativecommons.org/licenses/by/3.0/",
+  "embeddedAuthor": "Shin J, Greer B, Hakim C, Zhou Z, Chung Y, Duan Y, He Z, Duan D",
+  "embeddedCopyright": "Shin et al",
+  "sources": [
+    {
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0059875",
+      "finding": "Publisher identifies Movie S4 as a side-view affected-dog clip; article copyright permits attributed reuse."
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s004.ogv",
+      "finding": "Commons identifies Shin et al. Movie S4 and its authors. The license box is CC BY 2.5; the metadata usage-terms link is CC BY 3.0."
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by/3.0/",
+      "finding": "Reproduction and adaptation for any purpose including commercial use, subject to attribution and retained notices."
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by/2.5/",
+      "finding": "Reproduction and adaptation for any purpose including commercial use, subject to attribution and retained notices."
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by/3.0/legalcode.en",
+      "finding": "Section 3 permits reproduction and adaptations; Section 4 retains notices and attribution."
+    }
+  ],
+  "noticeDiscrepancy": {
+    "embedded": "CC BY 3.0",
+    "commonsBox": "CC BY 2.5",
+    "resolvedBy": "Retain both notices and their links. Use the original embedded 3.0 grant for this local feature-derived experiment while also satisfying shared 2.5 attribution/notice requirements; no assertion that the two notices are identical or that the uploader issued a new license."
+  },
+  "trainingUseAssessment": {
+    "permitted": true,
+    "inference": true,
+    "basis": "Bounded local model fitting on derived pose features is supported by the broad reproduction/adaptation grants. No training-specific restriction or third-party-content exclusion was found in the inspected source notices. This is not a claim of express AI-specific permission from the authors or a legal opinion."
+  },
+  "attributionRequired": true,
+  "redistributionPlanned": false,
+  "scope": "One source, Front C, two approved observations, five epochs, local exploratory train-only run; no clinical or independent validation claims."
+}

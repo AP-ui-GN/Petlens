@@ -1,0 +1,67 @@
+[
+  {
+    "epoch": 1,
+    "train": {
+      "loss": 0.8244903683662415,
+      "accuracy": 0.5,
+      "supervisedPawFrames": 2,
+      "eligibleCoverage": 0.4,
+      "contactTP": 0,
+      "contactFP": 0,
+      "contactFN": 1,
+      "counting": "Window-weighted; overlapping frames may repeat"
+    }
+  },
+  {
+    "epoch": 2,
+    "train": {
+      "loss": 0.6996031403541565,
+      "accuracy": 0.5,
+      "supervisedPawFrames": 2,
+      "eligibleCoverage": 0.4,
+      "contactTP": 0,
+      "contactFP": 0,
+      "contactFN": 1,
+      "counting": "Window-weighted; overlapping frames may repeat"
+    }
+  },
+  {
+    "epoch": 3,
+    "train": {
+      "loss": 0.8012294769287109,
+      "accuracy": 0.5,
+      "supervisedPawFrames": 2,
+      "eligibleCoverage": 0.4,
+      "contactTP": 1,
+      "contactFP": 1,
+      "contactFN": 0,
+      "counting": "Window-weighted; overlapping frames may repeat"
+    }
+  },
+  {
+    "epoch": 4,
+    "train": {
+      "loss": 0.7061731815338135,
+      "accuracy": 0.5,
+      "supervisedPawFrames": 2,
+      "eligibleCoverage": 0.4,
+      "contactTP": 1,
+      "contactFP": 1,
+      "contactFN": 0,
+      "counting": "Window-weighted; overlapping frames may repeat"
+    }
+  },
+  {
+    "epoch": 5,
+    "train": {
+      "loss": 0.7100680470466614,
+      "accuracy": 0.5,
+      "supervisedPawFrames": 2,
+      "eligibleCoverage": 0.4,
+      "contactTP": 1,
+      "contactFP": 1,
+      "contactFN": 0,
+      "counting": "Window-weighted; overlapping frames may repeat"
+    }
+  }
+]

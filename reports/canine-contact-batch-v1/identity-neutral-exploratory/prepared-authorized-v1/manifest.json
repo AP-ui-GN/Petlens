@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "petlens.contact-features.v1",
+  "jobSha256": "1584597bde887964437a3197dd7b87e90cd09495956022adf54fccb23a77f20b",
+  "adapterSha256": "f51eb92555a44d88b4bdb138cb2c0de1b3453aa081239ca164cb0c7b1d8bf991",
+  "preparerSha256": "a3ad1c1599f7d1649e43bbb494986848a1bef963200ec136a161ff0b8b14aca1",
+  "job": {
+    "schemaVersion": 1,
+    "trainingMode": "exploratory_train_only",
+    "dataPurpose": "real",
+    "keypointSchema": {
+      "path": "training/canine_keypoint_schema.json",
+      "sha256": "b44942d61544488c7fbe6fd5ad77db641e7615adf82e8924f4316b04cfbef579"
+    },
+    "sequences": [
+      {
+        "id": "s004-exploratory",
+        "predictions": {
+          "path": "tmp/rtmpose-test/multi-video-evaluation/runs/wikimedia-s004-cfr-20261103/predictions.json",
+          "sha256": "4ef66928d98216380ef9dec09bd8383c0f3bc6d98f616e22b2c09d748fc0661a",
+          "reused": true,
+          "alignedFrames": 60,
+          "newInference": false
+        },
+        "metadata": {
+          "path": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/s004/manifest.json",
+          "sha256": "0f0f8bf4cafb31de4284850b5bb4618f06b7f64fea048c61cd82dab2e4bc7d7c"
+        },
+        "sourceFrames": {
+          "path": "reports/canine-contact-batch-v1/frame-manifest.json",
+          "sha256": "5380e9416ec4727240f6dae6d26c770ff927723c7971c337d117181ed0b382cf",
+          "group": "gait-s004"
+        },
+        "video": {
+          "path": "tmp/wikimedia-s004-preparation/s004-lossless-cfr.mp4",
+          "sha256": "feedb618a93d0a7f8acddd7a198516405f2afe579d48191553bc75a8346d21cd"
+        },
+        "dogId": "shin-2013-s003-s004-unresolved",
+        "dogIdentityVerified": true,
+        "split": "train",
+        "provenanceGroup": "publication:shin-2013",
+        "trainingApproved": true,
+        "rights": {
+          "status": "cleared",
+          "source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0059875",
+          "fileDescription": "https://commons.wikimedia.org/wiki/File:Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s004.ogv",
+          "embeddedLicense": "https://creativecommons.org/licenses/by/3.0/",
+          "commonsLicense": "https://creativecommons.org/licenses/by/2.5/",
+          "evidence": "Source permissions verified 2026-11-11 for this bounded local run; see rightsEvidence hash-bound record. Embedded CC BY 3.0 and Commons 2.5 discrepancy retained; attribution, changes and no-endorsement notice preserved."
+        },
+        "timing": {
+          "sourceType": "source_movie",
+          "sourcePtsVerified": true,
+          "nativeVerified": false,
+          "evidence": "Original available OGV PTS 0..59, time base 1/12; joined to 60 saved prediction frames. No sensor capture attestation or event-timing accuracy claim."
+        },
+        "reviews": [],
+        "exploratoryLabels": {
+          "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v3.frames.json",
+          "sha256": "58d8b17d823c2aaf56ed1470982de8780cc5a72ff231feb30efd8ac5e4a0a14a"
+        },
+        "rightsEvidence": {
+          "path": "reports/canine-contact-batch-v1/identity-neutral-exploratory/rights-verification-v1.json",
+          "sha256": "a23df55470c52c2143c826d2af22250bd5ac5827bff04d712c91c9ea7eaf304a"
+        },
+        "exploratoryApproval": {
+          "path": "reports/canine-contact-batch-v1/identity-neutral-exploratory/owner-authorization.CONVERSATION-v1.json",
+          "sha256": "2ed691f290e4ce30ed63fa072256fe98b9b3565662616efe8f34518a533417b0"
+        },
+        "supervisionOutput": "identity_neutral_front",
+        "physicalOutput": {
+          "kind": "tracked_front",
+          "physicalPaw": "C",
+          "anatomicalSide": "unknown",
+          "firstFrame": 46,
+          "lastFrame": 50
+        },
+        "physicalIdentityEvidence": {
+          "path": "reports/canine-contact-batch-v1/identity-neutral-exploratory/reviewer-physical-continuity.json",
+          "sha256": "7b0a241d1b4ed01528b3f229023f1da2af78a211e28aa8ec97eeee943fd5c9b1"
+        }
+      }
+    ],
+    "supervisionOutput": "identity_neutral_front"
+  },
+  "keypointSchema": {
+    "path": "training/canine_keypoint_schema.json",
+    "sha256": "b44942d61544488c7fbe6fd5ad77db641e7615adf82e8924f4316b04cfbef579"
+  },
+  "channelOrder": [
+    "left_eye.relative_x",
+    "left_eye.relative_y",
+    "left_eye.raw_score",
+    "left_eye.observed",
+    "right_eye.relative_x",
+    "right_eye.relative_y",
+    "right_eye.raw_score",
+    "right_eye.observed",
+    "nose.relative_x",
+    "nose.relative_y",
+    "nose.raw_score",
+    "nose.observed",
+    "neck.relative_x",
+    "neck.relative_y",
+    "neck.raw_score",
+    "neck.observed",
+    "root_of_tail.relative_x",
+    "root_of_tail.relative_y",
+    "root_of_tail.raw_score",
+    "root_of_tail.observed",
+    "left_shoulder.relative_x",
+    "left_shoulder.relative_y",
+    "left_shoulder.raw_score",
+    "left_shoulder.observed",
+    "left_elbow.relative_x",
+    "left_elbow.relative_y",
+    "left_elbow.raw_score",
+    "left_elbow.observed",
+    "left_front_paw.relative_x",
+    "left_front_paw.relative_y",
+    "left_front_paw.raw_score",
+    "left_front_paw.observed",
+    "right_shoulder.relative_x",
+    "right_shoulder.relative_y",
+    "right_shoulder.raw_score",
+    "right_shoulder.observed",
+    "right_elbow.relative_x",
+    "right_elbow.relative_y",
+    "right_elbow.raw_score",
+    "right_elbow.observed",
+    "right_front_paw.relative_x",
+    "right_front_paw.relative_y",
+    "right_front_paw.raw_score",
+    "right_front_paw.observed",
+    "left_hip.relative_x",
+    "left_hip.relative_y",
+    "left_hip.raw_score",
+    "left_hip.observed",
+    "left_knee.relative_x",
+    "left_knee.relative_y",
+    "left_knee.raw_score",
+    "left_knee.observed",
+    "left_back_paw.relative_x",
+    "left_back_paw.relative_y",
+    "left_back_paw.raw_score",
+    "left_back_paw.observed",
+    "right_hip.relative_x",
+    "right_hip.relative_y",
+    "right_hip.raw_score",
+    "right_hip.observed",
+    "right_knee.relative_x",
+    "right_knee.relative_y",
+    "right_knee.raw_score",
+    "right_knee.observed",
+    "right_back_paw.relative_x",
+    "right_back_paw.relative_y",
+    "right_back_paw.raw_score",
+    "right_back_paw.observed",
+    "delta_seconds"
+  ],
+  "pawOrder": [
+    "LF",
+    "RF",
+    "LH",
+    "RH"
+  ],
+  "policy": {
+    "pointMinRawScore": 0.5,
+    "neckMinRawScore": 0.7,
+    "tailRootMinRawScore": 0.8,
+    "minimumBodyLengthPixels": 1e-06,
+    "maxGapSeconds": 0.25,
+    "windowLength": 128,
+    "windowStride": 64,
+    "interpolation": false,
+    "scoreClipping": false,
+    "rawScoresAreProbabilities": false
+  },
+  "trainingMode": "exploratory_train_only",
+  "supervisionOutput": "identity_neutral_front",
+  "trainingReady": true,
+  "sequences": [
+    {
+      "id": "s004-exploratory",
+      "manifest": "sequences/s004-exploratory/manifest.json",
+      "sha256": "064b837465eb59f7d469dde263f089b01e30e5c2e658f56cb64cc3742c445e80"
+    }
+  ]
+}

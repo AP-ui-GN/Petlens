@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-11-11T17:06:29.754246+00:00",
+  "batchId": "canine-contact-batch-v1",
+  "status": "one_clip_ready_for_human_labeling",
+  "branch": "feature/canine-gait-v2",
+  "head": "8d3dee57a3e82dcd99853ebdbc6275f57aebc886",
+  "selected": [
+    "gait-s004"
+  ],
+  "reviewFrameCount": 60,
+  "pawFramesPerReviewer": 240,
+  "contactLabelsCreated": 0,
+  "trainingApproved": false,
+  "frameManifest": {
+    "path": "reports/canine-contact-batch-v1/frame-manifest.json",
+    "sha256": "5380e9416ec4727240f6dae6d26c770ff927723c7971c337d117181ed0b382cf"
+  },
+  "predictions": {
+    "path": "tmp/rtmpose-test/multi-video-evaluation/runs/wikimedia-s004-cfr-20261103/predictions.json",
+    "sha256": "4ef66928d98216380ef9dec09bd8383c0f3bc6d98f616e22b2c09d748fc0661a",
+    "reused": true,
+    "alignedFrames": 60,
+    "newInference": false
+  },
+  "workingVideo": {
+    "path": "tmp/wikimedia-s004-preparation/s004-lossless-cfr.mp4",
+    "sha256": "feedb618a93d0a7f8acddd7a198516405f2afe579d48191553bc75a8346d21cd",
+    "exactDecodedPixelMatches": 60,
+    "opencv": "5.0.0"
+  },
+  "timing": {
+    "sourceTimeBase": "1/12",
+    "originalPtsFirst": 0,
+    "originalPtsLast": 59,
+    "sourceMovieFps": 12,
+    "strictlyIncreasing": true,
+    "sourceTimestampJoinVerified": true,
+    "sensorNativeCaptureAttested": false,
+    "fineTimingBenchmarkEligible": false
+  },
+  "physicalIdentity": {
+    "paws": {
+      "A": "Hind physical A",
+      "B": "Hind physical B",
+      "C": "Front physical C",
+      "D": "Front physical D"
+    },
+    "humanDescriptionsRequired": true,
+    "anatomyVerified": false,
+    "dogIdentityVerified": false,
+    "identityGroup": "shin-2013-s003-s004-unresolved"
+  },
+  "rights": {
+    "status": "attribution_required",
+    "source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0059875",
+    "fileDescription": "https://commons.wikimedia.org/wiki/File:Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s004.ogv",
+    "embeddedLicense": "https://creativecommons.org/licenses/by/3.0/",
+    "commonsLicense": "https://creativecommons.org/licenses/by/2.5/",
+    "evidence": "Publication grants attributed reuse; embedded CC BY 3.0 and Commons CC BY 2.5 discrepancy retained. Commercial reuse permitted with attribution; source notices preserved."
+  },
+  "rejectedOrDeferred": {
+    "dalmatian": "Source and commercial-use permission not verified.",
+    "dog02": "Existing exploratory-only policy retained.",
+    "dogreid115": "Elevated oblique view, far-paw ambiguity, original capture timing unverified.",
+    "dogreid198": "Elevated view, far-paw overlap, walking versus trot unresolved, original capture timing unverified.",
+    "husky": "Screen recording excluded from native gait-event timing.",
+    "otherLocalFootage": "See inventory and explicit rejection reasons in docs/CONTACTVISION_READINESS_AUDIT.md and reports/dogreid-1553/screened-videos.csv."
+  },
+  "workflow": {
+    "reviewer": "training/gait_event_review.py",
+    "uiExtension": "training/gait-event-review.js",
+    "canvas": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/annotation.js",
+    "modelAndPriorLabelAccess": false,
+    "blankDraftOnStart": true,
+    "separateReviewerStorage": true,
+    "exportDirectory": "reports/canine-contact-batch-v1/reviews",
+    "independentComparison": "--compare FIRST.zip SECOND.zip --paw-map HUMAN_CONFIRMED_PAIRS --comparison-output NEW.json",
+    "comparisonGeneratesConsensus": false
+  },
+  "blockers": [
+    "Independent human contact labels absent",
+    "Second independent review and human resolution absent",
+    "Physical-to-anatomical LF/RF/LH/RH mapping unverified",
+    "Dog identity and split not approved",
+    "Original sensor-capture timing unverified; source movie supports coarse frame labels only",
+    "Adapter label import awaits real reviewed labels and anatomical mapping"
+  ],
+  "smallestAdditionalData": "One different identified dog, clear side-on walking with visible paws, original timestamp provenance and explicit commercial model-development permission; Dalmatian rights clearance may avoid a new acquisition.",
+  "preservation": {
+    "beforeSnapshot": "/tmp/petlens-contact-batch-preservation/before.json",
+    "unchangedFiles": {
+      "src/petlens_gait/contact_features.py": true,
+      "training/prepare_contact_sequences.py": true,
+      "reports/gait-event-review-v1/frame-manifest.json": true,
+      "tests/13792872-hd_1080_1920_30fps (1).mp4": true,
+      "tmp/rtmpose-test/multi-video-evaluation/inputs/dalmatian-lossless-cfr.mp4": true,
+      "PY~": true,
+      "artifacts/petlens-colab-package-verification.json": true,
+      "artifacts/petlens-pilot-results (1).tar.gz": true,
+      "for": true,
+      "import": true,
+      "logs": true,
+      "p": true,
+      "reports/dalmatian-identity-failures-contact-sheet.png": true,
+      "reports/petlens-heldout-paw-comparison.jpg": true,
+      "reports/petlens-paw-label-check.jpg": true,
+      "reports/petlens-paw-model-comparison.jpg": true,
+      "tests/PetLens_Husky_ScreenRecording_Test.zip": true
+    },
+    "branchAndHeadUnchanged": true,
+    "oldDalmatianLosslessDerivativeStillLocal": true,
+    "oldDalmatianLosslessDerivativeSha256": "13efcd61041c8795852ad377ca4a969d117c907fcb8d4a9298c61303bb7881d8"
+  },
+  "verification": {
+    "pythonCommand": "python -m pytest -q tests/test_gait_event_review.py",
+    "pythonPassed": 49,
+    "pythonSeconds": 4.05,
+    "uiCommand": "node tests/test_gait_event_review_ui.cjs",
+    "uiPassed": true,
+    "actualSourceHttpFramesVerified": [
+      0,
+      59
+    ],
+    "allSourceFramePngHashesVerified": 60,
+    "blankExportTestDirectory": "Temporary pytest directory only; no fake labels or test ZIPs in real batch",
+    "uiVerificationType": "Shared canvas JavaScript runtime; not a full browser screenshot test",
+    "sandboxNote": "Initial HTTP tests were blocked by sandbox socket permissions; rerun with approved local socket access passed."
+  }
+}

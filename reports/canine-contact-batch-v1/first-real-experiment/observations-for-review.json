@@ -1,0 +1,527 @@
+{
+  "status": "BLOCKED_NOT_A_TRAINING_DATASET",
+  "dataPurpose": "real-observation-review-only",
+  "trainingApproved": false,
+  "sourceFrames": {
+    "path": "reports/canine-contact-batch-v1/frame-manifest.json",
+    "sha256": "5380e9416ec4727240f6dae6d26c770ff927723c7971c337d117181ed0b382cf"
+  },
+  "observationsSource": {
+    "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v3.frames.json",
+    "sha256": "58d8b17d823c2aaf56ed1470982de8780cc5a72ff231feb30efd8ac5e4a0a14a"
+  },
+  "eventsSource": {
+    "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v3.events.json",
+    "sha256": "3d6f0554847f3f26c44dc8ca1cc0e3ecdd171b36f739a59b00e20bc7410b281c"
+  },
+  "conflictsSource": {
+    "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v3.conflicts.json",
+    "sha256": "f4ae282de144b82002ac108096846720ff554e7c488cfe135352ea8a237f1b6a"
+  },
+  "sourceVideo": {
+    "path": "tests/Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s004.ogv",
+    "sha256": "91620e1d029a2801cb47b894896d257c10efd0558af863949c6ccc6c53cc8650"
+  },
+  "predictions": {
+    "path": "tmp/rtmpose-test/multi-video-evaluation/runs/wikimedia-s004-cfr-20261103/predictions.json",
+    "sha256": "4ef66928d98216380ef9dec09bd8383c0f3bc6d98f616e22b2c09d748fc0661a",
+    "reused": true,
+    "alignedFrames": 60,
+    "newInference": false
+  },
+  "workingVideo": {
+    "path": "tmp/wikimedia-s004-preparation/s004-lossless-cfr.mp4",
+    "sha256": "feedb618a93d0a7f8acddd7a198516405f2afe579d48191553bc75a8346d21cd",
+    "exactDecodedPixelMatches": 60,
+    "opencv": "5.0.0"
+  },
+  "candidateObservations": [
+    {
+      "observationId": "C-frame-11",
+      "physicalPaw": "C",
+      "frame": {
+        "frameIndex": 11,
+        "originalPts": 11,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 0.9166666666666666,
+        "pixelSha256": "dbaf238db850712f7ef3bf5b4fdfce47783118bc6ffae8f514f6c6c64a43735b",
+        "imageSha256": "bd0f619592ea18567ae3793bc1508af09eb330efa515e1b94895cd564ddba24d"
+      },
+      "reportedSupportState": "contacting",
+      "assessmentStatus": "definite",
+      "confidence": {
+        "percentage": null,
+        "approximate": false,
+        "qualitative": "high confidence",
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "conflicts": [],
+      "anatomicalPaw": null,
+      "trainingApproved": false,
+      "lossEligible": false,
+      "poseEligibilityByPossibleAnatomicalChannel": {
+        "LF": true,
+        "RF": true
+      },
+      "status": "candidate_only_pending_mapping_independent_review_and_approval"
+    },
+    {
+      "observationId": "C-frame-46",
+      "physicalPaw": "C",
+      "frame": {
+        "frameIndex": 46,
+        "originalPts": 46,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 3.8333333333333335,
+        "pixelSha256": "ffded4dd746cc5089cbf37dbc01ab578c30688cb6d056b0623d2bb7631b0aa5d",
+        "imageSha256": "549c796821561e0094928b41e4389cb82c0d65658dc353954efb1bce47ab691d"
+      },
+      "reportedSupportState": "contacting",
+      "assessmentStatus": "definite",
+      "confidence": {
+        "percentage": 80,
+        "approximate": true,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "conflicts": [],
+      "anatomicalPaw": null,
+      "trainingApproved": false,
+      "lossEligible": false,
+      "poseEligibilityByPossibleAnatomicalChannel": {
+        "LF": true,
+        "RF": true
+      },
+      "status": "candidate_only_pending_mapping_independent_review_and_approval"
+    },
+    {
+      "observationId": "C-frame-50",
+      "physicalPaw": "C",
+      "frame": {
+        "frameIndex": 50,
+        "originalPts": 50,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 4.166666666666667,
+        "pixelSha256": "b82f3df185f13180d8c7e9f0fa77fa0625c0b03694867644554e82b0a3197531",
+        "imageSha256": "3ee634fa52def5ecda23a803e596b9dd05119208861596c5b87d7cf49bdec06f"
+      },
+      "reportedSupportState": "airborne",
+      "assessmentStatus": "definite",
+      "confidence": {
+        "percentage": 100,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "conflicts": [],
+      "anatomicalPaw": null,
+      "trainingApproved": false,
+      "lossEligible": false,
+      "poseEligibilityByPossibleAnatomicalChannel": {
+        "LF": true,
+        "RF": true
+      },
+      "status": "candidate_only_pending_mapping_independent_review_and_approval"
+    },
+    {
+      "observationId": "D-frame-41",
+      "physicalPaw": "D",
+      "frame": {
+        "frameIndex": 41,
+        "originalPts": 41,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 3.4166666666666665,
+        "pixelSha256": "fe917f4cd40fd2390777a7f50ee020cd7e9a7f3744b63be68e4fbf174336bc62",
+        "imageSha256": "111f9eb63f3b9442aaa96c4e272937569de781fe83bed7dabbaa79671f17fd0f"
+      },
+      "reportedSupportState": "contacting",
+      "assessmentStatus": "definite",
+      "confidence": {
+        "percentage": 95,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "conflicts": [],
+      "anatomicalPaw": null,
+      "trainingApproved": false,
+      "lossEligible": false,
+      "poseEligibilityByPossibleAnatomicalChannel": {
+        "LF": true,
+        "RF": true
+      },
+      "status": "candidate_only_pending_mapping_independent_review_and_approval"
+    },
+    {
+      "observationId": "A-frame-15",
+      "physicalPaw": "A",
+      "frame": {
+        "frameIndex": 15,
+        "originalPts": 15,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 1.25,
+        "pixelSha256": "de9f52c860713a115e7705fcabad4294893bdd8110b499b70365724607580502",
+        "imageSha256": "74bf5e7c348eab9fc62ed85e94fafb2cd8c75731542727093455a5f7067571e0"
+      },
+      "reportedSupportState": "contacting",
+      "assessmentStatus": "definite",
+      "confidence": {
+        "percentage": 80,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "conflicts": [],
+      "anatomicalPaw": null,
+      "trainingApproved": false,
+      "lossEligible": false,
+      "poseEligibilityByPossibleAnatomicalChannel": {
+        "LH": true,
+        "RH": true
+      },
+      "status": "candidate_only_pending_mapping_independent_review_and_approval"
+    },
+    {
+      "observationId": "A-frame-20",
+      "physicalPaw": "A",
+      "frame": {
+        "frameIndex": 20,
+        "originalPts": 20,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 1.6666666666666667,
+        "pixelSha256": "6b023b5ee3212977e53b7c34f2ac7321775c1c2a2ca35cc2d98c5fd6487c9148",
+        "imageSha256": "bb008562b6cdc0d89294b47ea5ef33c201264617c39977ec2fa7f546abc95554"
+      },
+      "reportedSupportState": "airborne",
+      "assessmentStatus": "definite",
+      "confidence": {
+        "percentage": 100,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "conflicts": [],
+      "anatomicalPaw": null,
+      "trainingApproved": false,
+      "lossEligible": false,
+      "poseEligibilityByPossibleAnatomicalChannel": {
+        "LH": true,
+        "RH": true
+      },
+      "status": "candidate_only_pending_mapping_independent_review_and_approval"
+    },
+    {
+      "observationId": "A-frame-50",
+      "physicalPaw": "A",
+      "frame": {
+        "frameIndex": 50,
+        "originalPts": 50,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 4.166666666666667,
+        "pixelSha256": "b82f3df185f13180d8c7e9f0fa77fa0625c0b03694867644554e82b0a3197531",
+        "imageSha256": "3ee634fa52def5ecda23a803e596b9dd05119208861596c5b87d7cf49bdec06f"
+      },
+      "reportedSupportState": "contacting",
+      "assessmentStatus": "definite",
+      "confidence": {
+        "percentage": 100,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "conflicts": [],
+      "anatomicalPaw": null,
+      "trainingApproved": false,
+      "lossEligible": false,
+      "poseEligibilityByPossibleAnatomicalChannel": {
+        "LH": true,
+        "RH": true
+      },
+      "status": "candidate_only_pending_mapping_independent_review_and_approval"
+    },
+    {
+      "observationId": "B-frame-9",
+      "physicalPaw": "B",
+      "frame": {
+        "frameIndex": 9,
+        "originalPts": 9,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 0.75,
+        "pixelSha256": "0e6d6ad76af844c25c129d8fdef56ee2d96c2a93266c0ec697212829bfe61c07",
+        "imageSha256": "620be121b7117fea53287cf490aebe2628ac989b6b29e114fb8dd035648110e1"
+      },
+      "reportedSupportState": "contacting",
+      "assessmentStatus": "definite",
+      "confidence": {
+        "percentage": null,
+        "approximate": false,
+        "qualitative": "very confident",
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "conflicts": [],
+      "anatomicalPaw": null,
+      "trainingApproved": false,
+      "lossEligible": false,
+      "poseEligibilityByPossibleAnatomicalChannel": {
+        "LH": true,
+        "RH": true
+      },
+      "status": "candidate_only_pending_mapping_independent_review_and_approval"
+    },
+    {
+      "observationId": "B-frame-49",
+      "physicalPaw": "B",
+      "frame": {
+        "frameIndex": 49,
+        "originalPts": 49,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 4.083333333333333,
+        "pixelSha256": "6ba9c9385560197ed20b3a37aa6e5eb80209ad0ab89b6f98ba40a519cfabdadd",
+        "imageSha256": "4b43032a94c8598be19f468928635fd763bd2e6da2adf2697bf8bbbe4a59fde3"
+      },
+      "reportedSupportState": "contacting",
+      "assessmentStatus": "definite",
+      "confidence": {
+        "percentage": null,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "conflicts": [],
+      "anatomicalPaw": null,
+      "trainingApproved": false,
+      "lossEligible": false,
+      "poseEligibilityByPossibleAnatomicalChannel": {
+        "LH": true,
+        "RH": true
+      },
+      "status": "candidate_only_pending_mapping_independent_review_and_approval"
+    },
+    {
+      "observationId": "B-frame-55",
+      "physicalPaw": "B",
+      "frame": {
+        "frameIndex": 55,
+        "originalPts": 55,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 4.583333333333333,
+        "pixelSha256": "83da5289bd1b6039686f0b4280c0c6bf1604c47ae515c7a94fae8a6ad32e727a",
+        "imageSha256": "f6ec8f41db5de07847cb65c2b573de83b0e9bd8e1c5e7047c1df74b6b50e5db7"
+      },
+      "reportedSupportState": "airborne",
+      "assessmentStatus": "definite",
+      "confidence": {
+        "percentage": 100,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "conflicts": [],
+      "anatomicalPaw": null,
+      "trainingApproved": false,
+      "lossEligible": false,
+      "poseEligibilityByPossibleAnatomicalChannel": {
+        "LH": true,
+        "RH": true
+      },
+      "status": "candidate_only_pending_mapping_independent_review_and_approval"
+    }
+  ],
+  "excludedObservations": [
+    {
+      "observationId": "C-frame-4",
+      "physicalPaw": "C",
+      "frame": {
+        "frameIndex": 4,
+        "originalPts": 4,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 0.3333333333333333,
+        "pixelSha256": "3560f90067c21863f9f5c0c3f072e3f014c145857b1bc91e2a606765556e0122",
+        "imageSha256": "4b2fe4caeb76535def87362133776cd657287202809275825ac832e8e17bccc2"
+      },
+      "reportedSupportState": "unknown",
+      "assessmentStatus": "unknown",
+      "confidence": {
+        "percentage": null,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "conflicts": [],
+      "anatomicalPaw": null,
+      "trainingApproved": false,
+      "lossEligible": false,
+      "poseEligibilityByPossibleAnatomicalChannel": {
+        "LF": true,
+        "RF": true
+      },
+      "status": "excluded_unknown"
+    },
+    {
+      "observationId": "D-frame-7",
+      "physicalPaw": "D",
+      "frame": {
+        "frameIndex": 7,
+        "originalPts": 7,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 0.5833333333333334,
+        "pixelSha256": "47b9fb4e61e1343d9b3cfb3c1364d67d1b1ace52d1762291de5563fa0a8636be",
+        "imageSha256": "79e6e1d06829836c8d4a808dadbd4252953baeaa7894dc296e9b45576b008305"
+      },
+      "reportedSupportState": "unknown",
+      "assessmentStatus": "unknown",
+      "confidence": {
+        "percentage": null,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "conflicts": [],
+      "anatomicalPaw": null,
+      "trainingApproved": false,
+      "lossEligible": false,
+      "poseEligibilityByPossibleAnatomicalChannel": {
+        "LF": true,
+        "RF": true
+      },
+      "status": "excluded_unknown"
+    },
+    {
+      "observationId": "D-frame-13",
+      "physicalPaw": "D",
+      "frame": {
+        "frameIndex": 13,
+        "originalPts": 13,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 1.0833333333333333,
+        "pixelSha256": "453de5656fef21e2ae9c93d3ce7012a6ea28477db350964a764d3a2f4775ae02",
+        "imageSha256": "fee69cab1d66ac9896a88b574812c14551c5b7abf87b61af2daa73d54f9eb23a"
+      },
+      "reportedSupportState": "airborne",
+      "assessmentStatus": "provisional",
+      "confidence": {
+        "percentage": null,
+        "approximate": false,
+        "qualitative": "moderate confidence",
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "conflicts": [],
+      "anatomicalPaw": null,
+      "trainingApproved": false,
+      "lossEligible": false,
+      "poseEligibilityByPossibleAnatomicalChannel": {
+        "LF": true,
+        "RF": true
+      },
+      "status": "excluded_provisional"
+    },
+    {
+      "observationId": "D-frame-34",
+      "physicalPaw": "D",
+      "frame": {
+        "frameIndex": 34,
+        "originalPts": 34,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 2.8333333333333335,
+        "pixelSha256": "d59e540a5d518bf668dc586ed4cb5a567468ab4226fca2b88d6fedb79ea4381f",
+        "imageSha256": "933ab5649d05aade25d4de54351b37c8cbdae499f12e11909da09eff1dc66444"
+      },
+      "reportedSupportState": "unknown",
+      "assessmentStatus": "unknown",
+      "confidence": {
+        "percentage": null,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "conflicts": [],
+      "anatomicalPaw": null,
+      "trainingApproved": false,
+      "lossEligible": false,
+      "poseEligibilityByPossibleAnatomicalChannel": {
+        "LF": true,
+        "RF": true
+      },
+      "status": "excluded_unknown"
+    },
+    {
+      "observationId": "A-frame-43",
+      "physicalPaw": "A",
+      "frame": {
+        "frameIndex": 43,
+        "originalPts": 43,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 3.5833333333333335,
+        "pixelSha256": "820b48ee88c1070baa52a0ead6e511b81a62a6ec163594cc749773f495234cd6",
+        "imageSha256": "66f07fc0a8ee7ea4cc2ed99cf6aff7a5cecb6d45a76dae16837711d7aa90c131"
+      },
+      "reportedSupportState": "contacting",
+      "assessmentStatus": "definite",
+      "confidence": {
+        "percentage": null,
+        "approximate": false,
+        "qualitative": "pretty confident",
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "conflicts": [
+        "hind-A-contact-43-vs-touchdown-44-49"
+      ],
+      "anatomicalPaw": null,
+      "trainingApproved": false,
+      "lossEligible": false,
+      "poseEligibilityByPossibleAnatomicalChannel": {
+        "LH": true,
+        "RH": true
+      },
+      "status": "excluded_conflict"
+    },
+    {
+      "observationId": "B-frame-6",
+      "physicalPaw": "B",
+      "frame": {
+        "frameIndex": 6,
+        "originalPts": 6,
+        "originalTimeBase": "1/12",
+        "timestampSeconds": 0.5,
+        "pixelSha256": "dc28b12b62943a76dbb5923d3d0906e0a6472cf69d078110ac2ec45959fe7fe7",
+        "imageSha256": "8bebed2fc722a6415a4c970f9650015d83fa248331829a71a98c4ca9c7f35fcd"
+      },
+      "reportedSupportState": "unknown",
+      "assessmentStatus": "unknown",
+      "confidence": {
+        "percentage": null,
+        "approximate": false,
+        "qualitative": null,
+        "semantics": "Reviewer self-report only; not calibrated probability, approval, or loss weight. No numeric value inferred from qualitative wording."
+      },
+      "conflicts": [],
+      "anatomicalPaw": null,
+      "trainingApproved": false,
+      "lossEligible": false,
+      "poseEligibilityByPossibleAnatomicalChannel": {
+        "LH": true,
+        "RH": true
+      },
+      "status": "excluded_unknown"
+    }
+  ],
+  "unreviewedPawFrames": 224,
+  "approvedSupervisedObservations": 0,
+  "pawOrder": [
+    "LF",
+    "RF",
+    "LH",
+    "RH"
+  ],
+  "features": {
+    "path": "reports/canine-contact-batch-v1/first-real-experiment/features-inspection-only.npz",
+    "sha256": "3f424d1d283c3c0849d79d5a053cf6a903468a32c644815dac3876b581b6efb3"
+  },
+  "featureShape": [
+    60,
+    69
+  ],
+  "referenceValidFrames": 60,
+  "featureOnlyWindows": 1,
+  "supervisedWindows": 0
+}

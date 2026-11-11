@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "observationVersion": 2,
+  "datasetId": "gait-s004-91620e1d029a2801",
+  "manifestSha256": "5380e9416ec4727240f6dae6d26c770ff927723c7971c337d117181ed0b382cf",
+  "evidenceSource": {
+    "path": "tests/Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s004.ogv",
+    "sha256": "91620e1d029a2801cb47b894896d257c10efd0558af863949c6ccc6c53cc8650"
+  },
+  "annotationType": "targeted-human-verification-checklist",
+  "events": {
+    "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.events.json",
+    "sha256": "fd14138db5cf1e0ca7c38f49b9354355a0330d1a968f7800daf22c107b304227"
+  },
+  "supersedesChecklist": {
+    "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v1.verification.json",
+    "sha256": "d69b58e8493a568a9e711091f417e0bf3d0e7ed40365d64d2363a90cd5cb5b30"
+  },
+  "automatedContactSuggestions": false,
+  "trainingApproved": false,
+  "reviewer": "training.gait_event_review",
+  "interfaceChanged": false,
+  "navigation": "Existing frame number + Go, arrows, Previous/Next and slow playback. Checklist is read alongside the existing UI; no queue/schema/application changes.",
+  "startCommand": "python -m training.gait_event_review --dataset gait-s004 --manifest reports/canine-contact-batch-v1/frame-manifest.json --port 8767",
+  "url": "http://localhost:8767/?dataset=gait-s004",
+  "draftImport": {
+    "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v2.review.json",
+    "reviewer": "s004-requesting-user-written-v2",
+    "sameHumanAsVersion1": true,
+    "version1SessionId": "s004-requesting-user-written-v1",
+    "instruction": "Use the separate V2 session ID, declare prior_exposure and import only the V2 review JSON. Keep the V1 session untouched. Download any existing V2 work before replacing its draft. The versioned IDs identify the same human; other humans use their own blank review sessions and truthful exposure declarations."
+  },
+  "tasks": [
+    {
+      "id": "C-contact-flanks",
+      "physicalPaw": "C",
+      "priority": 1,
+      "frameRange": [
+        4,
+        11
+      ],
+      "framesToCheck": [
+        4,
+        11
+      ],
+      "reportedTransitionRange": [
+        5,
+        10
+      ],
+      "eventOccurrenceAlreadyHumanConfirmed": true,
+      "requireExactTransitionFrame": false,
+      "action": "Check only these flanking frames first for visible CONTACT/AIRBORNE and physical continuity. These are candidate evidence frames, not assumed states. Use neighboring original frames only if needed; retain UNKNOWN if unclear. Do not reconfirm occurrence just because the reported range is broad.",
+      "purpose": "Add real frame-state evidence without turning the event timing interval into fabricated support labels."
+    },
+    {
+      "id": "A-lift_off-flanks",
+      "physicalPaw": "A",
+      "priority": 1,
+      "frameRange": [
+        15,
+        20
+      ],
+      "framesToCheck": [
+        15,
+        20
+      ],
+      "reportedTransitionRange": [
+        16,
+        19
+      ],
+      "eventOccurrenceAlreadyHumanConfirmed": true,
+      "requireExactTransitionFrame": false,
+      "action": "Check only these flanking frames first for visible CONTACT/AIRBORNE and physical continuity. These are candidate evidence frames, not assumed states. Use neighboring original frames only if needed; retain UNKNOWN if unclear. Do not reconfirm occurrence just because the reported range is broad.",
+      "purpose": "Add real frame-state evidence without turning the event timing interval into fabricated support labels."
+    },
+    {
+      "id": "A-contact-flanks",
+      "physicalPaw": "A",
+      "priority": 1,
+      "frameRange": [
+        43,
+        50
+      ],
+      "framesToCheck": [
+        43,
+        50
+      ],
+      "reportedTransitionRange": [
+        44,
+        49
+      ],
+      "eventOccurrenceAlreadyHumanConfirmed": true,
+      "requireExactTransitionFrame": false,
+      "action": "Check only these flanking frames first for visible CONTACT/AIRBORNE and physical continuity. These are candidate evidence frames, not assumed states. Use neighboring original frames only if needed; retain UNKNOWN if unclear. Do not reconfirm occurrence just because the reported range is broad.",
+      "purpose": "Add real frame-state evidence without turning the event timing interval into fabricated support labels."
+    },
+    {
+      "id": "B-contact-flanks",
+      "physicalPaw": "B",
+      "priority": 1,
+      "frameRange": [
+        6,
+        9
+      ],
+      "framesToCheck": [
+        6,
+        9
+      ],
+      "reportedTransitionRange": [
+        7,
+        8
+      ],
+      "eventOccurrenceAlreadyHumanConfirmed": true,
+      "requireExactTransitionFrame": false,
+      "action": "Check only these flanking frames first for visible CONTACT/AIRBORNE and physical continuity. These are candidate evidence frames, not assumed states. Use neighboring original frames only if needed; retain UNKNOWN if unclear. Do not reconfirm occurrence just because the reported range is broad.",
+      "purpose": "Add real frame-state evidence without turning the event timing interval into fabricated support labels."
+    },
+    {
+      "id": "B-lift_off-flanks",
+      "physicalPaw": "B",
+      "priority": 1,
+      "frameRange": [
+        49,
+        55
+      ],
+      "framesToCheck": [
+        49,
+        55
+      ],
+      "reportedTransitionRange": [
+        50,
+        54
+      ],
+      "eventOccurrenceAlreadyHumanConfirmed": true,
+      "requireExactTransitionFrame": false,
+      "action": "Check only these flanking frames first for visible CONTACT/AIRBORNE and physical continuity. These are candidate evidence frames, not assumed states. Use neighboring original frames only if needed; retain UNKNOWN if unclear. Do not reconfirm occurrence just because the reported range is broad.",
+      "purpose": "Add real frame-state evidence without turning the event timing interval into fabricated support labels."
+    },
+    {
+      "id": "C-lift_off-flanks",
+      "physicalPaw": "C",
+      "priority": 1,
+      "frameRange": [
+        46,
+        50
+      ],
+      "framesToCheck": [
+        46,
+        50
+      ],
+      "reportedTransitionRange": [
+        47,
+        49
+      ],
+      "eventOccurrenceAlreadyHumanConfirmed": true,
+      "requireExactTransitionFrame": false,
+      "action": "Check only these flanking frames first for visible CONTACT/AIRBORNE and physical continuity. These are candidate evidence frames, not assumed states. Use neighboring original frames only if needed; retain UNKNOWN if unclear. Do not reconfirm occurrence just because the reported range is broad.",
+      "purpose": "Add real frame-state evidence without turning the event timing interval into fabricated support labels."
+    },
+    {
+      "id": "D-lift_off-flanks",
+      "physicalPaw": "D",
+      "priority": 1,
+      "frameRange": [
+        7,
+        13
+      ],
+      "framesToCheck": [
+        7,
+        13
+      ],
+      "reportedTransitionRange": [
+        8,
+        12
+      ],
+      "eventOccurrenceAlreadyHumanConfirmed": true,
+      "requireExactTransitionFrame": false,
+      "action": "Check only these flanking frames first for visible CONTACT/AIRBORNE and physical continuity. These are candidate evidence frames, not assumed states. Use neighboring original frames only if needed; retain UNKNOWN if unclear. Do not reconfirm occurrence just because the reported range is broad.",
+      "purpose": "Add real frame-state evidence without turning the event timing interval into fabricated support labels."
+    },
+    {
+      "id": "D-contact-flanks",
+      "physicalPaw": "D",
+      "priority": 1,
+      "frameRange": [
+        34,
+        41
+      ],
+      "framesToCheck": [
+        34,
+        41
+      ],
+      "reportedTransitionRange": [
+        35,
+        40
+      ],
+      "eventOccurrenceAlreadyHumanConfirmed": true,
+      "requireExactTransitionFrame": false,
+      "action": "Check only these flanking frames first for visible CONTACT/AIRBORNE and physical continuity. These are candidate evidence frames, not assumed states. Use neighboring original frames only if needed; retain UNKNOWN if unclear. Do not reconfirm occurrence just because the reported range is broad.",
+      "purpose": "Add real frame-state evidence without turning the event timing interval into fabricated support labels."
+    },
+    {
+      "id": "A-intermediate",
+      "physicalPaw": "A",
+      "priority": 2,
+      "frameRange": [
+        20,
+        43
+      ],
+      "requiredForFirstTargetedPass": false,
+      "condition": "Only if this gap is selected as a continuously labeled training span or a complete-cycle assertion is being built.",
+      "action": "Follow only this paw through the named gap, record assessable frame states/visibility/continuity and check for omitted transitions. Do not fill the gap from the two known events. Other paws need no relabeling during this check.",
+      "reason": "Unverified middle between opposite events; its duration alone is not evidence that the human report is wrong."
+    },
+    {
+      "id": "B-intermediate",
+      "physicalPaw": "B",
+      "priority": 2,
+      "frameRange": [
+        9,
+        49
+      ],
+      "requiredForFirstTargetedPass": false,
+      "condition": "Only if this gap is selected as a continuously labeled training span or a complete-cycle assertion is being built.",
+      "action": "Follow only this paw through the named gap, record assessable frame states/visibility/continuity and check for omitted transitions. Do not fill the gap from the two known events. Other paws need no relabeling during this check.",
+      "reason": "Unverified middle between opposite events; its duration alone is not evidence that the human report is wrong."
+    },
+    {
+      "id": "C-intermediate",
+      "physicalPaw": "C",
+      "priority": 2,
+      "frameRange": [
+        11,
+        46
+      ],
+      "requiredForFirstTargetedPass": false,
+      "condition": "Only if this gap is selected as a continuously labeled training span or a complete-cycle assertion is being built.",
+      "action": "Follow only this paw through the named gap, record assessable frame states/visibility/continuity and check for omitted transitions. Do not fill the gap from the two known events. Other paws need no relabeling during this check.",
+      "reason": "Unverified middle between opposite events; its duration alone is not evidence that the human report is wrong."
+    },
+    {
+      "id": "D-intermediate",
+      "physicalPaw": "D",
+      "priority": 2,
+      "frameRange": [
+        13,
+        34
+      ],
+      "requiredForFirstTargetedPass": false,
+      "condition": "Only if this gap is selected as a continuously labeled training span or a complete-cycle assertion is being built.",
+      "action": "Follow only this paw through the named gap, record assessable frame states/visibility/continuity and check for omitted transitions. Do not fill the gap from the two known events. Other paws need no relabeling during this check.",
+      "reason": "Unverified middle between opposite events; its duration alone is not evidence that the human report is wrong."
+    },
+    {
+      "id": "reference-anchor",
+      "priority": 2,
+      "physicalPaws": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "framesToCheck": [],
+      "requiredForFirstTargetedPass": false,
+      "action": "Name the stationary reference frame used for Front C's headward description and, when needed for later anatomical mapping, describe A versus B at that frame. Use an existing visible original frame; no numerical reference-frame interval was supplied. Do not recreate or swap the physical IDs, infer left/right, or repeat the full tracking pass."
+    }
+  ],
+  "firstAction": "Check Front C at original frames 4 and 11 around its confirmed touchdown range 5–10, record support state/visibility/continuity only if visible, then export a new partial review. If unclear, leave UNKNOWN.",
+  "workload": {
+    "firstCheckPawFrameDecisions": 2,
+    "allBoundaryFlankPawFrameDecisions": 16,
+    "complete240LabelPassRequired": false,
+    "interiorReviewConditional": true
+  },
+  "unknownCoverage": {
+    "allSupportStatesRemainUnknown": true,
+    "initialFrame": 0,
+    "initialStateVerificationRequired": false,
+    "initialStatePolicy": "Frame 0 need not be labeled to use later verified frames; leave unneeded prefixes/tails UNKNOWN and masked."
+  },
+  "reuse": {
+    "unchangedPaws": [
+      "B",
+      "D"
+    ],
+    "independentEvidence": false,
+    "instruction": "Retain B/D event ranges without another event-occurrence pass. Neither V1 nor V2 supplies definite frame states; reuse the reported event evidence only, not imagined frame labels."
+  },
+  "nextTrainingStep": "Turn selected flanking-frame checks into saved explicit human support states; later apply the existing anatomical mapping, independence/reconciliation and dog/split gates. Keep unverified targets masked. Front C/D supervised pair conversion still requires explicit provenance-preserving support."
+}

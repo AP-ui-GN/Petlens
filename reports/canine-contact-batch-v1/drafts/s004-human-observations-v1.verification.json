@@ -1,0 +1,321 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "gait-s004-91620e1d029a2801",
+  "manifestSha256": "5380e9416ec4727240f6dae6d26c770ff927723c7971c337d117181ed0b382cf",
+  "evidenceSource": {
+    "path": "tests/Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s004.ogv",
+    "sha256": "91620e1d029a2801cb47b894896d257c10efd0558af863949c6ccc6c53cc8650"
+  },
+  "annotationType": "targeted-human-verification-checklist",
+  "automatedContactSuggestions": false,
+  "trainingApproved": false,
+  "reviewer": "training.gait_event_review",
+  "interfaceChanged": false,
+  "navigation": "Existing frame number + Go, Previous/Next, arrows and slow playback. This checklist is not auto-loaded by the reviewer; no focused-queue option exists. Keep the original full manifest/hash.",
+  "startCommand": "python -m training.gait_event_review --dataset gait-s004 --manifest reports/canine-contact-batch-v1/frame-manifest.json --port 8767",
+  "url": "http://localhost:8767/?dataset=gait-s004",
+  "draftImport": {
+    "path": "reports/canine-contact-batch-v1/drafts/s004-human-observations-v1.review.json",
+    "reviewer": "s004-requesting-user-written-v1",
+    "instruction": "Use the source reviewer's dedicated session ID; declare prior_exposure. Start that session, then import the matching JSON backup. If a session already contains work, download its backup and keep it; review this new draft separately rather than overwrite. Other reviewers start their own blank sessions and cannot import this reviewer's draft."
+  },
+  "tasks": [
+    {
+      "id": "A-intermediate",
+      "physicalPaw": "A",
+      "priority": 1,
+      "frameRange": [
+        11,
+        46
+      ],
+      "action": "Follow only this physical paw through this gap. Record visibly supported CONTACT/AIRBORNE states and visibility/identity continuity; check for any additional touchdown/lift-off. If none is seen, explicitly record that check; retain UNKNOWN wherever evidence fails.",
+      "reason": "Unverified interior between reported opposite transitions. Long duration is a completeness question, not a contradiction."
+    },
+    {
+      "id": "B-intermediate",
+      "physicalPaw": "B",
+      "priority": 1,
+      "frameRange": [
+        9,
+        49
+      ],
+      "action": "Follow only this physical paw through this gap. Record visibly supported CONTACT/AIRBORNE states and visibility/identity continuity; check for any additional touchdown/lift-off. If none is seen, explicitly record that check; retain UNKNOWN wherever evidence fails.",
+      "reason": "Unverified interior between reported opposite transitions. Long duration is a completeness question, not a contradiction."
+    },
+    {
+      "id": "C-intermediate",
+      "physicalPaw": "C",
+      "priority": 1,
+      "frameRange": [
+        20,
+        43
+      ],
+      "action": "Follow only this physical paw through this gap. Record visibly supported CONTACT/AIRBORNE states and visibility/identity continuity; check for any additional touchdown/lift-off. If none is seen, explicitly record that check; retain UNKNOWN wherever evidence fails.",
+      "reason": "Unverified interior between reported opposite transitions. Long duration is a completeness question, not a contradiction."
+    },
+    {
+      "id": "D-intermediate",
+      "physicalPaw": "D",
+      "priority": 1,
+      "frameRange": [
+        13,
+        34
+      ],
+      "action": "Follow only this physical paw through this gap. Record visibly supported CONTACT/AIRBORNE states and visibility/identity continuity; check for any additional touchdown/lift-off. If none is seen, explicitly record that check; retain UNKNOWN wherever evidence fails.",
+      "reason": "Unverified interior between reported opposite transitions. Long duration is a completeness question, not a contradiction."
+    },
+    {
+      "id": "A-contact-flanks",
+      "physicalPaw": "A",
+      "priority": 2,
+      "frameRange": [
+        4,
+        11
+      ],
+      "framesToCheck": [
+        4,
+        11
+      ],
+      "reportedTransitionRange": [
+        5,
+        10
+      ],
+      "action": "Inspect the listed flanking frames for definite before/after support states, using neighboring original frames only as needed. Do not assume the flanks are definite, and do not force an exact event frame.",
+      "occurrenceReconfirmationRequired": false,
+      "reason": "Definite support-state endpoints were not supplied. Hind A occurrence/ranges were already rechecked; do not ask to reconfirm them merely because the gap is long."
+    },
+    {
+      "id": "A-lift_off-flanks",
+      "physicalPaw": "A",
+      "priority": 2,
+      "frameRange": [
+        46,
+        50
+      ],
+      "framesToCheck": [
+        46,
+        50
+      ],
+      "reportedTransitionRange": [
+        47,
+        49
+      ],
+      "action": "Inspect the listed flanking frames for definite before/after support states, using neighboring original frames only as needed. Do not assume the flanks are definite, and do not force an exact event frame.",
+      "occurrenceReconfirmationRequired": false,
+      "reason": "Definite support-state endpoints were not supplied. Hind A occurrence/ranges were already rechecked; do not ask to reconfirm them merely because the gap is long."
+    },
+    {
+      "id": "B-contact-flanks",
+      "physicalPaw": "B",
+      "priority": 2,
+      "frameRange": [
+        6,
+        9
+      ],
+      "framesToCheck": [
+        6,
+        9
+      ],
+      "reportedTransitionRange": [
+        7,
+        8
+      ],
+      "action": "Inspect the listed flanking frames for definite before/after support states, using neighboring original frames only as needed. Do not assume the flanks are definite, and do not force an exact event frame.",
+      "occurrenceReconfirmationRequired": null,
+      "reason": "Definite support-state endpoints were not supplied. Hind A occurrence/ranges were already rechecked; do not ask to reconfirm them merely because the gap is long."
+    },
+    {
+      "id": "B-lift_off-flanks",
+      "physicalPaw": "B",
+      "priority": 2,
+      "frameRange": [
+        49,
+        55
+      ],
+      "framesToCheck": [
+        49,
+        55
+      ],
+      "reportedTransitionRange": [
+        50,
+        54
+      ],
+      "action": "Inspect the listed flanking frames for definite before/after support states, using neighboring original frames only as needed. Do not assume the flanks are definite, and do not force an exact event frame.",
+      "occurrenceReconfirmationRequired": null,
+      "reason": "Definite support-state endpoints were not supplied. Hind A occurrence/ranges were already rechecked; do not ask to reconfirm them merely because the gap is long."
+    },
+    {
+      "id": "C-lift_off-flanks",
+      "physicalPaw": "C",
+      "priority": 2,
+      "frameRange": [
+        15,
+        20
+      ],
+      "framesToCheck": [
+        15,
+        20
+      ],
+      "reportedTransitionRange": [
+        16,
+        19
+      ],
+      "action": "Inspect the listed flanking frames for definite before/after support states, using neighboring original frames only as needed. Do not assume the flanks are definite, and do not force an exact event frame.",
+      "occurrenceReconfirmationRequired": null,
+      "reason": "Definite support-state endpoints were not supplied. Hind A occurrence/ranges were already rechecked; do not ask to reconfirm them merely because the gap is long."
+    },
+    {
+      "id": "C-contact-flanks",
+      "physicalPaw": "C",
+      "priority": 2,
+      "frameRange": [
+        43,
+        50
+      ],
+      "framesToCheck": [
+        43,
+        50
+      ],
+      "reportedTransitionRange": [
+        44,
+        49
+      ],
+      "action": "Inspect the listed flanking frames for definite before/after support states, using neighboring original frames only as needed. Do not assume the flanks are definite, and do not force an exact event frame.",
+      "occurrenceReconfirmationRequired": null,
+      "reason": "Definite support-state endpoints were not supplied. Hind A occurrence/ranges were already rechecked; do not ask to reconfirm them merely because the gap is long."
+    },
+    {
+      "id": "D-lift_off-flanks",
+      "physicalPaw": "D",
+      "priority": 2,
+      "frameRange": [
+        7,
+        13
+      ],
+      "framesToCheck": [
+        7,
+        13
+      ],
+      "reportedTransitionRange": [
+        8,
+        12
+      ],
+      "action": "Inspect the listed flanking frames for definite before/after support states, using neighboring original frames only as needed. Do not assume the flanks are definite, and do not force an exact event frame.",
+      "occurrenceReconfirmationRequired": null,
+      "reason": "Definite support-state endpoints were not supplied. Hind A occurrence/ranges were already rechecked; do not ask to reconfirm them merely because the gap is long."
+    },
+    {
+      "id": "D-contact-flanks",
+      "physicalPaw": "D",
+      "priority": 2,
+      "frameRange": [
+        34,
+        41
+      ],
+      "framesToCheck": [
+        34,
+        41
+      ],
+      "reportedTransitionRange": [
+        35,
+        40
+      ],
+      "action": "Inspect the listed flanking frames for definite before/after support states, using neighboring original frames only as needed. Do not assume the flanks are definite, and do not force an exact event frame.",
+      "occurrenceReconfirmationRequired": null,
+      "reason": "Definite support-state endpoints were not supplied. Hind A occurrence/ranges were already rechecked; do not ask to reconfirm them merely because the gap is long."
+    },
+    {
+      "id": "A-initial-tail",
+      "physicalPaw": "A",
+      "priority": 3,
+      "initialUnknownRange": [
+        0,
+        4
+      ],
+      "tailUnknownRange": [
+        50,
+        59
+      ],
+      "framesToCheck": [
+        0,
+        59
+      ],
+      "action": "Only if labels from these portions are needed: check frame 0 and 59 first; expand within the named ranges only where usable visible evidence is needed. Otherwise leave these portions UNKNOWN and masked.",
+      "requiredForFirstTargetedPass": false
+    },
+    {
+      "id": "B-initial-tail",
+      "physicalPaw": "B",
+      "priority": 3,
+      "initialUnknownRange": [
+        0,
+        6
+      ],
+      "tailUnknownRange": [
+        55,
+        59
+      ],
+      "framesToCheck": [
+        0,
+        59
+      ],
+      "action": "Only if labels from these portions are needed: check frame 0 and 59 first; expand within the named ranges only where usable visible evidence is needed. Otherwise leave these portions UNKNOWN and masked.",
+      "requiredForFirstTargetedPass": false
+    },
+    {
+      "id": "C-initial-tail",
+      "physicalPaw": "C",
+      "priority": 3,
+      "initialUnknownRange": [
+        0,
+        15
+      ],
+      "tailUnknownRange": [
+        50,
+        59
+      ],
+      "framesToCheck": [
+        0,
+        59
+      ],
+      "action": "Only if labels from these portions are needed: check frame 0 and 59 first; expand within the named ranges only where usable visible evidence is needed. Otherwise leave these portions UNKNOWN and masked.",
+      "requiredForFirstTargetedPass": false
+    },
+    {
+      "id": "D-initial-tail",
+      "physicalPaw": "D",
+      "priority": 3,
+      "initialUnknownRange": [
+        0,
+        7
+      ],
+      "tailUnknownRange": [
+        41,
+        59
+      ],
+      "framesToCheck": [
+        0,
+        59
+      ],
+      "action": "Only if labels from these portions are needed: check frame 0 and 59 first; expand within the named ranges only where usable visible evidence is needed. Otherwise leave these portions UNKNOWN and masked.",
+      "requiredForFirstTargetedPass": false
+    },
+    {
+      "id": "physical-anchors",
+      "physicalPaws": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "priority": 2,
+      "frameRange": [
+        0,
+        4
+      ],
+      "action": "At one visible stationary/reference frame in 0–4 (if none is usable, name another existing visible reference frame), describe which paw is A versus B and C versus D using the reviewer's existing headward/rearward distinction. Preserve their assignment. Do not infer anatomical left/right.",
+      "reason": "Tracking continuity was reported; exact per-paw reference anchors were not included. This requests a description, not re-tracking the whole clip."
+    }
+  ],
+  "firstAction": "Review Hind A frames 11–46 for definite frame states and any omitted transitions; retain its already-rechecked 5–10 and 47–49 event ranges unchanged unless new human evidence warrants a separate correction."
+}

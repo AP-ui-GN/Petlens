@@ -1,0 +1,91 @@
+{
+  "date": "2026-11-11",
+  "artifacts": [
+    {
+      "path": "outputs/contact-s004-physical-c-v1/last.pt",
+      "bytes": 995736,
+      "sha256": "930c67e805fa2fe65906731e2f476d0a3199a3a7d54beaf7b79212662fbc6789",
+      "notBackedUpByThisGitCheckpoint": true,
+      "reason": "Ignored model weights: outputs/ is excluded; no force-add.",
+      "reproduction": "Future authorized rerun of training/train_contact.py with the committed identity-neutral job and five-epoch config, preserved local hashed inputs, PyTorch 2.5.1+cpu and original environment. Use a fresh output directory. Training code does not recover missing inputs."
+    },
+    {
+      "path": "tmp/rtmpose-test/multi-video-evaluation/inputs/dalmatian-lossless-cfr.mp4",
+      "bytes": 159292052,
+      "sha256": "13efcd61041c8795852ad377ca4a969d117c907fcb8d4a9298c61303bb7881d8",
+      "notBackedUpByThisGitCheckpoint": true,
+      "reason": "Ignored 152 MiB lossless derivative; rights/source clearance incomplete.",
+      "reproduction": "Preserve this exact local file. Original input is tests/13792872-hd_1080_1920_30fps (1).mp4; exact historical encode command not verified in this session, so bit-for-bit reproduction is not promised."
+    },
+    {
+      "path": "reports/canine-contact-batch-v1/identity-neutral-exploratory/execution-v1/initial-state-reference.pt",
+      "bytes": 330665,
+      "sha256": "6a7e3f7b8eb30f479f39d79d4b3c0bb54514f18e0c63e5aeebb11e3ff1aac5e3",
+      "notBackedUpByThisGitCheckpoint": true,
+      "reason": "Random initialization tensor snapshot; omit weight binaries, retain verification JSON.",
+      "reproduction": "Reconstruct using seed 20261111 and IdentityNeutralContactModel from recorded config and binding; no training required."
+    },
+    {
+      "path": "artifacts/petlens-pilot-results (1).tar.gz",
+      "bytes": 51671314,
+      "sha256": "f6e90ea5b44736425da63b26937be4a242a45b6513284f56e8f7013873bee748",
+      "notBackedUpByThisGitCheckpoint": true,
+      "reason": "Unreviewed 51 MB pre-existing archive; unrelated to scoped checkpoint.",
+      "reproduction": "Preserved locally; exact archive generation and rights not verified here."
+    },
+    {
+      "path": "tests/PetLens_Husky_ScreenRecording_Test.zip",
+      "bytes": 12240902,
+      "sha256": "8579c53aca89e5eb7831cb3f69d3a1677b1955b5f8a3f24dfe0fd6149a9f49a9",
+      "notBackedUpByThisGitCheckpoint": true,
+      "reason": "Pre-existing private/unreviewed screen-recording archive.",
+      "reproduction": "Preserved locally; no public backup or regeneration claim."
+    },
+    {
+      "path": "tmp/rtmpose-test/multi-video-evaluation/runs/wikimedia-s004-cfr-20261103/predictions.json",
+      "bytes": 188396,
+      "sha256": "4ef66928d98216380ef9dec09bd8383c0f3bc6d98f616e22b2c09d748fc0661a",
+      "notBackedUpByThisGitCheckpoint": true,
+      "reason": "Ignored original input required by the authorized S004 training job.",
+      "reproduction": "Restore the exact file matching the committed job SHA256. Source video attribution/download links are committed; metadata and prediction JSON have local audit copies but reconstruction must satisfy original byte hashes."
+    },
+    {
+      "path": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/s004/manifest.json",
+      "bytes": 15191,
+      "sha256": "0f0f8bf4cafb31de4284850b5bb4618f06b7f64fea048c61cd82dab2e4bc7d7c",
+      "notBackedUpByThisGitCheckpoint": true,
+      "reason": "Ignored original input required by the authorized S004 training job.",
+      "reproduction": "Restore the exact file matching the committed job SHA256. Source video attribution/download links are committed; metadata and prediction JSON have local audit copies but reconstruction must satisfy original byte hashes."
+    },
+    {
+      "path": "tmp/wikimedia-s004-preparation/s004-lossless-cfr.mp4",
+      "bytes": 4432200,
+      "sha256": "feedb618a93d0a7f8acddd7a198516405f2afe579d48191553bc75a8346d21cd",
+      "notBackedUpByThisGitCheckpoint": true,
+      "reason": "Ignored original input required by the authorized S004 training job.",
+      "reproduction": "Restore the exact file matching the committed job SHA256. Source video attribution/download links are committed; metadata and prediction JSON have local audit copies but reconstruction must satisfy original byte hashes."
+    },
+    {
+      "path": "tmp/canine-candidate-nora-20261111/original.ogv",
+      "bytes": 10899300,
+      "sha256": "96635bfe9359472a81e9ad376018f9b46a29a06bb375d6a8506c38ab79b58652",
+      "notBackedUpByThisGitCheckpoint": true,
+      "reason": "Ignored individually downloaded rejection-screen source media; license notices retained in selection report.",
+      "reproduction": "Download original URL in reports/canine-video-selection-20261111/selection.json; verify its SHA-1/SHA256. FFprobe and overview images can be regenerated using existing tools."
+    },
+    {
+      "path": "tmp/canine-candidate-tokyo-20261111/original.webm",
+      "bytes": 2733971,
+      "sha256": "4e75c2c36b8465c270101ae4bafaeea54358165b44971739d8d5c8290812129e",
+      "notBackedUpByThisGitCheckpoint": true,
+      "reason": "Ignored individually downloaded rejection-screen source media; license notices retained in selection report.",
+      "reproduction": "Download original URL in reports/canine-video-selection-20261111/selection.json; verify its SHA-1/SHA256. FFprobe and overview images can be regenerated using existing tools."
+    }
+  ],
+  "otherLocalGroups": [
+    "outputs/contact-s004-physical-c-v1/ retains full execution bundle; selected JSON/Markdown metrics and authorization are checkpointed under reports/canine-contact-batch-v1/.",
+    "tmp/contact-feature-readiness-v1 and v2 exports; original local video/prediction caches, extracted review frames and downloaded pose weights remain local.",
+    "Local .venv-canine-v2 and node_modules environments are not backed up by Git.",
+    "Unrelated comparison images, paw-diagnosis directory and stray untracked files were not blindly staged."
+  ]
+}

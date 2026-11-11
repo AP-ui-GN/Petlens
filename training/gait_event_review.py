@@ -27,9 +27,10 @@ UI = Path('tmp/rtmpose-test/paw-tracking-experiment/manual-annotation')
 SOURCES = {
     'gait-dalmatian': ('tests/13792872-hd_1080_1920_30fps (1).mp4', 46, 74),
     'gait-dog02': ('test/Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s003.ogv', 0, 59),
+    'gait-s004': ('tests/Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s004.ogv', 0, 59),
 }
 PAWS = ('A', 'B')
-STATES = ('unreviewed', 'airborne', 'contacting', 'occluded', 'uncertain', 'unassessable')
+STATES = ('unreviewed', 'airborne', 'contacting', 'unknown', 'occluded', 'uncertain', 'unassessable')
 CONTINUITY = ('unreviewed', 'start', 'continuous', 'broken', 'uncertain', 'unassessable')
 BOUNDARIES = (
     ('initialContactLastAirborne', 'airborne'),
@@ -50,7 +51,7 @@ def inspect_sources(root=p.ROOT, groups=None):
     import cv2
 
     datasets, images = {}, {}
-    for group in (SOURCES if groups is None else groups):
+    for group in (('gait-dalmatian', 'gait-dog02') if groups is None else groups):
         p.require(group in SOURCES, f'Unknown review source: {group}')
         relative, start, end = SOURCES[group]
         source = root / relative
@@ -99,12 +100,29 @@ def inspect_sources(root=p.ROOT, groups=None):
             frames=frames, timestampPolicy='Native original-video PTS; zero-based source indices; no resampling',
             attribution=('Original Dalmatian source, retained unchanged.' if group == 'gait-dalmatian'
                          else 'Shin et al. (2013), Movie S3, DOI 10.1371/journal.pone.0059875; original embedded CC BY 3.0 attribution retained.'))
+        if group == 'gait-s004':
+            datasets[group].update(
+                physicalPaws=['A', 'B', 'C', 'D'],
+                pawRoles={'A': 'Hind physical A', 'B': 'Hind physical B',
+                          'C': 'Front physical C', 'D': 'Front physical D'},
+                identityPolicy='Follow physical limbs, not screen order. Describe each limb. Anatomical LF/RF/LH/RH mapping remains unverified; never infer it from predictions.',
+                attribution='Shin J-H et al. (2013), Movie S4, DOI 10.1371/journal.pone.0059875. Original OGV unchanged; PNG extraction for review. No endorsement implied.',
+                rights=dict(status='attribution_required',
+                    source='https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0059875',
+                    fileDescription='https://commons.wikimedia.org/wiki/File:Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s004.ogv',
+                    embeddedLicense='https://creativecommons.org/licenses/by/3.0/',
+                    commonsLicense='https://creativecommons.org/licenses/by/2.5/',
+                    evidence='Publication grants attributed reuse; embedded CC BY 3.0 and Commons CC BY 2.5 discrepancy retained. Commercial reuse permitted with attribution; source notices preserved.'),
+                identityGroup='shin-2013-s003-s004-unresolved', dogIdentityVerified=False,
+                trainingApproved=False,
+                timingLimit='Original available OGV PTS, 12 FPS (83.33 ms). Sensor capture rate is not independently attested; no subframe timing claims.',
+                reviewDirectory='reports/canine-contact-batch-v1/reviews')
         images[group] = encoded
     return dict(schemaVersion=1, annotationType=TYPE, datasets=datasets), images
 
 
-def prepare(path=MANIFEST, root=p.ROOT):
-    manifest, _ = inspect_sources(root)
+def prepare(path=MANIFEST, root=p.ROOT, groups=None):
+    manifest, _ = inspect_sources(root, groups=groups)
     target = root / path
     target.parent.mkdir(parents=True, exist_ok=True)
     with target.open('x') as handle:
@@ -131,16 +149,18 @@ def session(path=MANIFEST, root=p.ROOT, group=None):
 
 
 def initial_draft(meta, manifest_hash):
+    paws = meta.get('physicalPaws', PAWS)
     return dict(schemaVersion=1, annotationType=TYPE, blind=True,
         manifestSha256=manifest_hash, datasetId=meta['datasetId'],
         reviewer='', independenceDeclaration='unreviewed', modelExposed=False,
-        previousLabelsExposed=False, pawDescriptions={'A': '', 'B': ''},
+        previousLabelsExposed=False, pawDescriptions={paw: '' for paw in paws},
         observations={str(i): {paw: dict(visibility='unreviewed',
-            continuity='unreviewed', supportState='unreviewed', notes='') for paw in PAWS}
+            continuity='unreviewed', supportState='unreviewed', notes='') for paw in paws}
             for i in meta['selectedFrames']}, strides=[])
 
 
 def validate(meta, manifest_hash, draft):
+    paws = meta.get('physicalPaws', PAWS)
     p.require(isinstance(draft, dict) and draft.get('schemaVersion') == 1 and
               draft.get('annotationType') == TYPE and draft.get('blind') is True and
               draft.get('manifestSha256') == manifest_hash and
@@ -152,14 +172,14 @@ def validate(meta, manifest_hash, draft):
     p.require(draft.get('independenceDeclaration') in
               ('unreviewed', 'no_prior_exposure', 'prior_exposure'), 'Invalid independence declaration')
     p.require(isinstance(draft.get('pawDescriptions'), dict) and
-              set(draft['pawDescriptions']) == set(PAWS) and
+              set(draft['pawDescriptions']) == set(paws) and
               all(isinstance(v, str) for v in draft['pawDescriptions'].values()), 'Invalid physical paw descriptions')
     observations = draft.get('observations')
     p.require(isinstance(observations, dict) and
               set(observations) == {str(i) for i in meta['selectedFrames']}, 'Missing or foreign review frames')
-    for paws in observations.values():
-        p.require(isinstance(paws, dict) and set(paws) == set(PAWS), 'Invalid physical paws')
-        for observation in paws.values():
+    for frame_paws in observations.values():
+        p.require(isinstance(frame_paws, dict) and set(frame_paws) == set(paws), 'Invalid physical paws')
+        for observation in frame_paws.values():
             p.require(isinstance(observation, dict) and
                 set(observation) == {'visibility', 'continuity', 'supportState', 'notes'} and
                 observation.get('visibility') in ('unreviewed', 'visible', 'occluded', 'uncertain', 'unassessable') and
@@ -168,6 +188,12 @@ def validate(meta, manifest_hash, draft):
                 isinstance(observation.get('notes'), str), 'Invalid observation')
             if observation['supportState'] in ('airborne', 'contacting'):
                 p.require(observation['visibility'] == 'visible', 'Definite support state requires visible paw')
+        if meta.get('physicalPaws'):
+            for paw, observation in frame_paws.items():
+                if observation['supportState'] in ('airborne', 'contacting'):
+                    p.require(observation['continuity'] in ('start', 'continuous') and
+                              draft['pawDescriptions'][paw].strip(),
+                              'Definite support requires described, reliable physical identity')
     strides = draft.get('strides')
     p.require(isinstance(strides, list), 'Invalid stride list')
     ids, complete = set(), 0
@@ -176,7 +202,7 @@ def validate(meta, manifest_hash, draft):
                   bool(stride['id']) and stride['id'] not in ids, 'Invalid or duplicate stride ID')
         ids.add(stride['id'])
         p.require(set(stride) == {'id', 'physicalPaw', 'status', 'boundaries', 'notes'} and
-                  stride.get('physicalPaw') in PAWS and stride.get('status') in
+                  stride.get('physicalPaw') in paws and stride.get('status') in
                   ('unreviewed', 'complete', 'occluded', 'uncertain', 'unassessable') and
                   isinstance(stride.get('notes'), str), 'Invalid stride assertion')
         boundaries = stride.get('boundaries')
@@ -252,13 +278,58 @@ def export_review(meta, manifest_hash, draft):
     return buffer.getvalue()
 
 
-def save_export(payload, root=p.ROOT):
-    folder = root / DIRECTORY / 'reviews'
+def save_export(payload, root=p.ROOT, directory=None):
+    folder = root / (directory or DIRECTORY / 'reviews')
     folder.mkdir(parents=True, exist_ok=True)
     target = folder / ('review-' + uuid.uuid4().hex + '.zip')
     with target.open('xb') as handle:
         handle.write(payload)
     return target
+
+
+def compare_exports(first, second, paw_map):
+    """Flag differences only, after a human supplies physical-paw correspondence."""
+    reviews = []
+    for path in (first, second):
+        with zipfile.ZipFile(path) as archive:
+            provenance = json.loads(archive.read('manifest.json'))
+            for name, sha in provenance['outputSha256'].items():
+                p.require(digest_bytes(archive.read(name)) == sha, 'Review export hash mismatch')
+            meta = json.loads(archive.read('frame-manifest.json'))
+            draft = json.loads(archive.read('review.json'))
+            validate(meta, provenance['manifestSha256'], draft)
+            p.require(draft['reviewer'].strip() and
+                      draft['independenceDeclaration'] == 'no_prior_exposure',
+                      'Comparison requires independent reviewer declarations')
+            reviews.append((meta, draft, provenance))
+    (meta, left, lp), (other, right, rp) = reviews
+    p.require(meta == other and lp['manifestSha256'] == rp['manifestSha256'],
+              'Reviews have different source provenance')
+    p.require(left['reviewer'] != right['reviewer'], 'Two different reviewer IDs required')
+    paws = set(left['pawDescriptions'])
+    p.require(set(paw_map) == paws and set(paw_map.values()) == paws,
+              'Supply a one-to-one human-confirmed physical-paw correspondence')
+    p.require(all(d.strip() for draft in (left, right) for d in draft['pawDescriptions'].values()),
+              'Describe every physical paw before comparison')
+    disagreements, incomplete = [], []
+    for i in meta['selectedFrames']:
+        for paw, other_paw in paw_map.items():
+            a, b = left['observations'][str(i)][paw], right['observations'][str(i)][other_paw]
+            record = dict(frameIndex=i, timestampSeconds=meta['frames'][i]['timestampSeconds'],
+                          physicalPaw=paw, secondPhysicalPaw=other_paw)
+            fields = [field for field in ('visibility', 'continuity', 'supportState') if a[field] != b[field]]
+            if fields:
+                disagreements.append(dict(record, differingFields=fields, first=a, second=b))
+            if any(o[field] == 'unreviewed' for o in (a, b)
+                   for field in ('visibility', 'continuity', 'supportState')):
+                incomplete.append(record)
+    return dict(schemaVersion=1, adjudicated=False, trainingApproved=False,
+        datasetId=meta['datasetId'], manifestSha256=lp['manifestSha256'],
+        inputs=[dict(path=str(path), sha256=p.digest(Path(path))) for path in (first, second)],
+        reviewers=[left['reviewer'], right['reviewer']], humanSuppliedPawCorrespondence=paw_map,
+        pawDescriptions=[left['pawDescriptions'], right['pawDescriptions']],
+        disagreements=disagreements, incomplete=incomplete,
+        note='Differences require human resolution. Matching UNKNOWN is not a supervised target. Anatomical mapping and identity remain separate review requirements. No consensus labels generated.')
 
 
 def make_handler(manifest, images, manifest_hash, root=p.ROOT):
@@ -299,9 +370,9 @@ def make_handler(manifest, images, manifest_hash, root=p.ROOT):
                 # Reuse the existing page and canvas; remove old links/legacy controls before paint.
                 import re
                 html = re.sub(r'<h1>.*?</h1><p>Dataset:.*?</p>',
-                    '<h1>Blind gait-event reference review</h1><p>Source: '
-                    '<a href="?dataset=gait-dalmatian">Dalmatian</a> · '
-                    '<a href="?dataset=gait-dog02">Dog02 / S003</a></p>', html, count=1)
+                    '<h1>Blind gait-event reference review</h1><p>Source: ' +
+                    ' · '.join(f'<a href="?dataset={key}">{key}</a>' for key in manifest['datasets']) +
+                    '</p>', html, count=1)
                 html = html.replace('</style>', 'button{white-space:normal;overflow-wrap:anywhere;max-width:100%} input{max-width:100%;box-sizing:border-box}</style>')
                 html += '<script src="/gait-event-review.js"></script><script src="/annotation.js"></script></html>'
                 return self.send_bytes(html.encode(), 'text/html; charset=utf-8')
@@ -344,7 +415,7 @@ def make_handler(manifest, images, manifest_hash, root=p.ROOT):
                 if url.path == '/api/validate':
                     return self.send_bytes(json.dumps(validate(meta, manifest_hash, draft)).encode(), 'application/json')
                 payload = export_review(meta, manifest_hash, draft)
-                output = save_export(payload, root)
+                output = save_export(payload, root, meta.get('reviewDirectory'))
                 return self.send_bytes(payload, 'application/zip', headers={
                     'Content-Disposition': f'attachment; filename="{output.name}"',
                     'X-PetLens-Export-Path': str(output.relative_to(root))})
@@ -365,14 +436,26 @@ if __name__ == '__main__':
     parser.add_argument('--prepare', action='store_true', help='Verify original sources and write a new blank-review frame manifest')
     parser.add_argument('--manifest', type=Path, default=MANIFEST)
     parser.add_argument('--port', type=int, default=8767)
-    parser.add_argument('--dataset', choices=tuple(SOURCES), default='gait-dalmatian',
-                        help='Verify and serve only this dataset; all others remain blocked')
+    parser.add_argument('--dataset', choices=tuple(SOURCES),
+                        help='Verify only this dataset; default: both legacy sources for prepare, Dalmatian for serve')
+    parser.add_argument('--compare', type=Path, nargs=2, metavar=('FIRST_ZIP', 'SECOND_ZIP'))
+    parser.add_argument('--paw-map', nargs='+', help='Human-confirmed correspondence, e.g. A:A B:B C:D D:C')
+    parser.add_argument('--comparison-output', type=Path)
     args = parser.parse_args()
-    if args.prepare:
-        prepare(args.manifest)
+    if args.compare:
+        p.require(args.paw_map and args.comparison_output, 'Comparison needs --paw-map and --comparison-output')
+        pairs = [item.split(':') for item in args.paw_map]
+        p.require(all(len(pair) == 2 for pair in pairs) and len(dict(pairs)) == len(pairs), 'Invalid paw map')
+        comparison = compare_exports(*args.compare, dict(pairs))
+        with args.comparison_output.open('x') as handle:
+            json.dump(comparison, handle, indent=2, allow_nan=False)
+            handle.write('\n')
+        print(f'Flagged {len(comparison["disagreements"])} disagreements; no labels adjudicated.')
+    elif args.prepare:
+        prepare(args.manifest, groups=(args.dataset,) if args.dataset else None)
         print(f'Prepared original frames and native timestamps: {args.manifest}; no human labels created.')
     else:
         try:
-            serve(args.port, args.manifest, args.dataset)
+            serve(args.port, args.manifest, args.dataset or 'gait-dalmatian')
         except p.ValidationError as exc:
             parser.exit(2, f'{exc}\n')

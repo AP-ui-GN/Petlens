@@ -1,0 +1,29 @@
+{
+  "status": "blocked_pending_owner_authorization",
+  "realTrainingPerformed": false,
+  "anatomicalSide": "unknown",
+  "physicalPaw": "C",
+  "potentialSupervisedObservations": 2,
+  "approvedSupervisedObservations": 0,
+  "conditionalSupervisedWindows": 1,
+  "conditionalWindowFrames": [
+    46,
+    47,
+    48,
+    49,
+    50
+  ],
+  "featureShape": [
+    60,
+    69
+  ],
+  "endpointPoseAndReferenceEligible": true,
+  "reviewerExposure": "prior_exposure",
+  "independentlyVerified": false,
+  "testsPassed": 141,
+  "syntheticTestsOnly": true,
+  "unsignedRealCommandExitCode": 2,
+  "unsignedRealCommandMessage": "Exploratory owner authorization missing or unsigned",
+  "preservedExistingFiles": 36,
+  "originalModelAndFeatureAdapterUnchanged": true
+}

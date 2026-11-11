@@ -1,0 +1,152 @@
+{
+  "approved": true,
+  "reviewer": "requesting project owner in this conversation",
+  "date": "2026-11-11",
+  "evidence": "Explicit authorization in the current user instruction: PETLENS \u2014 AUTHORIZE AND EXECUTE FIRST REAL CANINE TRAINING EXPERIMENT. Owner reports \"I approve.\" following the six-item checklist and directs one five-epoch run after factual rights/provenance verification.",
+  "role": "project_owner",
+  "mode": "exploratory_train_only",
+  "trainingApproved": true,
+  "policySha256": "447d76342e24e2e6e385e454b7d3a4035dc62c0d927a1d705640dd55282feefb",
+  "scopes": {
+    "trainOnly": true,
+    "sparsePaws": true,
+    "sourceMovieTiming": true,
+    "singleExposedReviewer": true,
+    "noGeneralizationClaims": true,
+    "identityNeutralOutput": true
+  },
+  "inputHashes": {
+    "predictions": "4ef66928d98216380ef9dec09bd8383c0f3bc6d98f616e22b2c09d748fc0661a",
+    "video": "feedb618a93d0a7f8acddd7a198516405f2afe579d48191553bc75a8346d21cd",
+    "sourceFrames": "5380e9416ec4727240f6dae6d26c770ff927723c7971c337d117181ed0b382cf",
+    "exploratoryLabels": "58d8b17d823c2aaf56ed1470982de8780cc5a72ff231feb30efd8ac5e4a0a14a",
+    "rightsEvidence": "a23df55470c52c2143c826d2af22250bd5ac5827bff04d712c91c9ea7eaf304a",
+    "sourceVideo": "91620e1d029a2801cb47b894896d257c10efd0558af863949c6ccc6c53cc8650",
+    "metadata": "0f0f8bf4cafb31de4284850b5bb4618f06b7f64fea048c61cd82dab2e4bc7d7c",
+    "physicalIdentityEvidence": "7b0a241d1b4ed01528b3f229023f1da2af78a211e28aa8ec97eeee943fd5c9b1"
+  },
+  "dogId": "shin-2013-s003-s004-unresolved",
+  "provenanceGroup": "publication:shin-2013",
+  "rights": {
+    "approved": true,
+    "reviewer": "requesting project owner in this conversation",
+    "date": "2026-11-11",
+    "evidence": "Explicit authorization in the current user instruction: PETLENS \u2014 AUTHORIZE AND EXECUTE FIRST REAL CANINE TRAINING EXPERIMENT. Owner reports \"I approve.\" following the six-item checklist and directs one five-epoch run after factual rights/provenance verification. Factual permission assessment: reports/canine-contact-batch-v1/identity-neutral-exploratory/rights-verification-v1.json. Both license notices and attribution are retained; owner approval is not the license evidence.",
+    "attribution": "Shin J-H, Greer B, Hakim CH, Zhou Z, Chung Y-c, Duan Y, He Z, Duan D (2013), Movie S4, Quantitative Phenotyping of Duchenne Muscular Dystrophy Dogs by Comprehensive Gait Analysis and Overnight Activity Monitoring, PLOS ONE, DOI 10.1371/journal.pone.0059875. Original source unchanged; lossless working conversion, RTMPose inference and body-relative features are derivatives. CC BY 3.0 embedded; Commons states CC BY 2.5; both links retained in rights evidence. No endorsement implied.",
+    "authorizationMethod": "explicit conversational approval",
+    "approverIdentityKind": "conversation_participant_role",
+    "legalName": null,
+    "handwrittenSignature": null
+  },
+  "mapping": {
+    "A": {
+      "approved": false,
+      "reviewer": "",
+      "date": "",
+      "evidence": "",
+      "anatomicalPaw": null
+    },
+    "B": {
+      "approved": false,
+      "reviewer": "",
+      "date": "",
+      "evidence": "",
+      "anatomicalPaw": null
+    },
+    "C": {
+      "approved": false,
+      "reviewer": "",
+      "date": "",
+      "evidence": "",
+      "anatomicalPaw": null
+    },
+    "D": {
+      "approved": false,
+      "reviewer": "",
+      "date": "",
+      "evidence": "",
+      "anatomicalPaw": null
+    }
+  },
+  "identitySpans": [
+    {
+      "approved": true,
+      "reviewer": "requesting project owner in this conversation",
+      "date": "2026-11-11",
+      "evidence": "Explicit authorization in the current user instruction: PETLENS \u2014 AUTHORIZE AND EXECUTE FIRST REAL CANINE TRAINING EXPERIMENT. Owner reports \"I approve.\" following the six-item checklist and directs one five-epoch run after factual rights/provenance verification. Acceptance of requesting reviewer confirmation for physical Front C continuity across original frames 46\u201350. No anatomical-side or interior contact assertion.",
+      "physicalPaw": "C",
+      "firstFrame": 46,
+      "lastFrame": 50,
+      "physicalContinuous": true,
+      "reportedContinuitySource": {
+        "path": "reports/canine-contact-batch-v1/identity-neutral-exploratory/reviewer-physical-continuity.json",
+        "sha256": "7b0a241d1b4ed01528b3f229023f1da2af78a211e28aa8ec97eeee943fd5c9b1"
+      },
+      "authorizationMethod": "explicit conversational approval",
+      "approverIdentityKind": "conversation_participant_role",
+      "legalName": null,
+      "handwrittenSignature": null
+    }
+  ],
+  "observations": {
+    "C-frame-46": {
+      "approved": true,
+      "reviewer": "requesting project owner in this conversation",
+      "date": "2026-11-11",
+      "evidence": "Explicit authorization in the current user instruction: PETLENS \u2014 AUTHORIZE AND EXECUTE FIRST REAL CANINE TRAINING EXPERIMENT. Owner reports \"I approve.\" following the six-item checklist and directs one five-epoch run after factual rights/provenance verification. Individually approved real observation C-frame-46; original confidence and prior-exposure declaration remain unchanged.",
+      "authorizationMethod": "explicit conversational approval",
+      "approverIdentityKind": "conversation_participant_role",
+      "legalName": null,
+      "handwrittenSignature": null
+    },
+    "C-frame-50": {
+      "approved": true,
+      "reviewer": "requesting project owner in this conversation",
+      "date": "2026-11-11",
+      "evidence": "Explicit authorization in the current user instruction: PETLENS \u2014 AUTHORIZE AND EXECUTE FIRST REAL CANINE TRAINING EXPERIMENT. Owner reports \"I approve.\" following the six-item checklist and directs one five-epoch run after factual rights/provenance verification. Individually approved real observation C-frame-50; original confidence and prior-exposure declaration remain unchanged.",
+      "authorizationMethod": "explicit conversational approval",
+      "approverIdentityKind": "conversation_participant_role",
+      "legalName": null,
+      "handwrittenSignature": null
+    }
+  },
+  "dogIdentity": {
+    "approved": true,
+    "reviewer": "requesting project owner in this conversation",
+    "date": "2026-11-11",
+    "evidence": "Explicit authorization in the current user instruction: PETLENS \u2014 AUTHORIZE AND EXECUTE FIRST REAL CANINE TRAINING EXPERIMENT. Owner reports \"I approve.\" following the six-item checklist and directs one five-epoch run after factual rights/provenance verification. Grouping verified in source-grouping-verification-v1.json; S003/S004 are not asserted to be different dogs.",
+    "authorizationMethod": "explicit conversational approval",
+    "approverIdentityKind": "conversation_participant_role",
+    "legalName": null,
+    "handwrittenSignature": null
+  },
+  "identityNeutralPolicySha256": "db8827409d7c67bf700e503c36c2eafde7f358e09b3c7c3b792a7a101b018bb0",
+  "physicalOutput": {
+    "kind": "tracked_front",
+    "physicalPaw": "C",
+    "anatomicalSide": "unknown",
+    "firstFrame": 46,
+    "lastFrame": 50
+  },
+  "authorizationMethod": "explicit conversational approval",
+  "approverIdentityKind": "conversation_participant_role",
+  "legalName": null,
+  "handwrittenSignature": null,
+  "recordVersion": 1,
+  "recordedAt": "2026-11-11T19:39:56Z",
+  "evidenceVerbatim": "The requesting project owner has explicitly stated in this conversation:\n\n\"I approve.\"\n\nThis approval follows review of the six-item authorization checklist for the limited S004 identity-neutral exploratory training experiment.",
+  "evidenceSource": "Current user message, not a fabricated earlier standalone approval turn",
+  "supersedesUnsignedTemplate": {
+    "path": "reports/canine-contact-batch-v1/identity-neutral-exploratory/owner-authorization.UNSIGNED.json",
+    "sha256": "1770a9a48be14a9c39355a19926adcfaa036448b150f8ade875cb84b27b85be8"
+  },
+  "scope": "One bounded five-epoch S004 Front C identity-neutral train-only experiment",
+  "limitationsAcknowledged": [
+    "no generalization accuracy",
+    "no accurate event timing",
+    "no clinical validity",
+    "no performance claim on other dogs",
+    "reviewer had prior exposure",
+    "anatomical side unknown"
+  ]
+}

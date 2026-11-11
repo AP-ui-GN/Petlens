@@ -1,0 +1,18 @@
+{
+  "existingFilesChecked": 69,
+  "unchangedExistingFiles": 68,
+  "intentionallyUpdated": [
+    "reports/canine-contact-batch-v1/identity-neutral-exploratory/training-job.json"
+  ],
+  "unapprovedJobPreservedAs": "training-job.UNAPPROVED-v1.json",
+  "unsignedTemplateUnchanged": true,
+  "sourceAnnotationsV1V2V3Unchanged": true,
+  "posePredictionsAndVideosUnchanged": true,
+  "modelAdapterAndTrainingCodeUnchanged": true,
+  "rtmposeUnchanged": true,
+  "architectureTxtUnchanged": true,
+  "branch": "feature/canine-gait-v2",
+  "head": "8d3dee57a3e82dcd99853ebdbc6275f57aebc886",
+  "commitOrPushPerformed": false,
+  "installOrModelDownloadPerformed": false
+}

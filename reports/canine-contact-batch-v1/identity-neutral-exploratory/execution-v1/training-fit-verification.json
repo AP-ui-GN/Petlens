@@ -1,0 +1,70 @@
+{
+  "status": "real_training_completed",
+  "realDataTraining": true,
+  "syntheticLabelsUsed": false,
+  "trainingRuns": 1,
+  "epochsCompleted": 5,
+  "optimizerSteps": 5,
+  "dogs": 1,
+  "trainingWindows": 1,
+  "supervisedFrames": [
+    46,
+    50
+  ],
+  "physicalOutput": "Front C",
+  "anatomicalSide": "unknown",
+  "interiorFramesMasked": true,
+  "lossPerEpoch": [
+    0.8244903683662415,
+    0.6996031403541565,
+    0.8012294769287109,
+    0.7061731815338135,
+    0.7100680470466614
+  ],
+  "dropoutTrainingLossMonotonic": false,
+  "firstTrainingLoss": 0.8244903683662415,
+  "lastTrainingLoss": 0.7100680470466614,
+  "initialDeterministicTrainingInputBCE": 0.810655951499939,
+  "finalDeterministicTrainingInputBCE": 0.7385373115539551,
+  "trainingInputFitOnly": {
+    "frame46ContactProbability": 0.6509532332420349,
+    "frame50ContactProbability": 0.6492764949798584,
+    "threshold": 0.5,
+    "correctPositions": 1,
+    "totalPositions": 2,
+    "accuracy": 0.5,
+    "distinguishesBothStates": false
+  },
+  "parametersUpdated": true,
+  "changedStateTensors": 29,
+  "frozenAnatomicalHeadUnchanged": true,
+  "initializationConsistencyVerifiedByFrozenHeadMatch": true,
+  "gradientEvidence": {
+    "method": "Nonzero saved AdamW first/second moments after five real-data backward/step calls; encoder and physical head have moments and weight changes",
+    "parametersWithMoments": 29,
+    "parametersWithNonzeroFirstMoments": 29,
+    "stepsPerParameter": 5,
+    "directPerStepGradientNormsRecorded": false
+  },
+  "checkpoint": {
+    "path": "outputs/contact-s004-physical-c-v1/last.pt",
+    "sha256": "930c67e805fa2fe65906731e2f476d0a3199a3a7d54beaf7b79212662fbc6789",
+    "reloadStateExact": true,
+    "reloadForwardExact": true
+  },
+  "validationPerformed": false,
+  "generalizationValidated": false,
+  "eventTimingValidated": false,
+  "clinicalValidityEstablished": false,
+  "limitations": [
+    "Only one source dog, one five-frame window and two approved state observations.",
+    "The exposed reviewer is not an independent reference.",
+    "Front C anatomical left/right remains UNKNOWN; output is bound to this source and span.",
+    "Training-set loss/fit only; no validation or held-out/generalization accuracy.",
+    "No accurate event timing, clinical validity, complete stride or other-dog performance claim.",
+    "The auxiliary head can memorize sequence phase or pose context and does not locate a physical paw in a new clip.",
+    "Intervening frames 47\u201349 and every other unapproved/disputed/provisional/UNKNOWN state remain masked.",
+    "Gradient evidence comes from nonzero saved AdamW moments; direct per-step gradient norms were not logged.",
+    "Exactly one five-epoch optimization run; no second experiment or hyperparameter search."
+  ]
+}

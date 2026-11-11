@@ -1,0 +1,37 @@
+{
+  "status": "authorized_preflight_passed",
+  "dogs": 1,
+  "trainingWindows": 1,
+  "validWindowFrames": [
+    46,
+    47,
+    48,
+    49,
+    50
+  ],
+  "supervisedFrames": [
+    46,
+    50
+  ],
+  "supervisedTargets": [
+    1,
+    0
+  ],
+  "supervisedPhysicalOutput": "Front C",
+  "supervisedPositions": 2,
+  "anatomicalSide": "unknown",
+  "anatomicalSupervisedPositions": 0,
+  "interiorFramesMasked": true,
+  "validationWindows": 0,
+  "epochs": 5,
+  "batchSize": 1,
+  "initialEvalTrainingBCE": 0.810655951499939,
+  "initialEvalContactProbabilities": [
+    0.27309197187423706,
+    0.2762906551361084
+  ],
+  "torchVersion": "2.5.1+cpu",
+  "initializationMethod": "Exact CLI seed and constructor, captured before the one authorized training run",
+  "parameterCount": 79941,
+  "trainableParameterCount": 79681
+}

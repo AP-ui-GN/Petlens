@@ -1,0 +1,1580 @@
+{
+  "schemaVersion": 1,
+  "annotationType": "blind-gait-event-review",
+  "blind": true,
+  "manifestSha256": "5380e9416ec4727240f6dae6d26c770ff927723c7971c337d117181ed0b382cf",
+  "datasetId": "gait-s004-91620e1d029a2801",
+  "reviewer": "s004-requesting-user-written-v1",
+  "independenceDeclaration": "prior_exposure",
+  "modelExposed": false,
+  "previousLabelsExposed": false,
+  "pawDescriptions": {
+    "A": "Hind A. Reviewer reports tracking this physical paw throughout frames 0–59. The reviewer used the stationary/reference position to distinguish the two paws within each front/hind pair, using relative positioning toward the dog's head or rear, and followed each identified physical paw through movement. The supplied description does not specify which member is headward/rearward at a named reference frame. No anatomical mapping is established.",
+    "B": "Hind B. Reviewer reports tracking this physical paw throughout frames 0–59. The reviewer used the stationary/reference position to distinguish the two paws within each front/hind pair, using relative positioning toward the dog's head or rear, and followed each identified physical paw through movement. The supplied description does not specify which member is headward/rearward at a named reference frame. No anatomical mapping is established.",
+    "C": "Front C. Reviewer reports tracking this physical paw throughout frames 0–59. The reviewer used the stationary/reference position to distinguish the two paws within each front/hind pair, using relative positioning toward the dog's head or rear, and followed each identified physical paw through movement. The supplied description does not specify which member is headward/rearward at a named reference frame. No anatomical mapping is established.",
+    "D": "Front D. Reviewer reports tracking this physical paw throughout frames 0–59. The reviewer used the stationary/reference position to distinguish the two paws within each front/hind pair, using relative positioning toward the dog's head or rear, and followed each identified physical paw through movement. The supplied description does not specify which member is headward/rearward at a named reference frame. No anatomical mapping is established."
+  },
+  "observations": {
+    "0": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Recording begins; initial state not explicitly established."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Recording begins; initial state not explicitly established."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Recording begins; initial state not explicitly established."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Recording begins; initial state not explicitly established."
+      }
+    },
+    "1": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "2": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "3": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "4": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "5": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: A-contact-5-10. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "6": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: A-contact-5-10. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "7": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: A-contact-5-10. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: B-contact-7-8. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "8": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: A-contact-5-10. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: B-contact-7-8. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: D-lift_off-8-12. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      }
+    },
+    "9": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: A-contact-5-10. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: D-lift_off-8-12. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      }
+    },
+    "10": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: A-contact-5-10. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: D-lift_off-8-12. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      }
+    },
+    "11": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: D-lift_off-8-12. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      }
+    },
+    "12": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: D-lift_off-8-12. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      }
+    },
+    "13": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "14": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "15": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "16": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: C-lift_off-16-19. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "17": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: C-lift_off-16-19. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "18": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: C-lift_off-16-19. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "19": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: C-lift_off-16-19. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "20": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "21": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "22": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "23": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "24": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "25": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "26": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "27": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "28": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "29": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "30": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "31": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "32": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "33": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "34": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "35": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: D-contact-35-40. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      }
+    },
+    "36": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: D-contact-35-40. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      }
+    },
+    "37": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: D-contact-35-40. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      }
+    },
+    "38": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: D-contact-35-40. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      }
+    },
+    "39": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: D-contact-35-40. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      }
+    },
+    "40": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: D-contact-35-40. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      }
+    },
+    "41": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "42": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "43": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "44": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: C-contact-44-49. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "45": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: C-contact-44-49. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "46": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: C-contact-44-49. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "47": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: A-lift_off-47-49. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: C-contact-44-49. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "48": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: A-lift_off-47-49. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: C-contact-44-49. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "49": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: A-lift_off-47-49. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: C-contact-44-49. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "50": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: B-lift_off-50-54. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "51": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: B-lift_off-50-54. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "52": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: B-lift_off-50-54. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "53": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: B-lift_off-50-54. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "54": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review. Event timing only: B-lift_off-50-54. See s004-human-observations-v1.events.json; no definite endpoint states supplied."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "55": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "56": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "57": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "58": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    },
+    "59": {
+      "A": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "B": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "C": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      },
+      "D": {
+        "visibility": "unreviewed",
+        "continuity": "unreviewed",
+        "supportState": "unknown",
+        "notes": "DRAFT from written observations; frame support state not established. UNKNOWN is an unverified placeholder, not a completed visual review."
+      }
+    }
+  },
+  "strides": []
+}

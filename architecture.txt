@@ -1,34 +1,16 @@
-PETLENS — CONTACTVISION DATA ADAPTER IMPLEMENTATION
-November 11, 2026
+**REJECTED—neither inspected video provides sufficient paw-contact evidence.**
 
-Implemented all three files:
+| Video | Measured file properties | Reason |
+|---|---|---|
+| [Nora, San Francisco](https://commons.wikimedia.org/wiki/File:Dog_walking_in_the_Mission_in_San_Francisco.ogv) | **24 FPS, 1280×720, 16.83 s**; regular timestamps | Blurred, shaggy paw boundaries and limb overlap. Changing viewpoint prevents a reliable 8–12-second front-and-hind labeling span. |
+| [Alternative: Tokyo dog walker](https://commons.wikimedia.org/wiki/File:Pro_dog_walker_-_Tokyo_-_2024_Nov_1.webm) | **30 FPS, 1920×1080, 9.03 s**; increasing timestamps | Rear view of overlapping dogs; front paws are hidden and individual paw identities cannot be followed reliably. |
 
-- src/petlens_gait/contact_features.py: creates 69-channel temporal features while preserving timing, raw scores, and missing-data masks.
-- training/prepare_contact_sequences.py: exports features and checks label, identity, provenance, and split readiness.
-- tests/test_contact_features.py: covers conversion and safety checks.
+**Accepted usable duration: zero.** Both original-file checksums matched Commons. Camera-native sampling rates remain unverified.
 
-Real-data conversion succeeded:
+**Rights:** Nora is credited to Sage Ross under CC BY-SA 3.0; Tokyo to Nesnad under CC BY-SA 4.0. Attribution and modification notices must be retained; distributed media adaptations require the same or a compatible license. [License terms](https://creativecommons.org/licenses/by-sa/3.0/)
 
-Video       Frames retained    Feature shape
-Dog02       60/60              60 x 69
-Dalmatian   177/177            177 x 69
+**One next action:** provide one owner-recorded, side-on 8–12-second walking clip of a different dog, with paws visible against hard, contrasting ground and permission for model development. Neither rejected clip should enter labeling.
 
-Dalmatian's three missing-pose frames remain represented. Scores above 1 were preserved.
+[Inspection evidence and rejection records](/workspaces/Petlens/reports/canine-video-selection-20261111/REVIEW.md)
 
-Both datasets correctly remain NOT TRAINING-READY. They still need independently reviewed contact labels, verified paw/dog identities, approved splits, and completed timing/rights records. Dog02 remains exploratory-only.
-
-Readiness report: reports/contact-feature-readiness-v1/validation.json
-Feature files and per-sequence provenance: reports/contact-feature-readiness-v1/sequences/
-Reproducible inspection job: training/contact_sequence_inspection_job.json
-Previous architecture/readiness audit: docs/CONTACTVISION_READINESS_AUDIT.md
-
-All relevant tests passed: 343 tests plus 17 subtests, including 60 adapter tests. The two reviewer HTTP tests passed on rerun outside the sandbox because they require a temporary localhost socket.
-
-Existing videos, predictions, annotations, and unrelated work were preserved. No training, inference, dependency installations, or model downloads were performed.
-
-Reproduce conversion into a NEW directory:
-.venv-canine-v2/bin/python -m training.prepare_contact_sequences --job training/contact_sequence_inspection_job.json --output-dir tmp/contact-feature-inspection-new --inspect
-
-Inspection success means data converted; it does not mean data is training-ready. --require-training-ready exits 3 after writing the report when required evidence is missing.
-
-Checkpoint scope: adapter code/tests, this summary, preserved readiness audit, inspection job, and exported features/provenance are included. The original source videos are already tracked. The large ignored Dalmatian lossless working derivative and unrelated untracked files remain local; this commit is not a backup of those files. Re-running conversion currently requires that derivative at its recorded path. The exported features are saved independently of it.
+No training, bulk downloads, dependency installs, commits, or pushes. The 17 previously screened DogReID videos were not re-evaluated.

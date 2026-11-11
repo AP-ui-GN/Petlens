@@ -1,0 +1,218 @@
+{
+  "verificationMethod": {
+    "method": "Nonzero saved AdamW first/second moments after five real-data backward/step calls; encoder and physical head have moments and weight changes",
+    "parametersWithMoments": 29,
+    "parametersWithNonzeroFirstMoments": 29,
+    "stepsPerParameter": 5,
+    "directPerStepGradientNormsRecorded": false
+  },
+  "parameterChangesL2": {
+    "backbone.position": 0.05522461355272585,
+    "backbone.projection.weight": 0.1748402358123227,
+    "backbone.projection.bias": 0.020863084720315003,
+    "backbone.encoder.layers.0.self_attn.in_proj_weight": 0.2699397357469531,
+    "backbone.encoder.layers.0.self_attn.in_proj_bias": 0.027590062526142007,
+    "backbone.encoder.layers.0.self_attn.out_proj.weight": 0.1674423573469255,
+    "backbone.encoder.layers.0.self_attn.out_proj.bias": 0.020493581222800834,
+    "backbone.encoder.layers.0.linear1.weight": 0.19176568351454995,
+    "backbone.encoder.layers.0.linear1.bias": 0.023733700991733678,
+    "backbone.encoder.layers.0.linear2.weight": 0.19431979069203958,
+    "backbone.encoder.layers.0.linear2.bias": 0.021221475421109314,
+    "backbone.encoder.layers.0.norm1.weight": 0.02215964819066483,
+    "backbone.encoder.layers.0.norm1.bias": 0.02082140706659468,
+    "backbone.encoder.layers.0.norm2.weight": 0.02089798947557791,
+    "backbone.encoder.layers.0.norm2.bias": 0.021250578850080536,
+    "backbone.encoder.layers.1.self_attn.in_proj_weight": 0.29428640148056645,
+    "backbone.encoder.layers.1.self_attn.in_proj_bias": 0.03073074501415453,
+    "backbone.encoder.layers.1.self_attn.out_proj.weight": 0.1752933766040028,
+    "backbone.encoder.layers.1.self_attn.out_proj.bias": 0.022635625835381482,
+    "backbone.encoder.layers.1.linear1.weight": 0.18097158554643336,
+    "backbone.encoder.layers.1.linear1.bias": 0.022760437838558162,
+    "backbone.encoder.layers.1.linear2.weight": 0.18203442866696679,
+    "backbone.encoder.layers.1.linear2.bias": 0.020673215396275965,
+    "backbone.encoder.layers.1.norm1.weight": 0.020015948886903952,
+    "backbone.encoder.layers.1.norm1.bias": 0.020702425546292043,
+    "backbone.encoder.layers.1.norm2.weight": 0.02162083209649418,
+    "backbone.encoder.layers.1.norm2.bias": 0.018402993865107263,
+    "backbone.classifier.weight": 0.0,
+    "backbone.classifier.bias": 0.0,
+    "physical_head.weight": 0.02159162060420674,
+    "physical_head.bias": 0.002216242253780365
+  },
+  "optimizerMoments": [
+    {
+      "parameter": "backbone.position",
+      "steps": 5,
+      "firstMomentL2": 0.024163534565650027,
+      "secondMomentSum": 2.9915874492025818e-05
+    },
+    {
+      "parameter": "backbone.projection.weight",
+      "steps": 5,
+      "firstMomentL2": 0.0772458535190937,
+      "secondMomentSum": 0.001098723384451307
+    },
+    {
+      "parameter": "backbone.projection.bias",
+      "steps": 5,
+      "firstMomentL2": 0.010710820257542324,
+      "secondMomentSum": 2.1510462733687064e-05
+    },
+    {
+      "parameter": "backbone.encoder.layers.0.self_attn.in_proj_weight",
+      "steps": 5,
+      "firstMomentL2": 0.030904518046299755,
+      "secondMomentSum": 0.0002358328077655565
+    },
+    {
+      "parameter": "backbone.encoder.layers.0.self_attn.in_proj_bias",
+      "steps": 5,
+      "firstMomentL2": 0.007738779336382773,
+      "secondMomentSum": 1.524990100129544e-05
+    },
+    {
+      "parameter": "backbone.encoder.layers.0.self_attn.out_proj.weight",
+      "steps": 5,
+      "firstMomentL2": 0.026676655311915033,
+      "secondMomentSum": 0.00014003142909442025
+    },
+    {
+      "parameter": "backbone.encoder.layers.0.self_attn.out_proj.bias",
+      "steps": 5,
+      "firstMomentL2": 0.008925384663647963,
+      "secondMomentSum": 1.662990064232872e-05
+    },
+    {
+      "parameter": "backbone.encoder.layers.0.linear1.weight",
+      "steps": 5,
+      "firstMomentL2": 0.035244480348326904,
+      "secondMomentSum": 0.00023006899045105894
+    },
+    {
+      "parameter": "backbone.encoder.layers.0.linear1.bias",
+      "steps": 5,
+      "firstMomentL2": 0.004109050615376958,
+      "secondMomentSum": 3.351620322144741e-06
+    },
+    {
+      "parameter": "backbone.encoder.layers.0.linear2.weight",
+      "steps": 5,
+      "firstMomentL2": 0.033180071785310246,
+      "secondMomentSum": 0.00024426638856207014
+    },
+    {
+      "parameter": "backbone.encoder.layers.0.linear2.bias",
+      "steps": 5,
+      "firstMomentL2": 0.0034397132730724675,
+      "secondMomentSum": 3.7654454327906706e-06
+    },
+    {
+      "parameter": "backbone.encoder.layers.0.norm1.weight",
+      "steps": 5,
+      "firstMomentL2": 0.0056646818372576265,
+      "secondMomentSum": 6.689377409552222e-06
+    },
+    {
+      "parameter": "backbone.encoder.layers.0.norm1.bias",
+      "steps": 5,
+      "firstMomentL2": 0.0044948780997354585,
+      "secondMomentSum": 5.1818177988494085e-06
+    },
+    {
+      "parameter": "backbone.encoder.layers.0.norm2.weight",
+      "steps": 5,
+      "firstMomentL2": 0.005500170987476817,
+      "secondMomentSum": 7.4712500810480975e-06
+    },
+    {
+      "parameter": "backbone.encoder.layers.0.norm2.bias",
+      "steps": 5,
+      "firstMomentL2": 0.003983261585146354,
+      "secondMomentSum": 5.764472608582594e-06
+    },
+    {
+      "parameter": "backbone.encoder.layers.1.self_attn.in_proj_weight",
+      "steps": 5,
+      "firstMomentL2": 0.03749274876768569,
+      "secondMomentSum": 0.00025697989054941856
+    },
+    {
+      "parameter": "backbone.encoder.layers.1.self_attn.in_proj_bias",
+      "steps": 5,
+      "firstMomentL2": 0.004816066592319016,
+      "secondMomentSum": 4.506848597619429e-06
+    },
+    {
+      "parameter": "backbone.encoder.layers.1.self_attn.out_proj.weight",
+      "steps": 5,
+      "firstMomentL2": 0.03180508087718862,
+      "secondMomentSum": 0.0001699581698064983
+    },
+    {
+      "parameter": "backbone.encoder.layers.1.self_attn.out_proj.bias",
+      "steps": 5,
+      "firstMomentL2": 0.004616018312308583,
+      "secondMomentSum": 4.039196563221381e-06
+    },
+    {
+      "parameter": "backbone.encoder.layers.1.linear1.weight",
+      "steps": 5,
+      "firstMomentL2": 0.04700550748284771,
+      "secondMomentSum": 0.00034585035836820905
+    },
+    {
+      "parameter": "backbone.encoder.layers.1.linear1.bias",
+      "steps": 5,
+      "firstMomentL2": 0.005296835095473536,
+      "secondMomentSum": 4.569843569557364e-06
+    },
+    {
+      "parameter": "backbone.encoder.layers.1.linear2.weight",
+      "steps": 5,
+      "firstMomentL2": 0.04852049591410425,
+      "secondMomentSum": 0.0003449283609104423
+    },
+    {
+      "parameter": "backbone.encoder.layers.1.linear2.bias",
+      "steps": 5,
+      "firstMomentL2": 0.003914609118788917,
+      "secondMomentSum": 3.920479506536179e-06
+    },
+    {
+      "parameter": "backbone.encoder.layers.1.norm1.weight",
+      "steps": 5,
+      "firstMomentL2": 0.004982101015640938,
+      "secondMomentSum": 8.848714276532554e-06
+    },
+    {
+      "parameter": "backbone.encoder.layers.1.norm1.bias",
+      "steps": 5,
+      "firstMomentL2": 0.004337609084694056,
+      "secondMomentSum": 5.202109757185269e-06
+    },
+    {
+      "parameter": "backbone.encoder.layers.1.norm2.weight",
+      "steps": 5,
+      "firstMomentL2": 0.006268930750201807,
+      "secondMomentSum": 8.429907847320658e-06
+    },
+    {
+      "parameter": "backbone.encoder.layers.1.norm2.bias",
+      "steps": 5,
+      "firstMomentL2": 0.0026908275724755997,
+      "secondMomentSum": 4.457509522911088e-06
+    },
+    {
+      "parameter": "physical_head.weight",
+      "steps": 5,
+      "firstMomentL2": 0.10386432061274257,
+      "secondMomentSum": 0.0017477542035067017
+    },
+    {
+      "parameter": "physical_head.bias",
+      "steps": 5,
+      "firstMomentL2": 0.005192417185753584,
+      "secondMomentSum": 1.6108349882415496e-05
+    }
+  ]
+}

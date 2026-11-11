@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-11-11T19:39:56Z",
+  "sourceVideo": {
+    "path": "tests/Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s004.ogv",
+    "sha256": "91620e1d029a2801cb47b894896d257c10efd0558af863949c6ccc6c53cc8650"
+  },
+  "sourceFrames": {
+    "path": "reports/canine-contact-batch-v1/frame-manifest.json",
+    "sha256": "5380e9416ec4727240f6dae6d26c770ff927723c7971c337d117181ed0b382cf",
+    "group": "gait-s004"
+  },
+  "predictions": {
+    "path": "tmp/rtmpose-test/multi-video-evaluation/runs/wikimedia-s004-cfr-20261103/predictions.json",
+    "sha256": "4ef66928d98216380ef9dec09bd8383c0f3bc6d98f616e22b2c09d748fc0661a",
+    "reused": true,
+    "alignedFrames": 60,
+    "newInference": false
+  },
+  "workingVideo": {
+    "path": "tmp/wikimedia-s004-preparation/s004-lossless-cfr.mp4",
+    "sha256": "feedb618a93d0a7f8acddd7a198516405f2afe579d48191553bc75a8346d21cd"
+  },
+  "metadata": {
+    "path": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/s004/manifest.json",
+    "sha256": "0f0f8bf4cafb31de4284850b5bb4618f06b7f64fea048c61cd82dab2e4bc7d7c"
+  },
+  "dogGrouping": "shin-2013-s003-s004-unresolved",
+  "provenanceGroup": "publication:shin-2013",
+  "oneVisibleDogInSelectedSource": true,
+  "sourceEvidence": [
+    {
+      "path": "tmp/wikimedia-s004-preparation/source-review.jpg",
+      "sha256": "9735bbf43d713ada0d668d364ac59d065c407ac1a4ae891a679b4dcc6bfebe9e"
+    },
+    {
+      "path": "reports/canine-contact-batch-v1/identity-neutral-exploratory/reviewer-physical-continuity.json",
+      "sha256": "7b0a241d1b4ed01528b3f229023f1da2af78a211e28aa8ec97eeee943fd5c9b1"
+    }
+  ],
+  "basis": "Local source video and derivative hashes match the existing source manifest and prediction metadata. The original-frame contact sheet shows one dog in this side-view sequence; the requesting reviewer confirms the selected Front C continuity. Publisher/Commons identify Movie S4. Related S003/S004 material remains conservatively grouped.",
+  "s003AndS004KnownDifferentDogs": false,
+  "individualClinicalDogIdentityKnown": false,
+  "anatomicalSide": "unknown",
+  "split": "train",
+  "identityMeaning": "Verified within-source single-dog continuity and conservative grouping only; not a cross-video reidentification claim."
+}

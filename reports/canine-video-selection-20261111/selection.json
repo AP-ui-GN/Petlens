@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-11",
+  "status": "NO_SUITABLE_CLIP_SELECTED",
+  "candidatesInspected": 2,
+  "originalVideosDownloaded": 2,
+  "downloadedVideoBytes": 13633271,
+  "candidates": [
+    {
+      "candidateId": "nora-mission",
+      "decision": "REJECTED",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Dog_walking_in_the_Mission_in_San_Francisco.ogv",
+      "originalDownload": "https://upload.wikimedia.org/wikipedia/commons/6/67/Dog_walking_in_the_Mission_in_San_Francisco.ogv",
+      "localOriginal": "tmp/canine-candidate-nora-20261111/original.ogv",
+      "bytes": 10899300,
+      "sha256": "96635bfe9359472a81e9ad376018f9b46a29a06bb375d6a8506c38ab79b58652",
+      "sha1": "966fbd7f625d27180e148dd253e36d0700808bbd",
+      "commonsSha1Matched": true,
+      "resolution": [
+        1280,
+        720
+      ],
+      "timing": {
+        "decodedFrames": 404,
+        "rFrameRate": "24/1",
+        "averageFrameRate": "24/1",
+        "timeBase": "1/24",
+        "firstPts": 0,
+        "lastPts": 403,
+        "firstTimestampSeconds": 0.0,
+        "lastTimestampSeconds": 16.791666666666668,
+        "frameTimestampSpanSeconds": 16.791666666666668,
+        "videoDurationApproxSeconds": 16.833333333333332,
+        "containerDurationSeconds": 16.873651,
+        "minimumDeltaSeconds": 0.0416666666666643,
+        "maximumDeltaSeconds": 0.04166666666666785,
+        "allPtsStrictlyIncreasing": true,
+        "nativeCameraFpsVerified": false,
+        "noResamplingPerformed": true,
+        "exactConsecutiveDuplicateFrames": 0,
+        "uniqueDecodedPixelFrames": 404
+      },
+      "cameraView": "Moving/panning, slightly elevated oblique to lateral to rear",
+      "identityEvidence": "Nora, Irish Wolfhound mix; Commons category identifies LiAnna Davis's dog. One visually continuous dog, clearly distinct in appearance and provenance from the S004 laboratory dog; anatomical paw sides not verified.",
+      "pawContactAssessability": "Motion-blurred paw-ground boundaries, shaggy dark feet and repeated limb overlap; viewpoint changes from approach to side view to rear view. No continuous 8\u201312 second front-plus-hind contact-labeling span could be certified.",
+      "acceptedWalkingDurationSeconds": 0,
+      "certifiedContiguousWindows": 0,
+      "verifiedGaitCycles": 0,
+      "verifiedGaitCyclesMeaning": "No contact-verified cycle count asserted; this does not mean no locomotion is visible.",
+      "humanContactLabelsGenerated": 0,
+      "trainingApproved": false,
+      "rights": {
+        "status": "open_license_documented_not_training_approval",
+        "author": "Sage Ross (Ragesoss)",
+        "date": "2011-09-27",
+        "license": "CC-BY-SA-3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Dog_walking_in_the_Mission_in_San_Francisco.ogv",
+        "obligations": [
+          "Retain creator/title/source/license notices and link; indicate modifications; do not imply endorsement.",
+          "Distribute shared adaptations of the licensed media under the same or a permitted compatible license.",
+          "ShareAlike applicability to model weights is not determined in this rejected-candidate screen."
+        ],
+        "derivativeInspectionImagesLicense": "CC-BY-SA-3.0"
+      },
+      "evidence": {
+        "ffprobe": "tmp/canine-candidate-nora-20261111/ffprobe.json",
+        "overview": "tmp/canine-candidate-nora-20261111/overview.jpg",
+        "consecutive": "tmp/canine-candidate-nora-20261111/consecutive.jpg"
+      },
+      "reviewerType": "assistant visual suitability screening only; not human training annotation"
+    },
+    {
+      "candidateId": "tokyo-walker",
+      "decision": "REJECTED",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pro_dog_walker_-_Tokyo_-_2024_Nov_1.webm",
+      "originalDownload": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Pro_dog_walker_-_Tokyo_-_2024_Nov_1.webm",
+      "localOriginal": "tmp/canine-candidate-tokyo-20261111/original.webm",
+      "bytes": 2733971,
+      "sha256": "4e75c2c36b8465c270101ae4bafaeea54358165b44971739d8d5c8290812129e",
+      "sha1": "269e3b92330e96dc90d06d8215ebd36be5ff175d",
+      "commonsSha1Matched": true,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "timing": {
+        "decodedFrames": 271,
+        "rFrameRate": "30/1",
+        "averageFrameRate": "30/1",
+        "timeBase": "1/1000",
+        "firstPts": 3,
+        "lastPts": 9003,
+        "firstTimestampSeconds": 0.003,
+        "lastTimestampSeconds": 9.003,
+        "frameTimestampSpanSeconds": 9.0,
+        "videoDurationApproxSeconds": 9.033333333333333,
+        "containerDurationSeconds": 9.058,
+        "minimumDeltaSeconds": 0.032999999999999474,
+        "maximumDeltaSeconds": 0.034000000000000696,
+        "allPtsStrictlyIncreasing": true,
+        "nativeCameraFpsVerified": false,
+        "noResamplingPerformed": true,
+        "exactConsecutiveDuplicateFrames": 0,
+        "uniqueDecodedPixelFrames": 271
+      },
+      "cameraView": "Predominantly rear view, distant group, handheld camera with occasional blur",
+      "identityEvidence": "Multiple dogs, no individually verified persistent dog/paw identity suitable for this task; distinct source from S004 but no accepted target dog.",
+      "pawContactAssessability": "Rear view of a dense group of small dogs; dogs and limbs overlap, front feet are hidden and paws are too small for repeatable contact judgments. No continuously visible front-plus-hind paw pair on one dog.",
+      "acceptedWalkingDurationSeconds": 0,
+      "certifiedContiguousWindows": 0,
+      "verifiedGaitCycles": 0,
+      "verifiedGaitCyclesMeaning": "No contact-verified cycle count asserted; this does not mean no locomotion is visible.",
+      "humanContactLabelsGenerated": 0,
+      "trainingApproved": false,
+      "rights": {
+        "status": "open_license_documented_not_training_approval",
+        "author": "Nesnad",
+        "date": "2024-11-01",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Pro_dog_walker_-_Tokyo_-_2024_Nov_1.webm",
+        "obligations": [
+          "Retain creator/title/source/license notices and link; indicate modifications; do not imply endorsement.",
+          "Distribute shared adaptations of the licensed media under the same or a permitted compatible license.",
+          "ShareAlike applicability to model weights is not determined in this rejected-candidate screen."
+        ],
+        "derivativeInspectionImagesLicense": "CC-BY-SA-4.0"
+      },
+      "evidence": {
+        "ffprobe": "tmp/canine-candidate-tokyo-20261111/ffprobe.json",
+        "overview": "tmp/canine-candidate-tokyo-20261111/overview.jpg",
+        "consecutive": null
+      },
+      "reviewerType": "assistant visual suitability screening only; not human training annotation"
+    }
+  ],
+  "dogReidPreviouslyInspectedClipsReevaluated": 0,
+  "dogReidVideosDownloaded": 0,
+  "bulkArchivesDownloaded": false,
+  "existingInspectionToolsReused": [
+    "ffprobe",
+    "OpenCV",
+    "reports/dogreid-1553/screen.py:make_sheet"
+  ],
+  "newInfrastructureCreated": false,
+  "trainingPerformed": false,
+  "nextAction": "Provide one owner-recorded 8\u201312-second side-on walking clip of a clearly different dog on a hard contrasting surface at 30\u201360 FPS, with explicit labeling/model-development permission; then use the existing gait-event reviewer."
+}

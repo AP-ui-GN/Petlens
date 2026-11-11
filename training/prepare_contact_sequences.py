@@ -282,7 +282,7 @@ def _known_policies(root, hashes, entry, source, inputs):
     return excluded, timing_ban, publication_group
 
 
-def _prepare_one(root, entry, names):
+def _prepare_one(root, entry, names, mode="strict"):
     inputs = {}
     raw_predictions = _document(root, entry["predictions"], inputs)
     metadata = _document(root, entry["metadata"], inputs)
@@ -345,9 +345,20 @@ def _prepare_one(root, entry, names):
                   "Original-video hash mismatch")
     c.require((metadata["frameWidth"], metadata["frameHeight"]) ==
               (source["frameWidth"], source["frameHeight"]), "Original/working dimension mismatch")
-    labels, review_findings = _labels(root, entry.get("reviews", []), source, manifest_hash, arrays, inputs)
+    if mode == "exploratory_train_only":
+        from training.contact_exploratory import labels as exploratory_labels
+        labels, review_findings = exploratory_labels(root, entry, source, arrays, inputs, _document, p.digest)
+    else:
+        labels, review_findings = _labels(root, entry.get("reviews", []), source, manifest_hash, arrays, inputs)
     arrays.update(labels)
-    arrays.update(c.make_windows(arrays["reference_valid"], arrays["timestamps"], arrays["identity_segments"]))
+    neutral = entry.get("supervisionOutput", "anatomical") == "identity_neutral_front"
+    window_identity = (np.repeat(arrays["physical_identity_segments"], 4, axis=1) if neutral
+                       else arrays["identity_segments"])
+    arrays.update(c.make_windows(arrays["reference_valid"], arrays["timestamps"], window_identity))
+    supervised = ({k: arrays["physical_"+k] for k in
+                   ("targets", "target_valid", "label_valid", "identity_valid", "visibility_valid")}
+                  if neutral else arrays)
+    output_names = ("physical:" + entry["physicalOutput"]["physicalPaw"],) if neutral else c.PAWS
     for ancestor in entry.get("ancestors", []):
         _file(root, ancestor, inputs)
     lineage = {entry["predictions"]["sha256"], entry["video"]["sha256"], source["sourceVideo"]["sha256"]}
@@ -381,25 +392,29 @@ def _prepare_one(root, entry, names):
     rights = entry.get("rights", {})
     if rights.get("status") != "cleared" or not rights.get("evidence", "").strip():
         blockers.append("commercial_rights_unresolved")
-    if not timing_eligible:
+    movie_timing = (mode == "exploratory_train_only" and not timing_ban and
+                    timing.get("sourceType") == "source_movie" and
+                    timing.get("sourcePtsVerified") is True and bool(timing.get("evidence", "").strip()))
+    if not timing_eligible and not movie_timing:
         blockers.append("native_timing_unverified_or_excluded")
     counts = {}
-    for j, paw in enumerate(c.PAWS):
-        valid = arrays["target_valid"][:, j]
-        counts[paw] = dict(valid=int(valid.sum()), contacting=int(np.sum(valid & (arrays["targets"][:, j] == 1))),
-                           airborne=int(np.sum(valid & (arrays["targets"][:, j] == 0))))
-    if not arrays["label_valid"].any():
-        blockers.append("independent_adjudicated_contact_labels_missing")
-    if not arrays["identity_valid"].any():
+    for j, paw in enumerate(output_names):
+        valid = supervised["target_valid"][:, j]
+        counts[paw] = dict(valid=int(valid.sum()), contacting=int(np.sum(valid & (supervised["targets"][:, j] == 1))),
+                           airborne=int(np.sum(valid & (supervised["targets"][:, j] == 0))))
+    if not supervised["label_valid"].any():
+        blockers.append("approved_sparse_contact_labels_missing" if mode == "exploratory_train_only"
+                        else "independent_adjudicated_contact_labels_missing")
+    if not supervised["identity_valid"].any():
         blockers.append("verified_physical_paw_identity_missing")
-    if not arrays["target_valid"].any():
+    if not supervised["target_valid"].any():
         blockers.append("no_supervised_pose_eligible_paw_frames")
     if not arrays["window_indices"].size:
         blockers.append("no_eligible_temporal_windows")
     raw_scores = [point["rawScore"] for frame in predictions["frames"] for point in frame["keypoints"]
                   if c.finite(point.get("rawScore"))]
     windows = arrays["window_indices"]
-    window_supervised = [bool(arrays["target_valid"][row[row >= 0]].any()) for row in windows]
+    window_supervised = [bool(supervised["target_valid"][row[row >= 0]].any()) for row in windows]
     report = dict(converted=True, frameCount=predictions["frameCount"], featureShape=list(arrays["features"].shape),
                   referenceValidFrames=int(arrays["reference_valid"].sum()),
                   failedOrIncompletePoseFrames=sum(len(f["keypoints"]) != 17 or not f["detectionSuccess"]
@@ -408,15 +423,17 @@ def _prepare_one(root, entry, names):
                   rawScoresAboveOne=sum(s > 1 for s in raw_scores), rawScoresAreProbabilities=False,
                   observationReasons=dict(Counter(arrays["observation_reasons"].flat)),
                   referenceReasons=dict(Counter(arrays["reference_reasons"].flat)),
-                  targetReasons=dict(Counter(arrays["target_reasons"].flat)),
-                  identityEligiblePawFrames={paw: int(arrays["identity_valid"][:, j].sum()) for j, paw in enumerate(c.PAWS)},
-                  visibleReviewedPawFrames={paw: int(arrays["visibility_valid"][:, j].sum()) for j, paw in enumerate(c.PAWS)},
+                  targetReasons=dict(Counter(arrays["physical_target_reasons" if neutral else "target_reasons"].flat)),
+                  identityEligiblePawFrames={paw: int(supervised["identity_valid"][:, j].sum()) for j, paw in enumerate(output_names)},
+                  visibleReviewedPawFrames={paw: int(supervised["visibility_valid"][:, j].sum()) for j, paw in enumerate(output_names)},
                   excludedFeatureFrames=int((~arrays["reference_valid"]).sum()),
                   independentValidTargets=counts, reviewEvidence=review_findings,
                   temporalWindows=len(windows), supervisedWindows=sum(window_supervised),
                   featureOnlyWindows=len(windows)-sum(window_supervised),
                   nativeTimingEvaluationEligible=timing_eligible,
                   trainingReady=not blockers, blockers=blockers)
+    if mode == "exploratory_train_only":
+        report["approvedTargets"] = report.pop("independentValidTargets")
     manifest = dict(schemaVersion=c.VERSION, **record, inputs=inputs, sourceVideo=source["sourceVideo"],
                     workingVideo=entry["video"], sourceFrames=source["frames"],
                     channelOrder=list(c.CHANNELS), pawOrder=list(c.PAWS), policy=c.POLICY,
@@ -428,14 +445,33 @@ def _prepare_one(root, entry, names):
                     normalization="Per-frame neck/tail midpoint and distance; no fitted statistics",
                     paddingPolicy="window_indices=-1; padding_mask=True; gather nonnegative indices only",
                     trainingReady=report["trainingReady"])
+    manifest["trainingMode"] = mode
+    manifest["supervisionOutput"] = entry.get("supervisionOutput", "anatomical")
+    manifest["physicalOutput"] = review_findings[0]["physicalOutput"] if neutral else None
+    manifest["nativeTimingEvaluationEligible"] = timing_eligible
+    manifest["independentValidation"] = False if mode == "exploratory_train_only" else None
     return arrays, manifest, report, _audit_numbers(raw_predictions)
 
 
-def build(root, job_path, output):
+def build(root, job_path, output, mode="strict"):
     root, job_path, output = Path(root).resolve(), Path(job_path).resolve(), Path(output).absolute()
     c.require(not output.exists(), f"Output already exists: {output}")
     job_hash = p.digest(job_path)
     job = p.load_json(job_path)
+    c.require(mode in ("strict", "exploratory_train_only") and
+              job.get("trainingMode", "strict") == mode, "Training mode mismatch")
+    supervision = job.get("supervisionOutput", "anatomical")
+    c.require(supervision in ("anatomical", "identity_neutral_front") and
+              all(e.get("supervisionOutput", "anatomical") == supervision for e in job.get("sequences", [])),
+              "Supervision output mismatch")
+    if supervision == "identity_neutral_front":
+        c.require(mode == "exploratory_train_only" and len(job["sequences"]) == 1,
+                  "Identity-neutral supervision requires one exploratory source")
+    if mode == "exploratory_train_only":
+        c.require(all(e.get("split") == "train" for e in job.get("sequences", [])),
+                  "Exploratory mode accepts train-only sources")
+        dogs = {c.canonical_dog_id(e.get("dogId")) for e in job.get("sequences", [])}
+        c.require(len(dogs) == 1 and None not in dogs, "Exploratory mode requires one verified dog group")
     c.require(job.get("schemaVersion") == 1 and isinstance(job.get("sequences"), list) and job["sequences"],
               "Expected contact conversion job schemaVersion=1 with sequences")
     c.require(not job.get("normalizationFitDogIds"), "This adapter cannot fit normalization on any dogs")
@@ -447,7 +483,7 @@ def build(root, job_path, output):
     ids = [entry.get("id") for entry in job["sequences"]]
     c.require(all(isinstance(i, str) and re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]{0,79}", i) for i in ids)
               and len(set(ids)) == len(ids), "Unsafe/duplicate sequence IDs")
-    prepared = [_prepare_one(root, entry, names) for entry in job["sequences"]]
+    prepared = [_prepare_one(root, entry, names, mode) for entry in job["sequences"]]
     records = [manifest for _, manifest, _, _ in prepared]
     c.validate_partitions(records)
     # Reuse the existing DogReID dog-key split invariant without running its UI/report builder.
@@ -465,13 +501,14 @@ def build(root, job_path, output):
     reports = {m["id"]: r for _, m, r, _ in prepared}
     blockers = [f"{sid}: {reason}" for sid, r in reports.items() for reason in r["blockers"]]
     # Coverage is a collection-level four-paw training gate, not a per-clip demand.
-    for paw in c.PAWS:
+    for paw in c.PAWS if mode == "strict" else ():
         train = [r["independentValidTargets"][paw] for m, r in zip(records, reports.values()) if m["split"] == "train"]
         if not train or any(sum(row[state] for row in train) == 0 for state in ("contacting", "airborne")):
             blockers.append(f"training_cohort_missing_both_states_{paw}")
     summary = dict(schemaVersion=c.VERSION, converted=True, trainingReady=not blockers,
                    blockers=blockers, sequences=reports,
                    note="Conversion is not measured contact accuracy; no model trained or run.")
+    summary["trainingMode"] = mode
     output.mkdir(parents=True, exist_ok=False)
     for arrays, manifest, report, raw in prepared:
         folder = output / "sequences" / manifest["id"]
@@ -487,7 +524,7 @@ def build(root, job_path, output):
     _write(output / "manifest.json", dict(schemaVersion=c.VERSION, jobSha256=job_hash,
            adapterSha256=p.digest(Path(c.__file__)), preparerSha256=p.digest(Path(__file__)),
            job=job, keypointSchema=job["keypointSchema"], channelOrder=list(c.CHANNELS), pawOrder=list(c.PAWS),
-           policy=c.POLICY, trainingReady=summary["trainingReady"],
+           policy=c.POLICY, trainingMode=mode, supervisionOutput=supervision, trainingReady=summary["trainingReady"],
            sequences=[dict(id=m["id"], manifest=f"sequences/{m['id']}/manifest.json",
                            sha256=p.digest(output / "sequences" / m["id"] / "manifest.json")) for m in records]))
     return summary
@@ -498,12 +535,13 @@ def main(argv=None):
     parser.add_argument("--job", type=Path, required=True)
     parser.add_argument("--root", type=Path, default=ROOT)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--training-mode", choices=("strict", "exploratory_train_only"), default="strict")
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--inspect", action="store_true", help="Export even when contact labels are absent (default)")
     mode.add_argument("--require-training-ready", action="store_true")
     args = parser.parse_args(argv)
     try:
-        summary = build(args.root, args.job, args.output_dir)
+        summary = build(args.root, args.job, args.output_dir, args.training_mode)
     except (ValueError, OSError, KeyError, TypeError, zipfile.BadZipFile, OverflowError) as exc:
         print(f"Contact feature preparation failed: {exc}", file=sys.stderr)
         return 2
