@@ -1,0 +1,204 @@
+{
+  "schemaVersion": "petlens.contact-features.v1",
+  "converted": true,
+  "trainingReady": false,
+  "blockers": [
+    "dalmatian: verified_dog_identity_missing",
+    "dalmatian: provenance_group_missing",
+    "dalmatian: training_not_approved",
+    "dalmatian: commercial_rights_unresolved",
+    "dalmatian: native_timing_unverified_or_excluded",
+    "dalmatian: independent_adjudicated_contact_labels_missing",
+    "dalmatian: verified_physical_paw_identity_missing",
+    "dalmatian: no_supervised_pose_eligible_paw_frames",
+    "dog02: verified_dog_identity_missing",
+    "dog02: training_split_unassigned_or_exploratory",
+    "dog02: training_not_approved",
+    "dog02: existing_exploratory_only_policy",
+    "dog02: commercial_rights_unresolved",
+    "dog02: native_timing_unverified_or_excluded",
+    "dog02: independent_adjudicated_contact_labels_missing",
+    "dog02: verified_physical_paw_identity_missing",
+    "dog02: no_supervised_pose_eligible_paw_frames",
+    "training_cohort_missing_both_states_LF",
+    "training_cohort_missing_both_states_RF",
+    "training_cohort_missing_both_states_LH",
+    "training_cohort_missing_both_states_RH"
+  ],
+  "sequences": {
+    "dalmatian": {
+      "converted": true,
+      "frameCount": 177,
+      "featureShape": [
+        177,
+        69
+      ],
+      "referenceValidFrames": 167,
+      "failedOrIncompletePoseFrames": 3,
+      "rawScoreRange": [
+        0.13261210918426514,
+        1.4971554279327393
+      ],
+      "rawScoresAboveOne": 2151,
+      "rawScoresAreProbabilities": false,
+      "observationReasons": {
+        "observed": 2876,
+        "out_of_bounds": 6,
+        "low_raw_score": 76,
+        "missing_point": 51
+      },
+      "referenceReasons": {
+        "valid": 167,
+        "missing_body_reference": 8,
+        "low_body_reference_score": 2
+      },
+      "targetReasons": {
+        "unreviewed": 708
+      },
+      "identityEligiblePawFrames": {
+        "LF": 0,
+        "RF": 0,
+        "LH": 0,
+        "RH": 0
+      },
+      "visibleReviewedPawFrames": {
+        "LF": 0,
+        "RF": 0,
+        "LH": 0,
+        "RH": 0
+      },
+      "excludedFeatureFrames": 10,
+      "independentValidTargets": {
+        "LF": {
+          "valid": 0,
+          "contacting": 0,
+          "airborne": 0
+        },
+        "RF": {
+          "valid": 0,
+          "contacting": 0,
+          "airborne": 0
+        },
+        "LH": {
+          "valid": 0,
+          "contacting": 0,
+          "airborne": 0
+        },
+        "RH": {
+          "valid": 0,
+          "contacting": 0,
+          "airborne": 0
+        }
+      },
+      "reviewEvidence": [],
+      "temporalWindows": 3,
+      "supervisedWindows": 0,
+      "featureOnlyWindows": 3,
+      "nativeTimingEvaluationEligible": false,
+      "trainingReady": false,
+      "blockers": [
+        "verified_dog_identity_missing",
+        "provenance_group_missing",
+        "training_not_approved",
+        "commercial_rights_unresolved",
+        "native_timing_unverified_or_excluded",
+        "independent_adjudicated_contact_labels_missing",
+        "verified_physical_paw_identity_missing",
+        "no_supervised_pose_eligible_paw_frames"
+      ]
+    },
+    "dog02": {
+      "converted": true,
+      "frameCount": 60,
+      "featureShape": [
+        60,
+        69
+      ],
+      "referenceValidFrames": 60,
+      "failedOrIncompletePoseFrames": 0,
+      "rawScoreRange": [
+        0.48590850830078125,
+        1.4645013809204102
+      ],
+      "rawScoresAboveOne": 725,
+      "rawScoresAreProbabilities": false,
+      "observationReasons": {
+        "observed": 1019,
+        "low_raw_score": 1
+      },
+      "referenceReasons": {
+        "valid": 60
+      },
+      "targetReasons": {
+        "unreviewed": 120,
+        "anatomical_mapping_unverified": 120
+      },
+      "identityEligiblePawFrames": {
+        "LF": 0,
+        "RF": 0,
+        "LH": 0,
+        "RH": 0
+      },
+      "visibleReviewedPawFrames": {
+        "LF": 0,
+        "RF": 0,
+        "LH": 0,
+        "RH": 0
+      },
+      "excludedFeatureFrames": 0,
+      "independentValidTargets": {
+        "LF": {
+          "valid": 0,
+          "contacting": 0,
+          "airborne": 0
+        },
+        "RF": {
+          "valid": 0,
+          "contacting": 0,
+          "airborne": 0
+        },
+        "LH": {
+          "valid": 0,
+          "contacting": 0,
+          "airborne": 0
+        },
+        "RH": {
+          "valid": 0,
+          "contacting": 0,
+          "airborne": 0
+        }
+      },
+      "reviewEvidence": [
+        {
+          "pair": "hind",
+          "reviewers": [
+            "reviewer-1"
+          ],
+          "independent": false,
+          "exposedReviewers": [
+            "reviewer-1"
+          ],
+          "mappingVerified": false,
+          "adjudicated": false
+        }
+      ],
+      "temporalWindows": 1,
+      "supervisedWindows": 0,
+      "featureOnlyWindows": 1,
+      "nativeTimingEvaluationEligible": false,
+      "trainingReady": false,
+      "blockers": [
+        "verified_dog_identity_missing",
+        "training_split_unassigned_or_exploratory",
+        "training_not_approved",
+        "existing_exploratory_only_policy",
+        "commercial_rights_unresolved",
+        "native_timing_unverified_or_excluded",
+        "independent_adjudicated_contact_labels_missing",
+        "verified_physical_paw_identity_missing",
+        "no_supervised_pose_eligible_paw_frames"
+      ]
+    }
+  },
+  "note": "Conversion is not measured contact accuracy; no model trained or run."
+}

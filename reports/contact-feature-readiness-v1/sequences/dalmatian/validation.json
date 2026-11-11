@@ -1,0 +1,81 @@
+{
+  "converted": true,
+  "frameCount": 177,
+  "featureShape": [
+    177,
+    69
+  ],
+  "referenceValidFrames": 167,
+  "failedOrIncompletePoseFrames": 3,
+  "rawScoreRange": [
+    0.13261210918426514,
+    1.4971554279327393
+  ],
+  "rawScoresAboveOne": 2151,
+  "rawScoresAreProbabilities": false,
+  "observationReasons": {
+    "observed": 2876,
+    "out_of_bounds": 6,
+    "low_raw_score": 76,
+    "missing_point": 51
+  },
+  "referenceReasons": {
+    "valid": 167,
+    "missing_body_reference": 8,
+    "low_body_reference_score": 2
+  },
+  "targetReasons": {
+    "unreviewed": 708
+  },
+  "identityEligiblePawFrames": {
+    "LF": 0,
+    "RF": 0,
+    "LH": 0,
+    "RH": 0
+  },
+  "visibleReviewedPawFrames": {
+    "LF": 0,
+    "RF": 0,
+    "LH": 0,
+    "RH": 0
+  },
+  "excludedFeatureFrames": 10,
+  "independentValidTargets": {
+    "LF": {
+      "valid": 0,
+      "contacting": 0,
+      "airborne": 0
+    },
+    "RF": {
+      "valid": 0,
+      "contacting": 0,
+      "airborne": 0
+    },
+    "LH": {
+      "valid": 0,
+      "contacting": 0,
+      "airborne": 0
+    },
+    "RH": {
+      "valid": 0,
+      "contacting": 0,
+      "airborne": 0
+    }
+  },
+  "reviewEvidence": [],
+  "temporalWindows": 3,
+  "supervisedWindows": 0,
+  "featureOnlyWindows": 3,
+  "nativeTimingEvaluationEligible": false,
+  "trainingReady": false,
+  "blockers": [
+    "verified_dog_identity_missing",
+    "provenance_group_missing",
+    "training_not_approved",
+    "commercial_rights_unresolved",
+    "native_timing_unverified_or_excluded",
+    "independent_adjudicated_contact_labels_missing",
+    "verified_physical_paw_identity_missing",
+    "no_supervised_pose_eligible_paw_frames"
+  ]
+}

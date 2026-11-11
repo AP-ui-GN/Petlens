@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "keypointSchema": {
+    "path": "training/canine_keypoint_schema.json",
+    "sha256": "b44942d61544488c7fbe6fd5ad77db641e7615adf82e8924f4316b04cfbef579"
+  },
+  "sequences": [
+    {
+      "group": "dalmatian",
+      "predictions": {
+        "path": "tmp/rtmpose-test/multi-video-evaluation/runs/dalmatian-day2-cfr-20261103/predictions.json",
+        "sha256": "3c641f8418183512d5693acd9eeeae39ce1bff9847e2433bef839df13bd414a9"
+      },
+      "metadata": {
+        "path": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/dalmatian/manifest.json",
+        "sha256": "5de5968fe9a3d00f2aaae3311c106ca2d2af31b7fecc7fcb39ebaef9fa3594a6"
+      },
+      "video": {
+        "path": "tmp/rtmpose-test/multi-video-evaluation/inputs/dalmatian-lossless-cfr.mp4",
+        "sha256": "13efcd61041c8795852ad377ca4a969d117c907fcb8d4a9298c61303bb7881d8"
+      },
+      "split": "train",
+      "id": "dalmatian",
+      "sourceFrames": {
+        "path": "reports/gait-event-review-v1/frame-manifest.json",
+        "sha256": "ad0e2b3e9029fc67d397b8622c078ba61022fdb9bf45783902de48ee2eb442e8",
+        "group": "gait-dalmatian"
+      },
+      "dogId": null,
+      "dogIdentityVerified": false,
+      "trainingApproved": false,
+      "rights": {
+        "status": "unknown",
+        "evidence": "No new commercial-rights attestation during adapter implementation."
+      },
+      "timing": {
+        "sourceType": "unknown",
+        "nativeVerified": false,
+        "evidence": "Original encoded integer PTS verified; no new sensor-capture attestation."
+      }
+    },
+    {
+      "group": "dog02",
+      "predictions": {
+        "path": "tmp/rtmpose-test/multi-video-evaluation/runs/dog02-walking-20261102/predictions.json",
+        "sha256": "ac5013c8ed782060e54f58749b955cfc2bc2f5f44fda5003356596f4e62c5a54"
+      },
+      "metadata": {
+        "path": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/dog02/evaluation-manifest.json",
+        "sha256": "981dc012f14a11713c74215a3c98e937c24df87ef3909341ce6361a6099ae96f"
+      },
+      "video": {
+        "path": "tmp/rtmpose-test/multi-video-evaluation/inputs/dog02-walking.mp4",
+        "sha256": "d16ea683300bdc992abdd73d3d527754e34745e03840be6dd669090300f3d93c"
+      },
+      "split": "exploratory_evaluation",
+      "id": "dog02",
+      "sourceFrames": {
+        "path": "reports/gait-event-review-v1/frame-manifest.json",
+        "sha256": "ad0e2b3e9029fc67d397b8622c078ba61022fdb9bf45783902de48ee2eb442e8",
+        "group": "gait-dog02"
+      },
+      "dogId": null,
+      "dogIdentityVerified": false,
+      "trainingApproved": false,
+      "rights": {
+        "status": "unknown",
+        "evidence": "No new commercial-rights attestation during adapter implementation."
+      },
+      "timing": {
+        "sourceType": "unknown",
+        "nativeVerified": false,
+        "evidence": "Original encoded integer PTS verified; no new sensor-capture attestation."
+      },
+      "conversion": {
+        "path": "tmp/rtmpose-test/multi-video-evaluation/inputs/dog02-conversion.json",
+        "sha256": "9daeda3314f8ca7a03ce3612c32888eba524d98bf49bbaabc2f1fc552c929fa0"
+      },
+      "reviews": [
+        {
+          "pair": "hind",
+          "reviews": [
+            {
+              "path": "reports/gait-event-review-v1/reviews/review-d684d28c840a475ba7833f1c045d2504.zip",
+              "sha256": "e0f0bd2a6ca14ff6cc6cddf89a3495959c3a39ecbc5e0cf99b208589601bda82"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

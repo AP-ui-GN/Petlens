@@ -1,0 +1,204 @@
+{
+  "schemaVersion": "petlens.contact-features.v1",
+  "jobSha256": "df39637e549481bb0ae27451915cc5191b546373f9e5b9e03537885b4e8569cc",
+  "adapterSha256": "f51eb92555a44d88b4bdb138cb2c0de1b3453aa081239ca164cb0c7b1d8bf991",
+  "preparerSha256": "b9508ddb2cead7fa1c989fbf01f60d5b48718dde94f9e335427233dc522c76d6",
+  "job": {
+    "schemaVersion": 1,
+    "keypointSchema": {
+      "path": "training/canine_keypoint_schema.json",
+      "sha256": "b44942d61544488c7fbe6fd5ad77db641e7615adf82e8924f4316b04cfbef579"
+    },
+    "sequences": [
+      {
+        "group": "dalmatian",
+        "predictions": {
+          "path": "tmp/rtmpose-test/multi-video-evaluation/runs/dalmatian-day2-cfr-20261103/predictions.json",
+          "sha256": "3c641f8418183512d5693acd9eeeae39ce1bff9847e2433bef839df13bd414a9"
+        },
+        "metadata": {
+          "path": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/dalmatian/manifest.json",
+          "sha256": "5de5968fe9a3d00f2aaae3311c106ca2d2af31b7fecc7fcb39ebaef9fa3594a6"
+        },
+        "video": {
+          "path": "tmp/rtmpose-test/multi-video-evaluation/inputs/dalmatian-lossless-cfr.mp4",
+          "sha256": "13efcd61041c8795852ad377ca4a969d117c907fcb8d4a9298c61303bb7881d8"
+        },
+        "split": "train",
+        "id": "dalmatian",
+        "sourceFrames": {
+          "path": "reports/gait-event-review-v1/frame-manifest.json",
+          "sha256": "ad0e2b3e9029fc67d397b8622c078ba61022fdb9bf45783902de48ee2eb442e8",
+          "group": "gait-dalmatian"
+        },
+        "dogId": null,
+        "dogIdentityVerified": false,
+        "trainingApproved": false,
+        "rights": {
+          "status": "unknown",
+          "evidence": "No new commercial-rights attestation during adapter implementation."
+        },
+        "timing": {
+          "sourceType": "unknown",
+          "nativeVerified": false,
+          "evidence": "Original encoded integer PTS verified; no new sensor-capture attestation."
+        }
+      },
+      {
+        "group": "dog02",
+        "predictions": {
+          "path": "tmp/rtmpose-test/multi-video-evaluation/runs/dog02-walking-20261102/predictions.json",
+          "sha256": "ac5013c8ed782060e54f58749b955cfc2bc2f5f44fda5003356596f4e62c5a54"
+        },
+        "metadata": {
+          "path": "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/dog02/evaluation-manifest.json",
+          "sha256": "981dc012f14a11713c74215a3c98e937c24df87ef3909341ce6361a6099ae96f"
+        },
+        "video": {
+          "path": "tmp/rtmpose-test/multi-video-evaluation/inputs/dog02-walking.mp4",
+          "sha256": "d16ea683300bdc992abdd73d3d527754e34745e03840be6dd669090300f3d93c"
+        },
+        "split": "exploratory_evaluation",
+        "id": "dog02",
+        "sourceFrames": {
+          "path": "reports/gait-event-review-v1/frame-manifest.json",
+          "sha256": "ad0e2b3e9029fc67d397b8622c078ba61022fdb9bf45783902de48ee2eb442e8",
+          "group": "gait-dog02"
+        },
+        "dogId": null,
+        "dogIdentityVerified": false,
+        "trainingApproved": false,
+        "rights": {
+          "status": "unknown",
+          "evidence": "No new commercial-rights attestation during adapter implementation."
+        },
+        "timing": {
+          "sourceType": "unknown",
+          "nativeVerified": false,
+          "evidence": "Original encoded integer PTS verified; no new sensor-capture attestation."
+        },
+        "conversion": {
+          "path": "tmp/rtmpose-test/multi-video-evaluation/inputs/dog02-conversion.json",
+          "sha256": "9daeda3314f8ca7a03ce3612c32888eba524d98bf49bbaabc2f1fc552c929fa0"
+        },
+        "reviews": [
+          {
+            "pair": "hind",
+            "reviews": [
+              {
+                "path": "reports/gait-event-review-v1/reviews/review-d684d28c840a475ba7833f1c045d2504.zip",
+                "sha256": "e0f0bd2a6ca14ff6cc6cddf89a3495959c3a39ecbc5e0cf99b208589601bda82"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keypointSchema": {
+    "path": "training/canine_keypoint_schema.json",
+    "sha256": "b44942d61544488c7fbe6fd5ad77db641e7615adf82e8924f4316b04cfbef579"
+  },
+  "channelOrder": [
+    "left_eye.relative_x",
+    "left_eye.relative_y",
+    "left_eye.raw_score",
+    "left_eye.observed",
+    "right_eye.relative_x",
+    "right_eye.relative_y",
+    "right_eye.raw_score",
+    "right_eye.observed",
+    "nose.relative_x",
+    "nose.relative_y",
+    "nose.raw_score",
+    "nose.observed",
+    "neck.relative_x",
+    "neck.relative_y",
+    "neck.raw_score",
+    "neck.observed",
+    "root_of_tail.relative_x",
+    "root_of_tail.relative_y",
+    "root_of_tail.raw_score",
+    "root_of_tail.observed",
+    "left_shoulder.relative_x",
+    "left_shoulder.relative_y",
+    "left_shoulder.raw_score",
+    "left_shoulder.observed",
+    "left_elbow.relative_x",
+    "left_elbow.relative_y",
+    "left_elbow.raw_score",
+    "left_elbow.observed",
+    "left_front_paw.relative_x",
+    "left_front_paw.relative_y",
+    "left_front_paw.raw_score",
+    "left_front_paw.observed",
+    "right_shoulder.relative_x",
+    "right_shoulder.relative_y",
+    "right_shoulder.raw_score",
+    "right_shoulder.observed",
+    "right_elbow.relative_x",
+    "right_elbow.relative_y",
+    "right_elbow.raw_score",
+    "right_elbow.observed",
+    "right_front_paw.relative_x",
+    "right_front_paw.relative_y",
+    "right_front_paw.raw_score",
+    "right_front_paw.observed",
+    "left_hip.relative_x",
+    "left_hip.relative_y",
+    "left_hip.raw_score",
+    "left_hip.observed",
+    "left_knee.relative_x",
+    "left_knee.relative_y",
+    "left_knee.raw_score",
+    "left_knee.observed",
+    "left_back_paw.relative_x",
+    "left_back_paw.relative_y",
+    "left_back_paw.raw_score",
+    "left_back_paw.observed",
+    "right_hip.relative_x",
+    "right_hip.relative_y",
+    "right_hip.raw_score",
+    "right_hip.observed",
+    "right_knee.relative_x",
+    "right_knee.relative_y",
+    "right_knee.raw_score",
+    "right_knee.observed",
+    "right_back_paw.relative_x",
+    "right_back_paw.relative_y",
+    "right_back_paw.raw_score",
+    "right_back_paw.observed",
+    "delta_seconds"
+  ],
+  "pawOrder": [
+    "LF",
+    "RF",
+    "LH",
+    "RH"
+  ],
+  "policy": {
+    "pointMinRawScore": 0.5,
+    "neckMinRawScore": 0.7,
+    "tailRootMinRawScore": 0.8,
+    "minimumBodyLengthPixels": 1e-06,
+    "maxGapSeconds": 0.25,
+    "windowLength": 128,
+    "windowStride": 64,
+    "interpolation": false,
+    "scoreClipping": false,
+    "rawScoresAreProbabilities": false
+  },
+  "trainingReady": false,
+  "sequences": [
+    {
+      "id": "dalmatian",
+      "manifest": "sequences/dalmatian/manifest.json",
+      "sha256": "cee728df336914e19633364fa32e02ebc7ca1dee192b0f276060ab0c63a0bedd"
+    },
+    {
+      "id": "dog02",
+      "manifest": "sequences/dog02/manifest.json",
+      "sha256": "3a574a91bc24118adf8bdc10904fc1cfddbebd66aee3845e21efa74568fd7191"
+    }
+  ]
+}

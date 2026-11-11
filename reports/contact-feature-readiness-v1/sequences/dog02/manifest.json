@@ -1,0 +1,650 @@
+{
+  "schemaVersion": "petlens.contact-features.v1",
+  "id": "dog02",
+  "dogId": null,
+  "split": "exploratory_evaluation",
+  "provenanceGroup": "publication:shin-2013",
+  "lineageHashes": [
+    "6863e5046808ff5559c5b068ec3ab942d9de63ebbdc5a5d9d14bf9e00ebdcad6",
+    "ac5013c8ed782060e54f58749b955cfc2bc2f5f44fda5003356596f4e62c5a54",
+    "d16ea683300bdc992abdd73d3d527754e34745e03840be6dd669090300f3d93c"
+  ],
+  "inputs": {
+    "tmp/rtmpose-test/multi-video-evaluation/runs/dog02-walking-20261102/predictions.json": "ac5013c8ed782060e54f58749b955cfc2bc2f5f44fda5003356596f4e62c5a54",
+    "tmp/rtmpose-test/paw-tracking-experiment/manual-annotation/dog02/evaluation-manifest.json": "981dc012f14a11713c74215a3c98e937c24df87ef3909341ce6361a6099ae96f",
+    "reports/gait-event-review-v1/frame-manifest.json": "ad0e2b3e9029fc67d397b8622c078ba61022fdb9bf45783902de48ee2eb442e8",
+    "test/Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s003.ogv": "6863e5046808ff5559c5b068ec3ab942d9de63ebbdc5a5d9d14bf9e00ebdcad6",
+    "tmp/rtmpose-test/multi-video-evaluation/inputs/dog02-walking.mp4": "d16ea683300bdc992abdd73d3d527754e34745e03840be6dd669090300f3d93c",
+    "tmp/rtmpose-test/multi-video-evaluation/inputs/dog02-conversion.json": "9daeda3314f8ca7a03ce3612c32888eba524d98bf49bbaabc2f1fc552c929fa0",
+    "reports/gait-event-review-v1/reviews/review-d684d28c840a475ba7833f1c045d2504.zip": "e0f0bd2a6ca14ff6cc6cddf89a3495959c3a39ecbc5e0cf99b208589601bda82",
+    "reports/gait-event-review-v1/drafts/dog02-reviewer-1-written-observations-v1.proposal.json": "3aae39a680309b84f16dd37137ed6349dc437a805a1a5edf9aecd16d0016b076",
+    "training/paw_annotation_sources.json": "76b59a4b007fb7223cb973e54ea49f6fddcabb7aa8cbbb9b2039f61a7b2f77a7",
+    "reports/husky-evaluation/annotation-manifest-v1.json": "937cb52a8ce6c687df8069d811e61813f149365a254632eb86cae07b76db4236",
+    "reports/dogreid-1553/screened-videos.json": "d7939286cb6674ca4928fbb18a8db8f61aa8507d7da47a15942cc108208a4f5e"
+  },
+  "sourceVideo": {
+    "path": "test/Quantitative-Phenotyping-of-Duchenne-Muscular-Dystrophy-Dogs-by-Comprehensive-Gait-Analysis-and-pone.0059875.s003.ogv",
+    "sha256": "6863e5046808ff5559c5b068ec3ab942d9de63ebbdc5a5d9d14bf9e00ebdcad6"
+  },
+  "workingVideo": {
+    "path": "tmp/rtmpose-test/multi-video-evaluation/inputs/dog02-walking.mp4",
+    "sha256": "d16ea683300bdc992abdd73d3d527754e34745e03840be6dd669090300f3d93c"
+  },
+  "sourceFrames": [
+    {
+      "frameIndex": 0,
+      "originalPts": 0,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 0.0,
+      "pixelSha256": "5b63e63861a60638849ea572c91a6a49ffc05945e631417e36726122086e2440",
+      "imageSha256": "b3a3ca7c938c528002f46cd268e3aefc98332ac087302207b557c1031ae927e0"
+    },
+    {
+      "frameIndex": 1,
+      "originalPts": 1,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 0.08333333333333333,
+      "pixelSha256": "05118a1adde7d2c7fe94374139896a9a4ac82b690d5b95d8e6b0306376f1a7d5",
+      "imageSha256": "a4326c6cdf51952771d1072663f6e35a48f70e79bc25feddca0394c5484c0d6b"
+    },
+    {
+      "frameIndex": 2,
+      "originalPts": 2,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 0.16666666666666666,
+      "pixelSha256": "74030f1e4a23804b7abaf73a184ffeebacb453f1ad68c6198775a0521a3a24a5",
+      "imageSha256": "16cebeb8c6bc4fdfdd2b35d0237700f5ac829940404aa595b9965d75df3da630"
+    },
+    {
+      "frameIndex": 3,
+      "originalPts": 3,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 0.25,
+      "pixelSha256": "64041dbbde113ccaf21e1ed379562f1617f0105520de75a46daf53bea1756fa6",
+      "imageSha256": "a98c3a9fff28b073a9bc92ecef5a6ddbb86a2ff0f47ee8ca7cb6b71e7d36ff5a"
+    },
+    {
+      "frameIndex": 4,
+      "originalPts": 4,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 0.3333333333333333,
+      "pixelSha256": "e26d244ef1e12a4b316add071c1afabd74803372558453e5d628a6c58f6f617c",
+      "imageSha256": "31ffe35104290028d135ec3140dfac9fd1736ef4c4ba636d5b89f1b74439d225"
+    },
+    {
+      "frameIndex": 5,
+      "originalPts": 5,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 0.4166666666666667,
+      "pixelSha256": "e1118d03d35e091b297305426aecd2874eb6e89e123d5110eb7d0bcb01e1983e",
+      "imageSha256": "6623e5fade77428b26fe8906bf04e71c8c666fe71f7db54427a52a6f04a70ade"
+    },
+    {
+      "frameIndex": 6,
+      "originalPts": 6,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 0.5,
+      "pixelSha256": "340a2d2ad62b828cb2efbe25398a60d572da5d34d81dd1692011e53dccd07881",
+      "imageSha256": "00d091a338aff7f5ca6628efc0035b2a07cb109e80d21b5af21efe1320ad3f56"
+    },
+    {
+      "frameIndex": 7,
+      "originalPts": 7,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 0.5833333333333334,
+      "pixelSha256": "7b246206918dca600d59da0b554864a3af6add0ca73e97f03ea5d467369b6d79",
+      "imageSha256": "566c92622f376ad752b877ead5f231a6a4e43501fd8fbe3e5eec673ec0219e1c"
+    },
+    {
+      "frameIndex": 8,
+      "originalPts": 8,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 0.6666666666666666,
+      "pixelSha256": "0cbd1a389052d2558946863482950570aee8da396e8cc17dd40bfa8a81a022ff",
+      "imageSha256": "8ef927457c3979dc2efeec1215289976236a13df61b9b37fba71cbeb098f0bf8"
+    },
+    {
+      "frameIndex": 9,
+      "originalPts": 9,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 0.75,
+      "pixelSha256": "f27316e95a24e3ce181d5ac9132428aef3d845f8b2251f7bbae40d733116f1e8",
+      "imageSha256": "55d2b0d61e6b4f50fd3d61146f526718196a8bc8219ca552f74b611cbb1e02dc"
+    },
+    {
+      "frameIndex": 10,
+      "originalPts": 10,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 0.8333333333333334,
+      "pixelSha256": "08b03e538b4483a5483baa751c45cd0f41142e9f9dd69a6bf534e013c7dcfc52",
+      "imageSha256": "130d02f901bc86a7fc8fdf7ce4379a7994304977557a0faaa572b6700a8ce9d3"
+    },
+    {
+      "frameIndex": 11,
+      "originalPts": 11,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 0.9166666666666666,
+      "pixelSha256": "97e2c0237326047cfa9243fce0ff1d037651429d35476e953477f414f487ccb5",
+      "imageSha256": "39bd6acdda913a19b875370ebf3bf889ea7f7656237f160bf2cf61bbf61de542"
+    },
+    {
+      "frameIndex": 12,
+      "originalPts": 12,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 1.0,
+      "pixelSha256": "e505e20c5702af60e4aac9a3a0acbb60134aae840705a3e2f94f0241c015a438",
+      "imageSha256": "a2e1f63d8108ea63c50c852dcc8124e4510aafc492b97842ca930d4dfdb06901"
+    },
+    {
+      "frameIndex": 13,
+      "originalPts": 13,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 1.0833333333333333,
+      "pixelSha256": "fa0b6801fce2349cbd46c440dde53e306163d6a66b640fc0c872f887cb238283",
+      "imageSha256": "6c8b4d8a044648f0ce2d949f93e7133165ccc64724de5376fbaa63ad08997778"
+    },
+    {
+      "frameIndex": 14,
+      "originalPts": 14,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 1.1666666666666667,
+      "pixelSha256": "32e9ce872db4ac6436670c150ac731494218a0c5a9c7105037eaf161e9bfeff3",
+      "imageSha256": "71c787a9b2f9ceeb04731e316cb2aa4dcbcaafd8e74a9a594569c11a9296641f"
+    },
+    {
+      "frameIndex": 15,
+      "originalPts": 15,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 1.25,
+      "pixelSha256": "6fb53ccb9c40bc9befdcf49d64b5db2c2c4ddc20f7f1b93edae6de84ac1cb58c",
+      "imageSha256": "980e2693b5dd84f23e966495ae4574768869b3cee4f43befd20396a27055a423"
+    },
+    {
+      "frameIndex": 16,
+      "originalPts": 16,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 1.3333333333333333,
+      "pixelSha256": "f4c543792e040f16c78eded9e1e4c5c4500415fe82e8a8829aef0555a800d6b0",
+      "imageSha256": "ae68129d24f11be2491cde15a0e64e335f8e86cab515d28127755bc478729555"
+    },
+    {
+      "frameIndex": 17,
+      "originalPts": 17,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 1.4166666666666667,
+      "pixelSha256": "5cf70eebc38eddfbc6ffc8f36fa170060bca70c5095729659ff0682cca0a87e8",
+      "imageSha256": "920c1416db0bbe2768c522861f83c061d3e7e72cf4d084a989e9ab61edb69afe"
+    },
+    {
+      "frameIndex": 18,
+      "originalPts": 18,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 1.5,
+      "pixelSha256": "807c2a0075b387bb15c7b97a2afe3729e951153d5405616f0e78f975dd22f90a",
+      "imageSha256": "1b1918d36d519763d7d95002e28f095f90bb44247653dfd29371d1faff785db8"
+    },
+    {
+      "frameIndex": 19,
+      "originalPts": 19,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 1.5833333333333333,
+      "pixelSha256": "9f61c076fb50fddae8a6aacb76e2f66caa48483a0d57f6058119722dba5d854d",
+      "imageSha256": "f8bb408fc6e165100be9b731cfe185a06bd7411394955b65281519d7672b491c"
+    },
+    {
+      "frameIndex": 20,
+      "originalPts": 20,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 1.6666666666666667,
+      "pixelSha256": "2229b7d9f8b85a3a1d50f917cf5c0db8829140979890bb7ff675464ce8b9fdbf",
+      "imageSha256": "0847482aeeb3540ed3ee111df949802a8c1d8879882ecbe8561345147b218d40"
+    },
+    {
+      "frameIndex": 21,
+      "originalPts": 21,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 1.75,
+      "pixelSha256": "0e16ca16873458bf997925a36a8cf3dfe30ab5aa95d1b051b2f7ec13e55a8de1",
+      "imageSha256": "1e5de0c01c5de510c4f5eb1bf28d3e5e905609c249f1643cfbca7312d4b6d76b"
+    },
+    {
+      "frameIndex": 22,
+      "originalPts": 22,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 1.8333333333333333,
+      "pixelSha256": "ea3a01ea8477e04adf5ad29a47ad3996bddb39290385def33ef22d87873e3656",
+      "imageSha256": "1fb61448be0427a5edb15dc2b00076d7e1123eee61f4c0fe1e8fb71f7ed45481"
+    },
+    {
+      "frameIndex": 23,
+      "originalPts": 23,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 1.9166666666666667,
+      "pixelSha256": "c59c42418c42678239a87584ecb59f6b5cb5a72bed7e2b097c0c0a4de4a11612",
+      "imageSha256": "c6f63296f9e41f8533ba2d29caa0f64f4e9c063a2a962c933c54d5d52cb7b2b5"
+    },
+    {
+      "frameIndex": 24,
+      "originalPts": 24,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 2.0,
+      "pixelSha256": "ff97a8996611267561c719af7cb82806d898ca1746862a57b3100649bbfb92ec",
+      "imageSha256": "33cc0d3b207372a1662d4e04c70f16a073e70288fdfbcff42bbd9846a86fb9bd"
+    },
+    {
+      "frameIndex": 25,
+      "originalPts": 25,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 2.0833333333333335,
+      "pixelSha256": "bc7cbb733512c0d35be2f9a4e5642fcacbb19203fa47db6d224919f52c828f73",
+      "imageSha256": "30daf59bb2e61b428498817895eff35bfc8721f4af933ca240a1e8487a347ee3"
+    },
+    {
+      "frameIndex": 26,
+      "originalPts": 26,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 2.1666666666666665,
+      "pixelSha256": "a9de1ab16b4b847dd8c53212fec6144a97484a1b0e1650a6883779e16b47d01d",
+      "imageSha256": "5ea2a6a0be35ca5ce07f1cb3e01566b3071af2b1c86733e70ad2af087edc7d65"
+    },
+    {
+      "frameIndex": 27,
+      "originalPts": 27,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 2.25,
+      "pixelSha256": "4040383c31fee30a45b6e746ee33c404e3dbf4bfdc4ef83933e1a20ec6667c01",
+      "imageSha256": "ec0addfd9235d0ce942b96996b41fe518d6757f3ec4198ac7cb4edbd2c4e6077"
+    },
+    {
+      "frameIndex": 28,
+      "originalPts": 28,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 2.3333333333333335,
+      "pixelSha256": "72faa0542790637446089860e29169eada2ed700f378ffb55e258d90e77030af",
+      "imageSha256": "f02f834f0b965b8f92efe9b97706baf93a0129b9c687b8c6fb5798def4f97a66"
+    },
+    {
+      "frameIndex": 29,
+      "originalPts": 29,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 2.4166666666666665,
+      "pixelSha256": "caf5f4b261b21b042029bd70e4da5d11a12e103add98a3686eae508bf6f76d79",
+      "imageSha256": "567b6182078f729819b751e95dfe9e81d66e6f4636aadfe1a8e0b69513ffad29"
+    },
+    {
+      "frameIndex": 30,
+      "originalPts": 30,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 2.5,
+      "pixelSha256": "c43bdda0f59764ab233e6fc1fc23bf2872e1556a00a1473a2c516969831b1958",
+      "imageSha256": "2c1ea3be850000d60bd5c3dcaba9195b9f2e05d857263a9e29e9d854e69ecc52"
+    },
+    {
+      "frameIndex": 31,
+      "originalPts": 31,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 2.5833333333333335,
+      "pixelSha256": "ee59c95fc14ab151921bd615be348a7976cb9f5378a36b9d33bb2c735bc5fc22",
+      "imageSha256": "2d5b1b9059a0b472bb444ac573e1708bffa8156d2df507073b8027d4bea18a2d"
+    },
+    {
+      "frameIndex": 32,
+      "originalPts": 32,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 2.6666666666666665,
+      "pixelSha256": "ca81518b04e2bae965207c84f41bac56dbc9afbed011a33e1ab22c2dbbe0f586",
+      "imageSha256": "32358a01b3e4d12cee4c26720d93451c2b33253698cc890f8fa066966f9f0415"
+    },
+    {
+      "frameIndex": 33,
+      "originalPts": 33,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 2.75,
+      "pixelSha256": "5dbf40cc2289151eeccca50965d4f939e19217ab4c966f162a3e2780fea6dbab",
+      "imageSha256": "3f3ec461728f857b8d44d80fd6927eefa474f6e5ea1dc18fe79bddab5b0b9a7d"
+    },
+    {
+      "frameIndex": 34,
+      "originalPts": 34,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 2.8333333333333335,
+      "pixelSha256": "5a5b333fef97359a6a724220e8128dcfe5acd886d7d9d5de0c2c186e8d9d2bd7",
+      "imageSha256": "a15b874eaa7735403bcbc7be41df872bb6c0c6bebc243de8915922b06a00c61d"
+    },
+    {
+      "frameIndex": 35,
+      "originalPts": 35,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 2.9166666666666665,
+      "pixelSha256": "6b42c10e342538cd9de7c24aeac07e5cefd1274660b5f68a25bc4e5cf7743488",
+      "imageSha256": "451f3264a0b489d23238c6eaf464c76cff715677a039b997e11581b588b842dc"
+    },
+    {
+      "frameIndex": 36,
+      "originalPts": 36,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 3.0,
+      "pixelSha256": "037b6c3e189d1c0aea8e96fcdf516c268bef231d8ed0f88852af467f14898c87",
+      "imageSha256": "14781e582cca2dce44f445c8372917e4ecbfce27635506249f8f1f9b2c917c0c"
+    },
+    {
+      "frameIndex": 37,
+      "originalPts": 37,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 3.0833333333333335,
+      "pixelSha256": "c5a15e5a299279df1dae0376be3ba5534f8d699ac0256d5ad45c6e3bb2c2db2e",
+      "imageSha256": "66e2640a1c9df135bb94da4fcdbaa75efe642331d58b3063ddc221f317d1cc54"
+    },
+    {
+      "frameIndex": 38,
+      "originalPts": 38,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 3.1666666666666665,
+      "pixelSha256": "028d96423125527889e61525d78e0737a6c9a32fb51571c599875420401bb4b9",
+      "imageSha256": "c9927ae8278253b5791376f41ffb21366a99fdb9797e1428e192bd11f64f15f8"
+    },
+    {
+      "frameIndex": 39,
+      "originalPts": 39,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 3.25,
+      "pixelSha256": "92abea63e223372e33eecc3e8819159b461c4d510236c1865b39342dada2a5d2",
+      "imageSha256": "f951a9a7c954c8d6807db8695f18e45b916817fe2205454fbac3c52b35476d5f"
+    },
+    {
+      "frameIndex": 40,
+      "originalPts": 40,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 3.3333333333333335,
+      "pixelSha256": "6249af7d4ae59a6863de186969bc7227c7211f394aff65f499c95b7248de3e7b",
+      "imageSha256": "f74b99cea8df8cd91370245c2388ac2b4613ff59b2ad0ddbb25f4c2a74c72c3b"
+    },
+    {
+      "frameIndex": 41,
+      "originalPts": 41,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 3.4166666666666665,
+      "pixelSha256": "101bb8c37a7b728f93390fd68237df881be3a143024da527e8d986f713f18426",
+      "imageSha256": "2e89b2cd147553114bb996604111e7f5ecd03bbe1881de923d658e0260c95e04"
+    },
+    {
+      "frameIndex": 42,
+      "originalPts": 42,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 3.5,
+      "pixelSha256": "83cdfe99eed1b020587fd566591578ae2fae5b28913975873848b1f3116a1614",
+      "imageSha256": "8686bd0129ea7e95166b4abe18a6034f9e284fbeba5fe344f54af3f8a927e03f"
+    },
+    {
+      "frameIndex": 43,
+      "originalPts": 43,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 3.5833333333333335,
+      "pixelSha256": "8ce240add6ab232c76966f83689919d169b1c6ec1eeeba141223c31f08782ec7",
+      "imageSha256": "b90958a31b1b768a4f44a35a630cdd5d63f371079b77d1e4ecad6333e2aef305"
+    },
+    {
+      "frameIndex": 44,
+      "originalPts": 44,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 3.6666666666666665,
+      "pixelSha256": "66ffeadc68ad71e8936c156f106fcf68280861bf33aa46ae62e4d368b068d49d",
+      "imageSha256": "c3817f562406f20d9c6d575f7c545576a9a2fe9df94026f3e82af22a9ff75080"
+    },
+    {
+      "frameIndex": 45,
+      "originalPts": 45,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 3.75,
+      "pixelSha256": "6d5023f7c6b60c6351c0f73e900368888a852a7c6c38c033ad70bd6292b3f1dd",
+      "imageSha256": "d8be1500106d99d4cb3704925c88cb96d609794ebf5a6b28ec58aa464a80c756"
+    },
+    {
+      "frameIndex": 46,
+      "originalPts": 46,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 3.8333333333333335,
+      "pixelSha256": "be057638dbc51f7415243a738942c312a56796d62e7af2ee3d5e75c4be770ae4",
+      "imageSha256": "ec270892497847fc0a50b0d16b2eae3972edb2212398bd8fa11d2caff3341a92"
+    },
+    {
+      "frameIndex": 47,
+      "originalPts": 47,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 3.9166666666666665,
+      "pixelSha256": "bacb4e73aa863274a4638cc98c49e388acabb2daad87afb967d0850397354ca7",
+      "imageSha256": "38e0d55f9bd4e65a5a7d1cdb91b45ef3d06dd641c62af83db170caaf9b942913"
+    },
+    {
+      "frameIndex": 48,
+      "originalPts": 48,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 4.0,
+      "pixelSha256": "6c0b25d701b63a4cb962a3e227712c71c84ae0739d72ee70154ed06b0875df0d",
+      "imageSha256": "f4ba0d7841693ecae1e25dbbf3e6aeae0dba95005df61024ea97f21cd53d2672"
+    },
+    {
+      "frameIndex": 49,
+      "originalPts": 49,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 4.083333333333333,
+      "pixelSha256": "4de3eb51f05fe1156e95a10f26972bc7962dfe7788b7dab3a14cc5259b4f77a1",
+      "imageSha256": "5cc4ba18557cbf8022669452b455c90c26f3a248a6ae7f2eaea0b2272410e83b"
+    },
+    {
+      "frameIndex": 50,
+      "originalPts": 50,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 4.166666666666667,
+      "pixelSha256": "63ea514f56b0a176c46fd67cdf48e987cdc06ea1cbdd66b4d9438a87693586d5",
+      "imageSha256": "f24c74e767b3a511280e5eda981e860d2de49bfe9aee359378eef07b1b8af094"
+    },
+    {
+      "frameIndex": 51,
+      "originalPts": 51,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 4.25,
+      "pixelSha256": "0d92eacee4d9989091bd48ff87f383a54b4d535df21bcd83076d7df198c6cda4",
+      "imageSha256": "547503a0e0b5d5d7e80c7093f1c2bb4d714886a054b3dc432a02dadafe223f88"
+    },
+    {
+      "frameIndex": 52,
+      "originalPts": 52,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 4.333333333333333,
+      "pixelSha256": "ab2ed88fe9cc6cf3e7677d79ed0776e6f20bf684f9aa6fa056949928124debf7",
+      "imageSha256": "21a9581c967dedd5b20258ba9473642191bbe97befa6facbfecc2e3c1f6d4994"
+    },
+    {
+      "frameIndex": 53,
+      "originalPts": 53,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 4.416666666666667,
+      "pixelSha256": "e2d5bb7d1ead387a525dd476b0dfea5e778611a4015927e3e2fb2d78f776f42a",
+      "imageSha256": "c86725b1bb16ffadada7cce596e3b6f90ceac138f59c3ea4f1b01a6226a64202"
+    },
+    {
+      "frameIndex": 54,
+      "originalPts": 54,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 4.5,
+      "pixelSha256": "19b2bfcf585b803c08593bf2ecfe484da8ade47c21bfad873263e5f7e3f180ef",
+      "imageSha256": "70a685b2f5789cf69964ab0e183ba65002c863371cf47eebf4cd200086554ff6"
+    },
+    {
+      "frameIndex": 55,
+      "originalPts": 55,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 4.583333333333333,
+      "pixelSha256": "e1282c9c596f1998b642860300d0efa9346f936de14dfd5e8899f419046eca2b",
+      "imageSha256": "b002f13f55b2c9b7cc80f9252908174967ac4c9bdad3df90014a5467489c577b"
+    },
+    {
+      "frameIndex": 56,
+      "originalPts": 56,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 4.666666666666667,
+      "pixelSha256": "004d6b74e57551eb8a1bd9ad6a150d17d668927c8f66829de9c6a8c8ed8d44d0",
+      "imageSha256": "f0b0ff038686277ff55b3ad45cee4c2933a6d7de5037bc7298eb702192106c14"
+    },
+    {
+      "frameIndex": 57,
+      "originalPts": 57,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 4.75,
+      "pixelSha256": "04fd6fb04044f74499f404a511cd46a82754037dae8590c2f25e4fb01a9be2dd",
+      "imageSha256": "f27607ce3430ceb7718cdd81321882d426cc3b3ca98f632e207b945919d3788d"
+    },
+    {
+      "frameIndex": 58,
+      "originalPts": 58,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 4.833333333333333,
+      "pixelSha256": "6a02413a079476c78d02e2d94adc35cc96339329f59eb8f0e35eee98bdd80d1d",
+      "imageSha256": "82dae67f3500d044a0ba316f9088aac60a4638ec8fa28c90a827524c3e0da38f"
+    },
+    {
+      "frameIndex": 59,
+      "originalPts": 59,
+      "originalTimeBase": "1/12",
+      "timestampSeconds": 4.916666666666667,
+      "pixelSha256": "0988ac788fd377344da9041cdea0413a391bb91c04f743f75c1c63c9b180227d",
+      "imageSha256": "1d888edc963e0a0c9db1f19518a384bc714d1e63a32f4c113d2a42fb03c1e2e0"
+    }
+  ],
+  "channelOrder": [
+    "left_eye.relative_x",
+    "left_eye.relative_y",
+    "left_eye.raw_score",
+    "left_eye.observed",
+    "right_eye.relative_x",
+    "right_eye.relative_y",
+    "right_eye.raw_score",
+    "right_eye.observed",
+    "nose.relative_x",
+    "nose.relative_y",
+    "nose.raw_score",
+    "nose.observed",
+    "neck.relative_x",
+    "neck.relative_y",
+    "neck.raw_score",
+    "neck.observed",
+    "root_of_tail.relative_x",
+    "root_of_tail.relative_y",
+    "root_of_tail.raw_score",
+    "root_of_tail.observed",
+    "left_shoulder.relative_x",
+    "left_shoulder.relative_y",
+    "left_shoulder.raw_score",
+    "left_shoulder.observed",
+    "left_elbow.relative_x",
+    "left_elbow.relative_y",
+    "left_elbow.raw_score",
+    "left_elbow.observed",
+    "left_front_paw.relative_x",
+    "left_front_paw.relative_y",
+    "left_front_paw.raw_score",
+    "left_front_paw.observed",
+    "right_shoulder.relative_x",
+    "right_shoulder.relative_y",
+    "right_shoulder.raw_score",
+    "right_shoulder.observed",
+    "right_elbow.relative_x",
+    "right_elbow.relative_y",
+    "right_elbow.raw_score",
+    "right_elbow.observed",
+    "right_front_paw.relative_x",
+    "right_front_paw.relative_y",
+    "right_front_paw.raw_score",
+    "right_front_paw.observed",
+    "left_hip.relative_x",
+    "left_hip.relative_y",
+    "left_hip.raw_score",
+    "left_hip.observed",
+    "left_knee.relative_x",
+    "left_knee.relative_y",
+    "left_knee.raw_score",
+    "left_knee.observed",
+    "left_back_paw.relative_x",
+    "left_back_paw.relative_y",
+    "left_back_paw.raw_score",
+    "left_back_paw.observed",
+    "right_hip.relative_x",
+    "right_hip.relative_y",
+    "right_hip.raw_score",
+    "right_hip.observed",
+    "right_knee.relative_x",
+    "right_knee.relative_y",
+    "right_knee.raw_score",
+    "right_knee.observed",
+    "right_back_paw.relative_x",
+    "right_back_paw.relative_y",
+    "right_back_paw.raw_score",
+    "right_back_paw.observed",
+    "delta_seconds"
+  ],
+  "pawOrder": [
+    "LF",
+    "RF",
+    "LH",
+    "RH"
+  ],
+  "policy": {
+    "pointMinRawScore": 0.5,
+    "neckMinRawScore": 0.7,
+    "tailRootMinRawScore": 0.8,
+    "minimumBodyLengthPixels": 1e-06,
+    "maxGapSeconds": 0.25,
+    "windowLength": 128,
+    "windowStride": 64,
+    "interpolation": false,
+    "scoreClipping": false,
+    "rawScoresAreProbabilities": false
+  },
+  "dogIdentityVerified": false,
+  "rights": {
+    "status": "unknown",
+    "evidence": "No new commercial-rights attestation during adapter implementation."
+  },
+  "timing": {
+    "sourceType": "unknown",
+    "nativeVerified": false,
+    "evidence": "Original encoded integer PTS verified; no new sensor-capture attestation."
+  },
+  "trainingApproved": false,
+  "reviewEvidence": [
+    {
+      "pair": "hind",
+      "reviewers": [
+        "reviewer-1"
+      ],
+      "independent": false,
+      "exposedReviewers": [
+        "reviewer-1"
+      ],
+      "mappingVerified": false,
+      "adjudicated": false
+    }
+  ],
+  "reviewSpecifications": [
+    {
+      "pair": "hind",
+      "reviews": [
+        {
+          "path": "reports/gait-event-review-v1/reviews/review-d684d28c840a475ba7833f1c045d2504.zip",
+          "sha256": "e0f0bd2a6ca14ff6cc6cddf89a3495959c3a39ecbc5e0cf99b208589601bda82"
+        }
+      ]
+    }
+  ],
+  "sourceFrameRange": null,
+  "identityPolicy": "Model channels and feature windows never confirm physical identity",
+  "normalization": "Per-frame neck/tail midpoint and distance; no fitted statistics",
+  "paddingPolicy": "window_indices=-1; padding_mask=True; gather nonnegative indices only",
+  "trainingReady": false,
+  "outputs": {
+    "features.npz": "cacac9404e9b7fa08e900941392b06dc5fad73b9437704af3e9976019a0b8060",
+    "raw-observations.json": "ac5013c8ed782060e54f58749b955cfc2bc2f5f44fda5003356596f4e62c5a54",
+    "validation.json": "7901638714005b3e25fbc99dd7e9c601e4e3c4d2fe1d398bb7c227f2e387b5ae"
+  }
+}

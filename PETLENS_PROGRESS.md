@@ -1,3 +1,12 @@
+# ContactVision data adapter checkpoint — November 11, 2026
+
+- Implemented `src/petlens_gait/contact_features.py`, `training/prepare_contact_sequences.py`, and `tests/test_contact_features.py`. Pose-only 69-channel features preserve original timing, raw scores above one, missingness, and separate contact/identity masks. RTMPose and the rule detector are unchanged.
+- Saved Dog02 (60/60 frames) and Dalmatian (177/177 frames) conversion artifacts in `reports/contact-feature-readiness-v1/`; reproducible job in `training/contact_sequence_inspection_job.json`. Both remain NOT training-ready, with zero independently adjudicated eligible contact targets. Dog02 stays exploratory-only.
+- Relevant validation: 343 tests passed plus 17 subtests, including 60 adapter tests. Existing review HTTP tests passed outside the sandbox after its localhost restriction blocked them.
+- `architecture.txt` contains the implementation summary. The prior detailed contract and readiness audit are preserved in `docs/CONTACTVISION_READINESS_AUDIT.md`.
+- Next: independently reviewed contact labels, supported paw/dog identity, dog-level split assignment, approval and capture/rights records. No model training, inference, dependency installation, new UI, or annotation finalization was performed.
+- Original source videos and saved predictions are tracked. The 152 MB ignored Dalmatian lossless working derivative remains local; current real-data re-conversion/integration tests need it at its recorded path. Exported feature artifacts are preserved in this checkpoint. Unrelated untracked files are not included.
+
 # PetLens checkpoint — November 11, 2026
 
 ## Current status — Milestones 4 and 5
