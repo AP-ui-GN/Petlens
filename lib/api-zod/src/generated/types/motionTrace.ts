@@ -6,8 +6,11 @@
  * OpenAPI spec version: 0.1.0
  */
 import type { MotionTracePoint } from './motionTracePoint';
+import type { MotionTraceTimingSource } from './motionTraceTimingSource';
 
 export interface MotionTrace {
+  /** Decoder times are seconds from a validated zero source-video origin. Points represent midpoints of frame-pair intervals (or compacted intervals). Only decoder timing supports source-video replay; missing or nominal-FPS timing is unverified. */
+  timingSource?: MotionTraceTimingSource;
   /**
      * Number of decoded frame comparisons before downsampling.
      * @minimum 0

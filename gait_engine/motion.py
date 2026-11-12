@@ -8,6 +8,7 @@ into measurements.
 from __future__ import annotations
 
 from dataclasses import dataclass
+import math
 from pathlib import Path
 
 import cv2
@@ -33,6 +34,9 @@ class MotionSignal:
     height: int = 0
     # Mean brightness of the analysis frames, 0-1. None means it was not measured.
     brightness: float | None = None
+    # Decoder presentation times in seconds from the source video's start.
+    # Invalid/missing times are retained for validation, never replaced by indices.
+    frame_times_seconds: list[float] | None = None
 
 
 def _to_analysis_frame(frame_bgr):
@@ -52,16 +56,28 @@ def compact_motion_trace(
     fps: float,
     *,
     max_points: int = MOTION_TRACE_MAX_POINTS,
+    frame_times_seconds: list[float] | None = None,
 ) -> dict[str, object]:
     """Downsample frame-pair motion into timestamped means for visualization."""
 
     if max_points < 1:
         raise ValueError("max_points must be positive.")
     sample_count = len(frame_motion)
-    if sample_count == 0:
-        return {"sampleCount": 0, "points": []}
-    if not fps or not 0 < fps <= 240:
-        return {"sampleCount": sample_count, "points": []}
+    timing_source = "nominal-fps"
+    if frame_times_seconds is not None:
+        # A nonzero origin cannot safely be translated to browser currentTime
+        # without an explicit stream-start mapping. Refuse that mapping too.
+        valid = (
+            len(frame_times_seconds) == sample_count + 1
+            and all(math.isfinite(t) and t >= 0 for t in frame_times_seconds)
+            and abs(frame_times_seconds[0]) < 1e-6
+            and all(b > a for a, b in zip(frame_times_seconds, frame_times_seconds[1:]))
+        )
+        if not valid:
+            return {"sampleCount": sample_count, "points": [], "timingSource": "unavailable"}
+        timing_source = "decoder"
+    elif not fps or not 0 < fps <= 240:
+        return {"sampleCount": sample_count, "points": [], "timingSource": "unavailable"}
 
     point_count = min(sample_count, max_points)
     points: list[dict[str, float]] = []
@@ -73,11 +89,18 @@ def compact_motion_trace(
             continue
         points.append(
             {
-                "timeSeconds": round((start + end) / (2.0 * fps), 4),
+                # Comparison i spans source frames i and i+1. A compact bin
+                # represents its source interval's midpoint, not i / sampleCount.
+                "timeSeconds": round(
+                    (frame_times_seconds[start] + frame_times_seconds[end]) / 2
+                    if frame_times_seconds is not None
+                    else (start + end) / (2.0 * fps),
+                    4,
+                ),
                 "movement": round(sum(values) / len(values), 6),
             }
         )
-    return {"sampleCount": sample_count, "points": points}
+    return {"sampleCount": sample_count, "points": points, "timingSource": timing_source}
 
 
 def read_motion_signal(video_path: str | Path, *, max_frames: int = 600) -> MotionSignal:
@@ -105,6 +128,7 @@ def read_motion_signal(video_path: str | Path, *, max_frames: int = 600) -> Moti
         fps = 0.0
 
     frame_motion: list[float] = []
+    frame_times_seconds: list[float] = []
     frames_read = 0
     previous = None
     width = 0
@@ -119,6 +143,8 @@ def read_motion_signal(video_path: str | Path, *, max_frames: int = 600) -> Moti
 
             if frames_read == 0:
                 height, width = frame.shape[:2]
+
+            frame_times_seconds.append(float(capture.get(cv2.CAP_PROP_POS_MSEC)) / 1000.0)
 
             current = _to_analysis_frame(frame)
             brightness_sum += float(current.mean()) / 255.0
@@ -146,4 +172,5 @@ def read_motion_signal(video_path: str | Path, *, max_frames: int = 600) -> Moti
         width=int(width),
         height=int(height),
         brightness=round(brightness_sum / frames_read, 4) if frames_read else None,
+        frame_times_seconds=frame_times_seconds,
     )

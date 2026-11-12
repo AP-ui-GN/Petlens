@@ -463,3 +463,36 @@ def test_real_dog02_and_dalmatian_conversion_preserves_all_existing_inputs(tmp_p
     assert not evidence["independent"]
     assert evidence["exposedReviewers"] == ["reviewer-1"]
     assert all(p.digest(ROOT / name) == sha for name, sha in before.items())
+
+
+def test_decoded_pose_replay_keeps_provenance_for_contact_preparation(tmp_path):
+    """Decode real S004 frames with saved poses, without running a model."""
+    from petlens_gait.inference import infer
+
+    job = json.loads((ROOT / "reports/canine-contact-batch-v1/identity-neutral-exploratory/training-job.json").read_text())
+    entry = job["sequences"][0]
+    video = ROOT / entry["video"]["path"]
+    if not video.is_file():
+        pytest.skip("Local S004 video unavailable")
+    saved = json.loads((ROOT / entry["predictions"]["path"]).read_text())
+    metadata = json.loads((ROOT / entry["metadata"]["path"]).read_text())
+    source = json.loads((ROOT / entry["sourceFrames"]["path"]).read_text())["datasets"][entry["sourceFrames"]["group"]]
+    rows = iter(saved["frames"])
+
+    def replay(_image):
+        row = copy.deepcopy(next(rows))
+        row.pop("frameIndex")
+        row.pop("timestampSeconds")
+        return row
+
+    decoded = infer(video, tmp_path, replay)
+    assert decoded.get("videoSha256") == entry["video"]["sha256"] == p.digest(video)
+    # This is the same saved-prediction validator used by the preparer.
+    p.validate_predictions(decoded, metadata, c.NAMES)
+    actual = c.convert_sequence(decoded, source)
+    expected = c.convert_sequence(saved, source)
+    assert actual["features"].shape == (60, 69)
+    np.testing.assert_array_equal(actual["features"], expected["features"])
+    np.testing.assert_array_equal(actual["observed_mask"], expected["observed_mask"])
+    assert [f["keypoints"] for f in decoded["frames"]] == [f["keypoints"] for f in saved["frames"]]
+    assert decoded["fps"] == saved["fps"] == 12

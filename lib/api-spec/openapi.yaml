@@ -259,6 +259,10 @@ components:
     MotionTrace:
       type: object
       properties:
+        timingSource:
+          type: string
+          enum: [decoder, nominal-fps, unavailable]
+          description: Decoder times are seconds from a validated zero source-video origin. Points represent midpoints of frame-pair intervals (or compacted intervals). Only decoder timing supports source-video replay; missing or nominal-FPS timing is unverified.
         sampleCount:
           type: number
           multipleOf: 1

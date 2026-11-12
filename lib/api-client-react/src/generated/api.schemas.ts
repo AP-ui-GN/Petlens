@@ -64,6 +64,18 @@ export interface PoseKeypointSummary {
   confidence: number;
 }
 
+/**
+ * Decoder times are seconds from a validated zero source-video origin. Points represent midpoints of frame-pair intervals (or compacted intervals). Only decoder timing supports source-video replay; missing or nominal-FPS timing is unverified.
+ */
+export type MotionTraceTimingSource = typeof MotionTraceTimingSource[keyof typeof MotionTraceTimingSource];
+
+
+export const MotionTraceTimingSource = {
+  decoder: 'decoder',
+  'nominal-fps': 'nominal-fps',
+  unavailable: 'unavailable',
+} as const;
+
 export interface MotionTracePoint {
   /** @minimum 0 */
   timeSeconds: number;
@@ -76,6 +88,8 @@ export interface MotionTracePoint {
 }
 
 export interface MotionTrace {
+  /** Decoder times are seconds from a validated zero source-video origin. Points represent midpoints of frame-pair intervals (or compacted intervals). Only decoder timing supports source-video replay; missing or nominal-FPS timing is unverified. */
+  timingSource?: MotionTraceTimingSource;
   /**
      * Number of decoded frame comparisons before downsampling.
      * @minimum 0

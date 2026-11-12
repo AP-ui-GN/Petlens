@@ -15,6 +15,7 @@ type Props = {
   pets: Pet[];
   analyses: Analysis[];
   addAnalysis: (analysis: Omit<Analysis, 'id' | 'createdAt'>) => Analysis;
+  onVideoAnalyzed: (analysisId: string, file: File) => void;
   openDemoAnalysis: (analysis: Analysis, continueTour: boolean) => void;
 };
 
@@ -26,7 +27,7 @@ type Phase = 'upload' | 'review' | 'processing' | 'done';
 // loading. The service owns the deadline now.
 const PROCESSING_STATUS = 'Measuring this clip';
 
-export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis }: Props) {
+export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis, onVideoAnalyzed }: Props) {
   const [, setLocation] = useLocation();
   const [petId, setPetId] = useState(pets[0]?.id ?? '');
   const [file, setFile] = useState<File | null>(null);
@@ -172,6 +173,7 @@ export default function Analyze({ pets, analyses, addAnalysis, openDemoAnalysis 
       // and an opencv-motion result stays labeled as picture motion.
       record.observation = observationFromResult(result);
       const saved = addAnalysis(record);
+      onVideoAnalyzed(saved.id, file);
 
       setPhase('done');
       window.setTimeout(() => setLocation(`/history/${saved.id}`), 400);

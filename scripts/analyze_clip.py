@@ -100,9 +100,6 @@ def write_json(path: Path, result: dict) -> None:
 def main() -> int:
     args = parse_args()
 
-    # Imported here so --help works without OpenCV installed.
-    from gait_engine.pipeline import analyze_clip
-
     motion_ready = None
     if args.output_json is not None and not args.no_pose:
         output_path = args.output_json
@@ -111,6 +108,10 @@ def main() -> int:
             write_json(destination, attach_request_id(result, args.request_id))
 
     try:
+        # Keep dependency loading inside the process contract too: a missing
+        # runtime must produce failure JSON, rather than only a traceback.
+        from gait_engine.pipeline import analyze_clip
+
         result = analyze_clip(
             args.video,
             pet_name=args.pet_name,

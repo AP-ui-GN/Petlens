@@ -88,6 +88,7 @@ test("motion traces and experimental symmetry indices match the contract", () =>
     measurements: {
       ...motionResult.measurements,
       motionTrace: {
+        timingSource: 'decoder',
         sampleCount: 24,
         points: [
           { timeSeconds: 0.02, movement: 0.1 },
@@ -101,6 +102,13 @@ test("motion traces and experimental symmetry indices match the contract", () =>
     },
   };
   assert.equal(AnalyzeMovementClipResponse.safeParse(result).success, true);
+  const parsed = AnalyzeMovementClipResponse.parse(result);
+  assert.equal(parsed.measurements.motionTrace?.timingSource, 'decoder');
+  assert.equal(AnalyzeMovementClipResponse.safeParse({
+    ...result, measurements: { ...result.measurements, motionTrace: {
+      ...result.measurements.motionTrace, timingSource: 'invented',
+    } },
+  }).success, false);
 
   const invalidTrace = {
     ...result,

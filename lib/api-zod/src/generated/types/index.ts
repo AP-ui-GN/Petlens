@@ -23,6 +23,7 @@ export * from './modelInfoPipeline';
 export * from './modelInfoRunsOn';
 export * from './motionTrace';
 export * from './motionTracePoint';
+export * from './motionTraceTimingSource';
 export * from './pairValues';
 export * from './pawStride';
 export * from './poseKeypointSummary';

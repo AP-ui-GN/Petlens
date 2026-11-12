@@ -9,12 +9,15 @@ import { downloadTelemetryCsv, downloadTelemetryJson } from '@/lib/telemetry-exp
 import { TrendPanel } from '@/components/trend-panel';
 import ProductTour from '@/components/ProductTour';
 import VetReportModal from '@/components/VetReportModal';
+import EvidenceReplay from '@/components/EvidenceReplay';
+import type { SessionVideo } from '@/lib/evidence-replay';
 
 type Props = {
   pets: Pet[];
   analyses: Analysis[];
   deleteAnalysis: (id: string) => void;
   demoAnalysis?: Analysis | null;
+  replayVideo?: SessionVideo | null;
   demoTourActive?: boolean;
   onDemoTourComplete?: () => void;
 };
@@ -300,12 +303,14 @@ function AnalysisList({ analyses, pets }: { analyses: Analysis[]; pets: Pet[] })
 function ResultDetail({
   analysis,
   pet,
+  sourceFile,
   onDelete,
   demoTourActive,
   onDemoTourComplete,
 }: {
   analysis: Analysis;
   pet?: Pet;
+  sourceFile?: File;
   onDelete: () => void;
   demoTourActive: boolean;
   onDemoTourComplete: () => void;
@@ -444,6 +449,7 @@ function ResultDetail({
       </div>
     </div>
 
+    {!analysis.demo && <EvidenceReplay key={analysis.id} analysis={analysis} sourceFile={sourceFile} />}
     <PipelineVisual analysis={analysis} />
     {/* Per-frame pose tracks are not stored; avoid implying that aggregate mean landmarks are frame-synchronized. */}
 
@@ -471,7 +477,7 @@ function ResultDetail({
         <div className="measure-grid mt-5">
           {([
             ['Frames read', formatMeasure(measurements.frameCount, '', 0)],
-            ['Measured length', formatMeasure(measurements.durationSeconds, 's', 2)],
+            ['Analyzed length (nominal FPS)', formatMeasure(measurements.durationSeconds, 's', 2)],
             ['Mean frame motion', formatMeasure(measurements.motionMean, '', 4)],
             ['Motion variation', formatMeasure(measurements.motionStd, '', 4)],
             ['Frame Motion Coverage', formatMeasure(typeof measurements.motionCoverage === 'number' ? measurements.motionCoverage * 100 : undefined, '%', 0)],
@@ -514,13 +520,13 @@ function ResultDetail({
   </div>;
 }
 
-export default function History({ pets, analyses, deleteAnalysis, demoAnalysis, demoTourActive = false, onDemoTourComplete = () => {} }: Props) {
+export default function History({ pets, analyses, deleteAnalysis, replayVideo, demoAnalysis, demoTourActive = false, onDemoTourComplete = () => {} }: Props) {
   const params = useParams<{ id?: string }>();
   const selected = params.id
     ? analyses.find((analysis) => analysis.id === params.id) ?? (demoAnalysis?.id === params.id ? demoAnalysis : undefined)
     : undefined;
   if (params.id && selected) {
-    return <ResultDetail analysis={selected} pet={pets.find((pet) => pet.id === selected.petId)} onDelete={() => deleteAnalysis(selected.id)} demoTourActive={demoTourActive} onDemoTourComplete={onDemoTourComplete} />;
+    return <ResultDetail key={selected.id} sourceFile={replayVideo?.analysisId === selected.id ? replayVideo.file : undefined} analysis={selected} pet={pets.find((pet) => pet.id === selected.petId)} onDelete={() => deleteAnalysis(selected.id)} demoTourActive={demoTourActive} onDemoTourComplete={onDemoTourComplete} />;
   }
   if (params.id && !selected) {
     return <div className="page-frame"><div className="panel panel-padded text-center max-w-lg mx-auto mt-16"><CircleAlert size={28} className="mx-auto" style={{ color: '#ff8b84' }} /><h1 className="display-title text-3xl mt-5">That observation moved on.</h1><p className="body-muted mt-3">It may have been removed from local storage.</p><Link href="/history" className="btn-primary mt-6" data-testid="link-return-history">Back to history</Link></div></div>;

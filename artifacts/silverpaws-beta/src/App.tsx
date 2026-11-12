@@ -12,6 +12,7 @@ import NotFound from '@/pages/not-found';
 import { useLocalData } from '@/hooks/use-local-data';
 import { Route, Router as WouterRouter, Switch, useLocation } from 'wouter';
 import type { Analysis } from '@/lib/storage';
+import type { SessionVideo } from '@/lib/evidence-replay';
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ function RoutedErrorBoundary({ children }: { children: ReactNode }) {
 function Router() {
   const data = useLocalData();
   const [, setLocation] = useLocation();
+  const [replayVideo, setReplayVideo] = useState<SessionVideo | null>(null);
   const [demoAnalysis, setDemoAnalysis] = useState<Analysis | null>(null);
   const [demoTourActive, setDemoTourActive] = useState(false);
   const openDemoAnalysis = (analysis: Analysis, continueTour: boolean) => {
@@ -36,9 +38,9 @@ function Router() {
         <RoutedErrorBoundary>
           <Switch>
             <Route path="/" component={() => <Home pets={data.pets} analyses={data.analyses} />} />
-            <Route path="/analyze" component={() => <Analyze pets={data.pets} analyses={data.analyses} addAnalysis={data.addAnalysis} openDemoAnalysis={openDemoAnalysis} />} />
-            <Route path="/history" component={() => <History pets={data.pets} analyses={data.analyses} deleteAnalysis={data.deleteAnalysis} demoAnalysis={demoAnalysis} demoTourActive={demoTourActive} onDemoTourComplete={() => setDemoTourActive(false)} />} />
-            <Route path="/history/:id" component={() => <History pets={data.pets} analyses={data.analyses} deleteAnalysis={data.deleteAnalysis} demoAnalysis={demoAnalysis} demoTourActive={demoTourActive} onDemoTourComplete={() => setDemoTourActive(false)} />} />
+            <Route path="/analyze" component={() => <Analyze pets={data.pets} analyses={data.analyses} addAnalysis={data.addAnalysis} openDemoAnalysis={openDemoAnalysis} onVideoAnalyzed={(analysisId, file) => setReplayVideo({ analysisId, file })} />} />
+            <Route path="/history" component={() => <History pets={data.pets} analyses={data.analyses} deleteAnalysis={(id) => { data.deleteAnalysis(id); setReplayVideo((current) => current?.analysisId === id ? null : current); }} replayVideo={replayVideo} demoAnalysis={demoAnalysis} demoTourActive={demoTourActive} onDemoTourComplete={() => setDemoTourActive(false)} />} />
+            <Route path="/history/:id" component={() => <History pets={data.pets} analyses={data.analyses} deleteAnalysis={(id) => { data.deleteAnalysis(id); setReplayVideo((current) => current?.analysisId === id ? null : current); }} replayVideo={replayVideo} demoAnalysis={demoAnalysis} demoTourActive={demoTourActive} onDemoTourComplete={() => setDemoTourActive(false)} />} />
             <Route path="/pet">
               <PetProfile pets={data.pets} addPet={data.addPet} updatePet={data.updatePet} />
             </Route>

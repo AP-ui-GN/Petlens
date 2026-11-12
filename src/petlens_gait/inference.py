@@ -5,6 +5,7 @@ This module does not make clinical gait assessments.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 from pathlib import Path
@@ -61,6 +62,12 @@ class Models:
 
 def infer(video, out, model):
     import cv2
+    # Bind predictions to the actual working-video bytes, as required by the
+    # existing contact preparer. A path alone cannot identify a source clip.
+    fingerprint = hashlib.sha256()
+    with Path(video).open('rb') as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b''):
+            fingerprint.update(block)
     cap = cv2.VideoCapture(str(video))
     if not cap.isOpened(): raise ValueError('Cannot open video')
     fps = cap.get(cv2.CAP_PROP_FPS)
@@ -88,7 +95,8 @@ def infer(video, out, model):
                 frames.append(record); log.write(json.dumps(record,allow_nan=False)+'\n'); log.flush()
     finally: cap.release()
     if expected>0 and len(frames)!=expected: raise ValueError(f'Decode count mismatch: expected {expected}, got {len(frames)}; see frame-log.jsonl')
-    return dict(video=str(video),detectorModel=DETECTOR,poseModel='OpenMMLab RTMPose-m AP-10K',
+    return dict(video=str(video),videoSha256=fingerprint.hexdigest(),
+                detectorModel=DETECTOR,poseModel='OpenMMLab RTMPose-m AP-10K',
                 frameCount=len(frames),fps=fps,width=width,height=height,frames=frames,keypointSchema='AP-10K, 17 keypoints',
                 timestampConvention='OpenCV decoder POS_MSEC; playback uses nominal FPS',
                 detectorConfidenceThreshold=.30,rawPredictionsWereSmoothedOrCorrected=False)

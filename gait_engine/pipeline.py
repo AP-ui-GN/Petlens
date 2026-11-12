@@ -29,7 +29,6 @@ import numpy as np
 from .clip_quality import quality_notes
 from .confidence import pose_is_trusted, summarize_keypoints, summarize_pose_coordinates
 from .features import MOTION_FLOOR, motion_statistics
-from .gait import compute_gait_metrics
 from .motion import compact_motion_trace, read_motion_signal
 from .wellness import (
     DEFAULT_WEIGHTS,
@@ -379,7 +378,10 @@ def analyze_clip(
         "motionMean": motion_mean,
         "motionStd": motion_std,
         "motionCoverage": motion_coverage,
-        "motionTrace": compact_motion_trace(signal.frame_motion, signal.fps),
+        "motionTrace": compact_motion_trace(
+            signal.frame_motion, signal.fps,
+            frame_times_seconds=signal.frame_times_seconds or [],
+        ),
         "limbSymmetryIndex": {
             "front": {"signed": None, "absolute": None},
             "rear": {"signed": None, "absolute": None},
@@ -560,6 +562,10 @@ def analyze_clip(
                 measurements["notMeasuredReasons"] = [SCHEMA_LIMIT]
                 measurements["symmetryReliable"] = False
             else:
+                # SciPy gait math is optional for the OpenCV motion path and
+                # the COCO schema, neither of which measures canine strides.
+                from .gait import compute_gait_metrics
+
                 gait = compute_gait_metrics(
                     keypoints,
                     timestamps=pose_payload["timestamps"],

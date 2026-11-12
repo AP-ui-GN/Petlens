@@ -1,13 +1,37 @@
 """CLI contract tests that do not load OpenCV or model weights."""
 
+import json
+import subprocess
 import sys
 import unittest
+from pathlib import Path
 from unittest.mock import patch
 
 from scripts.analyze_clip import attach_request_id, parse_args
 
 
 class AnalyzeCliTests(unittest.TestCase):
+    def test_missing_pipeline_dependency_returns_json_and_writes_failure(self):
+        import tempfile
+
+        root = Path(__file__).resolve().parents[1]
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "result.json"
+            command = (
+                "import runpy, sys; sys.modules['cv2'] = None; "
+                "sys.argv = ['analyze_clip.py', 'unused.mp4', '--output-json', sys.argv[1], "
+                "'--request-id', 'missing-runtime']; "
+                "runpy.run_path('scripts/analyze_clip.py', run_name='__main__')"
+            )
+            result = subprocess.run([sys.executable, "-c", command, str(output)],
+                                    cwd=root, capture_output=True, text=True, timeout=15)
+            self.assertEqual(result.returncode, 1)
+            payload = json.loads(result.stdout)
+            self.assertFalse(payload["ok"])
+            self.assertIn("ModuleNotFoundError", payload["error"])
+            self.assertEqual(payload["requestId"], "missing-runtime")
+            self.assertEqual(json.loads(output.read_text()), payload)
+
     def test_request_id_argument_is_parsed(self):
         with patch.object(
             sys,

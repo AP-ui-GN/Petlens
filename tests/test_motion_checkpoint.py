@@ -1,6 +1,8 @@
 """Motion is saved before pose starts, so a later deadline can keep it."""
 
 import json
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -25,6 +27,33 @@ def write_clip(path: Path) -> None:
 
 
 class MotionCheckpointTests(unittest.TestCase):
+    def test_motion_and_readiness_work_without_optional_scipy(self):
+        root = Path(__file__).resolve().parents[1]
+        with tempfile.TemporaryDirectory() as directory:
+            video = Path(directory) / "walk.avi"
+            write_clip(video)
+            for script, args in (
+                ("scripts/check_setup.py", ["--json"]),
+                ("scripts/analyze_clip.py", [str(video), "--no-pose"]),
+            ):
+                with self.subTest(script=script):
+                    # Exercise a fresh process; an earlier SciPy import must not
+                    # make a motion-only runtime look complete.
+                    command = (
+                        "import runpy, sys; sys.modules['scipy'] = None; "
+                        "sys.argv = sys.argv[1:]; runpy.run_path(sys.argv[0], run_name='__main__')"
+                    )
+                    result = subprocess.run([sys.executable, "-c", command, script, *args],
+                                            cwd=root, capture_output=True, text=True, timeout=15)
+                    self.assertEqual(result.returncode, 0, result.stderr)
+                    payload = json.loads(result.stdout)
+                    if script.endswith("check_setup.py"):
+                        self.assertTrue(payload["fallbackReady"])
+                    else:
+                        self.assertTrue(payload["ok"])
+                        self.assertEqual(payload["measurements"]["frameCount"], 8)
+                        self.assertIsNone(payload["measurements"]["strideSymmetry"])
+
     def test_motion_is_ready_before_pose_and_stride_stays_unmeasured(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "walk.avi"

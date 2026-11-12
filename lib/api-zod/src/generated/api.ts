@@ -84,6 +84,7 @@ export const AnalyzeMovementClipResponse = zod.object({
   "motionStd": zod.number(),
   "motionCoverage": zod.number(),
   "motionTrace": zod.object({
+  "timingSource": zod.enum(['decoder', 'nominal-fps', 'unavailable']).optional().describe('Decoder times are seconds from a validated zero source-video origin. Points represent midpoints of frame-pair intervals (or compacted intervals). Only decoder timing supports source-video replay; missing or nominal-FPS timing is unverified.'),
   "sampleCount": zod.number().min(analyzeMovementClipResponseMeasurementsMotionTraceSampleCountMin).multipleOf(analyzeMovementClipResponseMeasurementsMotionTraceSampleCountMultipleOf).describe('Number of decoded frame comparisons before downsampling.'),
   "points": zod.array(zod.object({
   "timeSeconds": zod.number().min(analyzeMovementClipResponseMeasurementsMotionTracePointsItemTimeSecondsMin),
