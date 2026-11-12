@@ -259,8 +259,22 @@ class BulkReviewTests(unittest.TestCase):
         next(e for e in self.draft['reviews'] if e['frameIndex'] == 75)['identityState'] = 'uncertain'
         self.assertEqual(review.bulk_preview(self.base, self.draft)['frameCount'], 29)
 
+    def reference_session(self):
+        """Load the committed review fixture without requiring local source videos."""
+        reference = p.ROOT / review.REFERENCE
+        config = p.load_json(p.ROOT / 'training/paw_annotation_sources.json')
+        manifest = p.load_json(reference / 'manifest.json')
+        self.assertEqual(manifest['sourceConfiguration'], config)
+        for name in ('physical-reference.json', 'original-annotations.json'):
+            self.assertEqual(p.digest(reference / name), manifest['outputSha256'][name])
+        return dict(schemaVersion=2, annotationType='anatomical-paw-review',
+                    sourceConfiguration=config,
+                    bulkContinuityEvidence=p.load_json(p.ROOT / 'training/paw_bulk_continuity_evidence.json'),
+                    referenceSha256=p.digest(reference / 'physical-reference.json'),
+                    records=p.load_json(reference / 'physical-reference.json')['records'])
+
     def test_real_source_preview_does_not_change_labels(self):
-        base = review.session()
+        base = self.reference_session()
         draft = review.initial_draft(base)
         before = copy.deepcopy((base, draft))
         preview = review.bulk_preview(base, draft)
@@ -274,7 +288,7 @@ class BulkReviewTests(unittest.TestCase):
                 review.bulk_preview(base, bad)
 
     def test_direct_confirmed_export_preserves_real_coordinates_and_audit(self):
-        base = review.session()
+        base = self.reference_session()
         draft = review.initial_draft(base)
         confirmation = p.load_json(p.ROOT / 'training/paw_anatomical_mapping_confirmation.json')
         before = copy.deepcopy((base, draft, confirmation))
@@ -294,7 +308,7 @@ class BulkReviewTests(unittest.TestCase):
         self.assertEqual(json.loads(files['exploratory_evaluation.coco.json'])['annotations'], [])
 
     def test_direct_export_rejects_uncertainty_conflicts_and_missing_evidence(self):
-        base = review.session()
+        base = self.reference_session()
         confirmation = p.load_json(p.ROOT / 'training/paw_anatomical_mapping_confirmation.json')
         for state in ('uncertain', 'conflict', 'missing-evidence'):
             with self.subTest(state=state):

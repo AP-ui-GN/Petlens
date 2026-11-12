@@ -7,12 +7,20 @@ synthetic supervision.
 import json
 from pathlib import Path
 import sys
+import unittest
 
 import numpy as np
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
-torch = pytest.importorskip("torch")
+try:
+    import torch
+except ModuleNotFoundError as error:
+    if error.name != "torch":
+        raise
+    # Both unittest discovery and pytest recognize this standard skip. A
+    # broken installed Torch (or missing internal dependency) must still fail.
+    raise unittest.SkipTest("optional PyTorch test dependencies are not installed") from error
 from petlens_gait import contact_features as c
 from petlens_gait.contact_model import (CanineContactTransformer, ModelConfig,
                                        masked_contact_loss, save_checkpoint, load_checkpoint)
